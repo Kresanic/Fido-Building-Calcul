@@ -71,6 +71,16 @@
         }
       }
     },
+    "*" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "*"
+          }
+        }
+      }
+    },
     "/" : {
       "localizations" : {
         "sk" : {
@@ -1881,7 +1891,7 @@
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dľžka"
+            "value" : "Dĺžka"
           }
         }
       }

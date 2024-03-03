@@ -188,6 +188,7 @@ import PhotosUI
         withAnimation {
             if let user {
                 viewContext.delete(user)
+                try? viewContext.save()
             }
         }
     }

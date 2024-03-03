@@ -168,7 +168,7 @@ struct DemolitionEditor: View {
                 Text(DimensionCallout.readableSymbol(.durationOfWork))
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(Color.brandBlack)
-
+//                    .frame(width: 55, alignment: .trailing)
 
                 TextField("0", text: $newHours)
                     .font(.system(size: 20, weight: .semibold))
@@ -176,7 +176,8 @@ struct DemolitionEditor: View {
                     .focused($focusedDimension, equals: .first)
                     .multilineTextAlignment(.center)
                     .focused($focusedDimension, equals: .first)
-                    .frame(width: 65, height: 30)
+                    .frame(height: 30)
+                    .frame(maxWidth: .infinity)
                     .keyboardType(.decimalPad)
                     .background(Color.brandGray)
                     .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
@@ -184,8 +185,9 @@ struct DemolitionEditor: View {
                 Text(UnitsOfMeasurment.readableSymbol(Demolition.unit))
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(Color.brandBlack)
-
-            }
+                    .frame(width: 40, alignment: .leading)
+                
+            }.padding(.horizontal, 15)
             .onAppear { newHours = doubleToString(from: fetchedEntity.count) }
             .onChange(of: newHours) { _ in
                 fetchedEntity.count = stringToDouble(from: newHours)

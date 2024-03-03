@@ -172,6 +172,8 @@ struct PlubmingWorkEditor: View {
                 Text(DimensionCallout.readableSymbol(.numberOfOutlets))
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(Color.brandBlack)
+                    .fixedSize(horizontal: true, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+//                    .frame(minWidth: 55, alignment: .trailing)
                 
                 TextField("0", text: $newPieces)
                     .font(.system(size: 20, weight: .semibold))
@@ -179,15 +181,17 @@ struct PlubmingWorkEditor: View {
                     .focused($focusedDimension, equals: .first)
                     .multilineTextAlignment(.center)
                     .keyboardType(.decimalPad)
-                    .frame(width: 65, height: 30)
+                    .frame(height: 30)
+                    .frame(maxWidth: .infinity)
                     .background(Color.brandGray)
                     .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                 
                 Text(UnitsOfMeasurment.readableSymbol(Plumbing.unit))
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(Color.brandBlack)
+                    .frame(width: 40, alignment: .leading)
                 
-            }
+            }.padding(.horizontal, 15)
             .onAppear { newPieces = doubleToString(from: fetchedEntity.count) }
             .onChange(of: newPieces) { _ in
                 fetchedEntity.count = stringToDouble(from: newPieces)

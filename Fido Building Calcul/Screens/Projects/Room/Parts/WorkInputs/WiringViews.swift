@@ -179,23 +179,26 @@ struct ElectricalWorkEditor: View {
                 Text(DimensionCallout.readableSymbol(.numberOfOutlets))
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(Color.brandBlack)
-
-
+                    .fixedSize(horizontal: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+//                    .frame(minWidth: 55, alignment: .trailing)
+                
                 TextField("0", text: $newHours)
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundStyle(Color.brandBlack)
                     .multilineTextAlignment(.center)
-                .focused($focusedDimension, equals: .first)
+                    .focused($focusedDimension, equals: .first)
                     .keyboardType(.numberPad)
-                    .frame(width: 65, height: 30)
+                    .frame(height: 30)
+                    .frame(maxWidth: .infinity)
                     .background(Color.brandGray)
                     .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
 
                 Text(UnitsOfMeasurment.readableSymbol(Wiring.unit))
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(Color.brandBlack)
-
-            }
+                    .frame(width: 40, alignment: .leading)
+                
+            }.padding(.horizontal, 15)
             .onAppear { newHours = doubleToString(from: fetchedEntity.count) }
             .onChange(of: newHours) { _ in
                 fetchedEntity.count = stringToDouble(from: newHours)

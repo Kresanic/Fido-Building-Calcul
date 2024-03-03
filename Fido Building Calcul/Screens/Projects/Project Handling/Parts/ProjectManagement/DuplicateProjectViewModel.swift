@@ -17,21 +17,24 @@ import CoreData
         
         let projectPriceList = project.toPriceList
         let projectClient = project.toClient
+        let projectContractor = project.toContractor
         let newProjectNumber = newProjectNumber()
         
         project.toPriceList = nil
         project.toClient = nil
+        project.toContractor = nil
         
         let _ = project.copyEntireObjectGraph(context: viewContext)
         
         project.toPriceList = projectPriceList
         project.toClient = projectClient
+        project.toContractor = projectContractor
         
         try? viewContext.save()
         
         guard let duplicatedProject = fetchLastProject() else { return nil }
         
-        guard let editedProject = editNewProject(of: duplicatedProject, to: projectClient, with: projectPriceList, numbered:  newProjectNumber) else { return nil }
+        guard let editedProject = editNewProject(of: duplicatedProject, to: projectClient, with: projectPriceList, by: projectContractor, numbered:  newProjectNumber) else { return nil }
         
         do {
             try viewContext.save()
@@ -52,7 +55,7 @@ import CoreData
         
     }
     
-    private func editNewProject(of project: Project, to client: Client?, with priceList: PriceList?, numbered: Int64) -> Project? {
+    private func editNewProject(of project: Project, to client: Client?, with priceList: PriceList?, by contractor: Contractor?, numbered: Int64) -> Project? {
         
         let viewContext = PersistenceController.shared.container.viewContext
         print("Run edit project")
@@ -64,6 +67,7 @@ import CoreData
         project.isArchived = false
         project.archivedDate = nil
         project.toClient = client
+        project.toContractor = contractor
         project.addToToHistoryEvent(ProjectEvents.created.entityObject)
         
         guard let _ = copiedPriceListObject(toProject: project, from: priceList) else { return nil }

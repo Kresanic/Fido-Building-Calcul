@@ -230,13 +230,13 @@ struct WorkInputsToolBar: ViewModifier {
     private func keyboardToolbarContent(for dimension: FocusedDimension) -> some View {
         HStack(spacing: 0) {
             if dimension == .first {
-                doneButton().frame(width: 70)
+                doneButton().frame(width: 75)
                 mathSymbols()
-                nextButton().frame(width: 70)
+                nextButton().frame(width: 75)
             } else if dimension == .second {
-                Spacer().frame(width: 70)
+                Spacer().frame(width: 75)
                 mathSymbols()
-                doneButton().frame(width: 70)
+                doneButton().frame(width: 75)
             }
         }
     }
@@ -302,6 +302,16 @@ struct WorkInputsToolBar: ViewModifier {
             }.frame(height: 40)
             .frame(maxWidth: .infinity)
             
+            Button("*") {
+                if focusedDimension.wrappedValue == .first {
+                    size1 = size1 + "*"
+                } else if focusedDimension.wrappedValue == .second {
+                    size2 = size2 + "*"
+                }
+                impactMed.impactOccurred()
+            }.frame(height: 40)
+            .frame(maxWidth: .infinity)
+            .padding(.top, 8)
             
             Button("=") {
                 if focusedDimension.wrappedValue == .first {
@@ -330,7 +340,7 @@ struct WorkInputsToolBar: ViewModifier {
         guard let result = express.expressionValue(with: nil, context: nil) as? Double else { return "0" }
         
         let roundedResult = Double(round(100 * result) / 100)
-        
+
         return dbToStr(from: roundedResult)
         
     }
@@ -369,9 +379,9 @@ struct SingleWorkInputToolBar: ViewModifier {
     private func keyboardToolbarContent(for dimension: FocusedDimension) -> some View {
         HStack(spacing: 0) {
             if dimension == .first {
-                Spacer().frame(width: 70)
+                Spacer().frame(width: 75)
                 mathSymbols()
-                doneButton().frame(width: 70)
+                doneButton().frame(width: 75)
             }
         }
     }
@@ -411,6 +421,12 @@ struct SingleWorkInputToolBar: ViewModifier {
             }.frame(height: 40)
             .frame(maxWidth: .infinity)
             
+            Button("*") {
+                if focusedDimension.wrappedValue == .first { size = size + "*" }
+                impactMed.impactOccurred()
+            }.frame(height: 40)
+            .frame(maxWidth: .infinity)
+            .padding(.top, 8)
             
             Button("=") {
                 if focusedDimension.wrappedValue == .first {
@@ -436,7 +452,9 @@ struct SingleWorkInputToolBar: ViewModifier {
         
         guard let result = express.expressionValue(with: nil, context: nil) as? Double else { return "0" }
         
-        return dbToStr(from: result)
+        let roundedResult = Double(round(100 * result) / 100)
+        
+        return dbToStr(from: roundedResult)
         
     }
     

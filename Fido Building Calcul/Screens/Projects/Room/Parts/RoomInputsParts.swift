@@ -31,7 +31,6 @@ struct ValueEditingBox: View {
                 .frame(maxWidth: .infinity)
                 .background(Color.brandGray)
                 .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                //.padding(.horizontal, 5)
             
             Text(UnitsOfMeasurment.readableSymbol(unit))
                 .font(.system(size: 17, weight: .medium))
@@ -139,7 +138,8 @@ struct CustomWorkValueEditingBox: View {
             Text(DimensionCallout.readableSymbol(title))
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(Color.brandBlack)
-                .frame(width: 65, alignment: .trailing)
+                .fixedSize()
+//                .frame(minWidth: 65, alignment: .trailing)
             
             TextField("0", text: $value)
                 .font(.system(size: 20, weight: .semibold))
