@@ -329,7 +329,9 @@ struct WorkInputsToolBar: ViewModifier {
         
         guard let result = express.expressionValue(with: nil, context: nil) as? Double else { return "0" }
         
-        return dbToStr(from: result)
+        let roundedResult = Double(round(100 * result) / 100)
+        
+        return dbToStr(from: roundedResult)
         
     }
     

@@ -19,6 +19,7 @@
 		392393782B5B1D4D00DA3A42 /* ProjectHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392393772B5B1D4D00DA3A42 /* ProjectHistory.swift */; };
 		3929767C2B358DB3004884E8 /* BIDNetworkClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929767B2B358DB3004884E8 /* BIDNetworkClasses.swift */; };
 		3929767E2B3590BF004884E8 /* BIDFillSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929767D2B3590BF004884E8 /* BIDFillSheet.swift */; };
+		392DB07D2B947D2B00AA8BC8 /* PlasterboardingPartitionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DB07C2B947D2B00AA8BC8 /* PlasterboardingPartitionViews.swift */; };
 		3943953F2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3943953E2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift */; };
 		394395412A9FC2E900B2F64B /* ToolRentalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394395402A9FC2E900B2F64B /* ToolRentalViews.swift */; };
 		3943ADA72B7A156B0061F2F1 /* EmailInputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3943ADA62B7A156B0061F2F1 /* EmailInputSheet.swift */; };
@@ -69,7 +70,6 @@
 		3964D7FB2A9B946500AD4619 /* CommuteExpensesViewsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3964D7FA2A9B946500AD4619 /* CommuteExpensesViewsViews.swift */; };
 		3964D7FF2A9B989700AD4619 /* SiliconingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3964D7FE2A9B989700AD4619 /* SiliconingViews.swift */; };
 		3964D8022A9B9AE600AD4619 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3964D8012A9B9AE600AD4619 /* SettingsScreen.swift */; };
-		396DA3E42B9470380009D7AF /* PlasterboardingPartitionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396DA3E32B9470380009D7AF /* PlasterboardingPartitionViews.swift */; };
 		396EFD3C2AD0A2D400747EB5 /* CustomWork+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396EFD3A2AD0A2D400747EB5 /* CustomWork+CoreDataClass.swift */; };
 		396EFD422AD0A33900747EB5 /* CustomMaterial+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396EFD402AD0A33900747EB5 /* CustomMaterial+CoreDataClass.swift */; };
 		397B41012B877DEC0023A9BC /* ContractorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B41002B877DEC0023A9BC /* ContractorView.swift */; };
@@ -234,6 +234,7 @@
 		392393772B5B1D4D00DA3A42 /* ProjectHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHistory.swift; sourceTree = "<group>"; };
 		3929767B2B358DB3004884E8 /* BIDNetworkClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BIDNetworkClasses.swift; sourceTree = "<group>"; };
 		3929767D2B3590BF004884E8 /* BIDFillSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BIDFillSheet.swift; sourceTree = "<group>"; };
+		392DB07C2B947D2B00AA8BC8 /* PlasterboardingPartitionViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasterboardingPartitionViews.swift; sourceTree = "<group>"; };
 		3943953E2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWorksAndMaterialsViews.swift; sourceTree = "<group>"; };
 		394395402A9FC2E900B2F64B /* ToolRentalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolRentalViews.swift; sourceTree = "<group>"; };
 		3943ADA62B7A156B0061F2F1 /* EmailInputSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInputSheet.swift; sourceTree = "<group>"; };
@@ -286,7 +287,6 @@
 		3964D7FA2A9B946500AD4619 /* CommuteExpensesViewsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuteExpensesViewsViews.swift; sourceTree = "<group>"; };
 		3964D7FE2A9B989700AD4619 /* SiliconingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiliconingViews.swift; sourceTree = "<group>"; };
 		3964D8012A9B9AE600AD4619 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
-		396DA3E32B9470380009D7AF /* PlasterboardingPartitionViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlasterboardingPartitionViews.swift; path = "../../../../../../../../../../Volumes/exFAT/Work/iOS Freelance/Fido/Fido 1.2.0 Fido 8/Fido Building Calcul/Fido Building Calcul/Screens/Projects/Room/Parts/WorkInputs/PlasterboardingPartitionViews.swift"; sourceTree = "<group>"; };
 		396EFD3A2AD0A2D400747EB5 /* CustomWork+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CustomWork+CoreDataClass.swift"; path = "../../CustomWork+CoreDataClass.swift"; sourceTree = "<group>"; };
 		396EFD402AD0A33900747EB5 /* CustomMaterial+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomMaterial+CoreDataClass.swift"; sourceTree = "<group>"; };
 		397B41002B877DEC0023A9BC /* ContractorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractorView.swift; sourceTree = "<group>"; };
@@ -890,7 +890,7 @@
 				396435CA2A7A8F6D00C148B8 /* PenetrationCoatViews.swift */,
 				396435BA2A7A73BA00C148B8 /* PlasterBoardingCeilingViews.swift */,
 				396435C42A7A884C00C148B8 /* PlasteringCeilingViews.swift */,
-				396DA3E32B9470380009D7AF /* PlasterboardingPartitionViews.swift */,
+				392DB07C2B947D2B00AA8BC8 /* PlasterboardingPartitionViews.swift */,
 				396435C82A7A8E7800C148B8 /* PlasteringOfWindowSashViews.swift */,
 				396435C22A7A85B800C148B8 /* PlasteringWallViews.swift */,
 				396435B22A7A4DB700C148B8 /* PlumbingWorkViews.swift */,
@@ -1252,7 +1252,6 @@
 				398900862B15F7FF00CC3870 /* Array Extensions.swift in Sources */,
 				394395412A9FC2E900B2F64B /* ToolRentalViews.swift in Sources */,
 				390F80372B59487000A10FF0 /* ClientHandlingView.swift in Sources */,
-				396DA3E42B9470380009D7AF /* PlasterboardingPartitionViews.swift in Sources */,
 				396435DB2A7A9B9800C148B8 /* InstallationOfSanitaryViews.swift in Sources */,
 				396435D72A7A968F00C148B8 /* PavingCeramicViews.swift in Sources */,
 				398900D32B17581200CC3870 /* ArchivedProjectView.swift in Sources */,
@@ -1336,6 +1335,7 @@
 				398900932B15F9F100CC3870 /* DialogPrimaryButton.swift in Sources */,
 				39F549C72B03805600B9AC23 /* ContractorEditView.swift in Sources */,
 				398900EA2B1763E300CC3870 /* ArchiveButton.swift in Sources */,
+				392DB07D2B947D2B00AA8BC8 /* PlasterboardingPartitionViews.swift in Sources */,
 				396435C32A7A85B800C148B8 /* PlasteringWallViews.swift in Sources */,
 				398900B92B1754A000CC3870 /* Enums Archive.swift in Sources */,
 				398900742B1528F100CC3870 /* Pricing Calculations Types.swift in Sources */,
