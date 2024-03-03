@@ -1,0 +1,25 @@
+{
+  "images" : [
+    {
+      "filename" : "bottomBarPriceList_03 1.jpg",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "bottomBarPriceList_03.jpg",
+      "idiom" : "universal",
+      "locale" : "en"
+    },
+    {
+      "filename" : "bottomBarPriceList_02.jpg",
+      "idiom" : "universal",
+      "locale" : "sk"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "localizable" : true
+  }
+}

@@ -1,0 +1,23 @@
+//
+//  Demolition+CoreDataClass.swift
+//  Fido Building Calcul
+//
+//  Created by Peter Kresanič on 06/10/2023.
+//
+//
+
+
+import CoreData
+import SwiftUI
+
+@objc(Demolition)
+public class Demolition: NSManagedObject, CountBasedWorkType {
+    
+    static var title: LocalizedStringKey = "Demolition"
+    
+    static var subTitle: LocalizedStringKey =  ""
+    
+    static var unit: UnitsOfMeasurment  = .hour
+    
+    
+}

@@ -1,0 +1,25 @@
+{
+  "images" : [
+    {
+      "filename" : "createNewProject_04.jpg",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "createNewProject_04 1.jpg",
+      "idiom" : "universal",
+      "locale" : "en"
+    },
+    {
+      "filename" : "createNewProject_02.jpg",
+      "idiom" : "universal",
+      "locale" : "sk"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "localizable" : true
+  }
+}

@@ -1,0 +1,1630 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		390F80312B591D2800A10FF0 /* DuplicateProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390F80302B591D2800A10FF0 /* DuplicateProjectViewModel.swift */; };
+		390F80332B591DAA00A10FF0 /* NSManagedObject Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390F80322B591DAA00A10FF0 /* NSManagedObject Extension.swift */; };
+		390F80352B59483F00A10FF0 /* ProjectManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390F80342B59483F00A10FF0 /* ProjectManagementView.swift */; };
+		390F80372B59487000A10FF0 /* ClientHandlingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390F80362B59487000A10FF0 /* ClientHandlingView.swift */; };
+		3911147C2AF94B2D00D074E9 /* ReceiptParser in Frameworks */ = {isa = PBXBuildFile; productRef = 3911147B2AF94B2D00D074E9 /* ReceiptParser */; };
+		3911147E2AF94B2D00D074E9 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 3911147D2AF94B2D00D074E9 /* RevenueCat */; };
+		391114802AF94B2D00D074E9 /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3911147F2AF94B2D00D074E9 /* RevenueCatUI */; };
+		391FEEDB2A9E248B007CBFD4 /* ClientsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FEEDA2A9E248B007CBFD4 /* ClientsScreen.swift */; };
+		392393752B5B1A3C00DA3A42 /* HistoryEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392393732B5B1A3C00DA3A42 /* HistoryEvent+CoreDataClass.swift */; };
+		392393782B5B1D4D00DA3A42 /* ProjectHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392393772B5B1D4D00DA3A42 /* ProjectHistory.swift */; };
+		3929767C2B358DB3004884E8 /* BIDNetworkClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929767B2B358DB3004884E8 /* BIDNetworkClasses.swift */; };
+		3929767E2B3590BF004884E8 /* BIDFillSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929767D2B3590BF004884E8 /* BIDFillSheet.swift */; };
+		3943953F2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3943953E2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift */; };
+		394395412A9FC2E900B2F64B /* ToolRentalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394395402A9FC2E900B2F64B /* ToolRentalViews.swift */; };
+		3943ADA72B7A156B0061F2F1 /* EmailInputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3943ADA62B7A156B0061F2F1 /* EmailInputSheet.swift */; };
+		39475D4F2A76A877006EC970 /* FidoTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39475D4E2A76A877006EC970 /* FidoTabView.swift */; };
+		39475D512A76A909006EC970 /* BehavioursViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39475D502A76A909006EC970 /* BehavioursViewModel.swift */; };
+		39475D532A76AABF006EC970 /* Color Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39475D522A76AABF006EC970 /* Color Extensions.swift */; };
+		39475D552A76AB25006EC970 /* ProjectsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39475D542A76AB25006EC970 /* ProjectsScreen.swift */; };
+		39475D572A76AB3C006EC970 /* PricesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39475D562A76AB3C006EC970 /* PricesScreen.swift */; };
+		39475D5C2A76B585006EC970 /* PropertyCategoryBubbleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39475D5B2A76B585006EC970 /* PropertyCategoryBubbleViewModel.swift */; };
+		39475D5E2A76B771006EC970 /* PropertyCategoryBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39475D5D2A76B771006EC970 /* PropertyCategoryBubbleView.swift */; };
+		39475D612A76E139006EC970 /* CategorziedProjectsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39475D602A76E139006EC970 /* CategorziedProjectsScreen.swift */; };
+		39475D632A76E152006EC970 /* CategorizedProjectsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39475D622A76E152006EC970 /* CategorizedProjectsScreenViewModel.swift */; };
+		39475D652A76E376006EC970 /* View Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39475D642A76E376006EC970 /* View Extensions.swift */; };
+		39475D672A76EB1F006EC970 /* Custom View Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39475D662A76EB1F006EC970 /* Custom View Modifiers.swift */; };
+		39498F652B4EC8AB0017BE9F /* AppearancePreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39498F642B4EC8AB0017BE9F /* AppearancePreferenceView.swift */; };
+		39498F672B4EC8EC0017BE9F /* AppearanceOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39498F662B4EC8EC0017BE9F /* AppearanceOptions.swift */; };
+		3949A4E22AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3949A4E02AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodeld */; };
+		3949A4E42AFD2BB100D01A59 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3949A4E32AFD2BB100D01A59 /* Launch Screen.storyboard */; };
+		395086E82A7182CF0099BAD8 /* FidoBuildingCalculApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395086E72A7182CF0099BAD8 /* FidoBuildingCalculApp.swift */; };
+		395086EC2A7182D00099BAD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 395086EB2A7182D00099BAD8 /* Assets.xcassets */; };
+		395086EF2A7182D00099BAD8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 395086EE2A7182D00099BAD8 /* Preview Assets.xcassets */; };
+		395086F12A7182D00099BAD8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395086F02A7182D00099BAD8 /* Persistence.swift */; };
+		396435AB2A7A489A00C148B8 /* DemolitionWorkViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435AA2A7A489A00C148B8 /* DemolitionWorkViews.swift */; };
+		396435AD2A7A495900C148B8 /* WiringViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435AC2A7A495900C148B8 /* WiringViews.swift */; };
+		396435B32A7A4DB700C148B8 /* PlumbingWorkViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435B22A7A4DB700C148B8 /* PlumbingWorkViews.swift */; };
+		396435B72A7A699E00C148B8 /* UIParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435B62A7A699E00C148B8 /* UIParts.swift */; };
+		396435B92A7A69E300C148B8 /* BrickLoadBearingWallViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435B82A7A69E300C148B8 /* BrickLoadBearingWallViews.swift */; };
+		396435BB2A7A73BA00C148B8 /* PlasterBoardingCeilingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435BA2A7A73BA00C148B8 /* PlasterBoardingCeilingViews.swift */; };
+		396435BF2A7A821500C148B8 /* NettingWallViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435BE2A7A821500C148B8 /* NettingWallViews.swift */; };
+		396435C12A7A843F00C148B8 /* NettingCeilingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435C02A7A843F00C148B8 /* NettingCeilingViews.swift */; };
+		396435C32A7A85B800C148B8 /* PlasteringWallViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435C22A7A85B800C148B8 /* PlasteringWallViews.swift */; };
+		396435C52A7A884C00C148B8 /* PlasteringCeilingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435C42A7A884C00C148B8 /* PlasteringCeilingViews.swift */; };
+		396435C72A7A8CA900C148B8 /* InstallationOfCornerBeadsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435C62A7A8CA900C148B8 /* InstallationOfCornerBeadsViews.swift */; };
+		396435C92A7A8E7800C148B8 /* PlasteringOfWindowSashViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435C82A7A8E7800C148B8 /* PlasteringOfWindowSashViews.swift */; };
+		396435CB2A7A8F6D00C148B8 /* PenetrationCoatViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435CA2A7A8F6D00C148B8 /* PenetrationCoatViews.swift */; };
+		396435CD2A7A90CD00C148B8 /* PaintingWallViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435CC2A7A90CD00C148B8 /* PaintingWallViews.swift */; };
+		396435CF2A7A91E800C148B8 /* PaintingCeilingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435CE2A7A91E800C148B8 /* PaintingCeilingViews.swift */; };
+		396435D12A7A92C100C148B8 /* LevellingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435D02A7A92C100C148B8 /* LevellingViews.swift */; };
+		396435D32A7A944000C148B8 /* LayingFloatingFloorsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435D22A7A944000C148B8 /* LayingFloatingFloorsViews.swift */; };
+		396435D52A7A955C00C148B8 /* TileCeramicViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435D42A7A955C00C148B8 /* TileCeramicViews.swift */; };
+		396435D72A7A968F00C148B8 /* PavingCeramicViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435D62A7A968F00C148B8 /* PavingCeramicViews.swift */; };
+		396435D92A7A991D00C148B8 /* GroutingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435D82A7A991D00C148B8 /* GroutingViews.swift */; };
+		396435DB2A7A9B9800C148B8 /* InstallationOfSanitaryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435DA2A7A9B9800C148B8 /* InstallationOfSanitaryViews.swift */; };
+		396435DD2A7A9CFA00C148B8 /* WindowInstallationsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435DC2A7A9CFA00C148B8 /* WindowInstallationsViews.swift */; };
+		396435DF2A7A9E0D00C148B8 /* InstallationOfDoorJambViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435DE2A7A9E0D00C148B8 /* InstallationOfDoorJambViews.swift */; };
+		396435E12A7AB04900C148B8 /* RoomCalculationBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435E02A7AB04900C148B8 /* RoomCalculationBill.swift */; };
+		396435E32A7AB06400C148B8 /* RoomCalculationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435E22A7AB06400C148B8 /* RoomCalculationViewModel.swift */; };
+		3964D7FB2A9B946500AD4619 /* CommuteExpensesViewsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3964D7FA2A9B946500AD4619 /* CommuteExpensesViewsViews.swift */; };
+		3964D7FF2A9B989700AD4619 /* SiliconingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3964D7FE2A9B989700AD4619 /* SiliconingViews.swift */; };
+		3964D8022A9B9AE600AD4619 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3964D8012A9B9AE600AD4619 /* SettingsScreen.swift */; };
+		396DA3E42B9470380009D7AF /* PlasterboardingPartitionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396DA3E32B9470380009D7AF /* PlasterboardingPartitionViews.swift */; };
+		396EFD3C2AD0A2D400747EB5 /* CustomWork+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396EFD3A2AD0A2D400747EB5 /* CustomWork+CoreDataClass.swift */; };
+		396EFD422AD0A33900747EB5 /* CustomMaterial+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396EFD402AD0A33900747EB5 /* CustomMaterial+CoreDataClass.swift */; };
+		397B41012B877DEC0023A9BC /* ContractorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B41002B877DEC0023A9BC /* ContractorView.swift */; };
+		397B41032B877E280023A9BC /* ContractorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B41022B877E280023A9BC /* ContractorDetailView.swift */; };
+		397B41052B877E420023A9BC /* ContractorsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B41042B877E420023A9BC /* ContractorsListView.swift */; };
+		397B41072B8780950023A9BC /* Enums Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B41062B8780950023A9BC /* Enums Settings.swift */; };
+		397B41092B87820D0023A9BC /* CreateContractorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B41082B87820D0023A9BC /* CreateContractorButton.swift */; };
+		397B410B2B878D7F0023A9BC /* EditContractorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B410A2B878D7F0023A9BC /* EditContractorButton.swift */; };
+		397B410D2B878D9C0023A9BC /* DeleteContractorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B410C2B878D9C0023A9BC /* DeleteContractorButton.swift */; };
+		397B410F2B878E840023A9BC /* ContractorDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B410E2B878E840023A9BC /* ContractorDetailViewModel.swift */; };
+		397B41112B87939B0023A9BC /* InProjectContractorBubbles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B41102B87939B0023A9BC /* InProjectContractorBubbles.swift */; };
+		397B41132B8794A20023A9BC /* InProjectContractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B41122B8794A20023A9BC /* InProjectContractor.swift */; };
+		397B41152B8797F60023A9BC /* InProjectChoosingContractorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B41142B8797F60023A9BC /* InProjectChoosingContractorView.swift */; };
+		397BB9902AD041BF006BA23C /* InstallationOfSanitary+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB95A2AD041BE006BA23C /* InstallationOfSanitary+CoreDataClass.swift */; };
+		397BB9922AD041BF006BA23C /* PlasteringOfWindowSash+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB95C2AD041BF006BA23C /* PlasteringOfWindowSash+CoreDataClass.swift */; };
+		397BB9942AD041BF006BA23C /* BrickPartition+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB95E2AD041BF006BA23C /* BrickPartition+CoreDataClass.swift */; };
+		397BB9962AD041BF006BA23C /* Grouting+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB9602AD041BF006BA23C /* Grouting+CoreDataClass.swift */; };
+		397BB9982AD041BF006BA23C /* PlasterboardingCeiling+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB9622AD041BF006BA23C /* PlasterboardingCeiling+CoreDataClass.swift */; };
+		397BB99A2AD041BF006BA23C /* Siliconing+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB9642AD041BF006BA23C /* Siliconing+CoreDataClass.swift */; };
+		397BB99C2AD041BF006BA23C /* BrickLoadBearingWall+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB9662AD041BF006BA23C /* BrickLoadBearingWall+CoreDataClass.swift */; };
+		397BB99E2AD041BF006BA23C /* Demolition+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB9682AD041BF006BA23C /* Demolition+CoreDataClass.swift */; };
+		397BB9A02AD041BF006BA23C /* Wiring+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB96A2AD041BF006BA23C /* Wiring+CoreDataClass.swift */; };
+		397BB9A22AD041BF006BA23C /* PlasterboardingPartition+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB96C2AD041BF006BA23C /* PlasterboardingPartition+CoreDataClass.swift */; };
+		397BB9A42AD041BF006BA23C /* SkirtingOfFloatingFloor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB96E2AD041BF006BA23C /* SkirtingOfFloatingFloor+CoreDataClass.swift */; };
+		397BB9A62AD041BF006BA23C /* InstallationOfDoorJamb+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB9702AD041BF006BA23C /* InstallationOfDoorJamb+CoreDataClass.swift */; };
+		397BB9A82AD041BF006BA23C /* PaintingWall+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB9722AD041BF006BA23C /* PaintingWall+CoreDataClass.swift */; };
+		397BB9AA2AD041BF006BA23C /* NettingCeiling+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB9742AD041BF006BA23C /* NettingCeiling+CoreDataClass.swift */; };
+		397BB9AC2AD041BF006BA23C /* PenetrationCoating+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB9762AD041BF006BA23C /* PenetrationCoating+CoreDataClass.swift */; };
+		397BB9AE2AD041BF006BA23C /* InstallationOfCornerBead+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB9782AD041BF006BA23C /* InstallationOfCornerBead+CoreDataClass.swift */; };
+		397BB9B02AD041BF006BA23C /* PlasteringWall+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB97A2AD041BF006BA23C /* PlasteringWall+CoreDataClass.swift */; };
+		397BB9B22AD041BF006BA23C /* PriceList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB97C2AD041BF006BA23C /* PriceList+CoreDataClass.swift */; };
+		397BB9B42AD041BF006BA23C /* TileCeramic+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB97E2AD041BF006BA23C /* TileCeramic+CoreDataClass.swift */; };
+		397BB9B62AD041BF006BA23C /* LayingFloatingFloors+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB9802AD041BF006BA23C /* LayingFloatingFloors+CoreDataClass.swift */; };
+		397BB9B82AD041BF006BA23C /* Plumbing+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB9822AD041BF006BA23C /* Plumbing+CoreDataClass.swift */; };
+		397BB9BA2AD041BF006BA23C /* WindowInstallation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB9842AD041BF006BA23C /* WindowInstallation+CoreDataClass.swift */; };
+		397BB9BC2AD041BF006BA23C /* PlasteringCeiling+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB9862AD041BF006BA23C /* PlasteringCeiling+CoreDataClass.swift */; };
+		397BB9BE2AD041BF006BA23C /* Levelling+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB9882AD041BF006BA23C /* Levelling+CoreDataClass.swift */; };
+		397BB9C02AD041BF006BA23C /* PavingCeramic+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB98A2AD041BF006BA23C /* PavingCeramic+CoreDataClass.swift */; };
+		397BB9C22AD041BF006BA23C /* PaintingCeiling+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB98C2AD041BF006BA23C /* PaintingCeiling+CoreDataClass.swift */; };
+		397BB9C42AD041BF006BA23C /* NettingWall+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB98E2AD041BF006BA23C /* NettingWall+CoreDataClass.swift */; };
+		39804FA62AC41BC900F2A072 /* ClientPreviewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39804FA52AC41BC900F2A072 /* ClientPreviewScreen.swift */; };
+		39804FA82AC43ADC00F2A072 /* ClientEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39804FA72AC43ADC00F2A072 /* ClientEditView.swift */; };
+		39804FAA2AC43C0700F2A072 /* ClientEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39804FA92AC43C0700F2A072 /* ClientEditViewModel.swift */; };
+		39816FF22B0BD60E000CA0E2 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39816FF12B0BD60E000CA0E2 /* Onboarding.swift */; };
+		3982E34A2B5952FD00DB39DE /* ProjectManagementButtonNarrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3982E3492B5952FD00DB39DE /* ProjectManagementButtonNarrow.swift */; };
+		398900742B1528F100CC3870 /* Pricing Calculations Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900732B1528F100CC3870 /* Pricing Calculations Types.swift */; };
+		398900762B15296700CC3870 /* Enums Roots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900752B15296700CC3870 /* Enums Roots.swift */; };
+		398900782B15299B00CC3870 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900772B15299B00CC3870 /* CustomTabView.swift */; };
+		3989007C2B1529FF00CC3870 /* PurchasePayWallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989007B2B1529FF00CC3870 /* PurchasePayWallButton.swift */; };
+		3989007F2B152A9800CC3870 /* OnboardingContexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989007E2B152A9800CC3870 /* OnboardingContexts.swift */; };
+		398900822B152AB700CC3870 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900812B152AB700CC3870 /* OnboardingPageView.swift */; };
+		398900842B152ADC00CC3870 /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900832B152ADC00CC3870 /* OnboardingButton.swift */; };
+		398900862B15F7FF00CC3870 /* Array Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900852B15F7FF00CC3870 /* Array Extensions.swift */; };
+		398900882B15F85200CC3870 /* Enums Rooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900872B15F85200CC3870 /* Enums Rooms.swift */; };
+		3989008D2B15F8BF00CC3870 /* Materials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989008C2B15F8BF00CC3870 /* Materials.swift */; };
+		3989008F2B15F8E200CC3870 /* Works.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989008E2B15F8E200CC3870 /* Works.swift */; };
+		398900912B15F8FB00CC3870 /* Others.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900902B15F8FB00CC3870 /* Others.swift */; };
+		398900932B15F9F100CC3870 /* DialogPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900922B15F9F100CC3870 /* DialogPrimaryButton.swift */; };
+		398900952B15FA1900CC3870 /* DialogSecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900942B15FA1900CC3870 /* DialogSecondaryButton.swift */; };
+		398900982B15FA3B00CC3870 /* DialogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900972B15FA3B00CC3870 /* DialogType.swift */; };
+		3989009A2B15FA9000CC3870 /* Work Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900992B15FA9000CC3870 /* Work Protocols.swift */; };
+		3989009C2B15FABA00CC3870 /* Material Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989009B2B15FABA00CC3870 /* Material Protocols.swift */; };
+		3989009E2B15FAD200CC3870 /* Other Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989009D2B15FAD200CC3870 /* Other Protocols.swift */; };
+		398900A02B15FB6500CC3870 /* Enums Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989009F2B15FB6500CC3870 /* Enums Projects.swift */; };
+		398900A32B15FC8400CC3870 /* WindowAndDoorEditors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900A22B15FC8400CC3870 /* WindowAndDoorEditors.swift */; };
+		398900A62B15FF1800CC3870 /* PDFParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900A52B15FF1800CC3870 /* PDFParts.swift */; };
+		398900A82B15FF4D00CC3870 /* RoomInputsParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900A72B15FF4D00CC3870 /* RoomInputsParts.swift */; };
+		398900AD2B15FFFA00CC3870 /* ProjectHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900AC2B15FFFA00CC3870 /* ProjectHandling.swift */; };
+		398900B02B16006000CC3870 /* ComplementaryWorks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900AF2B16006000CC3870 /* ComplementaryWorks.swift */; };
+		398900B22B1600BB00CC3870 /* ClientHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900B12B1600BB00CC3870 /* ClientHandling.swift */; };
+		398900B72B17546800CC3870 /* PriceOfferSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900B62B17546800CC3870 /* PriceOfferSettings.swift */; };
+		398900B92B1754A000CC3870 /* Enums Archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900B82B1754A000CC3870 /* Enums Archive.swift */; };
+		398900BB2B1754B700CC3870 /* ArchiveSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900BA2B1754B700CC3870 /* ArchiveSettings.swift */; };
+		398900BE2B1754ED00CC3870 /* OthersSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900BD2B1754ED00CC3870 /* OthersSettings.swift */; };
+		398900C02B1755A800CC3870 /* Enums User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900BF2B1755A800CC3870 /* Enums User.swift */; };
+		398900C22B1755CB00CC3870 /* ContractorEditDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900C12B1755CB00CC3870 /* ContractorEditDetailsView.swift */; };
+		398900C52B17560F00CC3870 /* ValidityOfPriceOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900C42B17560F00CC3870 /* ValidityOfPriceOffer.swift */; };
+		398900CA2B17567F00CC3870 /* ContractorBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900C92B17567F00CC3870 /* ContractorBubble.swift */; };
+		398900CC2B17574800CC3870 /* ArchiveDurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900CB2B17574800CC3870 /* ArchiveDurationView.swift */; };
+		398900CE2B17576500CC3870 /* ArchiveDurationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900CD2B17576500CC3870 /* ArchiveDurationButton.swift */; };
+		398900D02B1757D900CC3870 /* AccountSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900CF2B1757D900CC3870 /* AccountSettings.swift */; };
+		398900D32B17581200CC3870 /* ArchivedProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900D22B17581200CC3870 /* ArchivedProjectView.swift */; };
+		398900D62B17586D00CC3870 /* ProjectBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900D52B17586D00CC3870 /* ProjectBubbleView.swift */; };
+		398900D82B17587D00CC3870 /* NewProjectSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900D72B17587D00CC3870 /* NewProjectSheet.swift */; };
+		398900DF2B1761CD00CC3870 /* InProjectPriceBubbles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900DE2B1761CD00CC3870 /* InProjectPriceBubbles.swift */; };
+		398900E32B17633E00CC3870 /* PickClientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900E22B17633E00CC3870 /* PickClientButton.swift */; };
+		398900E62B17638200CC3870 /* ProjectIsArchivedbutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900E52B17638200CC3870 /* ProjectIsArchivedbutton.swift */; };
+		398900E82B1763C300CC3870 /* InProjectPriceListButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900E72B1763C300CC3870 /* InProjectPriceListButton.swift */; };
+		398900EA2B1763E300CC3870 /* ArchiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900E92B1763E300CC3870 /* ArchiveButton.swift */; };
+		398900EC2B17641600CC3870 /* TitleAndNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900EB2B17641600CC3870 /* TitleAndNotes.swift */; };
+		398900EE2B17644600CC3870 /* NewRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900ED2B17644600CC3870 /* NewRoomView.swift */; };
+		398900F02B17645C00CC3870 /* RoomBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900EF2B17645C00CC3870 /* RoomBubbleView.swift */; };
+		398900F22B17647000CC3870 /* RoomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900F12B17647000CC3870 /* RoomListView.swift */; };
+		398900F42B1764A200CC3870 /* ClientBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900F32B1764A200CC3870 /* ClientBubbleView.swift */; };
+		398900F92B17655400CC3870 /* PDFViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900F82B17655400CC3870 /* PDFViewModel.swift */; };
+		398900FB2B17657700CC3870 /* LocalizedStringKey Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900FA2B17657700CC3870 /* LocalizedStringKey Extensions.swift */; };
+		398900FD2B1766FC00CC3870 /* Enums Clients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398900FC2B1766FC00CC3870 /* Enums Clients.swift */; };
+		398901022B1767DD00CC3870 /* EditClientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398901012B1767DD00CC3870 /* EditClientButton.swift */; };
+		398901052B17682600CC3870 /* ClientCreationHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398901042B17682600CC3870 /* ClientCreationHandling.swift */; };
+		398901072B17684B00CC3870 /* ClientsProjectsBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398901062B17684B00CC3870 /* ClientsProjectsBubble.swift */; };
+		3989010B2B1768D200CC3870 /* ClientAttributeBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989010A2B1768D200CC3870 /* ClientAttributeBubble.swift */; };
+		3989010D2B1769C700CC3870 /* PriceBubbles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989010C2B1769C700CC3870 /* PriceBubbles.swift */; };
+		39939AFF2B946B1A00F16884 /* BrickPartitionsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39939AFE2B946B1A00F16884 /* BrickPartitionsViews.swift */; };
+		3996E1FE2A77BEA0000D86E1 /* InProjectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E1FD2A77BEA0000D86E1 /* InProjectScreen.swift */; };
+		3996E2002A77BF64000D86E1 /* InProjectScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E1FF2A77BF64000D86E1 /* InProjectScreenViewModel.swift */; };
+		3996E2062A781CF5000D86E1 /* PricingCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E2052A781CF5000D86E1 /* PricingCalculations.swift */; };
+		3996E20B2A797029000D86E1 /* RoomScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E20A2A797029000D86E1 /* RoomScreen.swift */; };
+		3996E20D2A797033000D86E1 /* RoomScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E20C2A797033000D86E1 /* RoomScreenViewModel.swift */; };
+		3996E2942A797C54000D86E1 /* Room+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E25A2A797C54000D86E1 /* Room+CoreDataClass.swift */; };
+		3996E29A2A797C54000D86E1 /* Door+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E2602A797C54000D86E1 /* Door+CoreDataClass.swift */; };
+		3996E29C2A797C54000D86E1 /* Project+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E2622A797C54000D86E1 /* Project+CoreDataClass.swift */; };
+		3996E2A42A797C54000D86E1 /* Window+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E26A2A797C54000D86E1 /* Window+CoreDataClass.swift */; };
+		3996E2BD2A7985A1000D86E1 /* Binding Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E2BC2A7985A1000D86E1 /* Binding Extensions.swift */; };
+		399BB7782AEBFD1C00452560 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399BB7772AEBFD1C00452560 /* StoreKit.framework */; };
+		399BB77B2AEBFEC900452560 /* PayWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BB77A2AEBFEC900452560 /* PayWall.swift */; };
+		399BB77D2AEBFEDE00452560 /* PayWallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BB77C2AEBFEDE00452560 /* PayWallViewModel.swift */; };
+		399BB77F2AEBFF3400452560 /* OfferingBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BB77E2AEBFF3400452560 /* OfferingBubble.swift */; };
+		399BB78A2AEC320A00452560 /* PayWallFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BB7892AEC320A00452560 /* PayWallFeature.swift */; };
+		39A24D472AD6EFD6001FDE2A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 39A24D462AD6EFD6001FDE2A /* Localizable.xcstrings */; };
+		39AEABF62AAF61920085B2A1 /* PricesScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEABF52AAF61920085B2A1 /* PricesScreenViewModel.swift */; };
+		39AEABF82AAF6A350085B2A1 /* InProjectPricesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEABF72AAF6A350085B2A1 /* InProjectPricesListView.swift */; };
+		39AEABFA2AAF6A470085B2A1 /* InProjectPricesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEABF92AAF6A470085B2A1 /* InProjectPricesListViewModel.swift */; };
+		39B4E02D2AC2EC240035EFBC /* CreateNewClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B4E02C2AC2EC240035EFBC /* CreateNewClientViewModel.swift */; };
+		39B51FA22B56FC8C00700AB4 /* PDFPreviewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B51FA12B56FC8C00700AB4 /* PDFPreviewSheet.swift */; };
+		39B51FA42B57048200700AB4 /* PDFPreviewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B51FA32B57048200700AB4 /* PDFPreviewButton.swift */; };
+		39B51FA62B5706B000700AB4 /* PDFExportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B51FA52B5706B000700AB4 /* PDFExportButton.swift */; };
+		39B51FA82B57133900700AB4 /* TotalPriceOfferNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B51FA72B57133900700AB4 /* TotalPriceOfferNew.swift */; };
+		39B6EF4D2B41A1C70002066C /* Enums BIDError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B6EF4C2B41A1C70002066C /* Enums BIDError.swift */; };
+		39C112952ABD9BBF00CD82B7 /* Double Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C112942ABD9BBF00CD82B7 /* Double Extensions.swift */; };
+		39CA43262B0BA14C0048EB36 /* DialogWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CA43252B0BA14C0048EB36 /* DialogWindow.swift */; };
+		39CC5CD22AED13C8001C4D31 /* CTAPopUP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CC5CD12AED13C8001C4D31 /* CTAPopUP.swift */; };
+		39D22C742AA12D0400322E31 /* CreateNewClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D22C732AA12D0400322E31 /* CreateNewClientView.swift */; };
+		39D22C762AA12D9900322E31 /* PersonalClientCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D22C752AA12D9900322E31 /* PersonalClientCreationView.swift */; };
+		39D22C782AA12DE400322E31 /* CorporationClientCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D22C772AA12DE400322E31 /* CorporationClientCreationView.swift */; };
+		39D22C7E2AA12F2F00322E31 /* InProjectChoosingClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D22C7D2AA12F2F00322E31 /* InProjectChoosingClientView.swift */; };
+		39D435A12AA0DC5F001AAD18 /* Client+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D4359B2AA0DC5F001AAD18 /* Client+CoreDataClass.swift */; };
+		39F549C72B03805600B9AC23 /* ContractorEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F549C62B03805600B9AC23 /* ContractorEditView.swift */; };
+		39F549C92B03806600B9AC23 /* ContractorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F549C82B03806600B9AC23 /* ContractorViewModel.swift */; };
+		39FB6ECA2B87775500D473A8 /* Contractor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FB6EC82B87775400D473A8 /* Contractor+CoreDataClass.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3915180B2AF945590095142B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		390F80302B591D2800A10FF0 /* DuplicateProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateProjectViewModel.swift; sourceTree = "<group>"; };
+		390F80322B591DAA00A10FF0 /* NSManagedObject Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject Extension.swift"; sourceTree = "<group>"; };
+		390F80342B59483F00A10FF0 /* ProjectManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectManagementView.swift; sourceTree = "<group>"; };
+		390F80362B59487000A10FF0 /* ClientHandlingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHandlingView.swift; sourceTree = "<group>"; };
+		391FEEDA2A9E248B007CBFD4 /* ClientsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsScreen.swift; sourceTree = "<group>"; };
+		392393732B5B1A3C00DA3A42 /* HistoryEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
+		392393772B5B1D4D00DA3A42 /* ProjectHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHistory.swift; sourceTree = "<group>"; };
+		3929767B2B358DB3004884E8 /* BIDNetworkClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BIDNetworkClasses.swift; sourceTree = "<group>"; };
+		3929767D2B3590BF004884E8 /* BIDFillSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BIDFillSheet.swift; sourceTree = "<group>"; };
+		3943953E2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWorksAndMaterialsViews.swift; sourceTree = "<group>"; };
+		394395402A9FC2E900B2F64B /* ToolRentalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolRentalViews.swift; sourceTree = "<group>"; };
+		3943ADA62B7A156B0061F2F1 /* EmailInputSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInputSheet.swift; sourceTree = "<group>"; };
+		39475D4E2A76A877006EC970 /* FidoTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FidoTabView.swift; sourceTree = "<group>"; };
+		39475D502A76A909006EC970 /* BehavioursViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehavioursViewModel.swift; sourceTree = "<group>"; };
+		39475D522A76AABF006EC970 /* Color Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color Extensions.swift"; sourceTree = "<group>"; };
+		39475D542A76AB25006EC970 /* ProjectsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsScreen.swift; sourceTree = "<group>"; };
+		39475D562A76AB3C006EC970 /* PricesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesScreen.swift; sourceTree = "<group>"; };
+		39475D5B2A76B585006EC970 /* PropertyCategoryBubbleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyCategoryBubbleViewModel.swift; sourceTree = "<group>"; };
+		39475D5D2A76B771006EC970 /* PropertyCategoryBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyCategoryBubbleView.swift; sourceTree = "<group>"; };
+		39475D602A76E139006EC970 /* CategorziedProjectsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorziedProjectsScreen.swift; sourceTree = "<group>"; };
+		39475D622A76E152006EC970 /* CategorizedProjectsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorizedProjectsScreenViewModel.swift; sourceTree = "<group>"; };
+		39475D642A76E376006EC970 /* View Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View Extensions.swift"; sourceTree = "<group>"; };
+		39475D662A76EB1F006EC970 /* Custom View Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom View Modifiers.swift"; sourceTree = "<group>"; };
+		39498F642B4EC8AB0017BE9F /* AppearancePreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearancePreferenceView.swift; sourceTree = "<group>"; };
+		39498F662B4EC8EC0017BE9F /* AppearanceOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceOptions.swift; sourceTree = "<group>"; };
+		3949A4E12AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fido_Building_Calcul.xcdatamodel; sourceTree = "<group>"; };
+		3949A4E32AFD2BB100D01A59 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		3949A4E52AFE6A3800D01A59 /* Fido Building Calcul.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fido Building Calcul.entitlements"; sourceTree = "<group>"; };
+		395086E42A7182CF0099BAD8 /* Fido Building Calcul.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fido Building Calcul.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		395086E72A7182CF0099BAD8 /* FidoBuildingCalculApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FidoBuildingCalculApp.swift; sourceTree = "<group>"; };
+		395086EB2A7182D00099BAD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		395086EE2A7182D00099BAD8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		395086F02A7182D00099BAD8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		396435AA2A7A489A00C148B8 /* DemolitionWorkViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemolitionWorkViews.swift; sourceTree = "<group>"; };
+		396435AC2A7A495900C148B8 /* WiringViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiringViews.swift; sourceTree = "<group>"; };
+		396435B22A7A4DB700C148B8 /* PlumbingWorkViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlumbingWorkViews.swift; sourceTree = "<group>"; };
+		396435B62A7A699E00C148B8 /* UIParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIParts.swift; sourceTree = "<group>"; };
+		396435B82A7A69E300C148B8 /* BrickLoadBearingWallViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrickLoadBearingWallViews.swift; sourceTree = "<group>"; };
+		396435BA2A7A73BA00C148B8 /* PlasterBoardingCeilingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasterBoardingCeilingViews.swift; sourceTree = "<group>"; };
+		396435BE2A7A821500C148B8 /* NettingWallViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NettingWallViews.swift; sourceTree = "<group>"; };
+		396435C02A7A843F00C148B8 /* NettingCeilingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NettingCeilingViews.swift; sourceTree = "<group>"; };
+		396435C22A7A85B800C148B8 /* PlasteringWallViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasteringWallViews.swift; sourceTree = "<group>"; };
+		396435C42A7A884C00C148B8 /* PlasteringCeilingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasteringCeilingViews.swift; sourceTree = "<group>"; };
+		396435C62A7A8CA900C148B8 /* InstallationOfCornerBeadsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallationOfCornerBeadsViews.swift; sourceTree = "<group>"; };
+		396435C82A7A8E7800C148B8 /* PlasteringOfWindowSashViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasteringOfWindowSashViews.swift; sourceTree = "<group>"; };
+		396435CA2A7A8F6D00C148B8 /* PenetrationCoatViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenetrationCoatViews.swift; sourceTree = "<group>"; };
+		396435CC2A7A90CD00C148B8 /* PaintingWallViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingWallViews.swift; sourceTree = "<group>"; };
+		396435CE2A7A91E800C148B8 /* PaintingCeilingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingCeilingViews.swift; sourceTree = "<group>"; };
+		396435D02A7A92C100C148B8 /* LevellingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevellingViews.swift; sourceTree = "<group>"; };
+		396435D22A7A944000C148B8 /* LayingFloatingFloorsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayingFloatingFloorsViews.swift; sourceTree = "<group>"; };
+		396435D42A7A955C00C148B8 /* TileCeramicViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCeramicViews.swift; sourceTree = "<group>"; };
+		396435D62A7A968F00C148B8 /* PavingCeramicViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PavingCeramicViews.swift; sourceTree = "<group>"; };
+		396435D82A7A991D00C148B8 /* GroutingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroutingViews.swift; sourceTree = "<group>"; };
+		396435DA2A7A9B9800C148B8 /* InstallationOfSanitaryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallationOfSanitaryViews.swift; sourceTree = "<group>"; };
+		396435DC2A7A9CFA00C148B8 /* WindowInstallationsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowInstallationsViews.swift; sourceTree = "<group>"; };
+		396435DE2A7A9E0D00C148B8 /* InstallationOfDoorJambViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallationOfDoorJambViews.swift; sourceTree = "<group>"; };
+		396435E02A7AB04900C148B8 /* RoomCalculationBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCalculationBill.swift; sourceTree = "<group>"; };
+		396435E22A7AB06400C148B8 /* RoomCalculationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCalculationViewModel.swift; sourceTree = "<group>"; };
+		3964D7FA2A9B946500AD4619 /* CommuteExpensesViewsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuteExpensesViewsViews.swift; sourceTree = "<group>"; };
+		3964D7FE2A9B989700AD4619 /* SiliconingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiliconingViews.swift; sourceTree = "<group>"; };
+		3964D8012A9B9AE600AD4619 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+		396DA3E32B9470380009D7AF /* PlasterboardingPartitionViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlasterboardingPartitionViews.swift; path = "../../../../../../../../../../Volumes/exFAT/Work/iOS Freelance/Fido/Fido 1.2.0 Fido 8/Fido Building Calcul/Fido Building Calcul/Screens/Projects/Room/Parts/WorkInputs/PlasterboardingPartitionViews.swift"; sourceTree = "<group>"; };
+		396EFD3A2AD0A2D400747EB5 /* CustomWork+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CustomWork+CoreDataClass.swift"; path = "../../CustomWork+CoreDataClass.swift"; sourceTree = "<group>"; };
+		396EFD402AD0A33900747EB5 /* CustomMaterial+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomMaterial+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397B41002B877DEC0023A9BC /* ContractorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractorView.swift; sourceTree = "<group>"; };
+		397B41022B877E280023A9BC /* ContractorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractorDetailView.swift; sourceTree = "<group>"; };
+		397B41042B877E420023A9BC /* ContractorsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractorsListView.swift; sourceTree = "<group>"; };
+		397B41062B8780950023A9BC /* Enums Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums Settings.swift"; sourceTree = "<group>"; };
+		397B41082B87820D0023A9BC /* CreateContractorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateContractorButton.swift; sourceTree = "<group>"; };
+		397B410A2B878D7F0023A9BC /* EditContractorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContractorButton.swift; sourceTree = "<group>"; };
+		397B410C2B878D9C0023A9BC /* DeleteContractorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteContractorButton.swift; sourceTree = "<group>"; };
+		397B410E2B878E840023A9BC /* ContractorDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractorDetailViewModel.swift; sourceTree = "<group>"; };
+		397B41102B87939B0023A9BC /* InProjectContractorBubbles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectContractorBubbles.swift; sourceTree = "<group>"; };
+		397B41122B8794A20023A9BC /* InProjectContractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectContractor.swift; sourceTree = "<group>"; };
+		397B41142B8797F60023A9BC /* InProjectChoosingContractorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectChoosingContractorView.swift; sourceTree = "<group>"; };
+		397BB95A2AD041BE006BA23C /* InstallationOfSanitary+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InstallationOfSanitary+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB95C2AD041BF006BA23C /* PlasteringOfWindowSash+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlasteringOfWindowSash+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB95E2AD041BF006BA23C /* BrickPartition+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrickPartition+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB9602AD041BF006BA23C /* Grouting+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Grouting+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB9622AD041BF006BA23C /* PlasterboardingCeiling+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlasterboardingCeiling+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB9642AD041BF006BA23C /* Siliconing+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Siliconing+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB9662AD041BF006BA23C /* BrickLoadBearingWall+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrickLoadBearingWall+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB9682AD041BF006BA23C /* Demolition+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demolition+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB96A2AD041BF006BA23C /* Wiring+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wiring+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB96C2AD041BF006BA23C /* PlasterboardingPartition+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlasterboardingPartition+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB96E2AD041BF006BA23C /* SkirtingOfFloatingFloor+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SkirtingOfFloatingFloor+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB9702AD041BF006BA23C /* InstallationOfDoorJamb+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InstallationOfDoorJamb+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB9722AD041BF006BA23C /* PaintingWall+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaintingWall+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB9742AD041BF006BA23C /* NettingCeiling+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NettingCeiling+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB9762AD041BF006BA23C /* PenetrationCoating+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PenetrationCoating+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB9782AD041BF006BA23C /* InstallationOfCornerBead+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InstallationOfCornerBead+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB97A2AD041BF006BA23C /* PlasteringWall+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlasteringWall+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB97C2AD041BF006BA23C /* PriceList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PriceList+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB97E2AD041BF006BA23C /* TileCeramic+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TileCeramic+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB9802AD041BF006BA23C /* LayingFloatingFloors+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LayingFloatingFloors+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB9822AD041BF006BA23C /* Plumbing+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plumbing+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB9842AD041BF006BA23C /* WindowInstallation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WindowInstallation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB9862AD041BF006BA23C /* PlasteringCeiling+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlasteringCeiling+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB9882AD041BF006BA23C /* Levelling+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Levelling+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB98A2AD041BF006BA23C /* PavingCeramic+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PavingCeramic+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB98C2AD041BF006BA23C /* PaintingCeiling+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaintingCeiling+CoreDataClass.swift"; sourceTree = "<group>"; };
+		397BB98E2AD041BF006BA23C /* NettingWall+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NettingWall+CoreDataClass.swift"; sourceTree = "<group>"; };
+		39804FA52AC41BC900F2A072 /* ClientPreviewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientPreviewScreen.swift; sourceTree = "<group>"; };
+		39804FA72AC43ADC00F2A072 /* ClientEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientEditView.swift; sourceTree = "<group>"; };
+		39804FA92AC43C0700F2A072 /* ClientEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientEditViewModel.swift; sourceTree = "<group>"; };
+		39816FF12B0BD60E000CA0E2 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		3982E3492B5952FD00DB39DE /* ProjectManagementButtonNarrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectManagementButtonNarrow.swift; sourceTree = "<group>"; };
+		398900732B1528F100CC3870 /* Pricing Calculations Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pricing Calculations Types.swift"; sourceTree = "<group>"; };
+		398900752B15296700CC3870 /* Enums Roots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums Roots.swift"; sourceTree = "<group>"; };
+		398900772B15299B00CC3870 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
+		3989007B2B1529FF00CC3870 /* PurchasePayWallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasePayWallButton.swift; sourceTree = "<group>"; };
+		3989007E2B152A9800CC3870 /* OnboardingContexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContexts.swift; sourceTree = "<group>"; };
+		398900812B152AB700CC3870 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
+		398900832B152ADC00CC3870 /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
+		398900852B15F7FF00CC3870 /* Array Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array Extensions.swift"; sourceTree = "<group>"; };
+		398900872B15F85200CC3870 /* Enums Rooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums Rooms.swift"; sourceTree = "<group>"; };
+		3989008C2B15F8BF00CC3870 /* Materials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Materials.swift; sourceTree = "<group>"; };
+		3989008E2B15F8E200CC3870 /* Works.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Works.swift; sourceTree = "<group>"; };
+		398900902B15F8FB00CC3870 /* Others.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Others.swift; sourceTree = "<group>"; };
+		398900922B15F9F100CC3870 /* DialogPrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogPrimaryButton.swift; sourceTree = "<group>"; };
+		398900942B15FA1900CC3870 /* DialogSecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogSecondaryButton.swift; sourceTree = "<group>"; };
+		398900972B15FA3B00CC3870 /* DialogType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogType.swift; sourceTree = "<group>"; };
+		398900992B15FA9000CC3870 /* Work Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Work Protocols.swift"; sourceTree = "<group>"; };
+		3989009B2B15FABA00CC3870 /* Material Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Material Protocols.swift"; sourceTree = "<group>"; };
+		3989009D2B15FAD200CC3870 /* Other Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Other Protocols.swift"; sourceTree = "<group>"; };
+		3989009F2B15FB6500CC3870 /* Enums Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums Projects.swift"; sourceTree = "<group>"; };
+		398900A22B15FC8400CC3870 /* WindowAndDoorEditors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowAndDoorEditors.swift; sourceTree = "<group>"; };
+		398900A52B15FF1800CC3870 /* PDFParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFParts.swift; sourceTree = "<group>"; };
+		398900A72B15FF4D00CC3870 /* RoomInputsParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInputsParts.swift; sourceTree = "<group>"; };
+		398900AC2B15FFFA00CC3870 /* ProjectHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHandling.swift; sourceTree = "<group>"; };
+		398900AF2B16006000CC3870 /* ComplementaryWorks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplementaryWorks.swift; sourceTree = "<group>"; };
+		398900B12B1600BB00CC3870 /* ClientHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHandling.swift; sourceTree = "<group>"; };
+		398900B62B17546800CC3870 /* PriceOfferSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceOfferSettings.swift; sourceTree = "<group>"; };
+		398900B82B1754A000CC3870 /* Enums Archive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums Archive.swift"; sourceTree = "<group>"; };
+		398900BA2B1754B700CC3870 /* ArchiveSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveSettings.swift; sourceTree = "<group>"; };
+		398900BD2B1754ED00CC3870 /* OthersSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersSettings.swift; sourceTree = "<group>"; };
+		398900BF2B1755A800CC3870 /* Enums User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums User.swift"; sourceTree = "<group>"; };
+		398900C12B1755CB00CC3870 /* ContractorEditDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractorEditDetailsView.swift; sourceTree = "<group>"; };
+		398900C42B17560F00CC3870 /* ValidityOfPriceOffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidityOfPriceOffer.swift; sourceTree = "<group>"; };
+		398900C92B17567F00CC3870 /* ContractorBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractorBubble.swift; sourceTree = "<group>"; };
+		398900CB2B17574800CC3870 /* ArchiveDurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveDurationView.swift; sourceTree = "<group>"; };
+		398900CD2B17576500CC3870 /* ArchiveDurationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveDurationButton.swift; sourceTree = "<group>"; };
+		398900CF2B1757D900CC3870 /* AccountSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettings.swift; sourceTree = "<group>"; };
+		398900D22B17581200CC3870 /* ArchivedProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedProjectView.swift; sourceTree = "<group>"; };
+		398900D52B17586D00CC3870 /* ProjectBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectBubbleView.swift; sourceTree = "<group>"; };
+		398900D72B17587D00CC3870 /* NewProjectSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectSheet.swift; sourceTree = "<group>"; };
+		398900DE2B1761CD00CC3870 /* InProjectPriceBubbles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectPriceBubbles.swift; sourceTree = "<group>"; };
+		398900E22B17633E00CC3870 /* PickClientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickClientButton.swift; sourceTree = "<group>"; };
+		398900E52B17638200CC3870 /* ProjectIsArchivedbutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectIsArchivedbutton.swift; sourceTree = "<group>"; };
+		398900E72B1763C300CC3870 /* InProjectPriceListButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectPriceListButton.swift; sourceTree = "<group>"; };
+		398900E92B1763E300CC3870 /* ArchiveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveButton.swift; sourceTree = "<group>"; };
+		398900EB2B17641600CC3870 /* TitleAndNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndNotes.swift; sourceTree = "<group>"; };
+		398900ED2B17644600CC3870 /* NewRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoomView.swift; sourceTree = "<group>"; };
+		398900EF2B17645C00CC3870 /* RoomBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomBubbleView.swift; sourceTree = "<group>"; };
+		398900F12B17647000CC3870 /* RoomListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListView.swift; sourceTree = "<group>"; };
+		398900F32B1764A200CC3870 /* ClientBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientBubbleView.swift; sourceTree = "<group>"; };
+		398900F82B17655400CC3870 /* PDFViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewModel.swift; sourceTree = "<group>"; };
+		398900FA2B17657700CC3870 /* LocalizedStringKey Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalizedStringKey Extensions.swift"; sourceTree = "<group>"; };
+		398900FC2B1766FC00CC3870 /* Enums Clients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums Clients.swift"; sourceTree = "<group>"; };
+		398901012B1767DD00CC3870 /* EditClientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditClientButton.swift; sourceTree = "<group>"; };
+		398901042B17682600CC3870 /* ClientCreationHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientCreationHandling.swift; sourceTree = "<group>"; };
+		398901062B17684B00CC3870 /* ClientsProjectsBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsProjectsBubble.swift; sourceTree = "<group>"; };
+		3989010A2B1768D200CC3870 /* ClientAttributeBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientAttributeBubble.swift; sourceTree = "<group>"; };
+		3989010C2B1769C700CC3870 /* PriceBubbles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceBubbles.swift; sourceTree = "<group>"; };
+		39939AFE2B946B1A00F16884 /* BrickPartitionsViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrickPartitionsViews.swift; path = "../../../../../../../../Downloads/Fido Building Calcul/Fido Building Calcul/Screens/Projects/Room/RoomParts/BrickPartitionsViews.swift"; sourceTree = "<group>"; };
+		3996E1FD2A77BEA0000D86E1 /* InProjectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectScreen.swift; sourceTree = "<group>"; };
+		3996E1FF2A77BF64000D86E1 /* InProjectScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectScreenViewModel.swift; sourceTree = "<group>"; };
+		3996E2052A781CF5000D86E1 /* PricingCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricingCalculations.swift; sourceTree = "<group>"; };
+		3996E20A2A797029000D86E1 /* RoomScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomScreen.swift; sourceTree = "<group>"; };
+		3996E20C2A797033000D86E1 /* RoomScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomScreenViewModel.swift; sourceTree = "<group>"; };
+		3996E25A2A797C54000D86E1 /* Room+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3996E2602A797C54000D86E1 /* Door+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Door+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3996E2622A797C54000D86E1 /* Project+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3996E26A2A797C54000D86E1 /* Window+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Window+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3996E2BC2A7985A1000D86E1 /* Binding Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding Extensions.swift"; sourceTree = "<group>"; };
+		399BB7772AEBFD1C00452560 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		399BB77A2AEBFEC900452560 /* PayWall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWall.swift; sourceTree = "<group>"; };
+		399BB77C2AEBFEDE00452560 /* PayWallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallViewModel.swift; sourceTree = "<group>"; };
+		399BB77E2AEBFF3400452560 /* OfferingBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferingBubble.swift; sourceTree = "<group>"; };
+		399BB7892AEC320A00452560 /* PayWallFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallFeature.swift; sourceTree = "<group>"; };
+		39A24D462AD6EFD6001FDE2A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		39AEABF52AAF61920085B2A1 /* PricesScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesScreenViewModel.swift; sourceTree = "<group>"; };
+		39AEABF72AAF6A350085B2A1 /* InProjectPricesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectPricesListView.swift; sourceTree = "<group>"; };
+		39AEABF92AAF6A470085B2A1 /* InProjectPricesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectPricesListViewModel.swift; sourceTree = "<group>"; };
+		39AF90022AEAE188009DFC08 /* Fido-Building-Calcul-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Fido-Building-Calcul-Info.plist"; sourceTree = SOURCE_ROOT; };
+		39B4E02C2AC2EC240035EFBC /* CreateNewClientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewClientViewModel.swift; sourceTree = "<group>"; };
+		39B51FA12B56FC8C00700AB4 /* PDFPreviewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFPreviewSheet.swift; sourceTree = "<group>"; };
+		39B51FA32B57048200700AB4 /* PDFPreviewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFPreviewButton.swift; sourceTree = "<group>"; };
+		39B51FA52B5706B000700AB4 /* PDFExportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFExportButton.swift; sourceTree = "<group>"; };
+		39B51FA72B57133900700AB4 /* TotalPriceOfferNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalPriceOfferNew.swift; sourceTree = "<group>"; };
+		39B6EF4C2B41A1C70002066C /* Enums BIDError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums BIDError.swift"; sourceTree = "<group>"; };
+		39C112942ABD9BBF00CD82B7 /* Double Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double Extensions.swift"; sourceTree = "<group>"; };
+		39CA43252B0BA14C0048EB36 /* DialogWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogWindow.swift; sourceTree = "<group>"; };
+		39CC5CD12AED13C8001C4D31 /* CTAPopUP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTAPopUP.swift; sourceTree = "<group>"; };
+		39D22C732AA12D0400322E31 /* CreateNewClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewClientView.swift; sourceTree = "<group>"; };
+		39D22C752AA12D9900322E31 /* PersonalClientCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalClientCreationView.swift; sourceTree = "<group>"; };
+		39D22C772AA12DE400322E31 /* CorporationClientCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorporationClientCreationView.swift; sourceTree = "<group>"; };
+		39D22C7D2AA12F2F00322E31 /* InProjectChoosingClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectChoosingClientView.swift; sourceTree = "<group>"; };
+		39D4359B2AA0DC5F001AAD18 /* Client+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+CoreDataClass.swift"; sourceTree = "<group>"; };
+		39F549C62B03805600B9AC23 /* ContractorEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractorEditView.swift; sourceTree = "<group>"; };
+		39F549C82B03806600B9AC23 /* ContractorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractorViewModel.swift; sourceTree = "<group>"; };
+		39FB6EC82B87775400D473A8 /* Contractor+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contractor+CoreDataClass.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		395086E12A7182CF0099BAD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				391114802AF94B2D00D074E9 /* RevenueCatUI in Frameworks */,
+				3911147C2AF94B2D00D074E9 /* ReceiptParser in Frameworks */,
+				399BB7782AEBFD1C00452560 /* StoreKit.framework in Frameworks */,
+				3911147E2AF94B2D00D074E9 /* RevenueCat in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		391FEED92A9E247B007CBFD4 /* ClientsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				391FEEDA2A9E248B007CBFD4 /* ClientsScreen.swift */,
+				398900A42B15FDF700CC3870 /* Parts */,
+			);
+			path = ClientsScreen;
+			sourceTree = "<group>";
+		};
+		3929767A2B358D82004884E8 /* FillingBasedOnBID */ = {
+			isa = PBXGroup;
+			children = (
+				3929767B2B358DB3004884E8 /* BIDNetworkClasses.swift */,
+				3929767D2B3590BF004884E8 /* BIDFillSheet.swift */,
+			);
+			path = FillingBasedOnBID;
+			sourceTree = "<group>";
+		};
+		39475D4D2A72F5C1006EC970 /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				395086F02A7182D00099BAD8 /* Persistence.swift */,
+				3949A4E02AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodeld */,
+				397BB9662AD041BF006BA23C /* BrickLoadBearingWall+CoreDataClass.swift */,
+				397BB95E2AD041BF006BA23C /* BrickPartition+CoreDataClass.swift */,
+				39D4359B2AA0DC5F001AAD18 /* Client+CoreDataClass.swift */,
+				396EFD402AD0A33900747EB5 /* CustomMaterial+CoreDataClass.swift */,
+				39FB6EC82B87775400D473A8 /* Contractor+CoreDataClass.swift */,
+				396EFD3A2AD0A2D400747EB5 /* CustomWork+CoreDataClass.swift */,
+				397BB9682AD041BF006BA23C /* Demolition+CoreDataClass.swift */,
+				3996E2602A797C54000D86E1 /* Door+CoreDataClass.swift */,
+				392393732B5B1A3C00DA3A42 /* HistoryEvent+CoreDataClass.swift */,
+				397BB9602AD041BF006BA23C /* Grouting+CoreDataClass.swift */,
+				397BB9782AD041BF006BA23C /* InstallationOfCornerBead+CoreDataClass.swift */,
+				397BB9702AD041BF006BA23C /* InstallationOfDoorJamb+CoreDataClass.swift */,
+				397BB95A2AD041BE006BA23C /* InstallationOfSanitary+CoreDataClass.swift */,
+				397BB9802AD041BF006BA23C /* LayingFloatingFloors+CoreDataClass.swift */,
+				397BB9882AD041BF006BA23C /* Levelling+CoreDataClass.swift */,
+				397BB9742AD041BF006BA23C /* NettingCeiling+CoreDataClass.swift */,
+				397BB98E2AD041BF006BA23C /* NettingWall+CoreDataClass.swift */,
+				397BB98C2AD041BF006BA23C /* PaintingCeiling+CoreDataClass.swift */,
+				397BB9722AD041BF006BA23C /* PaintingWall+CoreDataClass.swift */,
+				397BB98A2AD041BF006BA23C /* PavingCeramic+CoreDataClass.swift */,
+				397BB9762AD041BF006BA23C /* PenetrationCoating+CoreDataClass.swift */,
+				397BB9622AD041BF006BA23C /* PlasterboardingCeiling+CoreDataClass.swift */,
+				397BB96C2AD041BF006BA23C /* PlasterboardingPartition+CoreDataClass.swift */,
+				397BB9862AD041BF006BA23C /* PlasteringCeiling+CoreDataClass.swift */,
+				397BB95C2AD041BF006BA23C /* PlasteringOfWindowSash+CoreDataClass.swift */,
+				397BB97A2AD041BF006BA23C /* PlasteringWall+CoreDataClass.swift */,
+				397BB9822AD041BF006BA23C /* Plumbing+CoreDataClass.swift */,
+				397BB97C2AD041BF006BA23C /* PriceList+CoreDataClass.swift */,
+				3996E2622A797C54000D86E1 /* Project+CoreDataClass.swift */,
+				3996E25A2A797C54000D86E1 /* Room+CoreDataClass.swift */,
+				397BB9642AD041BF006BA23C /* Siliconing+CoreDataClass.swift */,
+				397BB96E2AD041BF006BA23C /* SkirtingOfFloatingFloor+CoreDataClass.swift */,
+				397BB97E2AD041BF006BA23C /* TileCeramic+CoreDataClass.swift */,
+				3996E26A2A797C54000D86E1 /* Window+CoreDataClass.swift */,
+				397BB9842AD041BF006BA23C /* WindowInstallation+CoreDataClass.swift */,
+				397BB96A2AD041BF006BA23C /* Wiring+CoreDataClass.swift */,
+			);
+			path = CoreDataModels;
+			sourceTree = "<group>";
+		};
+		39475D582A76AB6C006EC970 /* Roots */ = {
+			isa = PBXGroup;
+			children = (
+				39475D502A76A909006EC970 /* BehavioursViewModel.swift */,
+				398900712B1528C900CC3870 /* PricingCalculations */,
+				398900792B1529C000CC3870 /* TabView */,
+			);
+			path = Roots;
+			sourceTree = "<group>";
+		};
+		39475D592A76AB96006EC970 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				3989007D2B152A7900CC3870 /* Onboarding */,
+				399BB7792AEBFE9200452560 /* PayWall */,
+				39475D5F2A76E123006EC970 /* Projects */,
+				3996E2092A796FD6000D86E1 /* Prices */,
+				391FEED92A9E247B007CBFD4 /* ClientsScreen */,
+				3964D8002A9B9AD500AD4619 /* SettingsScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		39475D5A2A76AB9D006EC970 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3949A4E32AFD2BB100D01A59 /* Launch Screen.storyboard */,
+				39475D662A76EB1F006EC970 /* Custom View Modifiers.swift */,
+				398900962B15FA2900CC3870 /* DialogWindow */,
+				3989008A2B15F89000CC3870 /* Enums */,
+				3989008B2B15F89900CC3870 /* Protocols */,
+				3989007A2B1529EE00CC3870 /* Buttons */,
+				3989006F2B1528AF00CC3870 /* Types */,
+				398900892B15F86500CC3870 /* Extensions */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		39475D5F2A76E123006EC970 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				398900D92B1758B600CC3870 /* Parts */,
+				39475D542A76AB25006EC970 /* ProjectsScreen.swift */,
+				3996E2012A781C98000D86E1 /* Categorized Projects */,
+				3996E2022A781CA4000D86E1 /* Project Handling */,
+				396435A82A7A486E00C148B8 /* Room */,
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
+		39498F632B4EC88F0017BE9F /* AppearancaPrefferance */ = {
+			isa = PBXGroup;
+			children = (
+				39498F642B4EC8AB0017BE9F /* AppearancePreferenceView.swift */,
+				39498F662B4EC8EC0017BE9F /* AppearanceOptions.swift */,
+			);
+			path = AppearancaPrefferance;
+			sourceTree = "<group>";
+		};
+		395086DB2A7182CF0099BAD8 = {
+			isa = PBXGroup;
+			children = (
+				395086E62A7182CF0099BAD8 /* Fido Building Calcul */,
+				395086E52A7182CF0099BAD8 /* Products */,
+				399BB7762AEBFD1C00452560 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		395086E52A7182CF0099BAD8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				395086E42A7182CF0099BAD8 /* Fido Building Calcul.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		395086E62A7182CF0099BAD8 /* Fido Building Calcul */ = {
+			isa = PBXGroup;
+			children = (
+				3949A4E52AFE6A3800D01A59 /* Fido Building Calcul.entitlements */,
+				39AF90022AEAE188009DFC08 /* Fido-Building-Calcul-Info.plist */,
+				395086E72A7182CF0099BAD8 /* FidoBuildingCalculApp.swift */,
+				39A24D462AD6EFD6001FDE2A /* Localizable.xcstrings */,
+				39475D582A76AB6C006EC970 /* Roots */,
+				39475D592A76AB96006EC970 /* Screens */,
+				39475D5A2A76AB9D006EC970 /* Utilities */,
+				39475D4D2A72F5C1006EC970 /* CoreDataModels */,
+				395086ED2A7182D00099BAD8 /* Preview Content */,
+				395086EB2A7182D00099BAD8 /* Assets.xcassets */,
+			);
+			path = "Fido Building Calcul";
+			sourceTree = "<group>";
+		};
+		395086ED2A7182D00099BAD8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				395086EE2A7182D00099BAD8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		396435A82A7A486E00C148B8 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				3996E20A2A797029000D86E1 /* RoomScreen.swift */,
+				3996E20C2A797033000D86E1 /* RoomScreenViewModel.swift */,
+				396435A92A7A487C00C148B8 /* Parts */,
+				398900DB2B17591E00CC3870 /* RoomCalculationBill */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		396435A92A7A487C00C148B8 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				398900A72B15FF4D00CC3870 /* RoomInputsParts.swift */,
+				398900AF2B16006000CC3870 /* ComplementaryWorks.swift */,
+				398900A22B15FC8400CC3870 /* WindowAndDoorEditors.swift */,
+				398900DA2B17590900CC3870 /* WorkInputs */,
+			);
+			path = Parts;
+			sourceTree = "<group>";
+		};
+		3964D8002A9B9AD500AD4619 /* SettingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3964D8012A9B9AE600AD4619 /* SettingsScreen.swift */,
+				39498F632B4EC88F0017BE9F /* AppearancaPrefferance */,
+				398900D12B1757E700CC3870 /* AccountSettings */,
+				398900B52B17541F00CC3870 /* PriceOfferSettings */,
+				398900B42B1753F400CC3870 /* ArchiveSettings */,
+				398900BC2B1754E300CC3870 /* OthersSettings */,
+			);
+			path = SettingsScreen;
+			sourceTree = "<group>";
+		};
+		3982E3482B5952B000DB39DE /* ProjectManagement */ = {
+			isa = PBXGroup;
+			children = (
+				390F80342B59483F00A10FF0 /* ProjectManagementView.swift */,
+				390F80302B591D2800A10FF0 /* DuplicateProjectViewModel.swift */,
+				392393772B5B1D4D00DA3A42 /* ProjectHistory.swift */,
+				397B41102B87939B0023A9BC /* InProjectContractorBubbles.swift */,
+				397B41122B8794A20023A9BC /* InProjectContractor.swift */,
+				397B41142B8797F60023A9BC /* InProjectChoosingContractorView.swift */,
+			);
+			path = ProjectManagement;
+			sourceTree = "<group>";
+		};
+		3989006F2B1528AF00CC3870 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				3989008E2B15F8E200CC3870 /* Works.swift */,
+				3989008C2B15F8BF00CC3870 /* Materials.swift */,
+				398900902B15F8FB00CC3870 /* Others.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		398900712B1528C900CC3870 /* PricingCalculations */ = {
+			isa = PBXGroup;
+			children = (
+				3996E2052A781CF5000D86E1 /* PricingCalculations.swift */,
+				398900722B1528D200CC3870 /* Parts */,
+			);
+			path = PricingCalculations;
+			sourceTree = "<group>";
+		};
+		398900722B1528D200CC3870 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				398900732B1528F100CC3870 /* Pricing Calculations Types.swift */,
+			);
+			path = Parts;
+			sourceTree = "<group>";
+		};
+		398900792B1529C000CC3870 /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				396435B62A7A699E00C148B8 /* UIParts.swift */,
+				39475D4E2A76A877006EC970 /* FidoTabView.swift */,
+				398900772B15299B00CC3870 /* CustomTabView.swift */,
+			);
+			path = TabView;
+			sourceTree = "<group>";
+		};
+		3989007A2B1529EE00CC3870 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				398900E92B1763E300CC3870 /* ArchiveButton.swift */,
+				398900CD2B17576500CC3870 /* ArchiveDurationButton.swift */,
+				398900C92B17567F00CC3870 /* ContractorBubble.swift */,
+				397B41082B87820D0023A9BC /* CreateContractorButton.swift */,
+				397B410C2B878D9C0023A9BC /* DeleteContractorButton.swift */,
+				398900922B15F9F100CC3870 /* DialogPrimaryButton.swift */,
+				398900942B15FA1900CC3870 /* DialogSecondaryButton.swift */,
+				398901012B1767DD00CC3870 /* EditClientButton.swift */,
+				397B410A2B878D7F0023A9BC /* EditContractorButton.swift */,
+				398900E72B1763C300CC3870 /* InProjectPriceListButton.swift */,
+				398900832B152ADC00CC3870 /* OnboardingButton.swift */,
+				39B51FA52B5706B000700AB4 /* PDFExportButton.swift */,
+				39B51FA32B57048200700AB4 /* PDFPreviewButton.swift */,
+				398900E22B17633E00CC3870 /* PickClientButton.swift */,
+				398900E52B17638200CC3870 /* ProjectIsArchivedbutton.swift */,
+				3982E3492B5952FD00DB39DE /* ProjectManagementButtonNarrow.swift */,
+				3989007B2B1529FF00CC3870 /* PurchasePayWallButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		3989007D2B152A7900CC3870 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				39816FF12B0BD60E000CA0E2 /* Onboarding.swift */,
+				398900802B152AA300CC3870 /* Parts */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		398900802B152AA300CC3870 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				3989007E2B152A9800CC3870 /* OnboardingContexts.swift */,
+				398900812B152AB700CC3870 /* OnboardingPageView.swift */,
+			);
+			path = Parts;
+			sourceTree = "<group>";
+		};
+		398900892B15F86500CC3870 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				39475D522A76AABF006EC970 /* Color Extensions.swift */,
+				3996E2BC2A7985A1000D86E1 /* Binding Extensions.swift */,
+				39475D642A76E376006EC970 /* View Extensions.swift */,
+				398900852B15F7FF00CC3870 /* Array Extensions.swift */,
+				39C112942ABD9BBF00CD82B7 /* Double Extensions.swift */,
+				398900FA2B17657700CC3870 /* LocalizedStringKey Extensions.swift */,
+				390F80322B591DAA00A10FF0 /* NSManagedObject Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3989008A2B15F89000CC3870 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				398900752B15296700CC3870 /* Enums Roots.swift */,
+				39B6EF4C2B41A1C70002066C /* Enums BIDError.swift */,
+				398900872B15F85200CC3870 /* Enums Rooms.swift */,
+				3989009F2B15FB6500CC3870 /* Enums Projects.swift */,
+				398900B82B1754A000CC3870 /* Enums Archive.swift */,
+				398900BF2B1755A800CC3870 /* Enums User.swift */,
+				398900FC2B1766FC00CC3870 /* Enums Clients.swift */,
+				397B41062B8780950023A9BC /* Enums Settings.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		3989008B2B15F89900CC3870 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				398900992B15FA9000CC3870 /* Work Protocols.swift */,
+				3989009B2B15FABA00CC3870 /* Material Protocols.swift */,
+				3989009D2B15FAD200CC3870 /* Other Protocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		398900962B15FA2900CC3870 /* DialogWindow */ = {
+			isa = PBXGroup;
+			children = (
+				398900972B15FA3B00CC3870 /* DialogType.swift */,
+				39CA43252B0BA14C0048EB36 /* DialogWindow.swift */,
+			);
+			path = DialogWindow;
+			sourceTree = "<group>";
+		};
+		398900A42B15FDF700CC3870 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				398900B12B1600BB00CC3870 /* ClientHandling.swift */,
+				398901092B1768B000CC3870 /* ClientPreview */,
+				398901002B17677F00CC3870 /* CreateNewClientView */,
+				398900FF2B17675E00CC3870 /* ClientEditView */,
+			);
+			path = Parts;
+			sourceTree = "<group>";
+		};
+		398900B32B1753E800CC3870 /* ContractorManagement */ = {
+			isa = PBXGroup;
+			children = (
+				39F549C82B03806600B9AC23 /* ContractorViewModel.swift */,
+				397B41002B877DEC0023A9BC /* ContractorView.swift */,
+				39FB6ECC2B877CC400D473A8 /* Parts */,
+			);
+			path = ContractorManagement;
+			sourceTree = "<group>";
+		};
+		398900B42B1753F400CC3870 /* ArchiveSettings */ = {
+			isa = PBXGroup;
+			children = (
+				398900BA2B1754B700CC3870 /* ArchiveSettings.swift */,
+				398900CB2B17574800CC3870 /* ArchiveDurationView.swift */,
+				398900D22B17581200CC3870 /* ArchivedProjectView.swift */,
+			);
+			path = ArchiveSettings;
+			sourceTree = "<group>";
+		};
+		398900B52B17541F00CC3870 /* PriceOfferSettings */ = {
+			isa = PBXGroup;
+			children = (
+				398900B62B17546800CC3870 /* PriceOfferSettings.swift */,
+				398900B32B1753E800CC3870 /* ContractorManagement */,
+				398900C32B1755FB00CC3870 /* ValidityOfOffer */,
+			);
+			path = PriceOfferSettings;
+			sourceTree = "<group>";
+		};
+		398900BC2B1754E300CC3870 /* OthersSettings */ = {
+			isa = PBXGroup;
+			children = (
+				398900BD2B1754ED00CC3870 /* OthersSettings.swift */,
+				3943ADA62B7A156B0061F2F1 /* EmailInputSheet.swift */,
+			);
+			path = OthersSettings;
+			sourceTree = "<group>";
+		};
+		398900C32B1755FB00CC3870 /* ValidityOfOffer */ = {
+			isa = PBXGroup;
+			children = (
+				398900C42B17560F00CC3870 /* ValidityOfPriceOffer.swift */,
+			);
+			path = ValidityOfOffer;
+			sourceTree = "<group>";
+		};
+		398900D12B1757E700CC3870 /* AccountSettings */ = {
+			isa = PBXGroup;
+			children = (
+				398900CF2B1757D900CC3870 /* AccountSettings.swift */,
+			);
+			path = AccountSettings;
+			sourceTree = "<group>";
+		};
+		398900D42B17586100CC3870 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				398900AC2B15FFFA00CC3870 /* ProjectHandling.swift */,
+				398900D52B17586D00CC3870 /* ProjectBubbleView.swift */,
+				398900D72B17587D00CC3870 /* NewProjectSheet.swift */,
+			);
+			path = Parts;
+			sourceTree = "<group>";
+		};
+		398900D92B1758B600CC3870 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				39475D5B2A76B585006EC970 /* PropertyCategoryBubbleViewModel.swift */,
+				39475D5D2A76B771006EC970 /* PropertyCategoryBubbleView.swift */,
+			);
+			path = Parts;
+			sourceTree = "<group>";
+		};
+		398900DA2B17590900CC3870 /* WorkInputs */ = {
+			isa = PBXGroup;
+			children = (
+				396435B82A7A69E300C148B8 /* BrickLoadBearingWallViews.swift */,
+				39939AFE2B946B1A00F16884 /* BrickPartitionsViews.swift */,
+				3964D7FA2A9B946500AD4619 /* CommuteExpensesViewsViews.swift */,
+				3943953E2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift */,
+				396435AA2A7A489A00C148B8 /* DemolitionWorkViews.swift */,
+				396435D82A7A991D00C148B8 /* GroutingViews.swift */,
+				396435C62A7A8CA900C148B8 /* InstallationOfCornerBeadsViews.swift */,
+				396435DE2A7A9E0D00C148B8 /* InstallationOfDoorJambViews.swift */,
+				396435DA2A7A9B9800C148B8 /* InstallationOfSanitaryViews.swift */,
+				396435D22A7A944000C148B8 /* LayingFloatingFloorsViews.swift */,
+				396435D02A7A92C100C148B8 /* LevellingViews.swift */,
+				396435C02A7A843F00C148B8 /* NettingCeilingViews.swift */,
+				396435BE2A7A821500C148B8 /* NettingWallViews.swift */,
+				396435CE2A7A91E800C148B8 /* PaintingCeilingViews.swift */,
+				396435CC2A7A90CD00C148B8 /* PaintingWallViews.swift */,
+				396435D62A7A968F00C148B8 /* PavingCeramicViews.swift */,
+				396435CA2A7A8F6D00C148B8 /* PenetrationCoatViews.swift */,
+				396435BA2A7A73BA00C148B8 /* PlasterBoardingCeilingViews.swift */,
+				396435C42A7A884C00C148B8 /* PlasteringCeilingViews.swift */,
+				396DA3E32B9470380009D7AF /* PlasterboardingPartitionViews.swift */,
+				396435C82A7A8E7800C148B8 /* PlasteringOfWindowSashViews.swift */,
+				396435C22A7A85B800C148B8 /* PlasteringWallViews.swift */,
+				396435B22A7A4DB700C148B8 /* PlumbingWorkViews.swift */,
+				3964D7FE2A9B989700AD4619 /* SiliconingViews.swift */,
+				396435D42A7A955C00C148B8 /* TileCeramicViews.swift */,
+				394395402A9FC2E900B2F64B /* ToolRentalViews.swift */,
+				396435DC2A7A9CFA00C148B8 /* WindowInstallationsViews.swift */,
+				396435AC2A7A495900C148B8 /* WiringViews.swift */,
+			);
+			path = WorkInputs;
+			sourceTree = "<group>";
+		};
+		398900DB2B17591E00CC3870 /* RoomCalculationBill */ = {
+			isa = PBXGroup;
+			children = (
+				396435E02A7AB04900C148B8 /* RoomCalculationBill.swift */,
+				396435E22A7AB06400C148B8 /* RoomCalculationViewModel.swift */,
+			);
+			name = RoomCalculationBill;
+			sourceTree = "<group>";
+		};
+		398900DC2B17595700CC3870 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				398900F72B17654500CC3870 /* PDFExport */,
+				398900E12B17622300CC3870 /* InProject */,
+				398900E42B17636A00CC3870 /* Client Handling */,
+				398900E02B17620C00CC3870 /* InProjectPricesList */,
+				3982E3482B5952B000DB39DE /* ProjectManagement */,
+			);
+			path = Parts;
+			sourceTree = "<group>";
+		};
+		398900E02B17620C00CC3870 /* InProjectPricesList */ = {
+			isa = PBXGroup;
+			children = (
+				398900DE2B1761CD00CC3870 /* InProjectPriceBubbles.swift */,
+				39AEABF72AAF6A350085B2A1 /* InProjectPricesListView.swift */,
+				39AEABF92AAF6A470085B2A1 /* InProjectPricesListViewModel.swift */,
+			);
+			path = InProjectPricesList;
+			sourceTree = "<group>";
+		};
+		398900E12B17622300CC3870 /* InProject */ = {
+			isa = PBXGroup;
+			children = (
+				398900EB2B17641600CC3870 /* TitleAndNotes.swift */,
+				398900ED2B17644600CC3870 /* NewRoomView.swift */,
+				398900EF2B17645C00CC3870 /* RoomBubbleView.swift */,
+				398900F12B17647000CC3870 /* RoomListView.swift */,
+				39B51FA72B57133900700AB4 /* TotalPriceOfferNew.swift */,
+				390F80362B59487000A10FF0 /* ClientHandlingView.swift */,
+			);
+			path = InProject;
+			sourceTree = "<group>";
+		};
+		398900E42B17636A00CC3870 /* Client Handling */ = {
+			isa = PBXGroup;
+			children = (
+				39D22C7D2AA12F2F00322E31 /* InProjectChoosingClientView.swift */,
+				398900F32B1764A200CC3870 /* ClientBubbleView.swift */,
+			);
+			path = "Client Handling";
+			sourceTree = "<group>";
+		};
+		398900F72B17654500CC3870 /* PDFExport */ = {
+			isa = PBXGroup;
+			children = (
+				398900F82B17655400CC3870 /* PDFViewModel.swift */,
+				398900A52B15FF1800CC3870 /* PDFParts.swift */,
+				39B51FA12B56FC8C00700AB4 /* PDFPreviewSheet.swift */,
+			);
+			path = PDFExport;
+			sourceTree = "<group>";
+		};
+		398900FE2B17673F00CC3870 /* ClientCreationViews */ = {
+			isa = PBXGroup;
+			children = (
+				39D22C752AA12D9900322E31 /* PersonalClientCreationView.swift */,
+				39D22C772AA12DE400322E31 /* CorporationClientCreationView.swift */,
+			);
+			path = ClientCreationViews;
+			sourceTree = "<group>";
+		};
+		398900FF2B17675E00CC3870 /* ClientEditView */ = {
+			isa = PBXGroup;
+			children = (
+				39804FA72AC43ADC00F2A072 /* ClientEditView.swift */,
+				39804FA92AC43C0700F2A072 /* ClientEditViewModel.swift */,
+			);
+			path = ClientEditView;
+			sourceTree = "<group>";
+		};
+		398901002B17677F00CC3870 /* CreateNewClientView */ = {
+			isa = PBXGroup;
+			children = (
+				39D22C732AA12D0400322E31 /* CreateNewClientView.swift */,
+				39B4E02C2AC2EC240035EFBC /* CreateNewClientViewModel.swift */,
+				398900FE2B17673F00CC3870 /* ClientCreationViews */,
+				398901032B17680F00CC3870 /* Parts */,
+			);
+			path = CreateNewClientView;
+			sourceTree = "<group>";
+		};
+		398901032B17680F00CC3870 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				3929767A2B358D82004884E8 /* FillingBasedOnBID */,
+				398901042B17682600CC3870 /* ClientCreationHandling.swift */,
+			);
+			path = Parts;
+			sourceTree = "<group>";
+		};
+		398901092B1768B000CC3870 /* ClientPreview */ = {
+			isa = PBXGroup;
+			children = (
+				39804FA52AC41BC900F2A072 /* ClientPreviewScreen.swift */,
+				398901062B17684B00CC3870 /* ClientsProjectsBubble.swift */,
+				3989010A2B1768D200CC3870 /* ClientAttributeBubble.swift */,
+			);
+			path = ClientPreview;
+			sourceTree = "<group>";
+		};
+		3996E2012A781C98000D86E1 /* Categorized Projects */ = {
+			isa = PBXGroup;
+			children = (
+				398900D42B17586100CC3870 /* Parts */,
+				39475D622A76E152006EC970 /* CategorizedProjectsScreenViewModel.swift */,
+				39475D602A76E139006EC970 /* CategorziedProjectsScreen.swift */,
+			);
+			path = "Categorized Projects";
+			sourceTree = "<group>";
+		};
+		3996E2022A781CA4000D86E1 /* Project Handling */ = {
+			isa = PBXGroup;
+			children = (
+				3996E1FD2A77BEA0000D86E1 /* InProjectScreen.swift */,
+				3996E1FF2A77BF64000D86E1 /* InProjectScreenViewModel.swift */,
+				398900DC2B17595700CC3870 /* Parts */,
+			);
+			path = "Project Handling";
+			sourceTree = "<group>";
+		};
+		3996E2092A796FD6000D86E1 /* Prices */ = {
+			isa = PBXGroup;
+			children = (
+				39475D562A76AB3C006EC970 /* PricesScreen.swift */,
+				39AEABF52AAF61920085B2A1 /* PricesScreenViewModel.swift */,
+				3989010C2B1769C700CC3870 /* PriceBubbles.swift */,
+			);
+			path = Prices;
+			sourceTree = "<group>";
+		};
+		399BB7762AEBFD1C00452560 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				399BB7772AEBFD1C00452560 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		399BB7792AEBFE9200452560 /* PayWall */ = {
+			isa = PBXGroup;
+			children = (
+				399BB77A2AEBFEC900452560 /* PayWall.swift */,
+				399BB7892AEC320A00452560 /* PayWallFeature.swift */,
+				399BB77C2AEBFEDE00452560 /* PayWallViewModel.swift */,
+				399BB77E2AEBFF3400452560 /* OfferingBubble.swift */,
+				39CC5CD12AED13C8001C4D31 /* CTAPopUP.swift */,
+			);
+			path = PayWall;
+			sourceTree = "<group>";
+		};
+		39FB6ECC2B877CC400D473A8 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				39F549C62B03805600B9AC23 /* ContractorEditView.swift */,
+				398900C12B1755CB00CC3870 /* ContractorEditDetailsView.swift */,
+				397B41022B877E280023A9BC /* ContractorDetailView.swift */,
+				397B410E2B878E840023A9BC /* ContractorDetailViewModel.swift */,
+				397B41042B877E420023A9BC /* ContractorsListView.swift */,
+			);
+			path = Parts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		395086E32A7182CF0099BAD8 /* Fido Building Calcul */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 395086F72A7182D00099BAD8 /* Build configuration list for PBXNativeTarget "Fido Building Calcul" */;
+			buildPhases = (
+				395086E02A7182CF0099BAD8 /* Sources */,
+				395086E12A7182CF0099BAD8 /* Frameworks */,
+				395086E22A7182CF0099BAD8 /* Resources */,
+				3915180B2AF945590095142B /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Fido Building Calcul";
+			packageProductDependencies = (
+				3911147B2AF94B2D00D074E9 /* ReceiptParser */,
+				3911147D2AF94B2D00D074E9 /* RevenueCat */,
+				3911147F2AF94B2D00D074E9 /* RevenueCatUI */,
+			);
+			productName = "Fido Building Calcul";
+			productReference = 395086E42A7182CF0099BAD8 /* Fido Building Calcul.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		395086DC2A7182CF0099BAD8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					395086E32A7182CF0099BAD8 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 395086DF2A7182CF0099BAD8 /* Build configuration list for PBXProject "Fido Building Calcul" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				sk,
+				Base,
+			);
+			mainGroup = 395086DB2A7182CF0099BAD8;
+			packageReferences = (
+				3911147A2AF94B2D00D074E9 /* XCRemoteSwiftPackageReference "purchases-ios" */,
+			);
+			productRefGroup = 395086E52A7182CF0099BAD8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				395086E32A7182CF0099BAD8 /* Fido Building Calcul */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		395086E22A7182CF0099BAD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				395086EF2A7182D00099BAD8 /* Preview Assets.xcassets in Resources */,
+				395086EC2A7182D00099BAD8 /* Assets.xcassets in Resources */,
+				3949A4E42AFD2BB100D01A59 /* Launch Screen.storyboard in Resources */,
+				39A24D472AD6EFD6001FDE2A /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		395086E02A7182CF0099BAD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				397BB9AE2AD041BF006BA23C /* InstallationOfCornerBead+CoreDataClass.swift in Sources */,
+				396435AB2A7A489A00C148B8 /* DemolitionWorkViews.swift in Sources */,
+				398900BE2B1754ED00CC3870 /* OthersSettings.swift in Sources */,
+				397BB9A82AD041BF006BA23C /* PaintingWall+CoreDataClass.swift in Sources */,
+				398901052B17682600CC3870 /* ClientCreationHandling.swift in Sources */,
+				396435B92A7A69E300C148B8 /* BrickLoadBearingWallViews.swift in Sources */,
+				397BB9BE2AD041BF006BA23C /* Levelling+CoreDataClass.swift in Sources */,
+				398900A82B15FF4D00CC3870 /* RoomInputsParts.swift in Sources */,
+				397B410D2B878D9C0023A9BC /* DeleteContractorButton.swift in Sources */,
+				39475D612A76E139006EC970 /* CategorziedProjectsScreen.swift in Sources */,
+				39D22C742AA12D0400322E31 /* CreateNewClientView.swift in Sources */,
+				397BB9AA2AD041BF006BA23C /* NettingCeiling+CoreDataClass.swift in Sources */,
+				397BB9AC2AD041BF006BA23C /* PenetrationCoating+CoreDataClass.swift in Sources */,
+				396435D92A7A991D00C148B8 /* GroutingViews.swift in Sources */,
+				398900D62B17586D00CC3870 /* ProjectBubbleView.swift in Sources */,
+				398900952B15FA1900CC3870 /* DialogSecondaryButton.swift in Sources */,
+				3996E20B2A797029000D86E1 /* RoomScreen.swift in Sources */,
+				398900C02B1755A800CC3870 /* Enums User.swift in Sources */,
+				39475D532A76AABF006EC970 /* Color Extensions.swift in Sources */,
+				396435DF2A7A9E0D00C148B8 /* InstallationOfDoorJambViews.swift in Sources */,
+				39475D672A76EB1F006EC970 /* Custom View Modifiers.swift in Sources */,
+				398900D02B1757D900CC3870 /* AccountSettings.swift in Sources */,
+				39475D5E2A76B771006EC970 /* PropertyCategoryBubbleView.swift in Sources */,
+				398900E32B17633E00CC3870 /* PickClientButton.swift in Sources */,
+				397B41152B8797F60023A9BC /* InProjectChoosingContractorView.swift in Sources */,
+				397B41032B877E280023A9BC /* ContractorDetailView.swift in Sources */,
+				398900A32B15FC8400CC3870 /* WindowAndDoorEditors.swift in Sources */,
+				398900BB2B1754B700CC3870 /* ArchiveSettings.swift in Sources */,
+				39B4E02D2AC2EC240035EFBC /* CreateNewClientViewModel.swift in Sources */,
+				39804FA62AC41BC900F2A072 /* ClientPreviewScreen.swift in Sources */,
+				39CC5CD22AED13C8001C4D31 /* CTAPopUP.swift in Sources */,
+				3989009A2B15FA9000CC3870 /* Work Protocols.swift in Sources */,
+				397B41072B8780950023A9BC /* Enums Settings.swift in Sources */,
+				39816FF22B0BD60E000CA0E2 /* Onboarding.swift in Sources */,
+				398900DF2B1761CD00CC3870 /* InProjectPriceBubbles.swift in Sources */,
+				3964D7FB2A9B946500AD4619 /* CommuteExpensesViewsViews.swift in Sources */,
+				396435D12A7A92C100C148B8 /* LevellingViews.swift in Sources */,
+				395086F12A7182D00099BAD8 /* Persistence.swift in Sources */,
+				392393752B5B1A3C00DA3A42 /* HistoryEvent+CoreDataClass.swift in Sources */,
+				396435C52A7A884C00C148B8 /* PlasteringCeilingViews.swift in Sources */,
+				39475D572A76AB3C006EC970 /* PricesScreen.swift in Sources */,
+				398900EE2B17644600CC3870 /* NewRoomView.swift in Sources */,
+				396435B72A7A699E00C148B8 /* UIParts.swift in Sources */,
+				392393782B5B1D4D00DA3A42 /* ProjectHistory.swift in Sources */,
+				3943953F2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift in Sources */,
+				39B51FA62B5706B000700AB4 /* PDFExportButton.swift in Sources */,
+				398900842B152ADC00CC3870 /* OnboardingButton.swift in Sources */,
+				390F80332B591DAA00A10FF0 /* NSManagedObject Extension.swift in Sources */,
+				398900B72B17546800CC3870 /* PriceOfferSettings.swift in Sources */,
+				397BB99E2AD041BF006BA23C /* Demolition+CoreDataClass.swift in Sources */,
+				396435BB2A7A73BA00C148B8 /* PlasterBoardingCeilingViews.swift in Sources */,
+				397BB9B22AD041BF006BA23C /* PriceList+CoreDataClass.swift in Sources */,
+				398900A62B15FF1800CC3870 /* PDFParts.swift in Sources */,
+				3964D8022A9B9AE600AD4619 /* SettingsScreen.swift in Sources */,
+				397BB9962AD041BF006BA23C /* Grouting+CoreDataClass.swift in Sources */,
+				3996E29A2A797C54000D86E1 /* Door+CoreDataClass.swift in Sources */,
+				398900982B15FA3B00CC3870 /* DialogType.swift in Sources */,
+				398900B22B1600BB00CC3870 /* ClientHandling.swift in Sources */,
+				397BB9BA2AD041BF006BA23C /* WindowInstallation+CoreDataClass.swift in Sources */,
+				398900F92B17655400CC3870 /* PDFViewModel.swift in Sources */,
+				39475D5C2A76B585006EC970 /* PropertyCategoryBubbleViewModel.swift in Sources */,
+				397BB9922AD041BF006BA23C /* PlasteringOfWindowSash+CoreDataClass.swift in Sources */,
+				398900D82B17587D00CC3870 /* NewProjectSheet.swift in Sources */,
+				39D22C7E2AA12F2F00322E31 /* InProjectChoosingClientView.swift in Sources */,
+				399BB78A2AEC320A00452560 /* PayWallFeature.swift in Sources */,
+				398901022B1767DD00CC3870 /* EditClientButton.swift in Sources */,
+				398900912B15F8FB00CC3870 /* Others.swift in Sources */,
+				39475D4F2A76A877006EC970 /* FidoTabView.swift in Sources */,
+				39475D512A76A909006EC970 /* BehavioursViewModel.swift in Sources */,
+				398900E82B1763C300CC3870 /* InProjectPriceListButton.swift in Sources */,
+				397B41052B877E420023A9BC /* ContractorsListView.swift in Sources */,
+				396435C72A7A8CA900C148B8 /* InstallationOfCornerBeadsViews.swift in Sources */,
+				3982E34A2B5952FD00DB39DE /* ProjectManagementButtonNarrow.swift in Sources */,
+				390F80312B591D2800A10FF0 /* DuplicateProjectViewModel.swift in Sources */,
+				397BB9B42AD041BF006BA23C /* TileCeramic+CoreDataClass.swift in Sources */,
+				397BB9982AD041BF006BA23C /* PlasterboardingCeiling+CoreDataClass.swift in Sources */,
+				390F80352B59483F00A10FF0 /* ProjectManagementView.swift in Sources */,
+				397BB9C02AD041BF006BA23C /* PavingCeramic+CoreDataClass.swift in Sources */,
+				397BB9C22AD041BF006BA23C /* PaintingCeiling+CoreDataClass.swift in Sources */,
+				398900F42B1764A200CC3870 /* ClientBubbleView.swift in Sources */,
+				398900C52B17560F00CC3870 /* ValidityOfPriceOffer.swift in Sources */,
+				391FEEDB2A9E248B007CBFD4 /* ClientsScreen.swift in Sources */,
+				39F549C92B03806600B9AC23 /* ContractorViewModel.swift in Sources */,
+				397BB9942AD041BF006BA23C /* BrickPartition+CoreDataClass.swift in Sources */,
+				396435B32A7A4DB700C148B8 /* PlumbingWorkViews.swift in Sources */,
+				398900F22B17647000CC3870 /* RoomListView.swift in Sources */,
+				397B41132B8794A20023A9BC /* InProjectContractor.swift in Sources */,
+				3989010B2B1768D200CC3870 /* ClientAttributeBubble.swift in Sources */,
+				3996E2062A781CF5000D86E1 /* PricingCalculations.swift in Sources */,
+				3996E1FE2A77BEA0000D86E1 /* InProjectScreen.swift in Sources */,
+				39CA43262B0BA14C0048EB36 /* DialogWindow.swift in Sources */,
+				398900862B15F7FF00CC3870 /* Array Extensions.swift in Sources */,
+				394395412A9FC2E900B2F64B /* ToolRentalViews.swift in Sources */,
+				390F80372B59487000A10FF0 /* ClientHandlingView.swift in Sources */,
+				396DA3E42B9470380009D7AF /* PlasterboardingPartitionViews.swift in Sources */,
+				396435DB2A7A9B9800C148B8 /* InstallationOfSanitaryViews.swift in Sources */,
+				396435D72A7A968F00C148B8 /* PavingCeramicViews.swift in Sources */,
+				398900D32B17581200CC3870 /* ArchivedProjectView.swift in Sources */,
+				3964D7FF2A9B989700AD4619 /* SiliconingViews.swift in Sources */,
+				39C112952ABD9BBF00CD82B7 /* Double Extensions.swift in Sources */,
+				398900882B15F85200CC3870 /* Enums Rooms.swift in Sources */,
+				397B41092B87820D0023A9BC /* CreateContractorButton.swift in Sources */,
+				398900E62B17638200CC3870 /* ProjectIsArchivedbutton.swift in Sources */,
+				398900F02B17645C00CC3870 /* RoomBubbleView.swift in Sources */,
+				3949A4E22AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodeld in Sources */,
+				397BB9B02AD041BF006BA23C /* PlasteringWall+CoreDataClass.swift in Sources */,
+				39D435A12AA0DC5F001AAD18 /* Client+CoreDataClass.swift in Sources */,
+				398900FB2B17657700CC3870 /* LocalizedStringKey Extensions.swift in Sources */,
+				397BB9A02AD041BF006BA23C /* Wiring+CoreDataClass.swift in Sources */,
+				399BB77B2AEBFEC900452560 /* PayWall.swift in Sources */,
+				398900AD2B15FFFA00CC3870 /* ProjectHandling.swift in Sources */,
+				396EFD3C2AD0A2D400747EB5 /* CustomWork+CoreDataClass.swift in Sources */,
+				397BB9B82AD041BF006BA23C /* Plumbing+CoreDataClass.swift in Sources */,
+				3996E29C2A797C54000D86E1 /* Project+CoreDataClass.swift in Sources */,
+				3989007F2B152A9800CC3870 /* OnboardingContexts.swift in Sources */,
+				396EFD422AD0A33900747EB5 /* CustomMaterial+CoreDataClass.swift in Sources */,
+				397B41112B87939B0023A9BC /* InProjectContractorBubbles.swift in Sources */,
+				39D22C782AA12DE400322E31 /* CorporationClientCreationView.swift in Sources */,
+				39939AFF2B946B1A00F16884 /* BrickPartitionsViews.swift in Sources */,
+				397BB9902AD041BF006BA23C /* InstallationOfSanitary+CoreDataClass.swift in Sources */,
+				396435D32A7A944000C148B8 /* LayingFloatingFloorsViews.swift in Sources */,
+				396435C12A7A843F00C148B8 /* NettingCeilingViews.swift in Sources */,
+				398900CE2B17576500CC3870 /* ArchiveDurationButton.swift in Sources */,
+				396435BF2A7A821500C148B8 /* NettingWallViews.swift in Sources */,
+				396435C92A7A8E7800C148B8 /* PlasteringOfWindowSashViews.swift in Sources */,
+				399BB77F2AEBFF3400452560 /* OfferingBubble.swift in Sources */,
+				3996E2002A77BF64000D86E1 /* InProjectScreenViewModel.swift in Sources */,
+				39804FAA2AC43C0700F2A072 /* ClientEditViewModel.swift in Sources */,
+				399BB77D2AEBFEDE00452560 /* PayWallViewModel.swift in Sources */,
+				397B41012B877DEC0023A9BC /* ContractorView.swift in Sources */,
+				39AEABFA2AAF6A470085B2A1 /* InProjectPricesListViewModel.swift in Sources */,
+				3989009E2B15FAD200CC3870 /* Other Protocols.swift in Sources */,
+				39B51FA42B57048200700AB4 /* PDFPreviewButton.swift in Sources */,
+				397BB9C42AD041BF006BA23C /* NettingWall+CoreDataClass.swift in Sources */,
+				3996E20D2A797033000D86E1 /* RoomScreenViewModel.swift in Sources */,
+				39475D632A76E152006EC970 /* CategorizedProjectsScreenViewModel.swift in Sources */,
+				39AEABF62AAF61920085B2A1 /* PricesScreenViewModel.swift in Sources */,
+				39804FA82AC43ADC00F2A072 /* ClientEditView.swift in Sources */,
+				39498F652B4EC8AB0017BE9F /* AppearancePreferenceView.swift in Sources */,
+				398900C22B1755CB00CC3870 /* ContractorEditDetailsView.swift in Sources */,
+				398901072B17684B00CC3870 /* ClientsProjectsBubble.swift in Sources */,
+				397BB9A42AD041BF006BA23C /* SkirtingOfFloatingFloor+CoreDataClass.swift in Sources */,
+				398900822B152AB700CC3870 /* OnboardingPageView.swift in Sources */,
+				395086E82A7182CF0099BAD8 /* FidoBuildingCalculApp.swift in Sources */,
+				3996E2A42A797C54000D86E1 /* Window+CoreDataClass.swift in Sources */,
+				398900CA2B17567F00CC3870 /* ContractorBubble.swift in Sources */,
+				398900A02B15FB6500CC3870 /* Enums Projects.swift in Sources */,
+				39B51FA22B56FC8C00700AB4 /* PDFPreviewSheet.swift in Sources */,
+				3996E2942A797C54000D86E1 /* Room+CoreDataClass.swift in Sources */,
+				396435CD2A7A90CD00C148B8 /* PaintingWallViews.swift in Sources */,
+				397B410B2B878D7F0023A9BC /* EditContractorButton.swift in Sources */,
+				396435CF2A7A91E800C148B8 /* PaintingCeilingViews.swift in Sources */,
+				396435E32A7AB06400C148B8 /* RoomCalculationViewModel.swift in Sources */,
+				3989009C2B15FABA00CC3870 /* Material Protocols.swift in Sources */,
+				3929767E2B3590BF004884E8 /* BIDFillSheet.swift in Sources */,
+				398900762B15296700CC3870 /* Enums Roots.swift in Sources */,
+				3989008F2B15F8E200CC3870 /* Works.swift in Sources */,
+				39B6EF4D2B41A1C70002066C /* Enums BIDError.swift in Sources */,
+				397B410F2B878E840023A9BC /* ContractorDetailViewModel.swift in Sources */,
+				398900CC2B17574800CC3870 /* ArchiveDurationView.swift in Sources */,
+				398900FD2B1766FC00CC3870 /* Enums Clients.swift in Sources */,
+				39498F672B4EC8EC0017BE9F /* AppearanceOptions.swift in Sources */,
+				396435AD2A7A495900C148B8 /* WiringViews.swift in Sources */,
+				397BB9BC2AD041BF006BA23C /* PlasteringCeiling+CoreDataClass.swift in Sources */,
+				397BB9B62AD041BF006BA23C /* LayingFloatingFloors+CoreDataClass.swift in Sources */,
+				398900B02B16006000CC3870 /* ComplementaryWorks.swift in Sources */,
+				39B51FA82B57133900700AB4 /* TotalPriceOfferNew.swift in Sources */,
+				39475D652A76E376006EC970 /* View Extensions.swift in Sources */,
+				39475D552A76AB25006EC970 /* ProjectsScreen.swift in Sources */,
+				3989007C2B1529FF00CC3870 /* PurchasePayWallButton.swift in Sources */,
+				3996E2BD2A7985A1000D86E1 /* Binding Extensions.swift in Sources */,
+				398900782B15299B00CC3870 /* CustomTabView.swift in Sources */,
+				397BB99C2AD041BF006BA23C /* BrickLoadBearingWall+CoreDataClass.swift in Sources */,
+				3989010D2B1769C700CC3870 /* PriceBubbles.swift in Sources */,
+				39FB6ECA2B87775500D473A8 /* Contractor+CoreDataClass.swift in Sources */,
+				398900932B15F9F100CC3870 /* DialogPrimaryButton.swift in Sources */,
+				39F549C72B03805600B9AC23 /* ContractorEditView.swift in Sources */,
+				398900EA2B1763E300CC3870 /* ArchiveButton.swift in Sources */,
+				396435C32A7A85B800C148B8 /* PlasteringWallViews.swift in Sources */,
+				398900B92B1754A000CC3870 /* Enums Archive.swift in Sources */,
+				398900742B1528F100CC3870 /* Pricing Calculations Types.swift in Sources */,
+				397BB9A22AD041BF006BA23C /* PlasterboardingPartition+CoreDataClass.swift in Sources */,
+				398900EC2B17641600CC3870 /* TitleAndNotes.swift in Sources */,
+				3943ADA72B7A156B0061F2F1 /* EmailInputSheet.swift in Sources */,
+				396435CB2A7A8F6D00C148B8 /* PenetrationCoatViews.swift in Sources */,
+				3989008D2B15F8BF00CC3870 /* Materials.swift in Sources */,
+				39AEABF82AAF6A350085B2A1 /* InProjectPricesListView.swift in Sources */,
+				396435E12A7AB04900C148B8 /* RoomCalculationBill.swift in Sources */,
+				397BB99A2AD041BF006BA23C /* Siliconing+CoreDataClass.swift in Sources */,
+				396435D52A7A955C00C148B8 /* TileCeramicViews.swift in Sources */,
+				397BB9A62AD041BF006BA23C /* InstallationOfDoorJamb+CoreDataClass.swift in Sources */,
+				396435DD2A7A9CFA00C148B8 /* WindowInstallationsViews.swift in Sources */,
+				3929767C2B358DB3004884E8 /* BIDNetworkClasses.swift in Sources */,
+				39D22C762AA12D9900322E31 /* PersonalClientCreationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		395086F52A7182D00099BAD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		395086F62A7182D00099BAD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		395086F82A7182D00099BAD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
+				DEVELOPMENT_TEAM = J7CR9GZ8S9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Fido-Building-Calcul-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Fido;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sk.fido.FidoBuildingCalcul;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		395086F92A7182D00099BAD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
+				DEVELOPMENT_TEAM = J7CR9GZ8S9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Fido-Building-Calcul-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Fido;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sk.fido.FidoBuildingCalcul;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		395086DF2A7182CF0099BAD8 /* Build configuration list for PBXProject "Fido Building Calcul" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				395086F52A7182D00099BAD8 /* Debug */,
+				395086F62A7182D00099BAD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		395086F72A7182D00099BAD8 /* Build configuration list for PBXNativeTarget "Fido Building Calcul" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				395086F82A7182D00099BAD8 /* Debug */,
+				395086F92A7182D00099BAD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3911147A2AF94B2D00D074E9 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.30.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3911147B2AF94B2D00D074E9 /* ReceiptParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3911147A2AF94B2D00D074E9 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = ReceiptParser;
+		};
+		3911147D2AF94B2D00D074E9 /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3911147A2AF94B2D00D074E9 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = RevenueCat;
+		};
+		3911147F2AF94B2D00D074E9 /* RevenueCatUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3911147A2AF94B2D00D074E9 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = RevenueCatUI;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		3949A4E02AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3949A4E12AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodel */,
+			);
+			currentVersion = 3949A4E12AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodel */;
+			name = Fido_Building_Calcul.xcdatamodeld;
+			path = "../../../../Library/Mobile Documents/com~apple~CloudDocs/Fido/Fido Building Calcul/Fido Building Calcul/CoreDataModels/Fido_Building_Calcul.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 395086DC2A7182CF0099BAD8 /* Project object */;
+}

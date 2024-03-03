@@ -1,0 +1,25 @@
+{
+  "images" : [
+    {
+      "filename" : "bottomBarSettings_06.jpg",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "bottomBarSettings_06 1.jpg",
+      "idiom" : "universal",
+      "locale" : "en"
+    },
+    {
+      "filename" : "bottomBarSettings_05.jpg",
+      "idiom" : "universal",
+      "locale" : "sk"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "localizable" : true
+  }
+}

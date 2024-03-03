@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "david-von-diemar-JnWfxikjB-s-unsplash.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "david-von-diemar-JnWfxikjB-s-unsplash 1.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "david-von-diemar-JnWfxikjB-s-unsplash 3.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

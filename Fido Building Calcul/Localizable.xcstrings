@@ -1,0 +1,4448 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    " - %@" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- %@"
+          }
+        }
+      }
+    },
+    " / month" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " / mesiac"
+          }
+        }
+      }
+    },
+    " / year" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " / rok"
+          }
+        }
+      }
+    },
+    " • " : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " • "
+          }
+        }
+      }
+    },
+    " no. %lld" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " č. %lld"
+          }
+        }
+      }
+    },
+    "-" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-"
+          }
+        }
+      }
+    },
+    "/" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "/"
+          }
+        }
+      }
+    },
+    "%" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%"
+          }
+        }
+      }
+    },
+    "%@ - %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ - %2$@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ - %2$@"
+          }
+        }
+      }
+    },
+    "%@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
+    "%@, %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@, %2$@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@, %2$@"
+          }
+        }
+      }
+    },
+    "%@: " : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@:"
+          }
+        }
+      }
+    },
+    "%@/" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@/"
+          }
+        }
+      }
+    },
+    "%lld days" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld dni"
+          }
+        }
+      }
+    },
+    "%lld days till deletion" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld day till deletion"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "%lld days till deletion"
+                }
+              }
+            }
+          }
+        },
+        "sk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld dni do vymazania"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld dní do vymazania"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld deň do vymazania"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld dní do vymazania"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld miestností" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld room"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld rooms"
+                }
+              }
+            }
+          }
+        },
+        "sk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld miestnosti"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld miestností"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld miestnosť"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld miestnosti"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld projects" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld project"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "%lld projects"
+                }
+              }
+            }
+          }
+        },
+        "sk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld projekty"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld projektov"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld projekt"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld projektov"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld rooms" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld room"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "%lld rooms"
+                }
+              }
+            }
+          }
+        },
+        "sk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld mestnosti"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld miestnosti"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld miestnosť"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld miestnosti"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld works" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld work"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "%lld works"
+                }
+              }
+            }
+          }
+        },
+        "sk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld práce"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld prác"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld práca"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld prác"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "©Fido, s.r.o. All rights reserved." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "©Fido, s.r.o. Všetky práva vyhradené."
+          }
+        }
+      }
+    },
+    "+" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+"
+          }
+        }
+      }
+    },
+    "=" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "="
+          }
+        }
+      }
+    },
+    "€5.49 / Monthly" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5,49 € / mesiac"
+          }
+        }
+      }
+    },
+    "0" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0"
+          }
+        }
+      }
+    },
+    "0,00" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0,00"
+          }
+        }
+      }
+    },
+    "7 days of free trial" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7 dní bezplatnej skúšobnej verzie"
+          }
+        }
+      }
+    },
+    "7 days of free trial, billed annually" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7 dní zadarmo, účtované ročne"
+          }
+        }
+      }
+    },
+    "7 days of free trial, billed monthly" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7 dní zadarmo, účtované mesačne"
+          }
+        }
+      }
+    },
+    "75 - 175mm" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "75 - 175mm"
+          }
+        }
+      }
+    },
+    "200 - 450mm" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "200 - 450mm"
+          }
+        }
+      }
+    },
+    "12345679" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "12345679"
+          }
+        }
+      }
+    },
+    "Access" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prístup"
+          }
+        }
+      }
+    },
+    "Add a new client by clicking on: (+)\nChoose a private or legal entity and fill in the client's details.\nDon't forget to save the details." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nového klienta pridáte kliknutím na: (+)\nVyberte súkromnú alebo právnickú osobu a vyplnte údaje o klientovi.\nNezabudnite uložiť údaje."
+          }
+        }
+      }
+    },
+    "Add client" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pridať klienta"
+          }
+        }
+      }
+    },
+    "Add Client" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pridať Klienta"
+          }
+        }
+      }
+    },
+    "Add project" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pridať projekt"
+          }
+        }
+      }
+    },
+    "Add room to this project" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pridať miestnosť do tohto projektu"
+          }
+        }
+      }
+    },
+    "Additional info" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doplnkové informácie"
+          }
+        }
+      }
+    },
+    "Adhesive" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lepidlo"
+          }
+        }
+      }
+    },
+    "Adhesive, netting" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lepidlo, sieťkovanie"
+          }
+        }
+      }
+    },
+    "Adhesive, tiling and paving" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lepidlo, obklad a dlažba"
+          }
+        }
+      }
+    },
+    "adjust individual project prices" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "upraviť ceny projektov"
+          }
+        }
+      }
+    },
+    "After saving the client's details, you can see already created projects, as well as create a new one by clicking on: (+)" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Po uložení údajov klienta môžete vidieť už vytvorené projekty, ako aj vytvoriť nový kliknutím na: (+)"
+          }
+        }
+      }
+    },
+    "App #, Suite (optional)" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voliteľné"
+          }
+        }
+      }
+    },
+    "Appearance" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vzhľad"
+          }
+        }
+      }
+    },
+    "Appearance of the app will match the appearance of the entire iPhone." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vzhľad aplikácie bude zodpovedať vzhľadu celého iPhonu."
+          }
+        }
+      }
+    },
+    "Appearance of the app will override the appearance of the entire iPhone and will be set to Dark." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vzhľad aplikácie prepíše vzhľad celého iPhonu a bude nastavený na Tmavý."
+          }
+        }
+      }
+    },
+    "Appearance of the app will override the appearance of the entire iPhone and will be set to Light." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vzhľad aplikácie prepíše vzhľad celého iPhonu a bude nastavený na Svetlý."
+          }
+        }
+      }
+    },
+    "approved" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "schválený"
+          }
+        }
+      }
+    },
+    "Approved" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schválený"
+          }
+        }
+      }
+    },
+    "Archive" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archív"
+          }
+        }
+      }
+    },
+    "Archive project" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archivovať projekt"
+          }
+        }
+      }
+    },
+    "Archive project %@?" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archivovať projekt %@?"
+          }
+        }
+      }
+    },
+    "Archived" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archivovaný"
+          }
+        }
+      }
+    },
+    "Archived projects" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archivované projekty"
+          }
+        }
+      }
+    },
+    "archived projects, archive duration" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "archivované projekty, doba archivovania"
+          }
+        }
+      }
+    },
+    "Archiving period" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doba archivovania"
+          }
+        }
+      }
+    },
+    "Archiving this project will not result in data loss. You can find this project in the 'Archive' tab in the app settings." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archiváciou tohto projektu nedôjde k strate dát. Tento projekt nájdete na karte 'Archív' v nastaveniach aplikácie."
+          }
+        }
+      }
+    },
+    "Assign contractor" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Priradiť dodávateľa"
+          }
+        }
+      }
+    },
+    "Associate project with a client" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Priraďte projekt ku klientovi"
+          }
+        }
+      }
+    },
+    "Automatic" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automaticky"
+          }
+        }
+      }
+    },
+    "Auxiliary and fastening material" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pomocný a spojovací materiál"
+          }
+        }
+      }
+    },
+    "Auxiliary and finishing work" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pomocné a ukončovacie práce"
+          }
+        }
+      }
+    },
+    "Bank account number" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IBAN (číslo účtu)"
+          }
+        }
+      }
+    },
+    "Bank Account Number" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Číslo účtu"
+          }
+        }
+      }
+    },
+    "Bank Code" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SWIFT Kód"
+          }
+        }
+      }
+    },
+    "Banking and legal" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ostatné"
+          }
+        }
+      }
+    },
+    "Bath screen" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zástena sklenená"
+          }
+        }
+      }
+    },
+    "Bathroom" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kúpeľna"
+          }
+        }
+      }
+    },
+    "Bathtub" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaňa"
+          }
+        }
+      }
+    },
+    "Become Pro!" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stať sa Pro!"
+          }
+        }
+      }
+    },
+    "Bed room" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spálňa"
+          }
+        }
+      }
+    },
+    "Bedroom" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spálňa"
+          }
+        }
+      }
+    },
+    "BID" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IČO"
+          }
+        }
+      }
+    },
+    "bm" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bm"
+          }
+        }
+      }
+    },
+    "Brick load-bearing wall" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Murovanie nosného muriva"
+          }
+        }
+      }
+    },
+    "Brick partitions" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Murovanie priečok"
+          }
+        }
+      }
+    },
+    "Business" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Právnická"
+          }
+        }
+      }
+    },
+    "Business entity" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Právnická osoba"
+          }
+        }
+      }
+    },
+    "Business ID" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Identifikačné číslo organizácie"
+          }
+        }
+      }
+    },
+    "Business information" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Firemné informácie"
+          }
+        }
+      }
+    },
+    "By clicking on:( + ) select the room you want to renovate. If you click on: (Custom) you can create your own room name.\n\nAfter adding the work you want to perform, the app will calculate the cost of labor and materials as well as the quantity (m, m2, pcs…) of materials needed for the renovation." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kliknutím na:( + )vyberte miestnosť, ktorú chcete rekonštruovať. Ak kliknete na: (Vlastné) vytvoríte si vlastny názov miestnosti.\n\nPo doplnení prác ktoré chcete vykonať, Vám aplikácia vypočíta cenu práce a materiálu ako aj množstvo (m, m2, ks …) materiálu potrebného pre danú rekonštrukciu."
+          }
+        }
+      }
+    },
+    "By updating the prices, you will replace all existing prices with those from the general price list. This action is irreversible." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktualizáciou cien nahradíte všetky existujúce ceny cenami z všeobecného cenníka. Táto akcia je nevratná."
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zrušiť"
+          }
+        }
+      }
+    },
+    "capacity per " : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "výdatnosť na "
+          }
+        }
+      }
+    },
+    "ceiling" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "strop"
+          }
+        }
+      }
+    },
+    "Ceiling no. %lld" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Strop č. %lld"
+          }
+        }
+      }
+    },
+    "ceiling, 2 layers" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "strop, 2 vrstvy"
+          }
+        }
+      }
+    },
+    "ceramic" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "keramická"
+          }
+        }
+      }
+    },
+    "ceramicTiling" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ceramic"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "keramický"
+          }
+        }
+      }
+    },
+    "change general prices" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "zmeniť všeobecné ceny"
+          }
+        }
+      }
+    },
+    "Change type of client" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmeniť typ osoby"
+          }
+        }
+      }
+    },
+    "Changes will affect prices in new projects" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmena ceny sa zobrazí v každom novom projekte"
+          }
+        }
+      }
+    },
+    "Changing the price list will overwrite the prices in this project only" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmena cenníka prepíše ceny v tomto projekte"
+          }
+        }
+      }
+    },
+    "Circumference" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozmer"
+          }
+        }
+      }
+    },
+    "City" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mesto"
+          }
+        }
+      }
+    },
+    "Client" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klient"
+          }
+        }
+      }
+    },
+    "Client's projects" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klientové projekty"
+          }
+        }
+      }
+    },
+    "Clients" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klienti"
+          }
+        }
+      }
+    },
+    "Coating no. %lld" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Náter č. %lld"
+          }
+        }
+      }
+    },
+    "Code" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kód"
+          }
+        }
+      }
+    },
+    "Commute" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cesta"
+          }
+        }
+      }
+    },
+    "Commute length" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dĺžka cesty"
+          }
+        }
+      }
+    },
+    "Companies" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Firmy"
+          }
+        }
+      }
+    },
+    "Company" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Firma"
+          }
+        }
+      }
+    },
+    "Complementary works" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doplnkové práce"
+          }
+        }
+      }
+    },
+    "Concealed toilet" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WC Podomietkové"
+          }
+        }
+      }
+    },
+    "Contact" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kontakt"
+          }
+        }
+      }
+    },
+    "Contact person" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kontaktná osoba"
+          }
+        }
+      }
+    },
+    "Continue" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokračovať"
+          }
+        }
+      }
+    },
+    "Contractor details" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detaily dodávateľa"
+          }
+        }
+      }
+    },
+    "Contractors" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodávatelia"
+          }
+        }
+      }
+    },
+    "Contractors details" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detialy dodávateľov"
+          }
+        }
+      }
+    },
+    "Copy" : {
+      "comment" : "Suffix indicating a duplicate item",
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kópia"
+          }
+        }
+      }
+    },
+    "Corner bead" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rohová lišta"
+          }
+        }
+      }
+    },
+    "Corner valve" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rohový ventil"
+          }
+        }
+      }
+    },
+    "Cottage" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chata"
+          }
+        }
+      }
+    },
+    "Cottages" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chaty"
+          }
+        }
+      }
+    },
+    "Could not reach database." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nepodarilo sa spojiť s databázou."
+          }
+        }
+      }
+    },
+    "Count" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Počet"
+          }
+        }
+      }
+    },
+    "Country" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Krajina"
+          }
+        }
+      }
+    },
+    "Create" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vytvoriť"
+          }
+        }
+      }
+    },
+    "Create profile" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vytvoriť profil"
+          }
+        }
+      }
+    },
+    "Create project" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vytvoriť projekt"
+          }
+        }
+      }
+    },
+    "Create project for client" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vytvoriť projekt pre klienta"
+          }
+        }
+      }
+    },
+    "Create project in which you can calculate prices and material for individual work" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vytvorte projekt, v ktorom môžete kalkulovať ceny a materiál pre jednotlivé práce"
+          }
+        }
+      }
+    },
+    "Create room" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vytvoriť miestnosť"
+          }
+        }
+      }
+    },
+    "Create!" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vytvoriť!"
+          }
+        }
+      }
+    },
+    "Created" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vytvorený"
+          }
+        }
+      }
+    },
+    "Created using Fido Building Calcul app." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vytvorené aplikáciou Fido Building Calcul."
+          }
+        }
+      }
+    },
+    "Custom" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vlastné"
+          }
+        }
+      }
+    },
+    "Custom Material" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vlastný materál"
+          }
+        }
+      }
+    },
+    "Custom Work" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vlastná práca"
+          }
+        }
+      }
+    },
+    "Custom work and material" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vlastná práca a materiál"
+          }
+        }
+      }
+    },
+    "Customer" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odberateľ"
+          }
+        }
+      }
+    },
+    "customer@email.com" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "zákazník@email.sk"
+          }
+        }
+      }
+    },
+    "Customise prices in the entire app and export projects to PDF." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prispôsobte ceny v celej aplikácii a exportujte projekty do PDF."
+          }
+        }
+      }
+    },
+    "Customise prices in the entire app and export projects to PDF. Try Pro For Free!" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prispôsobte ceny v celej aplikácii a exportujte projekty do PDF. Vyskúšajte Pro zadarmo!"
+          }
+        }
+      }
+    },
+    "Customize according to your work and material costs. Price changes will reflect in every newly created project." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prispôsobte si podľa vašej ceny práce a materiálov, ktoré používate. Zmena ceny sa prejaví v každom novo vytvorenom projekte."
+          }
+        }
+      }
+    },
+    "Dark" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tmavý"
+          }
+        }
+      }
+    },
+    "Data completion" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dopĺňanie údajov"
+          }
+        }
+      }
+    },
+    "Date of issue" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dátum vystavenia"
+          }
+        }
+      }
+    },
+    "day" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "deň"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vymazať"
+          }
+        }
+      }
+    },
+    "Delete contractor" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vymazať"
+          }
+        }
+      }
+    },
+    "Delete contractor?" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vymazať dodávateľa?"
+          }
+        }
+      }
+    },
+    "Delete project %@?" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vymazať projekt %@?"
+          }
+        }
+      }
+    },
+    "Deleting this contractor profile will permanently delete all data." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odstránením tohto profilu dodávateľa sa natrvalo vymažú všetky údaje."
+          }
+        }
+      }
+    },
+    "Demolition" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Búracie práce"
+          }
+        }
+      }
+    },
+    "Description" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Popis"
+          }
+        }
+      }
+    },
+    "Do you really want leave empty email?" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naozaj si prajete ponechať prázdny e-mail?"
+          }
+        }
+      }
+    },
+    "Do you want to discard the changes?" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chcete zahodiť zmeny?"
+          }
+        }
+      }
+    },
+    "Done" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hotovo"
+          }
+        }
+      }
+    },
+    "Done!" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hotovo!"
+          }
+        }
+      }
+    },
+    "Door" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dvere"
+          }
+        }
+      }
+    },
+    "Door jamb" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obložková zárubňa"
+          }
+        }
+      }
+    },
+    "Doors" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dvere"
+          }
+        }
+      }
+    },
+    "double" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dvojitá"
+          }
+        }
+      }
+    },
+    "Double" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dvojitá"
+          }
+        }
+      }
+    },
+    "double, partition" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dvojitý, priečka"
+          }
+        }
+      }
+    },
+    "Down Street 3, London" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Šafáriková 3, Bratislava"
+          }
+        }
+      }
+    },
+    "Duplicate" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duplikovať"
+          }
+        }
+      }
+    },
+    "Duplicated" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duplikovaný"
+          }
+        }
+      }
+    },
+    "Duration" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dľžka"
+          }
+        }
+      }
+    },
+    "Edit" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upraviť"
+          }
+        }
+      }
+    },
+    "Edit client" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upraviť klienta"
+          }
+        }
+      }
+    },
+    "Edit contractor" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodávateľ"
+          }
+        }
+      }
+    },
+    "Editing of client" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Úprava klienta"
+          }
+        }
+      }
+    },
+    "Email" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        }
+      }
+    },
+    "Email address" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emailová adresa"
+          }
+        }
+      }
+    },
+    "export to PDF" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "exportovať do PDF"
+          }
+        }
+      }
+    },
+    "feature allows users to modify prices in the general price list, affecting all future projects" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "funkcia umožňuje používateľom upravovať ceny vo všeobecnom cenníku, čo ovplyvňuje všetky budúce projekty"
+          }
+        }
+      }
+    },
+    "feature enables the export of entire projects into PDF format, allowing direct sharing with clients" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "funkcia umožňuje export celých projektov do formátu PDF, čo umožňuje priame zdieľanie s klientmi"
+          }
+        }
+      }
+    },
+    "feature enables users to modify prices in a project's price list, influencing prices exclusively within the selected project" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "funkcia umožňuje užívateľom upravovať ceny v cenníku projektu, čím ovplyvňuje ceny výlučne v rámci zvoleného projektu"
+          }
+        }
+      }
+    },
+    "Fido Building Calcul" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fido Building Calcul"
+          }
+        }
+      }
+    },
+    "FIDO Building Calcul" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FIDO Building Calcul"
+          }
+        }
+      }
+    },
+    "Fill based on BID" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyplniť podľa IČO"
+          }
+        }
+      }
+    },
+    "Fill in your client and then assign a project to them" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pridajte svojho klienta a následne priradťe projekt k nemu"
+          }
+        }
+      }
+    },
+    "Fill info" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyplniť"
+          }
+        }
+      }
+    },
+    "Fill out information for price offers" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyplňte informácie pre cenové ponuky"
+          }
+        }
+      }
+    },
+    "Flat" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Byt"
+          }
+        }
+      }
+    },
+    "Flats" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Byty"
+          }
+        }
+      }
+    },
+    "floating floor" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "plávajúca podlaha"
+          }
+        }
+      }
+    },
+    "Floating floor" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plávajúca podlaha"
+          }
+        }
+      }
+    },
+    "Flush-mounted tap" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batéria podomietková"
+          }
+        }
+      }
+    },
+    "For changing prices in individual projects, use the project price list. Price changes will only affect the current project." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pre zmenu ceny v jednotlivých projektoch použite cenník projektu. Zmena ceny sa prejavý len v aktuálnom projekte."
+          }
+        }
+      }
+    },
+    "For details in the price offer" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pre detaily v cenovej ponuke"
+          }
+        }
+      }
+    },
+    "Forever" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Navždy"
+          }
+        }
+      }
+    },
+    "General price list" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cenník (hlavný) na spodnej lište"
+          }
+        }
+      }
+    },
+    "Grouting" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Špárovanie"
+          }
+        }
+      }
+    },
+    "Grouting no. %lld" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Špárovanie č. %lld"
+          }
+        }
+      }
+    },
+    "Grouting, tiling and paving" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Špárovanie, obklad a dlažba"
+          }
+        }
+      }
+    },
+    "Guests room" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hosťovská"
+          }
+        }
+      }
+    },
+    "h" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hod"
+          }
+        }
+      }
+    },
+    "Hallway" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chodba"
+          }
+        }
+      }
+    },
+    "Height" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Výška"
+          }
+        }
+      }
+    },
+    "History" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "História"
+          }
+        }
+      }
+    },
+    "hot, cold, waste, connection point" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "teplá, studená, odpad, bod napojenia"
+          }
+        }
+      }
+    },
+    "House" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dom"
+          }
+        }
+      }
+    },
+    "Houses" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domy"
+          }
+        }
+      }
+    },
+    "I agree to receiving sparse email communication regarding my subscription and improvements of the app. **[Check our privacy policy here.](%@)**" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Súhlasím s prijímaním občasnej e-mailovej komunikácie týkajúcej sa môjho predplatného a vylepšení aplikácie. **[Pozrite si naše pravidlá ochrany osobných údajov tu.](%@)**"
+          }
+        }
+      }
+    },
+    "Insert BID and we will search for it in database and fill all publicly available information about the company." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zadajte IČO a my ho vyhľadáme v databáze a vyplníme všetky verejne dostupné informácie o spoločnosti."
+          }
+        }
+      }
+    },
+    "Installation of corner bead" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Osadenie rohovej lišty"
+          }
+        }
+      }
+    },
+    "Installation of door jamb" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Osadenie obložkovej zárubne "
+          }
+        }
+      }
+    },
+    "Installation of gutter" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Osadenie žľabu"
+          }
+        }
+      }
+    },
+    "John Doe" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Janko Hruška"
+          }
+        }
+      }
+    },
+    "kg" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kg"
+          }
+        }
+      }
+    },
+    "Kids room" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detská izba"
+          }
+        }
+      }
+    },
+    "Kitchen" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuchyňa"
+          }
+        }
+      }
+    },
+    "km" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "km"
+          }
+        }
+      }
+    },
+    "last change: " : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "posledná zmena: "
+          }
+        }
+      }
+    },
+    "laying" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pokládka"
+          }
+        }
+      }
+    },
+    "Laying no. %lld" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokládka č. %lld"
+          }
+        }
+      }
+    },
+    "Laying of floating floor" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokládka plávajúcej podlahy"
+          }
+        }
+      }
+    },
+    "Legal appendix" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spisová vložka"
+          }
+        }
+      }
+    },
+    "Length" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dĺžka"
+          }
+        }
+      }
+    },
+    "Levelling" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nivelačka"
+          }
+        }
+      }
+    },
+    "Light" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Svetlý"
+          }
+        }
+      }
+    },
+    "Link" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Link"
+          }
+        }
+      }
+    },
+    "Living room" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obývačka"
+          }
+        }
+      }
+    },
+    "Load-bearing masonry" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nosné murivo"
+          }
+        }
+      }
+    },
+    "Loading..." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Načítava sa..."
+          }
+        }
+      }
+    },
+    "Location" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poloha"
+          }
+        }
+      }
+    },
+    "Logo" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logo"
+          }
+        }
+      }
+    },
+    "Looking for company..." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hľadá sa spoločnosť..."
+          }
+        }
+      }
+    },
+    "m" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "m"
+          }
+        }
+      }
+    },
+    "m²" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "m²"
+          }
+        }
+      }
+    },
+    "m³" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "m³"
+          }
+        }
+      }
+    },
+    "Material" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Materiál"
+          }
+        }
+      }
+    },
+    "Material name" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Názov materiálu"
+          }
+        }
+      }
+    },
+    "Material price list" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cenník materiál"
+          }
+        }
+      }
+    },
+    "Mesh" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sklotextílna mriežka"
+          }
+        }
+      }
+    },
+    "Mirror" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zrkadlo"
+          }
+        }
+      }
+    },
+    "Name" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meno"
+          }
+        }
+      }
+    },
+    "Name and surname" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meno a priezvisko"
+          }
+        }
+      }
+    },
+    "Name of company" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Názov firmy"
+          }
+        }
+      }
+    },
+    "netting" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sieťkovanie"
+          }
+        }
+      }
+    },
+    "Netting" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sieťkovanie"
+          }
+        }
+      }
+    },
+    "Netting, ceiling" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sieťkovanie, strop"
+          }
+        }
+      }
+    },
+    "Netting, wall" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sieťkovanie, stena"
+          }
+        }
+      }
+    },
+    "New client" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nový klient"
+          }
+        }
+      }
+    },
+    "New project" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nový projekt"
+          }
+        }
+      }
+    },
+    "New room" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nová miestnosť"
+          }
+        }
+      }
+    },
+    "Next" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ďalej"
+          }
+        }
+      }
+    },
+    "No" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie"
+          }
+        }
+      }
+    },
+    "No archived projects" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Žiadne archivované projekty"
+          }
+        }
+      }
+    },
+    "No client" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Žiaden klient"
+          }
+        }
+      }
+    },
+    "No company was found with given BID." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nepodarilo sa nájsť spoločnosť s daným IČO."
+          }
+        }
+      }
+    },
+    "No. %lld" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "č. %lld"
+          }
+        }
+      }
+    },
+    "not sent" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "neodoslaný"
+          }
+        }
+      }
+    },
+    "Not sent" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neodoslaný"
+          }
+        }
+      }
+    },
+    "Note" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poznámka"
+          }
+        }
+      }
+    },
+    "Notes" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poznámky"
+          }
+        }
+      }
+    },
+    "Number" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Číslo"
+          }
+        }
+      }
+    },
+    "Number of outlets" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Počet vývodov"
+          }
+        }
+      }
+    },
+    "Options" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Možnosti"
+          }
+        }
+      }
+    },
+    "Others" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ostatné"
+          }
+        }
+      }
+    },
+    "outlet" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vývod"
+          }
+        }
+      }
+    },
+    "package" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "balenie"
+          }
+        }
+      }
+    },
+    "Paint" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Farba"
+          }
+        }
+      }
+    },
+    "Paint, ceiling" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Farba, strop"
+          }
+        }
+      }
+    },
+    "Paint, wall" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Farba, stena"
+          }
+        }
+      }
+    },
+    "Painting" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maľovanie"
+          }
+        }
+      }
+    },
+    "Painting no. %lld" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maľovanie č. %lld"
+          }
+        }
+      }
+    },
+    "Painting, ceiling" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maľovanie, strop"
+          }
+        }
+      }
+    },
+    "Painting, wall" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maľovanie, stena"
+          }
+        }
+      }
+    },
+    "partition" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "priečka"
+          }
+        }
+      }
+    },
+    "Partition" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Priečka"
+          }
+        }
+      }
+    },
+    "Partition masonry" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Priečkové murivo"
+          }
+        }
+      }
+    },
+    "Partition no. %lld" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Priečka č. %lld"
+          }
+        }
+      }
+    },
+    "Paving" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dlažba"
+          }
+        }
+      }
+    },
+    "Paving, ceramic" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dlažba, keramická"
+          }
+        }
+      }
+    },
+    "Pavings" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dlažba"
+          }
+        }
+      }
+    },
+    "Pavings, ceramic" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dlažba, keramická"
+          }
+        }
+      }
+    },
+    "pc" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ks"
+          }
+        }
+      }
+    },
+    "PDF could not be created." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PDF nebolo možné vytvoriť."
+          }
+        }
+      }
+    },
+    "Penetration coating" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penetračný náter"
+          }
+        }
+      }
+    },
+    "Permanently deleting this project will result in the loss of all data. This change is irreversible." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trvalým vymazaním tohto projektu dôjde k strate všetkých dát. Táto zmena je nevratná."
+          }
+        }
+      }
+    },
+    "Phone number" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Telefónne číslo"
+          }
+        }
+      }
+    },
+    "piece" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kus"
+          }
+        }
+      }
+    },
+    "pkg" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bal"
+          }
+        }
+      }
+    },
+    "Plaster" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omietka"
+          }
+        }
+      }
+    },
+    "Plasterboard" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sádrokartón"
+          }
+        }
+      }
+    },
+    "Plasterboard, ceiling" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartón, strop"
+          }
+        }
+      }
+    },
+    "Plasterboard, double partition" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartón, dvojitá priečka"
+          }
+        }
+      }
+    },
+    "Plasterboard, simple partition" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartón, jednoduchá priečka"
+          }
+        }
+      }
+    },
+    "Plasterboard, triple partition" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartón, trojitá priečka"
+          }
+        }
+      }
+    },
+    "Plasterboarding" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sádrokartón"
+          }
+        }
+      }
+    },
+    "Plasterboarding no. %lld" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sádrokartón č. %lld"
+          }
+        }
+      }
+    },
+    "Plasterboarding, ceiling" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sádrokartón, strop"
+          }
+        }
+      }
+    },
+    "Plasterboarding, double" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sádrokartón, dvojitý"
+          }
+        }
+      }
+    },
+    "Plasterboarding, simple" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sádrokartón, jednoduchý"
+          }
+        }
+      }
+    },
+    "Plasterboarding, triple" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sádrokartón, trojitý"
+          }
+        }
+      }
+    },
+    "Plastering" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omietka"
+          }
+        }
+      }
+    },
+    "Plastering of window sash" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omietka špalety"
+          }
+        }
+      }
+    },
+    "Plastering, ceiling" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omietka, strop"
+          }
+        }
+      }
+    },
+    "Plastering, wall" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omietka, stena"
+          }
+        }
+      }
+    },
+    "Plumbing" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vodoinštalatérské práce"
+          }
+        }
+      }
+    },
+    "PO" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CP"
+          }
+        }
+      }
+    },
+    "Postal code" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poštové číslo"
+          }
+        }
+      }
+    },
+    "Preferences" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prispôsobenie"
+          }
+        }
+      }
+    },
+    "Preview" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Náhľad"
+          }
+        }
+      }
+    },
+    "Price" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cena"
+          }
+        }
+      }
+    },
+    "Price list" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cenník"
+          }
+        }
+      }
+    },
+    "Price offer" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cenová ponuka"
+          }
+        }
+      }
+    },
+    "Price per unit" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cena za mj."
+          }
+        }
+      }
+    },
+    "Primer" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penetrák"
+          }
+        }
+      }
+    },
+    "Privacy Policy" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zásady ochrany osobných údajov"
+          }
+        }
+      }
+    },
+    "Private" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Súkromná"
+          }
+        }
+      }
+    },
+    "Private entity" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fyzická osoba"
+          }
+        }
+      }
+    },
+    "Pro Unlocks" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro odomkne:"
+          }
+        }
+      }
+    },
+    "Pro User" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro používateľ"
+          }
+        }
+      }
+    },
+    "Process no. %lld" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proces č. %lld"
+          }
+        }
+      }
+    },
+    "Project category" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategória projektu"
+          }
+        }
+      }
+    },
+    "Project management" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Správa projektu"
+          }
+        }
+      }
+    },
+    "Project name" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Názov projektu"
+          }
+        }
+      }
+    },
+    "Project price list" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cenník projektu"
+          }
+        }
+      }
+    },
+    "Projects" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Projekty"
+          }
+        }
+      }
+    },
+    "Projects in the archive can be restored or permanently deleted." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Projekty v archíve sa dajú vrátiť, alebo trvalo vymazať."
+          }
+        }
+      }
+    },
+    "projects-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Projects"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Projekty"
+          }
+        }
+      }
+    },
+    "Rental duration" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doba pôžičky"
+          }
+        }
+      }
+    },
+    "Restore Purchases" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obnovenie nákupov"
+          }
+        }
+      }
+    },
+    "Restricted Access" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obmedzený prístup"
+          }
+        }
+      }
+    },
+    "Room name" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Názov miestnosti"
+          }
+        }
+      }
+    },
+    "Rooms" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miestnosti"
+          }
+        }
+      }
+    },
+    "Sanitary installation" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inštalácia sanity"
+          }
+        }
+      }
+    },
+    "Save" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uložiť"
+          }
+        }
+      }
+    },
+    "Save!" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uložiť!"
+          }
+        }
+      }
+    },
+    "Search" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hľadať"
+          }
+        }
+      }
+    },
+    "Self-levelling compound" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samonivelizačná hmota"
+          }
+        }
+      }
+    },
+    "Send" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poslať"
+          }
+        }
+      }
+    },
+    "sent" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "odoslaný"
+          }
+        }
+      }
+    },
+    "Sent" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odoslaný"
+          }
+        }
+      }
+    },
+    "set appearance of the app" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nastavte vzhľad aplikácie"
+          }
+        }
+      }
+    },
+    "Set email for communication" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zadať e-mail na komunikáciu"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nastavenia"
+          }
+        }
+      }
+    },
+    "Shower cubicle" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprchový kút"
+          }
+        }
+      }
+    },
+    "Silicone" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Silikón"
+          }
+        }
+      }
+    },
+    "Siliconing" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Silikónovanie"
+          }
+        }
+      }
+    },
+    "simple" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "jednoduchá"
+          }
+        }
+      }
+    },
+    "Simple" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jednoduchá"
+          }
+        }
+      }
+    },
+    "simple, partition" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "jednoduchý, priečka"
+          }
+        }
+      }
+    },
+    "Sink" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Umývadlo"
+          }
+        }
+      }
+    },
+    "Sink with cabinet" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Umývadlo so skrinkou"
+          }
+        }
+      }
+    },
+    "Skirting" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lištovanie"
+          }
+        }
+      }
+    },
+    "Skirting board" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soklové lišty"
+          }
+        }
+      }
+    },
+    "Something went wrong with the offers. Try again or please contact us at info@fido.sk" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyskytol sa problém s ponukami. Skúste to znova alebo nás kontaktujte na adrese info@fido.sk"
+          }
+        }
+      }
+    },
+    "Something went wrong. Check internet connection or try again later." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niečo sa pokazilo. Skontrolujte pripojenie k internetu alebo vyskúšajte neskôr."
+          }
+        }
+      }
+    },
+    "Standing mixer tap" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batéria stojanová"
+          }
+        }
+      }
+    },
+    "Start Free Trial & Subscribe" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyskúšať na týždeň zdarma"
+          }
+        }
+      }
+    },
+    "Street" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ulica"
+          }
+        }
+      }
+    },
+    "Subscribe" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predplatiť"
+          }
+        }
+      }
+    },
+    "supplier information, validity of price offer" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dodávateľ, platnosť cenovej ponuky"
+          }
+        }
+      }
+    },
+    "switch, socket, light, connection point..." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vypínač, zásuvka, svetlo, bod napojenia..."
+          }
+        }
+      }
+    },
+    "t" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "t"
+          }
+        }
+      }
+    },
+    "Tax ID" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daňové identifikačné číslo"
+          }
+        }
+      }
+    },
+    "Terms of Use" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podmienky používania"
+          }
+        }
+      }
+    },
+    "The last item is - Auxiliary and connecting material.\nThis item includes: cover films, tapes, rollers, brushes, knives, pencils...\n\nFrom our experience, we have found that it is appropriate to set this item at 10%.\n\nExample:\nMaterial cost will be               1000€\nAuxiliary and connecting material   10%\nTotal material cost                 1100€" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ako posledná položka sa nachádza - Pomocný a spojovací materiál.\nV tejto položke sú započítane: krycie fólie, pásky, valčeky, štetce, nože, ceruzky….\n\nZ našej skúsenosti sme zistili, že túto položku je vhodné nastaviť na 10%\n\nPríklad:\nCena materiálu bude                       1000€\nPomocný a spojovací materiál           10%\n                                                    \nCelková cena materiálu                    1100€"
+          }
+        }
+      }
+    },
+    "The last item is - Auxiliary and finishing works.\nThis item includes: material purchase, handling, carrying out, cleaning, covering, taping, waste removal...\n\nFrom our experience, we have found that it is appropriate to set this item at 10%.\n\nExample:\nWork cost will be               1000€\nAuxiliary and finishing works   10%\nTotal work cost                 1100€" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ako posledná položka sa nachádza - Pomocné a ukončovacie práce.\nV tejto položke je započítane: nákup materiálu, manipulácia, vynášanie, upratovanie, čistenie, zakrývanie, olepovanie, odvoz odpadu …\n\nZ našej skúsenosti sme zistili, že túto položku je vhodné nastaviť na 10%\n\nPríklad:\nCena práce bude                       1000€\nPomocné a ukončovacie práce   10%\n                                                    \nCelková cena práce                    1100€"
+          }
+        }
+      }
+    },
+    "This app will save you hours spent in creating budgets. With the FIDO building calcul app, the budget will be ready in just a few minutes. The app calculates the cost of labor and materials needed for the reconstruction of a house, apartment, etc." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vám ušetrí hodiny strávene pri vytvárani rozpočtov. S aplikáciou FIDO bulding calcul, bude rozpočet pripravený behom pár minút.\nAplikácia vypočíta cenu práce a materiálu potrebného pri rekonštrukcii domu, bytu…"
+          }
+        }
+      }
+    },
+    "This project will be activated and can be found in its specified category." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tento projekt bude aktivovaný a nájdete ho v určenej kategórii."
+          }
+        }
+      }
+    },
+    "TID" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DIČ"
+          }
+        }
+      }
+    },
+    "Tiles" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obklad"
+          }
+        }
+      }
+    },
+    "Tiles, ceramic" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obklad, keramický"
+          }
+        }
+      }
+    },
+    "Tiling" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obklad"
+          }
+        }
+      }
+    },
+    "tiling and paving" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "obklad a dlažba"
+          }
+        }
+      }
+    },
+    "Tiling, ceramic" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obklad, keramický"
+          }
+        }
+      }
+    },
+    "Toilet" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WC"
+          }
+        }
+      }
+    },
+    "Toilet combi" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WC Kombi"
+          }
+        }
+      }
+    },
+    "Toilet with concealed cistern" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WC Podomietkové"
+          }
+        }
+      }
+    },
+    "Tool rental" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Požičovňa náradia"
+          }
+        }
+      }
+    },
+    "Total price" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Celková cena"
+          }
+        }
+      }
+    },
+    "Total price offer" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Celková cenová ponuka"
+          }
+        }
+      }
+    },
+    "triple" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "trojitá"
+          }
+        }
+      }
+    },
+    "Triple" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trojitá"
+          }
+        }
+      }
+    },
+    "triple, partition" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "trojitý, priečka"
+          }
+        }
+      }
+    },
+    "Try Pro" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyskúšať Pro"
+          }
+        }
+      }
+    },
+    "Tutorial" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tutoriál"
+          }
+        }
+      }
+    },
+    "Type of client?" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typ osoby?"
+          }
+        }
+      }
+    },
+    "Type of sanity" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typ sanity"
+          }
+        }
+      }
+    },
+    "Unarchive project %@?" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vybrať projekt %@ z archívu?"
+          }
+        }
+      }
+    },
+    "Unarchived" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vybraný z archívu"
+          }
+        }
+      }
+    },
+    "Units of measurement" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Merné jednotky"
+          }
+        }
+      }
+    },
+    "Unlock premium features with a subscription. By subscribing, you agree to our terms of service and privacy policy. Your subscription will automatically renew unless canceled at least 24 hours before the end of the current period. You can manage or cancel your subscription in your App Store account settings at any time." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odomknite prémiové funkcie s predplatným. Prihlásením sa na odber súhlasíte s našimi zmluvnými podmienkami a zásadami ochrany osobných údajov. Vaše predplatné sa automaticky obnoví, pokiaľ ho nezrušíte aspoň 24 hodín pred koncom aktuálneho obdobia. Svoje predplatné môžete kedykoľvek spravovať alebo zrušiť v nastaveniach účtu App Store."
+          }
+        }
+      }
+    },
+    "Update klient" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uložiť klienta"
+          }
+        }
+      }
+    },
+    "Update prices from general price list?" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktualizovať ceny z hlavného cenníka?"
+          }
+        }
+      }
+    },
+    "Urinal" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pisoár"
+          }
+        }
+      }
+    },
+    "v%@" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "v%@"
+          }
+        }
+      }
+    },
+    "Valid until" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Platné do"
+          }
+        }
+      }
+    },
+    "Validity of price offer" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Platnosť cenovej ponuky"
+          }
+        }
+      }
+    },
+    "Validity of your price offers will be set for %lld days since creation." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Platnosť vašich cenových ponúk bude nastavená na %lld dní od vytvorenia."
+          }
+        }
+      }
+    },
+    "VAT" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DPH"
+          }
+        }
+      }
+    },
+    "VAT ID" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IČ DPH"
+          }
+        }
+      }
+    },
+    "VAT not included" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bez DPH"
+          }
+        }
+      }
+    },
+    "VAT Registration Number" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Identifikačné číslo pre daň z pridanej hodnoty"
+          }
+        }
+      }
+    },
+    "VAT(%)" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DPH(%)"
+          }
+        }
+      }
+    },
+    "wall" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "stena"
+          }
+        }
+      }
+    },
+    "Wall no. %lld" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stena č. %lld"
+          }
+        }
+      }
+    },
+    "Wall-mounted tap" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batéria nástenná"
+          }
+        }
+      }
+    },
+    "wall, 2 layers" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "stena, 2 vrstvy"
+          }
+        }
+      }
+    },
+    "We will use your email only to contact you about your subscription or when there is something new about the app." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Váš e-mail použijeme iba na to, aby sme vás kontaktovali ohľadom vášho predplatného alebo keď bude niečo nové o aplikácii."
+          }
+        }
+      }
+    },
+    "Web page" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Webová stránka"
+          }
+        }
+      }
+    },
+    "Width" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Šírka"
+          }
+        }
+      }
+    },
+    "Window" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okno"
+          }
+        }
+      }
+    },
+    "Window installation" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Osadenie okna"
+          }
+        }
+      }
+    },
+    "Window lining" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Špaleta"
+          }
+        }
+      }
+    },
+    "Window no. %lld" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okno č. %lld"
+          }
+        }
+      }
+    },
+    "Windows" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okná"
+          }
+        }
+      }
+    },
+    "Wiring" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elektroinštalatérské práce"
+          }
+        }
+      }
+    },
+    "without VAT" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bez DPH"
+          }
+        }
+      }
+    },
+    "Work" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Práca"
+          }
+        }
+      }
+    },
+    "Work name" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Názov práce"
+          }
+        }
+      }
+    },
+    "Work price list" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cenník práca"
+          }
+        }
+      }
+    },
+    "Work room" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pracovňa"
+          }
+        }
+      }
+    },
+    "Wrong structure of the email." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nesprávna štruktúra e-mailu."
+          }
+        }
+      }
+    },
+    "Yes" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Áno"
+          }
+        }
+      }
+    },
+    "Your projects will remain in archive for %lld days, after that they will be deleted automatically." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaše projekty zostanú v archíve %lld dní, potom budú automaticky odstránené."
+          }
+        }
+      }
+    },
+    "Your projects will remain in archive forever. They will not be deleted, unless you do so." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaše projekty zostanú navždy v archíve. Ak tak neurobíte, nebudú odstránené."
+          }
+        }
+      }
+    },
+    "ZIP Code" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PSČ"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

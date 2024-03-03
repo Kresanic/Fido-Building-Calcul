@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22511.1" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BrickLoadBearingWall" representedClassName=".BrickLoadBearingWall" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="netting" attributeType="Integer 64" minValueString="0" maxValueString="2" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="painting" attributeType="Integer 64" minValueString="0" maxValueString="2" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="penetration_one" attributeType="Integer 64" minValueString="0" maxValueString="2" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="penetration_three" attributeType="Integer 64" minValueString="0" maxValueString="2" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="penetration_two" attributeType="Integer 64" minValueString="0" maxValueString="2" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="plastering" attributeType="Integer 64" minValueString="0" maxValueString="2" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="size1" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size2" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tiling" attributeType="Integer 64" minValueString="0" maxValueString="2" defaultValueString="NO" usesScalarValueType="YES"/>
+        <relationship name="containsDoors" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Door" inverseName="inBrickLoadBearingWall" inverseEntity="Door"/>
+        <relationship name="containsWindows" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Window" inverseName="inBrickLoadBearingWall" inverseEntity="Window"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsBrickLoadBearingWalls" inverseEntity="Room"/>
+    </entity>
+    <entity name="BrickPartition" representedClassName=".BrickPartition" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="netting" attributeType="Integer 64" minValueString="0" maxValueString="2" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="painting" attributeType="Integer 64" minValueString="0" maxValueString="2" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="penetration_one" attributeType="Integer 64" minValueString="0" maxValueString="2" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="penetration_three" attributeType="Integer 64" minValueString="0" maxValueString="2" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="penetration_two" attributeType="Integer 64" minValueString="0" maxValueString="2" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="plastering" attributeType="Integer 64" minValueString="0" maxValueString="2" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="size1" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size2" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tiling" attributeType="Integer 64" minValueString="0" maxValueString="2" defaultValueString="NO" usesScalarValueType="YES"/>
+        <relationship name="containsDoors" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Door" inverseName="inBrickPartition" inverseEntity="Door"/>
+        <relationship name="containsWindows" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Window" inverseName="inBrickPartition" inverseEntity="Window"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsBrickPartitions" inverseEntity="Room"/>
+    </entity>
+    <entity name="Client" representedClassName="Client" syncable="YES" codeGenerationType="category">
+        <attribute name="businessID" optional="YES" attributeType="String"/>
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="contactPersonName" optional="YES" attributeType="String"/>
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="phone" optional="YES" attributeType="String"/>
+        <attribute name="postalCode" optional="YES" attributeType="String"/>
+        <attribute name="secondRowStreet" optional="YES" attributeType="String"/>
+        <attribute name="street" optional="YES" attributeType="String"/>
+        <attribute name="taxID" optional="YES" attributeType="String"/>
+        <attribute name="type" attributeType="String"/>
+        <attribute name="vatRegistrationNumber" optional="YES" attributeType="String"/>
+        <relationship name="hasProject" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Project" inverseName="toClient" inverseEntity="Project"/>
+    </entity>
+    <entity name="CustomMaterial" representedClassName=".CustomMaterial" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="numberOfUnits" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="pricePerUnit" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="unit" attributeType="String"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsCustomMaterials" inverseEntity="Room"/>
+    </entity>
+    <entity name="CustomWork" representedClassName=".CustomWork" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="numberOfUnits" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="pricePerUnit" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="unit" attributeType="String"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsCustomWorks" inverseEntity="Room"/>
+    </entity>
+    <entity name="Demolition" representedClassName=".Demolition" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="count" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsDemolitions" inverseEntity="Room"/>
+    </entity>
+    <entity name="Door" representedClassName=".Door" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="size1" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size2" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="inBrickLoadBearingWall" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BrickLoadBearingWall" inverseName="containsDoors" inverseEntity="BrickLoadBearingWall"/>
+        <relationship name="inBrickPartition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BrickPartition" inverseName="containsDoors" inverseEntity="BrickPartition"/>
+        <relationship name="inNettingWall" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NettingWall" inverseName="containsDoors" inverseEntity="NettingWall"/>
+        <relationship name="inPlasterboardingPartition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlasterboardingPartition" inverseName="containsDoors" inverseEntity="PlasterboardingPartition"/>
+        <relationship name="inPlasteringWall" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlasteringWall" inverseName="containsDoors" inverseEntity="PlasteringWall"/>
+        <relationship name="inTileCeramic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TileCeramic" inverseName="containsDoors" inverseEntity="TileCeramic"/>
+    </entity>
+    <entity name="Grouting" representedClassName=".Grouting" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="size1" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size2" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsGroutings" inverseEntity="Room"/>
+    </entity>
+    <entity name="InstallationOfCornerBead" representedClassName=".InstallationOfCornerBead" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="count" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsInstallationOfCornerBeads" inverseEntity="Room"/>
+    </entity>
+    <entity name="InstallationOfDoorJamb" representedClassName=".InstallationOfDoorJamb" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="count" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="pricePerDoorJamb" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsInstallationOfDoorJambs" inverseEntity="Room"/>
+    </entity>
+    <entity name="InstallationOfSanitary" representedClassName=".InstallationOfSanitary" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="count" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="pricePerSanitary" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="type" attributeType="String"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsInstallationOfSanitaries" inverseEntity="Room"/>
+    </entity>
+    <entity name="LayingFloatingFloors" representedClassName=".LayingFloatingFloors" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="size1" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size2" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsLayingFloatingFloors" inverseEntity="Room"/>
+    </entity>
+    <entity name="Levelling" representedClassName=".Levelling" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="penetration" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="size1" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size2" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsLevellings" inverseEntity="Room"/>
+    </entity>
+    <entity name="NettingCeiling" representedClassName=".NettingCeiling" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="painting" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="penetration_one" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="penetration_two" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="plastering" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="size1" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size2" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsNettingCeilings" inverseEntity="Room"/>
+    </entity>
+    <entity name="NettingWall" representedClassName=".NettingWall" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="painting" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="penetration_one" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="penetration_two" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="plastering" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="size1" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size2" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tiling" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <relationship name="containsDoors" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Door" inverseName="inNettingWall" inverseEntity="Door"/>
+        <relationship name="containsWindows" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Window" inverseName="inNettingWall" inverseEntity="Window"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsNettingWalls" inverseEntity="Room"/>
+    </entity>
+    <entity name="PaintingCeiling" representedClassName=".PaintingCeiling" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="size1" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size2" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsPaintingCeilings" inverseEntity="Room"/>
+    </entity>
+    <entity name="PaintingWall" representedClassName=".PaintingWall" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="size1" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size2" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsPaintingWalls" inverseEntity="Room"/>
+    </entity>
+    <entity name="PavingCeramic" representedClassName=".PavingCeramic" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="size1" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size2" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsPavingCeramics" inverseEntity="Room"/>
+    </entity>
+    <entity name="PenetrationCoating" representedClassName=".PenetrationCoating" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="size1" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size2" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsPenetrationCoatings" inverseEntity="Room"/>
+    </entity>
+    <entity name="PlasterboardingCeiling" representedClassName=".PlasterboardingCeiling" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="painting" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="penetration" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="size1" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size2" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="containsWindows" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Window" inverseName="inPlasterboardingCeiling" inverseEntity="Window"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsPlasterboardingCeilings" inverseEntity="Room"/>
+    </entity>
+    <entity name="PlasterboardingPartition" representedClassName=".PlasterboardingPartition" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="painting" attributeType="Integer 64" minValueString="0" maxValueString="2" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="penetration" attributeType="Integer 64" minValueString="0" maxValueString="2" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="size1" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size2" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="type" attributeType="Integer 64" minValueString="1" maxValueString="3" defaultValueString="1" usesScalarValueType="YES"/>
+        <relationship name="containsDoors" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Door" inverseName="inPlasterboardingPartition" inverseEntity="Door"/>
+        <relationship name="containsWindows" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Window" inverseName="inPlasterboardingPartition" inverseEntity="Window"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsPlasterboardingPartitions" inverseEntity="Room"/>
+    </entity>
+    <entity name="PlasteringCeiling" representedClassName=".PlasteringCeiling" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="painting" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="penetration" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="size1" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size2" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsPlasteringCeilings" inverseEntity="Room"/>
+    </entity>
+    <entity name="PlasteringOfWindowSash" representedClassName=".PlasteringOfWindowSash" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="count" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsPlasteringOfWindowSashes" inverseEntity="Room"/>
+    </entity>
+    <entity name="PlasteringWall" representedClassName=".PlasteringWall" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="painting" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="penetration" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="size1" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size2" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="containsDoors" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Door" inverseName="inPlasteringWall" inverseEntity="Door"/>
+        <relationship name="containsWindows" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Window" inverseName="inPlasteringWall" inverseEntity="Window"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsPlasteringWalls" inverseEntity="Room"/>
+    </entity>
+    <entity name="Plumbing" representedClassName=".Plumbing" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="count" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsPlumbings" inverseEntity="Room"/>
+    </entity>
+    <entity name="PriceList" representedClassName=".PriceList" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateEdited" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isGeneral" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="materialAdhesiveNettingCapacity" attributeType="Double" minValueString="0" defaultValueString="6" usesScalarValueType="YES"/>
+        <attribute name="materialAdhesiveNettingPrice" attributeType="Double" minValueString="0" defaultValueString="9" usesScalarValueType="YES"/>
+        <attribute name="materialAdhesiveTilingAndPavingCapacity" attributeType="Double" minValueString="0" defaultValueString="3" usesScalarValueType="YES"/>
+        <attribute name="materialAdhesiveTilingAndPavingPrice" attributeType="Double" minValueString="0" defaultValueString="15" usesScalarValueType="YES"/>
+        <attribute name="materialAuxiliaryAndFasteningPrice" attributeType="Double" minValueString="0" defaultValueString="10" usesScalarValueType="YES"/>
+        <attribute name="materialCailingWallCapacity" attributeType="Double" minValueString="0" defaultValueString="99" usesScalarValueType="YES"/>
+        <attribute name="materialCornerBeadCapacity" attributeType="Double" minValueString="0" defaultValueString="3" usesScalarValueType="YES"/>
+        <attribute name="materialCornerBeadPrice" attributeType="Double" minValueString="0" defaultValueString="4" usesScalarValueType="YES"/>
+        <attribute name="materialDoublePlasterboardingPartitionCapacity" attributeType="Double" minValueString="0" defaultValueString="99" usesScalarValueType="YES"/>
+        <attribute name="materialDoublePlasterboardingPartitionPrice" attributeType="Double" minValueString="0" defaultValueString="99" usesScalarValueType="YES"/>
+        <attribute name="materialFloatingFloorPrice" attributeType="Double" minValueString="0" defaultValueString="15" usesScalarValueType="YES"/>
+        <attribute name="materialLoadBearingMasonryPrice" attributeType="Double" minValueString="0" defaultValueString="160" usesScalarValueType="YES"/>
+        <attribute name="materialMeshPrice" attributeType="Double" minValueString="0" defaultValueString="2" usesScalarValueType="YES"/>
+        <attribute name="materialPaintCeilingPrice" attributeType="Double" minValueString="0" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="materialPaintWallPrice" attributeType="Double" minValueString="0" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="materialPartitionMasonryPrice" attributeType="Double" minValueString="0" defaultValueString="30" usesScalarValueType="YES"/>
+        <attribute name="materialPavingsPrice" attributeType="Double" minValueString="0" defaultValueString="25" usesScalarValueType="YES"/>
+        <attribute name="materialPlasterboardingCeilingCapacity" attributeType="Double" minValueString="0" defaultValueString="3" usesScalarValueType="YES"/>
+        <attribute name="materialPlasterboardingCeilingPrice" attributeType="Double" minValueString="0" defaultValueString="7" usesScalarValueType="YES"/>
+        <attribute name="materialPlasterCapacity" attributeType="Double" minValueString="0" defaultValueString="8" usesScalarValueType="YES"/>
+        <attribute name="materialPlasterPrice" attributeType="Double" minValueString="0" defaultValueString="13" usesScalarValueType="YES"/>
+        <attribute name="materialPrimerPrice" attributeType="Double" minValueString="0" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="materialSelfLevellingCompoundCapacity" attributeType="Double" minValueString="0" defaultValueString="2" usesScalarValueType="YES"/>
+        <attribute name="materialSelfLevellingCompoundPrice" attributeType="Double" minValueString="0" defaultValueString="18" usesScalarValueType="YES"/>
+        <attribute name="materialSiliconeCapacity" attributeType="Double" minValueString="0" defaultValueString="15" usesScalarValueType="YES"/>
+        <attribute name="materialSiliconePrice" attributeType="Double" minValueString="0" defaultValueString="8" usesScalarValueType="YES"/>
+        <attribute name="materialSimplePlasterboardingPartitionCapacity" attributeType="Double" minValueString="0" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="materialSimplePlasterboardingPartitionPrice" attributeType="Double" minValueString="0" defaultValueString="7" usesScalarValueType="YES"/>
+        <attribute name="materialSkirtingBoardPrice" attributeType="Double" minValueString="0" defaultValueString="3" usesScalarValueType="YES"/>
+        <attribute name="materialTilesPrice" attributeType="Double" minValueString="0" defaultValueString="25" usesScalarValueType="YES"/>
+        <attribute name="materialTriplePlasterboardingPartitionCapacity" attributeType="Double" minValueString="0" defaultValueString="99" usesScalarValueType="YES"/>
+        <attribute name="materialTriplePlasterboardingPartitionPrice" attributeType="Double" minValueString="0" defaultValueString="99" usesScalarValueType="YES"/>
+        <attribute name="othersCommutePrice" attributeType="Double" minValueString="0" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="othersToolRentalPrice" attributeType="Double" minValueString="0" defaultValueString="10" usesScalarValueType="YES"/>
+        <attribute name="othersVatPrice" attributeType="Double" minValueString="0" defaultValueString="20" usesScalarValueType="YES"/>
+        <attribute name="workAuxiliaryAndFinishingPrice" attributeType="Double" minValueString="0" defaultValueString="65" usesScalarValueType="YES"/>
+        <attribute name="workBrickLoadBearingWallPrice" attributeType="Double" minValueString="0" defaultValueString="120" usesScalarValueType="YES"/>
+        <attribute name="workBrickPartitionsPrice" attributeType="Double" minValueString="0" defaultValueString="18" usesScalarValueType="YES"/>
+        <attribute name="workDemolitionPrice" attributeType="Double" minValueString="0" defaultValueString="15" usesScalarValueType="YES"/>
+        <attribute name="workDoorJambInstallationPrice" attributeType="Double" minValueString="0" defaultValueString="60" usesScalarValueType="YES"/>
+        <attribute name="workDoublePlasterboardingPartitionPrice" attributeType="Double" minValueString="0" defaultValueString="99" usesScalarValueType="YES"/>
+        <attribute name="workGroutingPrice" attributeType="Double" minValueString="0" defaultValueString="5" usesScalarValueType="YES"/>
+        <attribute name="workInstallationOfCornerBeadPrice" attributeType="Double" minValueString="0" defaultValueString="3" usesScalarValueType="YES"/>
+        <attribute name="workLayingFloatingFloorsPrice" attributeType="Double" minValueString="0" defaultValueString="7" usesScalarValueType="YES"/>
+        <attribute name="workLevellingPrice" attributeType="Double" minValueString="0" defaultValueString="7" usesScalarValueType="YES"/>
+        <attribute name="workNettingCeilingPrice" attributeType="Double" minValueString="0" defaultValueString="8" usesScalarValueType="YES"/>
+        <attribute name="workNettingWallPrice" attributeType="Double" minValueString="0" defaultValueString="6" usesScalarValueType="YES"/>
+        <attribute name="workPaintingCeilingPrice" attributeType="Double" minValueString="0" defaultValueString="3" usesScalarValueType="YES"/>
+        <attribute name="workPaintingWallPrice" attributeType="Double" minValueString="0" defaultValueString="3" usesScalarValueType="YES"/>
+        <attribute name="workPavingCeramicPrice" attributeType="Double" minValueString="0" defaultValueString="30" usesScalarValueType="YES"/>
+        <attribute name="workPenetrationCoatingPrice" attributeType="Double" minValueString="0" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="workPlasterboardingCeilingPrice" attributeType="Double" minValueString="0" defaultValueString="25" usesScalarValueType="YES"/>
+        <attribute name="workPlasteringCeilingPrice" attributeType="Double" minValueString="0" defaultValueString="7" usesScalarValueType="YES"/>
+        <attribute name="workPlasteringOfWindowSashPrice" attributeType="Double" minValueString="0" defaultValueString="5" usesScalarValueType="YES"/>
+        <attribute name="workPlasteringWallPrice" attributeType="Double" minValueString="0" defaultValueString="7" usesScalarValueType="YES"/>
+        <attribute name="workPlumbingPrice" attributeType="Double" minValueString="0" defaultValueString="45" usesScalarValueType="YES"/>
+        <attribute name="workSanitaryBathtubPrice" attributeType="Double" minValueString="0" defaultValueString="150" usesScalarValueType="YES"/>
+        <attribute name="workSanitaryCornerValvePrice" attributeType="Double" minValueString="0" defaultValueString="10" usesScalarValueType="YES"/>
+        <attribute name="workSanitaryFlushMountedTapPrice" attributeType="Double" minValueString="0" defaultValueString="120" usesScalarValueType="YES"/>
+        <attribute name="workSanitaryGutterPrice" attributeType="Double" minValueString="0" defaultValueString="99" usesScalarValueType="YES"/>
+        <attribute name="workSanitaryShowerCubiclePrice" attributeType="Double" minValueString="0" defaultValueString="220" usesScalarValueType="YES"/>
+        <attribute name="workSanitarySinkPrice" attributeType="Double" minValueString="0" defaultValueString="50" usesScalarValueType="YES"/>
+        <attribute name="workSanitarySinkWithCabinetPrice" attributeType="Double" minValueString="0" defaultValueString="120" usesScalarValueType="YES"/>
+        <attribute name="workSanitaryStandingMixerTapPrice" attributeType="Double" minValueString="0" defaultValueString="25" usesScalarValueType="YES"/>
+        <attribute name="workSanitaryToiletCombiPrice" attributeType="Double" minValueString="0" defaultValueString="65" usesScalarValueType="YES"/>
+        <attribute name="workSanitaryToiletWithConcealedCisternPrice" attributeType="Double" minValueString="0" defaultValueString="120" usesScalarValueType="YES"/>
+        <attribute name="workSanitaryWallMountedTapPrice" attributeType="Double" minValueString="0" defaultValueString="80" usesScalarValueType="YES"/>
+        <attribute name="workSiliconingPrice" attributeType="Double" minValueString="0" defaultValueString="2" usesScalarValueType="YES"/>
+        <attribute name="workSimplePlasterboardingPartitionPrice" attributeType="Double" minValueString="0" defaultValueString="40" usesScalarValueType="YES"/>
+        <attribute name="workSkirtingOfFloatingFloorPrice" attributeType="Double" minValueString="0" defaultValueString="4" usesScalarValueType="YES"/>
+        <attribute name="workTilingCeramicPrice" attributeType="Double" minValueString="0" defaultValueString="30" usesScalarValueType="YES"/>
+        <attribute name="workTriplePlasterboardingPartitionPrice" attributeType="Double" minValueString="0" defaultValueString="99" usesScalarValueType="YES"/>
+        <attribute name="workWindowInstallationPrice" attributeType="Double" minValueString="0" defaultValueString="7" usesScalarValueType="YES"/>
+        <attribute name="workWiringPrice" attributeType="Double" minValueString="0" defaultValueString="65" usesScalarValueType="YES"/>
+        <relationship name="fromProject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="toPriceList" inverseEntity="Project"/>
+    </entity>
+    <entity name="Project" representedClassName=".Project" syncable="YES" codeGenerationType="category">
+        <attribute name="archivedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="category" attributeType="String"/>
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isArchived" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <relationship name="consistsOfRooms" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Room" inverseName="fromProject" inverseEntity="Room"/>
+        <relationship name="toClient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Client" inverseName="hasProject" inverseEntity="Client"/>
+        <relationship name="toPriceList" maxCount="1" deletionRule="Nullify" destinationEntity="PriceList" inverseName="fromProject" inverseEntity="PriceList"/>
+    </entity>
+    <entity name="Room" representedClassName=".Room" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="commuteLength" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="daysInWork" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="toolRental" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="containsBrickLoadBearingWalls" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BrickLoadBearingWall" inverseName="fromRoom" inverseEntity="BrickLoadBearingWall"/>
+        <relationship name="containsBrickPartitions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BrickPartition" inverseName="fromRoom" inverseEntity="BrickPartition"/>
+        <relationship name="containsCustomMaterials" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CustomMaterial" inverseName="fromRoom" inverseEntity="CustomMaterial"/>
+        <relationship name="containsCustomWorks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CustomWork" inverseName="fromRoom" inverseEntity="CustomWork"/>
+        <relationship name="containsDemolitions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Demolition" inverseName="fromRoom" inverseEntity="Demolition"/>
+        <relationship name="containsGroutings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Grouting" inverseName="fromRoom" inverseEntity="Grouting"/>
+        <relationship name="containsInstallationOfCornerBeads" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="InstallationOfCornerBead" inverseName="fromRoom" inverseEntity="InstallationOfCornerBead"/>
+        <relationship name="containsInstallationOfDoorJambs" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="InstallationOfDoorJamb" inverseName="fromRoom" inverseEntity="InstallationOfDoorJamb"/>
+        <relationship name="containsInstallationOfSanitaries" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="InstallationOfSanitary" inverseName="fromRoom" inverseEntity="InstallationOfSanitary"/>
+        <relationship name="containsLayingFloatingFloors" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="LayingFloatingFloors" inverseName="fromRoom" inverseEntity="LayingFloatingFloors"/>
+        <relationship name="containsLevellings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Levelling" inverseName="fromRoom" inverseEntity="Levelling"/>
+        <relationship name="containsNettingCeilings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="NettingCeiling" inverseName="fromRoom" inverseEntity="NettingCeiling"/>
+        <relationship name="containsNettingWalls" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="NettingWall" inverseName="fromRoom" inverseEntity="NettingWall"/>
+        <relationship name="containsPaintingCeilings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PaintingCeiling" inverseName="fromRoom" inverseEntity="PaintingCeiling"/>
+        <relationship name="containsPaintingWalls" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PaintingWall" inverseName="fromRoom" inverseEntity="PaintingWall"/>
+        <relationship name="containsPavingCeramics" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PavingCeramic" inverseName="fromRoom" inverseEntity="PavingCeramic"/>
+        <relationship name="containsPenetrationCoatings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PenetrationCoating" inverseName="fromRoom" inverseEntity="PenetrationCoating"/>
+        <relationship name="containsPlasterboardingCeilings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PlasterboardingCeiling" inverseName="fromRoom" inverseEntity="PlasterboardingCeiling"/>
+        <relationship name="containsPlasterboardingPartitions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PlasterboardingPartition" inverseName="fromRoom" inverseEntity="PlasterboardingPartition"/>
+        <relationship name="containsPlasteringCeilings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PlasteringCeiling" inverseName="fromRoom" inverseEntity="PlasteringCeiling"/>
+        <relationship name="containsPlasteringOfWindowSashes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PlasteringOfWindowSash" inverseName="fromRoom" inverseEntity="PlasteringOfWindowSash"/>
+        <relationship name="containsPlasteringWalls" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PlasteringWall" inverseName="fromRoom" inverseEntity="PlasteringWall"/>
+        <relationship name="containsPlumbings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Plumbing" inverseName="fromRoom" inverseEntity="Plumbing"/>
+        <relationship name="containsSiliconings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Siliconing" inverseName="fromRoom" inverseEntity="Siliconing"/>
+        <relationship name="containsSkirtingFloatingFloor" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SkirtingOfFloatingFloor" inverseName="fromRoom" inverseEntity="SkirtingOfFloatingFloor"/>
+        <relationship name="containsTileCeramics" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TileCeramic" inverseName="fromRoom" inverseEntity="TileCeramic"/>
+        <relationship name="containsWindowInstallations" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WindowInstallation" inverseName="fromRoom" inverseEntity="WindowInstallation"/>
+        <relationship name="containsWirings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Wiring" inverseName="fromRoom" inverseEntity="Wiring"/>
+        <relationship name="fromProject" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="consistsOfRooms" inverseEntity="Project"/>
+    </entity>
+    <entity name="Siliconing" representedClassName=".Siliconing" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="count" attributeType="Double" minValueString="0" defaultValueString="2" usesScalarValueType="YES"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsSiliconings" inverseEntity="Room"/>
+    </entity>
+    <entity name="SkirtingOfFloatingFloor" representedClassName=".SkirtingOfFloatingFloor" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="count" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsSkirtingFloatingFloor" inverseEntity="Room"/>
+    </entity>
+    <entity name="TileCeramic" representedClassName=".TileCeramic" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="size1" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size2" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="containsDoors" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Door" inverseName="inTileCeramic" inverseEntity="Door"/>
+        <relationship name="containsWindows" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Window" inverseName="inTileCeramic" inverseEntity="Window"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsTileCeramics" inverseEntity="Room"/>
+    </entity>
+    <entity name="Window" representedClassName=".Window" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="size1" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size2" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="inBrickLoadBearingWall" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BrickLoadBearingWall" inverseName="containsWindows" inverseEntity="BrickLoadBearingWall"/>
+        <relationship name="inBrickPartition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BrickPartition" inverseName="containsWindows" inverseEntity="BrickPartition"/>
+        <relationship name="inNettingWall" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NettingWall" inverseName="containsWindows" inverseEntity="NettingWall"/>
+        <relationship name="inPlasterboardingCeiling" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlasterboardingCeiling" inverseName="containsWindows" inverseEntity="PlasterboardingCeiling"/>
+        <relationship name="inPlasterboardingPartition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlasterboardingPartition" inverseName="containsWindows" inverseEntity="PlasterboardingPartition"/>
+        <relationship name="inPlasteringWall" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlasteringWall" inverseName="containsWindows" inverseEntity="PlasteringWall"/>
+        <relationship name="inTileCeramic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TileCeramic" inverseName="containsWindows" inverseEntity="TileCeramic"/>
+    </entity>
+    <entity name="WindowInstallation" representedClassName=".WindowInstallation" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="count" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="pricePerWindow" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsWindowInstallations" inverseEntity="Room"/>
+    </entity>
+    <entity name="Wiring" representedClassName=".Wiring" syncable="YES" codeGenerationType="category">
+        <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="count" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsWirings" inverseEntity="Room"/>
+    </entity>
+</model>
