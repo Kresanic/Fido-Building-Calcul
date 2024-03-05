@@ -131,6 +131,7 @@ struct NewProjectSheet: View {
                 .onDisappear{ behaviours.redraw() }
         }
         .task {
+            chosenContractor = behaviours.activeContractor
             print(behaviours.activeContractor, chosenContractor)
         }
     }
@@ -145,6 +146,7 @@ struct NewProjectSheet: View {
         return withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) {
             
             let newProjectNumber = behaviours.newProjectNumber()
+            print(newProjectNumber)
             guard newProjectNumber != 0 else { return nil }
             
             let newProject = Project(context: viewContext)

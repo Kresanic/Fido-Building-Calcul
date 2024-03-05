@@ -16,17 +16,23 @@ struct CategorziedProjectsScreen: View {
     @State var propertyCategory: PropertyCategories
     @Environment(\.managedObjectContext) var viewContext
     
-    init(propertyCategory: PropertyCategories) {
+    init(propertyCategory: PropertyCategories, activeContractor: Contractor?) {
         
         _propertyCategory = State(initialValue: propertyCategory)
         
-        let projectRequest = Project.fetchRequest()
+        let projectFetchRequest = Project.fetchRequest()
         
-        projectRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Project.dateCreated, ascending: false)]
+        projectFetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Project.number, ascending: false)]
         
-        projectRequest.predicate = NSPredicate(format: "category == %@ AND isArchived == NO", propertyCategory.rawValue)
+        let category = propertyCategory.rawValue as CVarArg
         
-        _inCategoryProjects = FetchRequest(fetchRequest: projectRequest)
+        if let activeContractor = activeContractor {
+            projectFetchRequest.predicate = NSPredicate(format: "category == %@ AND  toContractor == %@ AND isArchived == NO", [category, activeContractor])
+        } else {
+            projectFetchRequest.predicate = NSPredicate(format: "category == %@ AND isArchived == NO", category)
+        }
+        
+      _inCategoryProjects = FetchRequest(fetchRequest: projectFetchRequest)
         
     }
     
@@ -34,7 +40,7 @@ struct CategorziedProjectsScreen: View {
             
             ScrollView {
                 
-                VStack {
+                VStack(spacing: 15) {
                     
                     // MARK: Title and Settings Gear
                     HStack {
@@ -44,9 +50,22 @@ struct CategorziedProjectsScreen: View {
                         
                         Spacer()
                         
+                        if !inCategoryProjects.isEmpty {
+                            Button {
+                                withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) { viewModel.isDeleting.toggle() }
+                            } label: {
+                                Image(systemName: "trash.circle.fill")
+                                    .font(.system(size: 30))
+                                    .foregroundColor(.brandBlack)
+                            }
+                        }
+                        
                         if !viewModel.isCreatingNewProject {
                             Button {
-                                withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) { viewModel.isCreatingNewProject = true }
+                                withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) {
+                                    viewModel.isCreatingNewProject = true
+                                    viewModel.isDeleting = false
+                                }
                             } label: {
                                 Image(systemName: "plus.circle.fill")
                                     .font(.system(size: 30))
@@ -63,7 +82,13 @@ struct CategorziedProjectsScreen: View {
                             NoProjectBubbleView(isCreatingNewProject: $viewModel.isCreatingNewProject)
                         } else {
                             ForEach(inCategoryProjects) { project in
-                                ProjectBubbleView(project: project)
+                                ProjectBubbleView(project: project, isDeleting: viewModel.isDeleting)
+                                    .modifier(ProjectBubbleViewDeletion(isDeleting: $viewModel.isDeleting, atButtonPress: {
+                                        withAnimation(.easeInOut) {
+                                            viewContext.delete(project)
+                                            try? viewContext.save()
+                                        }
+                                    }))
                             }
                             
                         }
@@ -84,6 +109,9 @@ struct CategorziedProjectsScreen: View {
                         .presentationCornerRadius(25)
                 }
                 .background(Color.brandWhite)
+                .task {
+                    print(inCategoryProjects)
+                }
         }
     
 }

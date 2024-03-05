@@ -17,8 +17,8 @@ import CoreData
         
         let projectPriceList = project.toPriceList
         let projectClient = project.toClient
-        let projectContractor = project.toContractor
-        let newProjectNumber = newProjectNumber()
+        guard let projectContractor = project.toContractor else { return nil }
+        let newProjectNumber = newProjectNumber(contractor: projectContractor)
         
         project.toPriceList = nil
         project.toClient = nil
@@ -90,13 +90,17 @@ import CoreData
         
     }
     
-    func newProjectNumber() -> Int64 {
+    func newProjectNumber(contractor: Contractor?) -> Int64 {
         
         let viewContext = PersistenceController.shared.container.viewContext
         
         let request = Project.fetchRequest()
         
         request.sortDescriptors = [NSSortDescriptor(keyPath: \Project.dateCreated, ascending: false)]
+        
+        guard let contractor else { return 0 }
+        
+        request.predicate = NSPredicate(format: "toContractor == %@", contractor)
         
         let fetchedProjects = try? viewContext.fetch(request)
         
@@ -105,7 +109,7 @@ import CoreData
         
         let thisYearProjects = fetchedProjects?.filter { calendar.component(.year, from: $0.dateCreated ?? Date.now) == calendar.component(.year, from: currentDate) }
         
-        if let thisYearProjects, !thisYearProjects.isEmpty {
+        if let thisYearProjects {
             
             let largestThisYearProjectByNumber = thisYearProjects.max { $0.number < $1.number }
             
@@ -113,7 +117,7 @@ import CoreData
             
         }
         
-        return 1
+        return 0
         
     }
     

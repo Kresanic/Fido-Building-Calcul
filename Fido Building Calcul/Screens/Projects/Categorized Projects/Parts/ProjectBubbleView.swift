@@ -10,6 +10,7 @@ import SwiftUI
 struct ProjectBubbleView: View {
     
     var project: Project
+    var isDeleting: Bool
     @FetchRequest var fetchedPriceList: FetchedResults<PriceList>
     @EnvironmentObject var priceCalc: PricingCalculations
     @EnvironmentObject var behavioursVM: BehavioursViewModel
@@ -17,9 +18,10 @@ struct ProjectBubbleView: View {
     @State var paddingVertical: CGFloat = 10
     @State var pressed = false
     
-    init(project: Project) {
+    init(project: Project, isDeleting: Bool) {
         
         self.project = project
+        self.isDeleting = isDeleting
         
         let request = PriceList.fetchRequest()
         
@@ -84,11 +86,11 @@ struct ProjectBubbleView: View {
                 }
                 
             }
-            
+            if !isDeleting {
             Image(systemName: "chevron.right")
                 .font(.system(size: 24))
                 .foregroundStyle(Color.brandBlack)
-            
+            }
         }
         .padding(.horizontal, 15)
         .padding(.vertical, paddingVertical)

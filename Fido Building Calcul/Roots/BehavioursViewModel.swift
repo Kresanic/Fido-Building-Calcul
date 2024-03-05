@@ -43,11 +43,9 @@ final class BehavioursViewModel: ObservableObject {
         
         assignContractor()
         
-//        createContractorAsClient()
-//        
-//        if !hasRetrievedOldContractors {
-//            fetchPreviousContractors()
-//        }
+        if !hasRetrievedOldContractors {
+            contractorVersionAntiDataLoss()
+        }
         
     }
     
@@ -59,9 +57,9 @@ final class BehavioursViewModel: ObservableObject {
         
         request.sortDescriptors = [NSSortDescriptor(keyPath: \Contractor.dateCreated, ascending: true)]
         
-        if let cid = activeContractorCID as? CVarArg {
+        if let cid = activeContractorCID {
             
-            request.predicate = NSPredicate(format: "cID == %@", cid)
+            request.predicate = NSPredicate(format: "cId == %@", cid as CVarArg)
             
             request.fetchLimit = 1
             
@@ -81,22 +79,7 @@ final class BehavioursViewModel: ObservableObject {
         
     }
     
-    func createContractorAsClient() {
-        
-        let viewContext = PersistenceController.shared.container.viewContext
-        
-        let clientAsContractor = Client(context: viewContext)
-        
-        clientAsContractor.name = "Pepo"
-        clientAsContractor.isUser = true
-        clientAsContractor.cId = UUID()
-        clientAsContractor.dateCreated = Date.now
-        
-        try? viewContext.save()
-        
-    }
-    
-    func fetchPreviousContractors() {
+    func contractorVersionAntiDataLoss() {
         
         let viewContext = PersistenceController.shared.container.viewContext
         
@@ -111,7 +94,6 @@ final class BehavioursViewModel: ObservableObject {
         if let fetchedClients {
          
             for client in fetchedClients {
-                print(client)
                 
                 let newContractor = Contractor(context: viewContext)
                 
@@ -134,29 +116,42 @@ final class BehavioursViewModel: ObservableObject {
                 newContractor.vatRegistrationNumber = client.vatRegistrationNumber
                 newContractor.web = client.web
                 newContractor.dateCreated = client.dateCreated
+                    
+                try? viewContext.save()
                 
-                do {
-                    try viewContext.save()
-                    hasRetrievedOldContractors = true
-                } catch {  }
+                reAssignProjectsToContractor(to: newContractor)
                 
-                #warning("fix counting")
-                
-//                if let entityName = client.entity.name {
-//                    
-//                    if let attributes = NSEntityDescription.entity(forEntityName: entityName, in: viewContext)?.attributesByName {
-//                        for attribute in attributes {
-//                            if attribute.key == "isUser" {
-//                                print(attribute.value.type, attribute.value, client.name)
-//                            }
-//                        }
-//                    }
-//                    
-//                }
+//                viewContext.delete(client)
+                #warning("Change to delete")
+                hasRetrievedOldContractors = true
                 
             }
             
         }
+        
+    }
+    
+    func reAssignProjectsToContractor(to contractor: Contractor) {
+        
+        let viewContext = PersistenceController.shared.container.viewContext
+        
+        let request = Project.fetchRequest()
+        
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Project.dateCreated, ascending: true)]
+        
+        request.predicate = NSPredicate(format: "toContractor == NIL")
+        
+        let fetchedProjects = try? viewContext.fetch(request)
+        
+        if let fetchedProjects {
+            for project in fetchedProjects {
+                
+                project.toContractor = contractor
+                
+            }
+        }
+        
+        try? viewContext.save()
         
     }
     
@@ -537,7 +532,7 @@ final class BehavioursViewModel: ObservableObject {
             
         }
         
-        return 1
+        return 0
         
     }
     

@@ -1196,7 +1196,14 @@
       }
     },
     "Choose contractor" : {
-
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vybrať dodávateľa"
+          }
+        }
+      }
     },
     "Circumference" : {
       "localizations" : {
@@ -1359,7 +1366,14 @@
       }
     },
     "Contractor" : {
-
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodávateľ"
+          }
+        }
+      }
     },
     "Contractor details" : {
       "localizations" : {
@@ -1732,15 +1746,19 @@
         }
       }
     },
-    "Deleting this contractor profile will permanently delete all data." : {
+    "Deleting this contractor profile will permanently delete all data about this contractor and all assign projects." : {
+      "extractionState" : "stale",
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Odstránením tohto profilu dodávateľa sa natrvalo vymažú všetky údaje."
+            "value" : "Odstránením tohto profilu dodávateľa sa natrvalo vymažú všetky údaje od dodávateľovi vrátane všetkých projektov."
           }
         }
       }
+    },
+    "Deleting this contractor profile will permanently delete all data about this contractor and all assigned projects." : {
+
     },
     "Demolition" : {
       "localizations" : {

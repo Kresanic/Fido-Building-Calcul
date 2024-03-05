@@ -39,7 +39,7 @@ struct ProjectsScreen: View {
             }.scrollIndicators(.hidden)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationDestination(for: PropertyCategories.self) { category in
-                    CategorziedProjectsScreen(propertyCategory: category)
+                    CategorziedProjectsScreen(propertyCategory: category, activeContractor: behavioursVM.activeContractor)
                 }
                 .navigationDestination(for: Project.self) { project in
                     InProjectScreen(project: project, hasDismissButton: false)
@@ -137,7 +137,6 @@ fileprivate struct ProjectScreenTitle: View {
                         Button {
                             withAnimation(.bouncy) {
                                 behaviours.activeContractor = contractor
-                                behaviours.activeContractorCID = contractor.cId
                                 isChoosingContractor = false
                             }
                         } label: {
