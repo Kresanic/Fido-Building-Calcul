@@ -30,10 +30,6 @@ struct InProjectContractorBubble: View {
             
             Spacer()
             
-            Image(systemName: "chevron.right")
-                .font(.system(size: 24))
-                .foregroundStyle(Color.brandBlack)
-            
         }.padding(.vertical, 15)
             .padding(.horizontal, 15)
             .background(Color.brandGray)

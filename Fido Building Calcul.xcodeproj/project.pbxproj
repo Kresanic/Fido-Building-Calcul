@@ -172,6 +172,8 @@
 		398901072B17684B00CC3870 /* ClientsProjectsBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398901062B17684B00CC3870 /* ClientsProjectsBubble.swift */; };
 		3989010B2B1768D200CC3870 /* ClientAttributeBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989010A2B1768D200CC3870 /* ClientAttributeBubble.swift */; };
 		3989010D2B1769C700CC3870 /* PriceBubbles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989010C2B1769C700CC3870 /* PriceBubbles.swift */; };
+		398B4C632B96FFDC00F84DB6 /* UUID Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398B4C622B96FFDC00F84DB6 /* UUID Extension.swift */; };
+		398B4C652B970AF700F84DB6 /* ChoosingContractorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398B4C642B970AF700F84DB6 /* ChoosingContractorView.swift */; };
 		39939AFF2B946B1A00F16884 /* BrickPartitionsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39939AFE2B946B1A00F16884 /* BrickPartitionsViews.swift */; };
 		3996E1FE2A77BEA0000D86E1 /* InProjectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E1FD2A77BEA0000D86E1 /* InProjectScreen.swift */; };
 		3996E2002A77BF64000D86E1 /* InProjectScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E1FF2A77BF64000D86E1 /* InProjectScreenViewModel.swift */; };
@@ -389,6 +391,8 @@
 		398901062B17684B00CC3870 /* ClientsProjectsBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsProjectsBubble.swift; sourceTree = "<group>"; };
 		3989010A2B1768D200CC3870 /* ClientAttributeBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientAttributeBubble.swift; sourceTree = "<group>"; };
 		3989010C2B1769C700CC3870 /* PriceBubbles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceBubbles.swift; sourceTree = "<group>"; };
+		398B4C622B96FFDC00F84DB6 /* UUID Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UUID Extension.swift"; sourceTree = "<group>"; };
+		398B4C642B970AF700F84DB6 /* ChoosingContractorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosingContractorView.swift; sourceTree = "<group>"; };
 		39939AFE2B946B1A00F16884 /* BrickPartitionsViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrickPartitionsViews.swift; path = "../../../../../../../../Downloads/Fido Building Calcul/Fido Building Calcul/Screens/Projects/Room/RoomParts/BrickPartitionsViews.swift"; sourceTree = "<group>"; };
 		3996E1FD2A77BEA0000D86E1 /* InProjectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectScreen.swift; sourceTree = "<group>"; };
 		3996E1FF2A77BF64000D86E1 /* InProjectScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectScreenViewModel.swift; sourceTree = "<group>"; };
@@ -745,6 +749,7 @@
 				39C112942ABD9BBF00CD82B7 /* Double Extensions.swift */,
 				398900FA2B17657700CC3870 /* LocalizedStringKey Extensions.swift */,
 				390F80322B591DAA00A10FF0 /* NSManagedObject Extension.swift */,
+				398B4C622B96FFDC00F84DB6 /* UUID Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -855,6 +860,7 @@
 				398900AC2B15FFFA00CC3870 /* ProjectHandling.swift */,
 				398900D52B17586D00CC3870 /* ProjectBubbleView.swift */,
 				398900D72B17587D00CC3870 /* NewProjectSheet.swift */,
+				398B4C642B970AF700F84DB6 /* ChoosingContractorView.swift */,
 			);
 			path = Parts;
 			sourceTree = "<group>";
@@ -1312,6 +1318,7 @@
 				396435E32A7AB06400C148B8 /* RoomCalculationViewModel.swift in Sources */,
 				3989009C2B15FABA00CC3870 /* Material Protocols.swift in Sources */,
 				3929767E2B3590BF004884E8 /* BIDFillSheet.swift in Sources */,
+				398B4C632B96FFDC00F84DB6 /* UUID Extension.swift in Sources */,
 				398900762B15296700CC3870 /* Enums Roots.swift in Sources */,
 				3989008F2B15F8E200CC3870 /* Works.swift in Sources */,
 				39B6EF4D2B41A1C70002066C /* Enums BIDError.swift in Sources */,
@@ -1352,6 +1359,7 @@
 				396435DD2A7A9CFA00C148B8 /* WindowInstallationsViews.swift in Sources */,
 				3929767C2B358DB3004884E8 /* BIDNetworkClasses.swift in Sources */,
 				39D22C762AA12D9900322E31 /* PersonalClientCreationView.swift in Sources */,
+				398B4C652B970AF700F84DB6 /* ChoosingContractorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

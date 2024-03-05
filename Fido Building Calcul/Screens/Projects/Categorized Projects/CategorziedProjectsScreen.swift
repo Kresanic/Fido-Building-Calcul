@@ -78,7 +78,9 @@ struct CategorziedProjectsScreen: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .sheet(isPresented: $viewModel.isCreatingNewProject) {
                     NewProjectSheet(toCategory: propertyCategory)
-                        .presentationDetents([.height(300)])
+                        .presentationDetents(
+                            behavioursVM.activeContractor == nil ? [.medium] : [.height(300)]
+                            )
                         .presentationCornerRadius(25)
                 }
                 .background(Color.brandWhite)

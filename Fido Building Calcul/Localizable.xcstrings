@@ -1195,6 +1195,9 @@
         }
       }
     },
+    "Choose contractor" : {
+
+    },
     "Circumference" : {
       "localizations" : {
         "sk" : {
@@ -1354,6 +1357,9 @@
           }
         }
       }
+    },
+    "Contractor" : {
+
     },
     "Contractor details" : {
       "localizations" : {

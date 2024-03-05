@@ -31,17 +31,16 @@ struct ProjectManagementView: View {
             
             InProjectPriceList(project: project)
             
-            InProjectContractor(project: project)
+            if let contractor = project.contractor {
+                InProjectContractorBubble(contractor: contractor)
+            }
             
             if project.isArchived {
-                
                 ProjectIsArchivedBubble(project: project)
-                
                 HStack(spacing: 8) {
                     DuplicateButton(project: project)
                     DeleteProjectButtonNarrow(project: project)
-                }
-                
+                }   
             } else {
                 HStack(spacing: 8) {
                     DuplicateButton(project: project)

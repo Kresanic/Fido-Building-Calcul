@@ -7,10 +7,18 @@
 
 import SwiftUI
 import RevenueCat
+import CoreData
 
 final class BehavioursViewModel: ObservableObject {
     
     @AppStorage("archiveForDays") var archiveForDays: Int = 30
+    @AppStorage("activeContractor") var activeContractorCID: UUID?
+    @AppStorage("hasRetrievedOldContractors") var hasRetrievedOldContractors = false
+    @Published var activeContractor: Contractor? {
+        didSet {
+            activeContractorCID = activeContractor?.cId
+        }
+    }
     @Published var currentTab: CustomTabs = .projects
     @Published var toRedraw = false
     @Published var projectsPath = NavigationPath()
@@ -24,6 +32,7 @@ final class BehavioursViewModel: ObservableObject {
     @AppStorage("appearancePrefferance") var prefferesAppearance: Int = 0
     
     init() {
+        
         Purchases.shared.getCustomerInfo { (customerInfo, error) in
             if customerInfo?.entitlements.all["Pro"]?.isActive == true {
                 withAnimation(.easeInOut) {
@@ -31,6 +40,124 @@ final class BehavioursViewModel: ObservableObject {
                 }
             }
         }
+        
+        assignContractor()
+        
+//        createContractorAsClient()
+//        
+//        if !hasRetrievedOldContractors {
+//            fetchPreviousContractors()
+//        }
+        
+    }
+    
+    func assignContractor() {
+        
+        let viewContext = PersistenceController.shared.container.viewContext
+        
+        let request = Contractor.fetchRequest()
+        
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Contractor.dateCreated, ascending: true)]
+        
+        if let cid = activeContractorCID as? CVarArg {
+            
+            request.predicate = NSPredicate(format: "cID == %@", cid)
+            
+            request.fetchLimit = 1
+            
+            let fetchedContractor = try? viewContext.fetch(request).first
+            
+            if let fetchedContractor { withAnimation { activeContractor = fetchedContractor } }
+            
+        } else {
+            
+            request.fetchLimit = 1
+            
+            let fetchedContractor = try? viewContext.fetch(request).first
+            
+            if let fetchedContractor { withAnimation { activeContractor = fetchedContractor } }
+            
+        }
+        
+    }
+    
+    func createContractorAsClient() {
+        
+        let viewContext = PersistenceController.shared.container.viewContext
+        
+        let clientAsContractor = Client(context: viewContext)
+        
+        clientAsContractor.name = "Pepo"
+        clientAsContractor.isUser = true
+        clientAsContractor.cId = UUID()
+        clientAsContractor.dateCreated = Date.now
+        
+        try? viewContext.save()
+        
+    }
+    
+    func fetchPreviousContractors() {
+        
+        let viewContext = PersistenceController.shared.container.viewContext
+        
+        let request = Client.fetchRequest()
+        
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Client.name, ascending: true)]
+        
+        request.predicate = NSPredicate(format: "isUser == true")
+        
+        let fetchedClients = try? viewContext.fetch(request)
+        
+        if let fetchedClients {
+         
+            for client in fetchedClients {
+                print(client)
+                
+                let newContractor = Contractor(context: viewContext)
+                
+                newContractor.cId = UUID()
+                newContractor.name = client.name
+                newContractor.businessID = client.businessID
+                newContractor.bankAccountNumber = client.bankAccountNumber
+                newContractor.city = client.city
+                newContractor.contactPersonName = client.contactPersonName
+                newContractor.country = client.country
+                newContractor.email = client.email
+                newContractor.legalNotice = client.legalNotice
+                newContractor.logo = client.logo
+                newContractor.phone = client.phone
+                newContractor.postalCode = client.postalCode
+                newContractor.secondRowStreet = client.secondRowStreet
+                newContractor.street = client.street
+                newContractor.swiftCode = client.swiftCode
+                newContractor.taxID = client.taxID
+                newContractor.vatRegistrationNumber = client.vatRegistrationNumber
+                newContractor.web = client.web
+                newContractor.dateCreated = client.dateCreated
+                
+                do {
+                    try viewContext.save()
+                    hasRetrievedOldContractors = true
+                } catch {  }
+                
+                #warning("fix counting")
+                
+//                if let entityName = client.entity.name {
+//                    
+//                    if let attributes = NSEntityDescription.entity(forEntityName: entityName, in: viewContext)?.attributesByName {
+//                        for attribute in attributes {
+//                            if attribute.key == "isUser" {
+//                                print(attribute.value.type, attribute.value, client.name)
+//                            }
+//                        }
+//                    }
+//                    
+//                }
+                
+            }
+            
+        }
+        
     }
     
     func showDialogWindow(using dialog: Dialog) {
@@ -390,6 +517,10 @@ final class BehavioursViewModel: ObservableObject {
         let request = Project.fetchRequest()
         
         request.sortDescriptors = [NSSortDescriptor(keyPath: \Project.dateCreated, ascending: false)]
+        
+        guard let activeContractor else { return 0 }
+        
+        request.predicate = NSPredicate(format: "toContractor == %@", activeContractor)
         
         let fetchedProjects = try? viewContext.fetch(request)
         

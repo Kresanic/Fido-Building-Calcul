@@ -13,8 +13,10 @@ struct NewProjectSheet: View {
     @State var nameOfProject = ""
     @Environment(\.dismiss) var dismiss
     @Environment(\.managedObjectContext) var viewContext
-    @EnvironmentObject var behaviourVM: BehavioursViewModel
+    @EnvironmentObject var behaviours: BehavioursViewModel
     @FocusState private var isFocused: Bool
+    @State var isChoosingContractor = false
+    @State var chosenContractor: Contractor?
     
     var body: some View {
         
@@ -59,8 +61,8 @@ struct NewProjectSheet: View {
                     .onSubmit {
                         if let newProject = createNewProject() {
                             dismiss()
-                            behaviourVM.redraw()
-                            behaviourVM.switchToProjectsPage(with: newProject)
+                            behaviours.redraw()
+                            behaviours.switchToProjectsPage(with: newProject)
                         }
                     }
                     .frame(maxWidth: .infinity)
@@ -68,13 +70,40 @@ struct NewProjectSheet: View {
                 
             }.padding(.top, 10)
             
+            if behaviours.activeContractor == nil {
+                
+                Spacer()
+                
+                VStack(spacing: 0) {
+                    
+                    Text("Contractor")
+                        .font(.system(size: 18, weight: .medium))
+                        .foregroundStyle(Color.brandBlack)
+                        .padding(.bottom, 5)
+                    
+                    Button {
+                        isChoosingContractor = true
+                    } label: {
+                        if let chosenContractor {
+                            ContractorBubble(contractor: chosenContractor, hasChevron: true)
+                        } else {
+                            InProjectNoContractorBubble().padding(.horizontal, 15)
+                        }
+                    }
+                    
+                }
+                
+            }
+            
             Spacer()
+            
+            let permissionToCreate = (behaviours.activeContractor != nil || chosenContractor != nil) && !nameOfProject.isEmpty
             
             Button {
                 if let newProject = createNewProject() {
                     dismiss()
-                    behaviourVM.redraw()
-                    behaviourVM.switchToProjectsPage(with: newProject)
+                    behaviours.redraw()
+                    behaviours.switchToProjectsPage(with: newProject)
                 }
             } label: {
                 
@@ -83,10 +112,11 @@ struct NewProjectSheet: View {
                     .foregroundStyle(Color.brandWhite)
                     .padding(.horizontal, 25)
                     .padding(.vertical, 12)
-                    .background(Color.brandBlack.opacity(0.8))
+                    .background(permissionToCreate ? Color.brandBlack : Color.brandBlack.opacity(0.6))
                     .clipShape(.rect(cornerRadius: 25, style: .continuous))
                 
             }.padding(.bottom, 10)
+                .disabled(!permissionToCreate)
             
             Spacer()
             
@@ -94,16 +124,28 @@ struct NewProjectSheet: View {
         .padding(.horizontal, 15)
         .frame(maxWidth: .infinity)
         .background(Color.brandWhite)
-        
+        .sheet(isPresented: $isChoosingContractor) {
+            ChoosingContractorView(contractor: $chosenContractor)
+                .presentationDetents([.large])
+                .presentationCornerRadius(25)
+                .onDisappear{ behaviours.redraw() }
+        }
+        .task {
+            print(behaviours.activeContractor, chosenContractor)
+        }
     }
     
     private func createNewProject() -> Project? {
         
         guard !nameOfProject.isEmpty else { return nil }
+        guard chosenContractor != nil else { return nil }
+        
+        behaviours.activeContractor = chosenContractor
         
         return withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) {
             
-            let newProjectNumber = behaviourVM.newProjectNumber()
+            let newProjectNumber = behaviours.newProjectNumber()
+            guard newProjectNumber != 0 else { return nil }
             
             let newProject = Project(context: viewContext)
             
@@ -114,10 +156,11 @@ struct NewProjectSheet: View {
             newProject.isArchived = false
             newProject.status = 0
             newProject.number = newProjectNumber
+            newProject.toContractor = chosenContractor
             
-            behaviourVM.addEvent(.created, to: newProject)
+            behaviours.addEvent(.created, to: newProject)
             
-            guard let _ = behaviourVM.generalPriceListObject(toProject: newProject) else { return nil }
+            guard let _ = behaviours.generalPriceListObject(toProject: newProject) else { return nil }
             
             try? viewContext.save()
             

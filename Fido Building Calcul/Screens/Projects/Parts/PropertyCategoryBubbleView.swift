@@ -12,8 +12,9 @@ struct PropertyCategoryBubbleView: View {
     var propertyCategory: PropertyCategories
     @FetchRequest var fetchedInCategory: FetchedResults<Project>
     @StateObject var viewModel = PropertyCategoryBubbleViewModel()
+    @EnvironmentObject var behaviours: BehavioursViewModel
     
-    init(propertyCategory: PropertyCategories) {
+    init(propertyCategory: PropertyCategories, activeContractor: Contractor?) {
         
         self.propertyCategory = propertyCategory
         
@@ -23,9 +24,13 @@ struct PropertyCategoryBubbleView: View {
         
         let category = propertyCategory.rawValue as CVarArg
         
-        projectFetchRequest.predicate = NSPredicate(format: "category == %@ AND isArchived == NO", category)
+        if let activeContractor = activeContractor {
+            projectFetchRequest.predicate = NSPredicate(format: "category == %@ AND  toContractor == %@ AND isArchived == NO", [category, activeContractor])
+        } else {
+            projectFetchRequest.predicate = NSPredicate(format: "category == %@ AND isArchived == NO", category)
+        }
         
-        _fetchedInCategory = FetchRequest(fetchRequest: projectFetchRequest)
+      _fetchedInCategory = FetchRequest(fetchRequest: projectFetchRequest)
         
     }
     
@@ -66,7 +71,6 @@ struct PropertyCategoryBubbleView: View {
         .frame(height: 275)
         .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
         .shadow(color: Color.brandBlack.opacity(0.15), radius: 7)
-        
         
     }
     

@@ -126,6 +126,9 @@ struct ContractorDetailView: View {
                         
                         Button {
                             behaviourVM.showDialogWindow(using: .init(alertType: .warning, title: "Delete contractor?", subTitle: "Deleting this contractor profile will permanently delete all data.", action: {
+                                if behaviourVM.activeContractor == contractor {
+                                    behaviourVM.activeContractor = nil
+                                }
                                 viewModel.deleteContractor()
                                 dismiss()
                             }))
