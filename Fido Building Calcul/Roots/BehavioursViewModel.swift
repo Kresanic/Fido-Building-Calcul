@@ -570,17 +570,5 @@ final class BehavioursViewModel: ObservableObject {
         return event
         
     }
-    
-//    func convertContractors() {
-//        let request = Client.fetchRequest()
-//        
-//        request.sortDescriptors = [NSSortDescriptor(keyPath: \Client.dateCreated, ascending: false)]
-//        
-////        request.predicate = NSPredicate(format: "cId == %@", clientcId as CVarArg)
-//        
-//        let fetchedContractors = try? PersistenceController.shared.container.viewContext.fetch(request)
-//        let firstCl = fetchedContractors?.first
-//        print(firstCl?.description)
-//    }
-    
+   
 }

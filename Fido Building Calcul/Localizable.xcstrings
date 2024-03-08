@@ -1746,8 +1746,7 @@
         }
       }
     },
-    "Deleting this contractor profile will permanently delete all data about this contractor and all assign projects." : {
-      "extractionState" : "stale",
+    "Deleting this contractor profile will permanently delete all data about this contractor and all assigned projects." : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
@@ -1756,9 +1755,6 @@
           }
         }
       }
-    },
-    "Deleting this contractor profile will permanently delete all data about this contractor and all assigned projects." : {
-
     },
     "Demolition" : {
       "localizations" : {

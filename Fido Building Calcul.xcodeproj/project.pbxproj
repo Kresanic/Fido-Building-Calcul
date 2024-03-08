@@ -11,9 +11,6 @@
 		390F80332B591DAA00A10FF0 /* NSManagedObject Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390F80322B591DAA00A10FF0 /* NSManagedObject Extension.swift */; };
 		390F80352B59483F00A10FF0 /* ProjectManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390F80342B59483F00A10FF0 /* ProjectManagementView.swift */; };
 		390F80372B59487000A10FF0 /* ClientHandlingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390F80362B59487000A10FF0 /* ClientHandlingView.swift */; };
-		3911147C2AF94B2D00D074E9 /* ReceiptParser in Frameworks */ = {isa = PBXBuildFile; productRef = 3911147B2AF94B2D00D074E9 /* ReceiptParser */; };
-		3911147E2AF94B2D00D074E9 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 3911147D2AF94B2D00D074E9 /* RevenueCat */; };
-		391114802AF94B2D00D074E9 /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3911147F2AF94B2D00D074E9 /* RevenueCatUI */; };
 		391FEEDB2A9E248B007CBFD4 /* ClientsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FEEDA2A9E248B007CBFD4 /* ClientsScreen.swift */; };
 		392393752B5B1A3C00DA3A42 /* HistoryEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392393732B5B1A3C00DA3A42 /* HistoryEvent+CoreDataClass.swift */; };
 		392393782B5B1D4D00DA3A42 /* ProjectHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392393772B5B1D4D00DA3A42 /* ProjectHistory.swift */; };
@@ -174,6 +171,10 @@
 		3989010D2B1769C700CC3870 /* PriceBubbles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989010C2B1769C700CC3870 /* PriceBubbles.swift */; };
 		398B4C632B96FFDC00F84DB6 /* UUID Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398B4C622B96FFDC00F84DB6 /* UUID Extension.swift */; };
 		398B4C652B970AF700F84DB6 /* ChoosingContractorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398B4C642B970AF700F84DB6 /* ChoosingContractorView.swift */; };
+		398B4C6E2B976C8A00F84DB6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399BB7772AEBFD1C00452560 /* StoreKit.framework */; };
+		398B4C722B976D0800F84DB6 /* ReceiptParser in Frameworks */ = {isa = PBXBuildFile; productRef = 398B4C712B976D0800F84DB6 /* ReceiptParser */; };
+		398B4C742B976D0800F84DB6 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 398B4C732B976D0800F84DB6 /* RevenueCat */; };
+		398B4C762B976D0800F84DB6 /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 398B4C752B976D0800F84DB6 /* RevenueCatUI */; };
 		39939AFF2B946B1A00F16884 /* BrickPartitionsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39939AFE2B946B1A00F16884 /* BrickPartitionsViews.swift */; };
 		3996E1FE2A77BEA0000D86E1 /* InProjectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E1FD2A77BEA0000D86E1 /* InProjectScreen.swift */; };
 		3996E2002A77BF64000D86E1 /* InProjectScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E1FF2A77BF64000D86E1 /* InProjectScreenViewModel.swift */; };
@@ -185,7 +186,6 @@
 		3996E29C2A797C54000D86E1 /* Project+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E2622A797C54000D86E1 /* Project+CoreDataClass.swift */; };
 		3996E2A42A797C54000D86E1 /* Window+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E26A2A797C54000D86E1 /* Window+CoreDataClass.swift */; };
 		3996E2BD2A7985A1000D86E1 /* Binding Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E2BC2A7985A1000D86E1 /* Binding Extensions.swift */; };
-		399BB7782AEBFD1C00452560 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399BB7772AEBFD1C00452560 /* StoreKit.framework */; };
 		399BB77B2AEBFEC900452560 /* PayWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BB77A2AEBFEC900452560 /* PayWall.swift */; };
 		399BB77D2AEBFEDE00452560 /* PayWallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BB77C2AEBFEDE00452560 /* PayWallViewModel.swift */; };
 		399BB77F2AEBFF3400452560 /* OfferingBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BB77E2AEBFF3400452560 /* OfferingBubble.swift */; };
@@ -212,19 +212,6 @@
 		39F549C92B03806600B9AC23 /* ContractorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F549C82B03806600B9AC23 /* ContractorViewModel.swift */; };
 		39FB6ECA2B87775500D473A8 /* Contractor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FB6EC82B87775400D473A8 /* Contractor+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		3915180B2AF945590095142B /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		390F80302B591D2800A10FF0 /* DuplicateProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateProjectViewModel.swift; sourceTree = "<group>"; };
@@ -438,10 +425,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				391114802AF94B2D00D074E9 /* RevenueCatUI in Frameworks */,
-				3911147C2AF94B2D00D074E9 /* ReceiptParser in Frameworks */,
-				399BB7782AEBFD1C00452560 /* StoreKit.framework in Frameworks */,
-				3911147E2AF94B2D00D074E9 /* RevenueCat in Frameworks */,
+				398B4C762B976D0800F84DB6 /* RevenueCatUI in Frameworks */,
+				398B4C722B976D0800F84DB6 /* ReceiptParser in Frameworks */,
+				398B4C6E2B976C8A00F84DB6 /* StoreKit.framework in Frameworks */,
+				398B4C742B976D0800F84DB6 /* RevenueCat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1092,7 +1079,6 @@
 				395086E02A7182CF0099BAD8 /* Sources */,
 				395086E12A7182CF0099BAD8 /* Frameworks */,
 				395086E22A7182CF0099BAD8 /* Resources */,
-				3915180B2AF945590095142B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1100,9 +1086,9 @@
 			);
 			name = "Fido Building Calcul";
 			packageProductDependencies = (
-				3911147B2AF94B2D00D074E9 /* ReceiptParser */,
-				3911147D2AF94B2D00D074E9 /* RevenueCat */,
-				3911147F2AF94B2D00D074E9 /* RevenueCatUI */,
+				398B4C712B976D0800F84DB6 /* ReceiptParser */,
+				398B4C732B976D0800F84DB6 /* RevenueCat */,
+				398B4C752B976D0800F84DB6 /* RevenueCatUI */,
 			);
 			productName = "Fido Building Calcul";
 			productReference = 395086E42A7182CF0099BAD8 /* Fido Building Calcul.app */;
@@ -1134,7 +1120,7 @@
 			);
 			mainGroup = 395086DB2A7182CF0099BAD8;
 			packageReferences = (
-				3911147A2AF94B2D00D074E9 /* XCRemoteSwiftPackageReference "purchases-ios" */,
+				398B4C702B976D0800F84DB6 /* XCRemoteSwiftPackageReference "purchases-ios" */,
 			);
 			productRefGroup = 395086E52A7182CF0099BAD8 /* Products */;
 			projectDirPath = "";
@@ -1493,7 +1479,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
 				DEVELOPMENT_TEAM = J7CR9GZ8S9;
 				ENABLE_PREVIEWS = YES;
@@ -1534,7 +1520,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
 				DEVELOPMENT_TEAM = J7CR9GZ8S9;
 				ENABLE_PREVIEWS = YES;
@@ -1592,30 +1578,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3911147A2AF94B2D00D074E9 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+		398B4C702B976D0800F84DB6 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.30.2;
+				minimumVersion = 4.37.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3911147B2AF94B2D00D074E9 /* ReceiptParser */ = {
+		398B4C712B976D0800F84DB6 /* ReceiptParser */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3911147A2AF94B2D00D074E9 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			package = 398B4C702B976D0800F84DB6 /* XCRemoteSwiftPackageReference "purchases-ios" */;
 			productName = ReceiptParser;
 		};
-		3911147D2AF94B2D00D074E9 /* RevenueCat */ = {
+		398B4C732B976D0800F84DB6 /* RevenueCat */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3911147A2AF94B2D00D074E9 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			package = 398B4C702B976D0800F84DB6 /* XCRemoteSwiftPackageReference "purchases-ios" */;
 			productName = RevenueCat;
 		};
-		3911147F2AF94B2D00D074E9 /* RevenueCatUI */ = {
+		398B4C752B976D0800F84DB6 /* RevenueCatUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3911147A2AF94B2D00D074E9 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			package = 398B4C702B976D0800F84DB6 /* XCRemoteSwiftPackageReference "purchases-ios" */;
 			productName = RevenueCatUI;
 		};
 /* End XCSwiftPackageProductDependency section */

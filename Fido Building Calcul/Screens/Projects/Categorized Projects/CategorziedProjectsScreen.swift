@@ -76,7 +76,7 @@ struct CategorziedProjectsScreen: View {
                     }.padding(.bottom, 15)
                     
                     // MARK: List of all of the Projects in the Category
-                    VStack {
+                    LazyVStack {
                         
                         if inCategoryProjects.isEmpty {
                             NoProjectBubbleView(isCreatingNewProject: $viewModel.isCreatingNewProject)
@@ -109,9 +109,6 @@ struct CategorziedProjectsScreen: View {
                         .presentationCornerRadius(25)
                 }
                 .background(Color.brandWhite)
-                .task {
-                    print(inCategoryProjects)
-                }
         }
     
 }

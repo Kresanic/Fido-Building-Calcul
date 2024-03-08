@@ -215,7 +215,6 @@ fileprivate struct InProjectPriceList: View {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.locale = Locale.current
-        print(Locale.current)
         if let date {
             let formattedDate = dateFormatter.string(from: date)
             return formattedDate

@@ -58,7 +58,6 @@ import CoreData
     private func editNewProject(of project: Project, to client: Client?, with priceList: PriceList?, by contractor: Contractor?, numbered: Int64) -> Project? {
         
         let viewContext = PersistenceController.shared.container.viewContext
-        print("Run edit project")
         project.cId = UUID()
         project.number = numbered
         project.dateCreated = Date.now
@@ -76,7 +75,6 @@ import CoreData
             try viewContext.save()
             return project
         } catch {
-            print(error)
             return nil
         }
         
