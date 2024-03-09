@@ -83,6 +83,8 @@ struct RoomScreen: View {
                         
                         PlasterboardingPartitionViews(room: fetchedRoom, scrollProxy: scrollProxy).id(PlasterboardingPartition.scrollID)
                         
+                        PlasterboardingOffsetWallViews(room: fetchedRoom, scrollProxy: scrollProxy).id(PlasterboardingOffsetWall.scrollID)
+                        
                         PlasterBoardCeilingViews(room: fetchedRoom, scrollProxy: scrollProxy).id(PlasterboardingCeiling.scrollID)
                         
                         NettingWallViews(room: fetchedRoom, scrollProxy: scrollProxy).id(NettingWall.scrollID)

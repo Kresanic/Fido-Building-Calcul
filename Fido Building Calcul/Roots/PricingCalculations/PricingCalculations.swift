@@ -102,7 +102,13 @@ final class PricingCalculations: ObservableObject {
             return $0 + ($1.area)*cleanAreaMultiply
         })
         
-        return brickPartition + brickLoadBearingWall + plasterboardingPartitions + plasterboardingCeilings + nettingWall + nettingCeiling + plasteringWall + plasteringCeiling + plasteringLevelling + plasteringPaintingWall + plasteringPaintingCeiling
+        let plasterboardingOffsetWall = room.associatedPlasterboardingOffsetWalls.reduce(0.0, {
+            var cleanAreaMultiply = 0.0
+            if $1.penetration { cleanAreaMultiply += 1 }
+            return $0 + ($1.cleanArea)*cleanAreaMultiply
+        })
+        
+        return brickPartition + brickLoadBearingWall + plasterboardingPartitions + plasterboardingCeilings + nettingWall + nettingCeiling + plasteringWall + plasteringCeiling + plasteringLevelling + plasteringPaintingWall + plasteringPaintingCeiling + plasterboardingOffsetWall
         
     }
     
@@ -174,10 +180,19 @@ final class PricingCalculations: ObservableObject {
             return $0 + ($1.cleanArea)*Double(cleanAreaMultiply)
         })
         
-        let nettingWall = room.associatedNettingWalls.reduce(0.0, { if $1.painting { return $0 + $1.cleanArea } else { return $0 + 0.0 } })
-        let plasteringWall = room.associatedPlasteringWalls.reduce(0.0, { if $1.painting { return $0 + $1.cleanArea } else { return $0 + 0.0 } })
+        let nettingWall = room.associatedNettingWalls.reduce(0.0, {
+            if $1.painting { return $0 + $1.cleanArea } else { return $0 + 0.0 }
+        })
         
-        return brickPartition + brickLoadBearingWall + plasterboardingPartition + nettingWall + plasteringWall
+        let plasteringWall = room.associatedPlasteringWalls.reduce(0.0, {
+            if $1.painting { return $0 + $1.cleanArea } else { return $0 + 0.0 }
+        })
+        
+        let offsetWall = room.associatedPlasterboardingOffsetWalls.reduce(0.0, {
+            if $1.painting { return $0 + $1.cleanArea } else { return $0 + 0.0 }
+        })
+        
+        return brickPartition + brickLoadBearingWall + plasterboardingPartition + nettingWall + plasteringWall + offsetWall
         
     }
     
@@ -253,6 +268,18 @@ final class PricingCalculations: ObservableObject {
         let triplePlasterBoardPartitionPrice = triplePlasterBoardPartitionPieces * priceList.workTriplePlasterboardingPartitionPrice
         let triplePlasterBoardPartitionRow = PriceBillRow(name: PlasterboardingPartition.tripleBillSubTitle, pieces: triplePlasterBoardPartitionPieces, unit: .squareMeter, price: triplePlasterBoardPartitionPrice)
         priceBill.addWorks(triplePlasterBoardPartitionRow)
+        
+        // SimplePlasterBoardOffsetWall
+        let simplePlasterBoardOffsetWallPieces = room.associatedSimplePlasterboardingOffsetWalls.reduce(0.0, { $0 + $1.cleanArea })
+        let simplePlasterBoardOffsetWallPrice = simplePlasterBoardOffsetWallPieces * priceList.workSimplePlasterboardingOffsetWallPrice
+        let simplePlasterBoardOffsetWallRow = PriceBillRow(name: PlasterboardingOffsetWall.simpleBillSubTitle, pieces: simplePlasterBoardOffsetWallPieces, unit: .squareMeter, price: simplePlasterBoardOffsetWallPrice)
+        priceBill.addWorks(simplePlasterBoardOffsetWallRow)
+        
+        // DoublePlasterBoardOffsetWall
+        let doublePlasterBoardOffsetWallPieces = room.associatedDoublePlasterboardingOffsetWalls.reduce(0.0, { $0 + $1.cleanArea })
+        let doublePlasterBoardOffsetWallPrice = doublePlasterBoardOffsetWallPieces * priceList.workDoublePlasterboardingOffsetWallPrice
+        let doublePlasterBoardOffsetWallRow = PriceBillRow(name: PlasterboardingOffsetWall.doubleBillSubTitle, pieces: doublePlasterBoardOffsetWallPieces, unit: .squareMeter, price: doublePlasterBoardOffsetWallPrice)
+        priceBill.addWorks(doublePlasterBoardOffsetWallRow)
         
         // PlasterBoardingCeiling
         let plasterBoardCielingPieces = room.associatedPlasterboardingCeilings.reduce(0.0, { $0 + $1.cleanArea })
@@ -541,6 +568,20 @@ final class PricingCalculations: ObservableObject {
         let triplePlasterBoardPartitionMaterialPrice = triplePlasterBoardPartitionMaterialPieces * priceList.materialTriplePlasterboardingPartitionPrice
         let triplePlasterBoardPartitionMaterialRow = PriceBillRow(name: TriplePlasterboardPartition.billSubTitle, pieces: triplePlasterBoardPartitionMaterialPieces, unit: .piece, price: triplePlasterBoardPartitionMaterialPrice)
         priceBill.addMaterials(triplePlasterBoardPartitionMaterialRow)
+        
+        // SimplePlasterBoardOffsetWallMaterial
+        let simpleAreaOfPlasterOffsetWall = simplePlasterBoardOffsetWallPieces
+        let simplePlasterBoardOffsetWallMaterialPieces = ceil(simpleAreaOfPlasterOffsetWall/priceList.materialSimplePlasterboardingOffsetWallCapacity)
+        let simplePlasterBoardOffsetWallMaterialPrice = simplePlasterBoardOffsetWallMaterialPieces * priceList.materialSimplePlasterboardingOffsetWallPrice
+        let simplePlasterBoardOffsetWallMaterialRow = PriceBillRow(name: SimplePlasterboardOffsetWall.billSubTitle, pieces: simplePlasterBoardOffsetWallMaterialPieces, unit: .piece, price: simplePlasterBoardOffsetWallMaterialPrice)
+        priceBill.addMaterials(simplePlasterBoardOffsetWallMaterialRow)
+        
+        // DoublePlasterBoardOffsetWallMaterial
+        let doubleAreaOfPlasterOffsetWall = doublePlasterBoardOffsetWallPieces*2
+        let doublePlasterBoardOffsetWallMaterialPieces = ceil(doubleAreaOfPlasterOffsetWall/priceList.materialDoublePlasterboardingOffsetWallCapacity)
+        let doublePlasterBoardOffsetWallMaterialPrice = doublePlasterBoardOffsetWallMaterialPieces * priceList.materialDoublePlasterboardingOffsetWallPrice
+        let doublePlasterBoardOffsetWallMaterialRow = PriceBillRow(name: DoublePlasterboardOffsetWall.billSubTitle, pieces: doublePlasterBoardOffsetWallMaterialPieces, unit: .piece, price: doublePlasterBoardOffsetWallMaterialPrice)
+        priceBill.addMaterials(doublePlasterBoardOffsetWallMaterialRow)
         
         // PlasterBoardCeilingMaterial
         let plasterBoardCeilingMaterialPieces = ceil(plasterBoardCielingPieces/priceList.materialPlasterboardingCeilingCapacity)

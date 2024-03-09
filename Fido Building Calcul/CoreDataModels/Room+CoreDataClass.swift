@@ -130,6 +130,40 @@ public class Room: NSManagedObject {
         
     }
     
+    public var associatedPlasterboardingOffsetWalls: [PlasterboardingOffsetWall] {
+    
+        let set = containsPlasterboardingOffsetWall as? Set<PlasterboardingOffsetWall> ?? []
+    
+        return set.sorted {
+            $0.dateCreated ?? Date.now > $1.dateCreated ?? Date.now
+        }
+        
+    }
+    
+    public var associatedSimplePlasterboardingOffsetWalls: [PlasterboardingOffsetWall] {
+    
+        let set = containsPlasterboardingOffsetWall as? Set<PlasterboardingOffsetWall> ?? []
+        
+        let selected = set.filter { $0.type == 1 }
+        
+        return selected.sorted {
+            $0.dateCreated ?? Date.now > $1.dateCreated ?? Date.now
+        }
+        
+    }
+    
+    public var associatedDoublePlasterboardingOffsetWalls: [PlasterboardingOffsetWall] {
+    
+        let set = containsPlasterboardingOffsetWall as? Set<PlasterboardingOffsetWall> ?? []
+        
+        let selected = set.filter { $0.type == 2 }
+        
+        return selected.sorted {
+            $0.dateCreated ?? Date.now > $1.dateCreated ?? Date.now
+        }
+        
+    }
+    
     public var associatedPlasterboardingCeilings: [PlasterboardingCeiling] {
     
         let set = containsPlasterboardingCeilings as? Set<PlasterboardingCeiling> ?? []

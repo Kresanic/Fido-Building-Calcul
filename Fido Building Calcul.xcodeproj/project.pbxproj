@@ -208,6 +208,8 @@
 		39D22C782AA12DE400322E31 /* CorporationClientCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D22C772AA12DE400322E31 /* CorporationClientCreationView.swift */; };
 		39D22C7E2AA12F2F00322E31 /* InProjectChoosingClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D22C7D2AA12F2F00322E31 /* InProjectChoosingClientView.swift */; };
 		39D435A12AA0DC5F001AAD18 /* Client+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D4359B2AA0DC5F001AAD18 /* Client+CoreDataClass.swift */; };
+		39E3548E2B9C87E700DE247E /* PlasterboardingOffsetWall+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3548C2B9C87E700DE247E /* PlasterboardingOffsetWall+CoreDataClass.swift */; };
+		39E354912B9C92A900DE247E /* PlasterboardingOffsetWallViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E354902B9C92A900DE247E /* PlasterboardingOffsetWallViews.swift */; };
 		39F549C72B03805600B9AC23 /* ContractorEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F549C62B03805600B9AC23 /* ContractorEditView.swift */; };
 		39F549C92B03806600B9AC23 /* ContractorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F549C82B03806600B9AC23 /* ContractorViewModel.swift */; };
 		39FB6ECA2B87775500D473A8 /* Contractor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FB6EC82B87775400D473A8 /* Contractor+CoreDataClass.swift */; };
@@ -415,6 +417,8 @@
 		39D22C772AA12DE400322E31 /* CorporationClientCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorporationClientCreationView.swift; sourceTree = "<group>"; };
 		39D22C7D2AA12F2F00322E31 /* InProjectChoosingClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectChoosingClientView.swift; sourceTree = "<group>"; };
 		39D4359B2AA0DC5F001AAD18 /* Client+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+CoreDataClass.swift"; sourceTree = "<group>"; };
+		39E3548C2B9C87E700DE247E /* PlasterboardingOffsetWall+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlasterboardingOffsetWall+CoreDataClass.swift"; sourceTree = "<group>"; };
+		39E354902B9C92A900DE247E /* PlasterboardingOffsetWallViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasterboardingOffsetWallViews.swift; sourceTree = "<group>"; };
 		39F549C62B03805600B9AC23 /* ContractorEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractorEditView.swift; sourceTree = "<group>"; };
 		39F549C82B03806600B9AC23 /* ContractorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractorViewModel.swift; sourceTree = "<group>"; };
 		39FB6EC82B87775400D473A8 /* Contractor+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contractor+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -470,6 +474,7 @@
 				397BB9602AD041BF006BA23C /* Grouting+CoreDataClass.swift */,
 				397BB9782AD041BF006BA23C /* InstallationOfCornerBead+CoreDataClass.swift */,
 				397BB9702AD041BF006BA23C /* InstallationOfDoorJamb+CoreDataClass.swift */,
+				39E3548C2B9C87E700DE247E /* PlasterboardingOffsetWall+CoreDataClass.swift */,
 				397BB95A2AD041BE006BA23C /* InstallationOfSanitary+CoreDataClass.swift */,
 				397BB9802AD041BF006BA23C /* LayingFloatingFloors+CoreDataClass.swift */,
 				397BB9882AD041BF006BA23C /* Levelling+CoreDataClass.swift */,
@@ -884,6 +889,7 @@
 				396435BA2A7A73BA00C148B8 /* PlasterBoardingCeilingViews.swift */,
 				396435C42A7A884C00C148B8 /* PlasteringCeilingViews.swift */,
 				392DB07C2B947D2B00AA8BC8 /* PlasterboardingPartitionViews.swift */,
+				39E354902B9C92A900DE247E /* PlasterboardingOffsetWallViews.swift */,
 				396435C82A7A8E7800C148B8 /* PlasteringOfWindowSashViews.swift */,
 				396435C22A7A85B800C148B8 /* PlasteringWallViews.swift */,
 				396435B22A7A4DB700C148B8 /* PlumbingWorkViews.swift */,
@@ -1153,6 +1159,7 @@
 				397BB9AE2AD041BF006BA23C /* InstallationOfCornerBead+CoreDataClass.swift in Sources */,
 				396435AB2A7A489A00C148B8 /* DemolitionWorkViews.swift in Sources */,
 				398900BE2B1754ED00CC3870 /* OthersSettings.swift in Sources */,
+				39E354912B9C92A900DE247E /* PlasterboardingOffsetWallViews.swift in Sources */,
 				397BB9A82AD041BF006BA23C /* PaintingWall+CoreDataClass.swift in Sources */,
 				398901052B17682600CC3870 /* ClientCreationHandling.swift in Sources */,
 				396435B92A7A69E300C148B8 /* BrickLoadBearingWallViews.swift in Sources */,
@@ -1271,6 +1278,7 @@
 				397BB9902AD041BF006BA23C /* InstallationOfSanitary+CoreDataClass.swift in Sources */,
 				396435D32A7A944000C148B8 /* LayingFloatingFloorsViews.swift in Sources */,
 				396435C12A7A843F00C148B8 /* NettingCeilingViews.swift in Sources */,
+				39E3548E2B9C87E700DE247E /* PlasterboardingOffsetWall+CoreDataClass.swift in Sources */,
 				398900CE2B17576500CC3870 /* ArchiveDurationButton.swift in Sources */,
 				396435BF2A7A821500C148B8 /* NettingWallViews.swift in Sources */,
 				396435C92A7A8E7800C148B8 /* PlasteringOfWindowSashViews.swift in Sources */,

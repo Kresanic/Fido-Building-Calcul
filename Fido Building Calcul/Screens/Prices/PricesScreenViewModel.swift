@@ -19,6 +19,8 @@ import CoreData
     @Published var workSimplePlasterboardingPartitionPrice: String = "0.0"
     @Published var workDoublePlasterboardingPartitionPrice: String = "0.0"
     @Published var workTriplePlasterboardingPartitionPrice: String = "0.0"
+    @Published var workSimplePlasterboardingOffsetWallPrice: String = "0.0"
+    @Published var workDoublePlasterboardingOffsetWallPrice: String = "0.0"
     @Published var workPlasterboardingCeilingPrice: String = "0.0"
     @Published var workNettingWallPrice: String = "0.0"
     @Published var workNettingCeilingPrice: String = "0.0"
@@ -61,6 +63,8 @@ import CoreData
     @Published var materialSimplePlasterboardingPartitionPrice: String = "0.0"
     @Published var materialDoublePlasterboardingPartitionPrice: String = "0.0"
     @Published var materialTriplePlasterboardingPartitionPrice: String = "0.0"
+    @Published var materialSimplePlasterboardingOffsetWallPrice: String = "0.0"
+    @Published var materialDoublePlasterboardingOffsetWallPrice: String = "0.0"
     @Published var materialPlasterboardingCeilingPrice: String = "0.0"
     @Published var materialMeshPrice: String = "0.0"
     @Published var materialAdhesiveNettingPrice: String = "0.0"
@@ -80,6 +84,8 @@ import CoreData
     @Published var materialSimplePlasterboardingPartitionCapacity: String = "0.0"
     @Published var materialDoublePlasterboardingPartitionCapacity: String = "0.0"
     @Published var materialTriplePlasterboardingPartitionCapacity: String = "0.0"
+    @Published var materialSimplePlasterboardingOffsetWallCapacity: String = "0.0"
+    @Published var materialDoublePlasterboardingOffsetWallCapacity: String = "0.0"
     @Published var materialPlasterboardingCeilingCapacity: String = "0.0"
     @Published var materialAdhesiveNettingCapacity: String = "0.0"
     @Published var materialAdhesiveTilingAndPavingCapacity: String = "0.0"
@@ -116,6 +122,8 @@ import CoreData
             priceList?.workSimplePlasterboardingPartitionPrice = stringToDouble(from: workSimplePlasterboardingPartitionPrice)
             priceList?.workDoublePlasterboardingPartitionPrice = stringToDouble(from: workDoublePlasterboardingPartitionPrice)
             priceList?.workTriplePlasterboardingPartitionPrice = stringToDouble(from: workTriplePlasterboardingPartitionPrice)
+            priceList?.workSimplePlasterboardingOffsetWallPrice = stringToDouble(from: workSimplePlasterboardingOffsetWallPrice)
+            priceList?.workDoublePlasterboardingOffsetWallPrice = stringToDouble(from: workDoublePlasterboardingOffsetWallPrice)
             priceList?.workPlasterboardingCeilingPrice = stringToDouble(from: workPlasterboardingCeilingPrice)
             priceList?.workNettingWallPrice = stringToDouble(from: workNettingWallPrice)
             priceList?.workNettingCeilingPrice = stringToDouble(from: workNettingCeilingPrice)
@@ -158,6 +166,8 @@ import CoreData
             priceList?.materialSimplePlasterboardingPartitionPrice = stringToDouble(from: materialSimplePlasterboardingPartitionPrice)
             priceList?.materialDoublePlasterboardingPartitionPrice = stringToDouble(from: materialDoublePlasterboardingPartitionPrice)
             priceList?.materialTriplePlasterboardingPartitionPrice = stringToDouble(from: materialTriplePlasterboardingPartitionPrice)
+            priceList?.materialSimplePlasterboardingOffsetWallPrice = stringToDouble(from: materialSimplePlasterboardingOffsetWallPrice)
+            priceList?.materialDoublePlasterboardingOffsetWallPrice = stringToDouble(from: materialDoublePlasterboardingOffsetWallPrice)
             priceList?.materialPlasterboardingCeilingPrice = stringToDouble(from: materialPlasterboardingCeilingPrice)
             priceList?.materialMeshPrice = stringToDouble(from: materialMeshPrice)
             priceList?.materialAdhesiveNettingPrice = stringToDouble(from: materialAdhesiveNettingPrice)
@@ -177,6 +187,8 @@ import CoreData
             priceList?.materialSimplePlasterboardingPartitionCapacity = stringToDouble(from: materialSimplePlasterboardingPartitionCapacity)
             priceList?.materialDoublePlasterboardingPartitionCapacity = stringToDouble(from: materialDoublePlasterboardingPartitionCapacity)
             priceList?.materialTriplePlasterboardingPartitionCapacity = stringToDouble(from: materialTriplePlasterboardingPartitionCapacity)
+            priceList?.materialSimplePlasterboardingOffsetWallCapacity = stringToDouble(from: materialSimplePlasterboardingOffsetWallCapacity)
+            priceList?.materialDoublePlasterboardingOffsetWallCapacity = stringToDouble(from: materialDoublePlasterboardingOffsetWallCapacity)
             priceList?.materialPlasterboardingCeilingCapacity = stringToDouble(from: materialPlasterboardingCeilingCapacity)
             priceList?.materialAdhesiveNettingCapacity = stringToDouble(from: materialAdhesiveNettingCapacity)
             priceList?.materialAdhesiveTilingAndPavingCapacity = stringToDouble(from: materialAdhesiveTilingAndPavingCapacity)
@@ -205,6 +217,8 @@ import CoreData
             workSimplePlasterboardingPartitionPrice = doubleToString(from: priceList.workSimplePlasterboardingPartitionPrice)
             workDoublePlasterboardingPartitionPrice = doubleToString(from: priceList.workDoublePlasterboardingPartitionPrice)
             workTriplePlasterboardingPartitionPrice = doubleToString(from: priceList.workTriplePlasterboardingPartitionPrice)
+            workSimplePlasterboardingOffsetWallPrice = doubleToString(from: priceList.workSimplePlasterboardingOffsetWallPrice)
+            workDoublePlasterboardingOffsetWallPrice = doubleToString(from: priceList.workDoublePlasterboardingOffsetWallPrice)
             workPlasterboardingCeilingPrice = doubleToString(from: priceList.workPlasterboardingCeilingPrice)
             workNettingWallPrice = doubleToString(from: priceList.workNettingWallPrice)
             workNettingCeilingPrice = doubleToString(from: priceList.workNettingCeilingPrice)
@@ -247,6 +261,8 @@ import CoreData
             materialSimplePlasterboardingPartitionPrice = doubleToString(from: priceList.materialSimplePlasterboardingPartitionPrice)
             materialDoublePlasterboardingPartitionPrice = doubleToString(from: priceList.materialDoublePlasterboardingPartitionPrice)
             materialTriplePlasterboardingPartitionPrice = doubleToString(from: priceList.materialTriplePlasterboardingPartitionPrice)
+            materialSimplePlasterboardingOffsetWallPrice = doubleToString(from: priceList.materialSimplePlasterboardingOffsetWallPrice)
+            materialDoublePlasterboardingOffsetWallPrice = doubleToString(from: priceList.materialDoublePlasterboardingOffsetWallPrice)
             materialPlasterboardingCeilingPrice = doubleToString(from: priceList.materialPlasterboardingCeilingPrice)
             materialMeshPrice = doubleToString(from: priceList.materialMeshPrice)
             materialAdhesiveNettingPrice = doubleToString(from: priceList.materialAdhesiveNettingPrice)
@@ -266,6 +282,8 @@ import CoreData
             materialSimplePlasterboardingPartitionCapacity = doubleToString(from: priceList.materialSimplePlasterboardingPartitionCapacity)
             materialDoublePlasterboardingPartitionCapacity = doubleToString(from: priceList.materialDoublePlasterboardingPartitionCapacity)
             materialTriplePlasterboardingPartitionCapacity = doubleToString(from: priceList.materialTriplePlasterboardingPartitionCapacity)
+            materialSimplePlasterboardingOffsetWallCapacity = doubleToString(from: priceList.materialSimplePlasterboardingOffsetWallCapacity)
+            materialDoublePlasterboardingOffsetWallCapacity = doubleToString(from: priceList.materialDoublePlasterboardingOffsetWallCapacity)
             materialPlasterboardingCeilingCapacity = doubleToString(from: priceList.materialPlasterboardingCeilingCapacity)
             materialAdhesiveNettingCapacity = doubleToString(from: priceList.materialAdhesiveNettingCapacity)
             materialAdhesiveTilingAndPavingCapacity = doubleToString(from: priceList.materialAdhesiveTilingAndPavingCapacity)

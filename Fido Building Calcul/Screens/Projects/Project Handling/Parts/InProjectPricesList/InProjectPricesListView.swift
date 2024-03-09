@@ -65,6 +65,8 @@ struct InProjectPricesListView: View {
                             InProjectPriceBubble(title: PlasterboardingPartition.title, subTitle: PlasterboardingPartition.simpleSubTitle, price: $viewModel.workSimplePlasterboardingPartitionPrice, unit: .squareMeter, viewModel: viewModel)
                             InProjectPriceBubble(title: PlasterboardingPartition.title, subTitle: PlasterboardingPartition.doubleSubTitle, price: $viewModel.workDoublePlasterboardingPartitionPrice, unit: .squareMeter, viewModel: viewModel)
                             InProjectPriceBubble(title: PlasterboardingPartition.title, subTitle: PlasterboardingPartition.tripleSubTitle, price: $viewModel.workTriplePlasterboardingPartitionPrice, unit: .squareMeter, viewModel: viewModel)
+                            InProjectPriceBubble(title: PlasterboardingOffsetWall.title, subTitle: PlasterboardingOffsetWall.simpleSubTitle, price: $viewModel.workSimplePlasterboardingOffsetWallPrice, unit: .squareMeter, viewModel: viewModel)
+                            InProjectPriceBubble(title: PlasterboardingOffsetWall.title, subTitle: PlasterboardingOffsetWall.doubleSubTitle, price: $viewModel.workDoublePlasterboardingOffsetWallPrice, unit: .squareMeter, viewModel: viewModel)
                             InProjectPriceWorkBubble(work: PlasterboardingCeiling.self, price: $viewModel.workPlasterboardingCeilingPrice, viewModel: viewModel)
                             InProjectPriceWorkBubble(work: NettingWall.self, price: $viewModel.workNettingWallPrice, viewModel: viewModel)
                             InProjectPriceWorkBubble(work: NettingCeiling.self, price: $viewModel.workNettingCeilingPrice, viewModel: viewModel)
@@ -127,6 +129,8 @@ struct InProjectPricesListView: View {
                             InProjectPriceMaterialBubblePackageBased(material: SimplePlasterboardPartition.self, price: $viewModel.materialSimplePlasterboardingPartitionPrice, capacity: $viewModel.materialSimplePlasterboardingPartitionCapacity, viewModel: viewModel)
                             InProjectPriceMaterialBubblePackageBased(material: DoublePlasterboardPartition.self, price: $viewModel.materialDoublePlasterboardingPartitionPrice, capacity: $viewModel.materialDoublePlasterboardingPartitionCapacity, viewModel: viewModel)
                             InProjectPriceMaterialBubblePackageBased(material: TriplePlasterboardPartition.self, price: $viewModel.materialTriplePlasterboardingPartitionPrice, capacity: $viewModel.materialTriplePlasterboardingPartitionCapacity, viewModel: viewModel)
+                            InProjectPriceMaterialBubblePackageBased(material: SimplePlasterboardOffsetWall.self, price: $viewModel.materialSimplePlasterboardingOffsetWallPrice, capacity: $viewModel.materialSimplePlasterboardingOffsetWallCapacity, viewModel: viewModel)
+                            InProjectPriceMaterialBubblePackageBased(material: DoublePlasterboardOffsetWall.self, price: $viewModel.materialDoublePlasterboardingOffsetWallPrice, capacity: $viewModel.materialDoublePlasterboardingOffsetWallCapacity, viewModel: viewModel)
                             InProjectPriceMaterialBubblePackageBased(material: PlasterboardCeiling.self, price: $viewModel.materialPlasterboardingCeilingPrice, capacity: $viewModel.materialPlasterboardingCeilingCapacity, viewModel: viewModel)
                             InProjectPriceMaterialBubble(material: Mesh.self, price: $viewModel.materialMeshPrice, viewModel: viewModel)
                             InProjectPriceMaterialBubblePackageBased(material: AdhesiveNetting.self, price: $viewModel.materialAdhesiveNettingPrice, capacity: $viewModel.materialAdhesiveNettingCapacity, viewModel: viewModel)
@@ -208,7 +212,7 @@ struct InProjectPricesListView: View {
                             }
                             
                         }
-                            
+                        
                         HStack(alignment: .firstTextBaseline, spacing: 3) {
                             
                             Image(systemName: "info.circle.fill")
@@ -223,7 +227,7 @@ struct InProjectPricesListView: View {
                             
                         }.padding(.top, -10)
                             .padding(.bottom, 2)
-                            
+                        
                     }.padding(.horizontal, 15)
                         .background(Color.brandWhite)
                     

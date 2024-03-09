@@ -40,7 +40,7 @@ final class BehavioursViewModel: ObservableObject {
                 }
             }
         }
-        
+        isUserPro = true; #warning("Delete this line")
         assignContractor()
         
         if !hasRetrievedOldContractors {
@@ -258,6 +258,8 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.workSimplePlasterboardingPartitionPrice = generalPriceList.workSimplePlasterboardingPartitionPrice
         newPriceList.workDoublePlasterboardingPartitionPrice = generalPriceList.workDoublePlasterboardingPartitionPrice
         newPriceList.workTriplePlasterboardingPartitionPrice = generalPriceList.workTriplePlasterboardingPartitionPrice
+        newPriceList.workSimplePlasterboardingOffsetWallPrice = generalPriceList.workSimplePlasterboardingOffsetWallPrice
+        newPriceList.workDoublePlasterboardingOffsetWallPrice = generalPriceList.workDoublePlasterboardingOffsetWallPrice
         newPriceList.workPlasterboardingCeilingPrice = generalPriceList.workPlasterboardingCeilingPrice
         newPriceList.workNettingWallPrice = generalPriceList.workNettingWallPrice
         newPriceList.workNettingCeilingPrice = generalPriceList.workNettingCeilingPrice
@@ -297,6 +299,8 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.materialSimplePlasterboardingPartitionPrice = generalPriceList.materialSimplePlasterboardingPartitionPrice
         newPriceList.materialDoublePlasterboardingPartitionPrice = generalPriceList.materialDoublePlasterboardingPartitionPrice
         newPriceList.materialTriplePlasterboardingPartitionPrice = generalPriceList.materialTriplePlasterboardingPartitionPrice
+        newPriceList.materialSimplePlasterboardingOffsetWallPrice = generalPriceList.materialSimplePlasterboardingOffsetWallPrice //
+        newPriceList.materialDoublePlasterboardingOffsetWallPrice = generalPriceList.materialDoublePlasterboardingOffsetWallPrice //
         newPriceList.materialPlasterboardingCeilingPrice = generalPriceList.materialPlasterboardingCeilingPrice
         newPriceList.materialMeshPrice = generalPriceList.materialMeshPrice
         newPriceList.materialAdhesiveNettingPrice = generalPriceList.materialAdhesiveNettingPrice
@@ -316,6 +320,8 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.materialSimplePlasterboardingPartitionCapacity = generalPriceList.materialSimplePlasterboardingPartitionCapacity
         newPriceList.materialDoublePlasterboardingPartitionCapacity = generalPriceList.materialDoublePlasterboardingPartitionCapacity
         newPriceList.materialTriplePlasterboardingPartitionCapacity = generalPriceList.materialTriplePlasterboardingPartitionCapacity
+        newPriceList.materialSimplePlasterboardingOffsetWallCapacity = generalPriceList.materialSimplePlasterboardingOffsetWallCapacity //
+        newPriceList.materialDoublePlasterboardingOffsetWallCapacity = generalPriceList.materialDoublePlasterboardingOffsetWallCapacity //
         newPriceList.materialPlasterboardingCeilingCapacity = generalPriceList.materialPlasterboardingCeilingCapacity
         newPriceList.materialAdhesiveNettingCapacity = generalPriceList.materialAdhesiveNettingCapacity
         newPriceList.materialAdhesiveTilingAndPavingCapacity = generalPriceList.materialAdhesiveTilingAndPavingCapacity
@@ -349,6 +355,8 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.workSimplePlasterboardingPartitionPrice = originalPriceList.workSimplePlasterboardingPartitionPrice
         newPriceList.workDoublePlasterboardingPartitionPrice = originalPriceList.workDoublePlasterboardingPartitionPrice
         newPriceList.workTriplePlasterboardingPartitionPrice = originalPriceList.workTriplePlasterboardingPartitionPrice
+        newPriceList.workSimplePlasterboardingOffsetWallPrice = originalPriceList.workSimplePlasterboardingOffsetWallPrice
+        newPriceList.workDoublePlasterboardingOffsetWallPrice = originalPriceList.workDoublePlasterboardingOffsetWallPrice
         newPriceList.workPlasterboardingCeilingPrice = originalPriceList.workPlasterboardingCeilingPrice
         newPriceList.workNettingWallPrice = originalPriceList.workNettingWallPrice
         newPriceList.workNettingCeilingPrice = originalPriceList.workNettingCeilingPrice
@@ -388,6 +396,8 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.materialSimplePlasterboardingPartitionPrice = originalPriceList.materialSimplePlasterboardingPartitionPrice
         newPriceList.materialDoublePlasterboardingPartitionPrice = originalPriceList.materialDoublePlasterboardingPartitionPrice
         newPriceList.materialTriplePlasterboardingPartitionPrice = originalPriceList.materialTriplePlasterboardingPartitionPrice
+        newPriceList.materialSimplePlasterboardingOffsetWallPrice = originalPriceList.materialSimplePlasterboardingOffsetWallPrice
+        newPriceList.materialDoublePlasterboardingOffsetWallPrice = originalPriceList.materialDoublePlasterboardingOffsetWallPrice
         newPriceList.materialPlasterboardingCeilingPrice = originalPriceList.materialPlasterboardingCeilingPrice
         newPriceList.materialMeshPrice = originalPriceList.materialMeshPrice
         newPriceList.materialAdhesiveNettingPrice = originalPriceList.materialAdhesiveNettingPrice
@@ -407,6 +417,8 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.materialSimplePlasterboardingPartitionCapacity = originalPriceList.materialSimplePlasterboardingPartitionCapacity
         newPriceList.materialDoublePlasterboardingPartitionCapacity = originalPriceList.materialDoublePlasterboardingPartitionCapacity
         newPriceList.materialTriplePlasterboardingPartitionCapacity = originalPriceList.materialTriplePlasterboardingPartitionCapacity
+        newPriceList.materialSimplePlasterboardingOffsetWallCapacity = originalPriceList.materialSimplePlasterboardingOffsetWallCapacity
+        newPriceList.materialDoublePlasterboardingOffsetWallCapacity = originalPriceList.materialDoublePlasterboardingOffsetWallCapacity
         newPriceList.materialPlasterboardingCeilingCapacity = originalPriceList.materialPlasterboardingCeilingCapacity
         newPriceList.materialAdhesiveNettingCapacity = originalPriceList.materialAdhesiveNettingCapacity
         newPriceList.materialAdhesiveTilingAndPavingCapacity = originalPriceList.materialAdhesiveTilingAndPavingCapacity

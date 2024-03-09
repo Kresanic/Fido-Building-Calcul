@@ -16,7 +16,7 @@
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- %@"
+            "value" : " - %@"
           }
         }
       }
@@ -1756,16 +1756,6 @@
         }
       }
     },
-    "Demolition" : {
-      "localizations" : {
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Búracie práce"
-          }
-        }
-      }
-    },
     "Description" : {
       "localizations" : {
         "sk" : {
@@ -1846,22 +1836,22 @@
         }
       }
     },
-    "double" : {
-      "localizations" : {
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "dvojitá"
-          }
-        }
-      }
-    },
     "Double" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dvojitá"
+          }
+        }
+      }
+    },
+    "double, offset wall" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "zdvojená predsadená stena"
           }
         }
       }
@@ -2826,6 +2816,56 @@
         }
       }
     },
+    "offset wall" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "predsadená stena"
+          }
+        }
+      }
+    },
+    "offset wall, double" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predsadená stena, dvojitá"
+          }
+        }
+      }
+    },
+    "Offset wall, double" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predsadená stena, dvojitá"
+          }
+        }
+      }
+    },
+    "offset wall, simple" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "predsadená stena, jednoduchá"
+          }
+        }
+      }
+    },
+    "Offset wall, simple" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predsadená stena, jednoduchá"
+          }
+        }
+      }
+    },
     "Options" : {
       "localizations" : {
         "sk" : {
@@ -2976,6 +3016,36 @@
         }
       }
     },
+    "partition, double" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "priečka, dvojitá"
+          }
+        }
+      }
+    },
+    "partition, simple" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "priečka, jednoduchá"
+          }
+        }
+      }
+    },
+    "partition, triple" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "priečka, trojitá"
+          }
+        }
+      }
+    },
     "Paving" : {
       "localizations" : {
         "sk" : {
@@ -3116,12 +3186,32 @@
         }
       }
     },
+    "Plasterboard, double offset wall" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartón, dvojitá predsadená stena"
+          }
+        }
+      }
+    },
     "Plasterboard, double partition" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartón, dvojitá priečka"
+          }
+        }
+      }
+    },
+    "Plasterboard, simple offset wall" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartón, jednoduchá predsadená stena"
           }
         }
       }
@@ -3282,6 +3372,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Prispôsobenie"
+          }
+        }
+      }
+    },
+    "Preparatory and demolition works" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prípravné a búracie práce"
           }
         }
       }
@@ -3673,22 +3773,22 @@
         }
       }
     },
-    "simple" : {
-      "localizations" : {
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "jednoduchá"
-          }
-        }
-      }
-    },
     "Simple" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jednoduchá"
+          }
+        }
+      }
+    },
+    "simple, offset wall" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "jednoduchá predsadená stena"
           }
         }
       }
@@ -4009,16 +4109,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Celková cenová ponuka"
-          }
-        }
-      }
-    },
-    "triple" : {
-      "localizations" : {
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "trojitá"
           }
         }
       }

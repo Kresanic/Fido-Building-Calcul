@@ -55,6 +55,26 @@ public class TriplePlasterboardPartition: MaterialType {
     
 }
 
+public class SimplePlasterboardOffsetWall: MaterialType {
+    
+    static var title: LocalizedStringKey = "Plasterboard"
+    static var subTitle: LocalizedStringKey = "simple, offset wall"
+    static var billSubTitle: LocalizedStringKey = "Plasterboard, simple offset wall"
+    static var unit: UnitsOfMeasurment = .squareMeter
+    static var capacityUnity: UnitsOfMeasurment? = .piece
+    
+}
+
+public class DoublePlasterboardOffsetWall: MaterialType {
+    
+    static var title: LocalizedStringKey = "Plasterboard"
+    static var subTitle: LocalizedStringKey = "double, offset wall"
+    static var billSubTitle: LocalizedStringKey = "Plasterboard, double offset wall"
+    static var unit: UnitsOfMeasurment = .squareMeter
+    static var capacityUnity: UnitsOfMeasurment? = .piece
+    
+}
+
 public class PlasterboardCeiling: MaterialType {
     
     static var title: LocalizedStringKey = "Plasterboard"

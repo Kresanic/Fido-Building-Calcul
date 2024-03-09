@@ -13,7 +13,7 @@ import SwiftUI
 @objc(Demolition)
 public class Demolition: NSManagedObject, CountBasedWorkType {
     
-    static var title: LocalizedStringKey = "Demolition"
+    static var title: LocalizedStringKey = "Preparatory and demolition works"
     
     static var subTitle: LocalizedStringKey =  ""
     
