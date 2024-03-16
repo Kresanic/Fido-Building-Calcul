@@ -11,7 +11,6 @@ struct PricesScreen: View {
     
     @StateObject var viewModel = PricesScreenViewModel()
     @Environment(\.managedObjectContext) var viewContext
-    
     @FetchRequest(entity: PriceList.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \PriceList.dateEdited, ascending: false)], predicate: NSPredicate(format: "isGeneral == YES")) var fetchedPriceList:  FetchedResults<PriceList>
     
     @State private var priceList: PriceList?
@@ -42,7 +41,8 @@ struct PricesScreen: View {
                         .padding(.bottom, 5)
                     
                     // MARK: Title and Settings Gear
-                    VStack {
+                    LazyVStack {
+                        
                         VStack {
                             
                             HStack(alignment: .center) {
@@ -58,6 +58,7 @@ struct PricesScreen: View {
                                 Spacer()
                                 
                             }
+                            
                             PriceWorkBubble(work: Demolition.self, price: $viewModel.workDemolitionPrice, viewModel: viewModel)
                             PriceBubble(title: Wiring.title, subTitle: Wiring.priceListSubTitle, price: $viewModel.workWiringPrice, unit: Wiring.unit, viewModel: viewModel)
                             PriceBubble(title: Plumbing.title, subTitle: Plumbing.priceListSubTitle, price: $viewModel.workPlumbingPrice, unit: Plumbing.unit, viewModel: viewModel)

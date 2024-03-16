@@ -96,7 +96,26 @@ import CoreData
         
         request.sortDescriptors = [NSSortDescriptor(keyPath: \Project.dateCreated, ascending: false)]
         
-        guard let contractor else { return 0 }
+        guard let contractor else {
+            
+            let fetchedProjects = try? viewContext.fetch(request)
+            
+            let calendar = Calendar.current
+            let currentDate = Date.now
+            
+            let thisYearProjects = fetchedProjects?.filter { calendar.component(.year, from: $0.dateCreated ?? Date.now) == calendar.component(.year, from: currentDate) }
+            
+            if let thisYearProjects {
+                
+                let largestThisYearProjectByNumber = thisYearProjects.max { $0.number < $1.number }
+                
+                return (largestThisYearProjectByNumber?.number ?? 0) + 1
+                
+            }
+            
+            return 0
+            
+        }
         
         request.predicate = NSPredicate(format: "toContractor == %@", contractor)
         

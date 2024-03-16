@@ -40,7 +40,7 @@ struct InProjectPricesListView: View {
                 VStack {
                     
                     // MARK: Title and Settings Gear
-                    VStack {
+                    LazyVStack {
                         VStack {
                             
                             HStack(alignment: .center) {

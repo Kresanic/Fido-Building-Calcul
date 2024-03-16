@@ -320,7 +320,7 @@ fileprivate struct InstallationOfSanitaryEditor: View {
                     
                     CustomWorkValueEditingBox(title: .count, value: $pieces, unit: .piece)
                         .onAppear { pieces = doubleToString(from: fetchedEntity.count) }
-                    .focused($focusedDimension, equals: .first)
+                        .focused($focusedDimension, equals: .first)
                         .onChange(of: pieces) { _ in
                             fetchedEntity.count = stringToDouble(from: pieces)
                             try? viewContext.save()
@@ -329,7 +329,7 @@ fileprivate struct InstallationOfSanitaryEditor: View {
                     
                     CustomWorkPriceEditingBox(title: .price, price: $pricePerPiece, unit: .piece, isMaterial: true)
                         .onAppear { pricePerPiece = doubleToString(from: fetchedEntity.pricePerSanitary) }
-                    .focused($focusedDimension, equals: .second)
+                        .focused($focusedDimension, equals: .second)
                         .onChange(of: pricePerPiece) { _ in
                             fetchedEntity.pricePerSanitary = stringToDouble(from: pricePerPiece)
                             try? viewContext.save()

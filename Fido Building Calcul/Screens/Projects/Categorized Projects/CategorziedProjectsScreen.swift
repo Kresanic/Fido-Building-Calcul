@@ -27,7 +27,7 @@ struct CategorziedProjectsScreen: View {
         let category = propertyCategory.rawValue as CVarArg
         
         if let activeContractor = activeContractor {
-            projectFetchRequest.predicate = NSPredicate(format: "category == %@ AND  toContractor == %@ AND isArchived == NO", [category, activeContractor])
+            projectFetchRequest.predicate = NSPredicate(format: "(category == %@ AND  toContractor == %@ AND isArchived == NO) OR toContractor == nil", [category, activeContractor])
         } else {
             projectFetchRequest.predicate = NSPredicate(format: "category == %@ AND isArchived == NO", category)
         }

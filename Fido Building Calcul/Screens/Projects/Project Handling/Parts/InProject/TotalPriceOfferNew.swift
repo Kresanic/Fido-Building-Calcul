@@ -57,32 +57,6 @@ struct TotalPriceOffer: View {
                     
                     VStack(spacing: 8) {
                         
-//                        ForEach(priceBubble.rooms) { roomRow in
-//                            
-//                            if roomRow.price > 0 {
-//                                
-//                                HStack(alignment: .center) {
-//                                    
-//                                    Text(RoomTypes.rawValueToString(roomRow.name))
-//                                        .font(.system(size: 20, weight: .medium))
-//                                        .foregroundStyle(Color.brandBlack)
-//                                    
-//                                    Spacer()
-//                                    
-//                                    Text(roomRow.price, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-//                                        .font(.system(size: 20, weight: .medium))
-//                                        .foregroundStyle(Color.brandBlack)
-//                                    
-//                                }
-//                                
-//                            }
-//                            
-//                        }
-//                        
-//                        RoundedRectangle(cornerRadius: 9)
-//                            .foregroundStyle(Color.brandWhite)
-//                            .frame(height: 2)
-                        
                         VStack {
                             
                             HStack(alignment: .firstTextBaseline) {

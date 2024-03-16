@@ -10,6 +10,10 @@ import SwiftUI
 struct ProjectManagementView: View {
     
     var project: Project
+    @State var isChoosingContractor = false
+    @State var chosenContractor: Contractor?
+    @Environment(\.managedObjectContext) var viewContext
+    @EnvironmentObject var behaviours: BehavioursViewModel
     
     var body: some View {
         
@@ -33,6 +37,13 @@ struct ProjectManagementView: View {
             
             if let contractor = project.contractor {
                 InProjectContractorBubble(contractor: contractor)
+            } else {
+                Button {
+                    isChoosingContractor = true
+                } label: {
+                    InProjectNoContractorBubble()
+                        .padding(.bottom, 3)
+                }
             }
             
             if project.isArchived {
@@ -50,6 +61,16 @@ struct ProjectManagementView: View {
             
             ProjectHistory(of: project)
             
+        }
+        .sheet(isPresented: $isChoosingContractor) {
+            ChoosingContractorView(contractor: $chosenContractor)
+                .presentationDetents([.large])
+                .presentationCornerRadius(25)
+                .onDisappear{
+                    project.toContractor = chosenContractor
+                    try? viewContext.save()
+                    behaviours.redraw()
+                }
         }
         
     }

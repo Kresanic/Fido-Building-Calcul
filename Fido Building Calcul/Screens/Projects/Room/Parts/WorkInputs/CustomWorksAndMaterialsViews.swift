@@ -344,7 +344,7 @@ struct CustomWorksAndMaterialsViews: View {
                             .padding(.bottom, 5)
                         
                     }.padding(.vertical, 10)
-                        .background { Color.brandWhite.onTapGesture { dismissKeyboard() } }
+                        .background { Color.brandMaterialGray.onTapGesture { dismissKeyboard() } }
                         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                     
                 }
@@ -405,7 +405,7 @@ struct CustomWorksAndMaterialsViews: View {
                                     CustomMaterialsEditor(customMaterial: loopedObject)
                                 }.frame(maxWidth: .infinity)
                                     .padding(.vertical, 10)
-                                    .background { Color.brandWhite.onTapGesture { dismissKeyboard() } }
+                                    .background { Color.brandMaterialGray.onTapGesture { dismissKeyboard() } } // TODO: CHANGE BACK COLOR
                                     .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                                     .transition(.opacity)
                             }
@@ -490,7 +490,7 @@ struct CustomMaterialsUnitsButton: View {
             .padding(.horizontal, 2)
             .frame(maxWidth: .infinity)
             .frame(height: 30)
-            .background(Color.brandGray)
+            .background(Color.brandWhite)
             .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
         
     }

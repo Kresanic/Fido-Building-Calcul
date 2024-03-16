@@ -174,9 +174,7 @@ import PhotosUI
                 do {
                     try viewContext.save()
                     return newUser
-                } catch {
-                    return nil
-                }
+                } catch { return nil }
                 
             }
             

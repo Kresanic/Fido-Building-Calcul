@@ -52,8 +52,6 @@ struct InProjectScreen: View {
                         
                         RoomsList(project: project, viewModel: viewModel, scrollToPos: scrollPos).id("RoomCreation")
                         
-//                        InProjectPricesListButton(project: project, priceListSheet: $viewModel.priceList)
-                        
                         ProjectManagementView(project: project)
                         
                     }.padding(.horizontal, 15)

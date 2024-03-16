@@ -100,9 +100,6 @@ struct NewProjectSheet: View {
             let permissionToCreate = (behaviours.activeContractor != nil || chosenContractor != nil) && !nameOfProject.isEmpty
             
             Button {
-//                createNewHundredProjects()
-//                dismiss()
-                #warning("Delete")
                 if let newProject = createNewProject() {
                     dismiss()
                     behaviours.redraw()
@@ -173,55 +170,5 @@ struct NewProjectSheet: View {
         }
         
     }
-#warning("Delete")
-//    private func createNewHundredProjects() {
-//        
-//        guard !nameOfProject.isEmpty else { return }
-//        guard chosenContractor != nil else { return }
-//        
-//        behaviours.activeContractor = chosenContractor
-//        
-//        let newProjectNumber = behaviours.newProjectNumber()
-//        
-//        guard newProjectNumber != 0 else { return }
-//        
-//        for i in 0..<50 {
-//            
-//            let newProject = Project(context: viewContext)
-//            
-//            newProject.cId = UUID()
-//            newProject.category = toCategory.rawValue
-//            newProject.name = nameOfProject
-//            newProject.dateCreated = Date.now
-//            newProject.isArchived = false
-//            newProject.status = 0
-//            newProject.number = newProjectNumber + Int64(i)
-//            newProject.toContractor = chosenContractor
-//            
-//            let newRoom = Room(context: viewContext)
-//            newRoom.cId = UUID()
-//            newRoom.name = "IDK"
-//            newRoom.dateCreated = Date.now
-//            let wiring = Wiring(context: viewContext)
-//            
-//            wiring.cId = UUID()
-//            wiring.dateCreated = Date.now
-//            wiring.count = 100
-//            
-//            newRoom.addToContainsWirings(wiring)
-//            
-//            newProject.addToConsistsOfRooms(newRoom)
-//            
-//            behaviours.addEvent(.created, to: newProject)
-//            
-//            guard let _ = behaviours.generalPriceListObject(toProject: newProject) else { return }
-//            
-//            try? viewContext.save()
-//            
-//        }
-//        
-//        
-//               
-//    }
     
 }

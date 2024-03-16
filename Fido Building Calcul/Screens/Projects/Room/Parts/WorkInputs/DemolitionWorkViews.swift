@@ -168,7 +168,6 @@ struct DemolitionEditor: View {
                 Text(DimensionCallout.readableSymbol(.durationOfWork))
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(Color.brandBlack)
-//                    .frame(width: 55, alignment: .trailing)
 
                 TextField("0", text: $newHours)
                     .font(.system(size: 20, weight: .semibold))

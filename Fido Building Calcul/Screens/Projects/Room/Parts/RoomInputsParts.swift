@@ -96,9 +96,9 @@ struct CustomWorkPriceEditingBox: View {
                 Text(DimensionCallout.readableSymbol(title))
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(Color.brandBlack)
-                    .frame(width: 65, alignment: .trailing)
                     .fixedSize()
-                
+                    .frame(width: 55, alignment: .trailing)
+                    
                 TextField("0,00", text: $price)
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundStyle(Color.brandBlack)
@@ -116,7 +116,7 @@ struct CustomWorkPriceEditingBox: View {
                 }
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(Color.brandBlack)
-                .frame(width: 65, alignment: .leading)
+                .frame(width: 40, alignment: .leading)
                 
             }
         }
@@ -139,7 +139,7 @@ struct CustomWorkValueEditingBox: View {
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(Color.brandBlack)
                 .fixedSize()
-//                .frame(minWidth: 65, alignment: .trailing)
+                .frame(minWidth: 55, alignment: .trailing)
             
             TextField("0", text: $value)
                 .font(.system(size: 20, weight: .semibold))
@@ -154,7 +154,7 @@ struct CustomWorkValueEditingBox: View {
             Text(CustomWorkUnits.readableSymbol(unit))
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(Color.brandBlack)
-                .frame(width: 65, alignment: .leading)
+                .frame(width: 40, alignment: .leading)
             
         }
         
@@ -185,8 +185,9 @@ struct CustomMaterialPriceEditingBox: View {
                 .keyboardType(.decimalPad)
                 .frame(height: 30)
                 .frame(maxWidth: .infinity)
-                .background(isMaterial ? Color.brandMaterialGray : Color.brandGray)
+                .background(isMaterial ? Color.brandWhite : Color.brandGray)
                 .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+            
             HStack {
                 Text("\(getSymbol(forCurrencyCode: Locale.current.currency?.identifier ?? "USD") ?? "$")/")
                 +
@@ -225,7 +226,7 @@ struct CustomMaterialValueEditingBox: View {
                 .keyboardType(.decimalPad)
                 .frame(height: 30)
                 .frame(maxWidth: .infinity)
-                .background(isMaterial ? Color.brandMaterialGray : Color.brandGray)
+                .background(isMaterial ? Color.brandWhite : Color.brandGray)
                 .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
             
             Text(CustomMaterialUnits.readableSymbol(unit))

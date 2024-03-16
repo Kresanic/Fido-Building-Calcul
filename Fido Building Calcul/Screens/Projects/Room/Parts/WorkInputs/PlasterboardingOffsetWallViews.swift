@@ -316,7 +316,7 @@ fileprivate struct PlasterboardingOffsetWallEditor: View {
                     
                     ValueEditingBox(title: .width, value: $width, unit: .meter)
                         .onAppear { width = doubleToString(from: fetchedEntity.size1) }
-                    .focused($focusedDimension, equals: .first)
+                        .focused($focusedDimension, equals: .first)
                         .onChange(of: width) { _ in
                             fetchedEntity.size1 = stringToDouble(from: width)
                             try? viewContext.save()

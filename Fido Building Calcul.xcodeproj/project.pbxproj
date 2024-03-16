@@ -78,7 +78,6 @@
 		397B410D2B878D9C0023A9BC /* DeleteContractorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B410C2B878D9C0023A9BC /* DeleteContractorButton.swift */; };
 		397B410F2B878E840023A9BC /* ContractorDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B410E2B878E840023A9BC /* ContractorDetailViewModel.swift */; };
 		397B41112B87939B0023A9BC /* InProjectContractorBubbles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B41102B87939B0023A9BC /* InProjectContractorBubbles.swift */; };
-		397B41132B8794A20023A9BC /* InProjectContractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B41122B8794A20023A9BC /* InProjectContractor.swift */; };
 		397B41152B8797F60023A9BC /* InProjectChoosingContractorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B41142B8797F60023A9BC /* InProjectChoosingContractorView.swift */; };
 		397BB9902AD041BF006BA23C /* InstallationOfSanitary+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB95A2AD041BE006BA23C /* InstallationOfSanitary+CoreDataClass.swift */; };
 		397BB9922AD041BF006BA23C /* PlasteringOfWindowSash+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BB95C2AD041BF006BA23C /* PlasteringOfWindowSash+CoreDataClass.swift */; };
@@ -289,7 +288,6 @@
 		397B410C2B878D9C0023A9BC /* DeleteContractorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteContractorButton.swift; sourceTree = "<group>"; };
 		397B410E2B878E840023A9BC /* ContractorDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractorDetailViewModel.swift; sourceTree = "<group>"; };
 		397B41102B87939B0023A9BC /* InProjectContractorBubbles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectContractorBubbles.swift; sourceTree = "<group>"; };
-		397B41122B8794A20023A9BC /* InProjectContractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectContractor.swift; sourceTree = "<group>"; };
 		397B41142B8797F60023A9BC /* InProjectChoosingContractorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectChoosingContractorView.swift; sourceTree = "<group>"; };
 		397BB95A2AD041BE006BA23C /* InstallationOfSanitary+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InstallationOfSanitary+CoreDataClass.swift"; sourceTree = "<group>"; };
 		397BB95C2AD041BF006BA23C /* PlasteringOfWindowSash+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlasteringOfWindowSash+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -646,7 +644,6 @@
 				390F80302B591D2800A10FF0 /* DuplicateProjectViewModel.swift */,
 				392393772B5B1D4D00DA3A42 /* ProjectHistory.swift */,
 				397B41102B87939B0023A9BC /* InProjectContractorBubbles.swift */,
-				397B41122B8794A20023A9BC /* InProjectContractor.swift */,
 				397B41142B8797F60023A9BC /* InProjectChoosingContractorView.swift */,
 			);
 			path = ProjectManagement;
@@ -1243,7 +1240,6 @@
 				397BB9942AD041BF006BA23C /* BrickPartition+CoreDataClass.swift in Sources */,
 				396435B32A7A4DB700C148B8 /* PlumbingWorkViews.swift in Sources */,
 				398900F22B17647000CC3870 /* RoomListView.swift in Sources */,
-				397B41132B8794A20023A9BC /* InProjectContractor.swift in Sources */,
 				3989010B2B1768D200CC3870 /* ClientAttributeBubble.swift in Sources */,
 				3996E2062A781CF5000D86E1 /* PricingCalculations.swift in Sources */,
 				3996E1FE2A77BEA0000D86E1 /* InProjectScreen.swift in Sources */,
@@ -1487,7 +1483,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
 				DEVELOPMENT_TEAM = J7CR9GZ8S9;
 				ENABLE_PREVIEWS = YES;
@@ -1508,7 +1504,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = sk.fido.FidoBuildingCalcul;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1528,7 +1524,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
 				DEVELOPMENT_TEAM = J7CR9GZ8S9;
 				ENABLE_PREVIEWS = YES;
@@ -1549,7 +1545,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = sk.fido.FidoBuildingCalcul;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

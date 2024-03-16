@@ -163,6 +163,7 @@ struct SiliconingEditor: View {
                 Text(DimensionCallout.readableSymbol(.length))
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(Color.brandBlack)
+                    .frame(width: 55, alignment: .trailing)
                 
                 TextField("0", text: $basicMeter)
                     .font(.system(size: 20, weight: .semibold))
@@ -178,6 +179,7 @@ struct SiliconingEditor: View {
                 Text(UnitsOfMeasurment.readableSymbol(Siliconing.unit))
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(Color.brandBlack)
+                    .frame(width: 40, alignment: .leading)
                 
             }
             .onAppear { basicMeter = doubleToString(from: fetchedEntity.count) }

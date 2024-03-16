@@ -88,24 +88,25 @@ struct CommuteExpensesViews: View {
                                 .font(.system(size: 17, weight: .medium))
                                 .foregroundStyle(Color.brandBlack)
                                 .fixedSize()
+                                .frame(minWidth: 55, alignment: .trailing)
                             
                             TextField("0", text: $length)
                                 .font(.system(size: 20, weight: .semibold))
                                 .foregroundStyle(Color.brandBlack)
                                 .multilineTextAlignment(.center)
-                                .keyboardType(.numberPad)
-                            .focused($focusedDimension, equals: .first)
+                                .keyboardType(.decimalPad)
                                 .frame(height: 30)
                                 .frame(maxWidth: .infinity)
                                 .background(Color.brandGray)
                                 .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                             
-                            Text(UnitsOfMeasurment.readableSymbol(.kilometer))
+                            Text(CustomWorkUnits.readableSymbol(.kilometer))
                                 .font(.system(size: 17, weight: .medium))
                                 .foregroundStyle(Color.brandBlack)
-                                .frame(width: 40)
+                                .frame(width: 40, alignment: .leading)
                             
                         }
+                        
                         
                         HStack(spacing: 15) {
                             
@@ -133,6 +134,7 @@ struct CommuteExpensesViews: View {
                         }
                         
                     }
+                    .padding(.horizontal, 10)
                     .frame(maxWidth: .infinity)
                     .padding(.all, 15)
                     .background { Color.brandWhite.onTapGesture { dismissKeyboard() } }

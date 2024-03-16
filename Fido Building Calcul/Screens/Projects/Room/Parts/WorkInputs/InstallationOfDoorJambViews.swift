@@ -183,7 +183,7 @@ struct InstallationOfDoorJambEditor: View {
                 
             }.task { if fetchedEntity.dateCreated ?? Date.now >= Date().addingTimeInterval(-10) { withAnimation { focusedDimension = .first } } }
                 .workInputsToolbar(focusedDimension: $focusedDimension, size1: $pieces, size2: $pricePerPiece)
-            
+                .padding(.horizontal, 10)
         }
         
     }

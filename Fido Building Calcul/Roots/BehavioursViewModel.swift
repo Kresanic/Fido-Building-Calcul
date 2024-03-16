@@ -40,12 +40,96 @@ final class BehavioursViewModel: ObservableObject {
                 }
             }
         }
-        isUserPro = true; #warning("Delete this line")
+        
         assignContractor()
         
-        if !hasRetrievedOldContractors {
-            contractorVersionAntiDataLoss()
+        hasAnyClientContractorCheck()
+        
+    }
+    
+    func hasAnyClientContractorCheck() {
+        
+        let viewContext = PersistenceController.shared.container.viewContext
+        
+        let request = Client.fetchRequest()
+        
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Client.name, ascending: true)]
+        
+        request.predicate = NSPredicate(format: "isUser == true")
+        
+        let fetchedClients = try? viewContext.fetch(request)
+        
+        if let fetchedClients {
+            contractorVersionAntiDataLoss(fetchedClients: fetchedClients)
         }
+        
+        let requestContr = Contractor.fetchRequest()
+        
+        requestContr.sortDescriptors = [NSSortDescriptor(keyPath: \Contractor.dateCreated, ascending: true)]
+        
+        requestContr.fetchLimit = 1
+        
+        let fetchedContractor = try? viewContext.fetch(requestContr).first
+        
+        if let fetchedContractor { reAssignProjectsToContractor(contractor: fetchedContractor) }
+            
+    }
+    
+    func contractorVersionAntiDataLoss(fetchedClients: [Client]) {
+        
+        let viewContext = PersistenceController.shared.container.viewContext
+        
+        for client in fetchedClients {
+            
+            let newContractor = Contractor(context: viewContext)
+            
+            newContractor.cId = UUID()
+            newContractor.name = client.name
+            newContractor.businessID = client.businessID
+            newContractor.bankAccountNumber = client.bankAccountNumber
+            newContractor.city = client.city
+            newContractor.contactPersonName = client.contactPersonName
+            newContractor.country = client.country
+            newContractor.email = client.email
+            newContractor.legalNotice = client.legalNotice
+            newContractor.logo = client.logo
+            newContractor.phone = client.phone
+            newContractor.postalCode = client.postalCode
+            newContractor.secondRowStreet = client.secondRowStreet
+            newContractor.street = client.street
+            newContractor.swiftCode = client.swiftCode
+            newContractor.taxID = client.taxID
+            newContractor.vatRegistrationNumber = client.vatRegistrationNumber
+            newContractor.web = client.web
+            newContractor.dateCreated = client.dateCreated
+                
+            try? viewContext.save()
+            
+            viewContext.delete(client)
+            
+        }
+          
+    }
+    
+    func reAssignProjectsToContractor(contractor: Contractor) {
+        
+        let viewContext = PersistenceController.shared.container.viewContext
+        
+        let request = Project.fetchRequest()
+        
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Project.dateCreated, ascending: true)]
+        
+        request.predicate = NSPredicate(format: "toContractor == nil")
+            
+        let fetchedProjects = try? viewContext.fetch(request)
+        
+        if let fetchedProjects {
+            for project in fetchedProjects {
+                project.toContractor = contractor
+            }
+        }
+        
+        try? viewContext.save()
         
     }
     
@@ -76,82 +160,6 @@ final class BehavioursViewModel: ObservableObject {
             if let fetchedContractor { withAnimation { activeContractor = fetchedContractor } }
             
         }
-        
-    }
-    
-    func contractorVersionAntiDataLoss() {
-        
-        let viewContext = PersistenceController.shared.container.viewContext
-        
-        let request = Client.fetchRequest()
-        
-        request.sortDescriptors = [NSSortDescriptor(keyPath: \Client.name, ascending: true)]
-        
-        request.predicate = NSPredicate(format: "isUser == true")
-        
-        let fetchedClients = try? viewContext.fetch(request)
-        
-        if let fetchedClients {
-         
-            for client in fetchedClients {
-                
-                let newContractor = Contractor(context: viewContext)
-                
-                newContractor.cId = UUID()
-                newContractor.name = client.name
-                newContractor.businessID = client.businessID
-                newContractor.bankAccountNumber = client.bankAccountNumber
-                newContractor.city = client.city
-                newContractor.contactPersonName = client.contactPersonName
-                newContractor.country = client.country
-                newContractor.email = client.email
-                newContractor.legalNotice = client.legalNotice
-                newContractor.logo = client.logo
-                newContractor.phone = client.phone
-                newContractor.postalCode = client.postalCode
-                newContractor.secondRowStreet = client.secondRowStreet
-                newContractor.street = client.street
-                newContractor.swiftCode = client.swiftCode
-                newContractor.taxID = client.taxID
-                newContractor.vatRegistrationNumber = client.vatRegistrationNumber
-                newContractor.web = client.web
-                newContractor.dateCreated = client.dateCreated
-                    
-                try? viewContext.save()
-                
-                reAssignProjectsToContractor(to: newContractor)
-                
-//                viewContext.delete(client)
-                #warning("Change to delete")
-                hasRetrievedOldContractors = true
-                
-            }
-            
-        }
-        
-    }
-    
-    func reAssignProjectsToContractor(to contractor: Contractor) {
-        
-        let viewContext = PersistenceController.shared.container.viewContext
-        
-        let request = Project.fetchRequest()
-        
-        request.sortDescriptors = [NSSortDescriptor(keyPath: \Project.dateCreated, ascending: true)]
-        
-        request.predicate = NSPredicate(format: "toContractor == NIL")
-        
-        let fetchedProjects = try? viewContext.fetch(request)
-        
-        if let fetchedProjects {
-            for project in fetchedProjects {
-                
-                project.toContractor = contractor
-                
-            }
-        }
-        
-        try? viewContext.save()
         
     }
     
@@ -299,8 +307,8 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.materialSimplePlasterboardingPartitionPrice = generalPriceList.materialSimplePlasterboardingPartitionPrice
         newPriceList.materialDoublePlasterboardingPartitionPrice = generalPriceList.materialDoublePlasterboardingPartitionPrice
         newPriceList.materialTriplePlasterboardingPartitionPrice = generalPriceList.materialTriplePlasterboardingPartitionPrice
-        newPriceList.materialSimplePlasterboardingOffsetWallPrice = generalPriceList.materialSimplePlasterboardingOffsetWallPrice //
-        newPriceList.materialDoublePlasterboardingOffsetWallPrice = generalPriceList.materialDoublePlasterboardingOffsetWallPrice //
+        newPriceList.materialSimplePlasterboardingOffsetWallPrice = generalPriceList.materialSimplePlasterboardingOffsetWallPrice
+        newPriceList.materialDoublePlasterboardingOffsetWallPrice = generalPriceList.materialDoublePlasterboardingOffsetWallPrice
         newPriceList.materialPlasterboardingCeilingPrice = generalPriceList.materialPlasterboardingCeilingPrice
         newPriceList.materialMeshPrice = generalPriceList.materialMeshPrice
         newPriceList.materialAdhesiveNettingPrice = generalPriceList.materialAdhesiveNettingPrice
@@ -320,8 +328,8 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.materialSimplePlasterboardingPartitionCapacity = generalPriceList.materialSimplePlasterboardingPartitionCapacity
         newPriceList.materialDoublePlasterboardingPartitionCapacity = generalPriceList.materialDoublePlasterboardingPartitionCapacity
         newPriceList.materialTriplePlasterboardingPartitionCapacity = generalPriceList.materialTriplePlasterboardingPartitionCapacity
-        newPriceList.materialSimplePlasterboardingOffsetWallCapacity = generalPriceList.materialSimplePlasterboardingOffsetWallCapacity //
-        newPriceList.materialDoublePlasterboardingOffsetWallCapacity = generalPriceList.materialDoublePlasterboardingOffsetWallCapacity //
+        newPriceList.materialSimplePlasterboardingOffsetWallCapacity = generalPriceList.materialSimplePlasterboardingOffsetWallCapacity
+        newPriceList.materialDoublePlasterboardingOffsetWallCapacity = generalPriceList.materialDoublePlasterboardingOffsetWallCapacity 
         newPriceList.materialPlasterboardingCeilingCapacity = generalPriceList.materialPlasterboardingCeilingCapacity
         newPriceList.materialAdhesiveNettingCapacity = generalPriceList.materialAdhesiveNettingCapacity
         newPriceList.materialAdhesiveTilingAndPavingCapacity = generalPriceList.materialAdhesiveTilingAndPavingCapacity
@@ -525,7 +533,26 @@ final class BehavioursViewModel: ObservableObject {
         
         request.sortDescriptors = [NSSortDescriptor(keyPath: \Project.dateCreated, ascending: false)]
         
-        guard let activeContractor else { return 0 }
+        guard let activeContractor else {
+            
+            let fetchedProjects = try? viewContext.fetch(request)
+            
+            let calendar = Calendar.current
+            let currentDate = Date.now
+            
+            let thisYearProjects = fetchedProjects?.filter { calendar.component(.year, from: $0.dateCreated ?? Date.now) == calendar.component(.year, from: currentDate) }
+            
+            if let thisYearProjects {
+                
+                let largestThisYearProjectByNumber = thisYearProjects.max { $0.number < $1.number }
+                
+                return (largestThisYearProjectByNumber?.number ?? 0) + 1
+                
+            }
+            
+            return 0
+            
+        }
         
         request.predicate = NSPredicate(format: "toContractor == %@", activeContractor)
         

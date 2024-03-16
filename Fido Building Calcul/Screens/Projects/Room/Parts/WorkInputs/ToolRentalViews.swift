@@ -90,6 +90,7 @@ struct ToolRentalViews: View {
                             .font(.system(size: 17, weight: .medium))
                             .foregroundStyle(Color.brandBlack)
                             .fixedSize()
+                            .frame(minWidth: 55, alignment: .trailing)
                         
                         TextField("0", text: $length)
                             .font(.system(size: 20, weight: .semibold))
@@ -105,7 +106,7 @@ struct ToolRentalViews: View {
                         Text(UnitsOfMeasurment.readableSymbol(.hour))
                             .font(.system(size: 17, weight: .medium))
                             .foregroundStyle(Color.brandBlack)
-                        
+                            .frame(width: 40, alignment: .leading)
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.all, 15)
