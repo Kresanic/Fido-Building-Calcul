@@ -17,13 +17,14 @@ struct PricesScreen: View {
     
     var body: some View {
         
-        NavigationStack {
-            
             ScrollView {
                 
-                VStack {
+                VStack(alignment: .leading) {
                     
-                    ScreenTitle(title: "Price list")
+                    Text("Price list")
+                        .font(.system(size: 40, weight: .heavy))
+                        .foregroundColor(Color.brandBlack)
+                        .padding(.bottom, 15)
                     
                     HStack(alignment: .firstTextBaseline, spacing: 3) {
                         
@@ -37,7 +38,7 @@ struct PricesScreen: View {
                         
                         Spacer()
                         
-                    }.padding(.top, -10)
+                    }.padding(.top, -15)
                         .padding(.bottom, 5)
                     
                     // MARK: Title and Settings Gear
@@ -180,7 +181,6 @@ struct PricesScreen: View {
                 
             }.scrollIndicators(.hidden)
                 .scrollDismissesKeyboard(.interactively)
-                .navigationBarHidden(true)
                 .onTapGesture { dismissKeyboard() }
                 .onAppear {
                     viewModel.priceList = fetchedPriceList.last
@@ -188,7 +188,6 @@ struct PricesScreen: View {
                 }
             
             
-        }
     }
     
 }

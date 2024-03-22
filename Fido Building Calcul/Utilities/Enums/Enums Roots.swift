@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum CustomTabs { case projects, prices, clients, settings }
+enum CustomTabs { case projects, clients, settings, invoices }
 
 enum DialogAlertType { case approval, warning }
 

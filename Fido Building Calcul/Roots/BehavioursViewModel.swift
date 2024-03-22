@@ -22,6 +22,7 @@ final class BehavioursViewModel: ObservableObject {
     @Published var currentTab: CustomTabs = .projects
     @Published var toRedraw = false
     @Published var projectsPath = NavigationPath()
+    @Published var invoicesPath = NavigationPath()
     @Published var clientsPath = NavigationPath()
     @Published var settingsPath = NavigationPath()
     @Published var isAnimationCircular = false

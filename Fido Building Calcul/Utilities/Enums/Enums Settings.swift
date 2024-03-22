@@ -8,5 +8,5 @@
 import Foundation
 
 enum SettingsNavigation {
-    case archive, priceOffer, appearance
+    case archive, priceOffer, appearance, generalPriceList
 }

@@ -1436,6 +1436,16 @@
         }
       }
     },
+    "Čoskoro faktúry pre %@..." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Čoskoro faktúry pre %@..."
+          }
+        }
+      }
+    },
     "Cottage" : {
       "localizations" : {
         "sk" : {
@@ -2147,11 +2157,12 @@
       }
     },
     "General price list" : {
+      "comment" : "in settings",
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cenník (hlavný) na spodnej lište"
+            "value" : "Hlavný cenník"
           }
         }
       }
@@ -2312,6 +2323,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Osadenie žľabu"
+          }
+        }
+      }
+    },
+    "Invoices" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faktúry"
           }
         }
       }
@@ -2542,6 +2563,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "m³"
+          }
+        }
+      }
+    },
+    "Main price list" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cenník (hlavný) na spodnej lište"
           }
         }
       }
@@ -3719,6 +3750,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "nastavte vzhľad aplikácie"
+          }
+        }
+      }
+    },
+    "set default price list" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nastavte všeobecný cenník"
           }
         }
       }
