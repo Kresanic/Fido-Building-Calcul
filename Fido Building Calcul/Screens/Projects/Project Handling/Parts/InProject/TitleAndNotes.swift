@@ -31,16 +31,17 @@ struct TitleAndNotesView: View {
                 
                 Spacer()
                     
-            }.onTapGesture {
-                withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) {
-                    let impactMed = UIImpactFeedbackGenerator(style: .light)
-                    project.status = project.statusEnum.advanceStatus
-                    let historyEventObject = behaviourVM.historyEventObjectFromProjectStatus(project.status)
-                    project.addToToHistoryEvent(historyEventObject)
-                    try? viewContext.save()
-                    impactMed.impactOccurred()
-                }
             }
+//            .onTapGesture {
+//                withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) {
+//                    let impactMed = UIImpactFeedbackGenerator(style: .light)
+//                    project.status = project.statusEnum.advanceStatus
+//                    let historyEventObject = behaviourVM.historyEventObjectFromProjectStatus(project.status)
+//                    project.addToToHistoryEvent(historyEventObject)
+//                    try? viewContext.save()
+//                    impactMed.impactOccurred()
+//                }
+//            }
                 
             HStack {
                 

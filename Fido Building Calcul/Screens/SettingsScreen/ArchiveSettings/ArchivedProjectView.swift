@@ -116,6 +116,8 @@ struct ArchivedProjectsView: View {
             .background(Color.brandGray)
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
             .padding(.bottom, 70)
+            .task { withAnimation { behaviourVM.deleteArchivedProjects() } }
+            
         }
         
         
