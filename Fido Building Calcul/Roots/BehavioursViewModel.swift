@@ -27,6 +27,9 @@ final class BehavioursViewModel: ObservableObject {
     @Published var settingsPath = NavigationPath()
     @Published var isAnimationCircular = false
     @Published var isUserPro = false
+    @Published var givenPromotional = false
+    @Published var promotionalEntitlements = false
+    let givePromotionalForMonths: Int = 6
     @Published var showingNotification: String? = nil
     @Published var showingDialogWindow: Dialog? = nil
     @AppStorage("hasNotSeenOnboarding") var hasNotSeenOnboarding: Bool = true
@@ -47,6 +50,70 @@ final class BehavioursViewModel: ObservableObject {
         hasAnyClientContractorCheck()
         
     }
+    
+    func proEntitlementHandling() async {
+        
+        Purchases.shared.getCustomerInfo { (customerInfo, error) in
+            if customerInfo?.entitlements.all["Pro"]?.isActive == true {
+                withAnimation(.easeInOut) {
+                    self.isUserPro = true
+                }
+            }
+        }
+        
+        await MainActor.run {
+            self.promotionalEntitlements = true
+        }
+        
+    }
+    
+    func windowingForPromotionalEntitlements() async {
+        
+        let currentDate = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month], from: currentDate)
+
+        let isApril2024 = components.year == 2024 && components.month == 4
+        
+        if isApril2024 && !isUserPro { try? await grantPromotionalEntitlement() }
+        
+    }
+    
+    func grantPromotionalEntitlement() async throws {
+        
+        let appUserID = Purchases.shared.appUserID
+        let url = URL(string: "https://api.revenuecat.com/v1/subscribers/\(appUserID)/entitlements/Pro/promotional")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("Bearer sk_puuududJBAxTZDOuimFLoJJgqORLv", forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let body: [String: Any] = [
+            "start_time_ms": Int(Date().timeIntervalSince1970 * 1000),
+            "end_time_ms": Int(Calendar.current.date(byAdding: .month, value: givePromotionalForMonths, to: Date())!.timeIntervalSince1970 * 1000)
+        ]
+        
+        print(Date().iso8601, Calendar.current.date(byAdding: .month, value: 6, to: Date())!.iso8601)
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: body)
+        request.httpBody = jsonData
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode < 300 && httpResponse.statusCode > 199  else {
+            print("Error with the request")
+            print(response)
+            return
+        }
+        
+        await MainActor.run {
+            self.givenPromotional = true
+            self.isUserPro = true
+        }
+        
+        print("Successful entitlement grant: \(data)")
+    }
+
     
     func hasAnyClientContractorCheck() {
         

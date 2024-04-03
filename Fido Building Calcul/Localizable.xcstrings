@@ -283,6 +283,16 @@
         }
       }
     },
+    "%lld Months on Us!" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Mesiacov na Nás!"
+          }
+        }
+      }
+    },
     "%lld projects" : {
       "localizations" : {
         "en" : {
@@ -1436,16 +1446,6 @@
         }
       }
     },
-    "Čoskoro faktúry pre %@..." : {
-      "localizations" : {
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Čoskoro faktúry pre %@..."
-          }
-        }
-      }
-    },
     "Cottage" : {
       "localizations" : {
         "sk" : {
@@ -2333,6 +2333,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Faktúry"
+          }
+        }
+      }
+    },
+    "Invoicing for All of your Contractors Coming Soon..." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fakturácia pre všetkých vašich dodávateľov už čoskoro..."
           }
         }
       }
@@ -3994,6 +4004,16 @@
         }
       }
     },
+    "Thank you!" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ďakujem!"
+          }
+        }
+      }
+    },
     "The last item is - Auxiliary and connecting material.\nThis item includes: cover films, tapes, rollers, brushes, knives, pencils...\n\nFrom our experience, we have found that it is appropriate to set this item at 10%.\n\nExample:\nMaterial cost will be               1000€\nAuxiliary and connecting material   10%\nTotal material cost                 1100€" : {
       "localizations" : {
         "sk" : {
@@ -4414,6 +4434,16 @@
         }
       }
     },
+    "We have moved the Main Price List into Settings screen" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hlavný cenník sme presunuli na obrazovku Nastavenia"
+          }
+        }
+      }
+    },
     "We will use your email only to contact you about your subscription or when there is something new about the app." : {
       "localizations" : {
         "sk" : {
@@ -4570,6 +4600,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Áno"
+          }
+        }
+      }
+    },
+    "You have been granted full access to the app for a period of %lld months to fully experience its features and functionalities." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bol vám udelený Pro prístup k aplikácii na obdobie %lld mesiacov, aby ste mohli naplno využívať jej funkcie a funkcie."
           }
         }
       }

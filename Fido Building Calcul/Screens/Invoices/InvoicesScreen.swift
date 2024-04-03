@@ -21,21 +21,29 @@ struct InvoicesScreen: View {
                     
                     InvoicesScreenTitle()
                     
-                    VStack {
-                        
-                        Spacer()
-                        
-                        Text("Čoskoro faktúry pre \(behavioursVM.activeContractor?.name ?? "dodávateľov")...")
-                            .padding(.horizontal, 30)
-                        
-                        Spacer()
-                    }
+                    Spacer()
                     
                 }.padding(.horizontal, 15)
                     .padding(.bottom, 105)
                 
             }.scrollIndicators(.hidden)
                 .navigationBarTitleDisplayMode(.inline)
+                .overlay(alignment: .center) {
+                    VStack {
+                        
+                        Text("Invoicing for All of your Contractors Coming Soon...")
+                            .font(.system(size: 28, weight: .semibold))
+                            .foregroundStyle(.brandBlack)
+                            .multilineTextAlignment(.center)
+                        
+                        Text("We have moved the Main Price List into Settings screen")
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundStyle(.brandBlack)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal, 20)
+                        
+                    }.padding(.horizontal, 30)
+                }
                 
         }
         

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RevenueCat
 
 struct FidoTabView: View {
     
@@ -44,8 +45,20 @@ struct FidoTabView: View {
         .ignoresSafeArea()
         .onAppear { behaviourVM.deleteArchivedProjects() }
         .onAppear { behaviourVM.checkCheckForGeneralPriceList() }
-        .fullScreenCover(isPresented: $behaviourVM.hasNotSeenOnboarding) {
-            Onboarding()
+        .sheet(isPresented: $behaviourVM.givenPromotional) { GivenPromotionalSheet() }
+        .fullScreenCover(isPresented: $behaviourVM.hasNotSeenOnboarding) { Onboarding() }
+        .onChange(of: behaviourVM.promotionalEntitlements, perform: { _ in
+            Task { await behaviourVM.windowingForPromotionalEntitlements() }
+        })
+        .task {
+            if !behaviourVM.hasNotSeenOnboarding {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                    Task { await behaviourVM.proEntitlementHandling() }
+                }
+            }
         }
     }
+    
+    
+    
 }
