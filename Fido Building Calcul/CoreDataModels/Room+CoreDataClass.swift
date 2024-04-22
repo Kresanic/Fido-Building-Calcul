@@ -204,6 +204,16 @@ public class Room: NSManagedObject {
         
     }
     
+    public var associatedFacadePlasterings: [FacadePlastering] {
+    
+        let set = containsFacadePlastering as? Set<FacadePlastering> ?? []
+    
+        return set.sorted {
+            $0.dateCreated ?? Date.now > $1.dateCreated ?? Date.now
+        }
+        
+    }
+    
     public var associatedPlasteringCeilings: [PlasteringCeiling] {
     
         let set = containsPlasteringCeilings as? Set<PlasteringCeiling> ?? []

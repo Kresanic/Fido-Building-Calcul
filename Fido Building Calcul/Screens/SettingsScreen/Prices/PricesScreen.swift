@@ -77,6 +77,7 @@ struct PricesScreen: View {
                         VStack {
                             PriceWorkBubble(work: PlasteringWall.self, price: $viewModel.workPlasteringWallPrice, viewModel: viewModel)
                             PriceWorkBubble(work: PlasteringCeiling.self, price: $viewModel.workPlasteringCeilingPrice, viewModel: viewModel)
+                            PriceWorkBubble(work: FacadePlastering.self, price: $viewModel.workFacadePlastering, viewModel: viewModel)
                             PriceWorkBubble(work: InstallationOfCornerBead.self, price: $viewModel.workInstallationOfCornerBeadPrice, viewModel: viewModel)
                             PriceWorkBubble(work: PlasteringOfWindowSash.self, price: $viewModel.workPlasteringOfWindowSashPrice, viewModel: viewModel)
                             PriceWorkBubble(work: PenetrationCoating.self, price: $viewModel.workPenetrationCoatingPrice, viewModel: viewModel)
@@ -136,9 +137,10 @@ struct PricesScreen: View {
                             PriceMaterialBubblePackageBased(material: DoublePlasterboardOffsetWall.self, price: $viewModel.materialDoublePlasterboardingOffsetWallPrice, capacity: $viewModel.materialDoublePlasterboardingOffsetWallCapacity, viewModel: viewModel)
                             PriceMaterialBubblePackageBased(material: PlasterboardCeiling.self, price: $viewModel.materialPlasterboardingCeilingPrice, capacity: $viewModel.materialPlasterboardingCeilingCapacity, viewModel: viewModel)
                             PriceMaterialBubble(material: Mesh.self, price: $viewModel.materialMeshPrice, viewModel: viewModel)
-                            PriceMaterialBubblePackageBased(material: AdhesiveNetting.self, price: $viewModel.materialAdhesiveNettingPrice, capacity: $viewModel.materialAdhesiveNettingCapacity, viewModel: viewModel)
-                            PriceMaterialBubblePackageBased(material: AdhesiveTilingAndPaving.self, price: $viewModel.materialAdhesiveTilingAndPavingPrice, capacity: $viewModel.materialAdhesiveTilingAndPavingCapacity, viewModel: viewModel)
-                            PriceMaterialBubblePackageBased(material: Plaster.self, price: $viewModel.materialPlasterPrice, capacity: $viewModel.materialPlasterCapacity, viewModel: viewModel)
+                            PriceMaterialBubblePackageBased(material: AdhesiveNetting.self, price: $viewModel.materialAdhesiveNettingPrice, capacity: $viewModel.materialAdhesiveNettingCapacity, viewModel: viewModel, hasKgNote: true)
+                            PriceMaterialBubblePackageBased(material: AdhesiveTilingAndPaving.self, price: $viewModel.materialAdhesiveTilingAndPavingPrice, capacity: $viewModel.materialAdhesiveTilingAndPavingCapacity, viewModel: viewModel, hasKgNote: true)
+                            PriceMaterialBubblePackageBased(material: Plaster.self, price: $viewModel.materialPlasterPrice, capacity: $viewModel.materialPlasterCapacity, viewModel: viewModel, hasKgNote: true)
+                            PriceMaterialBubblePackageBased(material: FacadePlaster.self, price: $viewModel.materialFacadePlasterPrice, capacity: $viewModel.materialFacadePlasterCapacity, viewModel: viewModel, hasKgNote: true)
                             PriceMaterialBubblePackageBased(material: CornerBead.self, price: $viewModel.materialCornerBeadPrice, capacity: $viewModel.materialCornerBeadCapacity, viewModel: viewModel)
                             PriceMaterialBubble(material: Primer.self, price: $viewModel.materialPrimerPrice, viewModel: viewModel)
                         }

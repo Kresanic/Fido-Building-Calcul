@@ -1596,6 +1596,16 @@
         }
       }
     },
+    "Custom days" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vlastná doba"
+          }
+        }
+      }
+    },
     "Custom Material" : {
       "localizations" : {
         "sk" : {
@@ -1986,6 +1996,26 @@
         }
       }
     },
+    "Facade Plaster" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fasádna omietka"
+          }
+        }
+      }
+    },
+    "Facade Plastering" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fasádna omietka"
+          }
+        }
+      }
+    },
     "feature allows users to modify prices in the general price list, affecting all future projects" : {
       "localizations" : {
         "sk" : {
@@ -2327,6 +2357,26 @@
         }
       }
     },
+    "Invoice" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faktúra"
+          }
+        }
+      }
+    },
+    "invoice settings" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nastavenia faktúr"
+          }
+        }
+      }
+    },
     "Invoices" : {
       "localizations" : {
         "sk" : {
@@ -2613,6 +2663,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cenník materiál"
+          }
+        }
+      }
+    },
+    "Maturity duration" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doba splatnosti"
           }
         }
       }
@@ -2943,6 +3003,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "balenie"
+          }
+        }
+      }
+    },
+    "package 25kg" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "balenie 25kg"
           }
         }
       }
@@ -4030,6 +4100,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ako posledná položka sa nachádza - Pomocné a ukončovacie práce.\nV tejto položke je započítane: nákup materiálu, manipulácia, vynášanie, upratovanie, čistenie, zakrývanie, olepovanie, odvoz odpadu …\n\nZ našej skúsenosti sme zistili, že túto položku je vhodné nastaviť na 10%\n\nPríklad:\nCena práce bude                       1000€\nPomocné a ukončovacie práce   10%\n                                                    \nCelková cena práce                    1100€"
+          }
+        }
+      }
+    },
+    "The set maturity for the new invoices created will be %lld days from the moment of creation." : {
+      "localizations" : {
+        "sk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Nastavená splatnosť pre nové vytvorené faktúry bude %lld dni od okamihu vytvorenia."
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Nastavená splatnosť pre nové vytvorené faktúry bude %lld dní od okamihu vytvorenia."
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Nastavená splatnosť pre nové vytvorené faktúry bude %lld deň od okamihu vytvorenia."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Nastavená splatnosť pre nové vytvorené faktúry bude %lld dní od okamihu vytvorenia."
+                }
+              }
+            }
           }
         }
       }

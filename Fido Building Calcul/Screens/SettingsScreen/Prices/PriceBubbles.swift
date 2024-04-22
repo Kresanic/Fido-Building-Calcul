@@ -284,6 +284,7 @@ struct PriceMaterialBubblePackageBased: View {
     @Binding var capacity: String
     @ObservedObject var viewModel: PricesScreenViewModel
     @FocusState var isFocused: Bool
+    var hasKgNote = false
     
     var body: some View {
         VStack {
@@ -361,11 +362,15 @@ struct PriceMaterialBubblePackageBased: View {
                     Spacer()
                     
                     HStack {
-                        
-                        Text("capacity per ")
-                        +
-                        Text(material.capacityUnity == .piece ? "piece" : "package")
-                        
+                        if hasKgNote {
+                            Text("capacity per ")
+                            +
+                            Text(material.capacityUnity == .piece ? "piece" : "package 25kg")
+                        } else {
+                            Text("capacity per ")
+                            +
+                            Text(material.capacityUnity == .piece ? "piece" : "package")
+                        }
                     }.font(.system(size: 15, weight: .medium))
                         .foregroundStyle(Color.brandBlack)
                         .minimumScaleFactor(0.8)

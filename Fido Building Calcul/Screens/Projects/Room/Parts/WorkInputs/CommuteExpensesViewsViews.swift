@@ -94,7 +94,8 @@ struct CommuteExpensesViews: View {
                                 .font(.system(size: 20, weight: .semibold))
                                 .foregroundStyle(Color.brandBlack)
                                 .multilineTextAlignment(.center)
-                                .keyboardType(.decimalPad)
+                                .focused($focusedDimension, equals: .first)
+                                .keyboardType(.numberPad)
                                 .frame(height: 30)
                                 .frame(maxWidth: .infinity)
                                 .background(Color.brandGray)
@@ -103,7 +104,7 @@ struct CommuteExpensesViews: View {
                             Text(CustomWorkUnits.readableSymbol(.kilometer))
                                 .font(.system(size: 17, weight: .medium))
                                 .foregroundStyle(Color.brandBlack)
-                                .frame(width: 40, alignment: .leading)
+                                .frame(width: 35, alignment: .leading)
                             
                         }
                         
@@ -114,6 +115,7 @@ struct CommuteExpensesViews: View {
                                 .font(.system(size: 17, weight: .medium))
                                 .foregroundStyle(Color.brandBlack)
                                 .fixedSize()
+                                .frame(minWidth: 55, alignment: .trailing)
                             
                             TextField("0", text: $days)
                                 .font(.system(size: 20, weight: .semibold))
@@ -129,7 +131,7 @@ struct CommuteExpensesViews: View {
                             Text(UnitsOfMeasurment.readableSymbol(.day))
                                 .font(.system(size: 17, weight: .medium))
                                 .foregroundStyle(Color.brandBlack)
-                                .frame(width: 40)
+                                .frame(width: 35, alignment: .leading)
                             
                         }
                         
@@ -158,7 +160,8 @@ struct CommuteExpensesViews: View {
                             behavioursVM.redraw()
                         }
                     }
-                    .workInputsToolbar(focusedDimension: $focusedDimension, size1: $length, size2: $days)
+                    
+                    
                     
                 }
                 
@@ -167,6 +170,7 @@ struct CommuteExpensesViews: View {
                 .background { Color.brandGray.onTapGesture { dismissKeyboard() } }
                 .clipShape(RoundedRectangle(cornerRadius: isShowingInputs ? 30 : 20, style: .continuous))
                 .onAppear { if room.commuteLength > 0 || room.daysInWork > 0 { isShowingInputs = true } }
+                .workInputsToolbar(focusedDimension: $focusedDimension, size1: $length, size2: $days)
         }
     }
     

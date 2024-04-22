@@ -98,6 +98,8 @@ struct RoomScreen: View {
                         
                         PlasteringCeilingViews(room: fetchedRoom, scrollProxy: scrollProxy).id(PlasteringCeiling.scrollID)
                         
+                        FacadePlasteringViews(room: fetchedRoom, scrollProxy: scrollProxy).id(FacadePlastering.scrollID)
+                        
                         InstallationOfCornerBeadViews(room: fetchedRoom, scrollProxy: scrollProxy).id(InstallationOfCornerBead.scrollID)
                         
                         PlasteringOfWindowSashViews(room: fetchedRoom, scrollProxy: scrollProxy).id(PlasteringOfWindowSash.scrollID)

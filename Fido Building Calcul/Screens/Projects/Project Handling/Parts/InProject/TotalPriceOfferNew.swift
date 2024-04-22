@@ -62,7 +62,6 @@ struct TotalPriceOffer: View {
                             HStack(alignment: .firstTextBaseline) {
               
                                 Text("without VAT")
-
                                     .font(.system(size: 16, weight: .semibold))
                                     .foregroundStyle(Color.brandBlack)
                                 

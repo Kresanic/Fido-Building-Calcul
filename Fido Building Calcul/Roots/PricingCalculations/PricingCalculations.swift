@@ -311,6 +311,12 @@ final class PricingCalculations: ObservableObject {
         let plasteringCeilingRow = PriceBillRow(name: PlasteringCeiling.billSubTitle, pieces: plasteringCeilingPieces, unit: .squareMeter, price: plasteringCeilingPrice)
         priceBill.addWorks(plasteringCeilingRow)
         
+        // FacadePlasteringCeiling
+        let facadePlasteringPieces = room.associatedFacadePlasterings.reduce(0.0, { $0 + $1.cleanArea })
+        let facadePlasteringPrice = facadePlasteringPieces * priceList.workFacadePlastering
+        let facadePlasteringRow = PriceBillRow(name: FacadePlastering.title, pieces: facadePlasteringPieces, unit: .squareMeter, price: facadePlasteringPrice)
+        priceBill.addWorks(facadePlasteringRow)
+        
         // CornerStrips
         let cornerStripsPieces = room.associatedInstallationOfCornerBeads.reduce(0.0, { $0 + $1.count })
         let cornerStripsPrice = cornerStripsPieces * priceList.workInstallationOfCornerBeadPrice
@@ -612,6 +618,12 @@ final class PricingCalculations: ObservableObject {
         let plasterMaterialPrice = plasterMaterialPieces * priceList.materialPlasterPrice
         let plasterMaterialRow = PriceBillRow(name: Plaster.title, pieces: plasterMaterialPieces, unit: .package, price: plasterMaterialPrice)
         priceBill.addMaterials(plasterMaterialRow)
+        
+        // FacadePlasterMaterial
+        let facadePlasterMaterialPieces = ceil(facadePlasteringPieces/priceList.materialPlasterCapacity)
+        let facadePlasterMaterialPrice = facadePlasterMaterialPieces * priceList.materialFacadePlasterPrice
+        let facadePlasterMaterialRow = PriceBillRow(name: FacadePlaster.title, pieces: facadePlasterMaterialPieces, unit: .package, price: facadePlasterMaterialPrice)
+        priceBill.addMaterials(facadePlasterMaterialRow)
         
         // CornerMoldingMaterial
         let circumferenceOfCornerStrips = room.associatedInstallationOfCornerBeads.reduce(0.0, { $0 + $1.count })

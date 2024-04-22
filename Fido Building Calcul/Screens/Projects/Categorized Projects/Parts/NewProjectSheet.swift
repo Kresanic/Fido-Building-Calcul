@@ -24,9 +24,7 @@ struct NewProjectSheet: View {
             
             HStack {
                 
-                Button("Cancel") {
-                    dismiss()
-                }.frame(width: 75, alignment: .leading)
+                Button("Cancel") { dismiss() }.frame(width: 75, alignment: .leading)
                 
                 Spacer()
                 
@@ -37,7 +35,11 @@ struct NewProjectSheet: View {
                 Spacer()
                 
                 Button("Create") {
-                    
+                    if let newProject = createNewProject() {
+                        dismiss()
+                        behaviours.redraw()
+                        behaviours.switchToProjectsPage(with: newProject)
+                    }
                 }.frame(width: 75, alignment: .trailing)
                 
                 

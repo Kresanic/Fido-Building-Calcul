@@ -341,6 +341,7 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.workNettingCeilingPrice = generalPriceList.workNettingCeilingPrice
         newPriceList.workPlasteringWallPrice = generalPriceList.workPlasteringWallPrice
         newPriceList.workPlasteringCeilingPrice = generalPriceList.workPlasteringCeilingPrice
+        newPriceList.workFacadePlastering = generalPriceList.workFacadePlastering
         newPriceList.workInstallationOfCornerBeadPrice = generalPriceList.workInstallationOfCornerBeadPrice
         newPriceList.workPlasteringOfWindowSashPrice = generalPriceList.workPlasteringOfWindowSashPrice
         newPriceList.workPenetrationCoatingPrice = generalPriceList.workPenetrationCoatingPrice
@@ -382,6 +383,8 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.materialAdhesiveNettingPrice = generalPriceList.materialAdhesiveNettingPrice
         newPriceList.materialAdhesiveTilingAndPavingPrice = generalPriceList.materialAdhesiveTilingAndPavingPrice
         newPriceList.materialPlasterPrice = generalPriceList.materialPlasterPrice
+        newPriceList.materialFacadePlasterPrice = generalPriceList.materialFacadePlasterPrice
+        newPriceList.materialFacadePlasterCapacity = generalPriceList.materialFacadePlasterCapacity
         newPriceList.materialCornerBeadPrice = generalPriceList.materialCornerBeadPrice
         newPriceList.materialPrimerPrice = generalPriceList.materialPrimerPrice
         newPriceList.materialPaintWallPrice = generalPriceList.materialPaintWallPrice
@@ -438,6 +441,7 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.workNettingCeilingPrice = originalPriceList.workNettingCeilingPrice
         newPriceList.workPlasteringWallPrice = originalPriceList.workPlasteringWallPrice
         newPriceList.workPlasteringCeilingPrice = originalPriceList.workPlasteringCeilingPrice
+        newPriceList.workFacadePlastering = originalPriceList.workFacadePlastering
         newPriceList.workInstallationOfCornerBeadPrice = originalPriceList.workInstallationOfCornerBeadPrice
         newPriceList.workPlasteringOfWindowSashPrice = originalPriceList.workPlasteringOfWindowSashPrice
         newPriceList.workPenetrationCoatingPrice = originalPriceList.workPenetrationCoatingPrice
@@ -479,6 +483,8 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.materialAdhesiveNettingPrice = originalPriceList.materialAdhesiveNettingPrice
         newPriceList.materialAdhesiveTilingAndPavingPrice = originalPriceList.materialAdhesiveTilingAndPavingPrice
         newPriceList.materialPlasterPrice = originalPriceList.materialPlasterPrice
+        newPriceList.materialFacadePlasterPrice = originalPriceList.materialFacadePlasterPrice
+        newPriceList.materialFacadePlasterCapacity = originalPriceList.materialFacadePlasterCapacity
         newPriceList.materialCornerBeadPrice = originalPriceList.materialCornerBeadPrice
         newPriceList.materialPrimerPrice = originalPriceList.materialPrimerPrice
         newPriceList.materialPaintWallPrice = originalPriceList.materialPaintWallPrice

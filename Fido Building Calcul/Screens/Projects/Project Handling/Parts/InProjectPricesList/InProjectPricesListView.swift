@@ -75,11 +75,13 @@ struct InProjectPricesListView: View {
                         VStack {
                             InProjectPriceWorkBubble(work: PlasteringWall.self, price: $viewModel.workPlasteringWallPrice, viewModel: viewModel)
                             InProjectPriceWorkBubble(work: PlasteringCeiling.self, price: $viewModel.workPlasteringCeilingPrice, viewModel: viewModel)
+                            InProjectPriceWorkBubble(work: FacadePlastering.self, price: $viewModel.workFacadePlastering, viewModel: viewModel)
                             InProjectPriceWorkBubble(work: InstallationOfCornerBead.self, price: $viewModel.workInstallationOfCornerBeadPrice, viewModel: viewModel)
                             InProjectPriceWorkBubble(work: PlasteringOfWindowSash.self, price: $viewModel.workPlasteringOfWindowSashPrice, viewModel: viewModel)
                             InProjectPriceWorkBubble(work: PenetrationCoating.self, price: $viewModel.workPenetrationCoatingPrice, viewModel: viewModel)
                             InProjectPriceWorkBubble(work: PaintingWall.self, price: $viewModel.workPaintingWallPrice, viewModel: viewModel)
                             InProjectPriceWorkBubble(work: PaintingCeiling.self, price: $viewModel.workPaintingCeilingPrice, viewModel: viewModel)
+                            
                             InProjectPriceWorkBubble(work: Levelling.self, price: $viewModel.workLevellingPrice, viewModel: viewModel)
                             InProjectPriceWorkBubble(work: LayingFloatingFloors.self, price: $viewModel.workLayingFloatingFloorsPrice, viewModel: viewModel)
                             InProjectPriceWorkBubble(work: SkirtingOfFloatingFloor.self, price: $viewModel.workSkirtingOfFloatingFloorPrice, viewModel: viewModel)
@@ -133,9 +135,10 @@ struct InProjectPricesListView: View {
                             InProjectPriceMaterialBubblePackageBased(material: DoublePlasterboardOffsetWall.self, price: $viewModel.materialDoublePlasterboardingOffsetWallPrice, capacity: $viewModel.materialDoublePlasterboardingOffsetWallCapacity, viewModel: viewModel)
                             InProjectPriceMaterialBubblePackageBased(material: PlasterboardCeiling.self, price: $viewModel.materialPlasterboardingCeilingPrice, capacity: $viewModel.materialPlasterboardingCeilingCapacity, viewModel: viewModel)
                             InProjectPriceMaterialBubble(material: Mesh.self, price: $viewModel.materialMeshPrice, viewModel: viewModel)
-                            InProjectPriceMaterialBubblePackageBased(material: AdhesiveNetting.self, price: $viewModel.materialAdhesiveNettingPrice, capacity: $viewModel.materialAdhesiveNettingCapacity, viewModel: viewModel)
-                            InProjectPriceMaterialBubblePackageBased(material: AdhesiveTilingAndPaving.self, price: $viewModel.materialAdhesiveTilingAndPavingPrice, capacity: $viewModel.materialAdhesiveTilingAndPavingCapacity, viewModel: viewModel)
-                            InProjectPriceMaterialBubblePackageBased(material: Plaster.self, price: $viewModel.materialPlasterPrice, capacity: $viewModel.materialPlasterCapacity, viewModel: viewModel)
+                            InProjectPriceMaterialBubblePackageBased(material: AdhesiveNetting.self, price: $viewModel.materialAdhesiveNettingPrice, capacity: $viewModel.materialAdhesiveNettingCapacity, viewModel: viewModel, hasKgNote: true)
+                            InProjectPriceMaterialBubblePackageBased(material: AdhesiveTilingAndPaving.self, price: $viewModel.materialAdhesiveTilingAndPavingPrice, capacity: $viewModel.materialAdhesiveTilingAndPavingCapacity, viewModel: viewModel, hasKgNote: true)
+                            InProjectPriceMaterialBubblePackageBased(material: Plaster.self, price: $viewModel.materialPlasterPrice, capacity: $viewModel.materialPlasterCapacity, viewModel: viewModel, hasKgNote: true)
+                            InProjectPriceMaterialBubblePackageBased(material: FacadePlaster.self, price: $viewModel.materialFacadePlasterPrice, capacity: $viewModel.materialFacadePlasterCapacity, viewModel: viewModel, hasKgNote: true)
                             InProjectPriceMaterialBubblePackageBased(material: CornerBead.self, price: $viewModel.materialCornerBeadPrice, capacity: $viewModel.materialCornerBeadCapacity, viewModel: viewModel)
                             InProjectPriceMaterialBubble(material: Primer.self, price: $viewModel.materialPrimerPrice, viewModel: viewModel)
                         }

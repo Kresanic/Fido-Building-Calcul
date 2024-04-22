@@ -123,6 +123,15 @@ public class Plaster: MaterialType {
     
 }
 
+public class FacadePlaster: MaterialType {
+    
+    static var title: LocalizedStringKey = "Facade Plaster"
+    static var subTitle: LocalizedStringKey = ""
+    static var unit: UnitsOfMeasurment = .squareMeter
+    static var capacityUnity: UnitsOfMeasurment? = .package
+    
+}
+
 public class CornerBead: MaterialType {
     
     static var title: LocalizedStringKey = "Corner bead"

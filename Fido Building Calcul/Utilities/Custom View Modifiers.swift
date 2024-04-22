@@ -221,6 +221,40 @@ struct ProjectBubbleViewDeletion: ViewModifier {
     
 }
 
+struct ProjectBubbleViewArchival: ViewModifier {
+    
+    @Binding var isDeleting: Bool
+    var atButtonPress: () -> Void
+    
+    func body(content: Content) -> some View {
+        
+        ZStack(alignment: .trailing) {
+            
+            if isDeleting {
+                Button {
+                    atButtonPress()
+                } label: {
+                    Image(systemName: "archivebox")
+                        .font(.system(size: 25))
+                        .foregroundStyle(Color.brandBlack)
+                        .frame(maxHeight: .infinity)
+                        .frame(width: 80)
+                        .background(Color.brandRed)
+                        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                    
+                }
+            }
+            
+            content
+                .offset(x: isDeleting ? -90 : 0)
+                .padding(.leading, isDeleting ? 90 : 0)
+            
+        }
+        
+    }
+    
+}
+
 struct Redrawable: ViewModifier {
     
     @EnvironmentObject var behaviourVM: BehavioursViewModel
