@@ -135,17 +135,17 @@ public struct PriceBillRow: Identifiable {
     public var id = UUID()
     public var name: LocalizedStringKey
     public var pieces: Double
-    public var unit: UnitsOfMeasurment
+    public var unit: UnitsOfMeasurement
     public var price: Double
     
-    public init(name: String, pieces: Double, unit: UnitsOfMeasurment, price: Double) {
+    public init(name: String, pieces: Double, unit: UnitsOfMeasurement, price: Double) {
         self.name = LocalizedStringKey(name)
         self.pieces = pieces
         self.unit = unit
         self.price = price
     }
     
-    public init(name: LocalizedStringKey, pieces: Double, unit: UnitsOfMeasurment, price: Double) {
+    public init(name: LocalizedStringKey, pieces: Double, unit: UnitsOfMeasurement, price: Double) {
         self.name = name
         self.pieces = pieces
         self.unit = unit

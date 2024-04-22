@@ -174,7 +174,7 @@ struct InstallationOfCornerBeadEditor: View {
                     .background(Color.brandGray)
                     .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                 
-                Text(UnitsOfMeasurment.readableSymbol(InstallationOfCornerBead.unit))
+                Text(UnitsOfMeasurement.readableSymbol(InstallationOfCornerBead.unit))
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(Color.brandBlack)
                 

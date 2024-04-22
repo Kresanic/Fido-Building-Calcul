@@ -17,6 +17,6 @@ public class Siliconing: NSManagedObject, CountBasedWorkType {
     
     static var subTitle: LocalizedStringKey =  ""
     
-    static var unit: UnitsOfMeasurment  = .basicMeter
+    static var unit: UnitsOfMeasurement  = .basicMeter
     
 }

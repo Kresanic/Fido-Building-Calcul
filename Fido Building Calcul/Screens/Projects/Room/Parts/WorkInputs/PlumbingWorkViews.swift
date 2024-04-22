@@ -186,7 +186,7 @@ struct PlubmingWorkEditor: View {
                     .background(Color.brandGray)
                     .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                 
-                Text(UnitsOfMeasurment.readableSymbol(Plumbing.unit))
+                Text(UnitsOfMeasurement.readableSymbol(Plumbing.unit))
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(Color.brandBlack)
                     .frame(width: 40, alignment: .leading)

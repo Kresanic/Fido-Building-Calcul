@@ -15,7 +15,7 @@ public class BrickLoadBearingWall: NSManagedObject, AreaBasedWorkType {
     
     static var title: LocalizedStringKey = "Brick load-bearing wall"
     static var subTitle: LocalizedStringKey =  "200 - 450mm"
-    static var unit: UnitsOfMeasurment  = .squareMeter
+    static var unit: UnitsOfMeasurement  = .squareMeter
     
     public var cleanArea: Double {
         

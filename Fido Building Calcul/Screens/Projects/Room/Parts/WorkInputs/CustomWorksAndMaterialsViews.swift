@@ -33,7 +33,7 @@ enum CustomWorkUnits: String, CaseIterable {
         
     }
     
-    static func parse(_ s: String?) -> UnitsOfMeasurment {
+    static func parse(_ s: String?) -> UnitsOfMeasurement {
         switch s {
         case "basicMeter":
             return .basicMeter

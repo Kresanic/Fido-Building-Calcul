@@ -19,7 +19,7 @@ public class Grouting: NSManagedObject, AreaBasedWorkType {
     
     static var billSubTitle: LocalizedStringKey = "Grouting, tiling and paving"
     
-    static var unit: UnitsOfMeasurment  = .squareMeter
+    static var unit: UnitsOfMeasurement  = .squareMeter
     
 
 }

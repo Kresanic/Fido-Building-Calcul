@@ -19,7 +19,7 @@ public class PavingCeramic: NSManagedObject, AreaBasedWorkType {
     
     static var billSubTitle: LocalizedStringKey = "Paving, ceramic"
     
-    static var unit: UnitsOfMeasurment  = .squareMeter
+    static var unit: UnitsOfMeasurement  = .squareMeter
     
 
 }

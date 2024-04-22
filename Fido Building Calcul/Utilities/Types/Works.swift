@@ -15,6 +15,6 @@ public class AuxiliaryAndFinishingWork: WorkType {
     
     static var subTitle: LocalizedStringKey = ""
     
-    static var unit: UnitsOfMeasurment = .percentage
+    static var unit: UnitsOfMeasurement = .percentage
     
 }

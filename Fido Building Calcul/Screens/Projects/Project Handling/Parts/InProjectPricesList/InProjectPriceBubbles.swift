@@ -12,7 +12,7 @@ struct InProjectPriceBubble: View {
     var title: LocalizedStringKey
     var subTitle: LocalizedStringKey
     @Binding var price: String
-    var unit: UnitsOfMeasurment
+    var unit: UnitsOfMeasurement
     @ObservedObject var viewModel: InProjectPricesListViewModel
     @FocusState var isFocused: Bool
     
@@ -54,7 +54,7 @@ struct InProjectPriceBubble: View {
                         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                         .focused($isFocused)
                     
-                    Text(UnitsOfMeasurment.readableSymbol(unit))
+                    Text(UnitsOfMeasurement.readableSymbol(unit))
                         .font(.system(size: 16, weight: .medium))
                         .foregroundStyle(Color.brandBlack)
                         .frame(width: 55)
@@ -78,7 +78,7 @@ struct InProjectPriceBubble: View {
                         Text("/")
                             .font(.system(size: 16, weight: .medium))
                         +
-                        Text(UnitsOfMeasurment.readableSymbol(unit))
+                        Text(UnitsOfMeasurement.readableSymbol(unit))
                             .font(.system(size: 16, weight: .medium))
                     }.foregroundStyle(Color.brandBlack)
                         .frame(width: 55)
@@ -143,7 +143,7 @@ struct InProjectPriceWorkBubble: View {
                         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                         .focused($isFocused)
                     
-                    Text(UnitsOfMeasurment.readableSymbol(work.unit))
+                    Text(UnitsOfMeasurement.readableSymbol(work.unit))
                         .font(.system(size: 16, weight: .medium))
                         .foregroundStyle(Color.brandBlack)
                         .frame(width: 55)
@@ -167,7 +167,7 @@ struct InProjectPriceWorkBubble: View {
                         Text("/")
                             .font(.system(size: 16, weight: .medium))
                         +
-                        Text(UnitsOfMeasurment.readableSymbol(work.unit))
+                        Text(UnitsOfMeasurement.readableSymbol(work.unit))
                             .font(.system(size: 16, weight: .medium))
                     }.frame(width: 55)
                     
@@ -231,7 +231,7 @@ struct InProjectPriceMaterialBubble: View {
                         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                         .focused($isFocused)
                     
-                    Text(UnitsOfMeasurment.readableSymbol(material.unit))
+                    Text(UnitsOfMeasurement.readableSymbol(material.unit))
                         .font(.system(size: 16, weight: .medium))
                         .foregroundStyle(Color.brandBlack)
                         .frame(width: 55)
@@ -255,7 +255,7 @@ struct InProjectPriceMaterialBubble: View {
                         Text("/")
                             .font(.system(size: 16, weight: .medium))
                         +
-                        Text(UnitsOfMeasurment.readableSymbol(material.unit))
+                        Text(UnitsOfMeasurement.readableSymbol(material.unit))
                             .font(.system(size: 16, weight: .medium))
                     }.foregroundStyle(Color.brandBlack)
                         .frame(width: 55)
@@ -319,7 +319,7 @@ struct InProjectPriceMaterialBubblePackageBased: View {
                         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                         .focused($isFocused)
                     
-                    Text(UnitsOfMeasurment.readableSymbol(material.unit))
+                    Text(UnitsOfMeasurement.readableSymbol(material.unit))
                         .font(.system(size: 16, weight: .medium))
                         .foregroundStyle(Color.brandBlack)
                         .frame(width: 45)
@@ -343,7 +343,7 @@ struct InProjectPriceMaterialBubblePackageBased: View {
                         Text("/")
                             .font(.system(size: 16, weight: .medium))
                         +
-                        Text(UnitsOfMeasurment.readableSymbol(material.capacityUnity ?? .package))
+                        Text(UnitsOfMeasurement.readableSymbol(material.capacityUnity ?? .package))
                             .font(.system(size: 16, weight: .medium))
                     }.foregroundStyle(Color.brandBlack)
                     .frame(width: 55)
@@ -386,7 +386,7 @@ struct InProjectPriceMaterialBubblePackageBased: View {
                         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                         .focused($isFocused)
                     
-                    Text(UnitsOfMeasurment.readableSymbol(material.unit))
+                    Text(UnitsOfMeasurement.readableSymbol(material.unit))
                         .font(.system(size: 16, weight: .medium))
                         .foregroundStyle(Color.brandBlack)
                         .frame(width: 55)
@@ -456,7 +456,7 @@ struct InProjectPriceOtherBubble: View {
                         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                         .focused($isFocused)
                     
-                    Text(UnitsOfMeasurment.readableSymbol(other.unit))
+                    Text(UnitsOfMeasurement.readableSymbol(other.unit))
                         .font(.system(size: 16, weight: .medium))
                         .foregroundStyle(Color.brandBlack)
                         .frame(width: 55)
@@ -480,7 +480,7 @@ struct InProjectPriceOtherBubble: View {
                         Text("/")
                             .font(.system(size: 16, weight: .medium))
                         +
-                        Text(UnitsOfMeasurment.readableSymbol(other.unit))
+                        Text(UnitsOfMeasurement.readableSymbol(other.unit))
                             .font(.system(size: 16, weight: .medium))
                     }.frame(width: 55)
                     

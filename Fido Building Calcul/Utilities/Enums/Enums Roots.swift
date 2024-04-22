@@ -11,7 +11,7 @@ enum CustomTabs { case projects, clients, settings, invoices }
 
 enum DialogAlertType { case approval, warning }
 
-public enum UnitsOfMeasurment: String {
+public enum UnitsOfMeasurement: String {
     
     case basicMeter, meter, squareMeter, cubicMeter, piece, package, hour, kilometer, percentage, day, kilogram, ton
     
@@ -45,7 +45,7 @@ public enum UnitsOfMeasurment: String {
         
     }
     
-    static func parse(_ s: String?) -> UnitsOfMeasurment {
+    static func parse(_ s: String?) -> UnitsOfMeasurement {
         switch s {
         case "basicMeter":
             return .basicMeter

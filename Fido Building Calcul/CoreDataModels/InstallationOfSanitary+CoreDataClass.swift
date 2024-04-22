@@ -29,6 +29,6 @@ public class InstallationOfSanitary: NSManagedObject {
     static var bathScreen: LocalizedStringKey = "Bath screen"
     static var mirror: LocalizedStringKey = "Mirror"
     
-    static var unit: UnitsOfMeasurment = .piece
+    static var unit: UnitsOfMeasurement = .piece
     
 }

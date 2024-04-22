@@ -530,7 +530,7 @@ final class PricingCalculations: ObservableObject {
             let customWorkTitlePreCursor = customWork.title == nil ? String(localized: "Custom Work") : customWork.title ?? ""
             let customWorkTitle = customWorkTitlePreCursor.isEmpty ? String(localized: "Custom Work") : customWorkTitlePreCursor
             
-            let customWorkRow = PriceBillRow(name: customWorkTitle, pieces: customWork.numberOfUnits, unit: UnitsOfMeasurment.parse(customWork.unit), price: customWork.numberOfUnits * customWork.pricePerUnit)
+            let customWorkRow = PriceBillRow(name: customWorkTitle, pieces: customWork.numberOfUnits, unit: UnitsOfMeasurement.parse(customWork.unit), price: customWork.numberOfUnits * customWork.pricePerUnit)
             
             priceBill.addWorks(customWorkRow)
             
@@ -714,7 +714,7 @@ final class PricingCalculations: ObservableObject {
             let customMaterialTitlePreCursor = customMaterial.title == nil ? String(localized: "Custom Material") : customMaterial.title ?? ""
             let customMaterialTitle = customMaterialTitlePreCursor.isEmpty ? String(localized: "Custom Material") : customMaterialTitlePreCursor
             
-            let customMaterialRow = PriceBillRow(name: customMaterialTitle, pieces: customMaterial.numberOfUnits, unit: UnitsOfMeasurment.parse(customMaterial.unit), price: customMaterial.numberOfUnits * customMaterial.pricePerUnit)
+            let customMaterialRow = PriceBillRow(name: customMaterialTitle, pieces: customMaterial.numberOfUnits, unit: UnitsOfMeasurement.parse(customMaterial.unit), price: customMaterial.numberOfUnits * customMaterial.pricePerUnit)
             
             priceBill.addMaterials(customMaterialRow)
             
@@ -754,6 +754,23 @@ final class PricingCalculations: ObservableObject {
         }
         
         return projectPriceBill
+        
+    }
+    
+    
+    func projectPriceBills(project: Project, priceList: PriceList) -> [PriceBill] {
+        
+        var projectBills: [PriceBill] = []
+        
+        for room in project.associatedRooms {
+            
+            let roomPriceBill = roomPriceBillCalculation(room: room, priceList: priceList)
+            
+            projectBills.append(roomPriceBill)
+            
+        }
+        
+        return projectBills
         
     }
     

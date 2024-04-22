@@ -19,7 +19,7 @@ public class PlasteringWall: NSManagedObject, AreaBasedWorkType {
     
     static var billSubTitle: LocalizedStringKey = "Plastering, wall"
     
-    static var unit: UnitsOfMeasurment  = .squareMeter
+    static var unit: UnitsOfMeasurement  = .squareMeter
     
     public var cleanArea: Double {
         

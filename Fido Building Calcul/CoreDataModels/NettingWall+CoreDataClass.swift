@@ -19,7 +19,7 @@ public class NettingWall: NSManagedObject, AreaBasedWorkType {
     
     static var billSubTitle: LocalizedStringKey = "Netting, wall"
     
-    static var unit: UnitsOfMeasurment  = .squareMeter
+    static var unit: UnitsOfMeasurement  = .squareMeter
     
     public var cleanArea: Double {
         

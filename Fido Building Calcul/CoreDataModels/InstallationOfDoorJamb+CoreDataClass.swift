@@ -17,6 +17,6 @@ public class InstallationOfDoorJamb: NSManagedObject, CountBasedWorkType {
     
     static var subTitle: LocalizedStringKey =  ""
     
-    static var unit: UnitsOfMeasurment  = .piece
+    static var unit: UnitsOfMeasurement  = .piece
 
 }

@@ -21,7 +21,7 @@ public class PlasterboardingOffsetWall: NSManagedObject, AreaBasedWorkType {
     static var simpleSubTitle: LocalizedStringKey = "offset wall, simple"
     static var doubleSubTitle: LocalizedStringKey = "offset wall, double"
     
-    static var unit: UnitsOfMeasurment = .squareMeter
+    static var unit: UnitsOfMeasurement = .squareMeter
     
     public var cleanArea: Double {
         

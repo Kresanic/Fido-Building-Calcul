@@ -11,6 +11,7 @@ struct TotalPriceOffer: View {
     
     var project: Project
     @State var isShowingPayWall = false
+    @State var isShowingInvoiceBuilder = false
     @EnvironmentObject var behavioursVM: BehavioursViewModel
     @EnvironmentObject var priceCalc: PricingCalculations
     @Environment(\.managedObjectContext) var viewContext
@@ -134,6 +135,26 @@ struct TotalPriceOffer: View {
                             
                         }
                         
+                        #warning("Delete or refactor")
+                        Button {
+                            isShowingInvoiceBuilder = true
+                        } label: {
+                            HStack(spacing: 5) {
+                                
+                                Text("Create Invocie")
+                                    .font(.system(size: 20, weight: .medium))
+                                    .foregroundStyle(Color.brandWhite)
+                                
+                                Image(systemName: "doc.text.fill")
+                                    .font(.system(size: 18, weight: .medium))
+                                    .foregroundStyle(Color.brandWhite)
+                                
+                            }.padding(.vertical, 15)
+                                .frame(maxWidth: .infinity)
+                                .background(Color.brandBlack)
+                                .clipShape(.rect(cornerRadius: 20, style: .continuous))
+                        }
+                        
                     }
                     .padding(15)
                     .background(Color.brandGray)
@@ -141,6 +162,7 @@ struct TotalPriceOffer: View {
                     .redrawable()
                     
                 }.fullScreenCover(isPresented: $isShowingPayWall) { PayWallScreen() }
+                    .fullScreenCover(isPresented: $isShowingInvoiceBuilder) { InvoiceBuilderView(project: project) }
                     .sheet(isPresented: $pdfViewModel.isShowingPreview) {
                         PDFPreviewSheet(pdfViewModel: pdfViewModel, pdfProject: project)
                             .onDisappear {

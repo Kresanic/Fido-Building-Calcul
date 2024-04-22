@@ -1506,6 +1506,16 @@
         }
       }
     },
+    "Create Invocie" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyfakturovať"
+          }
+        }
+      }
+    },
     "Create profile" : {
       "localizations" : {
         "sk" : {
@@ -2197,6 +2207,16 @@
         }
       }
     },
+    "Generate Invocie" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vygenerovať faktúru"
+          }
+        }
+      }
+    },
     "Grouting" : {
       "localizations" : {
         "sk" : {
@@ -2363,6 +2383,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Faktúra"
+          }
+        }
+      }
+    },
+    "Invoice Builder" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tvorba faktúry"
           }
         }
       }
@@ -2973,6 +3003,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Možnosti"
+          }
+        }
+      }
+    },
+    "Other" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ostatné"
           }
         }
       }
@@ -4020,6 +4060,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Predplatiť"
+          }
+        }
+      }
+    },
+    "Summary" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zhrnutie"
           }
         }
       }

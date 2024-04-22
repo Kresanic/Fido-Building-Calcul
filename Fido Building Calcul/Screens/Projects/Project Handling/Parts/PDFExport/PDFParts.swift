@@ -323,7 +323,7 @@ struct PDFRowView: View {
             
             var pieces = priceBillRow.pieces
             
-            Text("\(pieces.roundAndRemoveZerosFromEnd()) \(NSLocalizedString(UnitsOfMeasurment.readableSymbol(priceBillRow.unit).stringKey ?? "", comment: ""))")
+            Text("\(pieces.roundAndRemoveZerosFromEnd()) \(NSLocalizedString(UnitsOfMeasurement.readableSymbol(priceBillRow.unit).stringKey ?? "", comment: ""))")
                 .font(.system(size: 12))
                 .frame(width: 60, alignment: .trailing)
 

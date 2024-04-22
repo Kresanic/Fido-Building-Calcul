@@ -15,7 +15,7 @@ public class FacadePlastering: NSManagedObject, AreaBasedWorkType {
     
     static var title: LocalizedStringKey = "Facade Plastering"
     static var subTitle: LocalizedStringKey =  ""
-    static var unit: UnitsOfMeasurment  = .squareMeter
+    static var unit: UnitsOfMeasurement  = .squareMeter
     
     public var cleanArea: Double {
         

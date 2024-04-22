@@ -128,7 +128,7 @@ struct CommuteExpensesViews: View {
                                 .background(Color.brandGray)
                                 .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                             
-                            Text(UnitsOfMeasurment.readableSymbol(.day))
+                            Text(UnitsOfMeasurement.readableSymbol(.day))
                                 .font(.system(size: 17, weight: .medium))
                                 .foregroundStyle(Color.brandBlack)
                                 .frame(width: 35, alignment: .leading)

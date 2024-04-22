@@ -11,7 +11,7 @@ public class ToolRental: OtherType {
     
     static var title: LocalizedStringKey = "Tool rental"
     static var subTitle: LocalizedStringKey = ""
-    static var unit: UnitsOfMeasurment = .hour
+    static var unit: UnitsOfMeasurement = .hour
     static var scrollID: String = "\(title) + \(subTitle)"
     
 }
@@ -20,7 +20,7 @@ public class Commute: OtherType {
     
     static var title: LocalizedStringKey = "Commute"
     static var subTitle: LocalizedStringKey = ""
-    static var unit: UnitsOfMeasurment = .kilometer
+    static var unit: UnitsOfMeasurement = .kilometer
     static var scrollID: String = "\(title) + \(subTitle)"
     
 }
@@ -29,7 +29,7 @@ public class VAT: OtherType {
     
     static var title: LocalizedStringKey = "VAT"
     static var subTitle: LocalizedStringKey = ""
-    static var unit: UnitsOfMeasurment = .percentage
+    static var unit: UnitsOfMeasurement = .percentage
     
 }
 

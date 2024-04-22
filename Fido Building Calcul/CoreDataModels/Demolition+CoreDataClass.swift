@@ -17,7 +17,7 @@ public class Demolition: NSManagedObject, CountBasedWorkType {
     
     static var subTitle: LocalizedStringKey =  ""
     
-    static var unit: UnitsOfMeasurment  = .hour
+    static var unit: UnitsOfMeasurement  = .hour
     
     
 }

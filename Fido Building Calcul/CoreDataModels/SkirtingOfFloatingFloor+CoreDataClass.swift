@@ -17,6 +17,6 @@ public class SkirtingOfFloatingFloor: NSManagedObject, CountBasedWorkType {
     
     static var subTitle: LocalizedStringKey =  "floating floor"
     
-    static var unit: UnitsOfMeasurment  = .basicMeter
+    static var unit: UnitsOfMeasurement  = .basicMeter
     
 }

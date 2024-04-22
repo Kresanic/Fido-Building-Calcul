@@ -11,7 +11,7 @@ protocol MaterialType {
     
     static var title: LocalizedStringKey { get }
     static var subTitle: LocalizedStringKey { get }
-    static var unit: UnitsOfMeasurment { get }
-    static var capacityUnity: UnitsOfMeasurment? { get }
+    static var unit: UnitsOfMeasurement { get }
+    static var capacityUnity: UnitsOfMeasurement? { get }
     
 }

@@ -179,7 +179,7 @@ struct PriceBillRowView: View {
     
     var itemName: LocalizedStringKey
     var pieces: Double?
-    var unit: UnitsOfMeasurment?
+    var unit: UnitsOfMeasurement?
     var price: Double
     
     var body: some View {
@@ -197,7 +197,7 @@ struct PriceBillRowView: View {
                     Text(" - \(pieces)")
                         .font(.system(size: 14, weight: .medium))
                     +
-                    Text(UnitsOfMeasurment.readableSymbol(unit))
+                    Text(UnitsOfMeasurement.readableSymbol(unit))
                         .font(.system(size: 14, weight: .medium))
                     
                 } else {

@@ -19,6 +19,6 @@ public class PlasteringCeiling: NSManagedObject, AreaBasedWorkType {
     
     static var billSubTitle: LocalizedStringKey = "Plastering, ceiling"
     
-    static var unit: UnitsOfMeasurment  = .squareMeter
+    static var unit: UnitsOfMeasurement  = .squareMeter
 
 }

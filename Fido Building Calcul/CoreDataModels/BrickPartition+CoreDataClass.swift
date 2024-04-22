@@ -15,7 +15,7 @@ public class BrickPartition: NSManagedObject, AreaBasedWorkType {
     
     static var title: LocalizedStringKey = "Brick partitions"
     static var subTitle: LocalizedStringKey =  "75 - 175mm"
-    static var unit: UnitsOfMeasurment  = .squareMeter
+    static var unit: UnitsOfMeasurement  = .squareMeter
     
     public var cleanArea: Double {
         

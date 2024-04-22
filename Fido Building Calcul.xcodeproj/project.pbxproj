@@ -19,6 +19,8 @@
 		392DB07D2B947D2B00AA8BC8 /* PlasterboardingPartitionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DB07C2B947D2B00AA8BC8 /* PlasterboardingPartitionViews.swift */; };
 		392E81A82BD6A8ED00E45DCA /* FacadePlastering+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E81A62BD6A8ED00E45DCA /* FacadePlastering+CoreDataClass.swift */; };
 		392E81AB2BD6AE1F00E45DCA /* FacadePlasteringViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E81AA2BD6AE1F00E45DCA /* FacadePlasteringViews.swift */; };
+		392E81AD2BD6B7D900E45DCA /* InvoiceBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E81AC2BD6B7D900E45DCA /* InvoiceBuilderView.swift */; };
+		392E81B02BD6B7F500E45DCA /* InvoiceBuilderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E81AF2BD6B7F500E45DCA /* InvoiceBuilderViewModel.swift */; };
 		3943953F2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3943953E2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift */; };
 		394395412A9FC2E900B2F64B /* ToolRentalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394395402A9FC2E900B2F64B /* ToolRentalViews.swift */; };
 		3943ADA72B7A156B0061F2F1 /* EmailInputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3943ADA62B7A156B0061F2F1 /* EmailInputSheet.swift */; };
@@ -236,6 +238,8 @@
 		392E81A12BD69A5E00E45DCA /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		392E81A62BD6A8ED00E45DCA /* FacadePlastering+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FacadePlastering+CoreDataClass.swift"; sourceTree = "<group>"; };
 		392E81AA2BD6AE1F00E45DCA /* FacadePlasteringViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacadePlasteringViews.swift; sourceTree = "<group>"; };
+		392E81AC2BD6B7D900E45DCA /* InvoiceBuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceBuilderView.swift; sourceTree = "<group>"; };
+		392E81AF2BD6B7F500E45DCA /* InvoiceBuilderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceBuilderViewModel.swift; sourceTree = "<group>"; };
 		3943953E2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWorksAndMaterialsViews.swift; sourceTree = "<group>"; };
 		394395402A9FC2E900B2F64B /* ToolRentalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolRentalViews.swift; sourceTree = "<group>"; };
 		3943ADA62B7A156B0061F2F1 /* EmailInputSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInputSheet.swift; sourceTree = "<group>"; };
@@ -470,6 +474,15 @@
 				3929767D2B3590BF004884E8 /* BIDFillSheet.swift */,
 			);
 			path = FillingBasedOnBID;
+			sourceTree = "<group>";
+		};
+		392E81AE2BD6B7DF00E45DCA /* Invoicing */ = {
+			isa = PBXGroup;
+			children = (
+				392E81AC2BD6B7D900E45DCA /* InvoiceBuilderView.swift */,
+				392E81AF2BD6B7F500E45DCA /* InvoiceBuilderViewModel.swift */,
+			);
+			path = Invoicing;
 			sourceTree = "<group>";
 		};
 		39475D4D2A72F5C1006EC970 /* CoreDataModels */ = {
@@ -1060,6 +1073,7 @@
 				3996E1FD2A77BEA0000D86E1 /* InProjectScreen.swift */,
 				3996E1FF2A77BF64000D86E1 /* InProjectScreenViewModel.swift */,
 				398900DC2B17595700CC3870 /* Parts */,
+				392E81AE2BD6B7DF00E45DCA /* Invoicing */,
 			);
 			path = "Project Handling";
 			sourceTree = "<group>";
@@ -1237,6 +1251,7 @@
 				392393752B5B1A3C00DA3A42 /* HistoryEvent+CoreDataClass.swift in Sources */,
 				396435C52A7A884C00C148B8 /* PlasteringCeilingViews.swift in Sources */,
 				39475D572A76AB3C006EC970 /* PricesScreen.swift in Sources */,
+				392E81B02BD6B7F500E45DCA /* InvoiceBuilderViewModel.swift in Sources */,
 				398900EE2B17644600CC3870 /* NewRoomView.swift in Sources */,
 				396435B72A7A699E00C148B8 /* UIParts.swift in Sources */,
 				392393782B5B1D4D00DA3A42 /* ProjectHistory.swift in Sources */,
@@ -1363,6 +1378,7 @@
 				3989008F2B15F8E200CC3870 /* Works.swift in Sources */,
 				39B6EF4D2B41A1C70002066C /* Enums BIDError.swift in Sources */,
 				397B410F2B878E840023A9BC /* ContractorDetailViewModel.swift in Sources */,
+				392E81AD2BD6B7D900E45DCA /* InvoiceBuilderView.swift in Sources */,
 				398900CC2B17574800CC3870 /* ArchiveDurationView.swift in Sources */,
 				398900FD2B1766FC00CC3870 /* Enums Clients.swift in Sources */,
 				39498F672B4EC8EC0017BE9F /* AppearanceOptions.swift in Sources */,
