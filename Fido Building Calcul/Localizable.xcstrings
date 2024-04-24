@@ -1079,6 +1079,9 @@
         }
       }
     },
+    "By exiting this view all changes made will be deleted." : {
+
+    },
     "By updating the prices, you will replace all existing prices with those from the general price list. This action is irreversible." : {
       "localizations" : {
         "sk" : {
@@ -1486,6 +1489,16 @@
         }
       }
     },
+    "count: %@" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "počet: %@"
+          }
+        }
+      }
+    },
     "Country" : {
       "localizations" : {
         "sk" : {
@@ -1746,6 +1759,9 @@
         }
       }
     },
+    "Delete changes?" : {
+
+    },
     "Delete contractor" : {
       "localizations" : {
         "sk" : {
@@ -1995,6 +2011,9 @@
           }
         }
       }
+    },
+    "Exclude" : {
+
     },
     "export to PDF" : {
       "localizations" : {
@@ -2337,6 +2356,9 @@
         }
       }
     },
+    "Include" : {
+
+    },
     "Insert BID and we will search for it in database and fill all publicly available information about the company." : {
       "localizations" : {
         "sk" : {
@@ -2423,6 +2445,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fakturácia pre všetkých vašich dodávateľov už čoskoro..."
+          }
+        }
+      }
+    },
+    "Items" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Položky"
           }
         }
       }

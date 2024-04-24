@@ -46,6 +46,12 @@
 		395CDD242BD3D4FF00E98E49 /* InvoiceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CDD232BD3D4FF00E98E49 /* InvoiceSettings.swift */; };
 		395CDD262BD3D62800E98E49 /* InvoiceMaturityDurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CDD252BD3D62800E98E49 /* InvoiceMaturityDurationView.swift */; };
 		395CDD282BD3D73400E98E49 /* Enums Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CDD272BD3D73400E98E49 /* Enums Invoice.swift */; };
+		39603E5D2BD98D2F000CDFA4 /* InvoiceBuilderItemBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39603E5C2BD98D2F000CDFA4 /* InvoiceBuilderItemBubble.swift */; };
+		39603E5F2BD98D7F000CDFA4 /* InvoiceBuilderSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39603E5E2BD98D7F000CDFA4 /* InvoiceBuilderSummaryView.swift */; };
+		39603E622BD98DFD000CDFA4 /* InvoiceItemPriceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39603E612BD98DFD000CDFA4 /* InvoiceItemPriceInfo.swift */; };
+		39603E642BD98E29000CDFA4 /* InvoiceItemInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39603E632BD98E29000CDFA4 /* InvoiceItemInput.swift */; };
+		39603E662BD98E62000CDFA4 /* InvoiceItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39603E652BD98E62000CDFA4 /* InvoiceItemInfo.swift */; };
+		39603E682BD98E88000CDFA4 /* InvoiceItemPriceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39603E672BD98E88000CDFA4 /* InvoiceItemPriceInput.swift */; };
 		396435AB2A7A489A00C148B8 /* DemolitionWorkViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435AA2A7A489A00C148B8 /* DemolitionWorkViews.swift */; };
 		396435AD2A7A495900C148B8 /* WiringViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435AC2A7A495900C148B8 /* WiringViews.swift */; };
 		396435B32A7A4DB700C148B8 /* PlumbingWorkViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435B22A7A4DB700C148B8 /* PlumbingWorkViews.swift */; };
@@ -267,6 +273,12 @@
 		395CDD232BD3D4FF00E98E49 /* InvoiceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceSettings.swift; sourceTree = "<group>"; };
 		395CDD252BD3D62800E98E49 /* InvoiceMaturityDurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceMaturityDurationView.swift; sourceTree = "<group>"; };
 		395CDD272BD3D73400E98E49 /* Enums Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums Invoice.swift"; sourceTree = "<group>"; };
+		39603E5C2BD98D2F000CDFA4 /* InvoiceBuilderItemBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceBuilderItemBubble.swift; sourceTree = "<group>"; };
+		39603E5E2BD98D7F000CDFA4 /* InvoiceBuilderSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceBuilderSummaryView.swift; sourceTree = "<group>"; };
+		39603E612BD98DFD000CDFA4 /* InvoiceItemPriceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemPriceInfo.swift; sourceTree = "<group>"; };
+		39603E632BD98E29000CDFA4 /* InvoiceItemInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemInput.swift; sourceTree = "<group>"; };
+		39603E652BD98E62000CDFA4 /* InvoiceItemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemInfo.swift; sourceTree = "<group>"; };
+		39603E672BD98E88000CDFA4 /* InvoiceItemPriceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemPriceInput.swift; sourceTree = "<group>"; };
 		396435AA2A7A489A00C148B8 /* DemolitionWorkViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemolitionWorkViews.swift; sourceTree = "<group>"; };
 		396435AC2A7A495900C148B8 /* WiringViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiringViews.swift; sourceTree = "<group>"; };
 		396435B22A7A4DB700C148B8 /* PlumbingWorkViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlumbingWorkViews.swift; sourceTree = "<group>"; };
@@ -479,8 +491,9 @@
 		392E81AE2BD6B7DF00E45DCA /* Invoicing */ = {
 			isa = PBXGroup;
 			children = (
-				392E81AC2BD6B7D900E45DCA /* InvoiceBuilderView.swift */,
 				392E81AF2BD6B7F500E45DCA /* InvoiceBuilderViewModel.swift */,
+				392E81AC2BD6B7D900E45DCA /* InvoiceBuilderView.swift */,
+				39603E5B2BD98D05000CDFA4 /* Parts */,
 			);
 			path = Invoicing;
 			sourceTree = "<group>";
@@ -641,6 +654,27 @@
 				395CDD252BD3D62800E98E49 /* InvoiceMaturityDurationView.swift */,
 			);
 			path = InvoiceSettings;
+			sourceTree = "<group>";
+		};
+		39603E5B2BD98D05000CDFA4 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				39603E5E2BD98D7F000CDFA4 /* InvoiceBuilderSummaryView.swift */,
+				39603E5C2BD98D2F000CDFA4 /* InvoiceBuilderItemBubble.swift */,
+				39603E602BD98DA6000CDFA4 /* IBItemBubbleParts */,
+			);
+			path = Parts;
+			sourceTree = "<group>";
+		};
+		39603E602BD98DA6000CDFA4 /* IBItemBubbleParts */ = {
+			isa = PBXGroup;
+			children = (
+				39603E612BD98DFD000CDFA4 /* InvoiceItemPriceInfo.swift */,
+				39603E632BD98E29000CDFA4 /* InvoiceItemInput.swift */,
+				39603E652BD98E62000CDFA4 /* InvoiceItemInfo.swift */,
+				39603E672BD98E88000CDFA4 /* InvoiceItemPriceInput.swift */,
+			);
+			path = IBItemBubbleParts;
 			sourceTree = "<group>";
 		};
 		396435A82A7A486E00C148B8 /* Room */ = {
@@ -1256,6 +1290,7 @@
 				396435B72A7A699E00C148B8 /* UIParts.swift in Sources */,
 				392393782B5B1D4D00DA3A42 /* ProjectHistory.swift in Sources */,
 				3943953F2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift in Sources */,
+				39603E642BD98E29000CDFA4 /* InvoiceItemInput.swift in Sources */,
 				39B51FA62B5706B000700AB4 /* PDFExportButton.swift in Sources */,
 				398900842B152ADC00CC3870 /* OnboardingButton.swift in Sources */,
 				390F80332B591DAA00A10FF0 /* NSManagedObject Extension.swift in Sources */,
@@ -1272,6 +1307,7 @@
 				398900B22B1600BB00CC3870 /* ClientHandling.swift in Sources */,
 				397BB9BA2AD041BF006BA23C /* WindowInstallation+CoreDataClass.swift in Sources */,
 				398900F92B17655400CC3870 /* PDFViewModel.swift in Sources */,
+				39603E662BD98E62000CDFA4 /* InvoiceItemInfo.swift in Sources */,
 				39475D5C2A76B585006EC970 /* PropertyCategoryBubbleViewModel.swift in Sources */,
 				397BB9922AD041BF006BA23C /* PlasteringOfWindowSash+CoreDataClass.swift in Sources */,
 				398900D82B17587D00CC3870 /* NewProjectSheet.swift in Sources */,
@@ -1306,6 +1342,7 @@
 				398900862B15F7FF00CC3870 /* Array Extensions.swift in Sources */,
 				394395412A9FC2E900B2F64B /* ToolRentalViews.swift in Sources */,
 				390F80372B59487000A10FF0 /* ClientHandlingView.swift in Sources */,
+				39603E5F2BD98D7F000CDFA4 /* InvoiceBuilderSummaryView.swift in Sources */,
 				396435DB2A7A9B9800C148B8 /* InstallationOfSanitaryViews.swift in Sources */,
 				396435D72A7A968F00C148B8 /* PavingCeramicViews.swift in Sources */,
 				398900D32B17581200CC3870 /* ArchivedProjectView.swift in Sources */,
@@ -1339,12 +1376,14 @@
 				396435C12A7A843F00C148B8 /* NettingCeilingViews.swift in Sources */,
 				39E3548E2B9C87E700DE247E /* PlasterboardingOffsetWall+CoreDataClass.swift in Sources */,
 				398900CE2B17576500CC3870 /* ArchiveDurationButton.swift in Sources */,
+				39603E682BD98E88000CDFA4 /* InvoiceItemPriceInput.swift in Sources */,
 				396435BF2A7A821500C148B8 /* NettingWallViews.swift in Sources */,
 				396435C92A7A8E7800C148B8 /* PlasteringOfWindowSashViews.swift in Sources */,
 				399BB77F2AEBFF3400452560 /* OfferingBubble.swift in Sources */,
 				3996E2002A77BF64000D86E1 /* InProjectScreenViewModel.swift in Sources */,
 				39804FAA2AC43C0700F2A072 /* ClientEditViewModel.swift in Sources */,
 				399BB77D2AEBFEDE00452560 /* PayWallViewModel.swift in Sources */,
+				39603E5D2BD98D2F000CDFA4 /* InvoiceBuilderItemBubble.swift in Sources */,
 				397B41012B877DEC0023A9BC /* ContractorView.swift in Sources */,
 				395CDD282BD3D73400E98E49 /* Enums Invoice.swift in Sources */,
 				39AEABFA2AAF6A470085B2A1 /* InProjectPricesListViewModel.swift in Sources */,
@@ -1407,6 +1446,7 @@
 				3943ADA72B7A156B0061F2F1 /* EmailInputSheet.swift in Sources */,
 				396435CB2A7A8F6D00C148B8 /* PenetrationCoatViews.swift in Sources */,
 				3989008D2B15F8BF00CC3870 /* Materials.swift in Sources */,
+				39603E622BD98DFD000CDFA4 /* InvoiceItemPriceInfo.swift in Sources */,
 				39AEABF82AAF6A350085B2A1 /* InProjectPricesListView.swift in Sources */,
 				396435E12A7AB04900C148B8 /* RoomCalculationBill.swift in Sources */,
 				397BB99A2AD041BF006BA23C /* Siliconing+CoreDataClass.swift in Sources */,
@@ -1549,7 +1589,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
 				DEVELOPMENT_TEAM = J7CR9GZ8S9;
 				ENABLE_PREVIEWS = YES;
@@ -1590,7 +1630,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
 				DEVELOPMENT_TEAM = J7CR9GZ8S9;
 				ENABLE_PREVIEWS = YES;

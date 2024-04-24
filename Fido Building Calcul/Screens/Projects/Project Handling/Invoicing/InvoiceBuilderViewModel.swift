@@ -11,6 +11,8 @@ import SwiftUI
 @MainActor final class InvoiceBuilderViewModel: ObservableObject {
     
     @Published var invoiceItems: [InvoiceItem] = []
+    @Published var madeChanges = false
+    @Published var dialogWindow: Dialog?
     
     func populateInvoiceItems(with project: Project) {
         

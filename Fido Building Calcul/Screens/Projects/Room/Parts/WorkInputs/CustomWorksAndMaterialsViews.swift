@@ -670,19 +670,19 @@ fileprivate struct CustomWorksEditor: View {
     
     private func saveAll() { withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) { try? viewContext.save() } }
     
-    // TOOLBAR FOR CUSTOM WORK AND MATERIAL
+    // TOOLBAR FOR CUSTOM WORK
     
     @ViewBuilder
     private func keyboardToolbarContent(for dimension: Int?) -> some View {
         HStack(spacing: 0) {
             if dimension == 1 {
-                doneButton().frame(width: 70)
+                doneButton().frame(width: 75)
                 mathSymbols()
-                nextButton().frame(width: 70)
+                nextButton().frame(width: 75)
             } else if dimension == 2 {
-                Spacer().frame(width: 70)
+                Spacer().frame(width: 75)
                 mathSymbols()
-                doneButton().frame(width: 70)
+                doneButton().frame(width: 75)
             }
         }
     }
@@ -749,6 +749,16 @@ fileprivate struct CustomWorksEditor: View {
             }.frame(height: 40)
                 .frame(maxWidth: .infinity)
             
+            Button("*") {
+                if focusedDimension == 2 {
+                    pricePerUnit = pricePerUnit + "*"
+                } else if focusedDimension == 1 {
+                    numberOfUnits = numberOfUnits + "*"
+                }
+                impactMed.impactOccurred()
+            }.frame(height: 40)
+                .frame(maxWidth: .infinity)
+                .padding(.top, 8)
             
             Button("=") {
                 if focusedDimension == 2 {
@@ -968,19 +978,19 @@ fileprivate struct CustomMaterialsEditor: View {
         withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) { try? viewContext.save() }
     }
     
-    // TOOLBAR FOR CUSTOM WORK AND MATERIAL
+    // TOOLBAR FOR CUSTOM MATERIAL
     
     @ViewBuilder
     private func keyboardToolbarContent(for dimension: Int?) -> some View {
         HStack(spacing: 0) {
             if dimension == 1 {
-                doneButton().frame(width: 70)
+                doneButton().frame(width: 75)
                 mathSymbols()
-                nextButton().frame(width: 70)
+                nextButton().frame(width: 75)
             } else if dimension == 2 {
-                Spacer().frame(width: 70)
+                Spacer().frame(width: 75)
                 mathSymbols()
-                doneButton().frame(width: 70)
+                doneButton().frame(width: 75)
             }
         }
     }
@@ -1047,6 +1057,16 @@ fileprivate struct CustomMaterialsEditor: View {
             }.frame(height: 40)
                 .frame(maxWidth: .infinity)
             
+            Button("*") {
+                if focusedDimension == 2 {
+                    pricePerUnit = pricePerUnit + "*"
+                } else if focusedDimension == 1 {
+                    numberOfUnits = numberOfUnits + "*"
+                }
+                impactMed.impactOccurred()
+            }.frame(height: 40)
+                .frame(maxWidth: .infinity)
+                .padding(.top, 8)
             
             Button("=") {
                 if focusedDimension == 2 {
