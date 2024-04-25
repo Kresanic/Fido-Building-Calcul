@@ -1429,6 +1429,9 @@
         }
       }
     },
+    "Core Drill" : {
+
+    },
     "Corner bead" : {
       "localizations" : {
         "sk" : {
@@ -3845,6 +3848,9 @@
           }
         }
       }
+    },
+    "Scaffolding" : {
+
     },
     "Search" : {
       "localizations" : {

@@ -14,3 +14,28 @@ protocol OtherType {
     static var unit: UnitsOfMeasurement { get }
     
 }
+
+extension OtherType {
+    
+    static var scrollID: String { "\(Self.title.stringKey ?? "NOTHING") + \(Self.subTitle.stringKey ?? "NOTHING")" }
+    
+}
+
+protocol CountBasedOtherType: OtherType {
+    
+    var count: Double { get }
+    
+}
+
+protocol AreaBasedOtherType: OtherType {
+    
+    var size1: Double { get }
+    var size2: Double { get }
+    
+}
+
+extension AreaBasedOtherType {
+    
+    var area: Double { size1 * size2 }
+    
+}

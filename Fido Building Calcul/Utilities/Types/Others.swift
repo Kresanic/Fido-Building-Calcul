@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-public class ToolRental: OtherType {
-    
-    static var title: LocalizedStringKey = "Tool rental"
-    static var subTitle: LocalizedStringKey = ""
-    static var unit: UnitsOfMeasurement = .hour
-    static var scrollID: String = "\(title) + \(subTitle)"
-    
-}
+//public class ToolRental: OtherType {
+//    
+//    static var title: LocalizedStringKey = "Tool rental"
+//    static var subTitle: LocalizedStringKey = ""
+//    static var unit: UnitsOfMeasurement = .hour
+//    static var scrollID: String = "\(title) + \(subTitle)"
+//    
+//}
 
 public class Commute: OtherType {
     

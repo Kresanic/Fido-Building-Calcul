@@ -202,6 +202,9 @@
 		399BB77D2AEBFEDE00452560 /* PayWallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BB77C2AEBFEDE00452560 /* PayWallViewModel.swift */; };
 		399BB77F2AEBFF3400452560 /* OfferingBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BB77E2AEBFF3400452560 /* OfferingBubble.swift */; };
 		399BB78A2AEC320A00452560 /* PayWallFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BB7892AEC320A00452560 /* PayWallFeature.swift */; };
+		39A111B02BDA88690070500B /* ToolRental+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A111AA2BDA88690070500B /* ToolRental+CoreDataClass.swift */; };
+		39A111B22BDA88690070500B /* Scaffolding+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A111AC2BDA88690070500B /* Scaffolding+CoreDataClass.swift */; };
+		39A111B42BDA88690070500B /* CoreDrill+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A111AE2BDA88690070500B /* CoreDrill+CoreDataClass.swift */; };
 		39A24D472AD6EFD6001FDE2A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 39A24D462AD6EFD6001FDE2A /* Localizable.xcstrings */; };
 		39AEABF62AAF61920085B2A1 /* PricesScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEABF52AAF61920085B2A1 /* PricesScreenViewModel.swift */; };
 		39AEABF82AAF6A350085B2A1 /* InProjectPricesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEABF72AAF6A350085B2A1 /* InProjectPricesListView.swift */; };
@@ -426,6 +429,9 @@
 		399BB77C2AEBFEDE00452560 /* PayWallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallViewModel.swift; sourceTree = "<group>"; };
 		399BB77E2AEBFF3400452560 /* OfferingBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferingBubble.swift; sourceTree = "<group>"; };
 		399BB7892AEC320A00452560 /* PayWallFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallFeature.swift; sourceTree = "<group>"; };
+		39A111AA2BDA88690070500B /* ToolRental+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolRental+CoreDataClass.swift"; sourceTree = "<group>"; };
+		39A111AC2BDA88690070500B /* Scaffolding+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scaffolding+CoreDataClass.swift"; sourceTree = "<group>"; };
+		39A111AE2BDA88690070500B /* CoreDrill+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDrill+CoreDataClass.swift"; sourceTree = "<group>"; };
 		39A24D462AD6EFD6001FDE2A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		39AEABF52AAF61920085B2A1 /* PricesScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesScreenViewModel.swift; sourceTree = "<group>"; };
 		39AEABF72AAF6A350085B2A1 /* InProjectPricesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectPricesListView.swift; sourceTree = "<group>"; };
@@ -501,6 +507,9 @@
 		39475D4D2A72F5C1006EC970 /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
+				39A111AA2BDA88690070500B /* ToolRental+CoreDataClass.swift */,
+				39A111AC2BDA88690070500B /* Scaffolding+CoreDataClass.swift */,
+				39A111AE2BDA88690070500B /* CoreDrill+CoreDataClass.swift */,
 				395086F02A7182D00099BAD8 /* Persistence.swift */,
 				3949A4E02AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodeld */,
 				397BB9662AD041BF006BA23C /* BrickLoadBearingWall+CoreDataClass.swift */,
@@ -1362,7 +1371,9 @@
 				392E81AB2BD6AE1F00E45DCA /* FacadePlasteringViews.swift in Sources */,
 				399BB77B2AEBFEC900452560 /* PayWall.swift in Sources */,
 				398900AD2B15FFFA00CC3870 /* ProjectHandling.swift in Sources */,
+				39A111B02BDA88690070500B /* ToolRental+CoreDataClass.swift in Sources */,
 				396EFD3C2AD0A2D400747EB5 /* CustomWork+CoreDataClass.swift in Sources */,
+				39A111B42BDA88690070500B /* CoreDrill+CoreDataClass.swift in Sources */,
 				397BB9B82AD041BF006BA23C /* Plumbing+CoreDataClass.swift in Sources */,
 				3996E29C2A797C54000D86E1 /* Project+CoreDataClass.swift in Sources */,
 				39D1CBE92BADFA3C006580C2 /* InvoicesScreen.swift in Sources */,
@@ -1384,6 +1395,7 @@
 				39804FAA2AC43C0700F2A072 /* ClientEditViewModel.swift in Sources */,
 				399BB77D2AEBFEDE00452560 /* PayWallViewModel.swift in Sources */,
 				39603E5D2BD98D2F000CDFA4 /* InvoiceBuilderItemBubble.swift in Sources */,
+				39A111B22BDA88690070500B /* Scaffolding+CoreDataClass.swift in Sources */,
 				397B41012B877DEC0023A9BC /* ContractorView.swift in Sources */,
 				395CDD282BD3D73400E98E49 /* Enums Invoice.swift in Sources */,
 				39AEABFA2AAF6A470085B2A1 /* InProjectPricesListViewModel.swift in Sources */,
