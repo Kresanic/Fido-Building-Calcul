@@ -170,6 +170,9 @@ struct PricesScreen: View {
                                 
                             }.padding(.top, 10)
                             
+                            PriceOtherBubble(other: Scaffolding.self, price: $viewModel.othersScaffoldingPrice, viewModel: viewModel)
+                            PriceOtherBubble(other: ScaffoldingAssemblyAndDisassembly.self, price: $viewModel.othersScaffoldingAssemblyAndDisassemblyPrice, viewModel: viewModel)
+                            PriceOtherBubble(other: CoreDrill.self, price: $viewModel.othersCoreDrillRentalPrice, viewModel: viewModel)
                             PriceOtherBubble(other: ToolRental.self, price: $viewModel.othersToolRentalPrice, viewModel: viewModel)
                             PriceOtherBubble(other: Commute.self, price: $viewModel.othersCommutePrice, viewModel: viewModel)
                             PriceOtherBubble(other: VAT.self, price: $viewModel.othersVatPrice, viewModel: viewModel)

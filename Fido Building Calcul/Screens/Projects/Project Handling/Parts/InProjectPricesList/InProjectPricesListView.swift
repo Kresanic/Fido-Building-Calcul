@@ -168,6 +168,9 @@ struct InProjectPricesListView: View {
                                 
                             }.padding(.top, 10)
                             
+                            InProjectPriceOtherBubble(other: Scaffolding.self, price: $viewModel.othersScaffoldingPrice, viewModel: viewModel)
+                            InProjectPriceOtherBubble(other: ScaffoldingAssemblyAndDisassembly.self, price: $viewModel.othersScaffoldingAssemblyAndDisassemblyPrice, viewModel: viewModel)
+                            InProjectPriceOtherBubble(other: CoreDrill.self, price: $viewModel.othersCoreDrillRentalPrice, viewModel: viewModel)
                             InProjectPriceOtherBubble(other: ToolRental.self, price: $viewModel.othersToolRentalPrice, viewModel: viewModel)
                             InProjectPriceOtherBubble(other: Commute.self, price: $viewModel.othersCommutePrice, viewModel: viewModel)
                             InProjectPriceOtherBubble(other: VAT.self, price: $viewModel.othersVatPrice, viewModel: viewModel)

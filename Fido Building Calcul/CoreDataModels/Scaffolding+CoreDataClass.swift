@@ -17,3 +17,13 @@ public class Scaffolding: NSManagedObject, AreaBasedOtherType {
     static var unit: UnitsOfMeasurement = .squareMeter
 
 }
+
+
+public class ScaffoldingAssemblyAndDisassembly: OtherType {
+    
+    static var title: LocalizedStringKey = "Scaffolding"
+    static var subTitle: LocalizedStringKey = "assembly and disassembly"
+    static var billTitle: LocalizedStringKey = "Scaffolding - assembly and disassembly"
+    static var unit: UnitsOfMeasurement = .squareMeter
+    
+}

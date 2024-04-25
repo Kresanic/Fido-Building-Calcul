@@ -368,6 +368,9 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.workWindowInstallationPrice = generalPriceList.workWindowInstallationPrice
         newPriceList.workDoorJambInstallationPrice = generalPriceList.workDoorJambInstallationPrice
         newPriceList.workAuxiliaryAndFinishingPrice = generalPriceList.workAuxiliaryAndFinishingPrice
+        newPriceList.othersScaffoldingPrice = generalPriceList.othersScaffoldingPrice
+        newPriceList.othersScaffoldingAssemblyAndDisassemblyPrice = generalPriceList.othersScaffoldingAssemblyAndDisassemblyPrice
+        newPriceList.othersCoreDrillRentalPrice = generalPriceList.othersCoreDrillRentalPrice
         newPriceList.othersToolRentalPrice = generalPriceList.othersToolRentalPrice
         newPriceList.othersCommutePrice = generalPriceList.othersCommutePrice
         newPriceList.othersVatPrice = generalPriceList.othersVatPrice
@@ -468,6 +471,9 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.workWindowInstallationPrice = originalPriceList.workWindowInstallationPrice
         newPriceList.workDoorJambInstallationPrice = originalPriceList.workDoorJambInstallationPrice
         newPriceList.workAuxiliaryAndFinishingPrice = originalPriceList.workAuxiliaryAndFinishingPrice
+        newPriceList.othersScaffoldingPrice = originalPriceList.othersScaffoldingPrice
+        newPriceList.othersScaffoldingAssemblyAndDisassemblyPrice = originalPriceList.othersScaffoldingAssemblyAndDisassemblyPrice
+        newPriceList.othersCoreDrillRentalPrice = originalPriceList.othersCoreDrillRentalPrice
         newPriceList.othersToolRentalPrice = originalPriceList.othersToolRentalPrice
         newPriceList.othersCommutePrice = originalPriceList.othersCommutePrice
         newPriceList.othersVatPrice = originalPriceList.othersVatPrice

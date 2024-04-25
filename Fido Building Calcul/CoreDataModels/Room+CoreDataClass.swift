@@ -402,4 +402,34 @@ public class Room: NSManagedObject {
         
     }
     
+    public var associatedToolRentals: [ToolRental] {
+    
+        let set = containsToolRentals as? Set<ToolRental> ?? []
+    
+        return set.sorted {
+            $0.dateCreated ?? Date.now > $1.dateCreated ?? Date.now
+        }
+        
+    }
+    
+    public var associatedScaffoldings: [Scaffolding] {
+    
+        let set = containsScaffoldings as? Set<Scaffolding> ?? []
+    
+        return set.sorted {
+            $0.dateCreated ?? Date.now > $1.dateCreated ?? Date.now
+        }
+        
+    }
+    
+    public var associatedCoreDrills: [CoreDrill] {
+    
+        let set = containsCoreDrills as? Set<CoreDrill> ?? []
+    
+        return set.sorted {
+            $0.dateCreated ?? Date.now > $1.dateCreated ?? Date.now
+        }
+        
+    }
+    
 }

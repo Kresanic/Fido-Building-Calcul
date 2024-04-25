@@ -56,6 +56,9 @@ import CoreData
     @Published var workWindowInstallationPrice: String = "0.0"
     @Published var workDoorJambInstallationPrice: String = "0.0"
     @Published var workAuxiliaryAndFinishingPrice: String = "0.0"
+    @Published var othersCoreDrillRentalPrice: String = "0.0"
+    @Published var othersScaffoldingAssemblyAndDisassemblyPrice: String = "0.0"
+    @Published var othersScaffoldingPrice: String = "0.0"
     @Published var othersToolRentalPrice: String = "0.0"
     @Published var othersCommutePrice: String = "0.0"
     @Published var othersVatPrice: String = "0.0"
@@ -162,6 +165,9 @@ import CoreData
             priceList?.workWindowInstallationPrice = stringToDouble(from: workWindowInstallationPrice)
             priceList?.workDoorJambInstallationPrice = stringToDouble(from: workDoorJambInstallationPrice)
             priceList?.workAuxiliaryAndFinishingPrice = stringToDouble(from: workAuxiliaryAndFinishingPrice)
+            priceList?.othersCoreDrillRentalPrice = stringToDouble(from: othersCoreDrillRentalPrice)
+            priceList?.othersScaffoldingAssemblyAndDisassemblyPrice = stringToDouble(from: othersScaffoldingAssemblyAndDisassemblyPrice)
+            priceList?.othersScaffoldingPrice = stringToDouble(from: othersScaffoldingPrice)
             priceList?.othersToolRentalPrice = stringToDouble(from: othersToolRentalPrice)
             priceList?.othersCommutePrice = stringToDouble(from: othersCommutePrice)
             priceList?.othersVatPrice = stringToDouble(from: othersVatPrice)
@@ -260,6 +266,9 @@ import CoreData
             workWindowInstallationPrice = doubleToString(from: priceList.workWindowInstallationPrice)
             workDoorJambInstallationPrice = doubleToString(from: priceList.workDoorJambInstallationPrice)
             workAuxiliaryAndFinishingPrice = doubleToString(from: priceList.workAuxiliaryAndFinishingPrice)
+            othersCoreDrillRentalPrice = doubleToString(from: priceList.othersCoreDrillRentalPrice)
+            othersScaffoldingAssemblyAndDisassemblyPrice = doubleToString(from: priceList.othersScaffoldingAssemblyAndDisassemblyPrice)
+            othersScaffoldingPrice = doubleToString(from: priceList.othersScaffoldingPrice)
             othersToolRentalPrice = doubleToString(from: priceList.othersToolRentalPrice)
             othersCommutePrice = doubleToString(from: priceList.othersCommutePrice)
             othersVatPrice = doubleToString(from: priceList.othersVatPrice)

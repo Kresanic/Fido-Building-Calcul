@@ -839,6 +839,16 @@
         }
       }
     },
+    "assembly and disassembly" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "montáž a demontáž"
+          }
+        }
+      }
+    },
     "Assign contractor" : {
       "localizations" : {
         "sk" : {
@@ -1080,7 +1090,14 @@
       }
     },
     "By exiting this view all changes made will be deleted." : {
-
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odchodom z tejto obrazovky sa vymažu všetky doteraz vykonané zmeny."
+          }
+        }
+      }
     },
     "By updating the prices, you will replace all existing prices with those from the general price list. This action is irreversible." : {
       "localizations" : {
@@ -1430,7 +1447,24 @@
       }
     },
     "Core Drill" : {
-
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jadrová vrtačka"
+          }
+        }
+      }
+    },
+    "Core drill no. %lld" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jadrová vrtačka č. %lld"
+          }
+        }
+      }
     },
     "Corner bead" : {
       "localizations" : {
@@ -1763,7 +1797,14 @@
       }
     },
     "Delete changes?" : {
-
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vymazať zmeny?"
+          }
+        }
+      }
     },
     "Delete contractor" : {
       "localizations" : {
@@ -2016,7 +2057,14 @@
       }
     },
     "Exclude" : {
-
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odobrať"
+          }
+        }
+      }
     },
     "export to PDF" : {
       "localizations" : {
@@ -2360,7 +2408,14 @@
       }
     },
     "Include" : {
-
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pridať"
+          }
+        }
+      }
     },
     "Insert BID and we will search for it in database and fill all publicly available information about the company." : {
       "localizations" : {
@@ -3779,6 +3834,16 @@
         }
       }
     },
+    "Rentals" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Požičovňa"
+          }
+        }
+      }
+    },
     "Restore Purchases" : {
       "localizations" : {
         "sk" : {
@@ -3850,7 +3915,34 @@
       }
     },
     "Scaffolding" : {
-
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lešenie"
+          }
+        }
+      }
+    },
+    "Scaffolding - assembly and disassembly" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lešenie - montáž a demontáž"
+          }
+        }
+      }
+    },
+    "Scaffolding no. %lld" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lešenie č. %lld"
+          }
+        }
+      }
     },
     "Search" : {
       "localizations" : {
@@ -4332,6 +4424,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "WC Podomietkové"
+          }
+        }
+      }
+    },
+    "Tool no. %lld" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Náradie č. %lld"
           }
         }
       }

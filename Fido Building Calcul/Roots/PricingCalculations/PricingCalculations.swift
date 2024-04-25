@@ -732,9 +732,29 @@ final class PricingCalculations: ObservableObject {
         let commuteExpensesRow = PriceBillRow(name: Commute.title, pieces: commuteExpensesPieces, unit: .kilometer, price: commuteExpensesPrice)
         priceBill.addOthers(commuteExpensesRow)
         
+        
+        // Scaffoldings
+        let scaffoldingsPieces = room.associatedScaffoldings.reduce(0.0) { $0 + $1.area }
+        let scaffoldingsPrice = priceList.othersScaffoldingPrice * scaffoldingsPieces
+        let scaffoldingsRow = PriceBillRow(name: Scaffolding.title, pieces: scaffoldingsPieces, unit: Scaffolding.unit, price: scaffoldingsPrice)
+        priceBill.addOthers(scaffoldingsRow)
+        
+        let scaffoldingsAssemblyPrice = priceList.othersScaffoldingAssemblyAndDisassemblyPrice * scaffoldingsPieces
+        let scaffoldingsAssemblyRow = PriceBillRow(name: ScaffoldingAssemblyAndDisassembly.billTitle, pieces: scaffoldingsPieces, unit: ScaffoldingAssemblyAndDisassembly.unit, price: scaffoldingsAssemblyPrice)
+        priceBill.addOthers(scaffoldingsAssemblyRow)
+        
+        // CoreDrill
+        let coreDrillPieces = room.associatedCoreDrills.reduce(0.0) { $0 + $1.count }
+        let coreDrillPrice = priceList.othersCoreDrillRentalPrice * coreDrillPieces
+        let coreDrillRow = PriceBillRow(name: CoreDrill.title, pieces: coreDrillPieces, unit: CoreDrill.unit, price: coreDrillPrice)
+        priceBill.addOthers(coreDrillRow)
+        
         // ToolRental
-        let toolRentalPrice = room.toolRental * priceList.othersToolRentalPrice
-        let toolRentalRow = PriceBillRow(name: ToolRental.title, pieces: room.toolRental, unit: .hour, price: toolRentalPrice)
+        let newToolRentalPieces = room.associatedToolRentals.reduce(0.0) { $0 + $1.count }
+        let oldToolRentalPieces = room.toolRental
+        let toolRentalPieces = newToolRentalPieces + oldToolRentalPieces
+        let toolRentalPrice = toolRentalPieces * priceList.othersToolRentalPrice
+        let toolRentalRow = PriceBillRow(name: ToolRental.title, pieces: toolRentalPieces, unit: ToolRental.unit, price: toolRentalPrice)
         priceBill.addOthers(toolRentalRow)
         
         return priceBill

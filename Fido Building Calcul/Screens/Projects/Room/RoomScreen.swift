@@ -154,7 +154,7 @@ struct RoomScreen: View {
                         
                         CommuteExpensesViews(room: fetchedRoom, scrollProxy: scrollProxy).id(Commute.scrollID)
                         
-                        ToolRentalViews(room: fetchedRoom, scrollProxy: scrollProxy).id(ToolRental.scrollID)
+                        RentalViews(room: fetchedRoom, scrollProxy: scrollProxy).id(ToolRental.scrollID)
                         
                     }
                     

@@ -22,7 +22,7 @@
 		392E81AD2BD6B7D900E45DCA /* InvoiceBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E81AC2BD6B7D900E45DCA /* InvoiceBuilderView.swift */; };
 		392E81B02BD6B7F500E45DCA /* InvoiceBuilderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E81AF2BD6B7F500E45DCA /* InvoiceBuilderViewModel.swift */; };
 		3943953F2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3943953E2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift */; };
-		394395412A9FC2E900B2F64B /* ToolRentalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394395402A9FC2E900B2F64B /* ToolRentalViews.swift */; };
+		394395412A9FC2E900B2F64B /* RentalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394395402A9FC2E900B2F64B /* RentalViews.swift */; };
 		3943ADA72B7A156B0061F2F1 /* EmailInputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3943ADA62B7A156B0061F2F1 /* EmailInputSheet.swift */; };
 		39475D4F2A76A877006EC970 /* FidoTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39475D4E2A76A877006EC970 /* FidoTabView.swift */; };
 		39475D512A76A909006EC970 /* BehavioursViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39475D502A76A909006EC970 /* BehavioursViewModel.swift */; };
@@ -250,7 +250,7 @@
 		392E81AC2BD6B7D900E45DCA /* InvoiceBuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceBuilderView.swift; sourceTree = "<group>"; };
 		392E81AF2BD6B7F500E45DCA /* InvoiceBuilderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceBuilderViewModel.swift; sourceTree = "<group>"; };
 		3943953E2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWorksAndMaterialsViews.swift; sourceTree = "<group>"; };
-		394395402A9FC2E900B2F64B /* ToolRentalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolRentalViews.swift; sourceTree = "<group>"; };
+		394395402A9FC2E900B2F64B /* RentalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalViews.swift; sourceTree = "<group>"; };
 		3943ADA62B7A156B0061F2F1 /* EmailInputSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInputSheet.swift; sourceTree = "<group>"; };
 		39475D4E2A76A877006EC970 /* FidoTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FidoTabView.swift; sourceTree = "<group>"; };
 		39475D502A76A909006EC970 /* BehavioursViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehavioursViewModel.swift; sourceTree = "<group>"; };
@@ -982,7 +982,7 @@
 				396435B22A7A4DB700C148B8 /* PlumbingWorkViews.swift */,
 				3964D7FE2A9B989700AD4619 /* SiliconingViews.swift */,
 				396435D42A7A955C00C148B8 /* TileCeramicViews.swift */,
-				394395402A9FC2E900B2F64B /* ToolRentalViews.swift */,
+				394395402A9FC2E900B2F64B /* RentalViews.swift */,
 				396435DC2A7A9CFA00C148B8 /* WindowInstallationsViews.swift */,
 				396435AC2A7A495900C148B8 /* WiringViews.swift */,
 			);
@@ -1349,7 +1349,7 @@
 				3996E1FE2A77BEA0000D86E1 /* InProjectScreen.swift in Sources */,
 				39CA43262B0BA14C0048EB36 /* DialogWindow.swift in Sources */,
 				398900862B15F7FF00CC3870 /* Array Extensions.swift in Sources */,
-				394395412A9FC2E900B2F64B /* ToolRentalViews.swift in Sources */,
+				394395412A9FC2E900B2F64B /* RentalViews.swift in Sources */,
 				390F80372B59487000A10FF0 /* ClientHandlingView.swift in Sources */,
 				39603E5F2BD98D7F000CDFA4 /* InvoiceBuilderSummaryView.swift in Sources */,
 				396435DB2A7A9B9800C148B8 /* InstallationOfSanitaryViews.swift in Sources */,
