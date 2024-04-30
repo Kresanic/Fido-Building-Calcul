@@ -381,9 +381,7 @@ struct ContractorEditDetailsView: View {
                 Task {
                     if let loaded = try? await viewModel.selectedImages.first?.loadTransferable(type: Data.self) {
                         viewModel.imageData = loaded
-                    } else {
-                        print("Failed to load Image Data.")
-                    }
+                    } else { print("Failed to load Image Data.") }
                 }
             }
             .photosPicker(isPresented: $viewModel.isSelectingLogo, selection: $viewModel.selectedImages, maxSelectionCount: 1, matching: .images)

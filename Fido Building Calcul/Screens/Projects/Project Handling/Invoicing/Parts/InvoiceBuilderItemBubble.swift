@@ -60,13 +60,12 @@ struct InvoiceBuilderItemBubble: View {
                     TextField("Name", text: $title, onEditingChanged: { _ in
                         withAnimation { title = viewModel.changeTitle(of: itemID, to: title) }
                     })
-                    .font(.system(size: isRetracted ? 21 : 23, weight: .medium))
+                    .font(.system(size: 21, weight: .medium))
                     .foregroundStyle(foregroundTextColor)
                     .multilineTextAlignment(.leading)
                     .submitLabel(.done)
                     .disabled(isRetracted)
-                    .lineLimit(1)
-                
+                    
                     if isRetracted {
                         Text("count: \(pieces)")
                             .font(.system(size: 12))
@@ -74,6 +73,7 @@ struct InvoiceBuilderItemBubble: View {
                             .lineLimit(1)
                             .transition(.opacity.combined(with: .scale))
                     }
+                    
                 }
                 
                 Spacer()
@@ -123,7 +123,6 @@ struct InvoiceBuilderItemBubble: View {
                             impactHeavy.impactOccurred()
                             active = viewModel.toggleVisibility(of: itemID, from: active)
                         }
-                        viewModel.madeChanges = true
                     } label: {
                         HStack(spacing: 3) {
                             Image(systemName: "doc.text.fill")
@@ -147,7 +146,6 @@ struct InvoiceBuilderItemBubble: View {
                             }
                             isRetracted = false
                         }
-                        viewModel.madeChanges = true
                     } label: {
                         HStack(spacing: 3) {
                             Image(systemName: "pencil")
@@ -166,12 +164,6 @@ struct InvoiceBuilderItemBubble: View {
                 }.padding(.top, 4).transition(.opacity.combined(with: .move(edge: .bottom)))
                 
             } else {
-                
-                RoundedRectangle(cornerRadius: 9)
-                    .foregroundStyle(Color.brandWhite)
-                    .frame(height: 2)
-                    .padding(.vertical, 5)
-                
                 
                 HStack {
                     
@@ -195,11 +187,6 @@ struct InvoiceBuilderItemBubble: View {
                     Spacer()
                     
                 }
-                
-                RoundedRectangle(cornerRadius: 9)
-                    .foregroundStyle(Color.brandWhite)
-                    .frame(height: 2)
-                    .padding(.vertical, 5)
                 
                 VStack(alignment: .trailing) {
                     
@@ -226,7 +213,6 @@ struct InvoiceBuilderItemBubble: View {
             
         }.frame(maxWidth: .infinity)
             .padding(isRetracted ? 10 : 15)
-            
             .background(category == .material ? .brandMaterialGray.opacity(active ? 1.0 : 0.5) : .brandGray.opacity(active ? 1.0 : 0.5))
             .clipShape(RoundedRectangle(cornerRadius: isRetracted ? 21 : 28, style: .continuous))
             .task {
@@ -236,6 +222,7 @@ struct InvoiceBuilderItemBubble: View {
                     vat = doubleToString(from: item.vat)
                 }
             }
+            
         
     }
 }

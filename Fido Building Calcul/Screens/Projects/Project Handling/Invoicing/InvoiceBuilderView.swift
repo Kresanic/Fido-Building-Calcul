@@ -11,8 +11,13 @@ import SwiftUI
 struct InvoiceBuilderView: View {
     
     var project: Project
-    @StateObject var viewModel = InvoiceBuilderViewModel()
+    @StateObject var viewModel: InvoiceBuilderViewModel
     @Environment(\.dismiss) var dismiss
+
+    init(project: Project) {
+        self.project = project
+        self._viewModel = StateObject(wrappedValue: InvoiceBuilderViewModel(project))
+    }
     
     var body: some View {
         
@@ -36,9 +41,7 @@ struct InvoiceBuilderView: View {
                             viewModel.dialogWindow = .init(alertType: .approval, title: "Delete changes?", subTitle: "By exiting this view all changes made will be deleted.", action: {
                                 dismiss()
                             })
-                        } else {
-                            dismiss()
-                        }
+                        } else { dismiss() }
                     } label: {
                         Image(systemName: "xmark")
                             .font(.system(size: 21, weight: .medium))
@@ -118,7 +121,6 @@ struct InvoiceBuilderView: View {
             
         }
         .scrollDismissesKeyboard(.immediately)
-        .task { viewModel.populateInvoiceItems(with: project) }
         .sheet(item: $viewModel.dialogWindow) { dialog in
             DialogWindow(dialog: dialog)
         }

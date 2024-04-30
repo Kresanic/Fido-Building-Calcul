@@ -1,21 +1,19 @@
 //
-//  PDFPreviewSheet.swift
+//  InvoicePreviewSheet.swift
 //  Fido Building Calcul
 //
-//  Created by Peter Kresanič on 16/01/2024.
+//  Created by Peter Kresanič on 30/04/2024.
 //
 
 import SwiftUI
 import PDFKit
 
-struct PDFPreviewSheet: View {
+struct InvoicePreviewSheet: View {
     
     @Environment(\.dismiss) var dismiss
-    var pdfViewModel: ProjectPDF
-    let pdfProject: Project
-    @State var pdfTitle: String?
+//    var pdfViewModel: ProjectPDF
+    let pdfURL: URL
     @State var pdfDoc: PDFDocument?
-    @State var pdfURL: URL?
     
     var body: some View {
         VStack {
@@ -23,7 +21,6 @@ struct PDFPreviewSheet: View {
                 PDFKitView(showing: pdfDoc)
                     .padding(.bottom, 50)
                     .padding(.top, 35)
-                    .task { pdfTitle = pdfViewModel.getProjectLocalizedTitle(from: pdfProject) }
             } else { Text("Loading...") }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -35,7 +32,7 @@ struct PDFPreviewSheet: View {
                     
                     Spacer().frame(width: 50)
                     
-                    Text(pdfTitle ?? "PDF Preview")
+                    Text("Invoice Preview")
                         .font(.system(size: 20, weight: .medium))
                         .foregroundStyle(Color.brandBlack)
                         .frame(maxWidth: .infinity, alignment: .center)
@@ -55,9 +52,7 @@ struct PDFPreviewSheet: View {
                 Spacer()
                 
                 Button {
-                    pdfProject.addToToHistoryEvent(ProjectEvents.sent.entityObject)
-                    withAnimation { pdfViewModel.shouldSharePDF = true }
-                    dismiss()
+                    //TODO: MAKE FUNCTIONAL
                 } label: {
                     PDFExportButton()
                 }
@@ -66,7 +61,6 @@ struct PDFPreviewSheet: View {
                     .padding(.bottom, 35)
                     .background(Color.brandWhite.opacity(0.5))
                     .background(.ultraThinMaterial)
-                    .disabled(pdfURL == nil)
                 
             }
             
@@ -74,16 +68,11 @@ struct PDFPreviewSheet: View {
         .background(Color.brandGray)
         .ignoresSafeArea()
         .presentationCornerRadius(30)
-        .task {
-            withAnimation {
-                pdfViewModel.shouldSharePDF = false
-                pdfURL = pdfViewModel.previewPDFLoad(from: pdfProject)
-                if let pdfURL { pdfDoc = PDFDocument(url: pdfURL) }
-            }
-        }
+        .task { withAnimation { pdfDoc = PDFDocument(url: pdfURL) } }
     }
     
 }
+
 
 fileprivate struct PDFKitView: UIViewRepresentable {
 

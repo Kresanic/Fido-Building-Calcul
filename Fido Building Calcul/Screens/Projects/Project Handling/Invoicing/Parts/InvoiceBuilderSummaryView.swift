@@ -11,6 +11,8 @@ struct InvoiceBuilderSummaryView: View {
     
     @ObservedObject var viewModel: InvoiceBuilderViewModel
     
+    
+    
     var body: some View {
         
         VStack(spacing: 0) {
@@ -24,23 +26,7 @@ struct InvoiceBuilderSummaryView: View {
             
             VStack {
                 
-                let priceWithoutVAT = viewModel.invoiceItems.reduce(0.0) {
-                    if $1.active {
-                        return $0 + $1.price
-                    }
-                    
-                    return $0
-                }
                 
-                let cumulativeVAT = viewModel.invoiceItems.reduce(0.0) {
-                    if $1.active {
-                        return $0 + ($1.price * ($1.vat/100))
-                    }
-                    
-                    return $0
-                }
-                
-                let totalPrice = priceWithoutVAT + cumulativeVAT
                 
                 HStack(alignment: .firstTextBaseline) {
                     
@@ -50,7 +36,7 @@ struct InvoiceBuilderSummaryView: View {
                     
                     Spacer()
                     
-                    Text(round(priceWithoutVAT/100)*100, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    Text(viewModel.priceWithoutVAT, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .font(.system(size: 16, weight: .semibold))
                         .foregroundStyle(Color.brandBlack)
                     
@@ -64,9 +50,7 @@ struct InvoiceBuilderSummaryView: View {
                     
                     Spacer()
                     
-                    
-                    
-                    Text(round(cumulativeVAT/100)*100, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    Text(viewModel.cumulativeVAT, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .font(.system(size: 16, weight: .semibold))
                         .foregroundStyle(Color.brandBlack)
                     
@@ -82,8 +66,7 @@ struct InvoiceBuilderSummaryView: View {
                     
                     Spacer(minLength: 20)
                     
-                    
-                    Text(totalPrice, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    Text(viewModel.totalPrice, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .minimumScaleFactor(0.4)
                         .lineLimit(1)
                         .font(.system(size: 20, weight: .semibold))
@@ -92,7 +75,7 @@ struct InvoiceBuilderSummaryView: View {
                 }
                 
                 Button {
-                    
+                    viewModel.isShowingPDF = true
                 } label: {
                     HStack(spacing: 5) {
                         
@@ -108,13 +91,17 @@ struct InvoiceBuilderSummaryView: View {
                         .frame(maxWidth: .infinity)
                         .background(Color.brandBlack)
                         .clipShape(.rect(cornerRadius: 30, style: .continuous))
-                        .opacity(0.8)
+//                        .opacity(0.8)
                 }
                 
             }.padding(15)
                 .background(Color.brandGray)
                 .clipShape(.rect(cornerRadius: 25, style: .continuous))
         }
+        .sheet(isPresented: $viewModel.isShowingPDF) {
+            InvoicePreviewSheet(pdfURL: viewModel.pdfURL)
+        }
+        
     }
 }
 

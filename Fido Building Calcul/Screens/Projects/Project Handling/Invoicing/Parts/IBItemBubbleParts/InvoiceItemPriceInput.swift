@@ -39,8 +39,7 @@ struct InvoiceItemPriceInput: View {
             Text(locale.currencySymbol ?? "$")
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(Color.brandBlack)
-        }
-        
+        }        
         
     }
     

@@ -2477,6 +2477,9 @@
         }
       }
     },
+    "Invoice Preview" : {
+
+    },
     "invoice settings" : {
       "localizations" : {
         "sk" : {
@@ -3017,9 +3020,6 @@
           }
         }
       }
-    },
-    "Num: " : {
-
     },
     "Number" : {
       "localizations" : {

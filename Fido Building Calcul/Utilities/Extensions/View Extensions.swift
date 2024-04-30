@@ -14,7 +14,7 @@ extension View {
     }
     
     func doubleToString(from number: Double) -> String {
-        
+        // TODO: Localize
         if number.truncatingRemainder(dividingBy: 1.0) == 0.0 {
             return String(number) == "0.0" ? "" : String(Int(number))
         } else {
@@ -24,7 +24,6 @@ extension View {
     }
     
     func stringToDouble(from text: String) -> Double {
-        
         return calculate(on: text)
     }
     

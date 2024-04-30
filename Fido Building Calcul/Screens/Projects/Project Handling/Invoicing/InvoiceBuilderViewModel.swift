@@ -12,13 +12,30 @@ import CoreData
 @MainActor final class InvoiceBuilderViewModel: ObservableObject {
     
     @Published var invoiceItems: [InvoiceItem] = []
-    @Published var invoiceDetails: InvoiceDetails?
+    @Published var invoiceDetails: InvoiceDetails
     @Published var madeChanges = false
     @Published var dialogWindow: Dialog?
+    @Published var isShowingPDF = false
     
-    func populateInvoiceItems(with project: Project) {
+    @State var priceWithoutVAT: Double = 0.0
+    @State var cumulativeVAT: Double = 0.0
+    @State var totalPrice: Double = 0.0
+    
+    var pdfURL: URL {
+        return InvoicePDFCreator(invoiceDetails, invoiceItems).render()
+    }
+    
+    init(_ project: Project) {
         
         invoiceDetails = InvoiceDetails(project: project)
+        
+        populateInvoiceItems(with: project)
+        
+        refresh()
+        
+    }
+    
+    func populateInvoiceItems(with project: Project) {
         
         guard let priceList = project.toPriceList else { return }
         
@@ -46,7 +63,34 @@ import CoreData
         
     }
     
+    private func refresh() {
+         
+        withAnimation {
+            #warning("Not working")
+            priceWithoutVAT = round(invoiceItems.reduce(0.0) {
+                if $1.active {
+                    return $0 + $1.price
+                }
+                
+                return $0
+            }/100)*100
+            
+            cumulativeVAT = round(invoiceItems.reduce(0.0) {
+                if $1.active {
+                    return $0 + ($1.price * ($1.vat/100))
+                }
+                
+                return $0
+            }/100)*100
+            
+            totalPrice = round((priceWithoutVAT + cumulativeVAT)*100)/100
+        }
+        
+    }
+    
     func changeTitle(of id: UUID, to str: String) -> String {
+        
+        madeChanges = true
         
         let index = invoiceItems.firstIndex{ $0.id == id }
         
@@ -55,11 +99,15 @@ import CoreData
             return NSLocalizedString(invoiceItems[index].title.stringKey ?? "", comment: "")
         }
         
+        refresh()
+        
         return ""
         
     }
     
     func changePieces(of id: UUID, to num: Double) -> Double {
+        
+        madeChanges = true
         
         let index = invoiceItems.firstIndex{ $0.id == id }
         
@@ -68,11 +116,15 @@ import CoreData
             return invoiceItems[index].pieces
         }
         
+        refresh()
+        
         return 0
         
     }
     
     func changePrice(of id: UUID, to num: Double) -> Double {
+        
+        madeChanges = true
         
         let index = invoiceItems.firstIndex{ $0.id == id }
         
@@ -81,11 +133,15 @@ import CoreData
             return invoiceItems[index].price
         }
         
+        refresh()
+        
         return 0
         
     }
     
     func changeVat(of id: UUID, to num: Double) -> Double {
+        
+        madeChanges = true
         
         let index = invoiceItems.firstIndex{ $0.id == id }
         
@@ -94,11 +150,15 @@ import CoreData
             return invoiceItems[index].vat
         }
         
+        refresh()
+        
         return 0
         
     }
     
     func toggleVisibility(of id: UUID, from state: Bool) -> Bool {
+        
+        madeChanges = true
         
         let index = invoiceItems.firstIndex{ $0.id == id }
         
@@ -106,6 +166,8 @@ import CoreData
             invoiceItems[index].toggleVisibility()
             return invoiceItems[index].active
         }
+        
+        refresh()
         
         return !state
         
@@ -128,6 +190,12 @@ struct InvoiceDetails {
         self.contractor = prjct?.toContractor
         self.client = prjct?.toClient
         getPDFNumber()
+    }
+    
+    var title: String {
+        let localizedInvoice = NSLocalizedString("Invoice", comment: "")
+        
+        return "\(localizedInvoice) \(invoiceNumber)"
     }
     
     var invoiceNumber: String {
@@ -177,25 +245,30 @@ struct InvoiceDetails {
             let contractor,
             let swiftCode = contractor.swiftCode,
             let name = contractor.name,
-            let iban = contractor.bankAccountNumber,
+            let iban = contractor.bankAccountNumber?.trimmingCharacters(in: .whitespacesAndNewlines).uppercased(),
             let price,
             let number
         else { return nil }
+        //TODO: Alert when details are missing and localize
+        
         //TODO: Try ST: B2B and ID also idk
         
         return """
-        BCS
+        BCD
         002
-        2
-        STC
+        1
+        SCT
         \(swiftCode)
         \(name)
         \(iban)
-        EUR\(price)"
+        EUR\(round(price*100)/100)
+        
         
         
         \(invoiceNumber)
+        
         """
+        
         
     }
     
