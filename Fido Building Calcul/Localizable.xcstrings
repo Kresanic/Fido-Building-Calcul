@@ -2498,6 +2498,7 @@
       }
     },
     "Invoicing for All of your Contractors Coming Soon..." : {
+      "extractionState" : "stale",
       "localizations" : {
         "sk" : {
           "stringUnit" : {
@@ -3016,6 +3017,9 @@
           }
         }
       }
+    },
+    "Num: " : {
+
     },
     "Number" : {
       "localizations" : {
@@ -4729,6 +4733,7 @@
       }
     },
     "We have moved the Main Price List into Settings screen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "sk" : {
           "stringUnit" : {

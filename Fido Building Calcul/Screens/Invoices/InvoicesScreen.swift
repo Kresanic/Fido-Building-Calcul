@@ -10,6 +10,21 @@ import SwiftUI
 struct InvoicesScreen: View {
     
     @EnvironmentObject var behavioursVM: BehavioursViewModel
+    @FetchRequest var invoices: FetchedResults<Invoice>
+    
+    init(activeContractor: Contractor?) {
+        
+        let request = Invoice.fetchRequest()
+        
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Invoice.dateCreated, ascending: false)]
+        
+        if let activeContractor {
+            request.predicate = NSPredicate(format: "toContractor == %@", activeContractor)
+        }
+        
+        _invoices = FetchRequest(fetchRequest: request)
+        
+    }
     
     var body: some View {
         
@@ -21,29 +36,19 @@ struct InvoicesScreen: View {
                     
                     InvoicesScreenTitle()
                     
-                    Spacer()
+                    ForEach(invoices) { invoice in
+                        HStack {
+                            Text(invoice.number, format: .number)
+                            
+                            Text(invoice.dateCreated ?? .now, format: .dateTime.day().month().year().hour().minute())
+                        }
+                    }
                     
                 }.padding(.horizontal, 15)
                     .padding(.bottom, 105)
                 
             }.scrollIndicators(.hidden)
                 .navigationBarTitleDisplayMode(.inline)
-                .overlay(alignment: .center) {
-                    VStack {
-                        
-                        Text("Invoicing for All of your Contractors Coming Soon...")
-                            .font(.system(size: 28, weight: .semibold))
-                            .foregroundStyle(.brandBlack)
-                            .multilineTextAlignment(.center)
-                        
-                        Text("We have moved the Main Price List into Settings screen")
-                            .font(.system(size: 14, weight: .medium))
-                            .foregroundStyle(.brandBlack)
-                            .multilineTextAlignment(.center)
-                            .padding(.horizontal, 20)
-                        
-                    }.padding(.horizontal, 30)
-                }
                 
         }
         
@@ -135,6 +140,7 @@ fileprivate struct InvoicesScreenTitle: View {
                         } label: {
                                ContractorBubble(contractor: contractor, hasChevron: false)
                         }
+
                     }
                     
                     Button { isCreatingContractor = true } label: {
@@ -142,6 +148,7 @@ fileprivate struct InvoicesScreenTitle: View {
                     }
                     
                 }.padding(.bottom, 15)
+                    
                 
             }
             

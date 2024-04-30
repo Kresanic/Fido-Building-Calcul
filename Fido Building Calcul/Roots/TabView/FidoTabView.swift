@@ -24,7 +24,7 @@ struct FidoTabView: View {
                     .zIndex(0)
                     .transition(behaviourVM.isAnimationCircular ? .asymmetric(insertion: .scale(scale: 0.0, anchor: .bottomLeading).combined(with: .opacity), removal: .opacity)  : .opacity)
             case .invoices:
-                InvoicesScreen()
+                InvoicesScreen(activeContractor: behaviourVM.activeContractor)
                     .zIndex(0)
                     .transition(.opacity)
             case .clients:
