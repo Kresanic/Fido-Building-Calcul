@@ -118,6 +118,25 @@ struct ContractorDetailView: View {
                             .background(Color.brandGray)
                             .clipShape(.rect(cornerRadius: 24, style: .continuous))
                         
+                        if let signatureData = contractor.signature, let signature =  UIImage(data: signatureData)  {
+                            
+                            VStack(alignment: .center, spacing: 5) {
+                                
+                                ToggleableTitle(title: "Signature", toShowChevron: false)
+                                
+                                Image(uiImage: signature)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 200)
+                                    .clipShape(.rect(cornerRadius: 10, style: .continuous))
+                                
+                            }.frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(15)
+                                .background(Color.brandGray)
+                                .clipShape(.rect(cornerRadius: 24, style: .continuous))
+                            
+                        }
+                        
                         Button {
                             isCreatingContractor = true
                         } label: {

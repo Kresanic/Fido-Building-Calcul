@@ -59,7 +59,7 @@ struct InvoiceBuilderView: View {
                 
                 VStack(alignment: .leading, spacing: 3) {
                     
-                    let works = viewModel.invoiceItems.filter {$0.category == .work}
+                    let works = viewModel.invoiceDetails.workItems
                     
                     if !works.isEmpty {
                         Text("Work")
@@ -77,7 +77,7 @@ struct InvoiceBuilderView: View {
                         }
                     }
                     
-                    let materials = viewModel.invoiceItems.filter({$0.category == .material})
+                    let materials = viewModel.invoiceDetails.materialItems
                     if !materials.isEmpty {
                         
                         Text("Material")
@@ -95,7 +95,7 @@ struct InvoiceBuilderView: View {
                         }
                     }
                     
-                    let others = viewModel.invoiceItems.filter {$0.category == .other}
+                    let others = viewModel.invoiceDetails.otherItems
                     if !others.isEmpty {
                         Text("Other")
                             .font(.system(size: 16, weight: .semibold))

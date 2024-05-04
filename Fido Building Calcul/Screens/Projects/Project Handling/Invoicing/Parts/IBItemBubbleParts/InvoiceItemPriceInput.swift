@@ -13,6 +13,7 @@ struct InvoiceItemPriceInput: View {
     @Binding var value: String
     var editingChanged: () -> Void
     @Environment(\.locale) var locale
+    @FocusState var isFocused: Bool
     
     var body: some View {
         
@@ -24,22 +25,24 @@ struct InvoiceItemPriceInput: View {
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(Color.brandBlack)
             
-            TextField("0", text: $value, onEditingChanged: { _ in
-                editingChanged()
-            })
-            .font(.system(size: 20, weight: .semibold))
-            .foregroundStyle(Color.brandBlack)
-            .multilineTextAlignment(.center)
-            .keyboardType(.decimalPad)
-            .frame(width: 100, height: 37)
-            .background(Color.brandWhite)
-            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-            .frame(maxWidth: 125, alignment: .trailing)
+            TextField("0", text: $value)
+                .font(.system(size: 20, weight: .semibold))
+                .foregroundStyle(Color.brandBlack)
+                .multilineTextAlignment(.center)
+                .keyboardType(.decimalPad)
+                .focused($isFocused)
+                .frame(width: 100, height: 37)
+                .background(Color.brandWhite)
+                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .frame(maxWidth: 125, alignment: .trailing)
             
             Text(locale.currencySymbol ?? "$")
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(Color.brandBlack)
-        }        
+        }
+        .onChange(of: isFocused) { value in
+            if !isFocused { editingChanged() }
+        }
         
     }
     

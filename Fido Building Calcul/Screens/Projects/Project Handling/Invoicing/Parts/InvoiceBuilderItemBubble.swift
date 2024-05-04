@@ -58,7 +58,7 @@ struct InvoiceBuilderItemBubble: View {
                 VStack(alignment: .leading, spacing: 0) {
                 
                     TextField("Name", text: $title, onEditingChanged: { _ in
-                        withAnimation { title = viewModel.changeTitle(of: itemID, to: title) }
+                        withAnimation { title = viewModel.invoiceDetails.changeTitle(of: itemID, to: title) }
                     })
                     .font(.system(size: 21, weight: .medium))
                     .foregroundStyle(foregroundTextColor)
@@ -121,7 +121,7 @@ struct InvoiceBuilderItemBubble: View {
                     Button {
                         withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) {
                             impactHeavy.impactOccurred()
-                            active = viewModel.toggleVisibility(of: itemID, from: active)
+                            active = viewModel.invoiceDetails.toggleVisibility(of: itemID, from: active)
                         }
                     } label: {
                         HStack(spacing: 3) {
@@ -142,7 +142,7 @@ struct InvoiceBuilderItemBubble: View {
                         withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) {
                             if !active {
                                 impactHeavy.impactOccurred()
-                                active = viewModel.toggleVisibility(of: itemID, from: active)
+                                active = viewModel.invoiceDetails.toggleVisibility(of: itemID, from: active)
                             }
                             isRetracted = false
                         }
@@ -171,7 +171,7 @@ struct InvoiceBuilderItemBubble: View {
                     
                     InvoiceItemInput(title: "Count", value: $pieces, unit: UnitsOfMeasurement.piece) {
                         withAnimation {
-                            pieces = doubleToString(from: viewModel.changePieces(of: itemID, to: stringToDouble(from: pieces)))
+                            pieces = doubleToString(from: viewModel.invoiceDetails.changePieces(of: itemID, to: stringToDouble(from: pieces)))
                         }
                     }
                     
@@ -180,7 +180,7 @@ struct InvoiceBuilderItemBubble: View {
                     
                     InvoiceItemInput(title: "VAT", value: $vat, unit: UnitsOfMeasurement.percentage) {
                         withAnimation {
-                            vat = doubleToString(from: viewModel.changeVat(of: itemID, to: stringToDouble(from: vat)))
+                            vat = doubleToString(from: viewModel.invoiceDetails.changeVat(of: itemID, to: stringToDouble(from: vat)))
                         }
                     }
                     
@@ -192,13 +192,12 @@ struct InvoiceBuilderItemBubble: View {
                     
                     InvoiceItemPriceInput(title: "without VAT", value: $price) {
                         withAnimation {
-                            price = doubleToString(from: viewModel.changeVat(of: itemID, to: stringToDouble(from: price)))
+                            price = doubleToString(from: viewModel.invoiceDetails.changePrice(of: itemID, to: stringToDouble(from: price)))
                         }
                     }
                     
                     let priceD = stringToDouble(from: price)
                     let vatD = stringToDouble(from: vat)
-                    
                     let vatTotal = (priceD * vatD/100)
                     
                     InvoiceItemPriceInfo(title: "VAT", value: vatTotal)

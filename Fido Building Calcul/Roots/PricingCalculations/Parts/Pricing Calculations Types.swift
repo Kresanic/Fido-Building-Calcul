@@ -166,3 +166,20 @@ public struct PriceBillRow: Identifiable {
     }
     
 }
+
+//
+//func joinPriceRow(with priceBillRow: PriceBillRow) -> PriceBillRow? {
+//    
+//    if self.name == priceBillRow.name && self.unit == priceBillRow.unit {
+//        
+//        var pBR = priceBillRow
+//        
+//        pBR.price = pBR.price + price
+//        pBR.pieces = pBR.pieces + pieces
+//        
+//        return pBR
+//    }
+//    
+//    return nil
+//    
+//}

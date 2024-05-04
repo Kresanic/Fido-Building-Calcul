@@ -101,6 +101,16 @@
         }
       }
     },
+    "%@  %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@  %2$@"
+          }
+        }
+      }
+    },
     "%@ - %@" : {
       "localizations" : {
         "en" : {
@@ -629,6 +639,9 @@
         }
       }
     },
+    "Add signature" : {
+
+    },
     "Additional info" : {
       "localizations" : {
         "sk" : {
@@ -688,6 +701,9 @@
           }
         }
       }
+    },
+    "Amount to be paid" : {
+
     },
     "App #, Suite (optional)" : {
       "localizations" : {
@@ -2467,6 +2483,9 @@
         }
       }
     },
+    "Invoice (invoiceDetails.invoiceNumber)" : {
+
+    },
     "Invoice Builder" : {
       "localizations" : {
         "sk" : {
@@ -2790,6 +2809,9 @@
           }
         }
       }
+    },
+    "Maturity date" : {
+
     },
     "Maturity duration" : {
       "localizations" : {
@@ -3948,6 +3970,9 @@
         }
       }
     },
+    "Scan to Pay!" : {
+
+    },
     "Search" : {
       "localizations" : {
         "sk" : {
@@ -4047,6 +4072,9 @@
           }
         }
       }
+    },
+    "Signature" : {
+
     },
     "Silicone" : {
       "localizations" : {
@@ -4641,6 +4669,9 @@
           }
         }
       }
+    },
+    "Variable symbol" : {
+
     },
     "VAT" : {
       "localizations" : {

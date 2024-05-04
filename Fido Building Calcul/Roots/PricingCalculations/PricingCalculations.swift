@@ -778,7 +778,7 @@ final class PricingCalculations: ObservableObject {
     }
     
     
-    func projectPriceBills(project: Project, priceList: PriceList) -> [PriceBill] {
+    func projectPriceBills(project: Project, priceList: PriceList) -> PriceBill {
         
         var projectBills: [PriceBill] = []
         
@@ -790,8 +790,48 @@ final class PricingCalculations: ObservableObject {
             
         }
         
-        return projectBills
+        return joinDuplicatePriceBills(projectBills)
         
     }
+    
+    private func joinDuplicatePriceBills(_ priceBills: [PriceBill]) -> PriceBill {
+        // Initialize an empty PriceBill
+        var consolidatedBill = PriceBill(roomName: "All Rooms Consolidated", works: [], materials: [], others: [])
+
+        // Helper function to consolidate rows
+        func consolidateRows(from array: [PriceBillRow]) -> [PriceBillRow] {
+            var consolidatedRows: [PriceBillRow] = []
+            
+            for row in array {
+                if let index = consolidatedRows.firstIndex(where: { $0.name == row.name && $0.unit == row.unit }) {
+                    consolidatedRows[index].joinPriceBillRow(with: row)
+                } else {
+                    consolidatedRows.append(row)
+                }
+            }
+            
+            return consolidatedRows
+        }
+
+        // Consolidate all works, materials, and others from all price bills
+        for bill in priceBills {
+            consolidatedBill.works += bill.works
+            consolidatedBill.materials += bill.materials
+            consolidatedBill.others += bill.others
+        }
+
+        // Apply consolidation to each category
+        consolidatedBill.works = consolidateRows(from: consolidatedBill.works)
+        consolidatedBill.materials = consolidateRows(from: consolidatedBill.materials)
+        consolidatedBill.others = consolidateRows(from: consolidatedBill.others)
+
+        // Recalculate prices
+        consolidatedBill.worksPrice = consolidatedBill.works.reduce(0) { $0 + $1.price }
+        consolidatedBill.materialsPrice = consolidatedBill.materials.reduce(0) { $0 + $1.price }
+        consolidatedBill.othersPrice = consolidatedBill.others.reduce(0) { $0 + $1.price }
+
+        return consolidatedBill
+    }
+
     
 }

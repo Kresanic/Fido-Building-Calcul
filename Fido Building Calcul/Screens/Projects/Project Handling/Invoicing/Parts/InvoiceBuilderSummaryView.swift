@@ -11,8 +11,6 @@ struct InvoiceBuilderSummaryView: View {
     
     @ObservedObject var viewModel: InvoiceBuilderViewModel
     
-    
-    
     var body: some View {
         
         VStack(spacing: 0) {
@@ -36,7 +34,7 @@ struct InvoiceBuilderSummaryView: View {
                     
                     Spacer()
                     
-                    Text(viewModel.priceWithoutVAT, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    Text(viewModel.invoiceDetails.unPriceWithoutVAT, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .font(.system(size: 16, weight: .semibold))
                         .foregroundStyle(Color.brandBlack)
                     
@@ -50,7 +48,7 @@ struct InvoiceBuilderSummaryView: View {
                     
                     Spacer()
                     
-                    Text(viewModel.cumulativeVAT, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    Text(viewModel.invoiceDetails.unCumulativeVat, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .font(.system(size: 16, weight: .semibold))
                         .foregroundStyle(Color.brandBlack)
                     
@@ -66,7 +64,7 @@ struct InvoiceBuilderSummaryView: View {
                     
                     Spacer(minLength: 20)
                     
-                    Text(viewModel.totalPrice, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    Text(viewModel.invoiceDetails.totalPrice, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .minimumScaleFactor(0.4)
                         .lineLimit(1)
                         .font(.system(size: 20, weight: .semibold))
@@ -97,9 +95,10 @@ struct InvoiceBuilderSummaryView: View {
             }.padding(15)
                 .background(Color.brandGray)
                 .clipShape(.rect(cornerRadius: 25, style: .continuous))
+                
         }
         .sheet(isPresented: $viewModel.isShowingPDF) {
-            InvoicePreviewSheet(pdfURL: viewModel.pdfURL)
+            InvoicePreviewSheet(pdfURL: viewModel.invoiceDetails.pdfURL)
         }
         
     }

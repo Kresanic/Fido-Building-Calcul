@@ -19,7 +19,7 @@ struct InvoicePreviewSheet: View {
         VStack {
             if let pdfDoc {
                 PDFKitView(showing: pdfDoc)
-                    .padding(.bottom, 50)
+                    .padding(.bottom, 70)
                     .padding(.top, 35)
             } else { Text("Loading...") }
         }

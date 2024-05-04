@@ -44,9 +44,27 @@ extension View {
         return modifier(SingleWorkInputToolBar(focusedDimension: focusedDimension, size: size))
     }
     
+    func redraw(on toggle: Bool) -> some View {
+        return modifier(Redraw(toggle: toggle))
+    }
+    
 //    func singleWorkInputsToolbar(focusedDimension: FocusState<FocusedDimension?>.Binding) -> some View {
 //        return modifier(SingleWorkInputsToolBar(focusedDimension: focusedDimension))
 //    }
+    
+}
+
+struct Redraw: ViewModifier {
+    
+    var toggle: Bool
+    
+    func body(content: Content) -> some View {
+        if toggle {
+            content
+        } else {
+            content
+        }
+    }
     
 }
 

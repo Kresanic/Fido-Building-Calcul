@@ -13,6 +13,7 @@ struct InvoiceItemInput: View {
     @Binding var value: String
     var unit: UnitsOfMeasurement
     var editingChanged: () -> Void
+    @FocusState var isFocused: Bool
     
     var body: some View {
         
@@ -24,12 +25,11 @@ struct InvoiceItemInput: View {
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(Color.brandBlack)
                 
-                TextField("0", text: $value, onEditingChanged: { _ in
-                    editingChanged()
-                })
+                TextField("0", text: $value)
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundStyle(Color.brandBlack)
                 .multilineTextAlignment(.center)
+                .focused($isFocused)
                 .keyboardType(.decimalPad)
                 .frame(width: 100, height: 37)
                 .background(Color.brandWhite)
@@ -41,6 +41,8 @@ struct InvoiceItemInput: View {
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(Color.brandBlack)
             
+        }.onChange(of: isFocused) { value in
+            if !isFocused { editingChanged() }
         }
         
     }
