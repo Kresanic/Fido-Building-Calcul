@@ -1105,6 +1105,9 @@
         }
       }
     },
+    "By continuing, invoice will be permanently deleted and will not be able to retrieve any data. The number of the invoice will be freed and there will be no record of creating this invoice." : {
+
+    },
     "By exiting this view all changes made will be deleted." : {
       "localizations" : {
         "sk" : {
@@ -1842,6 +1845,9 @@
         }
       }
     },
+    "Delete invoice?" : {
+
+    },
     "Delete project %@?" : {
       "localizations" : {
         "sk" : {
@@ -2499,6 +2505,9 @@
     "Invoice Preview" : {
 
     },
+    "Invoice sent" : {
+
+    },
     "invoice settings" : {
       "localizations" : {
         "sk" : {
@@ -2529,6 +2538,9 @@
           }
         }
       }
+    },
+    "Issued by:" : {
+
     },
     "Items" : {
       "localizations" : {
@@ -3662,6 +3674,9 @@
           }
         }
       }
+    },
+    "Preview invoice" : {
+
     },
     "Price" : {
       "localizations" : {

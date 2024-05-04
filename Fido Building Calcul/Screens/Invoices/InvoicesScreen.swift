@@ -11,6 +11,7 @@ struct InvoicesScreen: View {
     
     @EnvironmentObject var behavioursVM: BehavioursViewModel
     @FetchRequest var invoices: FetchedResults<Invoice>
+    @Environment(\.managedObjectContext) var viewContext
     
     init(activeContractor: Contractor?) {
         
@@ -37,10 +38,8 @@ struct InvoicesScreen: View {
                     InvoicesScreenTitle()
                     
                     ForEach(invoices) { invoice in
-                        HStack {
-                            Text(invoice.number, format: .number)
-                            
-                            Text(invoice.dateCreated ?? .now, format: .dateTime.day().month().year().hour().minute())
+                        NavigationLink(value: invoice) {
+                            InvoiceBubbleView(invoice: invoice)
                         }
                     }
                     
@@ -49,7 +48,9 @@ struct InvoicesScreen: View {
                 
             }.scrollIndicators(.hidden)
                 .navigationBarTitleDisplayMode(.inline)
-                
+                .navigationDestination(for: Invoice.self) { invoice in
+                    InvoiceDetailView(invoice: invoice)
+                }
         }
         
     }
@@ -185,3 +186,39 @@ fileprivate struct InvoicesScreenTitle: View {
     
 }
 
+struct InvoiceBubbleView: View {
+    
+    var invoice: Invoice
+    
+    var body: some View {
+        
+        HStack {
+            
+            VStack(alignment: .leading, spacing: 3) {
+                
+                Text(invoice.stringNumber)
+                    .font(.system(size: 20, weight: .semibold))
+                    .foregroundStyle(Color.brandBlack)
+                
+                if let date = invoice.dateCreated {
+                    Text(date, format: .dateTime.day().month().year())
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundStyle(Color.brandBlack.opacity(0.8))
+                }
+                
+            }
+            
+            Spacer()
+                
+            Image(systemName: "chevron.right")
+                .font(.system(size: 24))
+                .foregroundStyle(Color.brandBlack)
+            
+        }.padding(.vertical, invoice.dateCreated != nil ? 15 : 20)
+            .padding(.horizontal, 15)
+            .background(Color.brandGray)
+            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        
+    }
+    
+}

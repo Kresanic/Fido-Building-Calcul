@@ -1,25 +1,22 @@
 //
-//  InvoicePreviewSheet.swift
+//  InvoicePDFDocumentPreviewSheet.swift
 //  Fido Building Calcul
 //
-//  Created by Peter Kresanič on 30/04/2024.
+//  Created by Peter Kresanič on 04/05/2024.
 //
 
 import SwiftUI
 import PDFKit
 
-struct InvoicePreviewSheet: View {
+struct InvoicePDFDocumentPreviewSheet: View {
     
     @Environment(\.dismiss) var dismiss
-    var project: Project
-    let pdfURL: URL
     @State var pdfDoc: PDFDocument?
-    @State var showingShareSheet = false
+    
     var body: some View {
         VStack {
             if let pdfDoc {
                 PDFKitView(showing: pdfDoc)
-                    .padding(.bottom, 80)
                     .padding(.top, 40)
             } else { Text("Loading...") }
         }
@@ -48,20 +45,7 @@ struct InvoicePreviewSheet: View {
                     .background(Color.brandWhite.opacity(0.5))
                     .background(.ultraThinMaterial)
                 
-                
                 Spacer()
-                
-                ShareLink(item: pdfURL) {
-                    PDFExportButton()
-                }
-                .padding(.top, 15)
-                .padding(.horizontal, 20)
-                .padding(.bottom, 35)
-                .background(Color.brandWhite.opacity(0.5))
-                .background(.ultraThinMaterial)
-                .simultaneousGesture(TapGesture().onEnded() {
-                    project.addToToHistoryEvent(ProjectEvents.invoiceSent.entityObject)
-                })
                 
             }
             
@@ -69,7 +53,7 @@ struct InvoicePreviewSheet: View {
         .background(Color.brandGray)
         .ignoresSafeArea()
         .presentationCornerRadius(30)
-        .task { withAnimation { pdfDoc = PDFDocument(url: pdfURL) } }
+        
     }
     
 }
@@ -93,4 +77,5 @@ fileprivate struct PDFKitView: UIViewRepresentable {
     func updateUIView(_ pdfView: PDFView, context: Context) {
         pdfView.document = pdfDocument
     }
+    
 }

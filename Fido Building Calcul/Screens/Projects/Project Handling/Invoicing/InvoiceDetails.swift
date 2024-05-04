@@ -199,7 +199,7 @@ extension InvoiceDetails {
         
         let numberAsString = formatter.string(from: (number ?? 1) as NSNumber)
         
-        return "\(year)\(numberAsString ?? "001")"
+        return "\(numberAsString ?? "001")"
         
     }
     
@@ -217,13 +217,13 @@ extension InvoiceDetails {
         
         guard let startOfTheYear else { return }
         
-        request.predicate = NSPredicate(format: "dateCreated >= %@", startOfTheYear as NSDate)
+        request.predicate = NSPredicate(format: "dateCreated >= %@ && toContractor == %@", [startOfTheYear as NSDate, project.toContractor! as CVarArg])
         
         request.fetchLimit = 1; #warning("Check")
         
         guard let invoices = try? viewContext.fetch(request) else { return }
         
-        if invoices.isEmpty { number = 1 }
+        if invoices.isEmpty { number = Int64("\(currentYear)001") }
         
         guard let lastNumber = invoices.first?.number else { return }
         

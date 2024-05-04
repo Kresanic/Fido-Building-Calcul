@@ -148,7 +148,7 @@ enum ProjectStatusBubbleDeployment {
 
 enum ProjectEvents: String {
     
-    case created, notSent, sent, approved, archived, unArchived, duplicated
+    case created, notSent, sent, approved, archived, unArchived, duplicated, invoiceSent
     
     var title: LocalizedStringKey {
         switch self {
@@ -158,6 +158,8 @@ enum ProjectEvents: String {
             return "Not sent"
         case .sent:
             return "Sent"
+        case .invoiceSent:
+            return "Invoice sent"
         case .approved:
             return "Approved"
         case .archived:
@@ -176,6 +178,8 @@ enum ProjectEvents: String {
         case .notSent:
             return "xmark.circle.fill"
         case .sent:
+            return "paperplane.circle.fill"
+        case .invoiceSent:
             return "paperplane.circle.fill"
         case .approved:
             return "checkmark.circle.fill"

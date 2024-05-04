@@ -10,6 +10,7 @@ import SwiftUI
 struct InvoiceBuilderSummaryView: View {
     
     @ObservedObject var viewModel: InvoiceBuilderViewModel
+    @Environment(\.managedObjectContext) var viewContext
     
     var body: some View {
         
@@ -73,6 +74,7 @@ struct InvoiceBuilderSummaryView: View {
                 }
                 
                 Button {
+                    generateInvoiceObject()
                     viewModel.isShowingPDF = true
                 } label: {
                     HStack(spacing: 5) {
@@ -98,9 +100,28 @@ struct InvoiceBuilderSummaryView: View {
                 
         }
         .sheet(isPresented: $viewModel.isShowingPDF) {
-            InvoicePreviewSheet(pdfURL: viewModel.invoiceDetails.pdfURL)
+            InvoicePreviewSheet(project: viewModel.project, pdfURL: viewModel.invoiceDetails.pdfURL)
         }
         
     }
+    
+    private func generateInvoiceObject() {
+        
+        let invoice = Invoice(context: viewContext)
+        
+        invoice.cId = UUID()
+        invoice.dateCreated = Date.now
+        invoice.number = Int64(viewModel.invoiceDetails.invoiceNumber) ?? 0
+        
+        invoice.pdfFile = try? Data(contentsOf: viewModel.invoiceDetails.pdfURL)
+        
+        invoice.toClient = viewModel.invoiceDetails.client
+        invoice.toContractor = viewModel.invoiceDetails.contractor
+        invoice.toProject = viewModel.project
+        
+        try? viewContext.save()
+        
+    }
+    
 }
 

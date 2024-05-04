@@ -229,6 +229,9 @@
 		39D22C782AA12DE400322E31 /* CorporationClientCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D22C772AA12DE400322E31 /* CorporationClientCreationView.swift */; };
 		39D22C7E2AA12F2F00322E31 /* InProjectChoosingClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D22C7D2AA12F2F00322E31 /* InProjectChoosingClientView.swift */; };
 		39D435A12AA0DC5F001AAD18 /* Client+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D4359B2AA0DC5F001AAD18 /* Client+CoreDataClass.swift */; };
+		39DC44F42BE6C5630026E5E4 /* Invoice+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DC44F22BE6C5630026E5E4 /* Invoice+CoreDataClass.swift */; };
+		39DC44F72BE6C99B0026E5E4 /* InvoiceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DC44F62BE6C99B0026E5E4 /* InvoiceDetailView.swift */; };
+		39DC44F92BE6CED60026E5E4 /* InvoicePDFDocumentPreviewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DC44F82BE6CED60026E5E4 /* InvoicePDFDocumentPreviewSheet.swift */; };
 		39E3548E2B9C87E700DE247E /* PlasterboardingOffsetWall+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3548C2B9C87E700DE247E /* PlasterboardingOffsetWall+CoreDataClass.swift */; };
 		39E354912B9C92A900DE247E /* PlasterboardingOffsetWallViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E354902B9C92A900DE247E /* PlasterboardingOffsetWallViews.swift */; };
 		39F549C72B03805600B9AC23 /* ContractorEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F549C62B03805600B9AC23 /* ContractorEditView.swift */; };
@@ -460,6 +463,9 @@
 		39D22C772AA12DE400322E31 /* CorporationClientCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorporationClientCreationView.swift; sourceTree = "<group>"; };
 		39D22C7D2AA12F2F00322E31 /* InProjectChoosingClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectChoosingClientView.swift; sourceTree = "<group>"; };
 		39D4359B2AA0DC5F001AAD18 /* Client+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+CoreDataClass.swift"; sourceTree = "<group>"; };
+		39DC44F22BE6C5630026E5E4 /* Invoice+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Invoice+CoreDataClass.swift"; sourceTree = "<group>"; };
+		39DC44F62BE6C99B0026E5E4 /* InvoiceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceDetailView.swift; sourceTree = "<group>"; };
+		39DC44F82BE6CED60026E5E4 /* InvoicePDFDocumentPreviewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoicePDFDocumentPreviewSheet.swift; sourceTree = "<group>"; };
 		39E3548C2B9C87E700DE247E /* PlasterboardingOffsetWall+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlasterboardingOffsetWall+CoreDataClass.swift"; sourceTree = "<group>"; };
 		39E354902B9C92A900DE247E /* PlasterboardingOffsetWallViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasterboardingOffsetWallViews.swift; sourceTree = "<group>"; };
 		39F549C62B03805600B9AC23 /* ContractorEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractorEditView.swift; sourceTree = "<group>"; };
@@ -530,6 +536,7 @@
 				3996E2602A797C54000D86E1 /* Door+CoreDataClass.swift */,
 				392393732B5B1A3C00DA3A42 /* HistoryEvent+CoreDataClass.swift */,
 				397BB9602AD041BF006BA23C /* Grouting+CoreDataClass.swift */,
+				39DC44F22BE6C5630026E5E4 /* Invoice+CoreDataClass.swift */,
 				392E81A62BD6A8ED00E45DCA /* FacadePlastering+CoreDataClass.swift */,
 				397BB9782AD041BF006BA23C /* InstallationOfCornerBead+CoreDataClass.swift */,
 				397BB9702AD041BF006BA23C /* InstallationOfDoorJamb+CoreDataClass.swift */,
@@ -1164,6 +1171,8 @@
 			isa = PBXGroup;
 			children = (
 				39D1CBE82BADFA3C006580C2 /* InvoicesScreen.swift */,
+				39DC44F62BE6C99B0026E5E4 /* InvoiceDetailView.swift */,
+				39DC44F82BE6CED60026E5E4 /* InvoicePDFDocumentPreviewSheet.swift */,
 			);
 			path = Invoices;
 			sourceTree = "<group>";
@@ -1390,6 +1399,7 @@
 				396EFD422AD0A33900747EB5 /* CustomMaterial+CoreDataClass.swift in Sources */,
 				397B41112B87939B0023A9BC /* InProjectContractorBubbles.swift in Sources */,
 				39666A222BE12D580086D704 /* InvoicePreviewSheet.swift in Sources */,
+				39DC44F72BE6C99B0026E5E4 /* InvoiceDetailView.swift in Sources */,
 				39D22C782AA12DE400322E31 /* CorporationClientCreationView.swift in Sources */,
 				39939AFF2B946B1A00F16884 /* BrickPartitionsViews.swift in Sources */,
 				397BB9902AD041BF006BA23C /* InstallationOfSanitary+CoreDataClass.swift in Sources */,
@@ -1424,6 +1434,7 @@
 				398900822B152AB700CC3870 /* OnboardingPageView.swift in Sources */,
 				395086E82A7182CF0099BAD8 /* FidoBuildingCalculApp.swift in Sources */,
 				3996E2A42A797C54000D86E1 /* Window+CoreDataClass.swift in Sources */,
+				39DC44F42BE6C5630026E5E4 /* Invoice+CoreDataClass.swift in Sources */,
 				398900CA2B17567F00CC3870 /* ContractorBubble.swift in Sources */,
 				398900A02B15FB6500CC3870 /* Enums Projects.swift in Sources */,
 				39B51FA22B56FC8C00700AB4 /* PDFPreviewSheet.swift in Sources */,
@@ -1477,6 +1488,7 @@
 				39666A202BE119050086D704 /* InvoicePDFCreator.swift in Sources */,
 				397BB9A62AD041BF006BA23C /* InstallationOfDoorJamb+CoreDataClass.swift in Sources */,
 				396435DD2A7A9CFA00C148B8 /* WindowInstallationsViews.swift in Sources */,
+				39DC44F92BE6CED60026E5E4 /* InvoicePDFDocumentPreviewSheet.swift in Sources */,
 				3929767C2B358DB3004884E8 /* BIDNetworkClasses.swift in Sources */,
 				39D22C762AA12D9900322E31 /* PersonalClientCreationView.swift in Sources */,
 				398B4C652B970AF700F84DB6 /* ChoosingContractorView.swift in Sources */,
@@ -1613,7 +1625,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
 				DEVELOPMENT_TEAM = J7CR9GZ8S9;
 				ENABLE_PREVIEWS = YES;
@@ -1654,7 +1666,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
 				DEVELOPMENT_TEAM = J7CR9GZ8S9;
 				ENABLE_PREVIEWS = YES;

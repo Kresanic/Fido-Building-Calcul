@@ -102,7 +102,9 @@ import CoreData
             }.frame(maxHeight: 170)
             
             if let projectSumUp = projectSumUp(invoiceDetails) {
+                
                 if let contractor = invoiceDetails.contractor, let bankNumber = contractor.bankAccountNumber {
+                    
                     HStack(spacing: 2) {
                         
                         PDFInvoiceSummaryBubble(title: NSLocalizedString("Bank Account Number", comment: ""), value: bankNumber)
@@ -113,8 +115,10 @@ import CoreData
                         
                         PDFInvoiceSummaryBubble(title: NSLocalizedString("Amount to be paid", comment: ""), value: invoiceDetails.totalPrice.formatted(.currency(code: Locale.current.currency?.identifier ?? "USD")), isImportant: true)
                         
-                    }.padding(.vertical, 20)
+                    }.padding(.vertical, 15)
+                    
                 }
+                
                 HStack {
                     
                     Text(NSLocalizedString("Description", comment: ""))
@@ -207,11 +211,18 @@ import CoreData
                         PDFInvoiceTotalPriceView(invoiceDetails)
                         
                         if let imageData = invoiceDetails.contractor?.signature, let signature =  UIImage(data: imageData) {
-                            Image(uiImage: signature)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 140)
-                                .clipShape(.rect(cornerRadius: 10, style: .continuous))
+                            VStack(alignment: .leading, spacing: 3) {
+                                
+                                Text("Issued by:")
+                                    .font(.system(size: 10, weight: .medium))
+                                    .foregroundStyle(.brandBlack)
+                                
+                                Image(uiImage: signature)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 140)
+                                    .clipShape(.rect(cornerRadius: 10, style: .continuous))
+                            }
                         }
                         
                     }
@@ -230,27 +241,6 @@ import CoreData
             .frame(minHeight: 891)
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     func projectSumUp(_ invoiceDetail: InvoiceDetails) -> PDFInvoicePriceBill? {
             
@@ -552,13 +542,14 @@ struct PDFInvoiceSummaryBubble: View {
                     .foregroundStyle(isImportant ? .brandWhite : .brandBlack)
                 
                 Text(value)
-                    .font(.system(size: 15, weight: .semibold))
+                    .font(.system(size: 15, weight: isImportant ? .bold : .semibold))
                     .foregroundStyle(isImportant ? .brandWhite : .brandBlack)
                     .lineLimit(1)
                     .minimumScaleFactor(isImportant ? 1.0 : 0.8)
                 
             }.padding(.horizontal, 8)
                 .frame(height: 50)
+                .frame(maxWidth: .infinity)
                 .background(isImportant ? .brandBlack : .brandGray)
                 .clipShape(.rect(cornerRadius: 10, style: .continuous))
         }

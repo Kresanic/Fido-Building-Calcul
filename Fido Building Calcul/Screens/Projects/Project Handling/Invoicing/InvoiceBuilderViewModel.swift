@@ -16,11 +16,13 @@ import CoreData
     @Published var dialogWindow: Dialog?
     @Published var isShowingPDF = false
     @Published var redraw = false
+    
+    var project: Project
 //    var pdfURL: URL {
 //        return InvoicePDFCreator(invoiceDetails, invoiceItems).render()
 //    }
     
-    init(_ project: Project) { invoiceDetails = InvoiceDetails(project: project) }
+    init(_ project: Project) { invoiceDetails = InvoiceDetails(project: project); self.project = project }
     
 }
 
