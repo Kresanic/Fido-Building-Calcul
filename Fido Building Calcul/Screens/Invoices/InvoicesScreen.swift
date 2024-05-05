@@ -37,9 +37,19 @@ struct InvoicesScreen: View {
                     
                     InvoicesScreenTitle()
                     
-                    ForEach(invoices) { invoice in
-                        NavigationLink(value: invoice) {
-                            InvoiceBubbleView(invoice: invoice)
+                    if invoices.isEmpty {
+                        Text("There is no Invoice for selected Contractor.")
+                            .font(.system(size: 25, weight: .semibold))
+                            .foregroundStyle(.brandBlack)
+                            .multilineTextAlignment(.center)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding(.horizontal, 40)
+                            .padding(.top, 150)
+                    } else {
+                        ForEach(invoices) { invoice in
+                            Button { behavioursVM.invoicesPath.append(invoice) } label: {
+                                InvoiceBubbleView(invoice: invoice)
+                            }
                         }
                     }
                     
@@ -47,11 +57,16 @@ struct InvoicesScreen: View {
                     .padding(.bottom, 105)
                 
             }.scrollIndicators(.hidden)
-                .navigationBarTitleDisplayMode(.inline)
                 .navigationDestination(for: Invoice.self) { invoice in
                     InvoiceDetailView(invoice: invoice)
                 }
-        }
+                .navigationDestination(for: Client.self) { client in
+                    ClientPreviewScreen(client: client)
+                }
+                
+            
+        }.navigationBarTitleDisplayMode(.inline)
+        
         
     }
     
@@ -188,36 +203,58 @@ fileprivate struct InvoicesScreenTitle: View {
 
 struct InvoiceBubbleView: View {
     
-    var invoice: Invoice
+    @FetchRequest var fetchedInvoices: FetchedResults<Invoice>
+    
+    init(invoice: Invoice) {
+        
+        let request = Invoice.fetchRequest()
+        
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Invoice.dateCreated, ascending: false)]
+        
+        let invoiceCID = invoice.cId ?? UUID()
+        
+        request.fetchLimit = 1
+        
+        request.predicate = NSPredicate(format: "cId == %@", invoiceCID as CVarArg)
+        
+        _fetchedInvoices = FetchRequest(fetchRequest: request)
+        
+    }
     
     var body: some View {
         
-        HStack {
+        if let invoice = fetchedInvoices.first {
             
-            VStack(alignment: .leading, spacing: 3) {
+            HStack {
                 
-                Text(invoice.stringNumber)
-                    .font(.system(size: 20, weight: .semibold))
-                    .foregroundStyle(Color.brandBlack)
-                
-                if let date = invoice.dateCreated {
-                    Text(date, format: .dateTime.day().month().year())
-                        .font(.system(size: 13, weight: .semibold))
-                        .foregroundStyle(Color.brandBlack.opacity(0.8))
+                VStack(alignment: .leading, spacing: 3) {
+                    
+                    Text(invoice.stringNumber)
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundStyle(Color.brandBlack)
+                    
+                    if let date = invoice.dateCreated {
+                        Text(date, format: .dateTime.day().month().year())
+                            .font(.system(size: 13, weight: .semibold))
+                            .foregroundStyle(Color.brandBlack.opacity(0.8))
+                    }
+                    
                 }
                 
-            }
-            
-            Spacer()
+                Spacer()
                 
-            Image(systemName: "chevron.right")
-                .font(.system(size: 24))
-                .foregroundStyle(Color.brandBlack)
+                invoice.statusCase.bubble
+                
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 24))
+                    .foregroundStyle(Color.brandBlack)
+                
+            }.padding(.vertical, invoice.dateCreated != nil ? 15 : 20)
+                .padding(.horizontal, 15)
+                .background(Color.brandGray)
+                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
             
-        }.padding(.vertical, invoice.dateCreated != nil ? 15 : 20)
-            .padding(.horizontal, 15)
-            .background(Color.brandGray)
-            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        }
         
     }
     

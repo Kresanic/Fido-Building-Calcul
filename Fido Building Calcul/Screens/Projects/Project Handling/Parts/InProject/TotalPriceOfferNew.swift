@@ -135,33 +135,82 @@ struct TotalPriceOffer: View {
                             
                         }
                         
-                        #warning("Delete or refactor")
-                        Button {
-                            isShowingInvoiceBuilder = true
-                        } label: {
-                            HStack(spacing: 5) {
-                                
-                                Text("Create Invocie")
-                                    .font(.system(size: 20, weight: .medium))
-                                    .foregroundStyle(Color.brandWhite)
-                                
-                                Image(systemName: "doc.text.fill")
-                                    .font(.system(size: 18, weight: .medium))
-                                    .foregroundStyle(Color.brandWhite)
-                                
-                            }.padding(.vertical, 15)
-                                .frame(maxWidth: .infinity)
-                                .background(Color.brandBlack)
-                                .clipShape(.rect(cornerRadius: 20, style: .continuous))
-                        }
-                        
                     }
                     .padding(15)
                     .background(Color.brandGray)
                     .clipShape(.rect(cornerRadius: 25, style: .continuous))
-                    .redrawable()
                     
-                }.fullScreenCover(isPresented: $isShowingPayWall) { PayWallScreen() }
+                    
+                    #warning("Delete or refactor")
+                    
+                    if let invoice = project.toInvoice {
+                        Button { behavioursVM.projectsPath.append(invoice) } label: {
+                            HStack {
+                                
+                                VStack(alignment: .leading, spacing: 3) {
+                                    
+                                    Text("Invoice \(invoice.stringNumber)")
+                                        .font(.system(size: 20, weight: .semibold))
+                                        .foregroundStyle(Color.brandBlack)
+                                    
+                                    Text(invoice.dateCreated ?? Date.now, format: .dateTime.day().month().year())
+                                        .font(.system(size: 13, weight: .semibold))
+                                        .foregroundStyle(Color.brandBlack.opacity(0.8))
+                                    
+                                }
+                                
+                                Spacer()
+                                    
+                                Image(systemName: "chevron.right")
+                                    .font(.system(size: 24))
+                                    .foregroundStyle(Color.brandBlack)
+                                
+                            }.padding(15)
+                                .background {
+                                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                        .strokeBorder(Color.brandBlack, lineWidth: 1.5)
+                                        .background(Color.brandGray)
+                                        .clipShape(.rect(cornerRadius: 20, style: .continuous))
+                                }
+                        }
+                        
+                    } else {
+                        Button {
+                            isShowingInvoiceBuilder = true
+                        } label: {
+                            HStack {
+                                
+                                VStack(alignment: .leading, spacing: 3) {
+                                    
+                                    Text("Create invoice")
+                                        .font(.system(size: 20, weight: .semibold))
+                                        .foregroundStyle(Color.brandBlack)
+                                    
+                                    Text("Choose items and generate PDF")
+                                        .font(.system(size: 13, weight: .semibold))
+                                        .foregroundStyle(Color.brandBlack.opacity(0.8))
+                                        .multilineTextAlignment(.leading)
+                                    
+                                }
+                                
+                                Spacer()
+                                    
+                                Image(systemName: "plus")
+                                    .font(.system(size: 24))
+                                    .foregroundStyle(Color.brandBlack)
+                                
+                            }.padding(15)
+                                .background {
+                                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                        .strokeBorder(Color.brandBlack, lineWidth: 1.5)
+                                        .background(Color.brandGray)
+                                        .clipShape(.rect(cornerRadius: 20, style: .continuous))
+                                }
+                        }
+                    }
+                    
+                }.redrawable()
+                .fullScreenCover(isPresented: $isShowingPayWall) { PayWallScreen() }
                     .fullScreenCover(isPresented: $isShowingInvoiceBuilder) { InvoiceBuilderView(project: project) }
                     .sheet(isPresented: $pdfViewModel.isShowingPreview) {
                         PDFPreviewSheet(pdfViewModel: pdfViewModel, pdfProject: project)

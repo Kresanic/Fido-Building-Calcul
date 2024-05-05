@@ -55,7 +55,9 @@ import CoreData
                 
                 VStack(alignment: .leading, spacing: 0) {
                     
-                    Text(NSLocalizedString("Invoice \(invoiceDetails.invoiceNumber)", comment: ""))
+                    let localizedInvoice = NSLocalizedString("Invoice", comment: "")
+                    
+                    Text("\(localizedInvoice) \(invoiceDetails.invoiceNumber)")
                         .font(.system(size: 25, weight: .semibold))
                         .foregroundStyle(Color.brandBlack)
                     

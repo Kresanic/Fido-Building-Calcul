@@ -13,7 +13,21 @@ import CoreData
 public class Invoice: NSManagedObject {
     
     var stringNumber: String {
-        String(number ?? 99999)
+        String(number)
     }
 
+    var statusCase: InvoiceStatus {
+        
+        let currentCase = InvoiceStatus(rawValue: status ?? "unpaid") ?? .unpaid
+        
+        let maturityCutOff = Calendar.current.date(byAdding: .day, value: Int(maturityDays), to: dateCreated ?? Date.now) ?? Date.now
+        
+        if Date.now > maturityCutOff && currentCase == .unpaid {
+            return .afterMaturity
+        } else {
+            return currentCase
+        }
+        
+    }
+    
 }

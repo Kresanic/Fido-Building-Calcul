@@ -60,7 +60,7 @@ struct InvoiceBuilderItemBubble: View {
                     TextField("Name", text: $title, onEditingChanged: { _ in
                         withAnimation { title = viewModel.invoiceDetails.changeTitle(of: itemID, to: title) }
                     })
-                    .font(.system(size: 21, weight: .medium))
+                    .font(.system(size: isRetracted ? 21 : 24, weight: .medium))
                     .foregroundStyle(foregroundTextColor)
                     .multilineTextAlignment(.leading)
                     .submitLabel(.done)
@@ -186,7 +186,7 @@ struct InvoiceBuilderItemBubble: View {
                     
                     Spacer()
                     
-                }
+                }.padding(.vertical, 10)
                 
                 VStack(alignment: .trailing) {
                     

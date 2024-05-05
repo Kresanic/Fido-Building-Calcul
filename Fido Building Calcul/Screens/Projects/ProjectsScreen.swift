@@ -24,8 +24,7 @@ struct ProjectsScreen: View {
                     VStack(spacing: 25) {
                         
                         ForEach(PropertyCategories.allCases) { propertyCategory in
-                            
-                            NavigationLink(value: propertyCategory) {
+                            Button { behavioursVM.projectsPath.append(propertyCategory) } label: {
                                 PropertyCategoryBubbleView(propertyCategory: propertyCategory, activeContractor: behavioursVM.activeContractor)
                             }
                             
@@ -50,8 +49,11 @@ struct ProjectsScreen: View {
                 .navigationDestination(for: Client.self) { client in
                     ClientPreviewScreen(client: client)
                 }
+                .navigationDestination(for: Invoice.self) { invoice in
+                    InvoiceDetailView(invoice: invoice)
+                }
                 
-        }
+        }.navigationViewStyle(.stack)
         
     }
     

@@ -235,6 +235,7 @@ final class BehavioursViewModel: ObservableObject {
         showingDialogWindow = dialog
     }
     
+    
     func switchToRoom(with room: Room) {
         withAnimation(.easeInOut(duration: 0.2)) {
             currentTab = .projects
@@ -249,7 +250,7 @@ final class BehavioursViewModel: ObservableObject {
     }
     
     func replaceProjectsInPath(with project: Project) {
-        // does not wokr
+        // does not work
         withAnimation(.easeInOut(duration: 0.2)) {
             self.projectsPath.removeLast(1)
             self.projectsPath.append(project)
@@ -257,16 +258,25 @@ final class BehavioursViewModel: ObservableObject {
     }
     
     func switchToProjectsPage(with project: Project) {
-        isAnimationCircular = true
+        print("went in ")
         withAnimation(.easeInOut(duration: 0.2)) {
-            currentTab = .projects
+            print("projectsPath.count", projectsPath.count)
             projectsPath.removeLast(projectsPath.count)
-            if let projectCat = PropertyCategories(rawValue: project.category ?? "flats") {
-                projectsPath.append(projectCat)
-            }
+            print("projectsPath.count2", projectsPath.count)
+            currentTab = .projects
+            print("currentTab", currentTab)
             projectsPath.append(project)
+            print("currentTab", currentTab)
         }
-        isAnimationCircular = false
+    }
+    
+    func switchToContractor(with contractor: Contractor) {
+        withAnimation(.easeInOut(duration: 0.2)) {
+            settingsPath.removeLast(settingsPath.count)
+            currentTab = .settings
+            settingsPath.append(SettingsNavigation.priceOffer)
+            settingsPath.append(contractor)
+        }
     }
     
     func appearancePrefferance() -> ColorScheme? {

@@ -108,6 +108,12 @@
             "state" : "new",
             "value" : "%1$@  %2$@"
           }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@  %2$@"
+          }
         }
       }
     },
@@ -640,7 +646,14 @@
       }
     },
     "Add signature" : {
-
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pridať podpis"
+          }
+        }
+      }
     },
     "Additional info" : {
       "localizations" : {
@@ -692,6 +705,16 @@
         }
       }
     },
+    "After Maturity" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Po Splatnosti"
+          }
+        }
+      }
+    },
     "After saving the client's details, you can see already created projects, as well as create a new one by clicking on: (+)" : {
       "localizations" : {
         "sk" : {
@@ -703,7 +726,14 @@
       }
     },
     "Amount to be paid" : {
-
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suma na úhradu"
+          }
+        }
+      }
     },
     "App #, Suite (optional)" : {
       "localizations" : {
@@ -851,6 +881,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Archiváciou tohto projektu nedôjde k strate dát. Tento projekt nájdete na karte 'Archív' v nastaveniach aplikácie."
+          }
+        }
+      }
+    },
+    "Are you sure you want to delete this invoice? This action is irreversible, and it will permanently erase all related data. The invoice number will also be freed for future use." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ste si istí, že chcete túto faktúru vymazať? Táto akcia je nezvratná a natrvalo vymaže všetky súvisiace údaje. Číslo faktúry sa uvoľní aj pre budúce použitie."
           }
         }
       }
@@ -1105,9 +1145,6 @@
         }
       }
     },
-    "By continuing, invoice will be permanently deleted and will not be able to retrieve any data. The number of the invoice will be freed and there will be no record of creating this invoice." : {
-
-    },
     "By exiting this view all changes made will be deleted." : {
       "localizations" : {
         "sk" : {
@@ -1250,6 +1287,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vybrať dodávateľa"
+          }
+        }
+      }
+    },
+    "Choose items and generate PDF" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vybrať položky a vygenerovať PDF"
           }
         }
       }
@@ -1575,12 +1622,12 @@
         }
       }
     },
-    "Create Invocie" : {
+    "Create invoice" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vyfakturovať"
+            "value" : "Vytvoriť faktúru"
           }
         }
       }
@@ -1845,8 +1892,15 @@
         }
       }
     },
-    "Delete invoice?" : {
-
+    "Delete Invoice?" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vymazať faktúru?"
+          }
+        }
+      }
     },
     "Delete project %@?" : {
       "localizations" : {
@@ -2489,8 +2543,25 @@
         }
       }
     },
-    "Invoice (invoiceDetails.invoiceNumber)" : {
-
+    "Invoice (invoice.stringNumber).pdf" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faktúra"
+          }
+        }
+      }
+    },
+    "Invoice %@" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faktúra %@"
+          }
+        }
+      }
     },
     "Invoice Builder" : {
       "localizations" : {
@@ -2503,10 +2574,24 @@
       }
     },
     "Invoice Preview" : {
-
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Náhľad Faktúry"
+          }
+        }
+      }
     },
     "Invoice sent" : {
-
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faktúra odoslaná"
+          }
+        }
+      }
     },
     "invoice settings" : {
       "localizations" : {
@@ -2528,19 +2613,15 @@
         }
       }
     },
-    "Invoicing for All of your Contractors Coming Soon..." : {
-      "extractionState" : "stale",
+    "Issued by:" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Fakturácia pre všetkých vašich dodávateľov už čoskoro..."
+            "value" : "Vystavil/a:"
           }
         }
       }
-    },
-    "Issued by:" : {
-
     },
     "Items" : {
       "localizations" : {
@@ -2792,6 +2873,16 @@
         }
       }
     },
+    "Mark as Paid" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Označiť ako uhradené"
+          }
+        }
+      }
+    },
     "Material" : {
       "localizations" : {
         "sk" : {
@@ -2823,7 +2914,14 @@
       }
     },
     "Maturity date" : {
-
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dátum splatnosti"
+          }
+        }
+      }
     },
     "Maturity duration" : {
       "localizations" : {
@@ -3185,6 +3283,16 @@
         }
       }
     },
+    "Paid" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uhradené"
+          }
+        }
+      }
+    },
     "Paint" : {
       "localizations" : {
         "sk" : {
@@ -3371,6 +3479,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ks"
+          }
+        }
+      }
+    },
+    "PDF" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PDF"
           }
         }
       }
@@ -3676,7 +3794,14 @@
       }
     },
     "Preview invoice" : {
-
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Náhľad faktúry"
+          }
+        }
+      }
     },
     "Price" : {
       "localizations" : {
@@ -3788,6 +3913,16 @@
         }
       }
     },
+    "Project" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Projekt"
+          }
+        }
+      }
+    },
     "Project category" : {
       "localizations" : {
         "sk" : {
@@ -3881,6 +4016,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Požičovňa"
+          }
+        }
+      }
+    },
+    "Resend Invoice" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opätovné odoslanie faktúry"
           }
         }
       }
@@ -3986,7 +4131,14 @@
       }
     },
     "Scan to Pay!" : {
-
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skenovať a zaplatiť!"
+          }
+        }
+      }
     },
     "Search" : {
       "localizations" : {
@@ -4089,7 +4241,14 @@
       }
     },
     "Signature" : {
-
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podpis"
+          }
+        }
+      }
     },
     "Silicone" : {
       "localizations" : {
@@ -4365,6 +4524,16 @@
         }
       }
     },
+    "There is no Invoice for selected Contractor." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pre vybraného dodávateľa nebola vytvorená žiadna faktúra."
+          }
+        }
+      }
+    },
     "This app will save you hours spent in creating budgets. With the FIDO building calcul app, the budget will be ready in just a few minutes. The app calculates the cost of labor and materials needed for the reconstruction of a house, apartment, etc." : {
       "localizations" : {
         "sk" : {
@@ -4615,6 +4784,16 @@
         }
       }
     },
+    "Unpaid" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neuhradené"
+          }
+        }
+      }
+    },
     "Update klient" : {
       "localizations" : {
         "sk" : {
@@ -4686,7 +4865,14 @@
       }
     },
     "Variable symbol" : {
-
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Variabilný symbol"
+          }
+        }
+      }
     },
     "VAT" : {
       "localizations" : {
@@ -4774,17 +4960,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "stena, 2 vrstvy"
-          }
-        }
-      }
-    },
-    "We have moved the Main Price List into Settings screen" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hlavný cenník sme presunuli na obrazovku Nastavenia"
           }
         }
       }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InvoiceItemPriceInfo: View {
     
-    var title: String
+    var title: LocalizedStringKey
     var value: Double
     var big: Bool = false
     @Environment(\.locale) var locale
@@ -25,7 +25,9 @@ struct InvoiceItemPriceInfo: View {
             Text(value, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                 .font(.system(size: big ? 23 : 17, weight: big ? .semibold : .medium))
                 .foregroundStyle(Color.brandBlack)
+                .contentTransition(.numericText())
                 .frame(maxWidth: 150, alignment: .trailing)
+                
             
         }
         

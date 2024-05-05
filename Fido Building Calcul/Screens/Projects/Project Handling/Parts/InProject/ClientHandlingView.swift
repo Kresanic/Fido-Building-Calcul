@@ -47,7 +47,7 @@ struct ClientHandlingView: View {
             }
             
             if let client = project.toClient {
-                NavigationLink(value: client) {
+                Button { behaviours.projectsPath.append(client) } label: {
                     ClientBubble(client: client, isDeleting: viewModel.isDeletingClientConnection)
                     
                 }
@@ -63,7 +63,7 @@ struct ClientHandlingView: View {
     }
 }
 
-fileprivate struct ClientBubble: View {
+struct ClientBubble: View {
     
     var client: Client
     var isDeleting: Bool

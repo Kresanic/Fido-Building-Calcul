@@ -25,13 +25,13 @@ struct InvoiceBuilderView: View {
             
             VStack(spacing: 0) {
                 
-                HStack {
+                HStack(alignment: .lastTextBaseline) {
                     
                     Text("Invoice Builder")
                         .font(.system(size: 40, weight: .bold))
                         .foregroundStyle(.brandBlack)
                         .multilineTextAlignment(.leading)
-                        .padding(.vertical, 20)
+                        .padding(.top, 20)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     Spacer()
@@ -44,17 +44,20 @@ struct InvoiceBuilderView: View {
                         } else { dismiss() }
                     } label: {
                         Image(systemName: "xmark")
-                            .font(.system(size: 21, weight: .medium))
+                            .font(.system(size: 24, weight: .medium))
                             .foregroundStyle(.brandBlack)
-                            .frame(width: 60, height: 60, alignment: .trailing)
+                            .frame(width: 60, height: 40, alignment: .bottom)
                     }
                     
                 }
+                
+                InvoiceBuilderSummaryView(viewModel: viewModel)
                 
                 Text("Items")
                     .font(.system(size: 30, weight: .semibold))
                     .foregroundStyle(.brandBlack)
                     .padding(.bottom, -10)
+                    .padding(.top, 20)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 VStack(alignment: .leading, spacing: 3) {
@@ -113,8 +116,6 @@ struct InvoiceBuilderView: View {
                     }
                     
                 }
-                
-                InvoiceBuilderSummaryView(viewModel: viewModel)
                 
             }.padding(.horizontal, 15)
                 .padding(.bottom, 15)

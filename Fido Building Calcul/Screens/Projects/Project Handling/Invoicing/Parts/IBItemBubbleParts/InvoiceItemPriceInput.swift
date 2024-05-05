@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InvoiceItemPriceInput: View {
     
-    var title: String
+    var title: LocalizedStringKey
     @Binding var value: String
     var editingChanged: () -> Void
     @Environment(\.locale) var locale

@@ -117,7 +117,6 @@ struct ProjectBubbleView: View {
                     pressed = false
                 }
             }
-            
         }
         .redrawable()
         

@@ -11,6 +11,7 @@ struct InvoiceBuilderSummaryView: View {
     
     @ObservedObject var viewModel: InvoiceBuilderViewModel
     @Environment(\.managedObjectContext) var viewContext
+    @AppStorage("invoiceMaturityDuration") var invoiceMaturityDuration: Int = 30
     
     var body: some View {
         
@@ -19,13 +20,10 @@ struct InvoiceBuilderSummaryView: View {
             Text("Summary")
                 .font(.system(size: 30, weight: .semibold))
                 .foregroundStyle(.brandBlack)
-                .padding(.top, 15)
                 .padding(.bottom, 5)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             VStack {
-                
-                
                 
                 HStack(alignment: .firstTextBaseline) {
                     
@@ -38,6 +36,7 @@ struct InvoiceBuilderSummaryView: View {
                     Text(viewModel.invoiceDetails.unPriceWithoutVAT, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .font(.system(size: 16, weight: .semibold))
                         .foregroundStyle(Color.brandBlack)
+                        .contentTransition(.numericText())
                     
                 }
                 
@@ -52,6 +51,7 @@ struct InvoiceBuilderSummaryView: View {
                     Text(viewModel.invoiceDetails.unCumulativeVat, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .font(.system(size: 16, weight: .semibold))
                         .foregroundStyle(Color.brandBlack)
+                        .contentTransition(.numericText())
                     
                 }
                 
@@ -67,6 +67,7 @@ struct InvoiceBuilderSummaryView: View {
                     
                     Text(viewModel.invoiceDetails.totalPrice, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .minimumScaleFactor(0.4)
+                        .contentTransition(.numericText())
                         .lineLimit(1)
                         .font(.system(size: 20, weight: .semibold))
                         .foregroundStyle(Color.brandBlack)
@@ -118,6 +119,12 @@ struct InvoiceBuilderSummaryView: View {
         invoice.toClient = viewModel.invoiceDetails.client
         invoice.toContractor = viewModel.invoiceDetails.contractor
         invoice.toProject = viewModel.project
+        
+        invoice.maturityDays = Int64(invoiceMaturityDuration)
+        invoice.priceWithoutVat = viewModel.invoiceDetails.unPriceWithoutVAT
+        invoice.vatAmount = viewModel.invoiceDetails.unCumulativeVat
+        
+        invoice.status = InvoiceStatus.unpaid.rawValue
         
         try? viewContext.save()
         
