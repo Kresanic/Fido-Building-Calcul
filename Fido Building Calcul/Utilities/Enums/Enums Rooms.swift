@@ -11,6 +11,22 @@ enum NumberOfInputs { case one, two }
 
 enum FocusedDimension { case first, second }
 
+enum TripleFocusedDimension {
+    case first, second, third
+    
+    var advance: Self? {
+        switch self {
+        case .first:
+            .second
+        case .second:
+            .third
+        case .third:
+            nil
+        }
+    }
+    
+}
+
 enum DimensionCallout: String {
     
     case durationOfWork, numberOfOutlets, height, width, length, windowLining, count, price, circumference, commuteLength, rentalLength

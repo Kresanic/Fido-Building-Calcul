@@ -225,13 +225,44 @@ struct InvoiceBubbleView: View {
         
         if let invoice = fetchedInvoices.first {
             
-            HStack {
+            HStack(alignment: .lastTextBaseline) {
                 
-                VStack(alignment: .leading, spacing: 3) {
+                VStack(alignment: .leading) {
                     
-                    Text(invoice.stringNumber)
-                        .font(.system(size: 20, weight: .semibold))
-                        .foregroundStyle(Color.brandBlack)
+                    if let projectName = invoice.toProject?.name {
+                    
+                        Text(invoice.stringNumber)
+                            .font(.system(size: 13, weight: .medium))
+                            .foregroundStyle(Color.brandBlack)
+                        
+                        Text(projectName)
+                            .font(.system(size: 20, weight: .semibold))
+                            .lineLimit(1)
+                            .foregroundStyle(Color.brandBlack)
+                            .multilineTextAlignment(.leading)
+                        
+                    } else {
+                        Text(invoice.stringNumber)
+                            .font(.system(size: 20, weight: .medium))
+                            .foregroundStyle(Color.brandBlack)
+                    }
+                    
+                    
+                    if let clientName = invoice.toClient?.name {
+                        Text(clientName)
+                            .font(.system(size: 13, weight: .medium))
+                            .foregroundStyle(Color.brandBlack)
+                    }
+                    
+                    
+                    
+                }.frame(height: 50)
+                
+                Spacer()
+                
+                VStack(alignment: .trailing, spacing: 3) {
+                    
+                    invoice.statusCase.bubble
                     
                     if let date = invoice.dateCreated {
                         Text(date, format: .dateTime.day().month().year())
@@ -240,10 +271,6 @@ struct InvoiceBubbleView: View {
                     }
                     
                 }
-                
-                Spacer()
-                
-                invoice.statusCase.bubble
                 
                 Image(systemName: "chevron.right")
                     .font(.system(size: 24))

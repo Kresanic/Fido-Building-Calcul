@@ -45,10 +45,20 @@ struct InvoiceDetailView: View {
                     
                     HStack {
                         
-                        Text(invoice.stringNumber)
-                            .font(.system(size: 40, weight: .heavy))
-                            .foregroundStyle(.brandBlack)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                        VStack(alignment: .leading, spacing: 2) {
+                            
+                            Text(invoice.stringNumber)
+                                .font(.system(size: 40, weight: .heavy))
+                                .foregroundStyle(.brandBlack)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            
+                            if let projectNum = invoice.toProject?.projectNumber {
+                                Text(projectNum)
+                                    .font(.system(size: 14, weight: .medium))
+                                    .foregroundStyle(.brandBlack)
+                            }
+                            
+                        }
                         
                         if invoice.statusCase != .paid {
                             Button {

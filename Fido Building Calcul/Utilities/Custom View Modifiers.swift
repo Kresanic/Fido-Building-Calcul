@@ -36,6 +36,10 @@ extension View {
         return modifier(CTAPopUp())
     }
     
+    func tripleWorkInputsToolbar(focusedDimension: FocusState<TripleFocusedDimension?>.Binding, size1: Binding<String>, size2: Binding<String>, size3: Binding<String>) -> some View {
+        return modifier(TripleWorkInputsToolBar(focusedDimension: focusedDimension, size1: size1, size2: size2, size3: size3))
+    }
+    
     func workInputsToolbar(focusedDimension: FocusState<FocusedDimension?>.Binding, size1: Binding<String>, size2: Binding<String>) -> some View {
         return modifier(WorkInputsToolBar(focusedDimension: focusedDimension, size1: size1, size2: size2))
     }
@@ -283,6 +287,165 @@ struct Redrawable: ViewModifier {
             content
         } else {
             content
+        }
+        
+    }
+    
+}
+
+struct TripleWorkInputsToolBar: ViewModifier {
+    
+    var focusedDimension: FocusState<TripleFocusedDimension?>.Binding
+    @Binding var size1: String
+    @Binding var size2: String
+    @Binding var size3: String
+    
+    func body(content: Content) -> some View {
+               
+            content
+                .toolbar {
+                        ToolbarItem(placement: .keyboard) {
+                                if focusedDimension.wrappedValue != nil {
+                                    if focusedDimension.wrappedValue == .first {
+                                        keyboardToolbarContent(for: .first)
+                                    } else if focusedDimension.wrappedValue == .second {
+                                        keyboardToolbarContent(for: .second)
+                                    } else if focusedDimension.wrappedValue == .third {
+                                            keyboardToolbarContent(for: .third)
+                                    }
+                                }
+                        }
+                        
+                    }
+                }
+        
+    @ViewBuilder
+    private func keyboardToolbarContent(for dimension: TripleFocusedDimension) -> some View {
+        HStack(spacing: 0) {
+            if dimension == .first || dimension == .second {
+                doneButton().frame(width: 75)
+                mathSymbols()
+                nextButton().frame(width: 75)
+            } else if dimension == .third {
+                Spacer().frame(width: 75)
+                mathSymbols()
+                doneButton().frame(width: 75)
+            }
+        }
+    }
+
+    private func doneButton() -> some View {
+        Button {
+            withAnimation {
+                focusedDimension.wrappedValue = nil
+                size1 = calculate(on: size1)
+                size2 = calculate(on: size2)
+                size3 = calculate(on: size3)
+            }
+        } label: {
+            Text("Done")
+                .font(.system(size: 17, weight: .semibold))
+                .foregroundStyle(Color.brandWhite)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 4)
+                .background { Color.brandBlack }
+                .clipShape(Capsule())
+        }
+    }
+
+    private func nextButton() -> some View {
+        Button {
+            withAnimation {
+                focusedDimension.wrappedValue = focusedDimension.wrappedValue?.advance
+                size1 = calculate(on: size1)
+                size2 = calculate(on: size2)
+            }
+        } label: {
+            Text("Next")
+                .font(.system(size: 17, weight: .semibold))
+                .foregroundStyle(Color.brandWhite)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 4)
+                .background { Color.brandBlack }
+                .clipShape(Capsule())
+        }
+    }
+    
+    private func mathSymbols() -> some View {
+        
+        HStack {
+            
+            let impactMed = UIImpactFeedbackGenerator(style: .soft)
+            
+            Button("-") {
+                if focusedDimension.wrappedValue == .first {
+                    size1 = size1 + "-"
+                } else if focusedDimension.wrappedValue == .second {
+                    size2 = size2 + "-"
+                }
+                impactMed.impactOccurred()
+            }.frame(height: 40)
+            .frame(maxWidth: .infinity)
+            
+            Button("+") {
+                if focusedDimension.wrappedValue == .first {
+                    size1 = size1 + "+"
+                } else if focusedDimension.wrappedValue == .second {
+                    size2 = size2 + "+"
+                }
+                impactMed.impactOccurred()
+            }.frame(height: 40)
+            .frame(maxWidth: .infinity)
+            
+            Button("*") {
+                if focusedDimension.wrappedValue == .first {
+                    size1 = size1 + "*"
+                } else if focusedDimension.wrappedValue == .second {
+                    size2 = size2 + "*"
+                }
+                impactMed.impactOccurred()
+            }.frame(height: 40)
+            .frame(maxWidth: .infinity)
+            .padding(.top, 8)
+            
+            Button("=") {
+                if focusedDimension.wrappedValue == .first {
+                    size1 = calculate(on: size1)
+                } else if focusedDimension.wrappedValue == .second {
+                    size2 = calculate(on: size2)
+                }
+                impactMed.impactOccurred()
+            }.frame(height: 40)
+            .frame(maxWidth: .infinity)
+            
+        }.font(.system(size: 22, weight: .bold))
+            .foregroundStyle(Color.brandBlack)
+        
+    }
+    
+    private func calculate(on expressionString: String) -> String {
+        
+        guard let _ = Int(expressionString.suffix(1)) else { return "0" }
+        guard let _ = Int(expressionString.prefix(1)) else { return "0" }
+        
+        let expression = expressionString.replacingOccurrences(of: ",", with: ".")
+                
+        let express = NSExpression(format: expression)
+        
+        guard let result = express.expressionValue(with: nil, context: nil) as? Double else { return "0" }
+        
+        let roundedResult = Double(round(100 * result) / 100)
+
+        return dbToStr(from: roundedResult)
+        
+    }
+    
+    private func dbToStr(from number: Double) -> String {
+        
+        if number.truncatingRemainder(dividingBy: 1.0) == 0.0 {
+            return String(number) == "0.0" ? "" : String(Int(number))
+        } else {
+            return String(number) == "0.0" ? "" : String(number).replacingOccurrences(of: ".", with: ",")
         }
         
     }

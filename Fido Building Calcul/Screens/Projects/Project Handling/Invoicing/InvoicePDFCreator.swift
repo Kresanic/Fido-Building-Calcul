@@ -249,15 +249,21 @@ import CoreData
         var pDFInvoicePriceBill: PDFInvoicePriceBill = PDFInvoicePriceBill()
             
         for work in invoiceDetail.workItems {
-            pDFInvoicePriceBill.addWorks(work)
+            if work.active {
+                pDFInvoicePriceBill.addWorks(work)
+            }
         }
         
         for material in invoiceDetail.materialItems {
-            pDFInvoicePriceBill.addMaterials(material)
+            if material.active {
+                pDFInvoicePriceBill.addMaterials(material)
+            }
         }
             
         for other in invoiceDetail.otherItems {
-            pDFInvoicePriceBill.addOthers(other)
+            if other.active {
+                pDFInvoicePriceBill.addOthers(other)
+            }
         }
       
         return pDFInvoicePriceBill

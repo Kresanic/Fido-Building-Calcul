@@ -36,7 +36,7 @@ public enum UnitsOfMeasurement: String {
         case .percentage:
             return "%"
         case .day:
-            return "day"
+            return "days"
         case .kilogram:
             return "kg"
         case .ton:
@@ -65,7 +65,7 @@ public enum UnitsOfMeasurement: String {
             return .kilometer
         case "percentage":
             return .percentage
-        case "day":
+        case "days":
             return .day
         case "kilogram":
             return .kilogram

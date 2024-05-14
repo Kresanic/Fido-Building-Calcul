@@ -14,7 +14,7 @@ public class Scaffolding: NSManagedObject, AreaBasedOtherType {
     
     static var title: LocalizedStringKey = "Scaffolding"
     static var subTitle: LocalizedStringKey = ""
-    static var unit: UnitsOfMeasurement = .squareMeter
+    static var unit: UnitsOfMeasurement = .day
 
 }
 

@@ -17,24 +17,27 @@ import CoreData
         
         let projectPriceList = project.toPriceList
         let projectClient = project.toClient
+        let projectInvoice = project.toInvoice
         guard let projectContractor = project.toContractor else { return nil }
         let newProjectNumber = newProjectNumber(contractor: projectContractor)
         
         project.toPriceList = nil
         project.toClient = nil
         project.toContractor = nil
+        project.toInvoice = nil
         
         let _ = project.copyEntireObjectGraph(context: viewContext)
         
         project.toPriceList = projectPriceList
         project.toClient = projectClient
         project.toContractor = projectContractor
+        project.toInvoice = projectInvoice
         
         try? viewContext.save()
         
         guard let duplicatedProject = fetchLastProject() else { return nil }
         
-        guard let editedProject = editNewProject(of: duplicatedProject, to: projectClient, with: projectPriceList, by: projectContractor, numbered:  newProjectNumber) else { return nil }
+        guard let editedProject = editNewProject(of: duplicatedProject, to: projectClient, with: projectPriceList, by: projectContractor, numbered: newProjectNumber) else { return nil }
         
         do {
             try viewContext.save()

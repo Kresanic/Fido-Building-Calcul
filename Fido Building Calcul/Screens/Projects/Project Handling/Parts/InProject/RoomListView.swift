@@ -53,7 +53,7 @@ struct RoomsList: View {
                     .font(.system(size: 18, weight: .bold))
                     .foregroundColor(Color.brandBlack)
                 
-                Text("Rooms")
+                Text("Project")
                     .font(.system(size: 24, weight: .bold))
                     .foregroundColor(Color.brandBlack)
                 

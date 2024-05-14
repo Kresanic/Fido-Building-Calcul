@@ -418,10 +418,11 @@ fileprivate struct ScaffoldingsEditor: View {
     @FetchRequest var fetchedEntities: FetchedResults<Scaffolding>
     @State var size1 = ""
     @State var size2 = ""
+    @State var numberOfDays = ""
     @Environment(\.managedObjectContext) var viewContext
     @EnvironmentObject var behavioursVM: BehavioursViewModel
     private var objectCount: Int
-    @FocusState var focusedDimension: FocusedDimension?
+    @FocusState var focusedDimension: TripleFocusedDimension?
     
     
     init(scaffolding: Scaffolding, objectCount: Int) {
@@ -432,7 +433,7 @@ fileprivate struct ScaffoldingsEditor: View {
         
         let cUUID = scaffolding.cId ?? UUID()
         
-        entityRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Scaffolding.size1, ascending: true)]
+        entityRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Scaffolding.numberOfDays, ascending: true)]
         
         entityRequest.predicate = NSPredicate(format: "cId == %@", cUUID as CVarArg)
         
@@ -487,15 +488,24 @@ fileprivate struct ScaffoldingsEditor: View {
                     
                     CustomWorkValueEditingBox(title: .height, value: $size2, unit: .basicMeter)
                         .onAppear { size2 = doubleToString(from:  fetchedEntity.size2) }
-                    .focused($focusedDimension, equals: .second)
+                        .focused($focusedDimension, equals: .second)
                         .onChange(of: size2) { _ in
                             fetchedEntity.size2 = stringToDouble(from: size2)
                             try? viewContext.save()
                             behavioursVM.redraw()
                         }
                     
+                    CustomWorkValueEditingBox(title: .rentalLength, value: $numberOfDays, unit: .day)
+                        .onAppear { numberOfDays = doubleToString(from:  fetchedEntity.numberOfDays) }
+                        .focused($focusedDimension, equals: .third)
+                        .onChange(of: numberOfDays) { _ in
+                            fetchedEntity.numberOfDays = stringToDouble(from: numberOfDays)
+                            try? viewContext.save()
+                            behavioursVM.redraw()
+                        }
+                    
                 }.task { if fetchedEntity.dateCreated ?? Date.now >= Date().addingTimeInterval(-10) { withAnimation { focusedDimension = .first } } }
-                    .workInputsToolbar(focusedDimension: $focusedDimension, size1: $size1, size2: $size2)
+                    .tripleWorkInputsToolbar(focusedDimension: $focusedDimension, size1: $size1, size2: $size2, size3: $numberOfDays)
                 
             }.frame(maxWidth: .infinity)
             

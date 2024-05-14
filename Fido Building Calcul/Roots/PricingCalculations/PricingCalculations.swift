@@ -735,8 +735,9 @@ final class PricingCalculations: ObservableObject {
         
         // Scaffoldings
         let scaffoldingsPieces = room.associatedScaffoldings.reduce(0.0) { $0 + $1.area }
-        let scaffoldingsPrice = priceList.othersScaffoldingPrice * scaffoldingsPieces
-        let scaffoldingsRow = PriceBillRow(name: Scaffolding.title, pieces: scaffoldingsPieces, unit: Scaffolding.unit, price: scaffoldingsPrice)
+        let scaffoldingsDays = room.associatedScaffoldings.reduce(0.0) { $0 + $1.numberOfDays }
+        let scaffoldingsPrice = priceList.othersScaffoldingPrice * scaffoldingsPieces * scaffoldingsDays
+        let scaffoldingsRow = PriceBillRow(name: Scaffolding.title, pieces: scaffoldingsDays, unit: Scaffolding.unit, price: scaffoldingsPrice)
         priceBill.addOthers(scaffoldingsRow)
         
         let scaffoldingsAssemblyPrice = priceList.othersScaffoldingAssemblyAndDisassemblyPrice * scaffoldingsPieces

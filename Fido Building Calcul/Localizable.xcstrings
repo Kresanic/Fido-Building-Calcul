@@ -1852,6 +1852,16 @@
         }
       }
     },
+    "days" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dni"
+          }
+        }
+      }
+    },
     "Delete" : {
       "localizations" : {
         "sk" : {
