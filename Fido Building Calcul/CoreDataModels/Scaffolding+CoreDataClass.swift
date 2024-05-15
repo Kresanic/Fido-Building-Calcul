@@ -9,7 +9,7 @@
 import SwiftUI
 import CoreData
 
-
+@objc(Scaffolding)
 public class Scaffolding: NSManagedObject, AreaBasedOtherType {
     
     static var title: LocalizedStringKey = "Scaffolding"

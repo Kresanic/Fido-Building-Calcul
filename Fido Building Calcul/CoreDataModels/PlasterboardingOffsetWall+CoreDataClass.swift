@@ -9,6 +9,7 @@
 import CoreData
 import SwiftUI
 
+@objc(PlasterboardingOffsetWall)
 public class PlasterboardingOffsetWall: NSManagedObject, AreaBasedWorkType {
     
     static var title: LocalizedStringKey = "Plasterboarding"

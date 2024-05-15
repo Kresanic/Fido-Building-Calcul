@@ -37,7 +37,6 @@
 		39475D672A76EB1F006EC970 /* Custom View Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39475D662A76EB1F006EC970 /* Custom View Modifiers.swift */; };
 		39498F652B4EC8AB0017BE9F /* AppearancePreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39498F642B4EC8AB0017BE9F /* AppearancePreferenceView.swift */; };
 		39498F672B4EC8EC0017BE9F /* AppearanceOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39498F662B4EC8EC0017BE9F /* AppearanceOptions.swift */; };
-		3949A4E22AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3949A4E02AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodeld */; };
 		3949A4E42AFD2BB100D01A59 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3949A4E32AFD2BB100D01A59 /* Launch Screen.storyboard */; };
 		395086E82A7182CF0099BAD8 /* FidoBuildingCalculApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395086E72A7182CF0099BAD8 /* FidoBuildingCalculApp.swift */; };
 		395086EC2A7182D00099BAD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 395086EB2A7182D00099BAD8 /* Assets.xcassets */; };
@@ -82,7 +81,6 @@
 		3964D8022A9B9AE600AD4619 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3964D8012A9B9AE600AD4619 /* SettingsScreen.swift */; };
 		39666A202BE119050086D704 /* InvoicePDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39666A1F2BE119050086D704 /* InvoicePDFCreator.swift */; };
 		39666A222BE12D580086D704 /* InvoicePreviewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39666A212BE12D580086D704 /* InvoicePreviewSheet.swift */; };
-		396EFD3C2AD0A2D400747EB5 /* CustomWork+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396EFD3A2AD0A2D400747EB5 /* CustomWork+CoreDataClass.swift */; };
 		396EFD422AD0A33900747EB5 /* CustomMaterial+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396EFD402AD0A33900747EB5 /* CustomMaterial+CoreDataClass.swift */; };
 		397B41012B877DEC0023A9BC /* ContractorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B41002B877DEC0023A9BC /* ContractorView.swift */; };
 		397B41032B877E280023A9BC /* ContractorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B41022B877E280023A9BC /* ContractorDetailView.swift */; };
@@ -189,7 +187,9 @@
 		398B4C722B976D0800F84DB6 /* ReceiptParser in Frameworks */ = {isa = PBXBuildFile; productRef = 398B4C712B976D0800F84DB6 /* ReceiptParser */; };
 		398B4C742B976D0800F84DB6 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 398B4C732B976D0800F84DB6 /* RevenueCat */; };
 		398B4C762B976D0800F84DB6 /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 398B4C752B976D0800F84DB6 /* RevenueCatUI */; };
-		39939AFF2B946B1A00F16884 /* BrickPartitionsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39939AFE2B946B1A00F16884 /* BrickPartitionsViews.swift */; };
+		398ED2502BF4C327003CFA8A /* CustomWork+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398ED24F2BF4C327003CFA8A /* CustomWork+CoreDataClass.swift */; };
+		398ED2522BF4C3D8003CFA8A /* BrickPartitionsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398ED2512BF4C3D7003CFA8A /* BrickPartitionsViews.swift */; };
+		398ED2552BF4C448003CFA8A /* Fido_Building_Calcul.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 398ED2532BF4C448003CFA8A /* Fido_Building_Calcul.xcdatamodeld */; };
 		399516392BE6782800AE8EEB /* InvoiceDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399516382BE6782800AE8EEB /* InvoiceDetails.swift */; };
 		3996E1FE2A77BEA0000D86E1 /* InProjectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E1FD2A77BEA0000D86E1 /* InProjectScreen.swift */; };
 		3996E2002A77BF64000D86E1 /* InProjectScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E1FF2A77BF64000D86E1 /* InProjectScreenViewModel.swift */; };
@@ -271,7 +271,6 @@
 		39475D662A76EB1F006EC970 /* Custom View Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom View Modifiers.swift"; sourceTree = "<group>"; };
 		39498F642B4EC8AB0017BE9F /* AppearancePreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearancePreferenceView.swift; sourceTree = "<group>"; };
 		39498F662B4EC8EC0017BE9F /* AppearanceOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceOptions.swift; sourceTree = "<group>"; };
-		3949A4E12AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fido_Building_Calcul.xcdatamodel; sourceTree = "<group>"; };
 		3949A4E32AFD2BB100D01A59 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		3949A4E52AFE6A3800D01A59 /* Fido Building Calcul.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fido Building Calcul.entitlements"; sourceTree = "<group>"; };
 		395086E42A7182CF0099BAD8 /* Fido Building Calcul.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fido Building Calcul.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -318,7 +317,6 @@
 		3964D8012A9B9AE600AD4619 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		39666A1F2BE119050086D704 /* InvoicePDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoicePDFCreator.swift; sourceTree = "<group>"; };
 		39666A212BE12D580086D704 /* InvoicePreviewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoicePreviewSheet.swift; sourceTree = "<group>"; };
-		396EFD3A2AD0A2D400747EB5 /* CustomWork+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CustomWork+CoreDataClass.swift"; path = "../../CustomWork+CoreDataClass.swift"; sourceTree = "<group>"; };
 		396EFD402AD0A33900747EB5 /* CustomMaterial+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomMaterial+CoreDataClass.swift"; sourceTree = "<group>"; };
 		397B41002B877DEC0023A9BC /* ContractorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractorView.swift; sourceTree = "<group>"; };
 		397B41022B877E280023A9BC /* ContractorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractorDetailView.swift; sourceTree = "<group>"; };
@@ -421,7 +419,9 @@
 		3989010C2B1769C700CC3870 /* PriceBubbles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceBubbles.swift; sourceTree = "<group>"; };
 		398B4C622B96FFDC00F84DB6 /* UUID Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UUID Extension.swift"; sourceTree = "<group>"; };
 		398B4C642B970AF700F84DB6 /* ChoosingContractorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosingContractorView.swift; sourceTree = "<group>"; };
-		39939AFE2B946B1A00F16884 /* BrickPartitionsViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrickPartitionsViews.swift; path = "../../../../../../../../Downloads/Fido Building Calcul/Fido Building Calcul/Screens/Projects/Room/RoomParts/BrickPartitionsViews.swift"; sourceTree = "<group>"; };
+		398ED24F2BF4C327003CFA8A /* CustomWork+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomWork+CoreDataClass.swift"; sourceTree = "<group>"; };
+		398ED2512BF4C3D7003CFA8A /* BrickPartitionsViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrickPartitionsViews.swift; sourceTree = "<group>"; };
+		398ED2542BF4C448003CFA8A /* Fido_Building_Calcul.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fido_Building_Calcul.xcdatamodel; sourceTree = "<group>"; };
 		399516382BE6782800AE8EEB /* InvoiceDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceDetails.swift; sourceTree = "<group>"; };
 		3996E1FD2A77BEA0000D86E1 /* InProjectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectScreen.swift; sourceTree = "<group>"; };
 		3996E1FF2A77BF64000D86E1 /* InProjectScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectScreenViewModel.swift; sourceTree = "<group>"; };
@@ -521,17 +521,17 @@
 		39475D4D2A72F5C1006EC970 /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
+				398ED2532BF4C448003CFA8A /* Fido_Building_Calcul.xcdatamodeld */,
 				39A111AA2BDA88690070500B /* ToolRental+CoreDataClass.swift */,
 				39A111AC2BDA88690070500B /* Scaffolding+CoreDataClass.swift */,
 				39A111AE2BDA88690070500B /* CoreDrill+CoreDataClass.swift */,
 				395086F02A7182D00099BAD8 /* Persistence.swift */,
-				3949A4E02AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodeld */,
 				397BB9662AD041BF006BA23C /* BrickLoadBearingWall+CoreDataClass.swift */,
 				397BB95E2AD041BF006BA23C /* BrickPartition+CoreDataClass.swift */,
 				39D4359B2AA0DC5F001AAD18 /* Client+CoreDataClass.swift */,
+				398ED24F2BF4C327003CFA8A /* CustomWork+CoreDataClass.swift */,
 				396EFD402AD0A33900747EB5 /* CustomMaterial+CoreDataClass.swift */,
 				39FB6EC82B87775400D473A8 /* Contractor+CoreDataClass.swift */,
-				396EFD3A2AD0A2D400747EB5 /* CustomWork+CoreDataClass.swift */,
 				397BB9682AD041BF006BA23C /* Demolition+CoreDataClass.swift */,
 				3996E2602A797C54000D86E1 /* Door+CoreDataClass.swift */,
 				392393732B5B1A3C00DA3A42 /* HistoryEvent+CoreDataClass.swift */,
@@ -972,7 +972,7 @@
 			isa = PBXGroup;
 			children = (
 				396435B82A7A69E300C148B8 /* BrickLoadBearingWallViews.swift */,
-				39939AFE2B946B1A00F16884 /* BrickPartitionsViews.swift */,
+				398ED2512BF4C3D7003CFA8A /* BrickPartitionsViews.swift */,
 				3964D7FA2A9B946500AD4619 /* CommuteExpensesViewsViews.swift */,
 				3943953E2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift */,
 				396435AA2A7A489A00C148B8 /* DemolitionWorkViews.swift */,
@@ -1334,6 +1334,7 @@
 				398900B22B1600BB00CC3870 /* ClientHandling.swift in Sources */,
 				397BB9BA2AD041BF006BA23C /* WindowInstallation+CoreDataClass.swift in Sources */,
 				398900F92B17655400CC3870 /* PDFViewModel.swift in Sources */,
+				398ED2522BF4C3D8003CFA8A /* BrickPartitionsViews.swift in Sources */,
 				39603E662BD98E62000CDFA4 /* InvoiceItemInfo.swift in Sources */,
 				39475D5C2A76B585006EC970 /* PropertyCategoryBubbleViewModel.swift in Sources */,
 				397BB9922AD041BF006BA23C /* PlasteringOfWindowSash+CoreDataClass.swift in Sources */,
@@ -1380,7 +1381,6 @@
 				397B41092B87820D0023A9BC /* CreateContractorButton.swift in Sources */,
 				398900E62B17638200CC3870 /* ProjectIsArchivedbutton.swift in Sources */,
 				398900F02B17645C00CC3870 /* RoomBubbleView.swift in Sources */,
-				3949A4E22AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodeld in Sources */,
 				397BB9B02AD041BF006BA23C /* PlasteringWall+CoreDataClass.swift in Sources */,
 				39D435A12AA0DC5F001AAD18 /* Client+CoreDataClass.swift in Sources */,
 				398900FB2B17657700CC3870 /* LocalizedStringKey Extensions.swift in Sources */,
@@ -1390,18 +1390,17 @@
 				399BB77B2AEBFEC900452560 /* PayWall.swift in Sources */,
 				398900AD2B15FFFA00CC3870 /* ProjectHandling.swift in Sources */,
 				39A111B02BDA88690070500B /* ToolRental+CoreDataClass.swift in Sources */,
-				396EFD3C2AD0A2D400747EB5 /* CustomWork+CoreDataClass.swift in Sources */,
 				39A111B42BDA88690070500B /* CoreDrill+CoreDataClass.swift in Sources */,
 				397BB9B82AD041BF006BA23C /* Plumbing+CoreDataClass.swift in Sources */,
 				3996E29C2A797C54000D86E1 /* Project+CoreDataClass.swift in Sources */,
 				39D1CBE92BADFA3C006580C2 /* InvoicesScreen.swift in Sources */,
 				3989007F2B152A9800CC3870 /* OnboardingContexts.swift in Sources */,
+				398ED2552BF4C448003CFA8A /* Fido_Building_Calcul.xcdatamodeld in Sources */,
 				396EFD422AD0A33900747EB5 /* CustomMaterial+CoreDataClass.swift in Sources */,
 				397B41112B87939B0023A9BC /* InProjectContractorBubbles.swift in Sources */,
 				39666A222BE12D580086D704 /* InvoicePreviewSheet.swift in Sources */,
 				39DC44F72BE6C99B0026E5E4 /* InvoiceDetailView.swift in Sources */,
 				39D22C782AA12DE400322E31 /* CorporationClientCreationView.swift in Sources */,
-				39939AFF2B946B1A00F16884 /* BrickPartitionsViews.swift in Sources */,
 				397BB9902AD041BF006BA23C /* InstallationOfSanitary+CoreDataClass.swift in Sources */,
 				396435D32A7A944000C148B8 /* LayingFloatingFloorsViews.swift in Sources */,
 				396435C12A7A843F00C148B8 /* NettingCeilingViews.swift in Sources */,
@@ -1474,6 +1473,7 @@
 				392DB07D2B947D2B00AA8BC8 /* PlasterboardingPartitionViews.swift in Sources */,
 				396435C32A7A85B800C148B8 /* PlasteringWallViews.swift in Sources */,
 				398900B92B1754A000CC3870 /* Enums Archive.swift in Sources */,
+				398ED2502BF4C327003CFA8A /* CustomWork+CoreDataClass.swift in Sources */,
 				398900742B1528F100CC3870 /* Pricing Calculations Types.swift in Sources */,
 				397BB9A22AD041BF006BA23C /* PlasterboardingPartition+CoreDataClass.swift in Sources */,
 				398900EC2B17641600CC3870 /* TitleAndNotes.swift in Sources */,
@@ -1753,14 +1753,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		3949A4E02AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodeld */ = {
+		398ED2532BF4C448003CFA8A /* Fido_Building_Calcul.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				3949A4E12AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodel */,
+				398ED2542BF4C448003CFA8A /* Fido_Building_Calcul.xcdatamodel */,
 			);
-			currentVersion = 3949A4E12AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodel */;
-			name = Fido_Building_Calcul.xcdatamodeld;
-			path = "../../../../Library/Mobile Documents/com~apple~CloudDocs/Fido/Fido Building Calcul/Fido Building Calcul/CoreDataModels/Fido_Building_Calcul.xcdatamodeld";
+			currentVersion = 398ED2542BF4C448003CFA8A /* Fido_Building_Calcul.xcdatamodel */;
+			path = Fido_Building_Calcul.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

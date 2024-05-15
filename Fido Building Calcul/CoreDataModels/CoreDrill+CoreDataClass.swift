@@ -9,12 +9,11 @@
 import CoreData
 import SwiftUI
 
-
+@objc(CoreDrill)
 public class CoreDrill: NSManagedObject, CountBasedOtherType {
     
     static var title: LocalizedStringKey = "Core Drill"
     static var subTitle: LocalizedStringKey = ""
     static var unit: UnitsOfMeasurement = .hour
     
-
 }

@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-
+@objc(Invoice)
 public class Invoice: NSManagedObject {
     
     var stringNumber: String {

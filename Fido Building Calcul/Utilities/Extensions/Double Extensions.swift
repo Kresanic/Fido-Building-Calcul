@@ -11,8 +11,7 @@ extension Double {
     
     mutating func roundAndRemoveZerosFromEnd() -> String {
             let formatter = NumberFormatter()
-            var selfCopy = self
-            let number = NSNumber(value: selfCopy)
+            let number = NSNumber(value: self)
             formatter.minimumFractionDigits = 0
             formatter.maximumFractionDigits = 1
             return String(formatter.string(from: number) ?? "")

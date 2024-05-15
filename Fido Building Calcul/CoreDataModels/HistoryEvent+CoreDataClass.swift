@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-
+@objc(HistoryEvent)
 public class HistoryEvent: NSManagedObject {
 
     var historyEventType: ProjectEvents {

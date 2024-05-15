@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 import SwiftUI
 
-
+@objc(FacadePlastering)
 public class FacadePlastering: NSManagedObject, AreaBasedWorkType {
     
     static var title: LocalizedStringKey = "Facade Plastering"

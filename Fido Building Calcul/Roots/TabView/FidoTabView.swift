@@ -57,8 +57,7 @@ struct FidoTabView: View {
                 }
             }
         }
+        
     }
-    
-    
     
 }

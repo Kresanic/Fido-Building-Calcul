@@ -9,7 +9,7 @@
 import CoreData
 import SwiftUI
 
-
+@objc(ToolRental)
 public class ToolRental: NSManagedObject, CountBasedOtherType {
     
     static var title: LocalizedStringKey = "Tool rental"

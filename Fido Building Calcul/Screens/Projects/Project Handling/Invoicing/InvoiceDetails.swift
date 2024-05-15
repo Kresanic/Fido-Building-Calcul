@@ -192,8 +192,6 @@ extension InvoiceDetails {
     
     var invoiceNumber: String {
         
-        let year = Calendar.current.component(.year, from: Date.now)
-        
         let formatter = NumberFormatter()
         formatter.minimumIntegerDigits = 3
         
@@ -239,8 +237,7 @@ extension InvoiceDetails {
             let name = contractor.name,
             let iban = contractor.bankAccountNumber?.trimmingCharacters(in: .whitespacesAndNewlines).uppercased(),
             let _ = cumulativeVat,
-            let _ = priceWithoutVAT,
-            let number
+            let _ = priceWithoutVAT
         else { return nil }
         //TODO: Alert when details are missing and localize
         

@@ -64,10 +64,7 @@ struct BrickLayingOfPartitionsViews: View {
                         
                     }
                 
-                }.frame(height: 40)
-                    .frame(maxWidth: .infinity)
-                    .background { Color.brandGray }
-                .onTapGesture {  createBrickLayingOfPartitions(to: room) }
+                }
                 
                 if !room.associatedBrickPartitions.isEmpty {
                     ForEach(room.associatedBrickPartitions) { loopedObject in
@@ -552,4 +549,5 @@ fileprivate struct WindowViewsForBrickPartition: View {
     }
     
 }
+
 
