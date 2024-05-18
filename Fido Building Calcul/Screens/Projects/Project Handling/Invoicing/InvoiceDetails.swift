@@ -7,6 +7,125 @@
 
 import SwiftUI
 
+enum PaymentType: String {
+    case cash, bankTransfer
+    
+    var title: LocalizedStringKey {
+        switch self {
+        case .cash:
+            "Cash"
+        case .bankTransfer:
+            "Bank transfer"
+        }
+    }
+    
+}
+
+struct IdentifiableInvoiceMissingValue: Identifiable {
+    let id = UUID()
+    let value: any InvoiceMissingValue
+}
+
+protocol InvoiceMissingValue: Identifiable {
+    var title: LocalizedStringKey { get }
+}
+    
+enum ContractorValues: String, InvoiceMissingValue {
+    
+    var id: String { self.rawValue }
+    
+    case vatRegistrationNumber, taxID, street, postalCode, name, country, city, businessID, bankAccountNumber, email, logo, phone, signature, swiftCode
+    
+    var title: LocalizedStringKey {
+        switch self {
+        case .vatRegistrationNumber:
+            "VAT Registration Number"
+        case .taxID:
+            "Tax ID"
+        case .street:
+            "Street"
+        case .postalCode:
+            "Postal code"
+        case .name:
+            "Name"
+        case .country:
+            "Country"
+        case .city:
+            "City"
+        case .businessID:
+            "Business ID"
+        case .bankAccountNumber:
+            "Bank Account Number"
+        case .email:
+            "Email"
+        case .logo:
+            "Logo"
+        case .phone:
+            "Phone number"
+        case .signature:
+            "Signature"
+        case .swiftCode:
+            "Bank Code"
+        }
+    }
+}
+
+enum ClientValues: String, InvoiceMissingValue {
+    
+    var id: String { self.rawValue }
+    
+    case vatRegistrationNumber, taxID, street, postalCode, name, country, city, businessID
+    
+    var title: LocalizedStringKey {
+        switch self {
+        case .vatRegistrationNumber:
+            "VAT Registration Number"
+        case .taxID:
+            "Tax ID"
+        case .street:
+            "Street"
+        case .postalCode:
+            "Postal code"
+        case .name:
+            "Name"
+        case .country:
+            "Country"
+        case .city:
+            "City"
+        case .businessID:
+            "Business ID"
+        }
+    }
+    
+}
+
+enum InvoiceValues: String, InvoiceMissingValue {
+    
+    var id: String { self.rawValue }
+    
+    case priceWithoutVAT, cumulativeVAT, number, invoiceItems, contractor, client
+    
+    var title: LocalizedStringKey {
+        switch self {
+        case .priceWithoutVAT:
+            "Error with calculating Price"
+        case .cumulativeVAT:
+            "Error with calculating VAT"
+        case .number:
+            "Could not generate Invoice Number"
+        case .invoiceItems:
+            "No Items to be displayed"
+        case .contractor:
+            "No Contractor Assigned to this Project"
+        case .client:
+            "No Client Assigned to this Project"
+        }
+    }
+    
+}
+    
+
+
 struct InvoiceDetails {
     
     var project: Project
@@ -15,10 +134,11 @@ struct InvoiceDetails {
     var priceWithoutVAT: Double?
     var cumulativeVat: Double?
     var number: Int64?
+    var dateOfDispatch = Date.now
+    var paymentType: PaymentType = .bankTransfer
+    var note: String = ""
     let dateCreated = Date.now
     var invoiceItems: [InvoiceItem] = []
-    
-    
     
     init(project prjct: Project) {
         self.project = prjct
@@ -51,6 +171,137 @@ extension InvoiceDetails {
     var materialItems: [InvoiceItem] { invoiceItems.filter {$0.category == .material} }
     
     var otherItems: [InvoiceItem] { invoiceItems.filter {$0.category == .other} }
+    
+    var missingValues: [IdentifiableInvoiceMissingValue] {
+        
+        var values: [IdentifiableInvoiceMissingValue] = []
+        
+        if let contractor = self.contractor {
+            if contractor.logo?.isEmpty ?? true {
+                values.append(IdentifiableInvoiceMissingValue(value: ContractorValues.logo))
+            }
+            if contractor.name?.isEmpty ?? true {
+                values.append(IdentifiableInvoiceMissingValue(value: ContractorValues.name))
+            }
+            if contractor.email?.isEmpty ?? true {
+                values.append(IdentifiableInvoiceMissingValue(value: ContractorValues.email))
+            }
+            if contractor.phone?.isEmpty ?? true {
+                values.append(IdentifiableInvoiceMissingValue(value: ContractorValues.phone))
+            }
+            if contractor.street?.isEmpty ?? true {
+                values.append(IdentifiableInvoiceMissingValue(value: ContractorValues.street))
+            }
+            if contractor.city?.isEmpty ?? true {
+                values.append(IdentifiableInvoiceMissingValue(value: ContractorValues.city))
+            }
+            if contractor.postalCode?.isEmpty ?? true {
+                values.append(IdentifiableInvoiceMissingValue(value: ContractorValues.postalCode))
+            }
+            if contractor.country?.isEmpty ?? true {
+                values.append(IdentifiableInvoiceMissingValue(value: ContractorValues.country))
+            }
+            if contractor.businessID?.isEmpty ?? true {
+                values.append(IdentifiableInvoiceMissingValue(value: ContractorValues.businessID))
+            }
+            if contractor.taxID?.isEmpty ?? true {
+                values.append(IdentifiableInvoiceMissingValue(value: ContractorValues.taxID))
+            }
+            if contractor.vatRegistrationNumber?.isEmpty ?? true {
+                values.append(IdentifiableInvoiceMissingValue(value: ContractorValues.vatRegistrationNumber))
+            }
+            if contractor.bankAccountNumber?.isEmpty ?? true {
+                values.append(IdentifiableInvoiceMissingValue(value: ContractorValues.bankAccountNumber))
+            }
+            if contractor.swiftCode?.isEmpty ?? true {
+                values.append(IdentifiableInvoiceMissingValue(value: ContractorValues.swiftCode))
+            }
+            if contractor.signature?.isEmpty ?? true {
+                values.append(IdentifiableInvoiceMissingValue(value: ContractorValues.signature))
+            }
+        } else {
+            values.append(IdentifiableInvoiceMissingValue(value: InvoiceValues.contractor))
+        }
+        
+        if let client = self.client {
+            
+            if client.name?.isEmpty ?? true {
+                values.append(IdentifiableInvoiceMissingValue(value: ClientValues.name))
+            }
+            if client.street?.isEmpty ?? true {
+                values.append(IdentifiableInvoiceMissingValue(value: ClientValues.street))
+            }
+            if client.city?.isEmpty ?? true {
+                values.append(IdentifiableInvoiceMissingValue(value: ClientValues.city))
+            }
+            if client.postalCode?.isEmpty ?? true {
+                values.append(IdentifiableInvoiceMissingValue(value: ClientValues.postalCode))
+            }
+            if client.country?.isEmpty ?? true {
+                values.append(IdentifiableInvoiceMissingValue(value: ClientValues.country))
+            }
+            
+            if ClientType(rawValue: client.type ?? "corporation") == .corporation {
+                if client.businessID?.isEmpty ?? true {
+                    values.append(IdentifiableInvoiceMissingValue(value: ClientValues.businessID))
+                }
+                if client.taxID?.isEmpty ?? true {
+                    values.append(IdentifiableInvoiceMissingValue(value: ClientValues.taxID))
+                }
+                if client.vatRegistrationNumber?.isEmpty ?? true {
+                    values.append(IdentifiableInvoiceMissingValue(value: ClientValues.vatRegistrationNumber))
+                }
+            }
+                
+        } else {
+            values.append(IdentifiableInvoiceMissingValue(value: InvoiceValues.client))
+        }
+        
+        if self.priceWithoutVAT ?? 0.0 == 0.0 {
+            values.append(IdentifiableInvoiceMissingValue(value: InvoiceValues.priceWithoutVAT))
+        }
+        if self.cumulativeVat ?? 0.0 == 0.0 {
+            values.append(IdentifiableInvoiceMissingValue(value: InvoiceValues.cumulativeVAT))
+        }
+        if self.number ?? 0 == 0 {
+            values.append(IdentifiableInvoiceMissingValue(value: InvoiceValues.number))
+        }
+        if self.invoiceItems.isEmpty { values.append(IdentifiableInvoiceMissingValue(value:InvoiceValues.invoiceItems))}
+                                                     
+        return values
+        
+    }
+    
+    var isValidIBAN: Bool {
+        if let iban = self.contractor?.bankAccountNumber {
+            let IBAN = iban.replacingOccurrences(of: " ", with: "")
+            var a = IBAN.utf8.map{ $0 }
+            while a.count < 4 {
+                a.append(0)
+            }
+            let b = a[4..<a.count] + a[0..<4]
+            let c = b.reduce(0) { (r, u) -> Int in
+                let i = Int(u)
+                return i > 64 ? (100 * r + i - 55) % 97: (10 * r + i - 48) % 97
+            }
+            return c == 1
+        }
+        return false
+    }
+    
+    var inSEPACountry: Bool {
+        
+        let sepaCountries: Set<String> = [
+                    "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IS", "IE", "IT",
+                    "LV", "LI", "LT", "LU", "MT", "MC", "NL", "NO", "PL", "PT", "RO", "SM", "SK", "SI", "ES", "SE",
+                    "CH", "GB"
+                ]
+        
+        let currentLocale = Locale.current.region?.identifier ?? ""
+        print("inSEPACountry", sepaCountries.contains(currentLocale))
+        return sepaCountries.contains(currentLocale)
+        
+    }
     
     mutating private func populateInvoiceItems(with project: Project) {
         
@@ -216,8 +467,6 @@ extension InvoiceDetails {
         guard let startOfTheYear else { return }
         
         request.predicate = NSPredicate(format: "dateCreated >= %@ && toContractor == %@", [startOfTheYear as NSDate, project.toContractor! as CVarArg])
-        
-        request.fetchLimit = 1; #warning("Check")
         
         guard let invoices = try? viewContext.fetch(request) else { return }
         

@@ -15,6 +15,8 @@ import CoreData
     @Published var madeChanges = false
     @Published var dialogWindow: Dialog?
     @Published var isShowingPDF = false
+    @Published var isShowingMissingValues = false
+    @Published var missingValues: [IdentifiableInvoiceMissingValue]?
     @Published var redraw = false
     
     var project: Project
@@ -22,7 +24,10 @@ import CoreData
 //        return InvoicePDFCreator(invoiceDetails, invoiceItems).render()
 //    }
     
-    init(_ project: Project) { invoiceDetails = InvoiceDetails(project: project); self.project = project }
+    init(_ project: Project) {
+        invoiceDetails = InvoiceDetails(project: project)
+        self.project = project
+    }
     
 }
 

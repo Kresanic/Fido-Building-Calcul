@@ -985,6 +985,16 @@
         }
       }
     },
+    "Bank transfer" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prevodom"
+          }
+        }
+      }
+    },
     "Banking and legal" : {
       "localizations" : {
         "sk" : {
@@ -1185,6 +1195,16 @@
         }
       }
     },
+    "Cash" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hotovosť"
+          }
+        }
+      }
+    },
     "ceiling" : {
       "localizations" : {
         "sk" : {
@@ -1322,6 +1342,16 @@
       }
     },
     "Client" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klient"
+          }
+        }
+      }
+    },
+    "Client values" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
@@ -1481,6 +1511,16 @@
         }
       }
     },
+    "Contractor values" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodávateľ"
+          }
+        }
+      }
+    },
     "Contractors" : {
       "localizations" : {
         "sk" : {
@@ -1568,6 +1608,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chaty"
+          }
+        }
+      }
+    },
+    "Could not generate Invoice Number" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nepodarilo sa vygenerovať číslo faktúry"
           }
         }
       }
@@ -1828,6 +1878,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dopĺňanie údajov"
+          }
+        }
+      }
+    },
+    "Date of dispatch" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dátum dodania"
           }
         }
       }
@@ -2142,6 +2202,26 @@
         }
       }
     },
+    "Error with calculating Price" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chyba pri výpočte ceny"
+          }
+        }
+      }
+    },
+    "Error with calculating VAT" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chyba pri výpočte DPH"
+          }
+        }
+      }
+    },
     "Exclude" : {
       "localizations" : {
         "sk" : {
@@ -2363,12 +2443,32 @@
         }
       }
     },
+    "Generate anyways" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vygenerovať"
+          }
+        }
+      }
+    },
     "Generate Invocie" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vygenerovať faktúru"
+          }
+        }
+      }
+    },
+    "Generic values" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Všeobecné"
           }
         }
       }
@@ -2489,6 +2589,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Súhlasím s prijímaním občasnej e-mailovej komunikácie týkajúcej sa môjho predplatného a vylepšení aplikácie. **[Pozrite si naše pravidlá ochrany osobných údajov tu.](%@)**"
+          }
+        }
+      }
+    },
+    "I will fill in!" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doplním!"
+          }
+        }
+      }
+    },
+    "In the case of non-payment of the invoice will automatically claim over to a collections company MAHUT Group." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "V prípade nezaplatenia faktúry bude pohľadávka automaticky postúpená inkasnej spoločnosti MAHUT Group."
           }
         }
       }
@@ -2963,6 +3083,16 @@
         }
       }
     },
+    "Missing values" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chýbajúce hodnoty"
+          }
+        }
+      }
+    },
     "Name" : {
       "localizations" : {
         "sk" : {
@@ -3103,12 +3233,42 @@
         }
       }
     },
+    "No Client Assigned to this Project" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Projekt bez klienta"
+          }
+        }
+      }
+    },
     "No company was found with given BID." : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nepodarilo sa nájsť spoločnosť s daným IČO."
+          }
+        }
+      }
+    },
+    "No Contractor Assigned to this Project" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Projekt bez dodávateľa"
+          }
+        }
+      }
+    },
+    "No Items to be displayed" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Žiadne položky na zobrazenie"
           }
         }
       }
@@ -3479,6 +3639,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dlažba, keramická"
+          }
+        }
+      }
+    },
+    "Payment type" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forma úhrady"
           }
         }
       }

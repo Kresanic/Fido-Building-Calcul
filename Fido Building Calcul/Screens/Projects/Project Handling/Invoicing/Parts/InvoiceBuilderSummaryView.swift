@@ -18,7 +18,7 @@ struct InvoiceBuilderSummaryView: View {
         VStack(spacing: 0) {
             
             Text("Summary")
-                .font(.system(size: 30, weight: .semibold))
+                .font(.system(size: 28, weight: .semibold))
                 .foregroundStyle(.brandBlack)
                 .padding(.bottom, 5)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -76,7 +76,6 @@ struct InvoiceBuilderSummaryView: View {
                 
                 Button {
                     generateInvoiceObject()
-                    viewModel.isShowingPDF = true
                 } label: {
                     HStack(spacing: 5) {
                         
@@ -100,33 +99,41 @@ struct InvoiceBuilderSummaryView: View {
                 .clipShape(.rect(cornerRadius: 25, style: .continuous))
                 
         }
-        .sheet(isPresented: $viewModel.isShowingPDF) {
-            InvoicePreviewSheet(project: viewModel.project, pdfURL: viewModel.invoiceDetails.pdfURL)
-        }
         
     }
     
     private func generateInvoiceObject() {
         
-        let invoice = Invoice(context: viewContext)
+        let missingValues = viewModel.invoiceDetails.missingValues
         
-        invoice.cId = UUID()
-        invoice.dateCreated = Date.now
-        invoice.number = Int64(viewModel.invoiceDetails.invoiceNumber) ?? 0
-        
-        invoice.pdfFile = try? Data(contentsOf: viewModel.invoiceDetails.pdfURL)
-        
-        invoice.toClient = viewModel.invoiceDetails.client
-        invoice.toContractor = viewModel.invoiceDetails.contractor
-        invoice.toProject = viewModel.project
-        
-        invoice.maturityDays = Int64(invoiceMaturityDuration)
-        invoice.priceWithoutVat = viewModel.invoiceDetails.unPriceWithoutVAT
-        invoice.vatAmount = viewModel.invoiceDetails.unCumulativeVat
-        
-        invoice.status = InvoiceStatus.unpaid.rawValue
-        
-        try? viewContext.save()
+        if missingValues.isEmpty {
+            
+            let invoice = Invoice(context: viewContext)
+            
+            invoice.cId = UUID()
+            invoice.dateCreated = Date.now
+            invoice.number = Int64(viewModel.invoiceDetails.invoiceNumber) ?? 0
+            
+            invoice.pdfFile = try? Data(contentsOf: viewModel.invoiceDetails.pdfURL)
+            
+            invoice.toClient = viewModel.invoiceDetails.client
+            invoice.toContractor = viewModel.invoiceDetails.contractor
+            invoice.toProject = viewModel.project
+            
+            invoice.maturityDays = Int64(invoiceMaturityDuration)
+            invoice.priceWithoutVat = viewModel.invoiceDetails.unPriceWithoutVAT
+            invoice.vatAmount = viewModel.invoiceDetails.unCumulativeVat
+            
+            invoice.status = InvoiceStatus.unpaid.rawValue
+            
+            try? viewContext.save()
+            
+            viewModel.isShowingPDF = true
+            
+        } else {
+            viewModel.missingValues = missingValues
+            viewModel.isShowingMissingValues = true
+        }
         
     }
     

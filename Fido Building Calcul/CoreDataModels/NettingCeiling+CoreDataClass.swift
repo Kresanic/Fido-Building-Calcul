@@ -22,3 +22,4 @@ public class NettingCeiling: NSManagedObject, AreaBasedWorkType {
     static var unit: UnitsOfMeasurement  = .squareMeter
 
 }
+

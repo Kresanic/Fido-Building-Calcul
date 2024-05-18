@@ -11,6 +11,7 @@
 		390F80332B591DAA00A10FF0 /* NSManagedObject Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390F80322B591DAA00A10FF0 /* NSManagedObject Extension.swift */; };
 		390F80352B59483F00A10FF0 /* ProjectManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390F80342B59483F00A10FF0 /* ProjectManagementView.swift */; };
 		390F80372B59487000A10FF0 /* ClientHandlingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390F80362B59487000A10FF0 /* ClientHandlingView.swift */; };
+		391B32BD2BF9230A00840EAE /* MissingValuesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B32BC2BF9230A00840EAE /* MissingValuesSheet.swift */; };
 		391FEEDB2A9E248B007CBFD4 /* ClientsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FEEDA2A9E248B007CBFD4 /* ClientsScreen.swift */; };
 		392393752B5B1A3C00DA3A42 /* HistoryEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392393732B5B1A3C00DA3A42 /* HistoryEvent+CoreDataClass.swift */; };
 		392393782B5B1D4D00DA3A42 /* ProjectHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392393772B5B1D4D00DA3A42 /* ProjectHistory.swift */; };
@@ -244,6 +245,7 @@
 		390F80322B591DAA00A10FF0 /* NSManagedObject Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject Extension.swift"; sourceTree = "<group>"; };
 		390F80342B59483F00A10FF0 /* ProjectManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectManagementView.swift; sourceTree = "<group>"; };
 		390F80362B59487000A10FF0 /* ClientHandlingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHandlingView.swift; sourceTree = "<group>"; };
+		391B32BC2BF9230A00840EAE /* MissingValuesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingValuesSheet.swift; sourceTree = "<group>"; };
 		391FEEDA2A9E248B007CBFD4 /* ClientsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsScreen.swift; sourceTree = "<group>"; };
 		392393732B5B1A3C00DA3A42 /* HistoryEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
 		392393772B5B1D4D00DA3A42 /* ProjectHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHistory.swift; sourceTree = "<group>"; };
@@ -687,6 +689,7 @@
 				39603E5C2BD98D2F000CDFA4 /* InvoiceBuilderItemBubble.swift */,
 				39603E602BD98DA6000CDFA4 /* IBItemBubbleParts */,
 				39666A212BE12D580086D704 /* InvoicePreviewSheet.swift */,
+				391B32BC2BF9230A00840EAE /* MissingValuesSheet.swift */,
 			);
 			path = Parts;
 			sourceTree = "<group>";
@@ -1457,6 +1460,7 @@
 				397BB9BC2AD041BF006BA23C /* PlasteringCeiling+CoreDataClass.swift in Sources */,
 				397BB9B62AD041BF006BA23C /* LayingFloatingFloors+CoreDataClass.swift in Sources */,
 				398900B02B16006000CC3870 /* ComplementaryWorks.swift in Sources */,
+				391B32BD2BF9230A00840EAE /* MissingValuesSheet.swift in Sources */,
 				39B51FA82B57133900700AB4 /* TotalPriceOfferNew.swift in Sources */,
 				39475D652A76E376006EC970 /* View Extensions.swift in Sources */,
 				39475D552A76AB25006EC970 /* ProjectsScreen.swift in Sources */,
@@ -1625,7 +1629,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
 				DEVELOPMENT_TEAM = J7CR9GZ8S9;
 				ENABLE_PREVIEWS = YES;
@@ -1666,7 +1670,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
 				DEVELOPMENT_TEAM = J7CR9GZ8S9;
 				ENABLE_PREVIEWS = YES;

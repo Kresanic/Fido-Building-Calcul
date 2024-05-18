@@ -12,6 +12,7 @@ import CoreData
 @MainActor final class InvoicePDFCreator {
     
     @AppStorage("invoiceMaturityDuration") var invoiceMaturityDuration: Int = 30
+    @AppStorage("invoiceNote") var invoiceNote: String = ""
     
     let invoiceDetails: InvoiceDetails
     let invoiceItems: [InvoiceItem]
@@ -59,6 +60,7 @@ import CoreData
                     
                     Text("\(localizedInvoice) \(invoiceDetails.invoiceNumber)")
                         .font(.system(size: 25, weight: .semibold))
+                        .minimumScaleFactor(0.5)
                         .foregroundStyle(Color.brandBlack)
                     
                     Spacer()
@@ -93,15 +95,21 @@ import CoreData
                     
                     Spacer()
                     
+                    PDFPersonalInfoView(title: NSLocalizedString("Date of issue", comment: ""), value: invoiceDetails.dateCreated.formatted(date: .numeric, time: .omitted), spaced: true)
+                    
+                    PDFPersonalInfoView(title: NSLocalizedString("Maturity date", comment: ""), value: invoiceDetails.dateCreated.addingTimeInterval(TimeInterval(invoiceMaturityDuration*24*60*60)).formatted(date: .numeric, time: .omitted), spaced: true)
+                    
+                    
                     PDFPersonalInfoView(title: NSLocalizedString("Variable symbol", comment: ""), value: invoiceDetails.invoiceNumber, spaced: true)
+                        .padding(.top, 5)
                     
-                    PDFPersonalInfoView(title: NSLocalizedString("Date of issue", comment: ""), value: Date.now.formatted(date: .numeric, time: .omitted), spaced: true)
+                    PDFPersonalInfoView(title: NSLocalizedString("Date of dispatch", comment: ""), value: invoiceDetails.dateOfDispatch.formatted(date: .numeric, time: .omitted), spaced: true)
                     
-                    PDFPersonalInfoView(title: NSLocalizedString("Maturity date", comment: ""), value: Date.now.addingTimeInterval(TimeInterval(invoiceMaturityDuration*24*60*60)).formatted(date: .numeric, time: .omitted), spaced: true)
+                    PDFPersonalInfoView(title: NSLocalizedString("Payment type", comment: ""), value: NSLocalizedString(invoiceDetails.paymentType.title.stringKey ?? "", comment: ""), spaced: true)
                     
                 }.frame(width: 175)
                 
-            }.frame(maxHeight: 170)
+            }.frame(maxHeight: 200)
             
             if let projectSumUp = projectSumUp(invoiceDetails) {
                 
@@ -115,7 +123,7 @@ import CoreData
                         
                         PDFInvoiceSummaryBubble(title: NSLocalizedString("Maturity date", comment: ""), value: Date.now.addingTimeInterval(TimeInterval(invoiceMaturityDuration*24*60*60)).formatted(date: .numeric, time: .omitted))
                         
-                        PDFInvoiceSummaryBubble(title: NSLocalizedString("Amount to be paid", comment: ""), value: invoiceDetails.totalPrice.formatted(.currency(code: Locale.current.currency?.identifier ?? "USD")), isImportant: true)
+                        PDFInvoiceSummaryBubble(title: NSLocalizedString("Amount to be paid", comment: ""), value: invoiceDetails.totalPrice.formatted(.currency(code: Locale.current.currency?.identifier ?? "USD")))
                         
                     }.padding(.vertical, 15)
                     
@@ -191,17 +199,23 @@ import CoreData
                 
                 HStack(alignment: .top) {
                     
-                    if let qrCode = generateQRCode(invoiceDetails: invoiceDetails) {
-                        VStack(spacing: 3) {
-                            
-                            Image(uiImage: qrCode)
-                                .resizable()
-                                .frame(width: 100, height: 100)
-                                .padding(.top, 30)
-                            
-                            Text(NSLocalizedString("Scan to Pay!", comment: ""))
-                                .font(.system(size: 10, weight: .medium))
-                                .foregroundStyle(.brandBlack)
+                    VStack(alignment: .leading, spacing: 10) {
+                        
+                        if invoiceDetails.isValidIBAN, invoiceDetails.inSEPACountry {
+                            if let qrCode = generateQRCode(invoiceDetails: invoiceDetails) {
+                                VStack(spacing: 3) {
+                                    
+                                    Image(uiImage: qrCode)
+                                        .resizable()
+                                        .frame(width: 80, height: 80)
+                                        .padding(.top, 30)
+                                    
+                                    Text(NSLocalizedString("Scan to Pay!", comment: ""))
+                                        .font(.system(size: 10, weight: .medium))
+                                        .foregroundStyle(.brandBlack)
+                                    
+                                }
+                            }
                             
                         }
                     }
@@ -222,14 +236,21 @@ import CoreData
                                 Image(uiImage: signature)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: 140)
+                                    .frame(width: 140, height: 80)
                                     .clipShape(.rect(cornerRadius: 10, style: .continuous))
-                            }
+                            }.padding(.top, 10)
                         }
                         
                     }
                     
-                }.padding(.bottom, 30)
+                }
+                
+                Spacer()
+                
+                Text(invoiceNote)
+                    .font(.system(size: 10))
+                    .foregroundStyle(.brandBlack)
+                    .padding(.bottom, 10)
                 
             } else { Text(NSLocalizedString("PDF could not be created.", comment: "")) }
             
@@ -240,7 +261,7 @@ import CoreData
         }.padding(.horizontal, 35)
             .padding(.vertical, 35)
             .frame(width: 630)
-            .frame(minHeight: 891)
+            .frame(minHeight: 891, alignment: .top)
         
     }
     
@@ -289,45 +310,6 @@ import CoreData
         
         return nil
         
-    }
-    
-    func isValidIBAN(_ iban: String?) -> Bool {
-        //TODO: CHECK FUNCTIONALITY
-        guard let iban else { return false }
-        // Remove any whitespace and convert to uppercase
-        let formattedIBAN = iban.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-        
-        // Check if the IBAN has the correct length
-        guard formattedIBAN.count >= 15 && formattedIBAN.count <= 34 else {
-            return false
-        }
-        
-        // Check if the IBAN begins with a valid country code (2 letters)
-        let countryCodePattern = "[A-Z]{2}"
-        guard let countryCodeRegex = try? NSRegularExpression(pattern: countryCodePattern),
-              let countryCodeMatch = countryCodeRegex.firstMatch(in: formattedIBAN, range: NSRange(location: 0, length: 2)),
-              countryCodeMatch.range.location == 0 else {
-            return false
-        }
-        
-        // Move the country code to the end of the IBAN and replace letters with numbers
-        var modifiedIBAN = formattedIBAN
-        let countryCode = String(formattedIBAN.prefix(2))
-        modifiedIBAN.removeFirst(2)
-        modifiedIBAN += countryCode
-        
-        modifiedIBAN = modifiedIBAN.replacingOccurrences(of: "A", with: "10")
-        modifiedIBAN = modifiedIBAN.replacingOccurrences(of: "B", with: "11")
-        modifiedIBAN = modifiedIBAN.replacingOccurrences(of: "C", with: "12")
-        // Continue replacing letters with their corresponding numbers (C = 12, D = 13, ..., Z = 35)
-        
-        // Convert the modified IBAN string to an integer
-        guard let ibanNumber = Int(modifiedIBAN) else {
-            return false
-        }
-        
-        // Check if the remainder of the division by 97 is equal to 1
-        return ibanNumber % 97 == 1
     }
     
 }
@@ -433,28 +415,28 @@ struct PDFInvoiceRowView: View {
             
             var piecess = pieces
             Text("\(piecess.roundAndRemoveZerosFromEnd())  \(NSLocalizedString(UnitsOfMeasurement.readableSymbol(unit).stringKey ?? "", comment: ""))")
-                .font(.system(size: 12))
+                .font(.system(size: 11))
                 .frame(width: 60, alignment: .trailing)
 
             if let formattedPricePerUnit = formatter.string(from: price/pieces as NSNumber) {
                 Text(formattedPricePerUnit)
-                    .font(.system(size: 12))
+                    .font(.system(size: 11))
                     .frame(width: 70, alignment: .trailing)
             }
             
             Text((percentage/100), format: .percent.precision(.fractionLength(0)))
-                .font(.system(size: 12))
+                .font(.system(size: 11))
                 .frame(width: 60, alignment: .trailing)
             
             if let VATPrice = formatter.string(from: price*(percentage/100) as NSNumber) {
                 Text(VATPrice)
-                    .font(.system(size: 12))
+                    .font(.system(size: 11))
                     .frame(width: 80, alignment: .trailing)
             }
             
             if let formattedPrice = formatter.string(from: price as NSNumber) {
                 Text(formattedPrice)
-                    .font(.system(size: 12))
+                    .font(.system(size: 11))
                     .frame(width: 80, alignment: .trailing)
             }
             
@@ -517,10 +499,10 @@ struct PDFInvoiceTotalPriceView: View {
                     Spacer()
                     
                     Text(NSLocalizedString("Total price", comment: ""))
-                        .font(.system(size: 18, weight: .bold))
+                        .font(.system(size: 17, weight: .semibold))
                     
                     Text(formattedPrice)
-                        .font(.system(size: 18, weight: .bold))
+                        .font(.system(size: 17, weight: .semibold))
                         .lineLimit(1)
                         .frame(alignment: .trailing)
                     
@@ -538,7 +520,6 @@ struct PDFInvoiceSummaryBubble: View {
     
     var title: String
     var value: String
-    var isImportant: Bool = false
     
     var body: some View {
         
@@ -547,19 +528,19 @@ struct PDFInvoiceSummaryBubble: View {
                 
                 Text(title)
                     .font(.system(size: 9))
-                    .foregroundStyle(isImportant ? .brandWhite : .brandBlack)
+                    .foregroundStyle(.brandBlack)
                 
                 Text(value)
-                    .font(.system(size: 15, weight: isImportant ? .bold : .semibold))
-                    .foregroundStyle(isImportant ? .brandWhite : .brandBlack)
+                    .font(.system(size: 15, weight: .semibold))
+                    .foregroundStyle(.brandBlack)
                     .lineLimit(1)
-                    .minimumScaleFactor(isImportant ? 1.0 : 0.8)
+                    .fixedSize()
+                    .minimumScaleFactor(0.6)
                 
             }.padding(.horizontal, 8)
                 .frame(height: 50)
                 .frame(maxWidth: .infinity)
-                .background(isImportant ? .brandBlack : .brandGray)
-                .clipShape(.rect(cornerRadius: 10, style: .continuous))
+                .background { RoundedRectangle(cornerRadius: 13, style: .continuous).strokeBorder(.brandGray, lineWidth: 1) }
         }
         
     }
