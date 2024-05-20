@@ -4013,6 +4013,9 @@
         }
       }
     },
+    "Price per piece" : {
+
+    },
     "Price per unit" : {
       "localizations" : {
         "sk" : {
@@ -5243,6 +5246,9 @@
           }
         }
       }
+    },
+    "Without VAT" : {
+
     },
     "Work" : {
       "localizations" : {

@@ -137,7 +137,7 @@ struct InvoiceDetails {
     var dateOfDispatch = Date.now
     var paymentType: PaymentType = .bankTransfer
     var note: String = ""
-    let dateCreated = Date.now
+    var dateCreated = Date.now
     var invoiceItems: [InvoiceItem] = []
     
     init(project prjct: Project) {
@@ -531,6 +531,10 @@ struct InvoiceItem: Identifiable {
         self.category = category
         self.active = true
         
+    }
+    
+    var pricePerPiece: Double {
+        return round((price/pieces)*100)/100
     }
     
     mutating func changeTitle(to str: String) {

@@ -7,6 +7,25 @@
 
 import SwiftUI
 
+enum InvoiceBuilderItemFocuses {
+    
+    case count, pricePerPiece, VAT, withoutVAT
+    
+    var advance: Self? {
+        switch self {
+        case .count:
+            .pricePerPiece
+        case .pricePerPiece:
+            .VAT
+        case .VAT:
+            .withoutVAT
+        case .withoutVAT:
+            nil
+        }
+    }
+    
+}
+
 struct InvoiceBuilderItemBubble: View {
     
     @ObservedObject var viewModel: InvoiceBuilderViewModel
@@ -17,26 +36,34 @@ struct InvoiceBuilderItemBubble: View {
     @State var title: String
     @State var pieces: String
     @State var price: String
+    @State var pricePerPiece: String
     @State var vat: String
     @State var unit: UnitsOfMeasurement
     @State var category: InvoiceItemCategory
     @State var active: Bool
-    
+    @Binding var isItemFocused: Bool
+    @FocusState var focused: InvoiceBuilderItemFocuses?
+    var scrollProxy: ScrollViewProxy
     @State var isRetracted = true
+    let backgroundColor: Color
     let impactHeavy = UIImpactFeedbackGenerator(style: .rigid)
     @Environment(\.locale) var locale
     
-    init(viewModel: InvoiceBuilderViewModel, item: InvoiceItem) {
+    init(viewModel: InvoiceBuilderViewModel, item: InvoiceItem, isItemFocused: Binding<Bool>, _ scrollProxy: ScrollViewProxy ) {
         self.viewModel = viewModel
         self.item = item
         _itemID = State(initialValue: item.id)
         _title = State(initialValue: NSLocalizedString(item.title.stringKey ?? "", comment: ""))
-        _pieces = State(initialValue: String(item.pieces))
-        _price = State(initialValue: String(item.price))
-        _vat = State(initialValue: String(item.vat))
+        _pieces = State(initialValue: item.pieces.toString)
+        _price = State(initialValue: item.price.toString)
+        _vat = State(initialValue: item.vat.toString)
+        _pricePerPiece = State(initialValue: item.pricePerPiece.toString)
         _unit = State(initialValue: item.unit)
         _category = State(initialValue: item.category)
         _active = State(initialValue: item.active)
+        _isItemFocused = isItemFocused
+        self.scrollProxy = scrollProxy
+        backgroundColor = item.category == .material ? .brandMaterialGray.opacity(item.active ? 1.0 : 0.5) : .brandGray.opacity(item.active ? 1.0 : 0.5)
     }
     
     var body: some View {
@@ -56,7 +83,7 @@ struct InvoiceBuilderItemBubble: View {
                 }
                 
                 VStack(alignment: .leading, spacing: 0) {
-                
+                    
                     TextField("Name", text: $title, onEditingChanged: { _ in
                         withAnimation { title = viewModel.invoiceDetails.changeTitle(of: itemID, to: title) }
                     })
@@ -91,11 +118,11 @@ struct InvoiceBuilderItemBubble: View {
                             .foregroundStyle(foregroundTextColor)
                             .lineLimit(1)
                             .multilineTextAlignment(.trailing)
-                            
+                        
                     }.transition(.scale.combined(with: .opacity))
                     
                 } else {
-                   
+                    
                     Button {
                         withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) {
                             isRetracted = true
@@ -165,36 +192,33 @@ struct InvoiceBuilderItemBubble: View {
                 
             } else {
                 
-                HStack {
+                VStack {
                     
-                    Spacer()
-                    
-                    InvoiceItemInput(title: "Count", value: $pieces, unit: UnitsOfMeasurement.piece) {
-                        withAnimation {
-                            pieces = doubleToString(from: viewModel.invoiceDetails.changePieces(of: itemID, to: stringToDouble(from: pieces)))
-                        }
+                    LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2), spacing: 15) {
+                        
+                        InvoiceItemInput(title: "Count", value: $pieces, unit: UnitsOfMeasurement.piece)
+                            .focused($focused, equals: .count)
+                        
+                        InvoiceItemInput(title: "Price per piece", value: $pricePerPiece)
+                            .focused($focused, equals: .pricePerPiece)
+                        
+                        InvoiceItemInput(title: "VAT", value: $vat, unit: UnitsOfMeasurement.percentage)
+                            .focused($focused, equals: .VAT)
+                        
+                        InvoiceItemInput(title: "Without VAT", value: $price)
+                            .focused($focused, equals: .withoutVAT)
+                        
                     }
                     
+                }
+                .padding(.vertical, 15)
+                    .background(.brandWhite)
+                    .clipShape(.rect(cornerRadius: 20, style: .continuous))
+                    .padding(.vertical, 10)
+                    .invoiceBuilderToolbar(focused: $focused, $pieces, $pricePerPiece, $vat, $price)
                     
-                    Spacer()
-                    
-                    InvoiceItemInput(title: "VAT", value: $vat, unit: UnitsOfMeasurement.percentage) {
-                        withAnimation {
-                            vat = doubleToString(from: viewModel.invoiceDetails.changeVat(of: itemID, to: stringToDouble(from: vat)))
-                        }
-                    }
-                    
-                    Spacer()
-                    
-                }.padding(.vertical, 10)
                 
                 VStack(alignment: .trailing) {
-                    
-                    InvoiceItemPriceInput(title: "without VAT", value: $price) {
-                        withAnimation {
-                            price = doubleToString(from: viewModel.invoiceDetails.changePrice(of: itemID, to: stringToDouble(from: price)))
-                        }
-                    }
                     
                     let priceD = stringToDouble(from: price)
                     let vatD = stringToDouble(from: vat)
@@ -206,22 +230,28 @@ struct InvoiceBuilderItemBubble: View {
                     
                     InvoiceItemPriceInfo(title: "Total price", value: totalPrice, big: true)
                     
-                }
+                }.frame(maxWidth: .infinity, alignment: .trailing)
                 
             }
             
         }.frame(maxWidth: .infinity)
             .padding(isRetracted ? 10 : 15)
-            .background(category == .material ? .brandMaterialGray.opacity(active ? 1.0 : 0.5) : .brandGray.opacity(active ? 1.0 : 0.5))
+            .background {
+                backgroundColor.onTapGesture { dismissKeyboard() }.ignoresSafeArea()
+            }
             .clipShape(RoundedRectangle(cornerRadius: isRetracted ? 21 : 28, style: .continuous))
-            .task {
-                withAnimation {
-                    pieces = doubleToString(from: item.pieces)
-                    price = doubleToString(from: item.price)
-                    vat = doubleToString(from: item.vat)
+            .onChange(of: isRetracted) { value in
+                if !value {
+                    withAnimation { scrollProxy.scrollTo(item.id, anchor: .top) }
+                    focused = .count
                 }
             }
-            
+            .onChange(of: focused) { value in
+                if value != nil {
+                    withAnimation { scrollProxy.scrollTo(item.id, anchor: .top) }
+                }
+            }
         
     }
+     
 }

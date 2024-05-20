@@ -46,6 +46,7 @@
 		395CDD242BD3D4FF00E98E49 /* InvoiceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CDD232BD3D4FF00E98E49 /* InvoiceSettings.swift */; };
 		395CDD262BD3D62800E98E49 /* InvoiceMaturityDurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CDD252BD3D62800E98E49 /* InvoiceMaturityDurationView.swift */; };
 		395CDD282BD3D73400E98E49 /* Enums Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CDD272BD3D73400E98E49 /* Enums Invoice.swift */; };
+		395D43022BFBAD5B00F2CDB3 /* String Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395D43012BFBAD5B00F2CDB3 /* String Extensions.swift */; };
 		39603E5D2BD98D2F000CDFA4 /* InvoiceBuilderItemBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39603E5C2BD98D2F000CDFA4 /* InvoiceBuilderItemBubble.swift */; };
 		39603E5F2BD98D7F000CDFA4 /* InvoiceBuilderSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39603E5E2BD98D7F000CDFA4 /* InvoiceBuilderSummaryView.swift */; };
 		39603E622BD98DFD000CDFA4 /* InvoiceItemPriceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39603E612BD98DFD000CDFA4 /* InvoiceItemPriceInfo.swift */; };
@@ -283,6 +284,7 @@
 		395CDD232BD3D4FF00E98E49 /* InvoiceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceSettings.swift; sourceTree = "<group>"; };
 		395CDD252BD3D62800E98E49 /* InvoiceMaturityDurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceMaturityDurationView.swift; sourceTree = "<group>"; };
 		395CDD272BD3D73400E98E49 /* Enums Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums Invoice.swift"; sourceTree = "<group>"; };
+		395D43012BFBAD5B00F2CDB3 /* String Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String Extensions.swift"; sourceTree = "<group>"; };
 		39603E5C2BD98D2F000CDFA4 /* InvoiceBuilderItemBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceBuilderItemBubble.swift; sourceTree = "<group>"; };
 		39603E5E2BD98D7F000CDFA4 /* InvoiceBuilderSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceBuilderSummaryView.swift; sourceTree = "<group>"; };
 		39603E612BD98DFD000CDFA4 /* InvoiceItemPriceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemPriceInfo.swift; sourceTree = "<group>"; };
@@ -846,6 +848,7 @@
 				390F80322B591DAA00A10FF0 /* NSManagedObject Extension.swift */,
 				398B4C622B96FFDC00F84DB6 /* UUID Extension.swift */,
 				39D1C5C12BBD85C800D3DEB7 /* Date Extensions.swift */,
+				395D43012BFBAD5B00F2CDB3 /* String Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1490,6 +1493,7 @@
 				397BB99A2AD041BF006BA23C /* Siliconing+CoreDataClass.swift in Sources */,
 				396435D52A7A955C00C148B8 /* TileCeramicViews.swift in Sources */,
 				39666A202BE119050086D704 /* InvoicePDFCreator.swift in Sources */,
+				395D43022BFBAD5B00F2CDB3 /* String Extensions.swift in Sources */,
 				397BB9A62AD041BF006BA23C /* InstallationOfDoorJamb+CoreDataClass.swift in Sources */,
 				396435DD2A7A9CFA00C148B8 /* WindowInstallationsViews.swift in Sources */,
 				39DC44F92BE6CED60026E5E4 /* InvoicePDFDocumentPreviewSheet.swift in Sources */,
@@ -1629,7 +1633,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
 				DEVELOPMENT_TEAM = J7CR9GZ8S9;
 				ENABLE_PREVIEWS = YES;
@@ -1670,7 +1674,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
 				DEVELOPMENT_TEAM = J7CR9GZ8S9;
 				ENABLE_PREVIEWS = YES;

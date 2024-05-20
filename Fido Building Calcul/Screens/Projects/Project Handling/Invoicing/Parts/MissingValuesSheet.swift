@@ -152,7 +152,10 @@ struct MissingValueCategory: View {
                         }.padding(.leading, 7)
                     }
                 }
-            }
+            }.padding(10)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(.brandGray)
+                .clipShape(.rect(cornerRadius: 20, style: .continuous))
         }
     }
     

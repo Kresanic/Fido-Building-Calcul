@@ -36,6 +36,10 @@ extension View {
         return modifier(CTAPopUp())
     }
     
+    func invoiceBuilderToolbar(focused: FocusState<InvoiceBuilderItemFocuses?>.Binding, _ pieces: Binding<String>,_ pricePerPiece: Binding<String>,_ vat: Binding<String>,_ withoutVAT: Binding<String>) -> some View {
+        modifier(InvoiceItemInputsToolBar(focusedDimension: focused, pieces: pieces, pricePerPiece: pricePerPiece, vat: vat, withoutVAT: withoutVAT))
+    }
+    
     func tripleWorkInputsToolbar(focusedDimension: FocusState<TripleFocusedDimension?>.Binding, size1: Binding<String>, size2: Binding<String>, size3: Binding<String>) -> some View {
         return modifier(TripleWorkInputsToolBar(focusedDimension: focusedDimension, size1: size1, size2: size2, size3: size3))
     }
@@ -51,10 +55,6 @@ extension View {
     func redraw(on toggle: Bool) -> some View {
         return modifier(Redraw(toggle: toggle))
     }
-    
-//    func singleWorkInputsToolbar(focusedDimension: FocusState<FocusedDimension?>.Binding) -> some View {
-//        return modifier(SingleWorkInputsToolBar(focusedDimension: focusedDimension))
-//    }
     
 }
 
@@ -289,6 +289,199 @@ struct Redrawable: ViewModifier {
             content
         }
         
+    }
+    
+}
+
+struct InvoiceItemInputsToolBar: ViewModifier {
+    
+    var focusedDimension: FocusState<InvoiceBuilderItemFocuses?>.Binding
+    @Binding var pieces: String
+    @Binding var pricePerPiece: String
+    @Binding var vat: String
+    @Binding var withoutVAT: String
+    let impactMed = UIImpactFeedbackGenerator(style: .light)
+    let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+    
+    enum ButtonType { case done, next }
+    
+    func body(content: Content) -> some View {
+               
+            content
+                .toolbar {
+                        ToolbarItem(placement: .keyboard) {
+                            if focusedDimension.wrappedValue != nil {
+                                keyboardToolbarContent()
+                            }
+                        }
+                    }
+                }
+        
+    @ViewBuilder
+    private func keyboardToolbarContent() -> some View {
+        HStack(spacing: 0) {
+            if focusedDimension.wrappedValue == .withoutVAT {
+                Spacer().frame(width: 75)
+                mathSymbols()
+                button(.done)
+            } else {
+                button(.done)
+                mathSymbols()
+                button(.next)
+            }
+        }
+    }
+
+    private func button(_ type: ButtonType) -> some View {
+        Button {
+            changeOccurred(shouldHide: type == .done ? true : false)
+        } label: {
+            Text(type == .done ? "Done" : "Next")
+                .font(.system(size: 17, weight: .semibold))
+                .foregroundStyle(Color.brandWhite)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 4)
+                .background { Color.brandBlack }
+                .clipShape(Capsule())
+                .frame(width: 75)
+        }
+    }
+    
+    private func mathSymbols() -> some View {
+        
+        HStack {
+            
+            Button("-") {
+                addSymbol("-")
+            }.frame(height: 40)
+            .frame(maxWidth: .infinity)
+            
+            Button("+") {
+                addSymbol("+")
+            }.frame(height: 40)
+            .frame(maxWidth: .infinity)
+            
+            Button("*") {
+                addSymbol("*")
+            }.frame(height: 40)
+            .frame(maxWidth: .infinity)
+            .padding(.top, 8)
+            
+            Button("=") {
+                changeOccurred(shouldAdvance: false)
+            }.frame(height: 40)
+            .frame(maxWidth: .infinity)
+            
+        }.font(.system(size: 22, weight: .bold))
+            .foregroundStyle(Color.brandBlack)
+        
+    }
+    
+    private func calculate(on expressionString: String) -> String {
+        
+        guard let _ = Int(expressionString.suffix(1)) else { return "0" }
+        guard let _ = Int(expressionString.prefix(1)) else { return "0" }
+        
+        let expression = expressionString.replacingOccurrences(of: ",", with: ".")
+                
+        let express = NSExpression(format: expression)
+        
+        guard let result = express.expressionValue(with: nil, context: nil) as? Double else { return "0" }
+        
+        let roundedResult = Double(round(100 * result) / 100)
+
+        return roundedResult.toString
+        
+    }
+    
+    private func changeOccurred(shouldHide: Bool = false, shouldAdvance: Bool = true) {
+        withAnimation {
+            switch focusedDimension.wrappedValue {
+            case .some(let focused):
+                switch focused {
+                case .count:
+                    changedCount()
+                case .pricePerPiece:
+                    changedPricePerCount()
+                case .VAT:
+                    changedVAT()
+                case .withoutVAT:
+                    changedVAT()
+                }
+            case .none:
+                break
+            }
+            if shouldHide {
+                focusedDimension.wrappedValue = nil
+            } else {
+                if shouldAdvance {
+                    focusedDimension.wrappedValue = focusedDimension.wrappedValue?.advance
+                }
+            }
+            
+        }
+    }
+    
+    private func addSymbol(_ s: String) {
+        switch focusedDimension.wrappedValue {
+        case .some(let focused):
+            switch focused {
+            case .count:
+                if let last = pieces.last, !["+","*","-"].contains(last) {
+                    pieces = pieces + s
+                } else {
+                    impactHeavy.impactOccurred()
+                }
+            case .pricePerPiece:
+                if let last = pricePerPiece.last, !["+","*","-"].contains(last) {
+                    pricePerPiece = pricePerPiece + s
+                } else {
+                    impactHeavy.impactOccurred()
+                }
+            case .VAT:
+                if let last = vat.last, !["+","*","-"].contains(last) {
+                    vat = vat + s
+                } else {
+                    impactHeavy.impactOccurred()
+                }
+            case .withoutVAT:
+                if let last = withoutVAT.last, !["+","*","-"].contains(last) {
+                    withoutVAT = withoutVAT + s
+                } else {
+                    impactHeavy.impactOccurred()
+                }
+            }
+        case .none:
+            break
+        }
+        impactMed.impactOccurred()
+    }
+    
+    private func changedCount() {
+        withAnimation {
+            pieces = calculate(on: pieces)
+            pricePerPiece = (withoutVAT.toDouble/pieces.toDouble).round.toString
+        }
+    }
+    
+    private func changedPricePerCount() {
+        withAnimation {
+            pricePerPiece = calculate(on: pricePerPiece)
+            withoutVAT = (pricePerPiece.toDouble*pieces.toDouble).round.toString
+        }
+    }
+    
+    private func changedVAT() {
+        withAnimation {
+            vat = calculate(on: vat)
+        }
+    }
+    
+    private func changedWithoutVAT() {
+        withAnimation {
+            withoutVAT = calculate(on: withoutVAT)
+            pricePerPiece = (withoutVAT.toDouble/pieces.toDouble).round.toString
+        }
     }
     
 }

@@ -18,6 +18,7 @@ import CoreData
     @Published var isShowingMissingValues = false
     @Published var missingValues: [IdentifiableInvoiceMissingValue]?
     @Published var redraw = false
+    @Published var isFocusedOnItem = false
     
     var project: Project
 //    var pdfURL: URL {

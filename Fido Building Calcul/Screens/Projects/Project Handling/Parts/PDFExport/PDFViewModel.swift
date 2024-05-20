@@ -181,7 +181,7 @@ import PDFKit
                     if let imageData = project.contractor?.signature, let signature =  UIImage(data: imageData) {
                         VStack(alignment: .leading, spacing: 3) {
                             
-                            Text("Issued by:")
+                            Text(NSLocalizedString("Issued by:", comment: ""))
                                 .font(.system(size: 10, weight: .medium))
                                 .foregroundStyle(.brandBlack)
                             

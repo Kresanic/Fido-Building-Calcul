@@ -17,7 +17,7 @@ struct InvoicesScreen: View {
         
         let request = Invoice.fetchRequest()
         
-        request.sortDescriptors = [NSSortDescriptor(keyPath: \Invoice.dateCreated, ascending: false)]
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Invoice.number, ascending: false)]
         
         if let activeContractor {
             request.predicate = NSPredicate(format: "toContractor == %@", activeContractor)

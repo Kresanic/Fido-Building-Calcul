@@ -24,6 +24,7 @@ extension View {
     }
     
     func stringToDouble(from text: String) -> Double {
+        // TODO: REGEX FOR CHECKING VALIDITY
         return calculate(on: text)
     }
     
