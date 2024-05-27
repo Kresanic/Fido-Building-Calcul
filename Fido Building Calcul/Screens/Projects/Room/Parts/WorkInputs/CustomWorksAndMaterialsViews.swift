@@ -527,7 +527,7 @@ fileprivate struct CustomWorksEditor: View {
             
             VStack {
                 
-                HStack(spacing: 0) {
+                HStack(alignment: .firstTextBaseline, spacing: 0) {
                     
                     Image(systemName: "ruler")
                         .font(.system(size: 14))
@@ -535,12 +535,10 @@ fileprivate struct CustomWorksEditor: View {
                         .rotationEffect(.degrees(90))
                         .padding(.trailing, -3)
                     
-                    TextField("Work name", text: $customWorkName, onCommit: {
-                        behavioursVM.redraw()
-                    })
+                    TextField("Work name", text: $customWorkName, axis: .vertical)
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundStyle(Color.brandBlack)
-                    .lineLimit(1)
+                    .lineLimit(1...4)
                     .submitLabel(.next)
                     .onSubmit { focusedDimension = 1 }
                     .focused($focusedDimension, equals: 0)
@@ -585,9 +583,11 @@ fileprivate struct CustomWorksEditor: View {
                         fetchedEntity.title = customWorkName
                         try? viewContext.save()
                     }
+                    .onChange(of: focusedDimension) { value in
+                        behavioursVM.redraw()
+                    }
                     
                     Spacer()
-                    
                     
                     Button {
                         deleteObject(toDelete: fetchedEntity)
@@ -833,7 +833,7 @@ fileprivate struct CustomMaterialsEditor: View {
             
             VStack {
                 
-                HStack(spacing: 0) {
+                HStack(alignment: .firstTextBaseline, spacing: 0) {
                     
                     Image(systemName: "ruler")
                         .font(.system(size: 14))
@@ -841,12 +841,10 @@ fileprivate struct CustomMaterialsEditor: View {
                         .rotationEffect(.degrees(90))
                         .padding(.trailing, -3)
                     
-                    TextField("Material name", text: $customMaterialName, onCommit: {
-                        behavioursVM.redraw()
-                    })
+                    TextField("Material name", text: $customMaterialName, axis: .vertical)
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundStyle(Color.brandBlack)
-                    .lineLimit(1)
+                    .lineLimit(1...4)
                     .submitLabel(.next)
                     .onSubmit { focusedDimension = 1 }
                     .focused($focusedDimension, equals: 0)
@@ -891,9 +889,11 @@ fileprivate struct CustomMaterialsEditor: View {
                         fetchedEntity.title = customMaterialName
                         try? viewContext.save()
                     }
+                    .onChange(of: focusedDimension) { value in
+                        behavioursVM.redraw()
+                    }
                     
                     Spacer()
-                    
                     
                     Button {
                         deleteObject(toDelete: fetchedEntity)

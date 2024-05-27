@@ -7,12 +7,15 @@
 
 import SwiftUI
 
+enum BuilderFocused { case number, note }
+
 struct InvoiceBuilderView: View {
     
     var project: Project
     @StateObject var viewModel: InvoiceBuilderViewModel
     @Environment(\.dismiss) var dismiss
-    @FocusState private var isNoteFocused: Bool
+    @FocusState private var whatIsFocused: BuilderFocused?
+    @State private var firstNumber: String?
 
     @AppStorage("invoiceNote") var invoiceNote: String = ""
     
@@ -64,6 +67,59 @@ struct InvoiceBuilderView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
                         VStack(alignment: .leading, spacing: 8) {
+                            
+                            HStack {
+                                
+                                Text("Invoice number")
+                                    .font(.system(size: 17, weight: .medium))
+                                    .foregroundStyle(.brandBlack)
+                                
+                                Spacer()
+                                
+                                if let firstNumber, firstNumber != viewModel.invoiceDetails.invoiceNumber {
+                                    
+                                    Button {
+                                        withAnimation {
+                                            if let restartNum = Int64(firstNumber) {
+                                                viewModel.invoiceDetails.number = restartNum
+                                            }
+                                        }
+                                    } label: {
+                                        Image(systemName: "arrow.circlepath")
+                                            .font(.system(size: 15, weight: .medium))
+                                            .foregroundStyle(.brandBlack)
+                                            .frame(width: 35, alignment: .trailing)
+                                            .padding(.trailing, 5)
+                                    }
+                                    
+                                }
+                                
+                                TextField("2024001 or 1", value: $viewModel.invoiceDetails.number, format: .number.grouping(.never))
+                                    .font(.system(size: 18, weight: .medium))
+                                    .foregroundStyle(.brandBlack)
+                                    .multilineTextAlignment(.trailing)
+                                    .lineLimit(1)
+                                    .keyboardType(.numberPad)
+                                    .focused($whatIsFocused, equals: .number)
+                                    .frame(width: 175, alignment: .trailing)
+                                    .background(.brandWhite.opacity(0.3))
+                                    .clipShape(.rect(cornerRadius: 13, style: .continuous))
+                                    .background {
+                                        RoundedRectangle(cornerRadius: 13, style: .continuous)
+                                            .strokeBorder(Color.brandBlack, lineWidth: 2)
+                                    }
+                                    
+                                    
+                                
+                            }.padding(.horizontal, 10)
+                                .frame(height: 55)
+                                .background(.brandGray)
+                                .clipShape(.rect(cornerRadius: 17, style: .continuous))
+                                .onAppear {
+                                    withAnimation {
+                                        firstNumber = viewModel.invoiceDetails.invoiceNumber
+                                    }
+                                }
                             
                             HStack {
                                 
@@ -123,47 +179,26 @@ struct InvoiceBuilderView: View {
                                     .font(.system(size: 15, weight: .medium))
                                     .foregroundStyle(.brandBlack)
                                     .lineLimit(1...5)
-                                    .focused($isNoteFocused)
+                                    .focused($whatIsFocused, equals: .note)
                                     .submitLabel(.return)
                                     .padding(10)
                                     .background(.brandWhite.opacity(0.3))
+                                    .clipShape(.rect(cornerRadius: 13, style: .continuous))
                                     .background {
                                         RoundedRectangle(cornerRadius: 13, style: .continuous)
                                             .strokeBorder(Color.brandBlack, lineWidth: 2)
                                     }
-                                    .task {
-                                        withAnimation {
-                                            viewModel.invoiceDetails.note = invoiceNote
-                                        }
-                                    }
-                                    .toolbar {
-                                        ToolbarItem(placement: .keyboard) {
-                                            if isNoteFocused {
-                                                HStack {
-                                                    Spacer()
-                                                    Button {
-                                                        invoiceNote = viewModel.invoiceDetails.note
-                                                        dismissKeyboard()
-                                                    } label: {
-                                                        Text("Save")
-                                                            .font(.system(size: 17, weight: .semibold))
-                                                            .foregroundStyle(Color.brandWhite)
-                                                            .padding(.horizontal, 12)
-                                                            .padding(.vertical, 4)
-                                                            .background { Color.brandBlack }
-                                                            .clipShape(Capsule())
-                                                            .frame(width: 120, alignment: .trailing)
-                                                            
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
+                                    
                                 
                             }.padding(.horizontal, 10)
                                 .padding(.vertical, 10)
                                 .background(.brandGray)
                                 .clipShape(.rect(cornerRadius: 17, style: .continuous))
+                                .task {
+                                    withAnimation {
+                                        viewModel.invoiceDetails.note = invoiceNote
+                                    }
+                                }
                             
                         }
                         
@@ -234,9 +269,17 @@ struct InvoiceBuilderView: View {
                         
                     }.padding(.horizontal, 15)
                     
+                }.toolbar {
+                    ToolbarItem(placement: .keyboard) {
+                        if whatIsFocused == .note {
+                            saveButton
+                        } else if whatIsFocused == .number {
+                            doneButton
+                        }
+                    }
                 }
             }
-            .scrollDismissesKeyboard(.automatic)
+            .scrollDismissesKeyboard(.interactively)
             .background{ Color.brandWhite.onTapGesture{ dismissKeyboard() } }
             .sheet(item: $viewModel.dialogWindow) { dialog in
                 DialogWindow(dialog: dialog)
@@ -249,10 +292,49 @@ struct InvoiceBuilderView: View {
                     InvoiceMissingValuesSheet(missingValues, viewModel: viewModel)
                         .presentationCornerRadius(25)
                         .presentationDetents([.fraction(0.65)])
-                        .onDisappear { dismiss() }
+//                        .onDisappear { dismiss() }
                 }
+            }.navigationViewStyle(.stack)
+        }
+    }
+    
+    var saveButton: some View {
+        HStack {
+            Spacer()
+            Button {
+                invoiceNote = viewModel.invoiceDetails.note
+                whatIsFocused = nil
+            } label: {
+                Text("Save")
+                    .font(.system(size: 17, weight: .semibold))
+                    .foregroundStyle(Color.brandWhite)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 4)
+                    .background { Color.brandBlack }
+                    .clipShape(Capsule())
+                    .frame(width: 120, alignment: .trailing)
             }
-            
+        }
+        .task {
+            print("Save shown")
+        }
+    }
+    
+    var doneButton: some View {
+        HStack {
+            Spacer()
+            Button {
+                viewModel.invoiceDetails.formatNumber()
+                whatIsFocused = nil
+            } label: {
+                Text("Done")
+                    .font(.system(size: 17, weight: .semibold))
+                    .foregroundStyle(Color.brandWhite)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 4)
+                    .background { Color.brandBlack }
+                    .clipShape(Capsule())
+            }.frame(width: 75)
         }
     }
     

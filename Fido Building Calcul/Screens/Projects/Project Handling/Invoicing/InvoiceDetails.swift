@@ -103,7 +103,7 @@ enum InvoiceValues: String, InvoiceMissingValue {
     
     var id: String { self.rawValue }
     
-    case priceWithoutVAT, cumulativeVAT, number, invoiceItems, contractor, client
+    case priceWithoutVAT, cumulativeVAT, number, invoiceItems, contractor, client, incorrectNumberFormat, numberAlreadyInUse
     
     var title: LocalizedStringKey {
         switch self {
@@ -119,6 +119,10 @@ enum InvoiceValues: String, InvoiceMissingValue {
             "No Contractor Assigned to this Project"
         case .client:
             "No Client Assigned to this Project"
+        case .incorrectNumberFormat:
+            "Incorrect Invoice Number Format"
+        case .numberAlreadyInUse:
+            "Invoice Number already In Use"
         }
     }
     
@@ -266,7 +270,15 @@ extension InvoiceDetails {
         if self.number ?? 0 == 0 {
             values.append(IdentifiableInvoiceMissingValue(value: InvoiceValues.number))
         }
-        if self.invoiceItems.isEmpty { values.append(IdentifiableInvoiceMissingValue(value:InvoiceValues.invoiceItems))}
+        if self.invoiceItems.isEmpty { values.append(IdentifiableInvoiceMissingValue(value:InvoiceValues.invoiceItems))
+        }
+        if self.number ?? 0 < 2000000 {
+            values.append(IdentifiableInvoiceMissingValue(value: InvoiceValues.incorrectNumberFormat))
+        }
+        if self.isNumberUsed {
+            values.append(IdentifiableInvoiceMissingValue(value: InvoiceValues.numberAlreadyInUse))
+        }
+        
                                                      
         return values
         
@@ -452,6 +464,78 @@ extension InvoiceDetails {
         
     }
     
+    var isNumberUsed: Bool {
+        
+        let viewContext = PersistenceController.shared.container.viewContext
+        
+        let request = Invoice.fetchRequest()
+        
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Invoice.dateCreated, ascending: false)]
+        
+        if let contractor = project.contractor {
+            request.predicate = NSPredicate(format: "number == %@ AND toContractor == %@", argumentArray: [self.number ?? 0 as NSNumber, contractor as CVarArg])
+        }
+        
+        request.fetchLimit = 1
+        
+        let fetchedInvoices = try? viewContext.fetch(request)
+        
+        guard let fetchedInvoices else { return false }
+        
+        return !fetchedInvoices.isEmpty
+        
+    }
+    
+    mutating func formatNumber() {
+        // Ensure the number is an integer and convert to string
+        let input = String(Int(number ?? 1))
+        
+        // Get the current year
+        let currentYear = Calendar.current.component(.year, from: Date())
+        
+        // If more than 7 characters
+        if input.count > 7 {
+            number = Int64("\(currentYear)001")
+            return
+        }
+        
+        // Check if the input is already in the correct format
+        let regex = "^\\d{7}$"
+        if let _ = input.range(of: regex, options: .regularExpression) {
+            return
+        }
+        
+        // Remove leading zeros and non-numeric characters from the input
+        let sanitizedInput = input.trimmingCharacters(in: .whitespacesAndNewlines)
+            .filter { $0.isNumber }
+        
+        // If input has more than 3 digits but less than 7, set it to current year + 001
+        if sanitizedInput.count > 3 && sanitizedInput.count < 7 {
+            number = Int64("\(currentYear)001")
+            return
+        }
+        
+        // Remove leading zeros
+        //let trimmedInput = sanitizedInput.trimmingCharacters(in: CharacterSet(charactersIn: "0"))
+        
+        // If the sanitized input is empty, return the formatted string for the current year with 001
+        guard !input.isEmpty else {
+            number = Int64("\(currentYear)001")
+            return
+        }
+        
+        // Convert the sanitized input to an integer
+        if let tryNumber = Int(input) {
+            // Format the number with leading zeros, ensuring it has 3 digits
+            let formattedNumber = String(format: "%03d", tryNumber)
+            self.number = Int64("\(currentYear)\(formattedNumber)")
+            return
+        }
+        
+        // In case of any unexpected issues, return the default formatted string
+        number = Int64("\(currentYear)001")
+    }
+
     mutating func getPDFNumber() {
         
         let viewContext = PersistenceController.shared.container.viewContext
@@ -466,7 +550,9 @@ extension InvoiceDetails {
         
         guard let startOfTheYear else { return }
         
-        request.predicate = NSPredicate(format: "dateCreated >= %@ && toContractor == %@", [startOfTheYear as NSDate, project.toContractor! as CVarArg])
+        if let contractor = project.contractor {
+            request.predicate = NSPredicate(format: "dateCreated >= %@ && toContractor == %@", [startOfTheYear as NSDate, contractor as CVarArg])
+        }
         
         guard let invoices = try? viewContext.fetch(request) else { return }
         

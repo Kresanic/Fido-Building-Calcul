@@ -343,8 +343,7 @@ struct InvoiceItemInputsToolBar: ViewModifier {
                 .padding(.vertical, 4)
                 .background { Color.brandBlack }
                 .clipShape(Capsule())
-                .frame(width: 75)
-        }
+        }.frame(width: 75)
     }
     
     private func mathSymbols() -> some View {

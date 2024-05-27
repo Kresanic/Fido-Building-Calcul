@@ -188,10 +188,10 @@
 		398B4C6E2B976C8A00F84DB6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399BB7772AEBFD1C00452560 /* StoreKit.framework */; };
 		398B4C722B976D0800F84DB6 /* ReceiptParser in Frameworks */ = {isa = PBXBuildFile; productRef = 398B4C712B976D0800F84DB6 /* ReceiptParser */; };
 		398B4C742B976D0800F84DB6 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 398B4C732B976D0800F84DB6 /* RevenueCat */; };
-		398B4C762B976D0800F84DB6 /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 398B4C752B976D0800F84DB6 /* RevenueCatUI */; };
 		398ED2502BF4C327003CFA8A /* CustomWork+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398ED24F2BF4C327003CFA8A /* CustomWork+CoreDataClass.swift */; };
 		398ED2522BF4C3D8003CFA8A /* BrickPartitionsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398ED2512BF4C3D7003CFA8A /* BrickPartitionsViews.swift */; };
 		398ED2552BF4C448003CFA8A /* Fido_Building_Calcul.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 398ED2532BF4C448003CFA8A /* Fido_Building_Calcul.xcdatamodeld */; };
+		3991E8082C04BBC3001B0979 /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3991E8072C04BBC3001B0979 /* RevenueCatUI */; };
 		399516392BE6782800AE8EEB /* InvoiceDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399516382BE6782800AE8EEB /* InvoiceDetails.swift */; };
 		3996E1FE2A77BEA0000D86E1 /* InProjectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E1FD2A77BEA0000D86E1 /* InProjectScreen.swift */; };
 		3996E2002A77BF64000D86E1 /* InProjectScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E1FF2A77BF64000D86E1 /* InProjectScreenViewModel.swift */; };
@@ -482,7 +482,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				398B4C762B976D0800F84DB6 /* RevenueCatUI in Frameworks */,
+				3991E8082C04BBC3001B0979 /* RevenueCatUI in Frameworks */,
 				398B4C722B976D0800F84DB6 /* ReceiptParser in Frameworks */,
 				398B4C6E2B976C8A00F84DB6 /* StoreKit.framework in Frameworks */,
 				398B4C742B976D0800F84DB6 /* RevenueCat in Frameworks */,
@@ -1214,7 +1214,7 @@
 			packageProductDependencies = (
 				398B4C712B976D0800F84DB6 /* ReceiptParser */,
 				398B4C732B976D0800F84DB6 /* RevenueCat */,
-				398B4C752B976D0800F84DB6 /* RevenueCatUI */,
+				3991E8072C04BBC3001B0979 /* RevenueCatUI */,
 			);
 			productName = "Fido Building Calcul";
 			productReference = 395086E42A7182CF0099BAD8 /* Fido Building Calcul.app */;
@@ -1633,7 +1633,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
 				DEVELOPMENT_TEAM = J7CR9GZ8S9;
 				ENABLE_PREVIEWS = YES;
@@ -1674,7 +1674,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
 				DEVELOPMENT_TEAM = J7CR9GZ8S9;
 				ENABLE_PREVIEWS = YES;
@@ -1753,7 +1753,7 @@
 			package = 398B4C702B976D0800F84DB6 /* XCRemoteSwiftPackageReference "purchases-ios" */;
 			productName = RevenueCat;
 		};
-		398B4C752B976D0800F84DB6 /* RevenueCatUI */ = {
+		3991E8072C04BBC3001B0979 /* RevenueCatUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 398B4C702B976D0800F84DB6 /* XCRemoteSwiftPackageReference "purchases-ios" */;
 			productName = RevenueCatUI;

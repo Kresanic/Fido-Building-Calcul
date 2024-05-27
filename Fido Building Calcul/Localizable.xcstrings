@@ -575,6 +575,16 @@
         }
       }
     },
+    "2024001 or 1" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2024001 alebo 1"
+          }
+        }
+      }
+    },
     "12345679" : {
       "localizations" : {
         "sk" : {
@@ -2623,6 +2633,16 @@
         }
       }
     },
+    "Incorrect Invoice Number Format" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nesprávny formát čísla faktúry"
+          }
+        }
+      }
+    },
     "Insert BID and we will search for it in database and fill all publicly available information about the company." : {
       "localizations" : {
         "sk" : {
@@ -2699,6 +2719,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tvorba faktúry"
+          }
+        }
+      }
+    },
+    "Invoice number" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Číslo faktúry"
+          }
+        }
+      }
+    },
+    "Invoice Number already In Use" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Číslo faktúry sa už používa"
           }
         }
       }
@@ -4014,7 +4054,14 @@
       }
     },
     "Price per piece" : {
-
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cena za mj."
+          }
+        }
+      }
     },
     "Price per unit" : {
       "localizations" : {
@@ -5248,7 +5295,14 @@
       }
     },
     "Without VAT" : {
-
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bez DPH"
+          }
+        }
+      }
     },
     "Work" : {
       "localizations" : {
