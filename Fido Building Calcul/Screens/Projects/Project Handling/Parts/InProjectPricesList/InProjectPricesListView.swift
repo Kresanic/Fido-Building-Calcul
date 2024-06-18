@@ -88,6 +88,7 @@ struct InProjectPricesListView: View {
                     VStack {
                         InProjectPriceWorkBubble(work: TileCeramic.self, price: $viewModel.workTilingCeramicPrice, viewModel: viewModel)
                         InProjectPriceWorkBubble(work: PavingCeramic.self, price: $viewModel.workPavingCeramicPrice, viewModel: viewModel)
+                        InProjectPriceWorkBubble(work: LargeFormatPavingAndTiling.self, price: $viewModel.workLargeFormatPavingAndTilingPrice, viewModel: viewModel)
                         InProjectPriceWorkBubble(work: Grouting.self, price: $viewModel.workGroutingPrice, viewModel: viewModel)
                         InProjectPriceWorkBubble(work: Siliconing.self, price: $viewModel.workSiliconingPrice, viewModel: viewModel)
                         InProjectPriceBubble(title: InstallationOfSanitary.generalTitle, subTitle: InstallationOfSanitary.cornerValveSubTitle, price: $viewModel.workSanitaryCornerValvePrice, unit: InstallationOfSanitary.unit, viewModel: viewModel)

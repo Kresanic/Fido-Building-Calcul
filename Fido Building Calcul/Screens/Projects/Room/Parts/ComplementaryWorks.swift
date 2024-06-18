@@ -11,21 +11,31 @@ struct ComplementaryWorksBubble: View {
     
     var work: WorkType.Type
     var isSwitchedOn: Bool
+    var subTitle: Bool = false
     var action: () -> Void
     
     var body: some View {
          
         Button {
-            withAnimation(.easeInOut(duration: 0.2)) {
-                action()
-            }
+            withAnimation(.easeInOut(duration: 0.2)) { action() }
         } label: {
             
             HStack(spacing: 3) {
                 
-                Text(work.title)
-                    .font(.system(size: 18, weight: .medium))
-                    .foregroundStyle(Color.brandBlack)
+                VStack(alignment: .leading, spacing: 0) {
+                    
+                    Text(work.title)
+                        .font(.system(size: 18, weight: .medium))
+                        .foregroundStyle(Color.brandBlack)
+                    
+                    if subTitle && ((work.subTitle.stringKey?.isEmpty) != nil) {
+                        Text(work.subTitle)
+                            .font(.system(size: 11, weight: .medium))
+                            .foregroundStyle(Color.brandBlack.opacity(0.75))
+                            .lineLimit(1)
+                    }
+                    
+                }
                     
                 Spacer()
                 

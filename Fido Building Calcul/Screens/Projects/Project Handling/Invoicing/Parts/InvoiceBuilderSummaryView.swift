@@ -79,7 +79,7 @@ struct InvoiceBuilderSummaryView: View {
                 } label: {
                     HStack(spacing: 5) {
                         
-                        Text("Generate Invocie")
+                        Text("Generate Invoice")
                             .font(.system(size: 20, weight: .medium))
                             .foregroundStyle(Color.brandWhite)
                         
@@ -91,7 +91,6 @@ struct InvoiceBuilderSummaryView: View {
                         .frame(maxWidth: .infinity)
                         .background(Color.brandBlack)
                         .clipShape(.rect(cornerRadius: 30, style: .continuous))
-//                        .opacity(0.8)
                 }
                 
             }.padding(15)
@@ -126,10 +125,12 @@ struct InvoiceBuilderSummaryView: View {
             
             invoice.status = InvoiceStatus.unpaid.rawValue
             
+            viewModel.project.addToToHistoryEvent(ProjectEvents.invoiceGenerated.entityObject)
+            
             try? viewContext.save()
             
             viewModel.isShowingPDF = true
-            
+            viewModel.wasPDFShown = true
         } else {
             viewModel.missingValues = missingValues
             viewModel.isShowingMissingValues = true

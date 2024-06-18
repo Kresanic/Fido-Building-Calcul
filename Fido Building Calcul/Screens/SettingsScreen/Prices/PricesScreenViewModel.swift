@@ -37,6 +37,7 @@ import CoreData
     @Published var workSkirtingOfFloatingFloorPrice: String = "0.0"
     @Published var workTilingCeramicPrice: String = "0.0"
     @Published var workPavingCeramicPrice: String = "0.0"
+    @Published var workLargeFormatPavingAndTilingPrice: String = "0.0"
     @Published var workGroutingPrice: String = "0.0"
     @Published var workSiliconingPrice: String = "0.0"
     @Published var workSanitaryCornerValvePrice: String = "0.0"
@@ -146,6 +147,7 @@ import CoreData
             priceList?.workSkirtingOfFloatingFloorPrice = stringToDouble(from: workSkirtingOfFloatingFloorPrice)
             priceList?.workTilingCeramicPrice = stringToDouble(from: workTilingCeramicPrice)
             priceList?.workPavingCeramicPrice = stringToDouble(from: workPavingCeramicPrice)
+            priceList?.workLargeFormatPavingAndTilingPrice = stringToDouble(from: workLargeFormatPavingAndTilingPrice)
             priceList?.workGroutingPrice = stringToDouble(from: workGroutingPrice)
             priceList?.workSiliconingPrice = stringToDouble(from: workSiliconingPrice)
             priceList?.workSanitaryCornerValvePrice = stringToDouble(from: workSanitaryCornerValvePrice)
@@ -247,6 +249,7 @@ import CoreData
             workSkirtingOfFloatingFloorPrice = doubleToString(from: priceList.workSkirtingOfFloatingFloorPrice)
             workTilingCeramicPrice = doubleToString(from: priceList.workTilingCeramicPrice)
             workPavingCeramicPrice = doubleToString(from: priceList.workPavingCeramicPrice)
+            workLargeFormatPavingAndTilingPrice = doubleToString(from: priceList.workLargeFormatPavingAndTilingPrice)
             workGroutingPrice = doubleToString(from: priceList.workGroutingPrice)
             workSiliconingPrice = doubleToString(from: priceList.workSiliconingPrice)
             workSanitaryCornerValvePrice = doubleToString(from: priceList.workSanitaryCornerValvePrice)

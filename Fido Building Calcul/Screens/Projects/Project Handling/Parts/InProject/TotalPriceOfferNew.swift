@@ -140,9 +140,6 @@ struct TotalPriceOffer: View {
                     .background(Color.brandGray)
                     .clipShape(.rect(cornerRadius: 25, style: .continuous))
                     
-                    
-                    #warning("Delete or refactor")
-                    
                     if let invoice = project.toInvoice {
                         Button { behavioursVM.projectsPath.append(invoice) } label: {
                             HStack {
@@ -160,6 +157,8 @@ struct TotalPriceOffer: View {
                                 }
                                 
                                 Spacer()
+                                
+                                invoice.statusCase.bubble
                                     
                                 Image(systemName: "chevron.right")
                                     .font(.system(size: 24))

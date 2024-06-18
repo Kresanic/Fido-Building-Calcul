@@ -15,6 +15,8 @@ struct InvoicePreviewSheet: View {
     let pdfURL: URL
     @State var pdfDoc: PDFDocument?
     @State var showingShareSheet = false
+    @Environment(\.managedObjectContext) var viewContext
+    
     var body: some View {
         VStack {
             if let pdfDoc {
@@ -61,6 +63,9 @@ struct InvoicePreviewSheet: View {
                 .background(.ultraThinMaterial)
                 .simultaneousGesture(TapGesture().onEnded() {
                     project.addToToHistoryEvent(ProjectEvents.invoiceSent.entityObject)
+                    project.addToToHistoryEvent(ProjectEvents.finished.entityObject)
+                    project.status = 3
+                    try? viewContext.save()
                 })
                 
             }

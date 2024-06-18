@@ -386,6 +386,8 @@ extension InvoiceDetails {
         
         if let index {
             invoiceItems[index].changePieces(to: num)
+            let newPrice = num*invoiceItems[index].pricePerPiece
+            invoiceItems[index].changePrice(to: newPrice.round)
             recalculate()
             return invoiceItems[index].pieces
         }
@@ -394,18 +396,19 @@ extension InvoiceDetails {
         
     }
     
-    mutating func changePrice(of id: UUID, to num: Double) -> Double {
+    mutating func changePriceWithoutVat(of id: UUID, to num: Double) -> Double {
         
         let index = invoiceItems.firstIndex{ $0.id == id }
         
         if let index {
             invoiceItems[index].changePrice(to: num)
+            let newPricePerPiece = num/invoiceItems[index].pieces
+            invoiceItems[index].changePricePerPiece(to: newPricePerPiece)
             recalculate()
             return invoiceItems[index].price
         }
         
         return 0
-        
     }
     
     mutating func changeVat(of id: UUID, to num: Double) -> Double {
@@ -416,6 +419,23 @@ extension InvoiceDetails {
             invoiceItems[index].changeVat(to: num)
             recalculate()
             return invoiceItems[index].vat
+        }
+        
+        return 0
+        
+    }
+
+    
+    mutating func changePricePerPiece(of id: UUID, to num: Double) -> Double {
+        
+        let index = invoiceItems.firstIndex{ $0.id == id }
+        
+        if let index {
+            invoiceItems[index].changePricePerPiece(to: num)
+            let newPriceWithoutVAT = num*invoiceItems[index].pieces
+            invoiceItems[index].changePrice(to: newPriceWithoutVAT)
+            recalculate()
+            return invoiceItems[index].pricePerPiece
         }
         
         return 0
@@ -434,6 +454,22 @@ extension InvoiceDetails {
         
         return !state
         
+    }
+    
+    func getPricePerPiece(of id: UUID) -> Double {
+        let index = invoiceItems.firstIndex{ $0.id == id }
+        if let index {
+            return invoiceItems[index].pricePerPiece
+        }
+        return 0.0
+    }
+    
+    func getPriceWithoutVAT(of id: UUID) -> Double {
+        let index = invoiceItems.firstIndex{ $0.id == id }
+        if let index {
+            return invoiceItems[index].price
+        }
+        return 0.0
     }
     
 }
@@ -600,6 +636,7 @@ struct InvoiceItem: Identifiable {
     var id: UUID
     var title: LocalizedStringKey
     var pieces: Double
+    var pricePerPiece: Double
     var price: Double
     var vat: Double
     var unit: UnitsOfMeasurement
@@ -612,6 +649,7 @@ struct InvoiceItem: Identifiable {
         self.title = priceBillRow.name
         self.pieces = priceBillRow.pieces
         self.price = round(priceBillRow.price*100)/100
+        self.pricePerPiece = round(priceBillRow.price/priceBillRow.pieces*100)/100
         self.unit = priceBillRow.unit
         self.vat = vat
         self.category = category
@@ -619,8 +657,8 @@ struct InvoiceItem: Identifiable {
         
     }
     
-    var pricePerPiece: Double {
-        return round((price/pieces)*100)/100
+    mutating func changePricePerPiece(to num: Double) {
+        self.pricePerPiece = num
     }
     
     mutating func changeTitle(to str: String) {

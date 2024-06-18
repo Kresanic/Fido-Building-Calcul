@@ -90,6 +90,7 @@ struct PricesScreen: View {
                         VStack {
                             PriceWorkBubble(work: TileCeramic.self, price: $viewModel.workTilingCeramicPrice, viewModel: viewModel)
                             PriceWorkBubble(work: PavingCeramic.self, price: $viewModel.workPavingCeramicPrice, viewModel: viewModel)
+                            PriceWorkBubble(work: LargeFormatPavingAndTiling.self, price: $viewModel.workLargeFormatPavingAndTilingPrice, viewModel: viewModel)
                             PriceWorkBubble(work: Grouting.self, price: $viewModel.workGroutingPrice, viewModel: viewModel)
                             PriceWorkBubble(work: Siliconing.self, price: $viewModel.workSiliconingPrice, viewModel: viewModel)
                             PriceBubble(title: InstallationOfSanitary.generalTitle, subTitle: InstallationOfSanitary.cornerValveSubTitle, price: $viewModel.workSanitaryCornerValvePrice, unit: InstallationOfSanitary.unit, viewModel: viewModel)

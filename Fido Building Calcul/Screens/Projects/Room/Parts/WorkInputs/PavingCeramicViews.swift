@@ -191,6 +191,16 @@ fileprivate struct PavingCeramicEditor: View {
                     
                 }.task { if fetchedEntity.dateCreated ?? Date.now >= Date().addingTimeInterval(-10) { withAnimation { focusedDimension = .first } } }
                     .workInputsToolbar(focusedDimension: $focusedDimension, size1: $width, size2: $length)
+            
+                VStack(alignment: .leading, spacing: 5) {
+                    
+                    ComplementaryWorksBubble(work: LargeFormatPavingAndTiling.self, isSwitchedOn: fetchedEntity.largeFormat, subTitle: true) {
+                        fetchedEntity.largeFormat.toggle()
+                        saveAll()
+                    }
+                    
+                }.padding(.horizontal, 10)
+                .padding(.bottom, 10)
                 
             }.padding(.horizontal, 10)
             
@@ -223,7 +233,10 @@ fileprivate struct PavingCeramicEditor: View {
     }
     
     private func saveAll() {
-        withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) { try? viewContext.save() }
+        withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) {
+            try? viewContext.save()
+            behavioursVM.redraw()
+        }
     }
     
 }

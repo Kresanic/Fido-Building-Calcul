@@ -36,8 +36,22 @@ extension View {
         return modifier(CTAPopUp())
     }
     
-    func invoiceBuilderToolbar(focused: FocusState<InvoiceBuilderItemFocuses?>.Binding, _ pieces: Binding<String>,_ pricePerPiece: Binding<String>,_ vat: Binding<String>,_ withoutVAT: Binding<String>) -> some View {
-        modifier(InvoiceItemInputsToolBar(focusedDimension: focused, pieces: pieces, pricePerPiece: pricePerPiece, vat: vat, withoutVAT: withoutVAT))
+    func invoiceBuilderToolbar(focused: FocusState<InvoiceBuilderItemFocuses?>.Binding, 
+                               viewModel: InvoiceBuilderViewModel,
+                               itemID: UUID,
+                               _ title: Binding<String>,
+                               _ pieces: Binding<String>,
+                               _ pricePerPiece: Binding<String>,
+                               _ vat: Binding<String>,
+                               _ withoutVAT: Binding<String>) -> some View {
+        modifier(InvoiceItemInputsToolBar(focusedDimension: focused,
+                                          viewModel: viewModel,
+                                          itemID: itemID,
+                                          title: title,
+                                          pieces: pieces,
+                                          pricePerPiece: pricePerPiece,
+                                          vat: vat,
+                                          withoutVAT: withoutVAT))
     }
     
     func tripleWorkInputsToolbar(focusedDimension: FocusState<TripleFocusedDimension?>.Binding, size1: Binding<String>, size2: Binding<String>, size3: Binding<String>) -> some View {
@@ -296,6 +310,10 @@ struct Redrawable: ViewModifier {
 struct InvoiceItemInputsToolBar: ViewModifier {
     
     var focusedDimension: FocusState<InvoiceBuilderItemFocuses?>.Binding
+    @Environment(\.dismiss) var dismiss
+    @ObservedObject var viewModel: InvoiceBuilderViewModel
+    var itemID: UUID
+    @Binding var title: String
     @Binding var pieces: String
     @Binding var pricePerPiece: String
     @Binding var vat: String
@@ -316,13 +334,16 @@ struct InvoiceItemInputsToolBar: ViewModifier {
                         }
                     }
                 }
-        
+    
     @ViewBuilder
     private func keyboardToolbarContent() -> some View {
         HStack(spacing: 0) {
             if focusedDimension.wrappedValue == .withoutVAT {
                 Spacer().frame(width: 75)
                 mathSymbols()
+                button(.done)
+            } else if focusedDimension.wrappedValue == .textField{
+                Spacer()
                 button(.done)
             } else {
                 button(.done)
@@ -399,13 +420,22 @@ struct InvoiceItemInputsToolBar: ViewModifier {
             case .some(let focused):
                 switch focused {
                 case .count:
-                    changedCount()
+                    pieces = calculate(on: pieces)
+                    pieces = viewModel.invoiceDetails.changePieces(of: itemID, to: pieces.toDouble).round.toString
+                    withoutVAT = viewModel.invoiceDetails.getPriceWithoutVAT(of: itemID).round.toString
                 case .pricePerPiece:
-                    changedPricePerCount()
+                    pricePerPiece = calculate(on: pricePerPiece)
+                    pricePerPiece = viewModel.invoiceDetails.changePricePerPiece(of: itemID, to: pricePerPiece.toDouble).round.toString
+                    withoutVAT = viewModel.invoiceDetails.getPriceWithoutVAT(of: itemID).round.toString
                 case .VAT:
-                    changedVAT()
+                    vat = calculate(on: vat)
+                    vat = viewModel.invoiceDetails.changeVat(of: itemID, to: vat.toDouble).round.toString
                 case .withoutVAT:
-                    changedVAT()
+                    withoutVAT = calculate(on: withoutVAT)
+                    withoutVAT = viewModel.invoiceDetails.changePriceWithoutVat(of: itemID, to: withoutVAT.toDouble).round.toString
+                    pricePerPiece = viewModel.invoiceDetails.getPricePerPiece(of: itemID).round.toString
+                case .textField:
+                    title = viewModel.invoiceDetails.changeTitle(of: itemID, to: title)
                 }
             case .none:
                 break
@@ -449,6 +479,8 @@ struct InvoiceItemInputsToolBar: ViewModifier {
                 } else {
                     impactHeavy.impactOccurred()
                 }
+            case .textField:
+                break
             }
         case .none:
             break
@@ -456,32 +488,32 @@ struct InvoiceItemInputsToolBar: ViewModifier {
         impactMed.impactOccurred()
     }
     
-    private func changedCount() {
-        withAnimation {
-            pieces = calculate(on: pieces)
-            pricePerPiece = (withoutVAT.toDouble/pieces.toDouble).round.toString
-        }
-    }
-    
-    private func changedPricePerCount() {
-        withAnimation {
-            pricePerPiece = calculate(on: pricePerPiece)
-            withoutVAT = (pricePerPiece.toDouble*pieces.toDouble).round.toString
-        }
-    }
-    
-    private func changedVAT() {
-        withAnimation {
-            vat = calculate(on: vat)
-        }
-    }
-    
-    private func changedWithoutVAT() {
-        withAnimation {
-            withoutVAT = calculate(on: withoutVAT)
-            pricePerPiece = (withoutVAT.toDouble/pieces.toDouble).round.toString
-        }
-    }
+//    private func changedCount() {
+//        withAnimation {
+//            pieces = calculate(on: pieces)
+//            pricePerPiece = (withoutVAT.toDouble/pieces.toDouble).round.toString
+//        }
+//    }
+//    
+//    private func changedPricePerCount() {
+//        withAnimation {
+//            pricePerPiece = calculate(on: pricePerPiece)
+//            withoutVAT = (pricePerPiece.toDouble*pieces.toDouble).round.toString
+//        }
+//    }
+//    
+//    private func changedVAT() {
+//        withAnimation {
+//            vat = calculate(on: vat)
+//        }
+//    }
+//    
+//    private func changedWithoutVAT() {
+//        withAnimation {
+//            withoutVAT = calculate(on: withoutVAT)
+//            pricePerPiece = (withoutVAT.toDouble/pieces.toDouble).round.toString
+//        }
+//    }
     
 }
 

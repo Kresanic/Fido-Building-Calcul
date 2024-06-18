@@ -595,6 +595,16 @@
         }
       }
     },
+    "above 60cm" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nad 60cm"
+          }
+        }
+      }
+    },
     "Access" : {
       "localizations" : {
         "sk" : {
@@ -2362,6 +2372,26 @@
         }
       }
     },
+    "finished" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ukončený"
+          }
+        }
+      }
+    },
+    "Finished" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukončený"
+          }
+        }
+      }
+    },
     "Flat" : {
       "localizations" : {
         "sk" : {
@@ -2463,7 +2493,7 @@
         }
       }
     },
-    "Generate Invocie" : {
+    "Generate Invoice" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
@@ -2723,6 +2753,16 @@
         }
       }
     },
+    "Invoice Generated" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faktúra vygenerovaná "
+          }
+        }
+      }
+    },
     "Invoice number" : {
       "localizations" : {
         "sk" : {
@@ -2849,6 +2889,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "km"
+          }
+        }
+      }
+    },
+    "Large Format" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veľkoformát"
           }
         }
       }
@@ -3659,6 +3709,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dlažba, keramická"
+          }
+        }
+      }
+    },
+    "Paving, large format" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dlažba, veľkoformát"
           }
         }
       }
@@ -4840,6 +4900,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Obklad, keramický"
+          }
+        }
+      }
+    },
+    "Tiling, large format" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obklad, veľkoformát"
           }
         }
       }

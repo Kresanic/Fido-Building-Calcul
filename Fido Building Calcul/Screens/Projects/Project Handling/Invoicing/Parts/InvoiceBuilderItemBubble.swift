@@ -9,7 +9,7 @@ import SwiftUI
 
 enum InvoiceBuilderItemFocuses {
     
-    case count, pricePerPiece, VAT, withoutVAT
+    case count, pricePerPiece, VAT, withoutVAT, textField
     
     var advance: Self? {
         switch self {
@@ -20,6 +20,8 @@ enum InvoiceBuilderItemFocuses {
         case .VAT:
             .withoutVAT
         case .withoutVAT:
+            nil
+        case .textField:
             nil
         }
     }
@@ -85,11 +87,14 @@ struct InvoiceBuilderItemBubble: View {
                 VStack(alignment: .leading, spacing: 0) {
                     
                     TextField("Name", text: $title, onEditingChanged: { _ in
-                        withAnimation { title = viewModel.invoiceDetails.changeTitle(of: itemID, to: title) }
+                        
                     })
                     .font(.system(size: isRetracted ? 21 : 24, weight: .medium))
                     .foregroundStyle(foregroundTextColor)
                     .multilineTextAlignment(.leading)
+                    .lineLimit(item.category == .other ? 1...4 : 1...1)
+                    .onSubmit { focused = focused?.advance }
+                    .focused($focused, equals: .textField)
                     .submitLabel(.done)
                     .disabled(isRetracted)
                     
@@ -215,9 +220,7 @@ struct InvoiceBuilderItemBubble: View {
                     .background(.brandWhite)
                     .clipShape(.rect(cornerRadius: 20, style: .continuous))
                     .padding(.vertical, 10)
-                    .invoiceBuilderToolbar(focused: $focused, $pieces, $pricePerPiece, $vat, $price)
                     
-                
                 VStack(alignment: .trailing) {
                     
                     let priceD = stringToDouble(from: price)
@@ -236,9 +239,7 @@ struct InvoiceBuilderItemBubble: View {
             
         }.frame(maxWidth: .infinity)
             .padding(isRetracted ? 10 : 15)
-            .background {
-                backgroundColor.onTapGesture { dismissKeyboard() }.ignoresSafeArea()
-            }
+            .background { backgroundColor.onTapGesture { dismissKeyboard() }.ignoresSafeArea() }
             .clipShape(RoundedRectangle(cornerRadius: isRetracted ? 21 : 28, style: .continuous))
             .onChange(of: isRetracted) { value in
                 if !value {
@@ -251,6 +252,14 @@ struct InvoiceBuilderItemBubble: View {
                     withAnimation { scrollProxy.scrollTo(item.id, anchor: .top) }
                 }
             }
+            .invoiceBuilderToolbar(focused: $focused,
+                                   viewModel: viewModel,
+                                   itemID: itemID,
+                                   $title,
+                                   $pieces,
+                                   $pricePerPiece,
+                                   $vat,
+                                   $price)
         
     }
      

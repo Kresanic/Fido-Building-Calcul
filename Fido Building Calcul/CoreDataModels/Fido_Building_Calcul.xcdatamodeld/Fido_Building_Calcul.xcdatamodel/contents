@@ -241,6 +241,7 @@
     <entity name="PavingCeramic" representedClassName=".PavingCeramic" syncable="YES" codeGenerationType="category">
         <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="largeFormat" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="size1" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="size2" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="fromRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="containsPavingCeramics" inverseEntity="Room"/>
@@ -377,6 +378,7 @@
         <attribute name="workFacadePlastering" attributeType="Double" minValueString="0" defaultValueString="80" usesScalarValueType="YES"/>
         <attribute name="workGroutingPrice" attributeType="Double" minValueString="0" defaultValueString="5" usesScalarValueType="YES"/>
         <attribute name="workInstallationOfCornerBeadPrice" attributeType="Double" minValueString="0" defaultValueString="3" usesScalarValueType="YES"/>
+        <attribute name="workLargeFormatPavingAndTilingPrice" optional="YES" attributeType="Double" defaultValueString="80" usesScalarValueType="YES"/>
         <attribute name="workLayingFloatingFloorsPrice" attributeType="Double" minValueString="0" defaultValueString="7" usesScalarValueType="YES"/>
         <attribute name="workLevellingPrice" attributeType="Double" minValueString="0" defaultValueString="7" usesScalarValueType="YES"/>
         <attribute name="workNettingCeilingPrice" attributeType="Double" minValueString="0" defaultValueString="8" usesScalarValueType="YES"/>
@@ -496,6 +498,7 @@
     <entity name="TileCeramic" representedClassName=".TileCeramic" syncable="YES" codeGenerationType="category">
         <attribute name="cId" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="largeFormat" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="size1" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="size2" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="containsDoors" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Door" inverseName="inTileCeramic" inverseEntity="Door"/>

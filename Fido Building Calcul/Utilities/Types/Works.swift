@@ -18,3 +18,19 @@ public class AuxiliaryAndFinishingWork: WorkType {
     static var unit: UnitsOfMeasurement = .percentage
     
 }
+
+public class LargeFormatPavingAndTiling: WorkType {
+    
+    var dateCreated: Date?
+    
+    static var title: LocalizedStringKey = "Large Format"
+    
+    static var subTitle: LocalizedStringKey = "above 60cm"
+    
+    static var pavingBillTitle: LocalizedStringKey = "Paving, large format"
+    
+    static var tilingBillTitle: LocalizedStringKey = "Tiling, large format"
+    
+    static var unit: UnitsOfMeasurement = .squareMeter
+    
+}

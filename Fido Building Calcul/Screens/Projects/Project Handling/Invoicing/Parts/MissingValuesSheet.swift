@@ -116,10 +116,12 @@ struct InvoiceMissingValuesSheet: View {
         
         invoice.status = InvoiceStatus.unpaid.rawValue
         
+        viewModel.project.addToToHistoryEvent(ProjectEvents.invoiceGenerated.entityObject)
+        
         try? viewContext.save()
         
         isShowingPDF = true
-        
+        viewModel.wasPDFShown = true
     }
     
 }

@@ -366,16 +366,48 @@ final class PricingCalculations: ObservableObject {
         priceBill.addWorks(skirtingFloatingFloorRow)
         
         // TilingCeramic
-        let tilingCeramicPieces = room.associatedTileCeramics.reduce(0.0, { $0 + $1.cleanArea }) + additiveTilingPieces
+        let tilingCeramicPieces = room.associatedTileCeramics.reduce(0.0, {
+            if !$1.largeFormat {
+                return $0 + $1.cleanArea
+            } else {
+                return $0
+            }
+        }) + additiveTilingPieces
         let tilingCeramicPrice = tilingCeramicPieces * priceList.workTilingCeramicPrice
         let tilingCeramicRow = PriceBillRow(name: TileCeramic.billSubTitle, pieces: tilingCeramicPieces, unit: .squareMeter, price: tilingCeramicPrice)
         priceBill.addWorks(tilingCeramicRow)
         
+        let tilingLFCeramicPieces = room.associatedTileCeramics.reduce(0.0, {
+            if $1.largeFormat {
+                return $0 + $1.cleanArea
+            } else { return $0 }
+        })
+        let tilingLFCeramicPrice = tilingLFCeramicPieces * priceList.workLargeFormatPavingAndTilingPrice
+        let tilingLFCeramicRow = PriceBillRow(name: LargeFormatPavingAndTiling.tilingBillTitle, pieces: tilingLFCeramicPieces, unit: .squareMeter, price: tilingLFCeramicPrice)
+        priceBill.addWorks(tilingLFCeramicRow)
+        
         // PavingCeramic
-        let pavingCeramicPieces = room.associatedPavingCeramics.reduce(0.0, { $0 + $1.area })
+        let pavingCeramicPieces = room.associatedPavingCeramics.reduce(0.0, {
+            if !$1.largeFormat {
+                return $0 + $1.area
+            } else {
+                return $0
+            }
+        })
         let pavingCeramicPrice = pavingCeramicPieces * priceList.workPavingCeramicPrice
         let pavingCeramicRow = PriceBillRow(name: PavingCeramic.billSubTitle, pieces: pavingCeramicPieces, unit: .squareMeter, price: pavingCeramicPrice)
         priceBill.addWorks(pavingCeramicRow)
+        
+        let pavingLFCeramicPieces = room.associatedPavingCeramics.reduce(0.0, {
+            if $1.largeFormat {
+                return $0 + $1.area
+            } else {
+                return $0
+            }
+        })
+        let pavingLFCeramicPrice = pavingLFCeramicPieces * priceList.workLargeFormatPavingAndTilingPrice
+        let pavingLFCeramicRow = PriceBillRow(name: LargeFormatPavingAndTiling.pavingBillTitle, pieces: pavingLFCeramicPieces, unit: .squareMeter, price: pavingLFCeramicPrice)
+        priceBill.addWorks(pavingLFCeramicRow)
         
         // Grouting
         let groutingTilesAndPavingPieces = room.associatedGroutings.reduce(0.0, { $0 + $1.area }) + tilingCeramicPieces + pavingCeramicPieces

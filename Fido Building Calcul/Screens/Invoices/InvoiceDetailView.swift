@@ -13,14 +13,14 @@ struct InvoiceDetailView: View {
     @FetchRequest var fetchedInvoices: FetchedResults<Invoice>
     @State var dialog: Dialog?
     @State var isShowingPreview = false
-    
+    var invoiceProject: Project?
     @EnvironmentObject var behaviours: BehavioursViewModel
     
     @Environment(\.managedObjectContext) var viewContext
     @Environment(\.dismiss) var dismiss
     
     init(invoice: Invoice) {
-        
+        self.invoiceProject = invoice.toProject
         let request = Invoice.fetchRequest()
         
         request.sortDescriptors = [NSSortDescriptor(keyPath: \Invoice.dateCreated, ascending: false)]
@@ -232,6 +232,17 @@ struct InvoiceDetailView: View {
                                             .clipShape(.rect(cornerRadius: 20, style: .continuous))
                                     }
                             }
+                            .simultaneousGesture(TapGesture().onEnded() {
+                                if let project = invoiceProject {
+                                    project.addToToHistoryEvent(ProjectEvents.invoiceSent.entityObject)
+                                    project.addToToHistoryEvent(ProjectEvents.finished.entityObject)
+                                    project.status = 3
+                                }
+                                if let fInvoice = fetchedInvoices.first {
+                                    fInvoice.status = "unpaid"
+                                }
+                                try? viewContext.save()
+                            })
                         }
                         
                     }
