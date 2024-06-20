@@ -60,6 +60,7 @@ struct InvoiceBuilderView: View {
                         InvoiceBuilderSummaryView(viewModel: viewModel)
                         
                         InvoiceBuilderSettingsView(viewModel: viewModel)
+                        
 //                        VStack(spacing: 0) {
 //                            Text("Settings")
 //                                .font(.system(size: 28, weight: .semibold))
@@ -215,7 +216,6 @@ struct InvoiceBuilderView: View {
 //                        }
 //                        }
                         
-                        
                         Text("Items")
                             .font(.system(size: 28, weight: .semibold))
                             .foregroundStyle(.brandBlack)
@@ -286,7 +286,7 @@ struct InvoiceBuilderView: View {
                 
             }
             .scrollDismissesKeyboard(.interactively)
-            .background{ Color.brandWhite.onTapGesture{ dismissKeyboard() } }
+            .background{ Color.brandWhite.onTapGesture{ dismissKeyboard() }.ignoresSafeArea() }
             .sheet(item: $viewModel.dialogWindow) { dialog in
                 DialogWindow(dialog: dialog)
             }

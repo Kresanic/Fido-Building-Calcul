@@ -62,10 +62,10 @@ struct SettingsScreen: View {
                                     .styleOfBubblesInSettings(subTitle: "set appearance of the app")
                             }
                             
-                            NavigationLink(value: SettingsNavigation.invoice) {
-                                Text("Invoice")
-                                    .styleOfBubblesInSettings(subTitle: "invoice settings")
-                            }
+//                            NavigationLink(value: SettingsNavigation.invoice) {
+//                                Text("Invoice")
+//                                    .styleOfBubblesInSettings(subTitle: "invoice settings")
+//                            }
                             
                         }
                         

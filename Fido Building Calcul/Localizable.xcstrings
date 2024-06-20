@@ -190,7 +190,7 @@
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%lld dni"
+            "value" : "%lld dní"
           }
         }
       }
@@ -1937,7 +1937,7 @@
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "dni"
+            "value" : "dní"
           }
         }
       }
@@ -2763,6 +2763,16 @@
         }
       }
     },
+    "Invoice maturity" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doba splatnosti"
+          }
+        }
+      }
+    },
     "Invoice number" : {
       "localizations" : {
         "sk" : {
@@ -2804,6 +2814,7 @@
       }
     },
     "invoice settings" : {
+      "extractionState" : "stale",
       "localizations" : {
         "sk" : {
           "stringUnit" : {
@@ -5420,6 +5431,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nesprávna štruktúra e-mailu."
+          }
+        }
+      }
+    },
+    "XY" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XY"
           }
         }
       }
