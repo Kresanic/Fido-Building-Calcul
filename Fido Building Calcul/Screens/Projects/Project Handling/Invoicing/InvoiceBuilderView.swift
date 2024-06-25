@@ -291,7 +291,8 @@ struct InvoiceBuilderView: View {
                 DialogWindow(dialog: dialog)
             }
             .sheet(isPresented: $viewModel.isShowingPDF) {
-                InvoicePreviewSheet(project: viewModel.project, pdfURL: viewModel.invoiceDetails.pdfURL)
+                InvoicePreviewSheet(project: viewModel.project, pdfURL: viewModel.invoiceDetails.pdfURL, cashReceiptURL: viewModel.invoiceDetails.cashReceiptURL)
+                    .presentationCornerRadius(30)
                     .onDisappear { dismiss() }
             }
             .sheet(isPresented: $viewModel.isShowingMissingValues) {

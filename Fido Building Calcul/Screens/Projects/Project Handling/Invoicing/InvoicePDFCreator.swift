@@ -258,6 +258,11 @@ import CoreData
                 PDFContractorInfoView(contractor: contractor)
             }
             
+            Text(NSLocalizedString("Created using Fido Building Calcul app.", comment: ""))
+                .font(.system(size: 10))
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .padding(.top, 10)
+            
         }.padding(.horizontal, 35)
             .padding(.vertical, 35)
             .frame(width: 630)
@@ -309,6 +314,129 @@ import CoreData
         }
         
         return nil
+        
+    }
+    
+    func renderCashReceipt() -> URL {
+        
+        let pdfContent = contentCashReceipt()
+        
+        let renderer = ImageRenderer(content: pdfContent)
+        
+        let url = URL.documentsDirectory.appending(path: "\(invoiceDetails.titleCashReceipt).pdf")
+        
+        renderer.render { size, context in
+            
+            var box = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+            
+            guard let pdf = CGContext(url as CFURL, mediaBox: &box, nil) else { return }
+            
+            pdf.beginPDFPage(nil)
+            
+            context(pdf)
+            
+            pdf.endPDFPage()
+            pdf.closePDF()
+        }
+    
+        return url
+    }
+    
+    func contentCashReceipt() -> some View {
+        
+        VStack(alignment: .leading, spacing: 0) {
+            
+            let localizedCashReceipt = NSLocalizedString("Cash Receipt", comment: "")
+            
+            Text("\(localizedCashReceipt) \(invoiceDetails.invoiceNumber)")
+            
+            HStack {
+                
+                let paymentForInvoiceLoc = NSLocalizedString("Payment for Invoice", comment: "")
+                
+                PDFInvoiceSummaryBubble(title: NSLocalizedString("Purpose", comment: ""), value: "\(paymentForInvoiceLoc) \(invoiceDetails.invoiceNumber)")
+                
+                PDFInvoiceSummaryBubble(title: NSLocalizedString("Date of Issue", comment: ""), value: invoiceDetails.dateCreated.formatted(date: .numeric, time: .omitted))
+                
+                PDFInvoiceSummaryBubble(title: NSLocalizedString("Price total", comment: ""), value: invoiceDetails.totalPrice.formatted(.currency(code: Locale.current.currency?.identifier ?? "USD")))
+                
+            }.padding(.vertical, 15)
+            
+            HStack {
+                
+                if let client = invoiceDetails.client {
+                    
+                    VStack(alignment: .leading) {
+                        
+                        Text(NSLocalizedString("Customer", comment: ""))
+                            .font(.system(size: 13, weight: .bold))
+                        
+                        PDFClientInfoView(client: client, isVertical: true)
+                        
+                        Spacer()
+                        
+                    }
+                    
+                }
+                
+                Spacer()
+                
+                VStack(alignment: .trailing, spacing: 10) {
+                    
+                    if let contractor = invoiceDetails.contractor, let name = contractor.name {
+                        
+                        HStack(spacing: 5) {
+                            
+                            Text(NSLocalizedString("Made by", comment: ""))
+                                .font(.system(size: 15))
+                            
+                            Spacer()
+                            
+                            Text(name)
+                                .font(.system(size: 15))
+                                .frame(width: 125, alignment: .trailing)
+                            
+                        }
+                    }
+                    
+                    Rectangle().foregroundStyle(Color.brandBlack).frame(maxWidth: .infinity).frame(height: 1)
+                    
+                    PDFInvoiceTotalPriceView(invoiceDetails)
+                    
+                    if let imageData = invoiceDetails.contractor?.signature, let signature =  UIImage(data: imageData) {
+                        VStack(alignment: .leading, spacing: 3) {
+                            
+                            Text(NSLocalizedString("Issued by:", comment: ""))
+                                .font(.system(size: 10, weight: .medium))
+                                .foregroundStyle(.brandBlack)
+                            
+                            Image(uiImage: signature)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 140, height: 80)
+                                .clipShape(.rect(cornerRadius: 10, style: .continuous))
+                        }.padding(.top, 10)
+                    }
+                    Spacer()
+                }.frame(width: 280)
+                
+            }
+            
+            Spacer()
+            
+            if let contractor = invoiceDetails.contractor {
+                PDFContractorInfoView(contractor: contractor)
+            }
+            
+            Text(NSLocalizedString("Created using Fido Building Calcul app.", comment: ""))
+                .font(.system(size: 10))
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .padding(.top, 10)
+            
+        }.padding(.horizontal, 35)
+            .padding(.vertical, 35)
+            .frame(width: 630)
+            .frame(minHeight: 500, alignment: .top)
         
     }
     
@@ -464,10 +592,10 @@ struct PDFInvoiceTotalPriceView: View {
                 
                 HStack(spacing: 5) {
                     
-                    Spacer()
-                    
                     Text(NSLocalizedString("without VAT", comment: ""))
                         .font(.system(size: 15))
+                    
+                    Spacer()
                     
                     Text(formattedPrice)
                         .font(.system(size: 15))
@@ -480,10 +608,10 @@ struct PDFInvoiceTotalPriceView: View {
                 
                 HStack(spacing: 5) {
                     
-                    Spacer()
-                    
                     Text(NSLocalizedString("VAT", comment: ""))
                         .font(.system(size: 15))
+                    
+                    Spacer()
                     
                     Text(formattedPrice)
                         .font(.system(size: 15))
@@ -496,10 +624,10 @@ struct PDFInvoiceTotalPriceView: View {
                 
                 HStack(spacing: 5) {
                     
-                    Spacer()
-                    
                     Text(NSLocalizedString("Total price", comment: ""))
                         .font(.system(size: 17, weight: .semibold))
+                    
+                    Spacer()
                     
                     Text(formattedPrice)
                         .font(.system(size: 17, weight: .semibold))
@@ -510,7 +638,7 @@ struct PDFInvoiceTotalPriceView: View {
                 
             }
          
-        }
+        }.frame(width: 280)
     }
     
 }
@@ -539,7 +667,7 @@ struct PDFInvoiceSummaryBubble: View {
                 
             }.padding(.horizontal, 8)
                 .frame(height: 50)
-                .frame(maxWidth: .infinity)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .background { RoundedRectangle(cornerRadius: 13, style: .continuous).strokeBorder(.brandGray, lineWidth: 1) }
         }
         

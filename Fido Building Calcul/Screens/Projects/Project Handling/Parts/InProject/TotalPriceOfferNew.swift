@@ -130,7 +130,7 @@ struct TotalPriceOffer: View {
                                     pdfViewModel.sharePDF(from: project)
                                 } else { isShowingPayWall = true }
                             } label: {
-                                PDFExportButtonSmall()
+                                PDFExportButtonSmall(title: "Send")
                             }
                             
                         }

@@ -12,6 +12,7 @@ struct InvoicePDFDocumentPreviewSheet: View {
     
     @Environment(\.dismiss) var dismiss
     @State var pdfDoc: PDFDocument?
+    var isPreviewingInvoice = true
     
     var body: some View {
         VStack {
@@ -29,7 +30,7 @@ struct InvoicePDFDocumentPreviewSheet: View {
                     
                     Spacer().frame(width: 50)
                     
-                    Text("Invoice Preview")
+                    Text(isPreviewingInvoice ? "Invoice Preview" : "Cash Receipt Preview")
                         .font(.system(size: 20, weight: .medium))
                         .foregroundStyle(Color.brandBlack)
                         .frame(maxWidth: .infinity, alignment: .center)
@@ -71,6 +72,9 @@ fileprivate struct PDFKitView: UIViewRepresentable {
         let pdfView = PDFView()
         pdfView.document = pdfDocument
         pdfView.autoScales = true
+        if let brandGray = UIColor(named: "brandGray") {
+            pdfView.backgroundColor = brandGray
+        }
         return pdfView
     }
 

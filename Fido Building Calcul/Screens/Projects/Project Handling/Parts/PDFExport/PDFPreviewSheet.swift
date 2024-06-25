@@ -59,7 +59,7 @@ struct PDFPreviewSheet: View {
                     withAnimation { pdfViewModel.shouldSharePDF = true }
                     dismiss()
                 } label: {
-                    PDFExportButton()
+                    PDFExportButton(title: "Send")
                 }
                     .padding(.top, 15)
                     .padding(.horizontal, 20)

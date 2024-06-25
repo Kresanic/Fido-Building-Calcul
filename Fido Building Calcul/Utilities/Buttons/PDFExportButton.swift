@@ -9,11 +9,13 @@ import SwiftUI
 
 struct PDFExportButton: View {
     
+    var title: LocalizedStringKey
+    
     var body: some View {
         
         HStack(spacing: 5) {
             
-            Text("Send")
+            Text(title)
                 .font(.system(size: 20, weight: .medium))
                 .foregroundStyle(Color.brandWhite)
             
@@ -32,11 +34,13 @@ struct PDFExportButton: View {
 
 struct PDFExportButtonSmall: View {
     
+    var title: LocalizedStringKey
+    
     var body: some View {
         
         HStack(spacing: 5) {
             
-            Text("Send")
+            Text(title)
                 .font(.system(size: 18, weight: .medium))
                 .foregroundStyle(Color.brandWhite)
             

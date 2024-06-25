@@ -631,6 +631,28 @@ extension InvoiceDetails {
     
 }
 
+extension InvoiceDetails {
+    
+    /// InvoiceDetails Extensions Regarding Receipt for Cash payment
+    
+    @MainActor
+    var cashReceiptURL: URL? {
+        if paymentType == .cash {
+            return InvoicePDFCreator(self).renderCashReceipt()
+        } else {
+            return nil
+        }
+    }
+    
+    var titleCashReceipt: String {
+        let localizedCashReceipt = NSLocalizedString("Cash Receipt", comment: "")
+        
+        return "\(localizedCashReceipt) \(invoiceNumber)"
+    }
+    
+    
+}
+
 struct InvoiceItem: Identifiable {
     
     var id: UUID

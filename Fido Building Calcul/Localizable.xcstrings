@@ -1225,6 +1225,26 @@
         }
       }
     },
+    "Cash Receipt" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prijímový doklad"
+          }
+        }
+      }
+    },
+    "Cash Receipt Preview" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Náhľad prijímového dokladu"
+          }
+        }
+      }
+    },
     "ceiling" : {
       "localizations" : {
         "sk" : {
@@ -1918,6 +1938,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dátum vystavenia"
+          }
+        }
+      }
+    },
+    "Date of Issue" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dátum vystavenia:"
           }
         }
       }
@@ -2714,16 +2744,7 @@
       }
     },
     "Invoice" : {
-      "localizations" : {
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Faktúra"
-          }
-        }
-      }
-    },
-    "Invoice (invoice.stringNumber).pdf" : {
+      "comment" : "just",
       "localizations" : {
         "sk" : {
           "stringUnit" : {
@@ -2813,13 +2834,19 @@
         }
       }
     },
-    "invoice settings" : {
-      "extractionState" : "stale",
+    "InvoiceJS" : {
+      "comment" : "just",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invoice"
+          }
+        },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nastavenia faktúr"
+            "value" : "faktúru"
           }
         }
       }
@@ -3090,6 +3117,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "m³"
+          }
+        }
+      }
+    },
+    "Made by" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyhotovil:"
           }
         }
       }
@@ -3754,6 +3791,16 @@
         }
       }
     },
+    "Payment for Invoice" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Úhrada faktúry"
+          }
+        }
+      }
+    },
     "Payment type" : {
       "localizations" : {
         "sk" : {
@@ -4084,7 +4131,17 @@
         }
       }
     },
-    "Preview invoice" : {
+    "Preview Cash Receipt" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Náhľad prijímového dokladu"
+          }
+        }
+      }
+    },
+    "Preview Invoice" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
@@ -4140,6 +4197,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cena za mj."
+          }
+        }
+      }
+    },
+    "Price total" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suma celkom"
           }
         }
       }
@@ -4301,6 +4368,27 @@
         }
       }
     },
+    "Purpose" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Účel"
+          }
+        }
+      }
+    },
+    "Receipt" : {
+      "comment" : "just",
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "prijímový doklad"
+          }
+        }
+      }
+    },
     "Rental duration" : {
       "localizations" : {
         "sk" : {
@@ -4321,12 +4409,22 @@
         }
       }
     },
+    "Resend Cash Receipt" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odoslanie prijímového dokladu"
+          }
+        }
+      }
+    },
     "Resend Invoice" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Opätovné odoslanie faktúry"
+            "value" : "Odoslanie faktúry"
           }
         }
       }
@@ -4467,6 +4565,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Poslať"
+          }
+        }
+      }
+    },
+    "Send Invoice and Receipt" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poslať faktúru a prijímový doklad"
+          }
+        }
+      }
+    },
+    "Send Just %@" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poslať iba %@"
           }
         }
       }

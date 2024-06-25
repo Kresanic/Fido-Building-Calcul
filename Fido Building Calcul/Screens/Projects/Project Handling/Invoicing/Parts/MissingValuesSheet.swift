@@ -69,6 +69,7 @@ struct InvoiceMissingValuesSheet: View {
                             .background(.brandBlack)
                             .clipShape(.capsule)
                     }
+                    .padding(.top, 5)
                     
                     Button {
                         generateInvoiceObject()
@@ -91,7 +92,9 @@ struct InvoiceMissingValuesSheet: View {
             .padding(.horizontal, 15)
         .background(.brandWhiteBackground)
         .sheet(isPresented: $isShowingPDF) {
-            InvoicePreviewSheet(project: viewModel.project, pdfURL: viewModel.invoiceDetails.pdfURL).onDisappear { dismiss() }
+            InvoicePreviewSheet(project: viewModel.project, pdfURL: viewModel.invoiceDetails.pdfURL, cashReceiptURL: viewModel.invoiceDetails.cashReceiptURL)
+                .presentationCornerRadius(30)
+                .onDisappear { dismiss() }
         }
         
     }
@@ -105,6 +108,10 @@ struct InvoiceMissingValuesSheet: View {
         invoice.number = Int64(viewModel.invoiceDetails.invoiceNumber) ?? 0
         
         invoice.pdfFile = try? Data(contentsOf: viewModel.invoiceDetails.pdfURL)
+        
+        if let receiptURL = viewModel.invoiceDetails.cashReceiptURL {
+            invoice.cashReceipt = try? Data(contentsOf: receiptURL)
+        }
         
         invoice.toClient = viewModel.invoiceDetails.client
         invoice.toContractor = viewModel.invoiceDetails.contractor

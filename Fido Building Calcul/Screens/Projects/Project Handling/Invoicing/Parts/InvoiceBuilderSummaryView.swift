@@ -115,6 +115,10 @@ struct InvoiceBuilderSummaryView: View {
             
             invoice.pdfFile = try? Data(contentsOf: viewModel.invoiceDetails.pdfURL)
             
+            if let receiptURL = viewModel.invoiceDetails.cashReceiptURL {
+                invoice.cashReceipt = try? Data(contentsOf: receiptURL)
+            }
+            
             invoice.toClient = viewModel.invoiceDetails.client
             invoice.toContractor = viewModel.invoiceDetails.contractor
             invoice.toProject = viewModel.project

@@ -13,6 +13,7 @@ struct InvoiceDetailView: View {
     @FetchRequest var fetchedInvoices: FetchedResults<Invoice>
     @State var dialog: Dialog?
     @State var isShowingPreview = false
+    @State var isPreviewingCashReceipt = false
     var invoiceProject: Project?
     @EnvironmentObject var behaviours: BehavioursViewModel
     
@@ -189,7 +190,7 @@ struct InvoiceDetailView: View {
                         } label: {
                             HStack {
                                 
-                                Text("Preview invoice")
+                                Text("Preview Invoice")
                                     .font(.system(size: 20, weight: .semibold))
                                     .foregroundStyle(Color.brandBlack)
                                 
@@ -209,7 +210,34 @@ struct InvoiceDetailView: View {
                                 }
                         }
                         
-                        if let pdfURL = generatePDFURL(invoice) {
+                        if let _ = invoice.cashReceipt {
+                            Button {
+                                isPreviewingCashReceipt = true
+                            } label: {
+                                HStack {
+                                    
+                                    Text("Preview Cash Receipt")
+                                        .font(.system(size: 20, weight: .semibold))
+                                        .foregroundStyle(Color.brandBlack)
+                                    
+                                    Spacer()
+                                    
+                                    Image(systemName: "chevron.right")
+                                        .font(.system(size: 24))
+                                        .foregroundStyle(Color.brandBlack)
+                                    
+                                }.padding(15)
+                                    .padding(.vertical, 5)
+                                    .background {
+                                        RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                            .strokeBorder(Color.brandBlack, lineWidth: 1.5)
+                                            .background(Color.brandGray)
+                                            .clipShape(.rect(cornerRadius: 20, style: .continuous))
+                                    }
+                            }
+                        }
+                        
+                        if let pdfURL = generatePDFURL(invoice.pdfFile) {
                             ShareLink(item: pdfURL) {
                                 HStack {
                                     
@@ -245,6 +273,31 @@ struct InvoiceDetailView: View {
                             })
                         }
                         
+                        if let pdfURL = generatePDFURL(invoice.cashReceipt, isInvoice: false) {
+                            ShareLink(item: pdfURL) {
+                                HStack {
+                                    
+                                    Text("Resend Cash Receipt")
+                                        .font(.system(size: 20, weight: .semibold))
+                                        .foregroundStyle(Color.brandBlack)
+                                    
+                                    Spacer()
+                                    
+                                    Image(systemName: "chevron.right")
+                                        .font(.system(size: 24))
+                                        .foregroundStyle(Color.brandBlack)
+                                    
+                                }.padding(15)
+                                    .padding(.vertical, 5)
+                                    .background {
+                                        RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                            .strokeBorder(Color.brandBlack, lineWidth: 1.5)
+                                            .background(Color.brandGray)
+                                            .clipShape(.rect(cornerRadius: 20, style: .continuous))
+                                    }
+                            }
+                        }
+                        
                     }
                     
                     Button {
@@ -267,7 +320,7 @@ struct InvoiceDetailView: View {
                         .clipShape(.capsule)
                         .padding(.horizontal, 50)
                         
-                    }.padding(.top, 20)
+                    }.padding(.top, 15)
                     
                 }.frame(maxWidth: .infinity)
                     .padding(.horizontal, 15)
@@ -285,6 +338,11 @@ struct InvoiceDetailView: View {
                     InvoicePDFDocumentPreviewSheet(pdfDoc: PDFDocument(data: data))
                 }
             }
+            .sheet(isPresented: $isPreviewingCashReceipt) {
+                if let data = invoice.cashReceipt {
+                    InvoicePDFDocumentPreviewSheet(pdfDoc: PDFDocument(data: data))
+                }
+            }
             
         }
         
@@ -298,21 +356,27 @@ struct InvoiceDetailView: View {
         dismiss()
     }
         
-    private func generatePDFURL(_ invoice: Invoice) -> URL? {
+    private func generatePDFURL(_ pdfData: Data?, isInvoice: Bool = true) -> URL? {
         // Check if the PDF data is available
-        guard let pdfData = invoice.pdfFile else {
+        guard let pdfData else {
             print("No PDF data available.")
             return nil
         }
-
+        
         // Get the documents directory URL
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             print("Documents directory is not accessible.")
             return nil
         }
         
-        // Create a unique file name for the PDF
-        let fileName = NSLocalizedString("Invoice \(invoice.stringNumber).pdf", comment: "")
+        var fileName = ""
+        if isInvoice {
+            let invoiceLoc = NSLocalizedString("Invoice", comment: "")
+            fileName = "\(invoiceLoc) \(fetchedInvoices.first?.stringNumber ?? "").pdf"
+        } else {
+            let cashRecLoc = NSLocalizedString("Cash Receipt", comment: "")
+            fileName = "\(cashRecLoc) \(fetchedInvoices.first?.stringNumber ?? "").pdf"
+        }
         let fileURL = documentsDirectory.appendingPathComponent(fileName)
 
         // Write the PDF data to the file

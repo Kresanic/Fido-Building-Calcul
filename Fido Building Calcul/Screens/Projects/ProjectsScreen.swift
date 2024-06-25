@@ -144,6 +144,7 @@ fileprivate struct ProjectScreenTitle: View {
                         } label: {
                                ContractorBubble(contractor: contractor, hasChevron: false)
                         }
+                        
                     }
                     
                     Button { isCreatingContractor = true } label: {
