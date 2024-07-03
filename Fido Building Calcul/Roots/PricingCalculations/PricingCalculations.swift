@@ -409,6 +409,21 @@ final class PricingCalculations: ObservableObject {
         let pavingLFCeramicRow = PriceBillRow(name: LargeFormatPavingAndTiling.pavingBillTitle, pieces: pavingLFCeramicPieces, unit: .squareMeter, price: pavingLFCeramicPrice)
         priceBill.addWorks(pavingLFCeramicRow)
         
+        let plinthCuttingPieces = room.associatedPavingCeramics.reduce(0.0, {
+            $0 + $1.plinthCutting
+        })
+        let plinthCuttingPrice = plinthCuttingPieces * priceList.workPlinthCutting
+        let plinthCuttingRow = PriceBillRow(name: PlinthCutting.billTitle, pieces: plinthCuttingPieces, unit: PlinthCutting.unit, price: plinthCuttingPrice)
+        priceBill.addWorks(plinthCuttingRow)
+        
+        let plinthBondingPieces = room.associatedPavingCeramics.reduce(0.0, {
+            $0 + $1.plinthBonding
+        })
+        let plinthBondingPrice = plinthBondingPieces * priceList.workPlinthBonding
+        let plinthBondingRow = PriceBillRow(name: PlinthBonding.billTitle, pieces: plinthBondingPieces, unit: PlinthBonding.unit, price: plinthBondingPrice)
+        priceBill.addWorks(plinthBondingRow)
+        
+        
         // Grouting
         let groutingTilesAndPavingPieces = room.associatedGroutings.reduce(0.0, { $0 + $1.area }) + tilingCeramicPieces + pavingCeramicPieces
         let groutingTilesAndPavingPrice = groutingTilesAndPavingPieces * priceList.workGroutingPrice

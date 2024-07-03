@@ -84,6 +84,7 @@ struct InvoiceDetailView: View {
                                     .clipShape(.rect(cornerRadius: 10, style: .continuous))
                             }
                         } else {
+                            
                             Button {
                                 if invoice.statusCase == .paid {
                                     withAnimation {

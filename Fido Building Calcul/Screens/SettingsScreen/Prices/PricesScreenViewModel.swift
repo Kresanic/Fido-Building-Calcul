@@ -51,6 +51,9 @@ import CoreData
     @Published var workSanitaryBathtubPrice: String = "0.0"
     @Published var workSanitaryShowerCubiclePrice: String = "0.0"
     @Published var workSanitaryGutterPrice: String = "0.0"
+    @Published var workPlinthCutting: String = "0.0"
+    @Published var workPlinthBonding: String = "0.0"
+    @Published var workJollyEdgingPrice: String = "0.0"
     @Published var workSanitaryUrinal: String = "0.0"
     @Published var workSanitaryBathScreen: String = "0.0"
     @Published var workSanitaryMirror: String = "0.0"
@@ -120,7 +123,9 @@ import CoreData
         let viewContext = PersistenceController.shared.container.viewContext
 
         if priceList != nil {
-            
+            priceList?.workPlinthCutting = stringToDouble(from: workPlinthCutting)
+            priceList?.workPlinthBonding = stringToDouble(from: workPlinthBonding)
+            priceList?.workJollyEdgingPrice = stringToDouble(from: workJollyEdgingPrice)
             priceList?.workDemolitionPrice = stringToDouble(from: workDemolitionPrice)
             priceList?.workWiringPrice = stringToDouble(from: workWiringPrice)
             priceList?.workPlumbingPrice = stringToDouble(from: workPlumbingPrice)
@@ -222,7 +227,9 @@ import CoreData
     func loadPriceList(priceList: PriceList?) {
         
         if let priceList {
-            
+            workPlinthCutting = doubleToString(from: priceList.workPlinthCutting)
+            workPlinthBonding = doubleToString(from: priceList.workPlinthBonding)
+            workJollyEdgingPrice = doubleToString(from: priceList.workJollyEdgingPrice)
             workDemolitionPrice = doubleToString(from: priceList.workDemolitionPrice)
             workWiringPrice = doubleToString(from: priceList.workWiringPrice)
             workPlumbingPrice = doubleToString(from: priceList.workPlumbingPrice)

@@ -8,8 +8,19 @@
 import Foundation
 
 extension Date {
+    
     var iso8601: String {
         let formatter = ISO8601DateFormatter()
         return formatter.string(from: self)
+    }
+    
+    var startOfTheDay: Date {
+        
+        let calendar = Calendar.current
+        
+        let startOfTheDay = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: self)
+        
+        return startOfTheDay ?? self
+        
     }
 }

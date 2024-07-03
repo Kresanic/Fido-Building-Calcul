@@ -34,3 +34,38 @@ public class LargeFormatPavingAndTiling: WorkType {
     static var unit: UnitsOfMeasurement = .squareMeter
     
 }
+
+
+public class JollyEdging: WorkType {
+    
+    static var title: LocalizedStringKey = "Jolly Edging"
+    
+    static var subTitle: LocalizedStringKey = ""
+    
+    static var unit: UnitsOfMeasurement = .meter
+    
+}
+
+public class PlinthCutting: WorkType {
+    
+    static var title: LocalizedStringKey = "Plinth"
+    
+    static var subTitle: LocalizedStringKey = "cutting and grinding"
+    
+    static var billTitle: LocalizedStringKey = "Plinth, cutting/grinding"
+    
+    static var unit: UnitsOfMeasurement = .meter
+    
+}
+
+public class PlinthBonding: WorkType {
+    
+    static var title: LocalizedStringKey = "Plinth"
+    
+    static var subTitle: LocalizedStringKey = "bonding"
+    
+    static var billTitle: LocalizedStringKey = "Plinth, bonding"
+    
+    static var unit: UnitsOfMeasurement = .meter
+    
+}

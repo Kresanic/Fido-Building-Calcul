@@ -104,7 +104,7 @@ struct InvoiceMissingValuesSheet: View {
         let invoice = Invoice(context: viewContext)
         
         invoice.cId = UUID()
-        invoice.dateCreated = Date.now
+        invoice.dateCreated = Date.now.startOfTheDay
         invoice.number = Int64(viewModel.invoiceDetails.invoiceNumber) ?? 0
         
         invoice.pdfFile = try? Data(contentsOf: viewModel.invoiceDetails.pdfURL)

@@ -13,7 +13,7 @@ import SwiftUI
 @objc(TileCeramic)
 public class TileCeramic: NSManagedObject, AreaBasedWorkType {
     
-    static var title: LocalizedStringKey = "Tiling"
+    static var title: LocalizedStringKey = "Tiling under 60cm"
     
     static var subTitle: LocalizedStringKey = "ceramicTiling"
     

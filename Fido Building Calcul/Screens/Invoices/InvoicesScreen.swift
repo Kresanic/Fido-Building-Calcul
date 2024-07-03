@@ -231,13 +231,13 @@ struct InvoiceBubbleView: View {
                     
                     if let projectName = invoice.toProject?.name {
                         
-                        HStack {
+                        HStack(spacing: 3) {
                             
                             Text(invoice.stringNumber)
                                 .font(.system(size: 13, weight: .medium))
                                 .foregroundStyle(Color.brandBlack)
                             
-                            if let date = invoice.dateCreated {
+                            if let date = invoice.dateCreated, invoice.statusCase != .afterMaturity {
                                 Text(date, format: .dateTime.day().month().year())
                                     .font(.system(size: 13, weight: .semibold))
                                     .foregroundStyle(Color.brandBlack.opacity(0.8))
@@ -273,7 +273,7 @@ struct InvoiceBubbleView: View {
                 
                 VStack(alignment: .trailing, spacing: 2) {
                     
-                    invoice.statusCase.bubble
+                    invoice.bubble
                     
                     Text(invoice.priceWithoutVat, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .font(.system(size: 20, weight: .semibold))
@@ -281,10 +281,11 @@ struct InvoiceBubbleView: View {
                         .lineLimit(1)
                         .multilineTextAlignment(.trailing)
                         .foregroundStyle(Color.brandBlack)
-                    
+                        
                     Text("VAT not included")
                         .font(.system(size: 12))
                         .foregroundStyle(Color.brandBlack)
+                        .lineLimit(1)
                     
                 }
                 

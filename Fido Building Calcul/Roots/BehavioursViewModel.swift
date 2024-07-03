@@ -357,6 +357,10 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.workPenetrationCoatingPrice = generalPriceList.workPenetrationCoatingPrice
         newPriceList.workPaintingWallPrice = generalPriceList.workPaintingWallPrice
         newPriceList.workPaintingCeilingPrice = generalPriceList.workPaintingCeilingPrice
+        newPriceList.workPlinthCutting = generalPriceList.workPlinthCutting
+        newPriceList.workPlinthBonding = generalPriceList.workPlinthBonding
+        newPriceList.workJollyEdgingPrice = generalPriceList.workJollyEdgingPrice
+        newPriceList.workLargeFormatPavingAndTilingPrice = generalPriceList.workLargeFormatPavingAndTilingPrice
         newPriceList.workLevellingPrice = generalPriceList.workLevellingPrice
         newPriceList.workLayingFloatingFloorsPrice = generalPriceList.workLayingFloatingFloorsPrice
         newPriceList.workSkirtingOfFloatingFloorPrice = generalPriceList.workSkirtingOfFloatingFloorPrice
@@ -463,10 +467,14 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.workLevellingPrice = originalPriceList.workLevellingPrice
         newPriceList.workLayingFloatingFloorsPrice = originalPriceList.workLayingFloatingFloorsPrice
         newPriceList.workSkirtingOfFloatingFloorPrice = originalPriceList.workSkirtingOfFloatingFloorPrice
+        newPriceList.workLargeFormatPavingAndTilingPrice = originalPriceList.workLargeFormatPavingAndTilingPrice
         newPriceList.workTilingCeramicPrice = originalPriceList.workTilingCeramicPrice
         newPriceList.workPavingCeramicPrice = originalPriceList.workPavingCeramicPrice
         newPriceList.workGroutingPrice = originalPriceList.workGroutingPrice
         newPriceList.workSiliconingPrice = originalPriceList.workSiliconingPrice
+        newPriceList.workPlinthCutting = originalPriceList.workPlinthCutting
+        newPriceList.workPlinthBonding = originalPriceList.workPlinthBonding
+        newPriceList.workJollyEdgingPrice = originalPriceList.workJollyEdgingPrice
         newPriceList.workSanitaryCornerValvePrice = originalPriceList.workSanitaryCornerValvePrice
         newPriceList.workSanitaryStandingMixerTapPrice = originalPriceList.workSanitaryStandingMixerTapPrice
         newPriceList.workSanitaryWallMountedTapPrice = originalPriceList.workSanitaryWallMountedTapPrice

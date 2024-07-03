@@ -184,7 +184,7 @@ fileprivate struct TileCeramicEditor: View {
                     
                     ValueEditingBox(title: .height, value: $length, unit: .meter)
                         .onAppear { length = doubleToString(from: fetchedEntity.size2) }
-                    .focused($focusedDimension, equals: .second)
+                        .focused($focusedDimension, equals: .second)
                         .onChange(of: length) { _ in
                             fetchedEntity.size2 = stringToDouble(from: length)
                             try? viewContext.save()
@@ -262,7 +262,6 @@ fileprivate struct DoorViewsForTileCeramic: View {
     @FetchRequest var fetchedParent: FetchedResults<TileCeramic>
     @Environment(\.managedObjectContext) var viewContext
     
-    
     init(tileCeramic: TileCeramic) {
         
         let entityRequest = TileCeramic.fetchRequest()
@@ -338,9 +337,7 @@ fileprivate struct DoorViewsForTileCeramic: View {
         
     }
     
-    private func saveAll() {
-        withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) { try? viewContext.save() }
-    }
+    private func saveAll() { withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) { try? viewContext.save() } }
     
 }
 
@@ -348,9 +345,7 @@ fileprivate struct DoorViewsForTileCeramic: View {
 fileprivate struct WindowViewsForTileCeramic: View {
     
     @FetchRequest var fetchedParent: FetchedResults<TileCeramic>
-    
     @Environment(\.managedObjectContext) var viewContext
-    
     
     init(tileCeramic: TileCeramic) {
         
@@ -365,8 +360,6 @@ fileprivate struct WindowViewsForTileCeramic: View {
         _fetchedParent = FetchRequest(fetchRequest: entityRequest)
         
     }
-    
-    
     
     var body: some View {
         
