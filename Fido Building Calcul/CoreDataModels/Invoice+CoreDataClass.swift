@@ -47,7 +47,7 @@ public class Invoice: NSManagedObject {
 
     var statusCase: InvoiceStatus {
         
-        testStatus()
+//        testStatus()
         
         let currentCase = InvoiceStatus(rawValue: status ?? "unpaid") ?? .unpaid
         
