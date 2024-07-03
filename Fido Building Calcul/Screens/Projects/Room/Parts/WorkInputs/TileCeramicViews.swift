@@ -120,6 +120,8 @@ fileprivate struct TileCeramicEditor: View {
     @EnvironmentObject var behavioursVM: BehavioursViewModel
     private var objectCount: Int
     @FocusState var focusedDimension: FocusedDimension?
+    @FocusState var isJollyActive: Bool
+    @State var jolly: String = ""
     
     init(tileCeramic: TileCeramic, objectCount: Int) {
         
@@ -214,8 +216,68 @@ fileprivate struct TileCeramicEditor: View {
                         saveAll()
                     }
                     
+                    HStack(spacing: 3) {
+                        
+                        VStack(alignment: .leading, spacing: 0) {
+                            
+                            Text(JollyEdging.title)
+                                .font(.system(size: 18, weight: .medium))
+                                .foregroundStyle(Color.brandBlack)
+                            
+                        }.fixedSize()
+                        
+                        Spacer()
+                        
+                        HStack(alignment: .lastTextBaseline, spacing: 5) {
+                            
+                            TextField("0", text: $jolly)
+                                .font(.system(size: 20, weight: .semibold))
+                                .foregroundStyle(Color.brandBlack)
+                                .multilineTextAlignment(.trailing)
+                                .keyboardType(.decimalPad)
+                                .frame(maxWidth: 100, alignment: .trailing)
+                                .onAppear { jolly = doubleToString(from: fetchedEntity.jollyEdging) }
+                                .focused($isJollyActive)
+                                .onChange(of: jolly) { _ in
+                                    fetchedEntity.jollyEdging = stringToDouble(from: jolly)
+                                    try? viewContext.save()
+                                    behavioursVM.redraw()
+                                }
+                            
+                            Text(UnitsOfMeasurement.readableSymbol(JollyEdging.unit))
+                                .font(.system(size: 17, weight: .medium))
+                                .foregroundStyle(Color.brandBlack)
+                                .frame(alignment: .leading)
+                        }
+                        
+                    }.padding(.horizontal, 15)
+                        .padding(.vertical, 10)
+                        .background(Color.brandGray)
+                        .clipShape(.rect(cornerRadius: 15, style: .continuous))
+                        
+                    
                 }.padding(.horizontal, 10)
                 .padding(.bottom, 10)
+                .toolbar {
+                    ToolbarItem(placement: .keyboard) {
+                        if isJollyActive {
+                            HStack {
+                                Spacer()
+                                Button {
+                                    dismissKeyboard()
+                                } label: {
+                                    Text("Done")
+                                        .font(.system(size: 17, weight: .semibold))
+                                        .foregroundStyle(Color.brandWhite)
+                                        .padding(.horizontal, 12)
+                                        .padding(.vertical, 4)
+                                        .background { Color.brandBlack }
+                                        .clipShape(Capsule())
+                                }.frame(width: 75)
+                            }
+                        }
+                    }
+                }
                 
             }.padding(.horizontal, 10)
             

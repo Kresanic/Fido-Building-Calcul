@@ -386,6 +386,13 @@ final class PricingCalculations: ObservableObject {
         let tilingLFCeramicRow = PriceBillRow(name: LargeFormatPavingAndTiling.tilingBillTitle, pieces: tilingLFCeramicPieces, unit: .squareMeter, price: tilingLFCeramicPrice)
         priceBill.addWorks(tilingLFCeramicRow)
         
+        let jollyEdgingPieces = room.associatedTileCeramics.reduce(0.0, {
+            $0 + $1.jollyEdging
+        })
+        let jollyEdgingPrice = jollyEdgingPieces * priceList.workJollyEdgingPrice
+        let jollyEdgingRow = PriceBillRow(name: JollyEdging.title, pieces: jollyEdgingPieces, unit: JollyEdging.unit, price: jollyEdgingPrice)
+        priceBill.addWorks(jollyEdgingRow)
+        
         // PavingCeramic
         let pavingCeramicPieces = room.associatedPavingCeramics.reduce(0.0, {
             if !$1.largeFormat {
