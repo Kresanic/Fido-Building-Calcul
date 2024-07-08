@@ -110,7 +110,7 @@ import PDFKit
                     
                     Text(NSLocalizedString("Price per unit", comment: ""))
                         .font(.system(size: 12, weight: .medium))
-                        .frame(width: 75, alignment: .trailing)
+                        .frame(width: 70, alignment: .trailing)
                     
                     Text(NSLocalizedString("VAT(%)", comment: ""))
                         .font(.system(size: 12, weight: .medium))
@@ -118,7 +118,7 @@ import PDFKit
                     
                     Text(NSLocalizedString("VAT", comment: ""))
                         .font(.system(size: 12, weight: .medium))
-                        .frame(width: 60, alignment: .trailing)
+                        .frame(width: 80, alignment: .trailing)
                     
                     Text(NSLocalizedString("Price", comment: ""))
                         .font(.system(size: 12, weight: .medium))

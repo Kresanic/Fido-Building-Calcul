@@ -63,6 +63,12 @@ import CoreData
                         .minimumScaleFactor(0.5)
                         .foregroundStyle(Color.brandBlack)
                     
+                    let localizedPriceOffer = NSLocalizedString("Price Offer", comment: "")
+                
+                    Text("\(localizedPriceOffer) \(invoiceDetails.project.projectNumber)")
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundStyle(Color.brandBlack.opacity(0.8))
+                    
                     Spacer()
                     
                     if let client = invoiceDetails.client {

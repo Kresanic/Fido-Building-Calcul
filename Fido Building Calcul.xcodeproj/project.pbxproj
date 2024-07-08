@@ -1637,7 +1637,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
 				DEVELOPMENT_TEAM = J7CR9GZ8S9;
 				ENABLE_PREVIEWS = YES;
@@ -1678,7 +1678,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
 				DEVELOPMENT_TEAM = J7CR9GZ8S9;
 				ENABLE_PREVIEWS = YES;

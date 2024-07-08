@@ -31,7 +31,7 @@ enum MaturityDuration: Int, CaseIterable {
 }
 
 
-enum InvoiceStatus: String {
+enum InvoiceStatus: String, CaseIterable {
     
     case paid, unpaid, afterMaturity
     

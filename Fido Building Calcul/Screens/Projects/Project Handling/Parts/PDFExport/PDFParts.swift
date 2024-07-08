@@ -365,7 +365,7 @@ struct PDFRowView: View {
             if let formattedPricePerUnit = formatter.string(from: priceBillRow.price/priceBillRow.pieces as NSNumber) {
                 Text(formattedPricePerUnit)
                     .font(.system(size: 12))
-                    .frame(width: 75, alignment: .trailing)
+                    .frame(width: 70, alignment: .trailing)
             }
             
             Text((percentage/100), format: .percent.precision(.fractionLength(0)))
@@ -375,7 +375,7 @@ struct PDFRowView: View {
             if let VATPrice = formatter.string(from: priceBillRow.price*(percentage/100) as NSNumber) {
                 Text(VATPrice)
                     .font(.system(size: 12))
-                    .frame(width: 60, alignment: .trailing)
+                    .frame(width: 80, alignment: .trailing)
             }
             
             if let formattedPrice = formatter.string(from: priceBillRow.price as NSNumber) {

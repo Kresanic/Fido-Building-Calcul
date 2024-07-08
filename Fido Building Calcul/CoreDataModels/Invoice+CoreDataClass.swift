@@ -44,10 +44,32 @@ public class Invoice: NSManagedObject {
     var maturityCutOffDate: Date {
         return Calendar.current.date(byAdding: .day, value: Int(maturityDays), to: dateCreated ?? Date.now) ?? Date.now
     }
+    
+//    var invoiceFiltering: InvoiceStatus? {
+//        
+//        guard let currentCase = InvoiceStatus(rawValue: status ?? "") else { return nil }
+//        
+//        if currentCase == .paid { return .paid }
+//        
+//        let isAfterMaturity = Date.now.startOfTheDay > maturityCutOffDate
+//        
+//        print("======================")
+//        
+//        print("number", number)
+//        
+//        print("Date.now.startOfTheDay > maturityCutOffDate", Date.now.startOfTheDay > maturityCutOffDate, "if true then afterMaturity")
+//        
+//        print("currentCase == .unpaid", currentCase == .unpaid)
+//        
+//        print("======================")
+//        
+//        if isAfterMaturity { return .afterMaturity }
+//    
+//        return .unpaid
+//        
+//    }
 
     var statusCase: InvoiceStatus {
-        
-//        testStatus()
         
         let currentCase = InvoiceStatus(rawValue: status ?? "unpaid") ?? .unpaid
         
@@ -70,7 +92,7 @@ public class Invoice: NSManagedObject {
                     .fixedSize()
                     .clipShape(.capsule)
        } else if statusCase == .afterMaturity, let maturityStatus {
-           return Text("\(statusCaseNameLoc), \(maturityStatus) days ago")
+           return Text("\(statusCaseNameLoc) \(maturityStatus) days ago")
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundStyle(.brandWhite)
                     .padding(.horizontal, 8)
