@@ -122,7 +122,8 @@ fileprivate struct PavingCeramicEditor: View {
     @FocusState var whatPlinthIsFocused: FocusedPlinth?
     @State var plinthCutting: String = ""
     @State var plinthBonding: String = ""
-    
+    let impactMed = UIImpactFeedbackGenerator(style: .light)
+    let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
     init(pavingCeramic: PavingCeramic, objectCount: Int) {
         
         self.objectCount = objectCount
@@ -296,22 +297,7 @@ fileprivate struct PavingCeramicEditor: View {
                 .padding(.bottom, 10)
                 .toolbar {
                     ToolbarItem(placement: .keyboard) {
-                        if whatPlinthIsFocused != nil {
-                            HStack {
-                                Spacer()
-                                Button {
-                                    dismissKeyboard()
-                                } label: {
-                                    Text("Done")
-                                        .font(.system(size: 17, weight: .semibold))
-                                        .foregroundStyle(Color.brandWhite)
-                                        .padding(.horizontal, 12)
-                                        .padding(.vertical, 4)
-                                        .background { Color.brandBlack }
-                                        .clipShape(Capsule())
-                                }.frame(width: 75)
-                            }
-                        }
+                        keyboardToolbarContent()
                     }
                 }
                 
@@ -350,6 +336,128 @@ fileprivate struct PavingCeramicEditor: View {
             try? viewContext.save()
             behavioursVM.redraw()
         }
+    }
+    
+    @ViewBuilder
+    private func keyboardToolbarContent() -> some View {
+        if whatPlinthIsFocused == .bonding {
+            HStack(spacing: 0) {
+                Spacer().frame(width: 75)
+                mathSymbols()
+                doneButton(isBonding: true).frame(width: 75)
+            }
+        } else if whatPlinthIsFocused == .cutting {
+            HStack(spacing: 0) {
+                Spacer().frame(width: 75)
+                mathSymbols()
+                doneButton(isBonding: false).frame(width: 75)
+            }
+        }
+    }
+
+    private func doneButton(isBonding: Bool) -> some View {
+        Button {
+            withAnimation {
+                if isBonding {
+                    plinthBonding = calculate(on: plinthBonding)
+                } else  {
+                    plinthCutting = calculate(on: plinthCutting)
+                }
+                whatPlinthIsFocused = nil
+            }
+        } label: {
+            Text("Done")
+                .font(.system(size: 17, weight: .semibold))
+                .foregroundStyle(Color.brandWhite)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 4)
+                .background { Color.brandBlack }
+                .clipShape(Capsule())
+        }
+    }
+    
+    private func mathSymbols() -> some View {
+        
+        HStack {
+            
+            let impactMed = UIImpactFeedbackGenerator(style: .soft)
+            
+            Button("-") {
+                addSymbol("-")
+            }.frame(height: 40)
+            .frame(maxWidth: .infinity)
+            
+            Button("+") {
+                addSymbol("+")
+            }.frame(height: 40)
+            .frame(maxWidth: .infinity)
+            
+            Button("*") {
+                addSymbol("*")
+            }.frame(height: 40)
+            .frame(maxWidth: .infinity)
+            .padding(.top, 8)
+            
+            Button("=") {
+                if whatPlinthIsFocused == .bonding {
+                    plinthBonding = calculate(on: plinthBonding)
+                } else if whatPlinthIsFocused == .cutting {
+                    plinthCutting = calculate(on: plinthCutting)
+                }
+                impactHeavy.impactOccurred()
+            }.frame(height: 40)
+            .frame(maxWidth: .infinity)
+            
+        }.font(.system(size: 22, weight: .bold))
+            .foregroundStyle(Color.brandBlack)
+        
+    }
+    
+    private func addSymbol(_ s: String) {
+        switch whatPlinthIsFocused {
+        case .cutting:
+            if let last = plinthCutting.last, !["+","*","-"].contains(last) {
+                plinthCutting = plinthCutting + s
+            } else {
+                impactHeavy.impactOccurred()
+            }
+        case .bonding:
+            if let last = plinthBonding.last, !["+","*","-"].contains(last) {
+                plinthBonding = plinthBonding + s
+            } else {
+                impactHeavy.impactOccurred()
+            }
+        case nil:
+            break
+        }
+        impactMed.impactOccurred()
+    }
+    
+    private func calculate(on expressionString: String) -> String {
+        
+        guard let _ = Int(expressionString.suffix(1)) else { return "0" }
+        guard let _ = Int(expressionString.prefix(1)) else { return "0" }
+        
+        let expression = expressionString.replacingOccurrences(of: ",", with: ".")
+                
+        let express = NSExpression(format: expression)
+        
+        guard let result = express.expressionValue(with: nil, context: nil) as? Double else { return "0" }
+        
+        let roundedResult = Double(round(100 * result) / 100)
+        
+        return dbToStr(from: roundedResult)
+        
+    }
+    
+    private func dbToStr(from number: Double) -> String {
+        
+        if number.truncatingRemainder(dividingBy: 1.0) == 0.0 {
+            return String(number) == "0.0" ? "" : String(Int(number))
+        } else {
+            return String(number) == "0.0" ? "" : String(number).replacingOccurrences(of: ".", with: ",")
+        }
+        
     }
     
 }

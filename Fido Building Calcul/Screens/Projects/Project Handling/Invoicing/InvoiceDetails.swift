@@ -578,7 +578,7 @@ extension InvoiceDetails {
         
         let request = Invoice.fetchRequest()
         
-        request.sortDescriptors = [NSSortDescriptor(keyPath: \Invoice.dateCreated, ascending: false)]
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Invoice.number, ascending: false)]
         
         let currentYear = Calendar.current.component(.year, from: Date.now)
         
