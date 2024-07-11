@@ -43,9 +43,10 @@ struct InvoiceDetailView: View {
             ScrollView {
                 
                 VStack(alignment:. center) {
-                    
+                    // MARK: Invoice Details
                     HStack {
                         
+                        // Invoice Name and Number
                         VStack(alignment: .leading, spacing: 2) {
                             
                             Text(invoice.stringNumber)
@@ -61,6 +62,7 @@ struct InvoiceDetailView: View {
                             
                         }
                         
+                        // Invoice Status Case Bubble Management
                         if invoice.statusCase != .paid {
                             Button {
                                 withAnimation {
@@ -107,6 +109,7 @@ struct InvoiceDetailView: View {
                     
                     VStack {
                         
+                        // Invoice Client
                         if let client = invoice.toClient {
                             
                             HStack(alignment: .center) {
@@ -130,6 +133,7 @@ struct InvoiceDetailView: View {
                             }
                         }
                         
+                        // Invoice Project
                         if let project = invoice.toProject {
                             
                             HStack(alignment: .center) {
@@ -153,6 +157,7 @@ struct InvoiceDetailView: View {
                             }
                         }
                         
+                        // Invoice Contractor
                         if let contractor = invoice.toContractor {
                             HStack(alignment: .center) {
                                 
@@ -172,6 +177,7 @@ struct InvoiceDetailView: View {
                             }
                         }
                     
+                        // MARK: Invoice PDF Management
                         HStack(alignment: .center) {
                             
                             Image(systemName: "doc.text.fill")
@@ -186,6 +192,7 @@ struct InvoiceDetailView: View {
                             
                         }.padding(.bottom, -5)
                         
+                        // Invoice Preview
                         Button {
                             isShowingPreview = true
                         } label: {
@@ -211,6 +218,7 @@ struct InvoiceDetailView: View {
                                 }
                         }
                         
+                        // Invoice CashReceipt Preview
                         if let _ = invoice.cashReceipt {
                             Button {
                                 isPreviewingCashReceipt = true
@@ -238,6 +246,7 @@ struct InvoiceDetailView: View {
                             }
                         }
                         
+                        // Invoice Sharing
                         if let pdfURL = generatePDFURL(invoice.pdfFile) {
                             ShareLink(item: pdfURL) {
                                 HStack {
@@ -274,6 +283,7 @@ struct InvoiceDetailView: View {
                             })
                         }
                         
+                        // Invoice Cash Receipt Sharing
                         if let pdfURL = generatePDFURL(invoice.cashReceipt, isInvoice: false) {
                             ShareLink(item: pdfURL) {
                                 HStack {
@@ -301,6 +311,7 @@ struct InvoiceDetailView: View {
                         
                     }
                     
+                    // Invoice Deletion
                     Button {
                         dialog = .init(alertType: .warning, title: "Delete Invoice?", subTitle: "Are you sure you want to delete this invoice? This action is irreversible, and it will permanently erase all related data. The invoice number will also be freed for future use.", action: {
                             deleteCurrentInvoice(invoice)
@@ -358,6 +369,7 @@ struct InvoiceDetailView: View {
     }
         
     private func generatePDFURL(_ pdfData: Data?, isInvoice: Bool = true) -> URL? {
+        /// Generates URL for PDF which was already created and saved, e.g. to CoreData as an attribute
         // Check if the PDF data is available
         guard let pdfData else {
             print("No PDF data available.")
@@ -393,96 +405,4 @@ struct InvoiceDetailView: View {
 }
 
 
-struct ProjectInvoiceBubbleView: View {
-    
-    var project: Project
-    @FetchRequest var fetchedPriceList: FetchedResults<PriceList>
-    @EnvironmentObject var priceCalc: PricingCalculations
-    @EnvironmentObject var behavioursVM: BehavioursViewModel
-    @Environment(\.managedObjectContext) var viewContext
-    @State var paddingVertical: CGFloat = 10
-    
-    init(project: Project) {
-        
-        self.project = project
-        
-        let request = PriceList.fetchRequest()
-        
-        request.sortDescriptors = [NSSortDescriptor(keyPath: \PriceList.dateEdited, ascending: false)]
-        
-        request.predicate = NSPredicate(format: "isGeneral == NO AND fromProject == %@", project as CVarArg)
-        
-        _fetchedPriceList = FetchRequest(fetchRequest: request)
-        
-    }
-    
-    var body: some View {
-        
-        HStack(alignment: .center) {
-            
-            VStack(alignment: .leading) {
-                
-                Text(project.projectNumber)
-                    .font(.system(size: 13, weight: .medium))
-                    .foregroundStyle(Color.brandBlack)
-                
-                Text(project.unwrappedName)
-                    .font(.system(size: 20, weight: .semibold))
-                    .lineLimit(1)
-                    .foregroundStyle(Color.brandBlack)
-                    .multilineTextAlignment(.leading)
-                
-                if let clientName = project.associatedClientName {
-                    Text(clientName)
-                        .font(.system(size: 13, weight: .medium))
-                        .foregroundStyle(Color.brandBlack)
-                }
-                
-            }.frame(height: 50)
-            
-            Spacer(minLength: 20)
-            
-            if let priceList = fetchedPriceList.last {
-                
-                let priceCalc = priceCalc.projectPriceBillCalculations(project: project, priceList: priceList)
-                
-                if priceCalc.priceWithoutVat > 0 {
-                    
-                    VStack(alignment: .trailing, spacing: 0) {
-                        
-                        ProjectStatusBubble(projectStatus: project.statusEnum, deployment: .projectBubble)
-                        
-                        Text(priceCalc.priceWithoutVat, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                            .font(.system(size: 20, weight: .semibold))
-                            .minimumScaleFactor(0.4)
-                            .lineLimit(1)
-                            .multilineTextAlignment(.trailing)
-                            .foregroundStyle(Color.brandBlack)
-                        
-                        Text("VAT not included")
-                            .font(.system(size: 12))
-                            .foregroundStyle(Color.brandBlack)
-                            .onAppear { withAnimation { paddingVertical = priceCalc.priceWithoutVat > 0 ? 5 : 10 } }
-                        
-                    }
-                    
-                }
-                
-            }
-            
-            Image(systemName: "chevron.right")
-                .font(.system(size: 24))
-                .foregroundStyle(Color.brandBlack)
-            
-        }
-        .padding(.horizontal, 15)
-        .padding(.vertical, paddingVertical)
-        .background(Color.brandGray)
-        .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-        .scaleEffect(1.0)
-        .redrawable()
-        
-        
-    }
-    
-}
+
