@@ -22,9 +22,6 @@ import CoreData
     @Published var wasPDFShown = false
     
     var project: Project
-//    var pdfURL: URL {
-//        return InvoicePDFCreator(invoiceDetails, invoiceItems).render()
-//    }
     
     init(_ project: Project) {
         invoiceDetails = InvoiceDetails(project: project)

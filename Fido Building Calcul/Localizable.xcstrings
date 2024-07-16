@@ -2417,6 +2417,7 @@
       }
     },
     "Exclude" : {
+      "extractionState" : "stale",
       "localizations" : {
         "sk" : {
           "stringUnit" : {
@@ -2828,6 +2829,7 @@
       }
     },
     "Include" : {
+      "extractionState" : "stale",
       "localizations" : {
         "sk" : {
           "stringUnit" : {

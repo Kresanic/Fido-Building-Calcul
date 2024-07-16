@@ -87,70 +87,8 @@ struct InvoicePreviewSheet: View {
                 withAnimation { cashReceiptDoc = PDFDocument(url: cashReceiptURL) }
             }
         }
-        
-        
-        
-        //        VStack {
-        //            if let pdfDoc {
-        //                PDFKitView(showing: pdfDoc)
-        //                    .padding(.bottom, 80)
-        //                    .padding(.top, 40)
-        //            } else { Text("Loading...") }
-        //        }
-        //        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        //        .overlay(alignment: .center) {
-        //
-        //            VStack {
-        //
-        //                HStack {
-        //
-        //                    Spacer().frame(width: 50)
-        //
-        //                    Text("Invoice Preview")
-        //                        .font(.system(size: 20, weight: .medium))
-        //                        .foregroundStyle(Color.brandBlack)
-        //                        .frame(maxWidth: .infinity, alignment: .center)
-        //
-        //                    Button { dismiss() } label: {
-        //                        Image(systemName: "xmark")
-        //                            .font(.system(size: 20, weight: .medium))
-        //                            .foregroundStyle(Color.brandBlack)
-        //                    }.frame(width: 50, alignment: .trailing)
-        //
-        //                }.padding(15)
-        //                    .padding([.top, .horizontal], 5)
-        //                    .background(Color.brandWhite.opacity(0.5))
-        //                    .background(.ultraThinMaterial)
-        //
-        //
-        //                Spacer()
-        //
-        //                ShareLink(item: pdfURL) {
-        //                    PDFExportButton()
-        //                }
-        //                .padding(.top, 15)
-        //                .padding(.horizontal, 20)
-        //                .padding(.bottom, 35)
-        //                .background(Color.brandWhite.opacity(0.5))
-        //                .background(.ultraThinMaterial)
-        //                .simultaneousGesture(TapGesture().onEnded() {
-        //                    project.addToToHistoryEvent(ProjectEvents.invoiceSent.entityObject)
-        //                    project.addToToHistoryEvent(ProjectEvents.finished.entityObject)
-        //                    project.status = 3
-        //                    try? viewContext.save()
-        //                })
-        //
-        //            }
-        //
-        //        }
-        //        .background(Color.brandGray)
-        //        .ignoresSafeArea()
-        //        .presentationCornerRadius(30)
-        //        .task { withAnimation { pdfDoc = PDFDocument(url: pdfURL) } }
     }
-    
 }
-
 
 fileprivate struct PDFKitView: UIViewRepresentable {
     
@@ -228,8 +166,8 @@ struct SharePDFView: View {
                         }
                         .frame(height: 50)
                         .frame(maxWidth: .infinity)
-                            .background(Color.brandBlack)
-                            .clipShape(.rect(cornerRadius: 20, style: .continuous))
+                        .background(Color.brandBlack)
+                        .clipShape(.rect(cornerRadius: 20, style: .continuous))
                     }.simultaneousGesture(TapGesture().onEnded() {
                         // TODO: FILL IN
                     })
@@ -250,8 +188,8 @@ struct SharePDFView: View {
                         }
                         .frame(height: 50)
                         .frame(maxWidth: .infinity)
-                            .background(Color.brandBlack)
-                            .clipShape(.rect(cornerRadius: 20, style: .continuous))
+                        .background(Color.brandBlack)
+                        .clipShape(.rect(cornerRadius: 20, style: .continuous))
                     }.simultaneousGesture(TapGesture().onEnded() {
                         // TODO: FILL IN
                     })
@@ -274,7 +212,7 @@ struct SharePDFView: View {
                                 .foregroundStyle(Color.brandBlue)
                             
                         }.padding(.vertical, 15)
-                        .frame(maxWidth: .infinity)
+                            .frame(maxWidth: .infinity)
                             .background(Color.brandBlack)
                             .clipShape(.rect(cornerRadius: 20, style: .continuous))
                     }.transition(.move(edge: .bottom).combined(with: .opacity))

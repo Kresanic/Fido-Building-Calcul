@@ -7,20 +7,6 @@
 
 import SwiftUI
 
-enum PaymentType: String {
-    case cash, bankTransfer
-    
-    var title: LocalizedStringKey {
-        switch self {
-        case .cash:
-            "Cash"
-        case .bankTransfer:
-            "Bank transfer"
-        }
-    }
-    
-}
-
 struct IdentifiableInvoiceMissingValue: Identifiable {
     let id = UUID()
     let value: any InvoiceMissingValue
@@ -29,107 +15,7 @@ struct IdentifiableInvoiceMissingValue: Identifiable {
 protocol InvoiceMissingValue: Identifiable {
     var title: LocalizedStringKey { get }
 }
-    
-enum ContractorValues: String, InvoiceMissingValue {
-    
-    var id: String { self.rawValue }
-    
-    case vatRegistrationNumber, taxID, street, postalCode, name, country, city, businessID, bankAccountNumber, email, logo, phone, signature, swiftCode
-    
-    var title: LocalizedStringKey {
-        switch self {
-        case .vatRegistrationNumber:
-            "VAT Registration Number"
-        case .taxID:
-            "Tax ID"
-        case .street:
-            "Street"
-        case .postalCode:
-            "Postal code"
-        case .name:
-            "Name"
-        case .country:
-            "Country"
-        case .city:
-            "City"
-        case .businessID:
-            "Business ID"
-        case .bankAccountNumber:
-            "Bank Account Number"
-        case .email:
-            "Email"
-        case .logo:
-            "Logo"
-        case .phone:
-            "Phone number"
-        case .signature:
-            "Signature"
-        case .swiftCode:
-            "Bank Code"
-        }
-    }
-}
-
-enum ClientValues: String, InvoiceMissingValue {
-    
-    var id: String { self.rawValue }
-    
-    case vatRegistrationNumber, taxID, street, postalCode, name, country, city, businessID
-    
-    var title: LocalizedStringKey {
-        switch self {
-        case .vatRegistrationNumber:
-            "VAT Registration Number"
-        case .taxID:
-            "Tax ID"
-        case .street:
-            "Street"
-        case .postalCode:
-            "Postal code"
-        case .name:
-            "Name"
-        case .country:
-            "Country"
-        case .city:
-            "City"
-        case .businessID:
-            "Business ID"
-        }
-    }
-    
-}
-
-enum InvoiceValues: String, InvoiceMissingValue {
-    
-    var id: String { self.rawValue }
-    
-    case priceWithoutVAT, cumulativeVAT, number, invoiceItems, contractor, client, incorrectNumberFormat, numberAlreadyInUse
-    
-    var title: LocalizedStringKey {
-        switch self {
-        case .priceWithoutVAT:
-            "Error with calculating Price"
-        case .cumulativeVAT:
-            "Error with calculating VAT"
-        case .number:
-            "Could not generate Invoice Number"
-        case .invoiceItems:
-            "No Items to be displayed"
-        case .contractor:
-            "No Contractor Assigned to this Project"
-        case .client:
-            "No Client Assigned to this Project"
-        case .incorrectNumberFormat:
-            "Incorrect Invoice Number Format"
-        case .numberAlreadyInUse:
-            "Invoice Number already In Use"
-        }
-    }
-    
-}
-    
-
-
+ 
 struct InvoiceDetails {
     
     var project: Project
@@ -628,7 +514,6 @@ extension InvoiceDetails {
         """
     }
     
-    
 }
 
 extension InvoiceDetails {
@@ -713,6 +598,3 @@ struct InvoiceItem: Identifiable {
     }
     
 }
-
-enum InvoiceItemCategory { case work, material, other }
-

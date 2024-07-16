@@ -96,7 +96,6 @@ struct ProjectInvoiceBubbleView: View {
         .scaleEffect(1.0)
         .redrawable()
         
-        
     }
     
 }
