@@ -83,7 +83,7 @@ public class Invoice: NSManagedObject {
         let statusCaseNameLoc = NSLocalizedString(statusCase.name.stringKey ?? "unpaid", comment: "").capitalized
         
         if statusCase == .unpaid, let maturityStatus {
-            return Text("\(statusCaseNameLoc), in \(maturityStatus) days")
+            return Text("Matures in \(maturityStatus) days")
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundStyle(.brandWhite)
                     .padding(.horizontal, 8)
@@ -92,7 +92,7 @@ public class Invoice: NSManagedObject {
                     .fixedSize()
                     .clipShape(.capsule)
        } else if statusCase == .afterMaturity, let maturityStatus {
-           return Text("\(statusCaseNameLoc) \(maturityStatus) days ago")
+           return Text("Matured \(maturityStatus) days ago")
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundStyle(.brandWhite)
                     .padding(.horizontal, 8)
@@ -101,7 +101,7 @@ public class Invoice: NSManagedObject {
                     .fixedSize()
                     .clipShape(.capsule)
         } else {
-            return Text("\(statusCaseNameLoc)")
+            return Text("Paid")
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundStyle(.brandWhite)
                     .padding(.horizontal, 8)

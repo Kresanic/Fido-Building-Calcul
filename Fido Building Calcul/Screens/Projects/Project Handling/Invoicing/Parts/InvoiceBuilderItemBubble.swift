@@ -151,7 +151,7 @@ struct InvoiceBuilderItemBubble: View {
     
     // Extracted subview for the action button content
     @ViewBuilder
-    private func actionButtonContent(imageName: String, text: String) -> some View {
+    private func actionButtonContent(imageName: String, text: LocalizedStringKey) -> some View {
         HStack(spacing: 3) {
             Image(systemName: imageName)
                 .font(.system(size: 15, weight: .medium))
