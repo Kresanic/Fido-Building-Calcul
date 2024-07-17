@@ -264,6 +264,7 @@ fileprivate struct TileCeramicEditor: View {
                             HStack {
                                 Spacer()
                                 Button {
+                                    jolly = stringToDouble(from: jolly).toString
                                     dismissKeyboard()
                                 } label: {
                                     Text("Done")

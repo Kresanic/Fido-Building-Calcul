@@ -25,6 +25,12 @@ extension View {
     
     func stringToDouble(from text: String) -> Double {
         // TODO: REGEX FOR CHECKING VALIDITY
+        guard text.numberOfOccurrencesOf(string: ",") < 2 else {
+                return Double(text.beforeCommaOrDot) ?? 0
+            }
+        guard text.numberOfOccurrencesOf(string: ".") < 2 else {
+            return Double(text.beforeCommaOrDot) ?? 0
+        }
         return calculate(on: text)
     }
     

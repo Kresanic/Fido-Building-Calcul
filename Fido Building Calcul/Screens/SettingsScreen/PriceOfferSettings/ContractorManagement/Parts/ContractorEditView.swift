@@ -62,7 +62,7 @@ struct ContractorEditView: View {
             }
             
         }.scrollDismissesKeyboard(.interactively)
-            .scrollIndicators(.automatic)
+            .scrollIndicators(.never)
             .frame(maxWidth: .infinity)
             .onAppear {
                 withAnimation {

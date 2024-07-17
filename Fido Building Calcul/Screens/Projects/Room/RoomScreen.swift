@@ -38,7 +38,7 @@ struct RoomScreen: View {
                 
                 ScrollViewReader { scrollProxy in
                 
-                VStack {
+                LazyVStack {
                     
                     HStack(alignment: .center) {
                         
@@ -162,11 +162,11 @@ struct RoomScreen: View {
                         
                 }
                 .padding(.bottom, 105)
+                .padding(.horizontal, 15)
                     
                 }
                 
-            }.padding(.horizontal, 15)
-                .scrollIndicators(.never)
+            }.scrollIndicators(.automatic)
                 .scrollDismissesKeyboard(.interactively)
                 .navigationBarTitleDisplayMode(.inline)
                 .background {

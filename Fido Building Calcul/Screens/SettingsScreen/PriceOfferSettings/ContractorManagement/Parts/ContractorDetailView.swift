@@ -159,12 +159,13 @@ struct ContractorDetailView: View {
                     
                 }
                 
-            }.padding(.bottom, 80).transition(.opacity)
+            }.padding(.bottom, 80)
+                .padding(.horizontal, 15)
                 .frame(maxWidth: .infinity)
+                .transition(.opacity)
             
         }.scrollDismissesKeyboard(.interactively)
             .scrollIndicators(.automatic)
-            .padding(.horizontal, 15)
             .sheet(isPresented: $isCreatingContractor, content: {
                 ContractorEditView(presentationDetents: $selectedDetent, contractor: viewModel.user)
                     .presentationCornerRadius(25)

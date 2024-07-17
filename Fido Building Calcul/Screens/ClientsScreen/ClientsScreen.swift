@@ -31,7 +31,7 @@ struct ClientsScreen: View {
                     HStack(spacing: 8) {
                         
                         Text("Clients")
-                            .font(.system(size: 40, weight: .heavy))
+                            .font(.system(size: 35, weight: .bold))
                             .foregroundColor(Color.brandBlack)
                         
                         Spacer()

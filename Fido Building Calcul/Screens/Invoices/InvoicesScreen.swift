@@ -33,7 +33,7 @@ struct InvoicesScreen: View {
             
             ScrollView {
                 
-                VStack {
+                LazyVStack {
                     
                     InvoicesScreenTitle()
                         .padding(.horizontal, 15)

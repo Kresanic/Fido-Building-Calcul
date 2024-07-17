@@ -667,7 +667,6 @@ fileprivate struct CustomWorksEditor: View {
         
     }
     
-    
     private func saveAll() { withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) { try? viewContext.save() } }
     
     // TOOLBAR FOR CUSTOM WORK
@@ -776,6 +775,9 @@ fileprivate struct CustomWorksEditor: View {
     }
     
     private func calculate(on expressionString: String) -> String {
+        
+        guard expressionString.numberOfOccurrencesOf(string: ",") < 2 else { return "0" }
+        guard expressionString.numberOfOccurrencesOf(string: ".") < 2 else { return "0" }
         
         guard let _ = Int(expressionString.suffix(1)) else { return "0" }
         guard let _ = Int(expressionString.prefix(1)) else { return "0" }
@@ -1084,6 +1086,9 @@ fileprivate struct CustomMaterialsEditor: View {
     }
     
     private func calculate(on expressionString: String) -> String {
+        
+        guard expressionString.numberOfOccurrencesOf(string: ",") < 2 else { return "0" }
+        guard expressionString.numberOfOccurrencesOf(string: ".") < 2 else { return "0" }
         
         guard let _ = Int(expressionString.suffix(1)) else { return "0" }
         guard let _ = Int(expressionString.prefix(1)) else { return "0" }

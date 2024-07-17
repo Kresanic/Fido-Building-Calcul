@@ -435,6 +435,10 @@ fileprivate struct PavingCeramicEditor: View {
     
     private func calculate(on expressionString: String) -> String {
         
+        guard expressionString.numberOfOccurrencesOf(string: ",") < 2 else { return expressionString.beforeCommaOrDot }
+        
+        guard expressionString.numberOfOccurrencesOf(string: ".") < 2 else { return expressionString.beforeCommaOrDot }
+        
         guard let _ = Int(expressionString.suffix(1)) else { return "0" }
         guard let _ = Int(expressionString.prefix(1)) else { return "0" }
         

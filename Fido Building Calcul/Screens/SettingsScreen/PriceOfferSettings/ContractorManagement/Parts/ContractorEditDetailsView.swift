@@ -420,8 +420,9 @@ struct ContractorEditDetailsView: View {
                         .clipShape(Capsule())
                 }.padding(.vertical, 15)
                     .disabled(viewModel.name.isEmpty)
+                    .padding(.horizontal, 15)
                 
-            }.padding(.horizontal, 15)
+            }
             
         }.onAppear { focusedField = .name }
             .background { Color.brandWhite.onTapGesture{ dismissKeyboard() } }

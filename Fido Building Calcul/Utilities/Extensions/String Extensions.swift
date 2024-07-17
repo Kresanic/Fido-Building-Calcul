@@ -13,4 +13,15 @@ extension String {
         return round((Double(self) ?? 1.0)*100)/100
     }
     
+    func numberOfOccurrencesOf(string: String) -> Int {
+        return self.components(separatedBy:string).count - 1
+    }
+    
+    var beforeCommaOrDot: String {
+        if let range = range(of: ",") ?? range(of: ".") {
+            return String(self[..<range.lowerBound])
+        }
+        return self
+    }
+    
 }

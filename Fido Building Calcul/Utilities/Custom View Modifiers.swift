@@ -399,6 +399,9 @@ struct InvoiceItemInputsToolBar: ViewModifier {
     
     private func calculate(on expressionString: String) -> String {
         
+        guard expressionString.numberOfOccurrencesOf(string: ",") < 2 else { return expressionString.beforeCommaOrDot }
+        guard expressionString.numberOfOccurrencesOf(string: ".") < 2 else { return expressionString.beforeCommaOrDot }
+        
         guard let _ = Int(expressionString.suffix(1)) else { return "0" }
         guard let _ = Int(expressionString.prefix(1)) else { return "0" }
         
@@ -487,33 +490,6 @@ struct InvoiceItemInputsToolBar: ViewModifier {
         }
         impactMed.impactOccurred()
     }
-    
-//    private func changedCount() {
-//        withAnimation {
-//            pieces = calculate(on: pieces)
-//            pricePerPiece = (withoutVAT.toDouble/pieces.toDouble).round.toString
-//        }
-//    }
-//    
-//    private func changedPricePerCount() {
-//        withAnimation {
-//            pricePerPiece = calculate(on: pricePerPiece)
-//            withoutVAT = (pricePerPiece.toDouble*pieces.toDouble).round.toString
-//        }
-//    }
-//    
-//    private func changedVAT() {
-//        withAnimation {
-//            vat = calculate(on: vat)
-//        }
-//    }
-//    
-//    private func changedWithoutVAT() {
-//        withAnimation {
-//            withoutVAT = calculate(on: withoutVAT)
-//            pricePerPiece = (withoutVAT.toDouble/pieces.toDouble).round.toString
-//        }
-//    }
     
 }
 
@@ -648,6 +624,9 @@ struct TripleWorkInputsToolBar: ViewModifier {
     }
     
     private func calculate(on expressionString: String) -> String {
+        
+        guard expressionString.numberOfOccurrencesOf(string: ",") < 2 else { return expressionString.beforeCommaOrDot }
+        guard expressionString.numberOfOccurrencesOf(string: ".") < 2 else { return expressionString.beforeCommaOrDot }
         
         guard let _ = Int(expressionString.suffix(1)) else { return "0" }
         guard let _ = Int(expressionString.prefix(1)) else { return "0" }
@@ -803,6 +782,9 @@ struct WorkInputsToolBar: ViewModifier {
     
     private func calculate(on expressionString: String) -> String {
         
+        guard expressionString.numberOfOccurrencesOf(string: ",") < 2 else { return expressionString.beforeCommaOrDot }
+        guard expressionString.numberOfOccurrencesOf(string: ".") < 2 else { return expressionString.beforeCommaOrDot }
+        
         guard let _ = Int(expressionString.suffix(1)) else { return "0" }
         guard let _ = Int(expressionString.prefix(1)) else { return "0" }
         
@@ -916,11 +898,14 @@ struct SingleWorkInputToolBar: ViewModifier {
     
     private func calculate(on expressionString: String) -> String {
         
+        guard expressionString.numberOfOccurrencesOf(string: ",") < 2 else { return expressionString.beforeCommaOrDot }
+        guard expressionString.numberOfOccurrencesOf(string: ".") < 2 else { return expressionString.beforeCommaOrDot }
+        
         guard let _ = Int(expressionString.suffix(1)) else { return "0" }
         guard let _ = Int(expressionString.prefix(1)) else { return "0" }
         
         let expression = expressionString.replacingOccurrences(of: ",", with: ".")
-                
+        
         let express = NSExpression(format: expression)
         
         guard let result = express.expressionValue(with: nil, context: nil) as? Double else { return "0" }
