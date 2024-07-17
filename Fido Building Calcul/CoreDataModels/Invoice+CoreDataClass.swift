@@ -80,7 +80,7 @@ public class Invoice: NSManagedObject {
     var bubble: some View {
         
         let statusCase = self.statusCase
-        let statusCaseNameLoc = NSLocalizedString(statusCase.name.stringKey ?? "unpaid", comment: "").capitalized
+        _ = NSLocalizedString(statusCase.name.stringKey ?? "unpaid", comment: "").capitalized
         
         if statusCase == .unpaid, let maturityStatus {
             return Text("Matures in \(maturityStatus) days")

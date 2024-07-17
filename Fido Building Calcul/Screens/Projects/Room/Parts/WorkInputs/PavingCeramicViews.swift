@@ -380,8 +380,6 @@ fileprivate struct PavingCeramicEditor: View {
         
         HStack {
             
-            let impactMed = UIImpactFeedbackGenerator(style: .soft)
-            
             Button("-") {
                 addSymbol("-")
             }.frame(height: 40)

@@ -1833,6 +1833,7 @@
       }
     },
     "Custom days" : {
+      "extractionState" : "stale",
       "localizations" : {
         "sk" : {
           "stringUnit" : {
@@ -3336,6 +3337,7 @@
       }
     },
     "Maturity duration" : {
+      "extractionState" : "stale",
       "localizations" : {
         "sk" : {
           "stringUnit" : {
@@ -5094,6 +5096,7 @@
       }
     },
     "The set maturity for the new invoices created will be %lld days from the moment of creation." : {
+      "extractionState" : "stale",
       "localizations" : {
         "sk" : {
           "variations" : {

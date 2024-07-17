@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum SettingsNavigation {
-    case archive, priceOffer, appearance, generalPriceList, invoice
+    case archive, priceOffer, appearance, generalPriceList
 }
 
 

@@ -47,8 +47,6 @@
 		3955E8982C3FD0BB007B5EFF /* InvoiceBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3955E8972C3FD0BB007B5EFF /* InvoiceBubbleView.swift */; };
 		3955E89A2C3FD0FE007B5EFF /* InvoiceScreenTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3955E8992C3FD0FE007B5EFF /* InvoiceScreenTitleView.swift */; };
 		3955E89C2C3FD2D5007B5EFF /* ProjectInvoiceBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3955E89B2C3FD2D5007B5EFF /* ProjectInvoiceBubbleView.swift */; };
-		395CDD242BD3D4FF00E98E49 /* InvoiceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CDD232BD3D4FF00E98E49 /* InvoiceSettings.swift */; };
-		395CDD262BD3D62800E98E49 /* InvoiceMaturityDurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CDD252BD3D62800E98E49 /* InvoiceMaturityDurationView.swift */; };
 		395CDD282BD3D73400E98E49 /* Enums Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CDD272BD3D73400E98E49 /* Enums Invoice.swift */; };
 		395D43022BFBAD5B00F2CDB3 /* String Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395D43012BFBAD5B00F2CDB3 /* String Extensions.swift */; };
 		39603E5D2BD98D2F000CDFA4 /* InvoiceBuilderItemBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39603E5C2BD98D2F000CDFA4 /* InvoiceBuilderItemBubble.swift */; };
@@ -226,6 +224,7 @@
 		39B51FA82B57133900700AB4 /* TotalPriceOfferNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B51FA72B57133900700AB4 /* TotalPriceOfferNew.swift */; };
 		39B6EF4D2B41A1C70002066C /* Enums BIDError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B6EF4C2B41A1C70002066C /* Enums BIDError.swift */; };
 		39C112952ABD9BBF00CD82B7 /* Double Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C112942ABD9BBF00CD82B7 /* Double Extensions.swift */; };
+		39C5CB1D2C47F26D007CD71A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 392E81A12BD69A5E00E45DCA /* PrivacyInfo.xcprivacy */; };
 		39CA43262B0BA14C0048EB36 /* DialogWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CA43252B0BA14C0048EB36 /* DialogWindow.swift */; };
 		39CC5CD22AED13C8001C4D31 /* CTAPopUP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CC5CD12AED13C8001C4D31 /* CTAPopUP.swift */; };
 		39D1C5C22BBD85C800D3DEB7 /* Date Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1C5C12BBD85C800D3DEB7 /* Date Extensions.swift */; };
@@ -290,8 +289,6 @@
 		3955E8972C3FD0BB007B5EFF /* InvoiceBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceBubbleView.swift; sourceTree = "<group>"; };
 		3955E8992C3FD0FE007B5EFF /* InvoiceScreenTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceScreenTitleView.swift; sourceTree = "<group>"; };
 		3955E89B2C3FD2D5007B5EFF /* ProjectInvoiceBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectInvoiceBubbleView.swift; sourceTree = "<group>"; };
-		395CDD232BD3D4FF00E98E49 /* InvoiceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceSettings.swift; sourceTree = "<group>"; };
-		395CDD252BD3D62800E98E49 /* InvoiceMaturityDurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceMaturityDurationView.swift; sourceTree = "<group>"; };
 		395CDD272BD3D73400E98E49 /* Enums Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums Invoice.swift"; sourceTree = "<group>"; };
 		395D43012BFBAD5B00F2CDB3 /* String Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String Extensions.swift"; sourceTree = "<group>"; };
 		39603E5C2BD98D2F000CDFA4 /* InvoiceBuilderItemBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceBuilderItemBubble.swift; sourceTree = "<group>"; };
@@ -696,15 +693,6 @@
 			path = Parts;
 			sourceTree = "<group>";
 		};
-		395CDD222BD3D4AB00E98E49 /* InvoiceSettings */ = {
-			isa = PBXGroup;
-			children = (
-				395CDD232BD3D4FF00E98E49 /* InvoiceSettings.swift */,
-				395CDD252BD3D62800E98E49 /* InvoiceMaturityDurationView.swift */,
-			);
-			path = InvoiceSettings;
-			sourceTree = "<group>";
-		};
 		39603E5B2BD98D05000CDFA4 /* Parts */ = {
 			isa = PBXGroup;
 			children = (
@@ -760,7 +748,6 @@
 				398900D12B1757E700CC3870 /* AccountSettings */,
 				398900B52B17541F00CC3870 /* PriceOfferSettings */,
 				398900B42B1753F400CC3870 /* ArchiveSettings */,
-				395CDD222BD3D4AB00E98E49 /* InvoiceSettings */,
 				398900BC2B1754E300CC3870 /* OthersSettings */,
 			);
 			path = SettingsScreen;
@@ -1288,6 +1275,7 @@
 				395086EF2A7182D00099BAD8 /* Preview Assets.xcassets in Resources */,
 				395086EC2A7182D00099BAD8 /* Assets.xcassets in Resources */,
 				3949A4E42AFD2BB100D01A59 /* Launch Screen.storyboard in Resources */,
+				39C5CB1D2C47F26D007CD71A /* PrivacyInfo.xcprivacy in Resources */,
 				39A24D472AD6EFD6001FDE2A /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1355,7 +1343,6 @@
 				398900B72B17546800CC3870 /* PriceOfferSettings.swift in Sources */,
 				397BB99E2AD041BF006BA23C /* Demolition+CoreDataClass.swift in Sources */,
 				396435BB2A7A73BA00C148B8 /* PlasterBoardingCeilingViews.swift in Sources */,
-				395CDD242BD3D4FF00E98E49 /* InvoiceSettings.swift in Sources */,
 				397BB9B22AD041BF006BA23C /* PriceList+CoreDataClass.swift in Sources */,
 				398900A62B15FF1800CC3870 /* PDFParts.swift in Sources */,
 				3964D8022A9B9AE600AD4619 /* SettingsScreen.swift in Sources */,
@@ -1409,7 +1396,6 @@
 				3964D7FF2A9B989700AD4619 /* SiliconingViews.swift in Sources */,
 				39C112952ABD9BBF00CD82B7 /* Double Extensions.swift in Sources */,
 				398900882B15F85200CC3870 /* Enums Rooms.swift in Sources */,
-				395CDD262BD3D62800E98E49 /* InvoiceMaturityDurationView.swift in Sources */,
 				397B41092B87820D0023A9BC /* CreateContractorButton.swift in Sources */,
 				398900E62B17638200CC3870 /* ProjectIsArchivedbutton.swift in Sources */,
 				398900F02B17645C00CC3870 /* RoomBubbleView.swift in Sources */,
