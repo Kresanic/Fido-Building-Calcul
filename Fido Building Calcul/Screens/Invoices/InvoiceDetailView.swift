@@ -20,6 +20,9 @@ struct InvoiceDetailView: View {
     @Environment(\.managedObjectContext) var viewContext
     @Environment(\.dismiss) var dismiss
     
+    @State var pdfURL: URL?
+    @State var cashReceiptURL: URL?
+    
     init(invoice: Invoice) {
         self.invoiceProject = invoice.toProject
         let request = Invoice.fetchRequest()
@@ -193,39 +196,13 @@ struct InvoiceDetailView: View {
                         }.padding(.bottom, -5)
                         
                         // Invoice Preview
-                        Button {
-                            isShowingPreview = true
-                        } label: {
-                            HStack {
-                                
-                                Text("Preview Invoice")
-                                    .font(.system(size: 20, weight: .semibold))
-                                    .foregroundStyle(Color.brandBlack)
-                                
-                                Spacer()
-                                
-                                Image(systemName: "chevron.right")
-                                    .font(.system(size: 24))
-                                    .foregroundStyle(Color.brandBlack)
-                                
-                            }.padding(15)
-                                .padding(.vertical, 5)
-                                .background {
-                                    RoundedRectangle(cornerRadius: 20, style: .continuous)
-                                        .strokeBorder(Color.brandBlack, lineWidth: 1.5)
-                                        .background(Color.brandGray)
-                                        .clipShape(.rect(cornerRadius: 20, style: .continuous))
-                                }
-                        }
-                        
-                        // Invoice CashReceipt Preview
-                        if let _ = invoice.cashReceipt {
+                        if pdfURL != nil {
                             Button {
-                                isPreviewingCashReceipt = true
+                                isShowingPreview = true
                             } label: {
                                 HStack {
                                     
-                                    Text("Preview Cash Receipt")
+                                    Text("Preview Invoice")
                                         .font(.system(size: 20, weight: .semibold))
                                         .foregroundStyle(Color.brandBlack)
                                     
@@ -246,8 +223,10 @@ struct InvoiceDetailView: View {
                             }
                         }
                         
+                        
+                        
                         // Invoice Sharing
-                        if let pdfURL = generatePDFURL(invoice.pdfFile) {
+                        if let pdfURL {
                             ShareLink(item: pdfURL) {
                                 HStack {
                                     
@@ -283,9 +262,37 @@ struct InvoiceDetailView: View {
                             })
                         }
                         
+                        // Invoice CashReceipt Preview
+                        if cashReceiptURL != nil {
+                            Button {
+                                isPreviewingCashReceipt = true
+                            } label: {
+                                HStack {
+                                    
+                                    Text("Preview Cash Receipt")
+                                        .font(.system(size: 20, weight: .semibold))
+                                        .foregroundStyle(Color.brandBlack)
+                                    
+                                    Spacer()
+                                    
+                                    Image(systemName: "chevron.right")
+                                        .font(.system(size: 24))
+                                        .foregroundStyle(Color.brandBlack)
+                                    
+                                }.padding(15)
+                                    .padding(.vertical, 5)
+                                    .background {
+                                        RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                            .strokeBorder(Color.brandBlack, lineWidth: 1.5)
+                                            .background(Color.brandGray)
+                                            .clipShape(.rect(cornerRadius: 20, style: .continuous))
+                                    }
+                            }
+                        }
+                        
                         // Invoice Cash Receipt Sharing
-                        if let pdfURL = generatePDFURL(invoice.cashReceipt, isInvoice: false) {
-                            ShareLink(item: pdfURL) {
+                        if let cashReceiptURL {
+                            ShareLink(item: cashReceiptURL) {
                                 HStack {
                                     
                                     Text("Resend Cash Receipt")
@@ -354,12 +361,13 @@ struct InvoiceDetailView: View {
                 if let data = invoice.cashReceipt {
                     InvoicePDFDocumentPreviewSheet(pdfDoc: PDFDocument(data: data))
                 }
+            }.task {
+                pdfURL = await generatePDFURL(invoice.pdfFile)
+                cashReceiptURL = await generatePDFURL(invoice.cashReceipt, isInvoice: false)
             }
             
         }
-        
-        
-        
+            
     }
     
     private func deleteCurrentInvoice(_ invoice: Invoice) {
@@ -368,8 +376,18 @@ struct InvoiceDetailView: View {
         dismiss()
     }
         
-    private func generatePDFURL(_ pdfData: Data?, isInvoice: Bool = true) -> URL? {
-        /// Generates URL for PDF which was already created and saved, e.g. to CoreData as an attribute
+    private func generatePDFURL(_ pdfData: Data?, isInvoice: Bool = true) async -> URL? {
+        // Perform the task in the background
+        let fileURL = await Task.detached(priority: .background) {
+            return await savePDFData(pdfData: pdfData, isInvoice: isInvoice)
+        }.value
+        
+        return await MainActor.run {
+            return fileURL
+        }
+    }
+
+    private func savePDFData(pdfData: Data?, isInvoice: Bool) -> URL? {
         // Check if the PDF data is available
         guard let pdfData else {
             print("No PDF data available.")

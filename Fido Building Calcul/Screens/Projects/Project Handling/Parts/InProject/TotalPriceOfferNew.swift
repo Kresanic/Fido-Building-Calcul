@@ -175,7 +175,9 @@ struct TotalPriceOffer: View {
                         
                     } else {
                         Button {
-                            isShowingInvoiceBuilder = true
+                            if behavioursVM.isUserPro {
+                                isShowingInvoiceBuilder = true
+                            } else { isShowingPayWall = true }
                         } label: {
                             HStack {
                                 

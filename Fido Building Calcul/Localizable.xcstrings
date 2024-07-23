@@ -1742,6 +1742,16 @@
         }
       }
     },
+    "create invoices" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "fakturovanie"
+          }
+        }
+      }
+    },
     "Create profile" : {
       "localizations" : {
         "sk" : {
@@ -1828,17 +1838,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vlastné"
-          }
-        }
-      }
-    },
-    "Custom days" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vlastná doba"
           }
         }
       }
@@ -2219,6 +2218,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dĺžka"
+          }
+        }
+      }
+    },
+    "easily create and send invoices to your clients" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "funkcia, umožňuje vytváranie a odosielanie faktúr klientom"
           }
         }
       }
@@ -3332,17 +3341,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dátum splatnosti"
-          }
-        }
-      }
-    },
-    "Maturity duration" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Doba splatnosti"
           }
         }
       }
@@ -5091,41 +5089,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ako posledná položka sa nachádza - Pomocné a ukončovacie práce.\nV tejto položke je započítane: nákup materiálu, manipulácia, vynášanie, upratovanie, čistenie, zakrývanie, olepovanie, odvoz odpadu …\n\nZ našej skúsenosti sme zistili, že túto položku je vhodné nastaviť na 10%\n\nPríklad:\nCena práce bude                       1000€\nPomocné a ukončovacie práce   10%\n                                                    \nCelková cena práce                    1100€"
-          }
-        }
-      }
-    },
-    "The set maturity for the new invoices created will be %lld days from the moment of creation." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "sk" : {
-          "variations" : {
-            "plural" : {
-              "few" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Nastavená splatnosť pre nové vytvorené faktúry bude %lld dni od okamihu vytvorenia."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Nastavená splatnosť pre nové vytvorené faktúry bude %lld dní od okamihu vytvorenia."
-                }
-              },
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Nastavená splatnosť pre nové vytvorené faktúry bude %lld deň od okamihu vytvorenia."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Nastavená splatnosť pre nové vytvorené faktúry bude %lld dní od okamihu vytvorenia."
-                }
-              }
-            }
           }
         }
       }

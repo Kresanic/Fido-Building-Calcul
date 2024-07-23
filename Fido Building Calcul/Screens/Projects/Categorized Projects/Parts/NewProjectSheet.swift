@@ -64,7 +64,7 @@ struct NewProjectSheet: View {
                         if let newProject = createNewProject() {
                             dismiss()
                             behaviours.redraw()
-                            behaviours.switchToProjectsPage(with: newProject)
+//                            behaviours.switchToProjectsPage(with: newProject)
                         }
                     }
                     .frame(maxWidth: .infinity)
@@ -105,7 +105,7 @@ struct NewProjectSheet: View {
                 if let newProject = createNewProject() {
                     dismiss()
                     behaviours.redraw()
-                    behaviours.switchToProjectsPage(with: newProject)
+//                    behaviours.switchToProjectsPage(with: newProject)
                 }
             } label: {
                 
