@@ -72,7 +72,7 @@ struct InvoiceMissingValuesSheet: View {
                     .padding(.top, 5)
                     
                     Button {
-                        Task { await generateInvoiceObject() }
+                        generateInvoiceObject()
                     } label: {
                         Text("Generate anyways")
                             .font(.system(size: 16, weight: .medium))
@@ -99,77 +99,37 @@ struct InvoiceMissingValuesSheet: View {
         
     }
     
-    private func performInvoiceGeneration() async -> Bool {
-        isGeneratingPDF = true // Toggle on when process begins
-        defer {
-            isGeneratingPDF = false // Ensure it toggles off when the process ends
-        }
-
-        return await withCheckedContinuation { continuation in
-            Task {
-                let invoice = Invoice(context: viewContext)
-                invoice.cId = UUID()
-                invoice.dateCreated = Date.now.startOfTheDay
-                invoice.number = Int64(viewModel.invoiceDetails.invoiceNumber) ?? 0
-
-                do {
-                    invoice.pdfFile = try Data(contentsOf: viewModel.invoiceDetails.pdfURL)
-                } catch {
-                    print("Failed to load PDF data: \(error)")
-                    continuation.resume(returning: false)
-                    return
-                }
-
-                if let receiptURL = viewModel.invoiceDetails.cashReceiptURL {
-                    do {
-                        invoice.cashReceipt = try Data(contentsOf: receiptURL)
-                    } catch {
-                        print("Failed to load cash receipt data: \(error)")
-                        continuation.resume(returning: false)
-                        return
-                    }
-                }
-
-                invoice.toClient = viewModel.invoiceDetails.client
-                invoice.toContractor = viewModel.invoiceDetails.contractor
-                invoice.toProject = viewModel.project
-                invoice.maturityDays = Int64(invoiceMaturityDuration)
-                invoice.priceWithoutVat = viewModel.invoiceDetails.unPriceWithoutVAT
-                invoice.vatAmount = viewModel.invoiceDetails.unCumulativeVat
-                invoice.status = InvoiceStatus.unpaid.rawValue
-
-                viewModel.project.addToToHistoryEvent(ProjectEvents.invoiceGenerated.entityObject)
-
-                do {
-                    try viewContext.save()
-                } catch {
-                    print("Failed to save context: \(error)")
-                    continuation.resume(returning: false)
-                    return
-                }
-
-                continuation.resume(returning: true)
-            }
-        }
-    }
-    
-    private func generateInvoiceObject() async {
-        let missingValues = viewModel.invoiceDetails.missingValues
-        await MainActor.run { withAnimation { isGeneratingPDF = true } }
-        if missingValues.isEmpty {
-            let success = await Task.detached(priority: .background) {
-                return await performInvoiceGeneration()
-            }.value
-            
-            await MainActor.run {
-                if success {
-                    isShowingPDF = true
-                    viewModel.wasPDFShown = true
-                }
-                withAnimation { isGeneratingPDF = false }
-            }
-        }
-    }
+    private func generateInvoiceObject() {
+           
+           let invoice = Invoice(context: viewContext)
+           
+           invoice.cId = UUID()
+           invoice.dateCreated = Date.now.startOfTheDay
+           invoice.number = Int64(viewModel.invoiceDetails.invoiceNumber) ?? 0
+           
+           invoice.pdfFile = try? Data(contentsOf: viewModel.invoiceDetails.pdfURL)
+           
+           if let receiptURL = viewModel.invoiceDetails.cashReceiptURL {
+               invoice.cashReceipt = try? Data(contentsOf: receiptURL)
+           }
+           
+           invoice.toClient = viewModel.invoiceDetails.client
+           invoice.toContractor = viewModel.invoiceDetails.contractor
+           invoice.toProject = viewModel.project
+           
+           invoice.maturityDays = Int64(invoiceMaturityDuration)
+           invoice.priceWithoutVat = viewModel.invoiceDetails.unPriceWithoutVAT
+           invoice.vatAmount = viewModel.invoiceDetails.unCumulativeVat
+           
+           invoice.status = InvoiceStatus.unpaid.rawValue
+           
+           viewModel.project.addToToHistoryEvent(ProjectEvents.invoiceGenerated.entityObject)
+           
+           try? viewContext.save()
+           
+           isShowingPDF = true
+           viewModel.wasPDFShown = true
+       }
     
 }
 
