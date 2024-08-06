@@ -59,9 +59,7 @@ struct InProjectScreen: View {
                         .onAppear { viewModel.projectLoading(project: project) }
                         .toolbar(.hidden, for: .bottomBar)
                         .sheet(isPresented: $viewModel.isPickingClient) {
-                            InProjectChoosingClientView(project: project)
-                                .presentationDetents([.large])
-                                .presentationCornerRadius(25)
+                            InProjectChoosingClientView(project: project).presentationDetents([.large]).presentationCornerRadius(25)
                         }
                         
                     

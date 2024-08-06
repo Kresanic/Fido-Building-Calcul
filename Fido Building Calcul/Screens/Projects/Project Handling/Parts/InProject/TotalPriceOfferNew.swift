@@ -11,6 +11,7 @@ struct TotalPriceOffer: View {
     
     var project: Project
     @State var isShowingPayWall = false
+    @State var isShowingInvoiceBuilder = false
     @EnvironmentObject var behavioursVM: BehavioursViewModel
     @EnvironmentObject var priceCalc: PricingCalculations
     @Environment(\.managedObjectContext) var viewContext
@@ -62,7 +63,6 @@ struct TotalPriceOffer: View {
                             HStack(alignment: .firstTextBaseline) {
               
                                 Text("without VAT")
-
                                     .font(.system(size: 16, weight: .semibold))
                                     .foregroundStyle(Color.brandBlack)
                                 
@@ -130,7 +130,7 @@ struct TotalPriceOffer: View {
                                     pdfViewModel.sharePDF(from: project)
                                 } else { isShowingPayWall = true }
                             } label: {
-                                PDFExportButtonSmall()
+                                PDFExportButtonSmall(title: "Send")
                             }
                             
                         }
@@ -139,9 +139,80 @@ struct TotalPriceOffer: View {
                     .padding(15)
                     .background(Color.brandGray)
                     .clipShape(.rect(cornerRadius: 25, style: .continuous))
-                    .redrawable()
                     
-                }.fullScreenCover(isPresented: $isShowingPayWall) { PayWallScreen() }
+                    if let invoice = project.toInvoice {
+                        Button { behavioursVM.projectsPath.append(invoice) } label: {
+                            HStack {
+                                
+                                VStack(alignment: .leading, spacing: 3) {
+                                    
+                                    Text("Invoice \(invoice.stringNumber)")
+                                        .font(.system(size: 20, weight: .semibold))
+                                        .foregroundStyle(Color.brandBlack)
+                                    
+                                    Text(invoice.dateCreated ?? Date.now, format: .dateTime.day().month().year())
+                                        .font(.system(size: 13, weight: .semibold))
+                                        .foregroundStyle(Color.brandBlack.opacity(0.8))
+                                    
+                                }
+                                
+                                Spacer()
+                                
+                                invoice.statusCase.bubble
+                                    
+                                Image(systemName: "chevron.right")
+                                    .font(.system(size: 24))
+                                    .foregroundStyle(Color.brandBlack)
+                                
+                            }.padding(15)
+                                .background {
+                                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                        .strokeBorder(Color.brandBlack, lineWidth: 1.5)
+                                        .background(Color.brandGray)
+                                        .clipShape(.rect(cornerRadius: 20, style: .continuous))
+                                }
+                        }
+                        
+                    } else {
+                        Button {
+                            if behavioursVM.isUserPro {
+                                isShowingInvoiceBuilder = true
+                            } else { isShowingPayWall = true }
+                        } label: {
+                            HStack {
+                                
+                                VStack(alignment: .leading, spacing: 3) {
+                                    
+                                    Text("Create invoice")
+                                        .font(.system(size: 20, weight: .semibold))
+                                        .foregroundStyle(Color.brandBlack)
+                                    
+                                    Text("Choose items and generate PDF")
+                                        .font(.system(size: 13, weight: .semibold))
+                                        .foregroundStyle(Color.brandBlack.opacity(0.8))
+                                        .multilineTextAlignment(.leading)
+                                    
+                                }
+                                
+                                Spacer()
+                                    
+                                Image(systemName: "plus")
+                                    .font(.system(size: 24))
+                                    .foregroundStyle(Color.brandBlack)
+                                
+                            }.padding(15)
+                                .background {
+                                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                        .strokeBorder(Color.brandBlack, lineWidth: 1.5)
+                                        .background(Color.brandGray)
+                                        .clipShape(.rect(cornerRadius: 20, style: .continuous))
+                                }
+                        }
+                    }
+                    
+                }.redrawable()
+                .fullScreenCover(isPresented: $isShowingPayWall) { PayWallScreen() }
+                    .fullScreenCover(isPresented: $isShowingInvoiceBuilder) { InvoiceBuilderView(project: project) }
                     .sheet(isPresented: $pdfViewModel.isShowingPreview) {
                         PDFPreviewSheet(pdfViewModel: pdfViewModel, pdfProject: project)
                             .onDisappear {

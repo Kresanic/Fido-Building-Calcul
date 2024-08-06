@@ -52,6 +52,11 @@ struct SettingsScreen: View {
                                     .styleOfBubblesInSettings(subTitle: "supplier information, validity of price offer")
                             }
                             
+                            NavigationLink(value: SettingsNavigation.generalPriceList) {
+                                Text("General price list", comment: "in settings")
+                                    .styleOfBubblesInSettings(subTitle: "set default price list")
+                            }
+                            
                             NavigationLink(value: SettingsNavigation.appearance) {
                                 Text("Appearance")
                                     .styleOfBubblesInSettings(subTitle: "set appearance of the app")
@@ -95,6 +100,8 @@ struct SettingsScreen: View {
                         PriceOfferSettings()
                     case .appearance:
                         AppearancePreferenceView()
+                    case .generalPriceList:
+                        PricesScreen()
                     }
                 }
                 

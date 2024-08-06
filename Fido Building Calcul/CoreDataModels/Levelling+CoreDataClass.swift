@@ -17,6 +17,6 @@ public class Levelling: NSManagedObject, AreaBasedWorkType {
     
     static var subTitle: LocalizedStringKey =  ""
     
-    static var unit: UnitsOfMeasurment  = .squareMeter
+    static var unit: UnitsOfMeasurement  = .squareMeter
 
 }

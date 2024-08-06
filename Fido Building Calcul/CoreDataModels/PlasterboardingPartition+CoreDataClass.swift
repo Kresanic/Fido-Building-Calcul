@@ -25,7 +25,7 @@ public class PlasterboardingPartition: NSManagedObject, AreaBasedWorkType {
     static var doubleSubTitle: LocalizedStringKey = "partition, double"
     static var tripleSubTitle: LocalizedStringKey = "partition, triple"
     
-    static var unit: UnitsOfMeasurment  = .squareMeter
+    static var unit: UnitsOfMeasurement  = .squareMeter
     
     public var cleanArea: Double {
         

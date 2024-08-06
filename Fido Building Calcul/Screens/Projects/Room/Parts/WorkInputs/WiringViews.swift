@@ -193,7 +193,7 @@ struct ElectricalWorkEditor: View {
                     .background(Color.brandGray)
                     .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
 
-                Text(UnitsOfMeasurment.readableSymbol(Wiring.unit))
+                Text(UnitsOfMeasurement.readableSymbol(Wiring.unit))
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(Color.brandBlack)
                     .frame(width: 40, alignment: .leading)

@@ -12,7 +12,7 @@ import CoreData
     
     @Published var isCreatingNewProject = false
     @Published var isShowingDetailedProject: Bool = false
-    @Published var isDeleting = false
+    @Published var isArchiving = false
     @Published var selectedProject: Project? = nil {
         didSet {
             isShowingDetailedProject = selectedProject != nil ? true : false

@@ -10,6 +10,7 @@
 import CoreData
 import SwiftUI
 
+@objc(CustomMaterial)
 public class CustomMaterial: NSManagedObject {
 
 }

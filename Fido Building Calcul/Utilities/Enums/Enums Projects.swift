@@ -64,6 +64,7 @@ enum ProjectStatus: Int {
     case notSent = 0
     case sent = 1
     case approved = 2
+    case finished = 3
     
     public var advanceStatus: Int64 {
         switch self {
@@ -72,6 +73,8 @@ enum ProjectStatus: Int {
         case .sent:
             return 2
         case .approved:
+            return 3
+        case .finished:
             return 0
         }
     }
@@ -84,6 +87,8 @@ enum ProjectStatus: Int {
             return "questionmark.circle.fill"
         case .approved:
             return "checkmark.circle.fill"
+        case .finished:
+            return "flag.checkered.circle.fill"
         }
     }
     
@@ -95,6 +100,8 @@ enum ProjectStatus: Int {
             return "sent"
         case .approved:
             return "approved"
+        case .finished:
+            return "finished"
         }
     }
     
@@ -106,6 +113,8 @@ enum ProjectStatus: Int {
             return "sent"
         case .approved:
             return "approved"
+        case .finished:
+            return "finished"
         }
     }
     
@@ -117,6 +126,8 @@ enum ProjectStatus: Int {
             return .brandBlue
         case .approved:
             return .brandGreen
+        case .finished:
+            return .brandDarkGray
         }
     }
     
@@ -148,7 +159,7 @@ enum ProjectStatusBubbleDeployment {
 
 enum ProjectEvents: String {
     
-    case created, notSent, sent, approved, archived, unArchived, duplicated
+    case created, notSent, sent, approved, archived, unArchived, duplicated, invoiceSent, invoiceGenerated, finished
     
     var title: LocalizedStringKey {
         switch self {
@@ -158,6 +169,12 @@ enum ProjectEvents: String {
             return "Not sent"
         case .sent:
             return "Sent"
+        case .invoiceSent:
+            return "Invoice sent"
+        case .invoiceGenerated:
+            return "Invoice Generated"
+        case .finished:
+            return "Finished"
         case .approved:
             return "Approved"
         case .archived:
@@ -177,6 +194,12 @@ enum ProjectEvents: String {
             return "xmark.circle.fill"
         case .sent:
             return "paperplane.circle.fill"
+        case .invoiceSent:
+            return "paperplane.circle.fill"
+        case .invoiceGenerated:
+            return "doc.circle.fill"
+        case .finished:
+            return "flag.checkered.circle.fill"
         case .approved:
             return "checkmark.circle.fill"
         case .archived:

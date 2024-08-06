@@ -22,10 +22,14 @@ final class BehavioursViewModel: ObservableObject {
     @Published var currentTab: CustomTabs = .projects
     @Published var toRedraw = false
     @Published var projectsPath = NavigationPath()
+    @Published var invoicesPath = NavigationPath()
     @Published var clientsPath = NavigationPath()
     @Published var settingsPath = NavigationPath()
     @Published var isAnimationCircular = false
     @Published var isUserPro = false
+    @Published var givenPromotional = false
+    @Published var promotionalEntitlements = false
+    let givePromotionalForMonths: Int = 6
     @Published var showingNotification: String? = nil
     @Published var showingDialogWindow: Dialog? = nil
     @AppStorage("hasNotSeenOnboarding") var hasNotSeenOnboarding: Bool = true
@@ -46,6 +50,70 @@ final class BehavioursViewModel: ObservableObject {
         hasAnyClientContractorCheck()
         
     }
+    
+    func proEntitlementHandling() async {
+        
+        Purchases.shared.getCustomerInfo { (customerInfo, error) in
+            if customerInfo?.entitlements.all["Pro"]?.isActive == true {
+                withAnimation(.easeInOut) {
+                    self.isUserPro = true
+                }
+            }
+        }
+        
+        await MainActor.run {
+            self.promotionalEntitlements = true
+        }
+        
+    }
+    
+    func windowingForPromotionalEntitlements() async {
+        
+        let currentDate = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month], from: currentDate)
+
+        let isApril2024 = components.year == 2024 && components.month == 4
+        
+        if isApril2024 && !isUserPro { try? await grantPromotionalEntitlement() }
+        
+    }
+    
+    func grantPromotionalEntitlement() async throws {
+        
+        let appUserID = Purchases.shared.appUserID
+        let url = URL(string: "https://api.revenuecat.com/v1/subscribers/\(appUserID)/entitlements/Pro/promotional")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("Bearer sk_puuududJBAxTZDOuimFLoJJgqORLv", forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let body: [String: Any] = [
+            "start_time_ms": Int(Date().timeIntervalSince1970 * 1000),
+            "end_time_ms": Int(Calendar.current.date(byAdding: .month, value: givePromotionalForMonths, to: Date())!.timeIntervalSince1970 * 1000)
+        ]
+        
+        print(Date().iso8601, Calendar.current.date(byAdding: .month, value: 6, to: Date())!.iso8601)
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: body)
+        request.httpBody = jsonData
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode < 300 && httpResponse.statusCode > 199  else {
+            print("Error with the request")
+            print(response)
+            return
+        }
+        
+        await MainActor.run {
+            self.givenPromotional = true
+            self.isUserPro = true
+        }
+        
+        print("Successful entitlement grant: \(data)")
+    }
+
     
     func hasAnyClientContractorCheck() {
         
@@ -167,6 +235,7 @@ final class BehavioursViewModel: ObservableObject {
         showingDialogWindow = dialog
     }
     
+    
     func switchToRoom(with room: Room) {
         withAnimation(.easeInOut(duration: 0.2)) {
             currentTab = .projects
@@ -181,7 +250,7 @@ final class BehavioursViewModel: ObservableObject {
     }
     
     func replaceProjectsInPath(with project: Project) {
-        // does not wokr
+        // does not work
         withAnimation(.easeInOut(duration: 0.2)) {
             self.projectsPath.removeLast(1)
             self.projectsPath.append(project)
@@ -189,16 +258,25 @@ final class BehavioursViewModel: ObservableObject {
     }
     
     func switchToProjectsPage(with project: Project) {
-        isAnimationCircular = true
+        print("went in ")
         withAnimation(.easeInOut(duration: 0.2)) {
-            currentTab = .projects
+            print("projectsPath.count", projectsPath.count)
             projectsPath.removeLast(projectsPath.count)
-            if let projectCat = PropertyCategories(rawValue: project.category ?? "flats") {
-                projectsPath.append(projectCat)
-            }
+            print("projectsPath.count2", projectsPath.count)
+            currentTab = .projects
+            print("currentTab", currentTab)
             projectsPath.append(project)
+            print("currentTab", currentTab)
         }
-        isAnimationCircular = false
+    }
+    
+    func switchToContractor(with contractor: Contractor) {
+        withAnimation(.easeInOut(duration: 0.2)) {
+            settingsPath.removeLast(settingsPath.count)
+            currentTab = .settings
+            settingsPath.append(SettingsNavigation.priceOffer)
+            settingsPath.append(contractor)
+        }
     }
     
     func appearancePrefferance() -> ColorScheme? {
@@ -273,11 +351,16 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.workNettingCeilingPrice = generalPriceList.workNettingCeilingPrice
         newPriceList.workPlasteringWallPrice = generalPriceList.workPlasteringWallPrice
         newPriceList.workPlasteringCeilingPrice = generalPriceList.workPlasteringCeilingPrice
+        newPriceList.workFacadePlastering = generalPriceList.workFacadePlastering
         newPriceList.workInstallationOfCornerBeadPrice = generalPriceList.workInstallationOfCornerBeadPrice
         newPriceList.workPlasteringOfWindowSashPrice = generalPriceList.workPlasteringOfWindowSashPrice
         newPriceList.workPenetrationCoatingPrice = generalPriceList.workPenetrationCoatingPrice
         newPriceList.workPaintingWallPrice = generalPriceList.workPaintingWallPrice
         newPriceList.workPaintingCeilingPrice = generalPriceList.workPaintingCeilingPrice
+        newPriceList.workPlinthCutting = generalPriceList.workPlinthCutting
+        newPriceList.workPlinthBonding = generalPriceList.workPlinthBonding
+        newPriceList.workJollyEdgingPrice = generalPriceList.workJollyEdgingPrice
+        newPriceList.workLargeFormatPavingAndTilingPrice = generalPriceList.workLargeFormatPavingAndTilingPrice
         newPriceList.workLevellingPrice = generalPriceList.workLevellingPrice
         newPriceList.workLayingFloatingFloorsPrice = generalPriceList.workLayingFloatingFloorsPrice
         newPriceList.workSkirtingOfFloatingFloorPrice = generalPriceList.workSkirtingOfFloatingFloorPrice
@@ -299,6 +382,9 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.workWindowInstallationPrice = generalPriceList.workWindowInstallationPrice
         newPriceList.workDoorJambInstallationPrice = generalPriceList.workDoorJambInstallationPrice
         newPriceList.workAuxiliaryAndFinishingPrice = generalPriceList.workAuxiliaryAndFinishingPrice
+        newPriceList.othersScaffoldingPrice = generalPriceList.othersScaffoldingPrice
+        newPriceList.othersScaffoldingAssemblyAndDisassemblyPrice = generalPriceList.othersScaffoldingAssemblyAndDisassemblyPrice
+        newPriceList.othersCoreDrillRentalPrice = generalPriceList.othersCoreDrillRentalPrice
         newPriceList.othersToolRentalPrice = generalPriceList.othersToolRentalPrice
         newPriceList.othersCommutePrice = generalPriceList.othersCommutePrice
         newPriceList.othersVatPrice = generalPriceList.othersVatPrice
@@ -314,6 +400,8 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.materialAdhesiveNettingPrice = generalPriceList.materialAdhesiveNettingPrice
         newPriceList.materialAdhesiveTilingAndPavingPrice = generalPriceList.materialAdhesiveTilingAndPavingPrice
         newPriceList.materialPlasterPrice = generalPriceList.materialPlasterPrice
+        newPriceList.materialFacadePlasterPrice = generalPriceList.materialFacadePlasterPrice
+        newPriceList.materialFacadePlasterCapacity = generalPriceList.materialFacadePlasterCapacity
         newPriceList.materialCornerBeadPrice = generalPriceList.materialCornerBeadPrice
         newPriceList.materialPrimerPrice = generalPriceList.materialPrimerPrice
         newPriceList.materialPaintWallPrice = generalPriceList.materialPaintWallPrice
@@ -370,6 +458,7 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.workNettingCeilingPrice = originalPriceList.workNettingCeilingPrice
         newPriceList.workPlasteringWallPrice = originalPriceList.workPlasteringWallPrice
         newPriceList.workPlasteringCeilingPrice = originalPriceList.workPlasteringCeilingPrice
+        newPriceList.workFacadePlastering = originalPriceList.workFacadePlastering
         newPriceList.workInstallationOfCornerBeadPrice = originalPriceList.workInstallationOfCornerBeadPrice
         newPriceList.workPlasteringOfWindowSashPrice = originalPriceList.workPlasteringOfWindowSashPrice
         newPriceList.workPenetrationCoatingPrice = originalPriceList.workPenetrationCoatingPrice
@@ -378,10 +467,14 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.workLevellingPrice = originalPriceList.workLevellingPrice
         newPriceList.workLayingFloatingFloorsPrice = originalPriceList.workLayingFloatingFloorsPrice
         newPriceList.workSkirtingOfFloatingFloorPrice = originalPriceList.workSkirtingOfFloatingFloorPrice
+        newPriceList.workLargeFormatPavingAndTilingPrice = originalPriceList.workLargeFormatPavingAndTilingPrice
         newPriceList.workTilingCeramicPrice = originalPriceList.workTilingCeramicPrice
         newPriceList.workPavingCeramicPrice = originalPriceList.workPavingCeramicPrice
         newPriceList.workGroutingPrice = originalPriceList.workGroutingPrice
         newPriceList.workSiliconingPrice = originalPriceList.workSiliconingPrice
+        newPriceList.workPlinthCutting = originalPriceList.workPlinthCutting
+        newPriceList.workPlinthBonding = originalPriceList.workPlinthBonding
+        newPriceList.workJollyEdgingPrice = originalPriceList.workJollyEdgingPrice
         newPriceList.workSanitaryCornerValvePrice = originalPriceList.workSanitaryCornerValvePrice
         newPriceList.workSanitaryStandingMixerTapPrice = originalPriceList.workSanitaryStandingMixerTapPrice
         newPriceList.workSanitaryWallMountedTapPrice = originalPriceList.workSanitaryWallMountedTapPrice
@@ -396,6 +489,9 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.workWindowInstallationPrice = originalPriceList.workWindowInstallationPrice
         newPriceList.workDoorJambInstallationPrice = originalPriceList.workDoorJambInstallationPrice
         newPriceList.workAuxiliaryAndFinishingPrice = originalPriceList.workAuxiliaryAndFinishingPrice
+        newPriceList.othersScaffoldingPrice = originalPriceList.othersScaffoldingPrice
+        newPriceList.othersScaffoldingAssemblyAndDisassemblyPrice = originalPriceList.othersScaffoldingAssemblyAndDisassemblyPrice
+        newPriceList.othersCoreDrillRentalPrice = originalPriceList.othersCoreDrillRentalPrice
         newPriceList.othersToolRentalPrice = originalPriceList.othersToolRentalPrice
         newPriceList.othersCommutePrice = originalPriceList.othersCommutePrice
         newPriceList.othersVatPrice = originalPriceList.othersVatPrice
@@ -411,6 +507,8 @@ final class BehavioursViewModel: ObservableObject {
         newPriceList.materialAdhesiveNettingPrice = originalPriceList.materialAdhesiveNettingPrice
         newPriceList.materialAdhesiveTilingAndPavingPrice = originalPriceList.materialAdhesiveTilingAndPavingPrice
         newPriceList.materialPlasterPrice = originalPriceList.materialPlasterPrice
+        newPriceList.materialFacadePlasterPrice = originalPriceList.materialFacadePlasterPrice
+        newPriceList.materialFacadePlasterCapacity = originalPriceList.materialFacadePlasterCapacity
         newPriceList.materialCornerBeadPrice = originalPriceList.materialCornerBeadPrice
         newPriceList.materialPrimerPrice = originalPriceList.materialPrimerPrice
         newPriceList.materialPaintWallPrice = originalPriceList.materialPaintWallPrice

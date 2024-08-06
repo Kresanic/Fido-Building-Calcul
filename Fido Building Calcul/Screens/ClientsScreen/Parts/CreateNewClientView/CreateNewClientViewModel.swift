@@ -106,7 +106,7 @@ import SwiftUI
         
         businessID = company.ico
         taxID = company.dic
-        vatRegistrationNumber = company.dicDph
+        vatRegistrationNumber = company.dicDph ?? ""
         name = company.companyName
         
         if let address = company.address.first {

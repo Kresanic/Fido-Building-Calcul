@@ -11,14 +11,19 @@
 		390F80332B591DAA00A10FF0 /* NSManagedObject Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390F80322B591DAA00A10FF0 /* NSManagedObject Extension.swift */; };
 		390F80352B59483F00A10FF0 /* ProjectManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390F80342B59483F00A10FF0 /* ProjectManagementView.swift */; };
 		390F80372B59487000A10FF0 /* ClientHandlingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390F80362B59487000A10FF0 /* ClientHandlingView.swift */; };
+		391B32BD2BF9230A00840EAE /* MissingValuesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B32BC2BF9230A00840EAE /* MissingValuesSheet.swift */; };
 		391FEEDB2A9E248B007CBFD4 /* ClientsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FEEDA2A9E248B007CBFD4 /* ClientsScreen.swift */; };
 		392393752B5B1A3C00DA3A42 /* HistoryEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392393732B5B1A3C00DA3A42 /* HistoryEvent+CoreDataClass.swift */; };
 		392393782B5B1D4D00DA3A42 /* ProjectHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392393772B5B1D4D00DA3A42 /* ProjectHistory.swift */; };
 		3929767C2B358DB3004884E8 /* BIDNetworkClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929767B2B358DB3004884E8 /* BIDNetworkClasses.swift */; };
 		3929767E2B3590BF004884E8 /* BIDFillSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929767D2B3590BF004884E8 /* BIDFillSheet.swift */; };
 		392DB07D2B947D2B00AA8BC8 /* PlasterboardingPartitionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DB07C2B947D2B00AA8BC8 /* PlasterboardingPartitionViews.swift */; };
+		392E81A82BD6A8ED00E45DCA /* FacadePlastering+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E81A62BD6A8ED00E45DCA /* FacadePlastering+CoreDataClass.swift */; };
+		392E81AB2BD6AE1F00E45DCA /* FacadePlasteringViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E81AA2BD6AE1F00E45DCA /* FacadePlasteringViews.swift */; };
+		392E81AD2BD6B7D900E45DCA /* InvoiceBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E81AC2BD6B7D900E45DCA /* InvoiceBuilderView.swift */; };
+		392E81B02BD6B7F500E45DCA /* InvoiceBuilderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E81AF2BD6B7F500E45DCA /* InvoiceBuilderViewModel.swift */; };
 		3943953F2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3943953E2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift */; };
-		394395412A9FC2E900B2F64B /* ToolRentalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394395402A9FC2E900B2F64B /* ToolRentalViews.swift */; };
+		394395412A9FC2E900B2F64B /* RentalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394395402A9FC2E900B2F64B /* RentalViews.swift */; };
 		3943ADA72B7A156B0061F2F1 /* EmailInputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3943ADA62B7A156B0061F2F1 /* EmailInputSheet.swift */; };
 		39475D4F2A76A877006EC970 /* FidoTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39475D4E2A76A877006EC970 /* FidoTabView.swift */; };
 		39475D512A76A909006EC970 /* BehavioursViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39475D502A76A909006EC970 /* BehavioursViewModel.swift */; };
@@ -33,12 +38,23 @@
 		39475D672A76EB1F006EC970 /* Custom View Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39475D662A76EB1F006EC970 /* Custom View Modifiers.swift */; };
 		39498F652B4EC8AB0017BE9F /* AppearancePreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39498F642B4EC8AB0017BE9F /* AppearancePreferenceView.swift */; };
 		39498F672B4EC8EC0017BE9F /* AppearanceOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39498F662B4EC8EC0017BE9F /* AppearanceOptions.swift */; };
-		3949A4E22AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3949A4E02AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodeld */; };
 		3949A4E42AFD2BB100D01A59 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3949A4E32AFD2BB100D01A59 /* Launch Screen.storyboard */; };
 		395086E82A7182CF0099BAD8 /* FidoBuildingCalculApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395086E72A7182CF0099BAD8 /* FidoBuildingCalculApp.swift */; };
 		395086EC2A7182D00099BAD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 395086EB2A7182D00099BAD8 /* Assets.xcassets */; };
 		395086EF2A7182D00099BAD8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 395086EE2A7182D00099BAD8 /* Preview Assets.xcassets */; };
 		395086F12A7182D00099BAD8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395086F02A7182D00099BAD8 /* Persistence.swift */; };
+		3955E8962C3FCFD6007B5EFF /* HorizontalInvoiceFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3955E8952C3FCFD6007B5EFF /* HorizontalInvoiceFilterView.swift */; };
+		3955E8982C3FD0BB007B5EFF /* InvoiceBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3955E8972C3FD0BB007B5EFF /* InvoiceBubbleView.swift */; };
+		3955E89A2C3FD0FE007B5EFF /* InvoiceScreenTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3955E8992C3FD0FE007B5EFF /* InvoiceScreenTitleView.swift */; };
+		3955E89C2C3FD2D5007B5EFF /* ProjectInvoiceBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3955E89B2C3FD2D5007B5EFF /* ProjectInvoiceBubbleView.swift */; };
+		395CDD282BD3D73400E98E49 /* Enums Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CDD272BD3D73400E98E49 /* Enums Invoice.swift */; };
+		395D43022BFBAD5B00F2CDB3 /* String Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395D43012BFBAD5B00F2CDB3 /* String Extensions.swift */; };
+		39603E5D2BD98D2F000CDFA4 /* InvoiceBuilderItemBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39603E5C2BD98D2F000CDFA4 /* InvoiceBuilderItemBubble.swift */; };
+		39603E5F2BD98D7F000CDFA4 /* InvoiceBuilderSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39603E5E2BD98D7F000CDFA4 /* InvoiceBuilderSummaryView.swift */; };
+		39603E622BD98DFD000CDFA4 /* InvoiceItemPriceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39603E612BD98DFD000CDFA4 /* InvoiceItemPriceInfo.swift */; };
+		39603E642BD98E29000CDFA4 /* InvoiceItemInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39603E632BD98E29000CDFA4 /* InvoiceItemInput.swift */; };
+		39603E662BD98E62000CDFA4 /* InvoiceItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39603E652BD98E62000CDFA4 /* InvoiceItemInfo.swift */; };
+		39603E682BD98E88000CDFA4 /* InvoiceItemPriceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39603E672BD98E88000CDFA4 /* InvoiceItemPriceInput.swift */; };
 		396435AB2A7A489A00C148B8 /* DemolitionWorkViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435AA2A7A489A00C148B8 /* DemolitionWorkViews.swift */; };
 		396435AD2A7A495900C148B8 /* WiringViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435AC2A7A495900C148B8 /* WiringViews.swift */; };
 		396435B32A7A4DB700C148B8 /* PlumbingWorkViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396435B22A7A4DB700C148B8 /* PlumbingWorkViews.swift */; };
@@ -67,7 +83,8 @@
 		3964D7FB2A9B946500AD4619 /* CommuteExpensesViewsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3964D7FA2A9B946500AD4619 /* CommuteExpensesViewsViews.swift */; };
 		3964D7FF2A9B989700AD4619 /* SiliconingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3964D7FE2A9B989700AD4619 /* SiliconingViews.swift */; };
 		3964D8022A9B9AE600AD4619 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3964D8012A9B9AE600AD4619 /* SettingsScreen.swift */; };
-		396EFD3C2AD0A2D400747EB5 /* CustomWork+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396EFD3A2AD0A2D400747EB5 /* CustomWork+CoreDataClass.swift */; };
+		39666A202BE119050086D704 /* InvoicePDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39666A1F2BE119050086D704 /* InvoicePDFCreator.swift */; };
+		39666A222BE12D580086D704 /* InvoicePreviewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39666A212BE12D580086D704 /* InvoicePreviewSheet.swift */; };
 		396EFD422AD0A33900747EB5 /* CustomMaterial+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396EFD402AD0A33900747EB5 /* CustomMaterial+CoreDataClass.swift */; };
 		397B41012B877DEC0023A9BC /* ContractorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B41002B877DEC0023A9BC /* ContractorView.swift */; };
 		397B41032B877E280023A9BC /* ContractorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B41022B877E280023A9BC /* ContractorDetailView.swift */; };
@@ -173,8 +190,11 @@
 		398B4C6E2B976C8A00F84DB6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399BB7772AEBFD1C00452560 /* StoreKit.framework */; };
 		398B4C722B976D0800F84DB6 /* ReceiptParser in Frameworks */ = {isa = PBXBuildFile; productRef = 398B4C712B976D0800F84DB6 /* ReceiptParser */; };
 		398B4C742B976D0800F84DB6 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 398B4C732B976D0800F84DB6 /* RevenueCat */; };
-		398B4C762B976D0800F84DB6 /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 398B4C752B976D0800F84DB6 /* RevenueCatUI */; };
-		39939AFF2B946B1A00F16884 /* BrickPartitionsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39939AFE2B946B1A00F16884 /* BrickPartitionsViews.swift */; };
+		398ED2502BF4C327003CFA8A /* CustomWork+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398ED24F2BF4C327003CFA8A /* CustomWork+CoreDataClass.swift */; };
+		398ED2522BF4C3D8003CFA8A /* BrickPartitionsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398ED2512BF4C3D7003CFA8A /* BrickPartitionsViews.swift */; };
+		398ED2552BF4C448003CFA8A /* Fido_Building_Calcul.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 398ED2532BF4C448003CFA8A /* Fido_Building_Calcul.xcdatamodeld */; };
+		3991E8082C04BBC3001B0979 /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3991E8072C04BBC3001B0979 /* RevenueCatUI */; };
+		399516392BE6782800AE8EEB /* InvoiceDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399516382BE6782800AE8EEB /* InvoiceDetails.swift */; };
 		3996E1FE2A77BEA0000D86E1 /* InProjectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E1FD2A77BEA0000D86E1 /* InProjectScreen.swift */; };
 		3996E2002A77BF64000D86E1 /* InProjectScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E1FF2A77BF64000D86E1 /* InProjectScreenViewModel.swift */; };
 		3996E2062A781CF5000D86E1 /* PricingCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996E2052A781CF5000D86E1 /* PricingCalculations.swift */; };
@@ -189,7 +209,11 @@
 		399BB77D2AEBFEDE00452560 /* PayWallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BB77C2AEBFEDE00452560 /* PayWallViewModel.swift */; };
 		399BB77F2AEBFF3400452560 /* OfferingBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BB77E2AEBFF3400452560 /* OfferingBubble.swift */; };
 		399BB78A2AEC320A00452560 /* PayWallFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BB7892AEC320A00452560 /* PayWallFeature.swift */; };
+		39A111B02BDA88690070500B /* ToolRental+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A111AA2BDA88690070500B /* ToolRental+CoreDataClass.swift */; };
+		39A111B22BDA88690070500B /* Scaffolding+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A111AC2BDA88690070500B /* Scaffolding+CoreDataClass.swift */; };
+		39A111B42BDA88690070500B /* CoreDrill+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A111AE2BDA88690070500B /* CoreDrill+CoreDataClass.swift */; };
 		39A24D472AD6EFD6001FDE2A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 39A24D462AD6EFD6001FDE2A /* Localizable.xcstrings */; };
+		39A31A432C2165CE00CE91A6 /* InvoiceBuilderSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A31A422C2165CE00CE91A6 /* InvoiceBuilderSettingsView.swift */; };
 		39AEABF62AAF61920085B2A1 /* PricesScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEABF52AAF61920085B2A1 /* PricesScreenViewModel.swift */; };
 		39AEABF82AAF6A350085B2A1 /* InProjectPricesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEABF72AAF6A350085B2A1 /* InProjectPricesListView.swift */; };
 		39AEABFA2AAF6A470085B2A1 /* InProjectPricesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEABF92AAF6A470085B2A1 /* InProjectPricesListViewModel.swift */; };
@@ -200,13 +224,20 @@
 		39B51FA82B57133900700AB4 /* TotalPriceOfferNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B51FA72B57133900700AB4 /* TotalPriceOfferNew.swift */; };
 		39B6EF4D2B41A1C70002066C /* Enums BIDError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B6EF4C2B41A1C70002066C /* Enums BIDError.swift */; };
 		39C112952ABD9BBF00CD82B7 /* Double Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C112942ABD9BBF00CD82B7 /* Double Extensions.swift */; };
+		39C5CB1D2C47F26D007CD71A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 392E81A12BD69A5E00E45DCA /* PrivacyInfo.xcprivacy */; };
 		39CA43262B0BA14C0048EB36 /* DialogWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CA43252B0BA14C0048EB36 /* DialogWindow.swift */; };
 		39CC5CD22AED13C8001C4D31 /* CTAPopUP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CC5CD12AED13C8001C4D31 /* CTAPopUP.swift */; };
+		39D1C5C22BBD85C800D3DEB7 /* Date Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1C5C12BBD85C800D3DEB7 /* Date Extensions.swift */; };
+		39D1C5C42BBDE4CD00D3DEB7 /* GivenPromotionalSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1C5C32BBDE4CD00D3DEB7 /* GivenPromotionalSheet.swift */; };
+		39D1CBE92BADFA3C006580C2 /* InvoicesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1CBE82BADFA3C006580C2 /* InvoicesScreen.swift */; };
 		39D22C742AA12D0400322E31 /* CreateNewClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D22C732AA12D0400322E31 /* CreateNewClientView.swift */; };
 		39D22C762AA12D9900322E31 /* PersonalClientCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D22C752AA12D9900322E31 /* PersonalClientCreationView.swift */; };
 		39D22C782AA12DE400322E31 /* CorporationClientCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D22C772AA12DE400322E31 /* CorporationClientCreationView.swift */; };
 		39D22C7E2AA12F2F00322E31 /* InProjectChoosingClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D22C7D2AA12F2F00322E31 /* InProjectChoosingClientView.swift */; };
 		39D435A12AA0DC5F001AAD18 /* Client+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D4359B2AA0DC5F001AAD18 /* Client+CoreDataClass.swift */; };
+		39DC44F42BE6C5630026E5E4 /* Invoice+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DC44F22BE6C5630026E5E4 /* Invoice+CoreDataClass.swift */; };
+		39DC44F72BE6C99B0026E5E4 /* InvoiceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DC44F62BE6C99B0026E5E4 /* InvoiceDetailView.swift */; };
+		39DC44F92BE6CED60026E5E4 /* InvoicePDFDocumentPreviewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DC44F82BE6CED60026E5E4 /* InvoicePDFDocumentPreviewSheet.swift */; };
 		39E3548E2B9C87E700DE247E /* PlasterboardingOffsetWall+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3548C2B9C87E700DE247E /* PlasterboardingOffsetWall+CoreDataClass.swift */; };
 		39E354912B9C92A900DE247E /* PlasterboardingOffsetWallViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E354902B9C92A900DE247E /* PlasterboardingOffsetWallViews.swift */; };
 		39F549C72B03805600B9AC23 /* ContractorEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F549C62B03805600B9AC23 /* ContractorEditView.swift */; };
@@ -219,14 +250,20 @@
 		390F80322B591DAA00A10FF0 /* NSManagedObject Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject Extension.swift"; sourceTree = "<group>"; };
 		390F80342B59483F00A10FF0 /* ProjectManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectManagementView.swift; sourceTree = "<group>"; };
 		390F80362B59487000A10FF0 /* ClientHandlingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHandlingView.swift; sourceTree = "<group>"; };
+		391B32BC2BF9230A00840EAE /* MissingValuesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingValuesSheet.swift; sourceTree = "<group>"; };
 		391FEEDA2A9E248B007CBFD4 /* ClientsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsScreen.swift; sourceTree = "<group>"; };
 		392393732B5B1A3C00DA3A42 /* HistoryEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
 		392393772B5B1D4D00DA3A42 /* ProjectHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHistory.swift; sourceTree = "<group>"; };
 		3929767B2B358DB3004884E8 /* BIDNetworkClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BIDNetworkClasses.swift; sourceTree = "<group>"; };
 		3929767D2B3590BF004884E8 /* BIDFillSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BIDFillSheet.swift; sourceTree = "<group>"; };
 		392DB07C2B947D2B00AA8BC8 /* PlasterboardingPartitionViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasterboardingPartitionViews.swift; sourceTree = "<group>"; };
+		392E81A12BD69A5E00E45DCA /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		392E81A62BD6A8ED00E45DCA /* FacadePlastering+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FacadePlastering+CoreDataClass.swift"; sourceTree = "<group>"; };
+		392E81AA2BD6AE1F00E45DCA /* FacadePlasteringViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacadePlasteringViews.swift; sourceTree = "<group>"; };
+		392E81AC2BD6B7D900E45DCA /* InvoiceBuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceBuilderView.swift; sourceTree = "<group>"; };
+		392E81AF2BD6B7F500E45DCA /* InvoiceBuilderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceBuilderViewModel.swift; sourceTree = "<group>"; };
 		3943953E2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWorksAndMaterialsViews.swift; sourceTree = "<group>"; };
-		394395402A9FC2E900B2F64B /* ToolRentalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolRentalViews.swift; sourceTree = "<group>"; };
+		394395402A9FC2E900B2F64B /* RentalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalViews.swift; sourceTree = "<group>"; };
 		3943ADA62B7A156B0061F2F1 /* EmailInputSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInputSheet.swift; sourceTree = "<group>"; };
 		39475D4E2A76A877006EC970 /* FidoTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FidoTabView.swift; sourceTree = "<group>"; };
 		39475D502A76A909006EC970 /* BehavioursViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehavioursViewModel.swift; sourceTree = "<group>"; };
@@ -241,7 +278,6 @@
 		39475D662A76EB1F006EC970 /* Custom View Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom View Modifiers.swift"; sourceTree = "<group>"; };
 		39498F642B4EC8AB0017BE9F /* AppearancePreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearancePreferenceView.swift; sourceTree = "<group>"; };
 		39498F662B4EC8EC0017BE9F /* AppearanceOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceOptions.swift; sourceTree = "<group>"; };
-		3949A4E12AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fido_Building_Calcul.xcdatamodel; sourceTree = "<group>"; };
 		3949A4E32AFD2BB100D01A59 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		3949A4E52AFE6A3800D01A59 /* Fido Building Calcul.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fido Building Calcul.entitlements"; sourceTree = "<group>"; };
 		395086E42A7182CF0099BAD8 /* Fido Building Calcul.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fido Building Calcul.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -249,6 +285,18 @@
 		395086EB2A7182D00099BAD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		395086EE2A7182D00099BAD8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		395086F02A7182D00099BAD8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		3955E8952C3FCFD6007B5EFF /* HorizontalInvoiceFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalInvoiceFilterView.swift; sourceTree = "<group>"; };
+		3955E8972C3FD0BB007B5EFF /* InvoiceBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceBubbleView.swift; sourceTree = "<group>"; };
+		3955E8992C3FD0FE007B5EFF /* InvoiceScreenTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceScreenTitleView.swift; sourceTree = "<group>"; };
+		3955E89B2C3FD2D5007B5EFF /* ProjectInvoiceBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectInvoiceBubbleView.swift; sourceTree = "<group>"; };
+		395CDD272BD3D73400E98E49 /* Enums Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums Invoice.swift"; sourceTree = "<group>"; };
+		395D43012BFBAD5B00F2CDB3 /* String Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String Extensions.swift"; sourceTree = "<group>"; };
+		39603E5C2BD98D2F000CDFA4 /* InvoiceBuilderItemBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceBuilderItemBubble.swift; sourceTree = "<group>"; };
+		39603E5E2BD98D7F000CDFA4 /* InvoiceBuilderSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceBuilderSummaryView.swift; sourceTree = "<group>"; };
+		39603E612BD98DFD000CDFA4 /* InvoiceItemPriceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemPriceInfo.swift; sourceTree = "<group>"; };
+		39603E632BD98E29000CDFA4 /* InvoiceItemInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemInput.swift; sourceTree = "<group>"; };
+		39603E652BD98E62000CDFA4 /* InvoiceItemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemInfo.swift; sourceTree = "<group>"; };
+		39603E672BD98E88000CDFA4 /* InvoiceItemPriceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemPriceInput.swift; sourceTree = "<group>"; };
 		396435AA2A7A489A00C148B8 /* DemolitionWorkViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemolitionWorkViews.swift; sourceTree = "<group>"; };
 		396435AC2A7A495900C148B8 /* WiringViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiringViews.swift; sourceTree = "<group>"; };
 		396435B22A7A4DB700C148B8 /* PlumbingWorkViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlumbingWorkViews.swift; sourceTree = "<group>"; };
@@ -277,7 +325,8 @@
 		3964D7FA2A9B946500AD4619 /* CommuteExpensesViewsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuteExpensesViewsViews.swift; sourceTree = "<group>"; };
 		3964D7FE2A9B989700AD4619 /* SiliconingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiliconingViews.swift; sourceTree = "<group>"; };
 		3964D8012A9B9AE600AD4619 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
-		396EFD3A2AD0A2D400747EB5 /* CustomWork+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CustomWork+CoreDataClass.swift"; path = "../../CustomWork+CoreDataClass.swift"; sourceTree = "<group>"; };
+		39666A1F2BE119050086D704 /* InvoicePDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoicePDFCreator.swift; sourceTree = "<group>"; };
+		39666A212BE12D580086D704 /* InvoicePreviewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoicePreviewSheet.swift; sourceTree = "<group>"; };
 		396EFD402AD0A33900747EB5 /* CustomMaterial+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomMaterial+CoreDataClass.swift"; sourceTree = "<group>"; };
 		397B41002B877DEC0023A9BC /* ContractorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractorView.swift; sourceTree = "<group>"; };
 		397B41022B877E280023A9BC /* ContractorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractorDetailView.swift; sourceTree = "<group>"; };
@@ -380,7 +429,10 @@
 		3989010C2B1769C700CC3870 /* PriceBubbles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceBubbles.swift; sourceTree = "<group>"; };
 		398B4C622B96FFDC00F84DB6 /* UUID Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UUID Extension.swift"; sourceTree = "<group>"; };
 		398B4C642B970AF700F84DB6 /* ChoosingContractorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosingContractorView.swift; sourceTree = "<group>"; };
-		39939AFE2B946B1A00F16884 /* BrickPartitionsViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrickPartitionsViews.swift; path = "../../../../../../../../Downloads/Fido Building Calcul/Fido Building Calcul/Screens/Projects/Room/RoomParts/BrickPartitionsViews.swift"; sourceTree = "<group>"; };
+		398ED24F2BF4C327003CFA8A /* CustomWork+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomWork+CoreDataClass.swift"; sourceTree = "<group>"; };
+		398ED2512BF4C3D7003CFA8A /* BrickPartitionsViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrickPartitionsViews.swift; sourceTree = "<group>"; };
+		398ED2542BF4C448003CFA8A /* Fido_Building_Calcul.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fido_Building_Calcul.xcdatamodel; sourceTree = "<group>"; };
+		399516382BE6782800AE8EEB /* InvoiceDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceDetails.swift; sourceTree = "<group>"; };
 		3996E1FD2A77BEA0000D86E1 /* InProjectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectScreen.swift; sourceTree = "<group>"; };
 		3996E1FF2A77BF64000D86E1 /* InProjectScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectScreenViewModel.swift; sourceTree = "<group>"; };
 		3996E2052A781CF5000D86E1 /* PricingCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricingCalculations.swift; sourceTree = "<group>"; };
@@ -396,7 +448,11 @@
 		399BB77C2AEBFEDE00452560 /* PayWallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallViewModel.swift; sourceTree = "<group>"; };
 		399BB77E2AEBFF3400452560 /* OfferingBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferingBubble.swift; sourceTree = "<group>"; };
 		399BB7892AEC320A00452560 /* PayWallFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallFeature.swift; sourceTree = "<group>"; };
+		39A111AA2BDA88690070500B /* ToolRental+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolRental+CoreDataClass.swift"; sourceTree = "<group>"; };
+		39A111AC2BDA88690070500B /* Scaffolding+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scaffolding+CoreDataClass.swift"; sourceTree = "<group>"; };
+		39A111AE2BDA88690070500B /* CoreDrill+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDrill+CoreDataClass.swift"; sourceTree = "<group>"; };
 		39A24D462AD6EFD6001FDE2A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		39A31A422C2165CE00CE91A6 /* InvoiceBuilderSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceBuilderSettingsView.swift; sourceTree = "<group>"; };
 		39AEABF52AAF61920085B2A1 /* PricesScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesScreenViewModel.swift; sourceTree = "<group>"; };
 		39AEABF72AAF6A350085B2A1 /* InProjectPricesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectPricesListView.swift; sourceTree = "<group>"; };
 		39AEABF92AAF6A470085B2A1 /* InProjectPricesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectPricesListViewModel.swift; sourceTree = "<group>"; };
@@ -410,11 +466,17 @@
 		39C112942ABD9BBF00CD82B7 /* Double Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double Extensions.swift"; sourceTree = "<group>"; };
 		39CA43252B0BA14C0048EB36 /* DialogWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogWindow.swift; sourceTree = "<group>"; };
 		39CC5CD12AED13C8001C4D31 /* CTAPopUP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTAPopUP.swift; sourceTree = "<group>"; };
+		39D1C5C12BBD85C800D3DEB7 /* Date Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date Extensions.swift"; sourceTree = "<group>"; };
+		39D1C5C32BBDE4CD00D3DEB7 /* GivenPromotionalSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GivenPromotionalSheet.swift; sourceTree = "<group>"; };
+		39D1CBE82BADFA3C006580C2 /* InvoicesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoicesScreen.swift; sourceTree = "<group>"; };
 		39D22C732AA12D0400322E31 /* CreateNewClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewClientView.swift; sourceTree = "<group>"; };
 		39D22C752AA12D9900322E31 /* PersonalClientCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalClientCreationView.swift; sourceTree = "<group>"; };
 		39D22C772AA12DE400322E31 /* CorporationClientCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorporationClientCreationView.swift; sourceTree = "<group>"; };
 		39D22C7D2AA12F2F00322E31 /* InProjectChoosingClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProjectChoosingClientView.swift; sourceTree = "<group>"; };
 		39D4359B2AA0DC5F001AAD18 /* Client+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+CoreDataClass.swift"; sourceTree = "<group>"; };
+		39DC44F22BE6C5630026E5E4 /* Invoice+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Invoice+CoreDataClass.swift"; sourceTree = "<group>"; };
+		39DC44F62BE6C99B0026E5E4 /* InvoiceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceDetailView.swift; sourceTree = "<group>"; };
+		39DC44F82BE6CED60026E5E4 /* InvoicePDFDocumentPreviewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoicePDFDocumentPreviewSheet.swift; sourceTree = "<group>"; };
 		39E3548C2B9C87E700DE247E /* PlasterboardingOffsetWall+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlasterboardingOffsetWall+CoreDataClass.swift"; sourceTree = "<group>"; };
 		39E354902B9C92A900DE247E /* PlasterboardingOffsetWallViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasterboardingOffsetWallViews.swift; sourceTree = "<group>"; };
 		39F549C62B03805600B9AC23 /* ContractorEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractorEditView.swift; sourceTree = "<group>"; };
@@ -427,7 +489,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				398B4C762B976D0800F84DB6 /* RevenueCatUI in Frameworks */,
+				3991E8082C04BBC3001B0979 /* RevenueCatUI in Frameworks */,
 				398B4C722B976D0800F84DB6 /* ReceiptParser in Frameworks */,
 				398B4C6E2B976C8A00F84DB6 /* StoreKit.framework in Frameworks */,
 				398B4C742B976D0800F84DB6 /* RevenueCat in Frameworks */,
@@ -455,21 +517,38 @@
 			path = FillingBasedOnBID;
 			sourceTree = "<group>";
 		};
+		392E81AE2BD6B7DF00E45DCA /* Invoicing */ = {
+			isa = PBXGroup;
+			children = (
+				392E81AF2BD6B7F500E45DCA /* InvoiceBuilderViewModel.swift */,
+				392E81AC2BD6B7D900E45DCA /* InvoiceBuilderView.swift */,
+				39603E5B2BD98D05000CDFA4 /* Parts */,
+				39666A1F2BE119050086D704 /* InvoicePDFCreator.swift */,
+				399516382BE6782800AE8EEB /* InvoiceDetails.swift */,
+			);
+			path = Invoicing;
+			sourceTree = "<group>";
+		};
 		39475D4D2A72F5C1006EC970 /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
+				398ED2532BF4C448003CFA8A /* Fido_Building_Calcul.xcdatamodeld */,
+				39A111AA2BDA88690070500B /* ToolRental+CoreDataClass.swift */,
+				39A111AC2BDA88690070500B /* Scaffolding+CoreDataClass.swift */,
+				39A111AE2BDA88690070500B /* CoreDrill+CoreDataClass.swift */,
 				395086F02A7182D00099BAD8 /* Persistence.swift */,
-				3949A4E02AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodeld */,
 				397BB9662AD041BF006BA23C /* BrickLoadBearingWall+CoreDataClass.swift */,
 				397BB95E2AD041BF006BA23C /* BrickPartition+CoreDataClass.swift */,
 				39D4359B2AA0DC5F001AAD18 /* Client+CoreDataClass.swift */,
+				398ED24F2BF4C327003CFA8A /* CustomWork+CoreDataClass.swift */,
 				396EFD402AD0A33900747EB5 /* CustomMaterial+CoreDataClass.swift */,
 				39FB6EC82B87775400D473A8 /* Contractor+CoreDataClass.swift */,
-				396EFD3A2AD0A2D400747EB5 /* CustomWork+CoreDataClass.swift */,
 				397BB9682AD041BF006BA23C /* Demolition+CoreDataClass.swift */,
 				3996E2602A797C54000D86E1 /* Door+CoreDataClass.swift */,
 				392393732B5B1A3C00DA3A42 /* HistoryEvent+CoreDataClass.swift */,
 				397BB9602AD041BF006BA23C /* Grouting+CoreDataClass.swift */,
+				39DC44F22BE6C5630026E5E4 /* Invoice+CoreDataClass.swift */,
+				392E81A62BD6A8ED00E45DCA /* FacadePlastering+CoreDataClass.swift */,
 				397BB9782AD041BF006BA23C /* InstallationOfCornerBead+CoreDataClass.swift */,
 				397BB9702AD041BF006BA23C /* InstallationOfDoorJamb+CoreDataClass.swift */,
 				39E3548C2B9C87E700DE247E /* PlasterboardingOffsetWall+CoreDataClass.swift */,
@@ -517,7 +596,7 @@
 				3989007D2B152A7900CC3870 /* Onboarding */,
 				399BB7792AEBFE9200452560 /* PayWall */,
 				39475D5F2A76E123006EC970 /* Projects */,
-				3996E2092A796FD6000D86E1 /* Prices */,
+				39D1CBE72BADFA1C006580C2 /* Invoices */,
 				391FEED92A9E247B007CBFD4 /* ClientsScreen */,
 				3964D8002A9B9AD500AD4619 /* SettingsScreen */,
 			);
@@ -580,6 +659,7 @@
 		395086E62A7182CF0099BAD8 /* Fido Building Calcul */ = {
 			isa = PBXGroup;
 			children = (
+				392E81A12BD69A5E00E45DCA /* PrivacyInfo.xcprivacy */,
 				3949A4E52AFE6A3800D01A59 /* Fido Building Calcul.entitlements */,
 				39AF90022AEAE188009DFC08 /* Fido-Building-Calcul-Info.plist */,
 				395086E72A7182CF0099BAD8 /* FidoBuildingCalculApp.swift */,
@@ -600,6 +680,41 @@
 				395086EE2A7182D00099BAD8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3955E8942C3FCFC4007B5EFF /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				3955E8952C3FCFD6007B5EFF /* HorizontalInvoiceFilterView.swift */,
+				3955E8972C3FD0BB007B5EFF /* InvoiceBubbleView.swift */,
+				3955E8992C3FD0FE007B5EFF /* InvoiceScreenTitleView.swift */,
+				3955E89B2C3FD2D5007B5EFF /* ProjectInvoiceBubbleView.swift */,
+			);
+			path = Parts;
+			sourceTree = "<group>";
+		};
+		39603E5B2BD98D05000CDFA4 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				39603E5E2BD98D7F000CDFA4 /* InvoiceBuilderSummaryView.swift */,
+				39603E5C2BD98D2F000CDFA4 /* InvoiceBuilderItemBubble.swift */,
+				39603E602BD98DA6000CDFA4 /* IBItemBubbleParts */,
+				39666A212BE12D580086D704 /* InvoicePreviewSheet.swift */,
+				391B32BC2BF9230A00840EAE /* MissingValuesSheet.swift */,
+				39A31A422C2165CE00CE91A6 /* InvoiceBuilderSettingsView.swift */,
+			);
+			path = Parts;
+			sourceTree = "<group>";
+		};
+		39603E602BD98DA6000CDFA4 /* IBItemBubbleParts */ = {
+			isa = PBXGroup;
+			children = (
+				39603E612BD98DFD000CDFA4 /* InvoiceItemPriceInfo.swift */,
+				39603E632BD98E29000CDFA4 /* InvoiceItemInput.swift */,
+				39603E652BD98E62000CDFA4 /* InvoiceItemInfo.swift */,
+				39603E672BD98E88000CDFA4 /* InvoiceItemPriceInput.swift */,
+			);
+			path = IBItemBubbleParts;
 			sourceTree = "<group>";
 		};
 		396435A82A7A486E00C148B8 /* Room */ = {
@@ -628,6 +743,7 @@
 			isa = PBXGroup;
 			children = (
 				3964D8012A9B9AE600AD4619 /* SettingsScreen.swift */,
+				3996E2092A796FD6000D86E1 /* Prices */,
 				39498F632B4EC88F0017BE9F /* AppearancaPrefferance */,
 				398900D12B1757E700CC3870 /* AccountSettings */,
 				398900B52B17541F00CC3870 /* PriceOfferSettings */,
@@ -681,6 +797,7 @@
 			children = (
 				396435B62A7A699E00C148B8 /* UIParts.swift */,
 				39475D4E2A76A877006EC970 /* FidoTabView.swift */,
+				39D1C5C32BBDE4CD00D3DEB7 /* GivenPromotionalSheet.swift */,
 				398900772B15299B00CC3870 /* CustomTabView.swift */,
 			);
 			path = TabView;
@@ -739,6 +856,8 @@
 				398900FA2B17657700CC3870 /* LocalizedStringKey Extensions.swift */,
 				390F80322B591DAA00A10FF0 /* NSManagedObject Extension.swift */,
 				398B4C622B96FFDC00F84DB6 /* UUID Extension.swift */,
+				39D1C5C12BBD85C800D3DEB7 /* Date Extensions.swift */,
+				395D43012BFBAD5B00F2CDB3 /* String Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -754,6 +873,7 @@
 				398900BF2B1755A800CC3870 /* Enums User.swift */,
 				398900FC2B1766FC00CC3870 /* Enums Clients.swift */,
 				397B41062B8780950023A9BC /* Enums Settings.swift */,
+				395CDD272BD3D73400E98E49 /* Enums Invoice.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -867,7 +987,7 @@
 			isa = PBXGroup;
 			children = (
 				396435B82A7A69E300C148B8 /* BrickLoadBearingWallViews.swift */,
-				39939AFE2B946B1A00F16884 /* BrickPartitionsViews.swift */,
+				398ED2512BF4C3D7003CFA8A /* BrickPartitionsViews.swift */,
 				3964D7FA2A9B946500AD4619 /* CommuteExpensesViewsViews.swift */,
 				3943953E2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift */,
 				396435AA2A7A489A00C148B8 /* DemolitionWorkViews.swift */,
@@ -889,10 +1009,11 @@
 				39E354902B9C92A900DE247E /* PlasterboardingOffsetWallViews.swift */,
 				396435C82A7A8E7800C148B8 /* PlasteringOfWindowSashViews.swift */,
 				396435C22A7A85B800C148B8 /* PlasteringWallViews.swift */,
+				392E81AA2BD6AE1F00E45DCA /* FacadePlasteringViews.swift */,
 				396435B22A7A4DB700C148B8 /* PlumbingWorkViews.swift */,
 				3964D7FE2A9B989700AD4619 /* SiliconingViews.swift */,
 				396435D42A7A955C00C148B8 /* TileCeramicViews.swift */,
-				394395402A9FC2E900B2F64B /* ToolRentalViews.swift */,
+				394395402A9FC2E900B2F64B /* RentalViews.swift */,
 				396435DC2A7A9CFA00C148B8 /* WindowInstallationsViews.swift */,
 				396435AC2A7A495900C148B8 /* WiringViews.swift */,
 			);
@@ -1026,6 +1147,7 @@
 				3996E1FD2A77BEA0000D86E1 /* InProjectScreen.swift */,
 				3996E1FF2A77BF64000D86E1 /* InProjectScreenViewModel.swift */,
 				398900DC2B17595700CC3870 /* Parts */,
+				392E81AE2BD6B7DF00E45DCA /* Invoicing */,
 			);
 			path = "Project Handling";
 			sourceTree = "<group>";
@@ -1060,6 +1182,17 @@
 			path = PayWall;
 			sourceTree = "<group>";
 		};
+		39D1CBE72BADFA1C006580C2 /* Invoices */ = {
+			isa = PBXGroup;
+			children = (
+				3955E8942C3FCFC4007B5EFF /* Parts */,
+				39D1CBE82BADFA3C006580C2 /* InvoicesScreen.swift */,
+				39DC44F62BE6C99B0026E5E4 /* InvoiceDetailView.swift */,
+				39DC44F82BE6CED60026E5E4 /* InvoicePDFDocumentPreviewSheet.swift */,
+			);
+			path = Invoices;
+			sourceTree = "<group>";
+		};
 		39FB6ECC2B877CC400D473A8 /* Parts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1091,7 +1224,7 @@
 			packageProductDependencies = (
 				398B4C712B976D0800F84DB6 /* ReceiptParser */,
 				398B4C732B976D0800F84DB6 /* RevenueCat */,
-				398B4C752B976D0800F84DB6 /* RevenueCatUI */,
+				3991E8072C04BBC3001B0979 /* RevenueCatUI */,
 			);
 			productName = "Fido Building Calcul";
 			productReference = 395086E42A7182CF0099BAD8 /* Fido Building Calcul.app */;
@@ -1142,6 +1275,7 @@
 				395086EF2A7182D00099BAD8 /* Preview Assets.xcassets in Resources */,
 				395086EC2A7182D00099BAD8 /* Assets.xcassets in Resources */,
 				3949A4E42AFD2BB100D01A59 /* Launch Screen.storyboard in Resources */,
+				39C5CB1D2C47F26D007CD71A /* PrivacyInfo.xcprivacy in Resources */,
 				39A24D472AD6EFD6001FDE2A /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1164,12 +1298,14 @@
 				398900A82B15FF4D00CC3870 /* RoomInputsParts.swift in Sources */,
 				397B410D2B878D9C0023A9BC /* DeleteContractorButton.swift in Sources */,
 				39475D612A76E139006EC970 /* CategorziedProjectsScreen.swift in Sources */,
+				3955E8962C3FCFD6007B5EFF /* HorizontalInvoiceFilterView.swift in Sources */,
 				39D22C742AA12D0400322E31 /* CreateNewClientView.swift in Sources */,
 				397BB9AA2AD041BF006BA23C /* NettingCeiling+CoreDataClass.swift in Sources */,
 				397BB9AC2AD041BF006BA23C /* PenetrationCoating+CoreDataClass.swift in Sources */,
 				396435D92A7A991D00C148B8 /* GroutingViews.swift in Sources */,
 				398900D62B17586D00CC3870 /* ProjectBubbleView.swift in Sources */,
 				398900952B15FA1900CC3870 /* DialogSecondaryButton.swift in Sources */,
+				39A31A432C2165CE00CE91A6 /* InvoiceBuilderSettingsView.swift in Sources */,
 				3996E20B2A797029000D86E1 /* RoomScreen.swift in Sources */,
 				398900C02B1755A800CC3870 /* Enums User.swift in Sources */,
 				39475D532A76AABF006EC970 /* Color Extensions.swift in Sources */,
@@ -1195,10 +1331,12 @@
 				392393752B5B1A3C00DA3A42 /* HistoryEvent+CoreDataClass.swift in Sources */,
 				396435C52A7A884C00C148B8 /* PlasteringCeilingViews.swift in Sources */,
 				39475D572A76AB3C006EC970 /* PricesScreen.swift in Sources */,
+				392E81B02BD6B7F500E45DCA /* InvoiceBuilderViewModel.swift in Sources */,
 				398900EE2B17644600CC3870 /* NewRoomView.swift in Sources */,
 				396435B72A7A699E00C148B8 /* UIParts.swift in Sources */,
 				392393782B5B1D4D00DA3A42 /* ProjectHistory.swift in Sources */,
 				3943953F2A9FB46000B2F64B /* CustomWorksAndMaterialsViews.swift in Sources */,
+				39603E642BD98E29000CDFA4 /* InvoiceItemInput.swift in Sources */,
 				39B51FA62B5706B000700AB4 /* PDFExportButton.swift in Sources */,
 				398900842B152ADC00CC3870 /* OnboardingButton.swift in Sources */,
 				390F80332B591DAA00A10FF0 /* NSManagedObject Extension.swift in Sources */,
@@ -1214,6 +1352,8 @@
 				398900B22B1600BB00CC3870 /* ClientHandling.swift in Sources */,
 				397BB9BA2AD041BF006BA23C /* WindowInstallation+CoreDataClass.swift in Sources */,
 				398900F92B17655400CC3870 /* PDFViewModel.swift in Sources */,
+				398ED2522BF4C3D8003CFA8A /* BrickPartitionsViews.swift in Sources */,
+				39603E662BD98E62000CDFA4 /* InvoiceItemInfo.swift in Sources */,
 				39475D5C2A76B585006EC970 /* PropertyCategoryBubbleViewModel.swift in Sources */,
 				397BB9922AD041BF006BA23C /* PlasteringOfWindowSash+CoreDataClass.swift in Sources */,
 				398900D82B17587D00CC3870 /* NewProjectSheet.swift in Sources */,
@@ -1235,8 +1375,10 @@
 				397BB9C22AD041BF006BA23C /* PaintingCeiling+CoreDataClass.swift in Sources */,
 				398900F42B1764A200CC3870 /* ClientBubbleView.swift in Sources */,
 				398900C52B17560F00CC3870 /* ValidityOfPriceOffer.swift in Sources */,
+				3955E8982C3FD0BB007B5EFF /* InvoiceBubbleView.swift in Sources */,
 				391FEEDB2A9E248B007CBFD4 /* ClientsScreen.swift in Sources */,
 				39F549C92B03806600B9AC23 /* ContractorViewModel.swift in Sources */,
+				39D1C5C42BBDE4CD00D3DEB7 /* GivenPromotionalSheet.swift in Sources */,
 				397BB9942AD041BF006BA23C /* BrickPartition+CoreDataClass.swift in Sources */,
 				396435B32A7A4DB700C148B8 /* PlumbingWorkViews.swift in Sources */,
 				398900F22B17647000CC3870 /* RoomListView.swift in Sources */,
@@ -1245,8 +1387,9 @@
 				3996E1FE2A77BEA0000D86E1 /* InProjectScreen.swift in Sources */,
 				39CA43262B0BA14C0048EB36 /* DialogWindow.swift in Sources */,
 				398900862B15F7FF00CC3870 /* Array Extensions.swift in Sources */,
-				394395412A9FC2E900B2F64B /* ToolRentalViews.swift in Sources */,
+				394395412A9FC2E900B2F64B /* RentalViews.swift in Sources */,
 				390F80372B59487000A10FF0 /* ClientHandlingView.swift in Sources */,
+				39603E5F2BD98D7F000CDFA4 /* InvoiceBuilderSummaryView.swift in Sources */,
 				396435DB2A7A9B9800C148B8 /* InstallationOfSanitaryViews.swift in Sources */,
 				396435D72A7A968F00C148B8 /* PavingCeramicViews.swift in Sources */,
 				398900D32B17581200CC3870 /* ArchivedProjectView.swift in Sources */,
@@ -1256,33 +1399,43 @@
 				397B41092B87820D0023A9BC /* CreateContractorButton.swift in Sources */,
 				398900E62B17638200CC3870 /* ProjectIsArchivedbutton.swift in Sources */,
 				398900F02B17645C00CC3870 /* RoomBubbleView.swift in Sources */,
-				3949A4E22AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodeld in Sources */,
 				397BB9B02AD041BF006BA23C /* PlasteringWall+CoreDataClass.swift in Sources */,
 				39D435A12AA0DC5F001AAD18 /* Client+CoreDataClass.swift in Sources */,
 				398900FB2B17657700CC3870 /* LocalizedStringKey Extensions.swift in Sources */,
 				397BB9A02AD041BF006BA23C /* Wiring+CoreDataClass.swift in Sources */,
+				39D1C5C22BBD85C800D3DEB7 /* Date Extensions.swift in Sources */,
+				392E81AB2BD6AE1F00E45DCA /* FacadePlasteringViews.swift in Sources */,
 				399BB77B2AEBFEC900452560 /* PayWall.swift in Sources */,
 				398900AD2B15FFFA00CC3870 /* ProjectHandling.swift in Sources */,
-				396EFD3C2AD0A2D400747EB5 /* CustomWork+CoreDataClass.swift in Sources */,
+				39A111B02BDA88690070500B /* ToolRental+CoreDataClass.swift in Sources */,
+				39A111B42BDA88690070500B /* CoreDrill+CoreDataClass.swift in Sources */,
 				397BB9B82AD041BF006BA23C /* Plumbing+CoreDataClass.swift in Sources */,
 				3996E29C2A797C54000D86E1 /* Project+CoreDataClass.swift in Sources */,
+				39D1CBE92BADFA3C006580C2 /* InvoicesScreen.swift in Sources */,
 				3989007F2B152A9800CC3870 /* OnboardingContexts.swift in Sources */,
+				398ED2552BF4C448003CFA8A /* Fido_Building_Calcul.xcdatamodeld in Sources */,
 				396EFD422AD0A33900747EB5 /* CustomMaterial+CoreDataClass.swift in Sources */,
 				397B41112B87939B0023A9BC /* InProjectContractorBubbles.swift in Sources */,
+				39666A222BE12D580086D704 /* InvoicePreviewSheet.swift in Sources */,
+				39DC44F72BE6C99B0026E5E4 /* InvoiceDetailView.swift in Sources */,
 				39D22C782AA12DE400322E31 /* CorporationClientCreationView.swift in Sources */,
-				39939AFF2B946B1A00F16884 /* BrickPartitionsViews.swift in Sources */,
 				397BB9902AD041BF006BA23C /* InstallationOfSanitary+CoreDataClass.swift in Sources */,
 				396435D32A7A944000C148B8 /* LayingFloatingFloorsViews.swift in Sources */,
 				396435C12A7A843F00C148B8 /* NettingCeilingViews.swift in Sources */,
 				39E3548E2B9C87E700DE247E /* PlasterboardingOffsetWall+CoreDataClass.swift in Sources */,
 				398900CE2B17576500CC3870 /* ArchiveDurationButton.swift in Sources */,
+				39603E682BD98E88000CDFA4 /* InvoiceItemPriceInput.swift in Sources */,
 				396435BF2A7A821500C148B8 /* NettingWallViews.swift in Sources */,
 				396435C92A7A8E7800C148B8 /* PlasteringOfWindowSashViews.swift in Sources */,
 				399BB77F2AEBFF3400452560 /* OfferingBubble.swift in Sources */,
 				3996E2002A77BF64000D86E1 /* InProjectScreenViewModel.swift in Sources */,
 				39804FAA2AC43C0700F2A072 /* ClientEditViewModel.swift in Sources */,
+				3955E89A2C3FD0FE007B5EFF /* InvoiceScreenTitleView.swift in Sources */,
 				399BB77D2AEBFEDE00452560 /* PayWallViewModel.swift in Sources */,
+				39603E5D2BD98D2F000CDFA4 /* InvoiceBuilderItemBubble.swift in Sources */,
+				39A111B22BDA88690070500B /* Scaffolding+CoreDataClass.swift in Sources */,
 				397B41012B877DEC0023A9BC /* ContractorView.swift in Sources */,
+				395CDD282BD3D73400E98E49 /* Enums Invoice.swift in Sources */,
 				39AEABFA2AAF6A470085B2A1 /* InProjectPricesListViewModel.swift in Sources */,
 				3989009E2B15FAD200CC3870 /* Other Protocols.swift in Sources */,
 				39B51FA42B57048200700AB4 /* PDFPreviewButton.swift in Sources */,
@@ -1295,9 +1448,12 @@
 				398900C22B1755CB00CC3870 /* ContractorEditDetailsView.swift in Sources */,
 				398901072B17684B00CC3870 /* ClientsProjectsBubble.swift in Sources */,
 				397BB9A42AD041BF006BA23C /* SkirtingOfFloatingFloor+CoreDataClass.swift in Sources */,
+				392E81A82BD6A8ED00E45DCA /* FacadePlastering+CoreDataClass.swift in Sources */,
 				398900822B152AB700CC3870 /* OnboardingPageView.swift in Sources */,
 				395086E82A7182CF0099BAD8 /* FidoBuildingCalculApp.swift in Sources */,
+				3955E89C2C3FD2D5007B5EFF /* ProjectInvoiceBubbleView.swift in Sources */,
 				3996E2A42A797C54000D86E1 /* Window+CoreDataClass.swift in Sources */,
+				39DC44F42BE6C5630026E5E4 /* Invoice+CoreDataClass.swift in Sources */,
 				398900CA2B17567F00CC3870 /* ContractorBubble.swift in Sources */,
 				398900A02B15FB6500CC3870 /* Enums Projects.swift in Sources */,
 				39B51FA22B56FC8C00700AB4 /* PDFPreviewSheet.swift in Sources */,
@@ -1313,6 +1469,7 @@
 				3989008F2B15F8E200CC3870 /* Works.swift in Sources */,
 				39B6EF4D2B41A1C70002066C /* Enums BIDError.swift in Sources */,
 				397B410F2B878E840023A9BC /* ContractorDetailViewModel.swift in Sources */,
+				392E81AD2BD6B7D900E45DCA /* InvoiceBuilderView.swift in Sources */,
 				398900CC2B17574800CC3870 /* ArchiveDurationView.swift in Sources */,
 				398900FD2B1766FC00CC3870 /* Enums Clients.swift in Sources */,
 				39498F672B4EC8EC0017BE9F /* AppearanceOptions.swift in Sources */,
@@ -1320,6 +1477,7 @@
 				397BB9BC2AD041BF006BA23C /* PlasteringCeiling+CoreDataClass.swift in Sources */,
 				397BB9B62AD041BF006BA23C /* LayingFloatingFloors+CoreDataClass.swift in Sources */,
 				398900B02B16006000CC3870 /* ComplementaryWorks.swift in Sources */,
+				391B32BD2BF9230A00840EAE /* MissingValuesSheet.swift in Sources */,
 				39B51FA82B57133900700AB4 /* TotalPriceOfferNew.swift in Sources */,
 				39475D652A76E376006EC970 /* View Extensions.swift in Sources */,
 				39475D552A76AB25006EC970 /* ProjectsScreen.swift in Sources */,
@@ -1330,23 +1488,29 @@
 				3989010D2B1769C700CC3870 /* PriceBubbles.swift in Sources */,
 				39FB6ECA2B87775500D473A8 /* Contractor+CoreDataClass.swift in Sources */,
 				398900932B15F9F100CC3870 /* DialogPrimaryButton.swift in Sources */,
+				399516392BE6782800AE8EEB /* InvoiceDetails.swift in Sources */,
 				39F549C72B03805600B9AC23 /* ContractorEditView.swift in Sources */,
 				398900EA2B1763E300CC3870 /* ArchiveButton.swift in Sources */,
 				392DB07D2B947D2B00AA8BC8 /* PlasterboardingPartitionViews.swift in Sources */,
 				396435C32A7A85B800C148B8 /* PlasteringWallViews.swift in Sources */,
 				398900B92B1754A000CC3870 /* Enums Archive.swift in Sources */,
+				398ED2502BF4C327003CFA8A /* CustomWork+CoreDataClass.swift in Sources */,
 				398900742B1528F100CC3870 /* Pricing Calculations Types.swift in Sources */,
 				397BB9A22AD041BF006BA23C /* PlasterboardingPartition+CoreDataClass.swift in Sources */,
 				398900EC2B17641600CC3870 /* TitleAndNotes.swift in Sources */,
 				3943ADA72B7A156B0061F2F1 /* EmailInputSheet.swift in Sources */,
 				396435CB2A7A8F6D00C148B8 /* PenetrationCoatViews.swift in Sources */,
 				3989008D2B15F8BF00CC3870 /* Materials.swift in Sources */,
+				39603E622BD98DFD000CDFA4 /* InvoiceItemPriceInfo.swift in Sources */,
 				39AEABF82AAF6A350085B2A1 /* InProjectPricesListView.swift in Sources */,
 				396435E12A7AB04900C148B8 /* RoomCalculationBill.swift in Sources */,
 				397BB99A2AD041BF006BA23C /* Siliconing+CoreDataClass.swift in Sources */,
 				396435D52A7A955C00C148B8 /* TileCeramicViews.swift in Sources */,
+				39666A202BE119050086D704 /* InvoicePDFCreator.swift in Sources */,
+				395D43022BFBAD5B00F2CDB3 /* String Extensions.swift in Sources */,
 				397BB9A62AD041BF006BA23C /* InstallationOfDoorJamb+CoreDataClass.swift in Sources */,
 				396435DD2A7A9CFA00C148B8 /* WindowInstallationsViews.swift in Sources */,
+				39DC44F92BE6CED60026E5E4 /* InvoicePDFDocumentPreviewSheet.swift in Sources */,
 				3929767C2B358DB3004884E8 /* BIDNetworkClasses.swift in Sources */,
 				39D22C762AA12D9900322E31 /* PersonalClientCreationView.swift in Sources */,
 				398B4C652B970AF700F84DB6 /* ChoosingContractorView.swift in Sources */,
@@ -1483,7 +1647,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
 				DEVELOPMENT_TEAM = J7CR9GZ8S9;
 				ENABLE_PREVIEWS = YES;
@@ -1504,7 +1668,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.2;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = sk.fido.FidoBuildingCalcul;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1524,7 +1688,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
 				DEVELOPMENT_TEAM = J7CR9GZ8S9;
 				ENABLE_PREVIEWS = YES;
@@ -1545,7 +1709,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.2;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = sk.fido.FidoBuildingCalcul;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1603,7 +1767,7 @@
 			package = 398B4C702B976D0800F84DB6 /* XCRemoteSwiftPackageReference "purchases-ios" */;
 			productName = RevenueCat;
 		};
-		398B4C752B976D0800F84DB6 /* RevenueCatUI */ = {
+		3991E8072C04BBC3001B0979 /* RevenueCatUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 398B4C702B976D0800F84DB6 /* XCRemoteSwiftPackageReference "purchases-ios" */;
 			productName = RevenueCatUI;
@@ -1611,14 +1775,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		3949A4E02AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodeld */ = {
+		398ED2532BF4C448003CFA8A /* Fido_Building_Calcul.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				3949A4E12AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodel */,
+				398ED2542BF4C448003CFA8A /* Fido_Building_Calcul.xcdatamodel */,
 			);
-			currentVersion = 3949A4E12AFD2B2A00D01A59 /* Fido_Building_Calcul.xcdatamodel */;
-			name = Fido_Building_Calcul.xcdatamodeld;
-			path = "../../../../Library/Mobile Documents/com~apple~CloudDocs/Fido/Fido Building Calcul/Fido Building Calcul/CoreDataModels/Fido_Building_Calcul.xcdatamodeld";
+			currentVersion = 398ED2542BF4C448003CFA8A /* Fido_Building_Calcul.xcdatamodel */;
+			path = Fido_Building_Calcul.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

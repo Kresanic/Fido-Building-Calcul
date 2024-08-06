@@ -86,11 +86,13 @@ struct ProjectBubbleView: View {
                 }
                 
             }
+            
             if !isDeleting {
-            Image(systemName: "chevron.right")
-                .font(.system(size: 24))
-                .foregroundStyle(Color.brandBlack)
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 24))
+                    .foregroundStyle(Color.brandBlack)
             }
+            
         }
         .padding(.horizontal, 15)
         .padding(.vertical, paddingVertical)
@@ -117,7 +119,6 @@ struct ProjectBubbleView: View {
                     pressed = false
                 }
             }
-            
         }
         .redrawable()
         

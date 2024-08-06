@@ -13,13 +13,13 @@ import SwiftUI
 @objc(TileCeramic)
 public class TileCeramic: NSManagedObject, AreaBasedWorkType {
     
-    static var title: LocalizedStringKey = "Tiling"
+    static var title: LocalizedStringKey = "Tiling under 60cm"
     
     static var subTitle: LocalizedStringKey = "ceramicTiling"
     
     static var billSubTitle: LocalizedStringKey = "Tiling, ceramic"
     
-    static var unit: UnitsOfMeasurment  = .squareMeter
+    static var unit: UnitsOfMeasurement  = .squareMeter
     
     public var cleanArea: Double {
         

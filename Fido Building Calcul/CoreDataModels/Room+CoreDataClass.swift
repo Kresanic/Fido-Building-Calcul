@@ -204,6 +204,16 @@ public class Room: NSManagedObject {
         
     }
     
+    public var associatedFacadePlasterings: [FacadePlastering] {
+    
+        let set = containsFacadePlastering as? Set<FacadePlastering> ?? []
+    
+        return set.sorted {
+            $0.dateCreated ?? Date.now > $1.dateCreated ?? Date.now
+        }
+        
+    }
+    
     public var associatedPlasteringCeilings: [PlasteringCeiling] {
     
         let set = containsPlasteringCeilings as? Set<PlasteringCeiling> ?? []
@@ -385,6 +395,36 @@ public class Room: NSManagedObject {
     public var associatedCustomMaterials: [CustomMaterial] {
     
         let set = containsCustomMaterials as? Set<CustomMaterial> ?? []
+    
+        return set.sorted {
+            $0.dateCreated ?? Date.now > $1.dateCreated ?? Date.now
+        }
+        
+    }
+    
+    public var associatedToolRentals: [ToolRental] {
+    
+        let set = containsToolRentals as? Set<ToolRental> ?? []
+    
+        return set.sorted {
+            $0.dateCreated ?? Date.now > $1.dateCreated ?? Date.now
+        }
+        
+    }
+    
+    public var associatedScaffoldings: [Scaffolding] {
+    
+        let set = containsScaffoldings as? Set<Scaffolding> ?? []
+    
+        return set.sorted {
+            $0.dateCreated ?? Date.now > $1.dateCreated ?? Date.now
+        }
+        
+    }
+    
+    public var associatedCoreDrills: [CoreDrill] {
+    
+        let set = containsCoreDrills as? Set<CoreDrill> ?? []
     
         return set.sorted {
             $0.dateCreated ?? Date.now > $1.dateCreated ?? Date.now

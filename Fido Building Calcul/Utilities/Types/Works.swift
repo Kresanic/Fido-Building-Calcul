@@ -15,6 +15,57 @@ public class AuxiliaryAndFinishingWork: WorkType {
     
     static var subTitle: LocalizedStringKey = ""
     
-    static var unit: UnitsOfMeasurment = .percentage
+    static var unit: UnitsOfMeasurement = .percentage
+    
+}
+
+public class LargeFormatPavingAndTiling: WorkType {
+    
+    var dateCreated: Date?
+    
+    static var title: LocalizedStringKey = "Large Format"
+    
+    static var subTitle: LocalizedStringKey = "above 60cm"
+    
+    static var pavingBillTitle: LocalizedStringKey = "Paving, large format"
+    
+    static var tilingBillTitle: LocalizedStringKey = "Tiling, large format"
+    
+    static var unit: UnitsOfMeasurement = .squareMeter
+    
+}
+
+
+public class JollyEdging: WorkType {
+    
+    static var title: LocalizedStringKey = "Jolly Edging"
+    
+    static var subTitle: LocalizedStringKey = ""
+    
+    static var unit: UnitsOfMeasurement = .meter
+    
+}
+
+public class PlinthCutting: WorkType {
+    
+    static var title: LocalizedStringKey = "Plinth"
+    
+    static var subTitle: LocalizedStringKey = "cutting and grinding"
+    
+    static var billTitle: LocalizedStringKey = "Plinth, cutting/grinding"
+    
+    static var unit: UnitsOfMeasurement = .meter
+    
+}
+
+public class PlinthBonding: WorkType {
+    
+    static var title: LocalizedStringKey = "Plinth"
+    
+    static var subTitle: LocalizedStringKey = "bonding"
+    
+    static var billTitle: LocalizedStringKey = "Plinth, bonding"
+    
+    static var unit: UnitsOfMeasurement = .meter
     
 }

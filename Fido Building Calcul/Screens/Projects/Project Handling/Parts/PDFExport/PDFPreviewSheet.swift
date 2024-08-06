@@ -51,6 +51,7 @@ struct PDFPreviewSheet: View {
                     .background(Color.brandWhite.opacity(0.5))
                     .background(.ultraThinMaterial)
                 
+                
                 Spacer()
                 
                 Button {
@@ -58,7 +59,7 @@ struct PDFPreviewSheet: View {
                     withAnimation { pdfViewModel.shouldSharePDF = true }
                     dismiss()
                 } label: {
-                    PDFExportButton()
+                    PDFExportButton(title: "Send")
                 }
                     .padding(.top, 15)
                     .padding(.horizontal, 20)
@@ -84,7 +85,7 @@ struct PDFPreviewSheet: View {
     
 }
 
-struct PDFKitView: UIViewRepresentable {
+fileprivate struct PDFKitView: UIViewRepresentable {
 
     let pdfDocument: PDFDocument
 

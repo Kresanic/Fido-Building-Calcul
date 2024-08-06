@@ -15,7 +15,7 @@ struct ScreenTitle: View {
     
         HStack {
             Text(title)
-                .font(.system(size: 40, weight: .heavy))
+                .font(.system(size: 35, weight: .bold))
                 .foregroundColor(Color.brandBlack)
                 .padding(.vertical, 15)
             

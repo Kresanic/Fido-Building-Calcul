@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-enum CustomTabs { case projects, prices, clients, settings }
+enum CustomTabs { case projects, clients, settings, invoices }
 
 enum DialogAlertType { case approval, warning }
 
-public enum UnitsOfMeasurment: String {
+public enum UnitsOfMeasurement: String {
     
     case basicMeter, meter, squareMeter, cubicMeter, piece, package, hour, kilometer, percentage, day, kilogram, ton
     
@@ -36,7 +36,7 @@ public enum UnitsOfMeasurment: String {
         case .percentage:
             return "%"
         case .day:
-            return "day"
+            return "days"
         case .kilogram:
             return "kg"
         case .ton:
@@ -45,7 +45,7 @@ public enum UnitsOfMeasurment: String {
         
     }
     
-    static func parse(_ s: String?) -> UnitsOfMeasurment {
+    static func parse(_ s: String?) -> UnitsOfMeasurement {
         switch s {
         case "basicMeter":
             return .basicMeter
@@ -65,7 +65,7 @@ public enum UnitsOfMeasurment: String {
             return .kilometer
         case "percentage":
             return .percentage
-        case "day":
+        case "days":
             return .day
         case "kilogram":
             return .kilogram

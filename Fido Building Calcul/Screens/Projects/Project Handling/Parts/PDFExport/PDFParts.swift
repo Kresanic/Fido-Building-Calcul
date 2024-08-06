@@ -82,39 +82,74 @@ struct PDFTotalPriceView: View {
 struct PDFClientInfoView: View {
     
     var client: Client
+    var isVertical: Bool = false
     
     var body: some View {
         
-        HStack(alignment: .lastTextBaseline, spacing: 30) {
-            
-            VStack(alignment: .leading, spacing: 2) {
+        if isVertical {
+            VStack(alignment: .leading, spacing: 15) {
                 
-                PDFPersonalInfoView(value: client.name)
-                
-                PDFPersonalInfoView(value: client.street)
-                
-                PDFPersonalInfoView(value: client.secondRowStreet)
-                
-                PDFPersonalInfoView(value: client.postalCode, secondValue: client.city)
-                
-                PDFPersonalInfoView(value: client.country)
-                
-                PDFPersonalInfoView(value: client.email)
-                
-                PDFPersonalInfoView(value: client.phone)
-                
-            }
-            
-            if client.type == ClientType.corporation.rawValue {
                 VStack(alignment: .leading, spacing: 2) {
-                    PDFPersonalInfoView(title: NSLocalizedString("BID", comment: ""), value: client.businessID)
                     
-                    PDFPersonalInfoView(title: NSLocalizedString("TID", comment: ""), value: client.taxID)
+                    PDFPersonalInfoView(value: client.name)
                     
-                    PDFPersonalInfoView(title: NSLocalizedString("VAT ID", comment: ""), value: client.vatRegistrationNumber)
+                    PDFPersonalInfoView(value: client.street)
+                    
+                    PDFPersonalInfoView(value: client.secondRowStreet)
+                    
+                    PDFPersonalInfoView(value: client.postalCode, secondValue: client.city)
+                    
+                    PDFPersonalInfoView(value: client.country)
+                    
+                    PDFPersonalInfoView(value: client.email)
+                    
+                    PDFPersonalInfoView(value: client.phone)
+                    
                 }
+                
+                if client.type == ClientType.corporation.rawValue {
+                    VStack(alignment: .leading, spacing: 2) {
+                        PDFPersonalInfoView(title: NSLocalizedString("BID", comment: ""), value: client.businessID)
+                        
+                        PDFPersonalInfoView(title: NSLocalizedString("TID", comment: ""), value: client.taxID)
+                        
+                        PDFPersonalInfoView(title: NSLocalizedString("VAT ID", comment: ""), value: client.vatRegistrationNumber)
+                    }
+                }
+                
             }
-            
+        } else {
+            HStack(alignment: .lastTextBaseline, spacing: 30) {
+                
+                VStack(alignment: .leading, spacing: 2) {
+                    
+                    PDFPersonalInfoView(value: client.name)
+                    
+                    PDFPersonalInfoView(value: client.street)
+                    
+                    PDFPersonalInfoView(value: client.secondRowStreet)
+                    
+                    PDFPersonalInfoView(value: client.postalCode, secondValue: client.city)
+                    
+                    PDFPersonalInfoView(value: client.country)
+                    
+                    PDFPersonalInfoView(value: client.email)
+                    
+                    PDFPersonalInfoView(value: client.phone)
+                    
+                }
+                
+                if client.type == ClientType.corporation.rawValue {
+                    VStack(alignment: .leading, spacing: 2) {
+                        PDFPersonalInfoView(title: NSLocalizedString("BID", comment: ""), value: client.businessID)
+                        
+                        PDFPersonalInfoView(title: NSLocalizedString("TID", comment: ""), value: client.taxID)
+                        
+                        PDFPersonalInfoView(title: NSLocalizedString("VAT ID", comment: ""), value: client.vatRegistrationNumber)
+                    }
+                }
+                
+            }
         }
         
     }
@@ -323,14 +358,14 @@ struct PDFRowView: View {
             
             var pieces = priceBillRow.pieces
             
-            Text("\(pieces.roundAndRemoveZerosFromEnd()) \(NSLocalizedString(UnitsOfMeasurment.readableSymbol(priceBillRow.unit).stringKey ?? "", comment: ""))")
+            Text("\(pieces.roundAndRemoveZerosFromEnd()) \(NSLocalizedString(UnitsOfMeasurement.readableSymbol(priceBillRow.unit).stringKey ?? "", comment: ""))")
                 .font(.system(size: 12))
                 .frame(width: 60, alignment: .trailing)
 
             if let formattedPricePerUnit = formatter.string(from: priceBillRow.price/priceBillRow.pieces as NSNumber) {
                 Text(formattedPricePerUnit)
                     .font(.system(size: 12))
-                    .frame(width: 75, alignment: .trailing)
+                    .frame(width: 70, alignment: .trailing)
             }
             
             Text((percentage/100), format: .percent.precision(.fractionLength(0)))
@@ -340,7 +375,7 @@ struct PDFRowView: View {
             if let VATPrice = formatter.string(from: priceBillRow.price*(percentage/100) as NSNumber) {
                 Text(VATPrice)
                     .font(.system(size: 12))
-                    .frame(width: 60, alignment: .trailing)
+                    .frame(width: 80, alignment: .trailing)
             }
             
             if let formattedPrice = formatter.string(from: priceBillRow.price as NSNumber) {

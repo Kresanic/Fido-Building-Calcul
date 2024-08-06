@@ -101,6 +101,22 @@
         }
       }
     },
+    "%@  %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@  %2$@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@  %2$@"
+          }
+        }
+      }
+    },
     "%@ - %@" : {
       "localizations" : {
         "en" : {
@@ -174,7 +190,7 @@
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%lld dni"
+            "value" : "%lld dní"
           }
         }
       }
@@ -279,6 +295,16 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "%lld Months on Us!" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Mesiacov na Nás!"
           }
         }
       }
@@ -549,12 +575,32 @@
         }
       }
     },
+    "2024001 or 1" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2024001 alebo 1"
+          }
+        }
+      }
+    },
     "12345679" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "12345679"
+          }
+        }
+      }
+    },
+    "above 60cm" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nad 60cm"
           }
         }
       }
@@ -619,6 +665,16 @@
         }
       }
     },
+    "Add signature" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pridať podpis"
+          }
+        }
+      }
+    },
     "Additional info" : {
       "localizations" : {
         "sk" : {
@@ -669,12 +725,42 @@
         }
       }
     },
+    "After Maturity" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Po Splatnosti"
+          }
+        }
+      }
+    },
     "After saving the client's details, you can see already created projects, as well as create a new one by clicking on: (+)" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Po uložení údajov klienta môžete vidieť už vytvorené projekty, ako aj vytvoriť nový kliknutím na: (+)"
+          }
+        }
+      }
+    },
+    "All" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Všetky"
+          }
+        }
+      }
+    },
+    "Amount to be paid" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suma na úhradu"
           }
         }
       }
@@ -829,6 +915,26 @@
         }
       }
     },
+    "Are you sure you want to delete this invoice? This action is irreversible, and it will permanently erase all related data. The invoice number will also be freed for future use." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ste si istí, že chcete túto faktúru vymazať? Táto akcia je nezvratná a natrvalo vymaže všetky súvisiace údaje. Číslo faktúry sa uvoľní aj pre budúce použitie."
+          }
+        }
+      }
+    },
+    "assembly and disassembly" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "montáž a demontáž"
+          }
+        }
+      }
+    },
     "Assign contractor" : {
       "localizations" : {
         "sk" : {
@@ -905,6 +1011,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "SWIFT Kód"
+          }
+        }
+      }
+    },
+    "Bank transfer" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prevodom"
           }
         }
       }
@@ -999,6 +1115,16 @@
         }
       }
     },
+    "bonding" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "lepenie"
+          }
+        }
+      }
+    },
     "Brick load-bearing wall" : {
       "localizations" : {
         "sk" : {
@@ -1069,6 +1195,16 @@
         }
       }
     },
+    "By exiting this view all changes made will be deleted." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odchodom z tejto obrazovky sa vymažu všetky doteraz vykonané zmeny."
+          }
+        }
+      }
+    },
     "By updating the prices, you will replace all existing prices with those from the general price list. This action is irreversible." : {
       "localizations" : {
         "sk" : {
@@ -1095,6 +1231,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "výdatnosť na "
+          }
+        }
+      }
+    },
+    "Cash" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hotovosť"
+          }
+        }
+      }
+    },
+    "Cash Receipt" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prijmový doklad"
+          }
+        }
+      }
+    },
+    "Cash Receipt Preview" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Náhľad prijmového dokladu"
           }
         }
       }
@@ -1205,6 +1371,16 @@
         }
       }
     },
+    "Choose items and generate PDF" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vybrať položky a vygenerovať PDF"
+          }
+        }
+      }
+    },
     "Circumference" : {
       "localizations" : {
         "sk" : {
@@ -1226,6 +1402,16 @@
       }
     },
     "Client" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klient"
+          }
+        }
+      }
+    },
+    "Client values" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
@@ -1385,6 +1571,16 @@
         }
       }
     },
+    "Contractor values" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodávateľ"
+          }
+        }
+      }
+    },
     "Contractors" : {
       "localizations" : {
         "sk" : {
@@ -1412,6 +1608,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kópia"
+          }
+        }
+      }
+    },
+    "Core Drill" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jadrová vrtačka"
+          }
+        }
+      }
+    },
+    "Core drill no. %lld" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jadrová vrtačka č. %lld"
           }
         }
       }
@@ -1456,6 +1672,16 @@
         }
       }
     },
+    "Could not generate Invoice Number" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nepodarilo sa vygenerovať číslo faktúry"
+          }
+        }
+      }
+    },
     "Could not reach database." : {
       "localizations" : {
         "sk" : {
@@ -1476,6 +1702,16 @@
         }
       }
     },
+    "count: %@" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "počet: %@"
+          }
+        }
+      }
+    },
     "Country" : {
       "localizations" : {
         "sk" : {
@@ -1492,6 +1728,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vytvoriť"
+          }
+        }
+      }
+    },
+    "Create invoice" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vytvoriť faktúru"
+          }
+        }
+      }
+    },
+    "create invoices" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "fakturovanie"
           }
         }
       }
@@ -1666,6 +1922,16 @@
         }
       }
     },
+    "cutting and grinding" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "rezanie a brúsenie"
+          }
+        }
+      }
+    },
     "Dark" : {
       "localizations" : {
         "sk" : {
@@ -1686,12 +1952,32 @@
         }
       }
     },
+    "Date of dispatch" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dátum dodania"
+          }
+        }
+      }
+    },
     "Date of issue" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dátum vystavenia"
+          }
+        }
+      }
+    },
+    "Date of Issue" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dátum vystavenia:"
           }
         }
       }
@@ -1706,12 +1992,32 @@
         }
       }
     },
+    "days" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dní"
+          }
+        }
+      }
+    },
     "Delete" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vymazať"
+          }
+        }
+      }
+    },
+    "Delete changes?" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vymazať zmeny?"
           }
         }
       }
@@ -1732,6 +2038,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vymazať dodávateľa?"
+          }
+        }
+      }
+    },
+    "Delete Invoice?" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vymazať faktúru?"
           }
         }
       }
@@ -1906,6 +2222,16 @@
         }
       }
     },
+    "easily create and send invoices to your clients" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "funkcia, umožňuje vytváranie a odosielanie faktúr klientom"
+          }
+        }
+      }
+    },
     "Edit" : {
       "localizations" : {
         "sk" : {
@@ -1966,12 +2292,62 @@
         }
       }
     },
+    "Error with calculating Price" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chyba pri výpočte ceny"
+          }
+        }
+      }
+    },
+    "Error with calculating VAT" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chyba pri výpočte DPH"
+          }
+        }
+      }
+    },
+    "Exclude" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odobrať"
+          }
+        }
+      }
+    },
     "export to PDF" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "exportovať do PDF"
+          }
+        }
+      }
+    },
+    "Facade Plaster" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fasádna omietka"
+          }
+        }
+      }
+    },
+    "Facade Plastering" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fasádna omietka"
           }
         }
       }
@@ -2066,6 +2442,26 @@
         }
       }
     },
+    "finished" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ukončený"
+          }
+        }
+      }
+    },
+    "Finished" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukončený"
+          }
+        }
+      }
+    },
     "Flat" : {
       "localizations" : {
         "sk" : {
@@ -2147,11 +2543,42 @@
       }
     },
     "General price list" : {
+      "comment" : "in settings",
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cenník (hlavný) na spodnej lište"
+            "value" : "Hlavný cenník"
+          }
+        }
+      }
+    },
+    "Generate anyways" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vygenerovať"
+          }
+        }
+      }
+    },
+    "Generate Invoice" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vygenerovať faktúru"
+          }
+        }
+      }
+    },
+    "Generic values" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Všeobecné"
           }
         }
       }
@@ -2276,6 +2703,46 @@
         }
       }
     },
+    "I will fill in!" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doplním!"
+          }
+        }
+      }
+    },
+    "In the case of non-payment of the invoice will automatically claim over to a collections company MAHUT Group." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "V prípade nezaplatenia faktúry bude pohľadávka automaticky postúpená inkasnej spoločnosti MAHUT Group."
+          }
+        }
+      }
+    },
+    "Include" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pridať"
+          }
+        }
+      }
+    },
+    "Incorrect Invoice Number Format" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nesprávny formát čísla faktúry"
+          }
+        }
+      }
+    },
     "Insert BID and we will search for it in database and fill all publicly available information about the company." : {
       "localizations" : {
         "sk" : {
@@ -2316,12 +2783,160 @@
         }
       }
     },
+    "Invoice" : {
+      "comment" : "just",
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faktúra"
+          }
+        }
+      }
+    },
+    "Invoice %@" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faktúra %@"
+          }
+        }
+      }
+    },
+    "Invoice Builder" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tvorba faktúry"
+          }
+        }
+      }
+    },
+    "Invoice Generated" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faktúra vygenerovaná "
+          }
+        }
+      }
+    },
+    "Invoice maturity" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doba splatnosti"
+          }
+        }
+      }
+    },
+    "Invoice number" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Číslo faktúry"
+          }
+        }
+      }
+    },
+    "Invoice Number already In Use" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Číslo faktúry sa už používa"
+          }
+        }
+      }
+    },
+    "Invoice Preview" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Náhľad Faktúry"
+          }
+        }
+      }
+    },
+    "Invoice sent" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faktúra odoslaná"
+          }
+        }
+      }
+    },
+    "InvoiceJS" : {
+      "comment" : "just",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invoice"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "faktúru"
+          }
+        }
+      }
+    },
+    "Invoices" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faktúry"
+          }
+        }
+      }
+    },
+    "Issued by:" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vystavil/a:"
+          }
+        }
+      }
+    },
+    "Items" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Položky"
+          }
+        }
+      }
+    },
     "John Doe" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Janko Hruška"
+          }
+        }
+      }
+    },
+    "Jolly Edging" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jolly hrana"
           }
         }
       }
@@ -2362,6 +2977,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "km"
+          }
+        }
+      }
+    },
+    "Large Format" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veľkoformát"
           }
         }
       }
@@ -2546,6 +3171,36 @@
         }
       }
     },
+    "Made by" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyhotovil:"
+          }
+        }
+      }
+    },
+    "Main price list" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cenník (hlavný) na spodnej lište"
+          }
+        }
+      }
+    },
+    "Mark as Paid" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Označiť ako uhradené"
+          }
+        }
+      }
+    },
     "Material" : {
       "localizations" : {
         "sk" : {
@@ -2576,6 +3231,120 @@
         }
       }
     },
+    "Matured %lld days ago" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Matured %lld day ago"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "Matured %lld days ago"
+                }
+              }
+            }
+          }
+        },
+        "sk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Po splatnosti %lld dni"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Po splatnosti %lld dní"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Po splatnosti %lld deň"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Po splatnosti %lld dní"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Matures in %lld days" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Matures in %lld day"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "Matures in %lld days"
+                }
+              }
+            }
+          }
+        },
+        "sk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Splatné o %lld dni"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Splatné o %lld dní"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Splatné o %lld deň"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Splatné o %lld dní"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Maturity date" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dátum splatnosti"
+          }
+        }
+      }
+    },
     "Mesh" : {
       "localizations" : {
         "sk" : {
@@ -2592,6 +3361,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zrkadlo"
+          }
+        }
+      }
+    },
+    "Missing values" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chýbajúce hodnoty"
           }
         }
       }
@@ -2736,12 +3515,42 @@
         }
       }
     },
+    "No Client Assigned to this Project" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Projekt bez klienta"
+          }
+        }
+      }
+    },
     "No company was found with given BID." : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nepodarilo sa nájsť spoločnosť s daným IČO."
+          }
+        }
+      }
+    },
+    "No Contractor Assigned to this Project" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Projekt bez dodávateľa"
+          }
+        }
+      }
+    },
+    "No Items to be displayed" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Žiadne položky na zobrazenie"
           }
         }
       }
@@ -2876,6 +3685,16 @@
         }
       }
     },
+    "Other" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ostatné"
+          }
+        }
+      }
+    },
     "Others" : {
       "localizations" : {
         "sk" : {
@@ -2902,6 +3721,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "balenie"
+          }
+        }
+      }
+    },
+    "package 25kg" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "balenie 25kg"
+          }
+        }
+      }
+    },
+    "Paid" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uhradené"
           }
         }
       }
@@ -3046,12 +3885,12 @@
         }
       }
     },
-    "Paving" : {
+    "Paving under 60cm" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dlažba"
+            "value" : "Dlažba do 60 cm"
           }
         }
       }
@@ -3062,6 +3901,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dlažba, keramická"
+          }
+        }
+      }
+    },
+    "Paving, large format" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dlažba, veľkoformát"
           }
         }
       }
@@ -3086,12 +3935,42 @@
         }
       }
     },
+    "Payment for Invoice" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Úhrada faktúry"
+          }
+        }
+      }
+    },
+    "Payment type" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forma úhrady"
+          }
+        }
+      }
+    },
     "pc" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ks"
+          }
+        }
+      }
+    },
+    "PDF" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PDF"
           }
         }
       }
@@ -3336,6 +4215,36 @@
         }
       }
     },
+    "Plinth" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sokel"
+          }
+        }
+      }
+    },
+    "Plinth, bonding" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sokel, lepenie"
+          }
+        }
+      }
+    },
+    "Plinth, cutting/grinding" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sokel, rezanie, brúsenie"
+          }
+        }
+      }
+    },
     "Plumbing" : {
       "localizations" : {
         "sk" : {
@@ -3396,6 +4305,26 @@
         }
       }
     },
+    "Preview Cash Receipt" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Náhľad prijmového dokladu"
+          }
+        }
+      }
+    },
+    "Preview Invoice" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Náhľad faktúry"
+          }
+        }
+      }
+    },
     "Price" : {
       "localizations" : {
         "sk" : {
@@ -3426,12 +4355,42 @@
         }
       }
     },
+    "Price Offer" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cenová ponuka"
+          }
+        }
+      }
+    },
+    "Price per piece" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cena za mj."
+          }
+        }
+      }
+    },
     "Price per unit" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cena za mj."
+          }
+        }
+      }
+    },
+    "Price total" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suma celkom"
           }
         }
       }
@@ -3502,6 +4461,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Proces č. %lld"
+          }
+        }
+      }
+    },
+    "Project" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Projekt"
           }
         }
       }
@@ -3583,12 +4552,63 @@
         }
       }
     },
+    "Purpose" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Účel"
+          }
+        }
+      }
+    },
+    "Receipt" : {
+      "comment" : "just",
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "prijmový doklad"
+          }
+        }
+      }
+    },
     "Rental duration" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Doba pôžičky"
+          }
+        }
+      }
+    },
+    "Rentals" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Požičovňa"
+          }
+        }
+      }
+    },
+    "Resend Cash Receipt" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odoslanie prijmového dokladu"
+          }
+        }
+      }
+    },
+    "Resend Invoice" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odoslanie faktúry"
           }
         }
       }
@@ -3663,6 +4683,46 @@
         }
       }
     },
+    "Scaffolding" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lešenie"
+          }
+        }
+      }
+    },
+    "Scaffolding - assembly and disassembly" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lešenie - montáž a demontáž"
+          }
+        }
+      }
+    },
+    "Scaffolding no. %lld" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lešenie č. %lld"
+          }
+        }
+      }
+    },
+    "Scan to Pay!" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skenovať a zaplatiť!"
+          }
+        }
+      }
+    },
     "Search" : {
       "localizations" : {
         "sk" : {
@@ -3689,6 +4749,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Poslať"
+          }
+        }
+      }
+    },
+    "Send Invoice and Receipt" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poslať faktúru a prijmový doklad"
+          }
+        }
+      }
+    },
+    "Send Just %@" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poslať iba %@"
           }
         }
       }
@@ -3723,6 +4803,16 @@
         }
       }
     },
+    "set default price list" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nastavte všeobecný cenník"
+          }
+        }
+      }
+    },
     "Set email for communication" : {
       "localizations" : {
         "sk" : {
@@ -3749,6 +4839,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sprchový kút"
+          }
+        }
+      }
+    },
+    "Signature" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podpis"
           }
         }
       }
@@ -3903,6 +5003,16 @@
         }
       }
     },
+    "Summary" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zhrnutie"
+          }
+        }
+      }
+    },
     "supplier information, validity of price offer" : {
       "localizations" : {
         "sk" : {
@@ -3953,6 +5063,16 @@
         }
       }
     },
+    "Thank you!" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ďakujem!"
+          }
+        }
+      }
+    },
     "The last item is - Auxiliary and connecting material.\nThis item includes: cover films, tapes, rollers, brushes, knives, pencils...\n\nFrom our experience, we have found that it is appropriate to set this item at 10%.\n\nExample:\nMaterial cost will be               1000€\nAuxiliary and connecting material   10%\nTotal material cost                 1100€" : {
       "localizations" : {
         "sk" : {
@@ -3969,6 +5089,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ako posledná položka sa nachádza - Pomocné a ukončovacie práce.\nV tejto položke je započítane: nákup materiálu, manipulácia, vynášanie, upratovanie, čistenie, zakrývanie, olepovanie, odvoz odpadu …\n\nZ našej skúsenosti sme zistili, že túto položku je vhodné nastaviť na 10%\n\nPríklad:\nCena práce bude                       1000€\nPomocné a ukončovacie práce   10%\n                                                    \nCelková cena práce                    1100€"
+          }
+        }
+      }
+    },
+    "There is no Invoice for selected Contractor." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pre vybraného dodávateľa nebola vytvorená žiadna faktúra."
+          }
+        }
+      }
+    },
+    "There is no Invoice for selected Invoice Status." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pre vybratý stav faktúry neexistuje žiadna faktúra."
           }
         }
       }
@@ -4023,16 +5163,6 @@
         }
       }
     },
-    "Tiling" : {
-      "localizations" : {
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Obklad"
-          }
-        }
-      }
-    },
     "tiling and paving" : {
       "localizations" : {
         "sk" : {
@@ -4043,12 +5173,32 @@
         }
       }
     },
+    "Tiling under 60cm" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obklad do 60cm"
+          }
+        }
+      }
+    },
     "Tiling, ceramic" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Obklad, keramický"
+          }
+        }
+      }
+    },
+    "Tiling, large format" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obklad, veľkoformát"
           }
         }
       }
@@ -4079,6 +5229,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "WC Podomietkové"
+          }
+        }
+      }
+    },
+    "Tool no. %lld" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Náradie č. %lld"
           }
         }
       }
@@ -4213,6 +5373,26 @@
         }
       }
     },
+    "unpaid" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "neuhradené"
+          }
+        }
+      }
+    },
+    "Unpaid" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neuhradené"
+          }
+        }
+      }
+    },
     "Update klient" : {
       "localizations" : {
         "sk" : {
@@ -4279,6 +5459,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Platnosť vašich cenových ponúk bude nastavená na %lld dní od vytvorenia."
+          }
+        }
+      }
+    },
+    "Variable symbol" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Variabilný symbol"
           }
         }
       }
@@ -4473,6 +5663,16 @@
         }
       }
     },
+    "Without VAT" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bez DPH"
+          }
+        }
+      }
+    },
     "Work" : {
       "localizations" : {
         "sk" : {
@@ -4523,12 +5723,32 @@
         }
       }
     },
+    "XY" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XY"
+          }
+        }
+      }
+    },
     "Yes" : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Áno"
+          }
+        }
+      }
+    },
+    "You have been granted full access to the app for a period of %lld months to fully experience its features and functionalities." : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bol vám udelený Pro prístup k aplikácii na obdobie %lld mesiacov, aby ste mohli naplno využívať jej funkcie a funkcie."
           }
         }
       }

@@ -11,7 +11,7 @@ struct ValueEditingBox: View {
     
     var title: DimensionCallout
     @Binding var value: String
-    var unit: UnitsOfMeasurment
+    var unit: UnitsOfMeasurement
     
     var body: some View {
         
@@ -32,7 +32,7 @@ struct ValueEditingBox: View {
                 .background(Color.brandGray)
                 .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
             
-            Text(UnitsOfMeasurment.readableSymbol(unit))
+            Text(UnitsOfMeasurement.readableSymbol(unit))
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(Color.brandBlack)
                 .frame(width: 40, alignment: .leading)
@@ -47,7 +47,7 @@ struct ValueEditingBoxSmall: View {
     
     var title: DimensionCallout
     @Binding var value: String
-    var unit: UnitsOfMeasurment
+    var unit: UnitsOfMeasurement
     
     var body: some View {
         
@@ -68,7 +68,7 @@ struct ValueEditingBoxSmall: View {
                 .background(Color.brandWhite)
                 .clipShape(RoundedRectangle(cornerRadius: 9, style: .continuous))
             
-            Text(UnitsOfMeasurment.readableSymbol(unit))
+            Text(UnitsOfMeasurement.readableSymbol(unit))
                 .font(.system(size: 13, weight: .medium))
                 .foregroundStyle(Color.brandBlack)
                 .minimumScaleFactor(0.7)

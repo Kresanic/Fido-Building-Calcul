@@ -26,6 +26,7 @@ import CoreData
     @Published var workNettingCeilingPrice: String = "0.0"
     @Published var workPlasteringWallPrice: String = "0.0"
     @Published var workPlasteringCeilingPrice: String = "0.0"
+    @Published var workFacadePlastering: String = "0.0"
     @Published var workInstallationOfCornerBeadPrice: String = "0.0"
     @Published var workPlasteringOfWindowSashPrice: String = "0.0"
     @Published var workPenetrationCoatingPrice: String = "0.0"
@@ -36,6 +37,7 @@ import CoreData
     @Published var workSkirtingOfFloatingFloorPrice: String = "0.0"
     @Published var workTilingCeramicPrice: String = "0.0"
     @Published var workPavingCeramicPrice: String = "0.0"
+    @Published var workLargeFormatPavingAndTilingPrice: String = "0.0"
     @Published var workGroutingPrice: String = "0.0"
     @Published var workSiliconingPrice: String = "0.0"
     @Published var workSanitaryCornerValvePrice: String = "0.0"
@@ -49,12 +51,18 @@ import CoreData
     @Published var workSanitaryBathtubPrice: String = "0.0"
     @Published var workSanitaryShowerCubiclePrice: String = "0.0"
     @Published var workSanitaryGutterPrice: String = "0.0"
+    @Published var workPlinthCutting: String = "0.0"
+    @Published var workPlinthBonding: String = "0.0"
+    @Published var workJollyEdgingPrice: String = "0.0"
     @Published var workSanitaryUrinal: String = "0.0"
     @Published var workSanitaryBathScreen: String = "0.0"
     @Published var workSanitaryMirror: String = "0.0"
     @Published var workWindowInstallationPrice: String = "0.0"
     @Published var workDoorJambInstallationPrice: String = "0.0"
     @Published var workAuxiliaryAndFinishingPrice: String = "0.0"
+    @Published var othersCoreDrillRentalPrice: String = "0.0"
+    @Published var othersScaffoldingAssemblyAndDisassemblyPrice: String = "0.0"
+    @Published var othersScaffoldingPrice: String = "0.0"
     @Published var othersToolRentalPrice: String = "0.0"
     @Published var othersCommutePrice: String = "0.0"
     @Published var othersVatPrice: String = "0.0"
@@ -90,6 +98,8 @@ import CoreData
     @Published var materialAdhesiveNettingCapacity: String = "0.0"
     @Published var materialAdhesiveTilingAndPavingCapacity: String = "0.0"
     @Published var materialPlasterCapacity: String = "0.0"
+    @Published var materialFacadePlasterPrice: String = "0.0"
+    @Published var materialFacadePlasterCapacity: String = "0.0"
     @Published var materialCornerBeadCapacity: String = "0.0"
     @Published var materialSelfLevellingCompoundCapacity: String = "0.0"
     @Published var materialSiliconeCapacity: String = "0.0"
@@ -113,7 +123,9 @@ import CoreData
         let viewContext = PersistenceController.shared.container.viewContext
 
         if priceList != nil {
-            
+            priceList?.workPlinthCutting = stringToDouble(from: workPlinthCutting)
+            priceList?.workPlinthBonding = stringToDouble(from: workPlinthBonding)
+            priceList?.workJollyEdgingPrice = stringToDouble(from: workJollyEdgingPrice)
             priceList?.workDemolitionPrice = stringToDouble(from: workDemolitionPrice)
             priceList?.workWiringPrice = stringToDouble(from: workWiringPrice)
             priceList?.workPlumbingPrice = stringToDouble(from: workPlumbingPrice)
@@ -129,6 +141,7 @@ import CoreData
             priceList?.workNettingCeilingPrice = stringToDouble(from: workNettingCeilingPrice)
             priceList?.workPlasteringWallPrice = stringToDouble(from: workPlasteringWallPrice)
             priceList?.workPlasteringCeilingPrice = stringToDouble(from: workPlasteringCeilingPrice)
+            priceList?.workFacadePlastering = stringToDouble(from: workFacadePlastering)
             priceList?.workInstallationOfCornerBeadPrice = stringToDouble(from: workInstallationOfCornerBeadPrice)
             priceList?.workPlasteringOfWindowSashPrice = stringToDouble(from: workPlasteringOfWindowSashPrice)
             priceList?.workPenetrationCoatingPrice = stringToDouble(from: workPenetrationCoatingPrice)
@@ -139,6 +152,7 @@ import CoreData
             priceList?.workSkirtingOfFloatingFloorPrice = stringToDouble(from: workSkirtingOfFloatingFloorPrice)
             priceList?.workTilingCeramicPrice = stringToDouble(from: workTilingCeramicPrice)
             priceList?.workPavingCeramicPrice = stringToDouble(from: workPavingCeramicPrice)
+            priceList?.workLargeFormatPavingAndTilingPrice = stringToDouble(from: workLargeFormatPavingAndTilingPrice)
             priceList?.workGroutingPrice = stringToDouble(from: workGroutingPrice)
             priceList?.workSiliconingPrice = stringToDouble(from: workSiliconingPrice)
             priceList?.workSanitaryCornerValvePrice = stringToDouble(from: workSanitaryCornerValvePrice)
@@ -158,6 +172,9 @@ import CoreData
             priceList?.workWindowInstallationPrice = stringToDouble(from: workWindowInstallationPrice)
             priceList?.workDoorJambInstallationPrice = stringToDouble(from: workDoorJambInstallationPrice)
             priceList?.workAuxiliaryAndFinishingPrice = stringToDouble(from: workAuxiliaryAndFinishingPrice)
+            priceList?.othersCoreDrillRentalPrice = stringToDouble(from: othersCoreDrillRentalPrice)
+            priceList?.othersScaffoldingAssemblyAndDisassemblyPrice = stringToDouble(from: othersScaffoldingAssemblyAndDisassemblyPrice)
+            priceList?.othersScaffoldingPrice = stringToDouble(from: othersScaffoldingPrice)
             priceList?.othersToolRentalPrice = stringToDouble(from: othersToolRentalPrice)
             priceList?.othersCommutePrice = stringToDouble(from: othersCommutePrice)
             priceList?.othersVatPrice = stringToDouble(from: othersVatPrice)
@@ -173,6 +190,8 @@ import CoreData
             priceList?.materialAdhesiveNettingPrice = stringToDouble(from: materialAdhesiveNettingPrice)
             priceList?.materialAdhesiveTilingAndPavingPrice = stringToDouble(from: materialAdhesiveTilingAndPavingPrice)
             priceList?.materialPlasterPrice = stringToDouble(from: materialPlasterPrice)
+            priceList?.materialFacadePlasterPrice = stringToDouble(from: materialFacadePlasterPrice)
+            priceList?.materialFacadePlasterCapacity = stringToDouble(from: materialFacadePlasterCapacity)
             priceList?.materialCornerBeadPrice = stringToDouble(from: materialCornerBeadPrice)
             priceList?.materialPrimerPrice = stringToDouble(from: materialPrimerPrice)
             priceList?.materialPaintWallPrice = stringToDouble(from: materialPaintWallPrice)
@@ -208,7 +227,9 @@ import CoreData
     func loadPriceList(priceList: PriceList?) {
         
         if let priceList {
-            
+            workPlinthCutting = doubleToString(from: priceList.workPlinthCutting)
+            workPlinthBonding = doubleToString(from: priceList.workPlinthBonding)
+            workJollyEdgingPrice = doubleToString(from: priceList.workJollyEdgingPrice)
             workDemolitionPrice = doubleToString(from: priceList.workDemolitionPrice)
             workWiringPrice = doubleToString(from: priceList.workWiringPrice)
             workPlumbingPrice = doubleToString(from: priceList.workPlumbingPrice)
@@ -224,6 +245,7 @@ import CoreData
             workNettingCeilingPrice = doubleToString(from: priceList.workNettingCeilingPrice)
             workPlasteringWallPrice = doubleToString(from: priceList.workPlasteringWallPrice)
             workPlasteringCeilingPrice = doubleToString(from: priceList.workPlasteringCeilingPrice)
+            workFacadePlastering = doubleToString(from: priceList.workFacadePlastering)
             workInstallationOfCornerBeadPrice = doubleToString(from: priceList.workInstallationOfCornerBeadPrice)
             workPlasteringOfWindowSashPrice = doubleToString(from: priceList.workPlasteringOfWindowSashPrice)
             workPenetrationCoatingPrice = doubleToString(from: priceList.workPenetrationCoatingPrice)
@@ -234,6 +256,7 @@ import CoreData
             workSkirtingOfFloatingFloorPrice = doubleToString(from: priceList.workSkirtingOfFloatingFloorPrice)
             workTilingCeramicPrice = doubleToString(from: priceList.workTilingCeramicPrice)
             workPavingCeramicPrice = doubleToString(from: priceList.workPavingCeramicPrice)
+            workLargeFormatPavingAndTilingPrice = doubleToString(from: priceList.workLargeFormatPavingAndTilingPrice)
             workGroutingPrice = doubleToString(from: priceList.workGroutingPrice)
             workSiliconingPrice = doubleToString(from: priceList.workSiliconingPrice)
             workSanitaryCornerValvePrice = doubleToString(from: priceList.workSanitaryCornerValvePrice)
@@ -253,6 +276,9 @@ import CoreData
             workWindowInstallationPrice = doubleToString(from: priceList.workWindowInstallationPrice)
             workDoorJambInstallationPrice = doubleToString(from: priceList.workDoorJambInstallationPrice)
             workAuxiliaryAndFinishingPrice = doubleToString(from: priceList.workAuxiliaryAndFinishingPrice)
+            othersCoreDrillRentalPrice = doubleToString(from: priceList.othersCoreDrillRentalPrice)
+            othersScaffoldingAssemblyAndDisassemblyPrice = doubleToString(from: priceList.othersScaffoldingAssemblyAndDisassemblyPrice)
+            othersScaffoldingPrice = doubleToString(from: priceList.othersScaffoldingPrice)
             othersToolRentalPrice = doubleToString(from: priceList.othersToolRentalPrice)
             othersCommutePrice = doubleToString(from: priceList.othersCommutePrice)
             othersVatPrice = doubleToString(from: priceList.othersVatPrice)
@@ -268,6 +294,8 @@ import CoreData
             materialAdhesiveNettingPrice = doubleToString(from: priceList.materialAdhesiveNettingPrice)
             materialAdhesiveTilingAndPavingPrice = doubleToString(from: priceList.materialAdhesiveTilingAndPavingPrice)
             materialPlasterPrice = doubleToString(from: priceList.materialPlasterPrice)
+            materialFacadePlasterPrice = doubleToString(from: priceList.materialFacadePlasterPrice)
+            materialFacadePlasterCapacity = doubleToString(from: priceList.materialFacadePlasterCapacity)
             materialCornerBeadPrice = doubleToString(from: priceList.materialCornerBeadPrice)
             materialPrimerPrice = doubleToString(from: priceList.materialPrimerPrice)
             materialPaintWallPrice = doubleToString(from: priceList.materialPaintWallPrice)

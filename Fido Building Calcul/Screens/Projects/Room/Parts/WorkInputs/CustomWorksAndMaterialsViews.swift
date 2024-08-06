@@ -33,7 +33,7 @@ enum CustomWorkUnits: String, CaseIterable {
         
     }
     
-    static func parse(_ s: String?) -> UnitsOfMeasurment {
+    static func parse(_ s: String?) -> UnitsOfMeasurement {
         switch s {
         case "basicMeter":
             return .basicMeter
@@ -527,7 +527,7 @@ fileprivate struct CustomWorksEditor: View {
             
             VStack {
                 
-                HStack(spacing: 0) {
+                HStack(alignment: .firstTextBaseline, spacing: 0) {
                     
                     Image(systemName: "ruler")
                         .font(.system(size: 14))
@@ -535,12 +535,10 @@ fileprivate struct CustomWorksEditor: View {
                         .rotationEffect(.degrees(90))
                         .padding(.trailing, -3)
                     
-                    TextField("Work name", text: $customWorkName, onCommit: {
-                        behavioursVM.redraw()
-                    })
+                    TextField("Work name", text: $customWorkName, axis: .vertical)
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundStyle(Color.brandBlack)
-                    .lineLimit(1)
+                    .lineLimit(1...4)
                     .submitLabel(.next)
                     .onSubmit { focusedDimension = 1 }
                     .focused($focusedDimension, equals: 0)
@@ -585,9 +583,11 @@ fileprivate struct CustomWorksEditor: View {
                         fetchedEntity.title = customWorkName
                         try? viewContext.save()
                     }
+                    .onChange(of: focusedDimension) { value in
+                        behavioursVM.redraw()
+                    }
                     
                     Spacer()
-                    
                     
                     Button {
                         deleteObject(toDelete: fetchedEntity)
@@ -667,22 +667,21 @@ fileprivate struct CustomWorksEditor: View {
         
     }
     
-    
     private func saveAll() { withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) { try? viewContext.save() } }
     
-    // TOOLBAR FOR CUSTOM WORK AND MATERIAL
+    // TOOLBAR FOR CUSTOM WORK
     
     @ViewBuilder
     private func keyboardToolbarContent(for dimension: Int?) -> some View {
         HStack(spacing: 0) {
             if dimension == 1 {
-                doneButton().frame(width: 70)
+                doneButton().frame(width: 75)
                 mathSymbols()
-                nextButton().frame(width: 70)
+                nextButton().frame(width: 75)
             } else if dimension == 2 {
-                Spacer().frame(width: 70)
+                Spacer().frame(width: 75)
                 mathSymbols()
-                doneButton().frame(width: 70)
+                doneButton().frame(width: 75)
             }
         }
     }
@@ -749,6 +748,16 @@ fileprivate struct CustomWorksEditor: View {
             }.frame(height: 40)
                 .frame(maxWidth: .infinity)
             
+            Button("*") {
+                if focusedDimension == 2 {
+                    pricePerUnit = pricePerUnit + "*"
+                } else if focusedDimension == 1 {
+                    numberOfUnits = numberOfUnits + "*"
+                }
+                impactMed.impactOccurred()
+            }.frame(height: 40)
+                .frame(maxWidth: .infinity)
+                .padding(.top, 8)
             
             Button("=") {
                 if focusedDimension == 2 {
@@ -766,6 +775,9 @@ fileprivate struct CustomWorksEditor: View {
     }
     
     private func calculate(on expressionString: String) -> String {
+        
+        guard expressionString.numberOfOccurrencesOf(string: ",") < 2 else { return "0" }
+        guard expressionString.numberOfOccurrencesOf(string: ".") < 2 else { return "0" }
         
         guard let _ = Int(expressionString.suffix(1)) else { return "0" }
         guard let _ = Int(expressionString.prefix(1)) else { return "0" }
@@ -823,7 +835,7 @@ fileprivate struct CustomMaterialsEditor: View {
             
             VStack {
                 
-                HStack(spacing: 0) {
+                HStack(alignment: .firstTextBaseline, spacing: 0) {
                     
                     Image(systemName: "ruler")
                         .font(.system(size: 14))
@@ -831,12 +843,10 @@ fileprivate struct CustomMaterialsEditor: View {
                         .rotationEffect(.degrees(90))
                         .padding(.trailing, -3)
                     
-                    TextField("Material name", text: $customMaterialName, onCommit: {
-                        behavioursVM.redraw()
-                    })
+                    TextField("Material name", text: $customMaterialName, axis: .vertical)
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundStyle(Color.brandBlack)
-                    .lineLimit(1)
+                    .lineLimit(1...4)
                     .submitLabel(.next)
                     .onSubmit { focusedDimension = 1 }
                     .focused($focusedDimension, equals: 0)
@@ -881,9 +891,11 @@ fileprivate struct CustomMaterialsEditor: View {
                         fetchedEntity.title = customMaterialName
                         try? viewContext.save()
                     }
+                    .onChange(of: focusedDimension) { value in
+                        behavioursVM.redraw()
+                    }
                     
                     Spacer()
-                    
                     
                     Button {
                         deleteObject(toDelete: fetchedEntity)
@@ -968,19 +980,19 @@ fileprivate struct CustomMaterialsEditor: View {
         withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) { try? viewContext.save() }
     }
     
-    // TOOLBAR FOR CUSTOM WORK AND MATERIAL
+    // TOOLBAR FOR CUSTOM MATERIAL
     
     @ViewBuilder
     private func keyboardToolbarContent(for dimension: Int?) -> some View {
         HStack(spacing: 0) {
             if dimension == 1 {
-                doneButton().frame(width: 70)
+                doneButton().frame(width: 75)
                 mathSymbols()
-                nextButton().frame(width: 70)
+                nextButton().frame(width: 75)
             } else if dimension == 2 {
-                Spacer().frame(width: 70)
+                Spacer().frame(width: 75)
                 mathSymbols()
-                doneButton().frame(width: 70)
+                doneButton().frame(width: 75)
             }
         }
     }
@@ -1047,6 +1059,16 @@ fileprivate struct CustomMaterialsEditor: View {
             }.frame(height: 40)
                 .frame(maxWidth: .infinity)
             
+            Button("*") {
+                if focusedDimension == 2 {
+                    pricePerUnit = pricePerUnit + "*"
+                } else if focusedDimension == 1 {
+                    numberOfUnits = numberOfUnits + "*"
+                }
+                impactMed.impactOccurred()
+            }.frame(height: 40)
+                .frame(maxWidth: .infinity)
+                .padding(.top, 8)
             
             Button("=") {
                 if focusedDimension == 2 {
@@ -1064,6 +1086,9 @@ fileprivate struct CustomMaterialsEditor: View {
     }
     
     private func calculate(on expressionString: String) -> String {
+        
+        guard expressionString.numberOfOccurrencesOf(string: ",") < 2 else { return "0" }
+        guard expressionString.numberOfOccurrencesOf(string: ".") < 2 else { return "0" }
         
         guard let _ = Int(expressionString.suffix(1)) else { return "0" }
         guard let _ = Int(expressionString.prefix(1)) else { return "0" }

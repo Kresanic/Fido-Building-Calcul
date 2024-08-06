@@ -24,6 +24,8 @@ struct PayWallFeature: View {
             
             IncludedInProfessionalRow(title: "export to PDF", subTitle: "feature enables the export of entire projects into PDF format, allowing direct sharing with clients")
             
+            IncludedInProfessionalRow(title: "create invoices", subTitle: "easily create and send invoices to your clients")
+            
         }
         .padding(.vertical, 23)
         .background(Color.brandWhite)
@@ -43,8 +45,6 @@ fileprivate struct IncludedInProfessionalRow: View {
         
         HStack(alignment: .firstTextBaseline, spacing: 4) {
             
-            Spacer()
-            
             Image(systemName: "checkmark.circle.fill")
                 .font(.system(size: 17))
             
@@ -62,6 +62,7 @@ fileprivate struct IncludedInProfessionalRow: View {
             
         }.foregroundStyle(Color.brandBlack)
             .padding(.horizontal, 15)
+            .frame(maxWidth: .infinity, alignment: .leading)
         
     }
     

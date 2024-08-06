@@ -94,7 +94,7 @@ struct DialogWindow: View {
                 impactMed.impactOccurred()
             }
             .frame(maxWidth: .infinity)
-                .background { Color.brandWhite.clipShape(.rect(cornerRadius: 40, style: .continuous)).padding(.horizontal, 15).padding(.bottom, 30) }
+                .background { Color.brandWhiteBackground.clipShape(.rect(cornerRadius: 40, style: .continuous)).padding(.horizontal, 15).padding(.bottom, 30) }
                 .ignoresSafeArea()
                 .presentationDetents([.height(260)])
                 .presentationCornerRadius(0)

@@ -25,7 +25,7 @@ struct ContractorEditDetailsView: View {
             
             // MARK: - Logo Input
             Button {
-                dismissKeyboard()
+                focusedField = nil
                 viewModel.isSelectingLogo = true
             } label: {
                 HStack {
@@ -93,7 +93,6 @@ struct ContractorEditDetailsView: View {
                         .foregroundStyle(Color.brandBlack)
                         .focused($focusedField, equals: .contactPersonName)
                         .onSubmit { focusedField = .email }
-                        .submitLabel(.done)
                         .submitLabel(.continue)
                         .multilineTextAlignment(.leading)
                         .keyboardType(.default)
@@ -359,6 +358,55 @@ struct ContractorEditDetailsView: View {
                     
                 }
                 
+                VStack(alignment: .leading, spacing: 3) {
+                        
+                    Text("Signature")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundStyle(Color.brandBlack)
+                    
+                    Button {
+                        focusedField = nil
+                        viewModel.isSelectingSignature = true
+                    } label: {
+                        if let signatureData = viewModel.signatureData , let signatureData =  UIImage(data: signatureData)  {
+                            HStack {
+                                
+                                Spacer()
+                                
+                                Spacer()
+                                    .frame(width: 40, alignment: .trailing)
+                                
+                                Image(uiImage: signatureData)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 200)
+                                    .clipShape(.rect(cornerRadius: 10, style: .continuous))
+                                
+                                Image(systemName: "square.and.pencil.circle.fill")
+                                    .font(.system(size: 30, weight: .medium))
+                                    .foregroundStyle(Color.brandBlack)
+                                    .frame(width: 40, alignment: .trailing)
+                                
+                                
+                                Spacer()
+                                
+                            }
+                        } else {
+                            
+                            Text("Add signature")
+                                .font(.system(size: 18, weight: .medium))
+                                .foregroundStyle(Color.brandBlack)
+                                .padding(.vertical, 7)
+                                .padding(.horizontal, 20)
+                                .background(Color.brandGray)
+                                .clipShape(Capsule())
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
                 Button {
                     dismissKeyboard()
                     if let _ = viewModel.createUser() { dismiss() }
@@ -372,6 +420,7 @@ struct ContractorEditDetailsView: View {
                         .clipShape(Capsule())
                 }.padding(.vertical, 15)
                     .disabled(viewModel.name.isEmpty)
+                    .padding(.horizontal, 15)
                 
             }.padding(.horizontal, 15)
             
@@ -381,12 +430,19 @@ struct ContractorEditDetailsView: View {
                 Task {
                     if let loaded = try? await viewModel.selectedImages.first?.loadTransferable(type: Data.self) {
                         viewModel.imageData = loaded
-                    } else {
-                        print("Failed to load Image Data.")
-                    }
+                    } else { print("Failed to load Image Data.") }
                 }
             }
+            .onChange(of: viewModel.selectedSignature) { _ in
+                Task {
+                    if let loaded = try? await viewModel.selectedSignature.first?.loadTransferable(type: Data.self) {
+                        viewModel.signatureData = loaded
+                    } else { print("Failed to load Image Data for Signature.") }
+                }
+            }
+            .scrollDismissesKeyboard(.automatic)
             .photosPicker(isPresented: $viewModel.isSelectingLogo, selection: $viewModel.selectedImages, maxSelectionCount: 1, matching: .images)
+            .photosPicker(isPresented: $viewModel.isSelectingSignature, selection: $viewModel.selectedSignature, maxSelectionCount: 1, matching: .images)
     }
     
 }

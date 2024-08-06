@@ -73,7 +73,7 @@ fileprivate struct HistoryEventBubble: View {
                 .foregroundStyle(Color.brandBlack)
                 .frame(width: 10, alignment: .center)
             
-            if historyEventType == .sent {
+            if historyEventType == .sent || historyEventType == .invoiceSent {
                 Image(systemName: historyEventType.sfSymbol)
                     .font(.system(size: 19))
                     .foregroundStyle(Color.brandBlue, Color.brandBlack)

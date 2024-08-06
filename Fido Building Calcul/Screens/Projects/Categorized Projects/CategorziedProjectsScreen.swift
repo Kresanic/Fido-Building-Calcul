@@ -52,9 +52,9 @@ struct CategorziedProjectsScreen: View {
                         
                         if !inCategoryProjects.isEmpty {
                             Button {
-                                withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) { viewModel.isDeleting.toggle() }
+                                withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) { viewModel.isArchiving.toggle() }
                             } label: {
-                                Image(systemName: "trash.circle.fill")
+                                Image(systemName: "archivebox.circle.fill")
                                     .font(.system(size: 30))
                                     .foregroundColor(.brandBlack)
                             }
@@ -64,7 +64,7 @@ struct CategorziedProjectsScreen: View {
                             Button {
                                 withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) {
                                     viewModel.isCreatingNewProject = true
-                                    viewModel.isDeleting = false
+                                    viewModel.isArchiving = false
                                 }
                             } label: {
                                 Image(systemName: "plus.circle.fill")
@@ -82,10 +82,12 @@ struct CategorziedProjectsScreen: View {
                             NoProjectBubbleView(isCreatingNewProject: $viewModel.isCreatingNewProject)
                         } else {
                             ForEach(inCategoryProjects) { project in
-                                ProjectBubbleView(project: project, isDeleting: viewModel.isDeleting)
-                                    .modifier(ProjectBubbleViewDeletion(isDeleting: $viewModel.isDeleting, atButtonPress: {
+                                ProjectBubbleView(project: project, isDeleting: viewModel.isArchiving)
+                                    .modifier(ProjectBubbleViewArchival(isDeleting: $viewModel.isArchiving, atButtonPress: {
                                         withAnimation(.easeInOut) {
-                                            viewContext.delete(project)
+                                            project.isArchived = true
+                                            project.archivedDate = Date.now
+                                            project.addToToHistoryEvent(ProjectEvents.archived.entityObject)
                                             try? viewContext.save()
                                         }
                                     }))

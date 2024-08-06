@@ -311,6 +311,12 @@ final class PricingCalculations: ObservableObject {
         let plasteringCeilingRow = PriceBillRow(name: PlasteringCeiling.billSubTitle, pieces: plasteringCeilingPieces, unit: .squareMeter, price: plasteringCeilingPrice)
         priceBill.addWorks(plasteringCeilingRow)
         
+        // FacadePlasteringCeiling
+        let facadePlasteringPieces = room.associatedFacadePlasterings.reduce(0.0, { $0 + $1.cleanArea })
+        let facadePlasteringPrice = facadePlasteringPieces * priceList.workFacadePlastering
+        let facadePlasteringRow = PriceBillRow(name: FacadePlastering.title, pieces: facadePlasteringPieces, unit: .squareMeter, price: facadePlasteringPrice)
+        priceBill.addWorks(facadePlasteringRow)
+        
         // CornerStrips
         let cornerStripsPieces = room.associatedInstallationOfCornerBeads.reduce(0.0, { $0 + $1.count })
         let cornerStripsPrice = cornerStripsPieces * priceList.workInstallationOfCornerBeadPrice
@@ -360,16 +366,70 @@ final class PricingCalculations: ObservableObject {
         priceBill.addWorks(skirtingFloatingFloorRow)
         
         // TilingCeramic
-        let tilingCeramicPieces = room.associatedTileCeramics.reduce(0.0, { $0 + $1.cleanArea }) + additiveTilingPieces
+        let tilingCeramicPieces = room.associatedTileCeramics.reduce(0.0, {
+            if !$1.largeFormat {
+                return $0 + $1.cleanArea
+            } else {
+                return $0
+            }
+        }) + additiveTilingPieces
         let tilingCeramicPrice = tilingCeramicPieces * priceList.workTilingCeramicPrice
         let tilingCeramicRow = PriceBillRow(name: TileCeramic.billSubTitle, pieces: tilingCeramicPieces, unit: .squareMeter, price: tilingCeramicPrice)
         priceBill.addWorks(tilingCeramicRow)
         
+        let tilingLFCeramicPieces = room.associatedTileCeramics.reduce(0.0, {
+            if $1.largeFormat {
+                return $0 + $1.cleanArea
+            } else { return $0 }
+        })
+        let tilingLFCeramicPrice = tilingLFCeramicPieces * priceList.workLargeFormatPavingAndTilingPrice
+        let tilingLFCeramicRow = PriceBillRow(name: LargeFormatPavingAndTiling.tilingBillTitle, pieces: tilingLFCeramicPieces, unit: .squareMeter, price: tilingLFCeramicPrice)
+        priceBill.addWorks(tilingLFCeramicRow)
+        
+        let jollyEdgingPieces = room.associatedTileCeramics.reduce(0.0, {
+            $0 + $1.jollyEdging
+        })
+        let jollyEdgingPrice = jollyEdgingPieces * priceList.workJollyEdgingPrice
+        let jollyEdgingRow = PriceBillRow(name: JollyEdging.title, pieces: jollyEdgingPieces, unit: JollyEdging.unit, price: jollyEdgingPrice)
+        priceBill.addWorks(jollyEdgingRow)
+        
         // PavingCeramic
-        let pavingCeramicPieces = room.associatedPavingCeramics.reduce(0.0, { $0 + $1.area })
+        let pavingCeramicPieces = room.associatedPavingCeramics.reduce(0.0, {
+            if !$1.largeFormat {
+                return $0 + $1.area
+            } else {
+                return $0
+            }
+        })
         let pavingCeramicPrice = pavingCeramicPieces * priceList.workPavingCeramicPrice
         let pavingCeramicRow = PriceBillRow(name: PavingCeramic.billSubTitle, pieces: pavingCeramicPieces, unit: .squareMeter, price: pavingCeramicPrice)
         priceBill.addWorks(pavingCeramicRow)
+        
+        let pavingLFCeramicPieces = room.associatedPavingCeramics.reduce(0.0, {
+            if $1.largeFormat {
+                return $0 + $1.area
+            } else {
+                return $0
+            }
+        })
+        let pavingLFCeramicPrice = pavingLFCeramicPieces * priceList.workLargeFormatPavingAndTilingPrice
+        let pavingLFCeramicRow = PriceBillRow(name: LargeFormatPavingAndTiling.pavingBillTitle, pieces: pavingLFCeramicPieces, unit: .squareMeter, price: pavingLFCeramicPrice)
+        priceBill.addWorks(pavingLFCeramicRow)
+        
+        let plinthCuttingPieces = room.associatedPavingCeramics.reduce(0.0, {
+            $0 + $1.plinthCutting
+        })
+        let plinthCuttingPrice = plinthCuttingPieces * priceList.workPlinthCutting
+        let plinthCuttingRow = PriceBillRow(name: PlinthCutting.billTitle, pieces: plinthCuttingPieces, unit: PlinthCutting.unit, price: plinthCuttingPrice)
+        priceBill.addWorks(plinthCuttingRow)
+        
+        let plinthBondingPieces = room.associatedPavingCeramics.reduce(0.0, {
+            $0 + $1.plinthBonding
+        })
+        let plinthBondingPrice = plinthBondingPieces * priceList.workPlinthBonding
+        let plinthBondingRow = PriceBillRow(name: PlinthBonding.billTitle, pieces: plinthBondingPieces, unit: PlinthBonding.unit, price: plinthBondingPrice)
+        priceBill.addWorks(plinthBondingRow)
+        
         
         // Grouting
         let groutingTilesAndPavingPieces = room.associatedGroutings.reduce(0.0, { $0 + $1.area }) + tilingCeramicPieces + pavingCeramicPieces
@@ -524,7 +584,7 @@ final class PricingCalculations: ObservableObject {
             let customWorkTitlePreCursor = customWork.title == nil ? String(localized: "Custom Work") : customWork.title ?? ""
             let customWorkTitle = customWorkTitlePreCursor.isEmpty ? String(localized: "Custom Work") : customWorkTitlePreCursor
             
-            let customWorkRow = PriceBillRow(name: customWorkTitle, pieces: customWork.numberOfUnits, unit: UnitsOfMeasurment.parse(customWork.unit), price: customWork.numberOfUnits * customWork.pricePerUnit)
+            let customWorkRow = PriceBillRow(name: customWorkTitle, pieces: customWork.numberOfUnits, unit: UnitsOfMeasurement.parse(customWork.unit), price: customWork.numberOfUnits * customWork.pricePerUnit)
             
             priceBill.addWorks(customWorkRow)
             
@@ -612,6 +672,12 @@ final class PricingCalculations: ObservableObject {
         let plasterMaterialPrice = plasterMaterialPieces * priceList.materialPlasterPrice
         let plasterMaterialRow = PriceBillRow(name: Plaster.title, pieces: plasterMaterialPieces, unit: .package, price: plasterMaterialPrice)
         priceBill.addMaterials(plasterMaterialRow)
+        
+        // FacadePlasterMaterial
+        let facadePlasterMaterialPieces = ceil(facadePlasteringPieces/priceList.materialPlasterCapacity)
+        let facadePlasterMaterialPrice = facadePlasterMaterialPieces * priceList.materialFacadePlasterPrice
+        let facadePlasterMaterialRow = PriceBillRow(name: FacadePlaster.title, pieces: facadePlasterMaterialPieces, unit: .package, price: facadePlasterMaterialPrice)
+        priceBill.addMaterials(facadePlasterMaterialRow)
         
         // CornerMoldingMaterial
         let circumferenceOfCornerStrips = room.associatedInstallationOfCornerBeads.reduce(0.0, { $0 + $1.count })
@@ -702,7 +768,7 @@ final class PricingCalculations: ObservableObject {
             let customMaterialTitlePreCursor = customMaterial.title == nil ? String(localized: "Custom Material") : customMaterial.title ?? ""
             let customMaterialTitle = customMaterialTitlePreCursor.isEmpty ? String(localized: "Custom Material") : customMaterialTitlePreCursor
             
-            let customMaterialRow = PriceBillRow(name: customMaterialTitle, pieces: customMaterial.numberOfUnits, unit: UnitsOfMeasurment.parse(customMaterial.unit), price: customMaterial.numberOfUnits * customMaterial.pricePerUnit)
+            let customMaterialRow = PriceBillRow(name: customMaterialTitle, pieces: customMaterial.numberOfUnits, unit: UnitsOfMeasurement.parse(customMaterial.unit), price: customMaterial.numberOfUnits * customMaterial.pricePerUnit)
             
             priceBill.addMaterials(customMaterialRow)
             
@@ -720,9 +786,30 @@ final class PricingCalculations: ObservableObject {
         let commuteExpensesRow = PriceBillRow(name: Commute.title, pieces: commuteExpensesPieces, unit: .kilometer, price: commuteExpensesPrice)
         priceBill.addOthers(commuteExpensesRow)
         
+        
+        // Scaffoldings
+        let scaffoldingsPieces = room.associatedScaffoldings.reduce(0.0) { $0 + $1.area }
+        let scaffoldingsDays = room.associatedScaffoldings.reduce(0.0) { $0 + $1.numberOfDays }
+        let scaffoldingsPrice = priceList.othersScaffoldingPrice * scaffoldingsPieces * scaffoldingsDays
+        let scaffoldingsRow = PriceBillRow(name: Scaffolding.title, pieces: scaffoldingsDays, unit: Scaffolding.unit, price: scaffoldingsPrice)
+        priceBill.addOthers(scaffoldingsRow)
+        
+        let scaffoldingsAssemblyPrice = priceList.othersScaffoldingAssemblyAndDisassemblyPrice * scaffoldingsPieces
+        let scaffoldingsAssemblyRow = PriceBillRow(name: ScaffoldingAssemblyAndDisassembly.billTitle, pieces: scaffoldingsPieces, unit: ScaffoldingAssemblyAndDisassembly.unit, price: scaffoldingsAssemblyPrice)
+        priceBill.addOthers(scaffoldingsAssemblyRow)
+        
+        // CoreDrill
+        let coreDrillPieces = room.associatedCoreDrills.reduce(0.0) { $0 + $1.count }
+        let coreDrillPrice = priceList.othersCoreDrillRentalPrice * coreDrillPieces
+        let coreDrillRow = PriceBillRow(name: CoreDrill.title, pieces: coreDrillPieces, unit: CoreDrill.unit, price: coreDrillPrice)
+        priceBill.addOthers(coreDrillRow)
+        
         // ToolRental
-        let toolRentalPrice = room.toolRental * priceList.othersToolRentalPrice
-        let toolRentalRow = PriceBillRow(name: ToolRental.title, pieces: room.toolRental, unit: .hour, price: toolRentalPrice)
+        let newToolRentalPieces = room.associatedToolRentals.reduce(0.0) { $0 + $1.count }
+        let oldToolRentalPieces = room.toolRental
+        let toolRentalPieces = newToolRentalPieces + oldToolRentalPieces
+        let toolRentalPrice = toolRentalPieces * priceList.othersToolRentalPrice
+        let toolRentalRow = PriceBillRow(name: ToolRental.title, pieces: toolRentalPieces, unit: ToolRental.unit, price: toolRentalPrice)
         priceBill.addOthers(toolRentalRow)
         
         return priceBill
@@ -744,5 +831,62 @@ final class PricingCalculations: ObservableObject {
         return projectPriceBill
         
     }
+    
+    
+    func projectPriceBills(project: Project, priceList: PriceList) -> PriceBill {
+        
+        var projectBills: [PriceBill] = []
+        
+        for room in project.associatedRooms {
+            
+            let roomPriceBill = roomPriceBillCalculation(room: room, priceList: priceList)
+            
+            projectBills.append(roomPriceBill)
+            
+        }
+        
+        return joinDuplicatePriceBills(projectBills)
+        
+    }
+    
+    private func joinDuplicatePriceBills(_ priceBills: [PriceBill]) -> PriceBill {
+        // Initialize an empty PriceBill
+        var consolidatedBill = PriceBill(roomName: "All Rooms Consolidated", works: [], materials: [], others: [])
+
+        // Helper function to consolidate rows
+        func consolidateRows(from array: [PriceBillRow]) -> [PriceBillRow] {
+            var consolidatedRows: [PriceBillRow] = []
+            
+            for row in array {
+                if let index = consolidatedRows.firstIndex(where: { $0.name == row.name && $0.unit == row.unit }) {
+                    consolidatedRows[index].joinPriceBillRow(with: row)
+                } else {
+                    consolidatedRows.append(row)
+                }
+            }
+            
+            return consolidatedRows
+        }
+
+        // Consolidate all works, materials, and others from all price bills
+        for bill in priceBills {
+            consolidatedBill.works += bill.works
+            consolidatedBill.materials += bill.materials
+            consolidatedBill.others += bill.others
+        }
+
+        // Apply consolidation to each category
+        consolidatedBill.works = consolidateRows(from: consolidatedBill.works)
+        consolidatedBill.materials = consolidateRows(from: consolidatedBill.materials)
+        consolidatedBill.others = consolidateRows(from: consolidatedBill.others)
+
+        // Recalculate prices
+        consolidatedBill.worksPrice = consolidatedBill.works.reduce(0) { $0 + $1.price }
+        consolidatedBill.materialsPrice = consolidatedBill.materials.reduce(0) { $0 + $1.price }
+        consolidatedBill.othersPrice = consolidatedBill.others.reduce(0) { $0 + $1.price }
+
+        return consolidatedBill
+    }
+
     
 }

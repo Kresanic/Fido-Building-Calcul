@@ -49,6 +49,12 @@ public class Project: NSManagedObject {
     
     }
     
+    public var vatOfProject: Double {
+        
+        return toPriceList?.othersVatPrice ?? 20.0
+        
+    }
+    
     var statusEnum: ProjectStatus {
         return ProjectStatus(rawValue: Int(status)) ?? .notSent
     }

@@ -174,7 +174,7 @@ struct PlasteringOfWindowSashEditor: View {
                     .background(Color.brandGray)
                     .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                 
-                Text(UnitsOfMeasurment.readableSymbol(PlasteringOfWindowSash.unit))
+                Text(UnitsOfMeasurement.readableSymbol(PlasteringOfWindowSash.unit))
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(Color.brandBlack)
                 

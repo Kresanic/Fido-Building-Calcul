@@ -19,7 +19,7 @@ public class LayingFloatingFloors: NSManagedObject, AreaBasedWorkType {
     
     static var billSubTitle: LocalizedStringKey = "Laying of floating floor"
     
-    static var unit: UnitsOfMeasurment  = .squareMeter
+    static var unit: UnitsOfMeasurement  = .squareMeter
     
     public var circurmference: Double {
         

@@ -110,7 +110,7 @@ import PDFKit
                     
                     Text(NSLocalizedString("Price per unit", comment: ""))
                         .font(.system(size: 12, weight: .medium))
-                        .frame(width: 75, alignment: .trailing)
+                        .frame(width: 70, alignment: .trailing)
                     
                     Text(NSLocalizedString("VAT(%)", comment: ""))
                         .font(.system(size: 12, weight: .medium))
@@ -118,7 +118,7 @@ import PDFKit
                     
                     Text(NSLocalizedString("VAT", comment: ""))
                         .font(.system(size: 12, weight: .medium))
-                        .frame(width: 60, alignment: .trailing)
+                        .frame(width: 80, alignment: .trailing)
                     
                     Text(NSLocalizedString("Price", comment: ""))
                         .font(.system(size: 12, weight: .medium))
@@ -174,8 +174,26 @@ import PDFKit
                 Rectangle()
                     .foregroundStyle(Color.brandBlack)
                     .frame(maxWidth: .infinity, maxHeight: 1).padding(.vertical, 4)
-                
-                PDFTotalPriceView(priceWithoutVat: projectSumUp.priceWithoutVat, percentage: projectSumUp.VATPercentage)
+                VStack(alignment: .trailing, spacing: 10) {
+                    
+                    PDFTotalPriceView(priceWithoutVat: projectSumUp.priceWithoutVat, percentage: projectSumUp.VATPercentage)
+                    
+                    if let imageData = project.contractor?.signature, let signature =  UIImage(data: imageData) {
+                        VStack(alignment: .leading, spacing: 3) {
+                            
+                            Text(NSLocalizedString("Issued by:", comment: ""))
+                                .font(.system(size: 10, weight: .medium))
+                                .foregroundStyle(.brandBlack)
+                            
+                            Image(uiImage: signature)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 140, height: 80)
+                                .clipShape(.rect(cornerRadius: 10, style: .continuous))
+                        }.padding(.top, 10)
+                    }
+                    
+                }
                 
             } else { Text(NSLocalizedString("PDF could not be created.", comment: "")) }
             

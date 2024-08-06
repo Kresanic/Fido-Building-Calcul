@@ -50,21 +50,21 @@ struct CustomTabView: View {
             
             Spacer()
             
-            // MARK: - Prices
+            // MARK: - Invoices
             Button {
-                withAnimation(.easeInOut(duration: 0.15)) { activeTab = .prices }
+                withAnimation(.easeInOut(duration: 0.15)) { activeTab = .invoices }
             } label: {
                 
                 VStack(spacing: 5) {
                     
-                    Image(systemName: activeTab == .prices ? "list.bullet.rectangle.portrait.fill" : "list.bullet.rectangle.portrait")
+                    Image(systemName: activeTab == .invoices ? "doc.text.fill" : "doc.text")
                         .font(.system(size: symbolSize))
                         .frame(height: 28)
                     
-                    Text("Price list")
+                    Text("Invoices")
                         .font(.system(size: 9))
                     
-                }.foregroundColor(activeTab == .prices ? .brandBlack : .brandBlack.opacity(0.9))
+                }.foregroundColor(activeTab == .invoices ? .brandBlack : .brandBlack.opacity(0.9))
                 
             }.frame(width: 60)
             

@@ -123,7 +123,6 @@ struct PlasterboardingPartitionViews: View {
                                 .clipShape(Circle())
                         }.transition(.scale)
                     } else {
-                        
                         Button {
                             withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) {
                                 isChoosingTypeOfPlasterboarding = true
@@ -136,7 +135,6 @@ struct PlasterboardingPartitionViews: View {
                                 .background(Color.brandWhite)
                                 .clipShape(Circle())
                         }.transition(.scale)
-                        
                     }
                     
                 }

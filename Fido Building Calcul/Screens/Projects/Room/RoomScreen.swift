@@ -38,7 +38,7 @@ struct RoomScreen: View {
                 
                 ScrollViewReader { scrollProxy in
                 
-                VStack {
+                LazyVStack {
                     
                     HStack(alignment: .center) {
                         
@@ -98,6 +98,8 @@ struct RoomScreen: View {
                         
                         PlasteringCeilingViews(room: fetchedRoom, scrollProxy: scrollProxy).id(PlasteringCeiling.scrollID)
                         
+                        FacadePlasteringViews(room: fetchedRoom, scrollProxy: scrollProxy).id(FacadePlastering.scrollID)
+                        
                         InstallationOfCornerBeadViews(room: fetchedRoom, scrollProxy: scrollProxy).id(InstallationOfCornerBead.scrollID)
                         
                         PlasteringOfWindowSashViews(room: fetchedRoom, scrollProxy: scrollProxy).id(PlasteringOfWindowSash.scrollID)
@@ -152,7 +154,7 @@ struct RoomScreen: View {
                         
                         CommuteExpensesViews(room: fetchedRoom, scrollProxy: scrollProxy).id(Commute.scrollID)
                         
-                        ToolRentalViews(room: fetchedRoom, scrollProxy: scrollProxy).id(ToolRental.scrollID)
+                        RentalViews(room: fetchedRoom, scrollProxy: scrollProxy).id(ToolRental.scrollID)
                         
                     }
                     
@@ -160,11 +162,11 @@ struct RoomScreen: View {
                         
                 }
                 .padding(.bottom, 105)
+                .padding(.horizontal, 15)
                     
                 }
                 
-            }.padding(.horizontal, 15)
-                .scrollIndicators(.never)
+            }.scrollIndicators(.automatic)
                 .scrollDismissesKeyboard(.interactively)
                 .navigationBarTitleDisplayMode(.inline)
                 .background {

@@ -15,6 +15,7 @@ struct RoomsList: View {
     @Environment(\.managedObjectContext) var viewContext
     @FetchRequest var fetchedRooms: FetchedResults<Room>
     @FetchRequest var fetchedPriceList: FetchedResults<PriceList>
+    @EnvironmentObject var behaviours: BehavioursViewModel
     
     init(project: Project, viewModel: InProjectScreenViewModel, scrollToPos: ScrollViewProxy) {
         
@@ -52,7 +53,7 @@ struct RoomsList: View {
                     .font(.system(size: 18, weight: .bold))
                     .foregroundColor(Color.brandBlack)
                 
-                Text("Rooms")
+                Text("Project")
                     .font(.system(size: 24, weight: .bold))
                     .foregroundColor(Color.brandBlack)
                 
@@ -97,7 +98,7 @@ struct RoomsList: View {
                 } else {
                     ForEach(fetchedRooms) { room in
                         
-                        NavigationLink(value: room) {
+                        Button { behaviours.projectsPath.append(room) } label: {
                             RoomBubbleView(room: room, priceList: priceList, isDeleting: viewModel.isDeletingRooms)
                                 .redrawable()
                                 .modifier(RoomBubbleViewDeletion(isDeleting: $viewModel.isDeletingRooms, atButtonPress: {

@@ -10,6 +10,7 @@ import RevenueCat
 
 struct Onboarding: View {
     
+    @EnvironmentObject var behaviours: BehavioursViewModel
     @Environment(\.locale) var locale
     @Environment(\.dismiss) var dismiss
     @State var currentIndex = 0
@@ -78,7 +79,11 @@ struct Onboarding: View {
             .background {Color.brandWhite.onTapGesture { dismissKeyboard() }.ignoresSafeArea() }
             .overlay(alignment: .topTrailing) {
                 Button {
-                    dismiss()
+                    Task {
+                        behaviours.hasNotSeenOnboarding = false
+                        dismiss()
+                        await behaviours.proEntitlementHandling()
+                    }
                 } label: {
                     Image(systemName: "xmark")
                         .font(.system(size: 18, weight: .bold))
@@ -214,6 +219,7 @@ struct Onboarding: View {
             
             Button {
                 confirmationLogic()
+                
             } label: {
                 HStack {
                     
@@ -253,9 +259,13 @@ struct Onboarding: View {
         
         if emailInput.isEmpty {
             if fastRouteCheck {
-                Purchases.shared.attribution.setEmail(nil)
-                customerEmail = ""
-                dismiss()
+                Task {
+                    Purchases.shared.attribution.setEmail(nil)
+                    customerEmail = ""
+                    behaviours.hasNotSeenOnboarding = false
+                    await behaviours.proEntitlementHandling()
+                    dismiss()
+                }
             } else {
                 impactHeavy.impactOccurred()
                 withAnimation(.bouncy) { isWrongStructureOfEmail = false ; fastRouteCheck = true }
@@ -282,9 +292,13 @@ struct Onboarding: View {
         
         if isValidEmail() {
             withAnimation { isWrongStructureOfEmail = false }
-            Purchases.shared.attribution.setEmail(emailInput)
-            customerEmail = emailInput
-            dismiss()
+            Task {
+                Purchases.shared.attribution.setEmail(emailInput)
+                customerEmail = emailInput
+                behaviours.hasNotSeenOnboarding = false
+                dismiss()
+                await behaviours.proEntitlementHandling()
+            }
         } else {
             withAnimation(.bouncy) {
                 impactHeavy.impactOccurred()

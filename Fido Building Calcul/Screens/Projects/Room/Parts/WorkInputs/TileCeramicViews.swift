@@ -120,6 +120,8 @@ fileprivate struct TileCeramicEditor: View {
     @EnvironmentObject var behavioursVM: BehavioursViewModel
     private var objectCount: Int
     @FocusState var focusedDimension: FocusedDimension?
+    @FocusState var isJollyActive: Bool
+    @State var jolly: String = ""
     
     init(tileCeramic: TileCeramic, objectCount: Int) {
         
@@ -184,7 +186,7 @@ fileprivate struct TileCeramicEditor: View {
                     
                     ValueEditingBox(title: .height, value: $length, unit: .meter)
                         .onAppear { length = doubleToString(from: fetchedEntity.size2) }
-                    .focused($focusedDimension, equals: .second)
+                        .focused($focusedDimension, equals: .second)
                         .onChange(of: length) { _ in
                             fetchedEntity.size2 = stringToDouble(from: length)
                             try? viewContext.save()
@@ -205,7 +207,77 @@ fileprivate struct TileCeramicEditor: View {
                     
                     WindowViewsForTileCeramic(tileCeramic: fetchedEntity)
                     
+                }
+                
+                VStack(alignment: .leading, spacing: 5) {
                     
+                    ComplementaryWorksBubble(work: LargeFormatPavingAndTiling.self, isSwitchedOn: fetchedEntity.largeFormat, subTitle: true) {
+                        fetchedEntity.largeFormat.toggle()
+                        saveAll()
+                    }
+                    
+                    HStack(spacing: 3) {
+                        
+                        VStack(alignment: .leading, spacing: 0) {
+                            
+                            Text(JollyEdging.title)
+                                .font(.system(size: 18, weight: .medium))
+                                .foregroundStyle(Color.brandBlack)
+                            
+                        }.fixedSize()
+                        
+                        Spacer()
+                        
+                        HStack(alignment: .lastTextBaseline, spacing: 5) {
+                            
+                            TextField("0", text: $jolly)
+                                .font(.system(size: 20, weight: .semibold))
+                                .foregroundStyle(Color.brandBlack)
+                                .multilineTextAlignment(.trailing)
+                                .keyboardType(.decimalPad)
+                                .frame(maxWidth: 100, alignment: .trailing)
+                                .onAppear { jolly = doubleToString(from: fetchedEntity.jollyEdging) }
+                                .focused($isJollyActive)
+                                .onChange(of: jolly) { _ in
+                                    fetchedEntity.jollyEdging = stringToDouble(from: jolly)
+                                    try? viewContext.save()
+                                    behavioursVM.redraw()
+                                }
+                            
+                            Text(UnitsOfMeasurement.readableSymbol(JollyEdging.unit))
+                                .font(.system(size: 17, weight: .medium))
+                                .foregroundStyle(Color.brandBlack)
+                                .frame(alignment: .leading)
+                        }
+                        
+                    }.padding(.horizontal, 15)
+                        .padding(.vertical, 10)
+                        .background(Color.brandGray)
+                        .clipShape(.rect(cornerRadius: 15, style: .continuous))
+                        
+                    
+                }.padding(.horizontal, 10)
+                .padding(.bottom, 10)
+                .toolbar {
+                    ToolbarItem(placement: .keyboard) {
+                        if isJollyActive {
+                            HStack {
+                                Spacer()
+                                Button {
+                                    jolly = stringToDouble(from: jolly).toString
+                                    dismissKeyboard()
+                                } label: {
+                                    Text("Done")
+                                        .font(.system(size: 17, weight: .semibold))
+                                        .foregroundStyle(Color.brandWhite)
+                                        .padding(.horizontal, 12)
+                                        .padding(.vertical, 4)
+                                        .background { Color.brandBlack }
+                                        .clipShape(Capsule())
+                                }.frame(width: 75)
+                            }
+                        }
+                    }
                 }
                 
             }.padding(.horizontal, 10)
@@ -240,7 +312,10 @@ fileprivate struct TileCeramicEditor: View {
     
     
     private func saveAll() {
-        withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) { try? viewContext.save() }
+        withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) {
+            try? viewContext.save()
+            behavioursVM.redraw()
+        }
     }
     
 }
@@ -249,7 +324,6 @@ fileprivate struct DoorViewsForTileCeramic: View {
     
     @FetchRequest var fetchedParent: FetchedResults<TileCeramic>
     @Environment(\.managedObjectContext) var viewContext
-    
     
     init(tileCeramic: TileCeramic) {
         
@@ -326,9 +400,7 @@ fileprivate struct DoorViewsForTileCeramic: View {
         
     }
     
-    private func saveAll() {
-        withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) { try? viewContext.save() }
-    }
+    private func saveAll() { withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) { try? viewContext.save() } }
     
 }
 
@@ -336,9 +408,7 @@ fileprivate struct DoorViewsForTileCeramic: View {
 fileprivate struct WindowViewsForTileCeramic: View {
     
     @FetchRequest var fetchedParent: FetchedResults<TileCeramic>
-    
     @Environment(\.managedObjectContext) var viewContext
-    
     
     init(tileCeramic: TileCeramic) {
         
@@ -353,8 +423,6 @@ fileprivate struct WindowViewsForTileCeramic: View {
         _fetchedParent = FetchRequest(fetchRequest: entityRequest)
         
     }
-    
-    
     
     var body: some View {
         

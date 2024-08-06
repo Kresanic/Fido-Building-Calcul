@@ -18,7 +18,7 @@ struct OnboardingPageInfo {
 
 struct OnboardingPageContexts {
     
-    static let mainPriceList: OnboardingPageInfo = .init(title: "General price list", images: [.bottomBarPriceList], description: "Customize according to your work and material costs. Price changes will reflect in every newly created project.")
+    static let mainPriceList: OnboardingPageInfo = .init(title: "Main price list", images: [.bottomBarPriceList], description: "Customize according to your work and material costs. Price changes will reflect in every newly created project.")
     
     static let projectPriceList: OnboardingPageInfo = .init(title: "Project price list", images: [.projectPriceList], description: "For changing prices in individual projects, use the project price list. Price changes will only affect the current project.")
     

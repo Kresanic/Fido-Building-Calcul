@@ -11,6 +11,7 @@ import PhotosUI
 @MainActor final class ContractorViewModel: ObservableObject {
     
     @Published var isSelectingLogo = false
+    @Published var isSelectingSignature = false
     @Published var user: Contractor? {
         didSet {
             if let user {
@@ -35,7 +36,9 @@ import PhotosUI
     @Published var swiftCode = ""
     @Published var web = ""
     @Published var selectedImages: [PhotosPickerItem] = []
+    @Published var selectedSignature: [PhotosPickerItem] = []
     @Published var imageData: Data?
+    @Published var signatureData: Data?
     
     func loadClient(_ contractor: Contractor) {
         
@@ -57,6 +60,7 @@ import PhotosUI
         web                   = contractor.web ?? ""
         
         imageData             = contractor.logo
+        signatureData         = contractor.signature
         
     }
         
@@ -117,9 +121,6 @@ import PhotosUI
             
             if let user = self.user {
                 
-                if let imageData {
-                    user.logo = imageData
-                }
                 user.cId = UUID()
                 user.dateCreated = Date.now
                 user.name = name
@@ -139,7 +140,7 @@ import PhotosUI
                 user.swiftCode = swiftCode
                 user.web = web
                 user.logo = imageData
-                
+                user.signature = signatureData
                 do {
                     try viewContext.save()
                     return user
@@ -170,7 +171,8 @@ import PhotosUI
                 newUser.swiftCode = swiftCode
                 newUser.web = web
                 newUser.logo = imageData
-                    
+                newUser.signature = signatureData
+                
                 do {
                     try viewContext.save()
                     return newUser

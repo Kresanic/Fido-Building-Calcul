@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RevenueCat
 
 struct FidoTabView: View {
     
@@ -21,9 +22,9 @@ struct FidoTabView: View {
             case .projects:
                 ProjectsScreen()
                     .zIndex(0)
-                    .transition(behaviourVM.isAnimationCircular ? .asymmetric(insertion: .scale(scale: 0.0, anchor: .bottomLeading).combined(with: .opacity), removal: .opacity)  : .opacity)
-            case .prices:
-                PricesScreen()
+                    .transition(.opacity)
+            case .invoices:
+                InvoicesScreen(activeContractor: behaviourVM.activeContractor)
                     .zIndex(0)
                     .transition(.opacity)
             case .clients:
@@ -44,8 +45,19 @@ struct FidoTabView: View {
         .ignoresSafeArea()
         .onAppear { behaviourVM.deleteArchivedProjects() }
         .onAppear { behaviourVM.checkCheckForGeneralPriceList() }
-        .fullScreenCover(isPresented: $behaviourVM.hasNotSeenOnboarding) {
-            Onboarding()
+        .sheet(isPresented: $behaviourVM.givenPromotional) { GivenPromotionalSheet() }
+        .fullScreenCover(isPresented: $behaviourVM.hasNotSeenOnboarding) { Onboarding() }
+        .onChange(of: behaviourVM.promotionalEntitlements, perform: { _ in
+            Task { await behaviourVM.windowingForPromotionalEntitlements() }
+        })
+        .task {
+            if !behaviourVM.hasNotSeenOnboarding {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                    Task { await behaviourVM.proEntitlementHandling() }
+                }
+            }
         }
+        
     }
+    
 }

@@ -118,7 +118,12 @@ fileprivate struct PavingCeramicEditor: View {
     @EnvironmentObject var behavioursVM: BehavioursViewModel
     private var objectCount: Int
     @FocusState var focusedDimension: FocusedDimension?
-    
+    enum FocusedPlinth { case cutting, bonding }
+    @FocusState var whatPlinthIsFocused: FocusedPlinth?
+    @State var plinthCutting: String = ""
+    @State var plinthBonding: String = ""
+    let impactMed = UIImpactFeedbackGenerator(style: .light)
+    let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
     init(pavingCeramic: PavingCeramic, objectCount: Int) {
         
         self.objectCount = objectCount
@@ -173,7 +178,7 @@ fileprivate struct PavingCeramicEditor: View {
                     
                     ValueEditingBox(title: .width, value: $width, unit: .meter)
                         .onAppear { width = doubleToString(from: fetchedEntity.size1) }
-                    .focused($focusedDimension, equals: .first)
+                        .focused($focusedDimension, equals: .first)
                         .onChange(of: width) { _ in
                             fetchedEntity.size1 = stringToDouble(from: width)
                             try? viewContext.save()
@@ -182,7 +187,7 @@ fileprivate struct PavingCeramicEditor: View {
                     
                     ValueEditingBox(title: .length, value: $length, unit: .meter)
                         .onAppear { length = doubleToString(from: fetchedEntity.size2) }
-                    .focused($focusedDimension, equals: .second)
+                        .focused($focusedDimension, equals: .second)
                         .onChange(of: length) { _ in
                             fetchedEntity.size2 = stringToDouble(from: length)
                             try? viewContext.save()
@@ -191,6 +196,110 @@ fileprivate struct PavingCeramicEditor: View {
                     
                 }.task { if fetchedEntity.dateCreated ?? Date.now >= Date().addingTimeInterval(-10) { withAnimation { focusedDimension = .first } } }
                     .workInputsToolbar(focusedDimension: $focusedDimension, size1: $width, size2: $length)
+            
+                VStack(alignment: .leading, spacing: 5) {
+                    
+                    ComplementaryWorksBubble(work: LargeFormatPavingAndTiling.self, isSwitchedOn: fetchedEntity.largeFormat, subTitle: true) {
+                        fetchedEntity.largeFormat.toggle()
+                        saveAll()
+                    }
+                    
+                    HStack(spacing: 3) {
+                        
+                        VStack(alignment: .leading, spacing: 0) {
+                            
+                            Text(PlinthCutting.title)
+                                .font(.system(size: 18, weight: .medium))
+                                .foregroundStyle(Color.brandBlack)
+                            
+                            Text(PlinthCutting.subTitle)
+                                .font(.system(size: 11, weight: .medium))
+                                .foregroundStyle(Color.brandBlack.opacity(0.75))
+                                .lineLimit(1)
+                            
+                        }.fixedSize()
+                        
+                        Spacer()
+                        
+                        HStack(alignment: .lastTextBaseline, spacing: 5) {
+                            
+                            TextField("0", text: $plinthCutting)
+                                .font(.system(size: 20, weight: .semibold))
+                                .foregroundStyle(Color.brandBlack)
+                                .multilineTextAlignment(.trailing)
+                                .keyboardType(.decimalPad)
+                                .frame(maxWidth: 100, alignment: .trailing)
+                                .onAppear { plinthCutting = doubleToString(from: fetchedEntity.plinthCutting) }
+                                .focused($whatPlinthIsFocused, equals: .cutting)
+                                .onChange(of: plinthCutting) { _ in
+                                    fetchedEntity.plinthCutting = stringToDouble(from: plinthCutting)
+                                    try? viewContext.save()
+                                    behavioursVM.redraw()
+                                }
+                            
+                            Text(UnitsOfMeasurement.readableSymbol(PlinthCutting.unit))
+                                .font(.system(size: 17, weight: .medium))
+                                .foregroundStyle(Color.brandBlack)
+                                .frame(alignment: .leading)
+                        }
+                        
+                    }.padding(.horizontal, 15)
+                        .padding(.vertical, 10)
+                        .background(Color.brandGray)
+                        .clipShape(.rect(cornerRadius: 15, style: .continuous))
+                    
+                    HStack(spacing: 3) {
+                        
+                        VStack(alignment: .leading, spacing: 0) {
+                            
+                            Text(PlinthBonding.title)
+                                .font(.system(size: 18, weight: .medium))
+                                .foregroundStyle(Color.brandBlack)
+                            
+                            Text(PlinthBonding.subTitle)
+                                .font(.system(size: 11, weight: .medium))
+                                .foregroundStyle(Color.brandBlack.opacity(0.75))
+                                .lineLimit(1)
+                            
+                        }.fixedSize()
+                        
+                        Spacer()
+                        
+                        HStack(alignment: .lastTextBaseline, spacing: 5) {
+                            
+                            TextField("0", text: $plinthBonding)
+                                .font(.system(size: 20, weight: .semibold))
+                                .foregroundStyle(Color.brandBlack)
+                                .multilineTextAlignment(.trailing)
+                                .keyboardType(.decimalPad)
+                                .frame(maxWidth: 100, alignment: .trailing)
+                                .onAppear { plinthBonding = doubleToString(from: fetchedEntity.plinthBonding) }
+                                .focused($whatPlinthIsFocused, equals: .bonding)
+                                .onChange(of: plinthBonding) { _ in
+                                    fetchedEntity.plinthBonding = stringToDouble(from: plinthBonding)
+                                    try? viewContext.save()
+                                    behavioursVM.redraw()
+                                }
+                            
+                            Text(UnitsOfMeasurement.readableSymbol(PlinthBonding.unit))
+                                .font(.system(size: 17, weight: .medium))
+                                .foregroundStyle(Color.brandBlack)
+                                .frame(alignment: .leading)
+                        }
+                        
+                    }.padding(.horizontal, 15)
+                        .padding(.vertical, 10)
+                        .background(Color.brandGray)
+                        .clipShape(.rect(cornerRadius: 15, style: .continuous))
+                        
+                    
+                }.padding(.horizontal, 10)
+                .padding(.bottom, 10)
+                .toolbar {
+                    ToolbarItem(placement: .keyboard) {
+                        keyboardToolbarContent()
+                    }
+                }
                 
             }.padding(.horizontal, 10)
             
@@ -223,7 +332,134 @@ fileprivate struct PavingCeramicEditor: View {
     }
     
     private func saveAll() {
-        withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) { try? viewContext.save() }
+        withAnimation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.4)) {
+            try? viewContext.save()
+            behavioursVM.redraw()
+        }
+    }
+    
+    @ViewBuilder
+    private func keyboardToolbarContent() -> some View {
+        if whatPlinthIsFocused == .bonding {
+            HStack(spacing: 0) {
+                Spacer().frame(width: 75)
+                mathSymbols()
+                doneButton(isBonding: true).frame(width: 75)
+            }
+        } else if whatPlinthIsFocused == .cutting {
+            HStack(spacing: 0) {
+                Spacer().frame(width: 75)
+                mathSymbols()
+                doneButton(isBonding: false).frame(width: 75)
+            }
+        }
+    }
+
+    private func doneButton(isBonding: Bool) -> some View {
+        Button {
+            withAnimation {
+                if isBonding {
+                    plinthBonding = calculate(on: plinthBonding)
+                } else  {
+                    plinthCutting = calculate(on: plinthCutting)
+                }
+                whatPlinthIsFocused = nil
+            }
+        } label: {
+            Text("Done")
+                .font(.system(size: 17, weight: .semibold))
+                .foregroundStyle(Color.brandWhite)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 4)
+                .background { Color.brandBlack }
+                .clipShape(Capsule())
+        }
+    }
+    
+    private func mathSymbols() -> some View {
+        
+        HStack {
+            
+            Button("-") {
+                addSymbol("-")
+            }.frame(height: 40)
+            .frame(maxWidth: .infinity)
+            
+            Button("+") {
+                addSymbol("+")
+            }.frame(height: 40)
+            .frame(maxWidth: .infinity)
+            
+            Button("*") {
+                addSymbol("*")
+            }.frame(height: 40)
+            .frame(maxWidth: .infinity)
+            .padding(.top, 8)
+            
+            Button("=") {
+                if whatPlinthIsFocused == .bonding {
+                    plinthBonding = calculate(on: plinthBonding)
+                } else if whatPlinthIsFocused == .cutting {
+                    plinthCutting = calculate(on: plinthCutting)
+                }
+                impactHeavy.impactOccurred()
+            }.frame(height: 40)
+            .frame(maxWidth: .infinity)
+            
+        }.font(.system(size: 22, weight: .bold))
+            .foregroundStyle(Color.brandBlack)
+        
+    }
+    
+    private func addSymbol(_ s: String) {
+        switch whatPlinthIsFocused {
+        case .cutting:
+            if let last = plinthCutting.last, !["+","*","-"].contains(last) {
+                plinthCutting = plinthCutting + s
+            } else {
+                impactHeavy.impactOccurred()
+            }
+        case .bonding:
+            if let last = plinthBonding.last, !["+","*","-"].contains(last) {
+                plinthBonding = plinthBonding + s
+            } else {
+                impactHeavy.impactOccurred()
+            }
+        case nil:
+            break
+        }
+        impactMed.impactOccurred()
+    }
+    
+    private func calculate(on expressionString: String) -> String {
+        
+        guard expressionString.numberOfOccurrencesOf(string: ",") < 2 else { return expressionString.beforeCommaOrDot }
+        
+        guard expressionString.numberOfOccurrencesOf(string: ".") < 2 else { return expressionString.beforeCommaOrDot }
+        
+        guard let _ = Int(expressionString.suffix(1)) else { return "0" }
+        guard let _ = Int(expressionString.prefix(1)) else { return "0" }
+        
+        let expression = expressionString.replacingOccurrences(of: ",", with: ".")
+                
+        let express = NSExpression(format: expression)
+        
+        guard let result = express.expressionValue(with: nil, context: nil) as? Double else { return "0" }
+        
+        let roundedResult = Double(round(100 * result) / 100)
+        
+        return dbToStr(from: roundedResult)
+        
+    }
+    
+    private func dbToStr(from number: Double) -> String {
+        
+        if number.truncatingRemainder(dividingBy: 1.0) == 0.0 {
+            return String(number) == "0.0" ? "" : String(Int(number))
+        } else {
+            return String(number) == "0.0" ? "" : String(number).replacingOccurrences(of: ".", with: ",")
+        }
+        
     }
     
 }
