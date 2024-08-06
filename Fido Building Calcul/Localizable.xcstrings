@@ -765,6 +765,16 @@
         }
       }
     },
+    "Any Time" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kedykoľvek"
+          }
+        }
+      }
+    },
     "App #, Suite (optional)" : {
       "localizations" : {
         "sk" : {
@@ -5103,12 +5113,12 @@
         }
       }
     },
-    "There is no Invoice for selected Invoice Status." : {
+    "There is no Invoice for the selected filter criteria." : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pre vybratý stav faktúry neexistuje žiadna faktúra."
+            "value" : "Pre vybraté kritériá filtra neexistuje žiadna faktúra."
           }
         }
       }
@@ -5369,17 +5379,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Odomknite prémiové funkcie s predplatným. Prihlásením sa na odber súhlasíte s našimi zmluvnými podmienkami a zásadami ochrany osobných údajov. Vaše predplatné sa automaticky obnoví, pokiaľ ho nezrušíte aspoň 24 hodín pred koncom aktuálneho obdobia. Svoje predplatné môžete kedykoľvek spravovať alebo zrušiť v nastaveniach účtu App Store."
-          }
-        }
-      }
-    },
-    "unpaid" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "neuhradené"
           }
         }
       }
@@ -5730,6 +5729,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "XY"
+          }
+        }
+      }
+    },
+    "Year" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rok"
           }
         }
       }

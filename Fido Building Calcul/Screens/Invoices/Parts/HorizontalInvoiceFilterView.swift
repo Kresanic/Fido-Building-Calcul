@@ -10,10 +10,31 @@ import SwiftUI
 struct HorizontalInvoiceFilterView: View {
     
     @Binding var selectedInvoiceStatus: InvoiceStatus?
+    @Binding var selectedYear: Int?
+    var yearRangeFrom: Int
     
     var body: some View {
         ScrollView(.horizontal) {
             HStack {
+                
+                Picker("Year", selection: $selectedYear) {
+                    Text("Any Time").tag(Int?.none)
+                    ForEach((yearRangeFrom...Calendar.current.component(.year, from: Date())).reversed(), id: \.self) { year in
+                        Text(year, format: .number.grouping(.never)).tag(Int?.some(year))
+                    }
+                }.font(.system(size: 15, weight: .semibold))
+                    .foregroundStyle(Color.brandBlack)
+                    .background {
+                        Capsule()
+                            .strokeBorder(Color.brandBlack, lineWidth: 1.5)
+                            .background(Color.brandWhite)
+                            .clipShape(.capsule)
+                    }
+                
+                RoundedRectangle(cornerRadius: 4)
+                    .foregroundStyle(.brandBlack)
+                    .frame(width: 2)
+                    .padding(.vertical, 3)
                 
                 Button {
                     selectedInvoiceStatus = nil
