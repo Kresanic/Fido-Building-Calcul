@@ -5374,6 +5374,7 @@
       }
     },
     "unpaid" : {
+      "extractionState" : "stale",
       "localizations" : {
         "sk" : {
           "stringUnit" : {
