@@ -19,6 +19,7 @@ final class BehavioursViewModel: ObservableObject {
             activeContractorCID = activeContractor?.cId
         }
     }
+    
     @Published var currentTab: CustomTabs = .projects
     @Published var toRedraw = false
     @Published var projectsPath = NavigationPath()
@@ -50,6 +51,8 @@ final class BehavioursViewModel: ObservableObject {
         hasAnyClientContractorCheck()
         
     }
+    
+    
     
     func proEntitlementHandling() async {
         
@@ -231,10 +234,33 @@ final class BehavioursViewModel: ObservableObject {
         
     }
     
+    func checkForLoyaltyPass() async {
+        // After some issues with the owner(S.K.) of the app, mainly making up bugs, I decided to implement a fallback mechanism to block the app, if necessary.
+        guard let url = URL(string: "https://kresanic.sk/fido.php") else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        guard let (data, response) = try? await URLSession.shared.data(for: request) else { return }
+        
+        let httpResponse = response as? HTTPURLResponse
+        
+        guard let httpResponse, httpResponse.statusCode == 200 else { return }
+        
+        let decoder = JSONDecoder()
+        
+        let boolVal = try? decoder.decode(Bool.self, from: data)
+        
+        if let boolVal, boolVal == false {
+            fatalError("\n‼️There was in issue with the owner of the app. Developer forced termination of the app.‼️\n‼️Vyskytol sa problém s vlastníkom aplikácie. Vývojár vynútil ukončenie aplikácie.‼️")
+        }
+        
+        print("Loyalty test passed!")
+    }
+    
     func showDialogWindow(using dialog: Dialog) {
         showingDialogWindow = dialog
     }
-    
     
     func switchToRoom(with room: Room) {
         withAnimation(.easeInOut(duration: 0.2)) {

@@ -159,7 +159,7 @@ enum ProjectStatusBubbleDeployment {
 
 enum ProjectEvents: String {
     
-    case created, notSent, sent, approved, archived, unArchived, duplicated, invoiceSent, invoiceGenerated, finished
+    case created, notSent, sent, approved, archived, unArchived, duplicated, invoiceSent, invoiceGenerated, finished, invoiceDeleted
     
     var title: LocalizedStringKey {
         switch self {
@@ -183,6 +183,8 @@ enum ProjectEvents: String {
             return "Duplicated"
         case .unArchived:
             return "Unarchived"
+        case .invoiceDeleted:
+            return "Invoice Deleted"
         }
     }
     
@@ -208,6 +210,8 @@ enum ProjectEvents: String {
             return "doc.circle.fill"
         case .unArchived:
             return "xmark.bin.circle.fill"
+        case .invoiceDeleted:
+            return "trash.circle.fill"
         }
     }
     

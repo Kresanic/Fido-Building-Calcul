@@ -34,7 +34,7 @@ import PDFKit
     }
     
     func pdfContent(from project: Project) -> some View {
-        
+        // Checked
         VStack(alignment: .leading, spacing: 0) {
             
             HStack(alignment: .top) {
@@ -45,12 +45,12 @@ import PDFKit
                     
                     Text("\(localizedTitle) - \(project.unwrappedName)")
                         .font(.system(size: 25, weight: .semibold))
-                        .foregroundStyle(Color.brandBlack)
+                        .foregroundStyle(.black)
                     
                     if let notes = project.notes, !notes.isEmpty {
                         Text(notes)
                             .font(.system(size: 12, weight: .regular))
-                            .foregroundStyle(Color.brandBlack)
+                            .foregroundStyle(.black)
                             .lineLimit(4)
                             .multilineTextAlignment(.leading)
                             .frame(width: 300)
@@ -64,7 +64,7 @@ import PDFKit
                             
                             Text(NSLocalizedString("Customer", comment: ""))
                                 .font(.system(size: 13, weight: .bold))
-                            
+                                .foregroundStyle(.black)
                             PDFClientInfoView(client: client)
                             
                         }
@@ -87,9 +87,11 @@ import PDFKit
                     
                     Spacer()
                     
-                    PDFPersonalInfoView(title: NSLocalizedString("Date of issue", comment: ""), value: Date.now.formatted(date: .numeric, time: .omitted), spaced: true)
+                    let dateOfCreation = project.dateCreated ?? Date.now
                     
-                    PDFPersonalInfoView(title: NSLocalizedString("Valid until", comment: ""), value: Date.now.addingTimeInterval(TimeInterval(priceOfferValidity*24*60*60)).formatted(date: .numeric, time: .omitted), spaced: true)
+                    PDFPersonalInfoView(title: NSLocalizedString("Date of issue", comment: ""), value: dateOfCreation.formatted(date: .numeric, time: .omitted), spaced: true)
+                    
+                    PDFPersonalInfoView(title: NSLocalizedString("Valid until", comment: ""), value: dateOfCreation.addingTimeInterval(TimeInterval(priceOfferValidity*24*60*60)).formatted(date: .numeric, time: .omitted), spaced: true)
                     
                 }.frame(width: 175)
                 
@@ -124,15 +126,17 @@ import PDFKit
                         .font(.system(size: 12, weight: .medium))
                         .frame(width: 80, alignment: .trailing)
                     
-                }.padding(.top, 20)
+                }.foregroundStyle(.black)
+                .padding(.top, 20)
                 
                 Rectangle()
-                    .foregroundStyle(Color.brandBlack)
+                    .foregroundStyle(.black)
                     .frame(maxWidth: .infinity, maxHeight: 1).padding(.vertical, 4)
                 
                 if !projectSumUp.works.isEmpty {
                     Text(NSLocalizedString("Work", comment: ""))
                         .font(.system(size: 10, weight: .medium))
+                        .foregroundStyle(.black)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.bottom, 2)
                 }
@@ -172,8 +176,9 @@ import PDFKit
                 }
                 
                 Rectangle()
-                    .foregroundStyle(Color.brandBlack)
+                    .foregroundStyle(.black)
                     .frame(maxWidth: .infinity, maxHeight: 1).padding(.vertical, 4)
+                
                 VStack(alignment: .trailing, spacing: 10) {
                     
                     PDFTotalPriceView(priceWithoutVat: projectSumUp.priceWithoutVat, percentage: projectSumUp.VATPercentage)
@@ -183,7 +188,7 @@ import PDFKit
                             
                             Text(NSLocalizedString("Issued by:", comment: ""))
                                 .font(.system(size: 10, weight: .medium))
-                                .foregroundStyle(.brandBlack)
+                                .foregroundStyle(.black)
                             
                             Image(uiImage: signature)
                                 .resizable()

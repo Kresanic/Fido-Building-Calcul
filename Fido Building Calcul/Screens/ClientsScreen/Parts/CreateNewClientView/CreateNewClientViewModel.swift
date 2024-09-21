@@ -104,8 +104,8 @@ import SwiftUI
     
     private func loadRetrievedInfo(from company: Company) {
         
-        businessID = company.ico
-        taxID = company.dic
+        businessID = company.ico ?? ""
+        taxID = company.dic ?? ""
         vatRegistrationNumber = company.dicDph ?? ""
         name = company.companyName
         

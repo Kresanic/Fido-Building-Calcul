@@ -725,6 +725,16 @@
         }
       }
     },
+    "After maturity" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Po splatnosti"
+          }
+        }
+      }
+    },
     "After Maturity" : {
       "localizations" : {
         "sk" : {
@@ -2457,7 +2467,7 @@
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ukončený"
+            "value" : "vyfakturované"
           }
         }
       }
@@ -2467,7 +2477,7 @@
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ukončený"
+            "value" : "Vyfakturované"
           }
         }
       }
@@ -2733,6 +2743,16 @@
         }
       }
     },
+    "in total, including VAT" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "celkovo, vrátane DPH"
+          }
+        }
+      }
+    },
     "Include" : {
       "localizations" : {
         "sk" : {
@@ -2824,6 +2844,16 @@
         }
       }
     },
+    "Invoice Deleted" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faktúra vymazaná"
+          }
+        }
+      }
+    },
     "Invoice Generated" : {
       "localizations" : {
         "sk" : {
@@ -2901,12 +2931,44 @@
         }
       }
     },
+    "invoices" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "invoices"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "faktúry"
+          }
+        }
+      }
+    },
     "Invoices" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invoices"
+          }
+        },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Faktúry"
+          }
+        }
+      }
+    },
+    "invoices in total" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "faktúry celkovo"
           }
         }
       }
@@ -4989,6 +5051,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vyskúšať na týždeň zdarma"
+          }
+        }
+      }
+    },
+    "Statistics" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Štatistiky"
           }
         }
       }
