@@ -24,14 +24,16 @@ extension View {
     }
     
     func stringToDouble(from text: String) -> Double {
+        
+        let new_text = text.replacingOccurrences(of: " ", with: "")
         // TODO: REGEX FOR CHECKING VALIDITY
-        guard text.numberOfOccurrencesOf(string: ",") < 2 else {
-                return Double(text.beforeCommaOrDot) ?? 0
+        guard new_text.numberOfOccurrencesOf(string: ",") < 2 else {
+                return Double(new_text.beforeCommaOrDot) ?? 0
             }
-        guard text.numberOfOccurrencesOf(string: ".") < 2 else {
-            return Double(text.beforeCommaOrDot) ?? 0
+        guard new_text.numberOfOccurrencesOf(string: ".") < 2 else {
+            return Double(new_text.beforeCommaOrDot) ?? 0
         }
-        return calculate(on: text)
+        return calculate(on: new_text)
     }
     
     private func calculate(on expressionString: String) -> Double {
@@ -39,7 +41,7 @@ extension View {
         guard let _ = Int(expressionString.suffix(1)) else { return 0.0 }
         guard let _ = Int(expressionString.prefix(1)) else { return 0.0 }
         
-        let expression = expressionString.replacingOccurrences(of: ",", with: ".")
+        let expression = expressionString.replacingOccurrences(of: ",", with: ".").replacingOccurrences(of: " ", with: "")
                 
         let express = NSExpression(format: expression)
         

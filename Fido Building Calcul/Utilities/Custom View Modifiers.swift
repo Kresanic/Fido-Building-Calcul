@@ -405,7 +405,7 @@ struct InvoiceItemInputsToolBar: ViewModifier {
         guard let _ = Int(expressionString.suffix(1)) else { return "0" }
         guard let _ = Int(expressionString.prefix(1)) else { return "0" }
         
-        let expression = expressionString.replacingOccurrences(of: ",", with: ".")
+        let expression = expressionString.replacingOccurrences(of: ",", with: ".").replacingOccurrences(of: " ", with: "")
                 
         let express = NSExpression(format: expression)
         
@@ -631,7 +631,7 @@ struct TripleWorkInputsToolBar: ViewModifier {
         guard let _ = Int(expressionString.suffix(1)) else { return "0" }
         guard let _ = Int(expressionString.prefix(1)) else { return "0" }
         
-        let expression = expressionString.replacingOccurrences(of: ",", with: ".")
+        let expression = expressionString.replacingOccurrences(of: ",", with: ".").replacingOccurrences(of: " ", with: "")
                 
         let express = NSExpression(format: expression)
         
@@ -788,7 +788,7 @@ struct WorkInputsToolBar: ViewModifier {
         guard let _ = Int(expressionString.suffix(1)) else { return "0" }
         guard let _ = Int(expressionString.prefix(1)) else { return "0" }
         
-        let expression = expressionString.replacingOccurrences(of: ",", with: ".")
+        let expression = expressionString.replacingOccurrences(of: ",", with: ".").replacingOccurrences(of: " ", with: "")
                 
         let express = NSExpression(format: expression)
         
@@ -904,7 +904,7 @@ struct SingleWorkInputToolBar: ViewModifier {
         guard let _ = Int(expressionString.suffix(1)) else { return "0" }
         guard let _ = Int(expressionString.prefix(1)) else { return "0" }
         
-        let expression = expressionString.replacingOccurrences(of: ",", with: ".")
+        let expression = expressionString.replacingOccurrences(of: ",", with: ".").replacingOccurrences(of: " ", with: "")
         
         let express = NSExpression(format: expression)
         

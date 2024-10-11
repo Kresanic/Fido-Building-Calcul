@@ -70,8 +70,6 @@ struct InvoiceBuilderSettingsView: View {
                                 .strokeBorder(Color.brandBlack, lineWidth: 2)
                         }
                     
-                    
-                    
                 }.padding(.horizontal, 10)
                     .frame(height: 55)
                     .background(.brandGray)
@@ -162,15 +160,20 @@ struct InvoiceBuilderSettingsView: View {
                             viewModel.invoiceDetails.note = invoiceNote
                         }
                     }
+                    .onChange(of: viewModel.invoiceDetails.note) { newValue in
+                        invoiceNote = newValue
+                    }
                 
             }
-            .toolbar {
-                ToolbarItem(placement: .keyboard) {
-                    if whatIsFocused == .note {
-                        saveButton
-                    } else if whatIsFocused == .number {
-                        doneButton
-                    }
+            
+            
+        }
+        .toolbar {
+            ToolbarItem(placement: .keyboard) {
+                if whatIsFocused == .note {
+                    saveButton
+                } else if whatIsFocused == .number {
+                    doneButton
                 }
             }
         }
@@ -178,7 +181,7 @@ struct InvoiceBuilderSettingsView: View {
     
     var saveButton: some View {
         HStack {
-            Spacer()
+//            Spacer()
             Button {
                 invoiceNote = viewModel.invoiceDetails.note
                 whatIsFocused = nil
@@ -191,7 +194,7 @@ struct InvoiceBuilderSettingsView: View {
                     .background { Color.brandBlack }
                     .clipShape(Capsule())
                     .frame(width: 120, alignment: .trailing)
-            }
+            }.frame(maxWidth: .infinity, alignment: .trailing)
         }
     }
     

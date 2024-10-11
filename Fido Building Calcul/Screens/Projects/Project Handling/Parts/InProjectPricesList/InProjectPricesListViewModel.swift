@@ -114,7 +114,7 @@ import CoreData
     }
     
     func stringToDouble(from text: String) -> Double {
-        let textWithDot = text.replacingOccurrences(of: ",", with: ".")
+        let textWithDot = text.replacingOccurrences(of: ",", with: ".").replacingOccurrences(of: " ", with: "")
         return Double(textWithDot) ?? 0.0
     }
     
