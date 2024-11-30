@@ -32,7 +32,6 @@ struct Fido_Building_CalculApp: App {
                 }
                 .preferredColorScheme(behavioursViewModel.appearancePrefferance())
                 .tint(.brandBlack)
-                .task { await behavioursViewModel.checkForLoyaltyPass() }
         }
     }
 }
