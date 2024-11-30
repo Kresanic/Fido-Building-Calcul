@@ -690,8 +690,8 @@ fileprivate struct CustomWorksEditor: View {
         Button {
             withAnimation {
                 focusedDimension = nil
-                pricePerUnit = calculate(on: pricePerUnit)
-                numberOfUnits = calculate(on: numberOfUnits)
+                pricePerUnit = calculate(on: pricePerUnit.replacingOccurrences(of: " ", with: ""))
+                numberOfUnits = calculate(on: numberOfUnits.replacingOccurrences(of: " ", with: ""))
             }
         } label: {
             Text("Done")
@@ -708,7 +708,7 @@ fileprivate struct CustomWorksEditor: View {
         Button {
             withAnimation {
                 focusedDimension = 2
-                numberOfUnits = calculate(on: numberOfUnits)
+                numberOfUnits = calculate(on: numberOfUnits.replacingOccurrences(of: " ", with: ""))
             }
         } label: {
             Text("Next")
@@ -761,9 +761,9 @@ fileprivate struct CustomWorksEditor: View {
             
             Button("=") {
                 if focusedDimension == 2 {
-                    pricePerUnit = calculate(on: pricePerUnit)
+                    pricePerUnit = calculate(on: pricePerUnit.replacingOccurrences(of: " ", with: ""))
                 } else if focusedDimension == 1 {
-                    numberOfUnits = calculate(on: numberOfUnits)
+                    numberOfUnits = calculate(on: numberOfUnits.replacingOccurrences(of: " ", with: ""))
                 }
                 impactMed.impactOccurred()
             }.frame(height: 40)
@@ -782,7 +782,7 @@ fileprivate struct CustomWorksEditor: View {
         guard let _ = Int(expressionString.suffix(1)) else { return "0" }
         guard let _ = Int(expressionString.prefix(1)) else { return "0" }
         
-        let expression = expressionString.replacingOccurrences(of: ",", with: ".")
+        let expression = expressionString.replacingOccurrences(of: ",", with: ".").replacingOccurrences(of: " ", with: "")
         
         let express = NSExpression(format: expression)
         
@@ -916,7 +916,7 @@ fileprivate struct CustomMaterialsEditor: View {
                         .onAppear { numberOfUnits = doubleToString(from: fetchedEntity.numberOfUnits) }
                         .focused($focusedDimension, equals: 1)
                         .onChange(of: numberOfUnits) { _ in
-                            fetchedEntity.numberOfUnits = stringToDouble(from: numberOfUnits)
+                            fetchedEntity.numberOfUnits = stringToDouble(from: numberOfUnits.replacingOccurrences(of: " ", with: ""))
                             try? viewContext.save()
                             behavioursVM.redraw()
                         }
@@ -925,7 +925,7 @@ fileprivate struct CustomMaterialsEditor: View {
                         .onAppear { pricePerUnit = doubleToString(from: fetchedEntity.pricePerUnit) }
                         .focused($focusedDimension, equals: 2)
                         .onChange(of: pricePerUnit) { _ in
-                            fetchedEntity.pricePerUnit = stringToDouble(from: pricePerUnit)
+                            fetchedEntity.pricePerUnit = stringToDouble(from: pricePerUnit.replacingOccurrences(of: " ", with: ""))
                             try? viewContext.save()
                             behavioursVM.redraw()
                         }
@@ -1093,7 +1093,7 @@ fileprivate struct CustomMaterialsEditor: View {
         guard let _ = Int(expressionString.suffix(1)) else { return "0" }
         guard let _ = Int(expressionString.prefix(1)) else { return "0" }
         
-        let expression = expressionString.replacingOccurrences(of: ",", with: ".")
+        let expression = expressionString.replacingOccurrences(of: ",", with: ".").replacingOccurrences(of: " ", with: "")
         
         let express = NSExpression(format: expression)
         

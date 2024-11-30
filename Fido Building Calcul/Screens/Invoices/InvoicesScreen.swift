@@ -1,9 +1,3 @@
-//
-//  InvoicesScreen.swift
-//  Fido Building Calcul
-//
-//  Created by Peter Kresanič on 22/03/2024.
-//
 
 import SwiftUI
 
@@ -13,6 +7,8 @@ struct InvoicesScreen: View {
     @FetchRequest var invoices: FetchedResults<Invoice>
     @Environment(\.managedObjectContext) var viewContext
     @State var selectedInvoiceStatus: InvoiceStatus?
+//    @State var selectedYear: Int?
+    @AppStorage("selectedYear") var selectedYear: Int?
     @State var selectedInvoices: [Invoice] = []
     
     init(activeContractor: Contractor?) {
@@ -29,6 +25,10 @@ struct InvoicesScreen: View {
     
     var body: some View {
         
+        let earliestYear = invoices.compactMap { invoice in
+                    invoice.dateCreated.map { Calendar.current.component(.year, from: $0) }
+                }.min() ?? Calendar.current.component(.year, from: Date())
+        
         NavigationStack(path: $behavioursVM.invoicesPath) {
             
             ScrollView {
@@ -38,7 +38,7 @@ struct InvoicesScreen: View {
                     InvoicesScreenTitle()
                         .padding(.horizontal, 15)
                     
-                    HorizontalInvoiceFilterView(selectedInvoiceStatus: $selectedInvoiceStatus)
+                    HorizontalInvoiceFilterView(selectedInvoiceStatus: $selectedInvoiceStatus, selectedYear: $selectedYear, yearRangeFrom: earliestYear)
                     
                     if invoices.isEmpty {
                         /// If no invoices were fetched at all
@@ -50,7 +50,7 @@ struct InvoicesScreen: View {
                             .padding(.horizontal, 40)
                             .padding(.top, 150)
                     } else {
-                        if selectedInvoiceStatus == nil {
+                        if selectedInvoiceStatus == nil && selectedYear == nil {
                             /// If no invoice filter was selected
                             /// Showing all Invoices
                             ForEach(invoices) { invoice in
@@ -60,7 +60,7 @@ struct InvoicesScreen: View {
                             }
                             .padding(.horizontal, 15)
                         } else if !selectedInvoices.isEmpty {
-                            /// Showing filtered invoices by invoice status
+                            /// Showing filtered invoices by invoice status and/or year
                             ForEach(selectedInvoices) { invoice in
                                 Button { behavioursVM.invoicesPath.append(invoice) } label: {
                                     InvoiceBubbleView(invoice: invoice)
@@ -69,7 +69,7 @@ struct InvoicesScreen: View {
                             .padding(.horizontal, 15)
                         } else {
                             /// For selected filter no invoices exist
-                            Text("There is no Invoice for selected Invoice Status.")
+                            Text("There is no Invoice for the selected filter criteria.")
                                 .font(.system(size: 25, weight: .semibold))
                                 .foregroundStyle(.brandBlack)
                                 .multilineTextAlignment(.center)
@@ -90,18 +90,38 @@ struct InvoicesScreen: View {
                 .navigationDestination(for: Client.self) { client in
                     ClientPreviewScreen(client: client)
                 }
-                .onChange(of: selectedInvoiceStatus) { value in
-                    if selectedInvoiceStatus != nil {
-                        withAnimation {
-                            selectedInvoices = invoices.filter { $0.statusCase == value }
-                        }
-                    }
+                .onChange(of: selectedInvoiceStatus) { _ in
+                    filterInvoices()
+                }
+                .onChange(of: selectedYear) { _ in
+                    filterInvoices()
                 }
             
-            
         }.navigationBarTitleDisplayMode(.inline)
-        
+            .task {
+                filterInvoices()
+            }
+            .task { await behavioursVM.checkForLoyaltyPass() }
         
     }
     
+    private func filterInvoices() {
+        withAnimation {
+            selectedInvoices = invoices.filter { invoice in
+                var matchesStatus = true
+                var matchesYear = true
+                
+                if let status = selectedInvoiceStatus {
+                    matchesStatus = invoice.statusCase == status
+                }
+                
+                if let year = selectedYear, let invoiceCreatedDate = invoice.dateCreated {
+                    let invoiceYear = Calendar.current.component(.year, from: invoiceCreatedDate)
+                    matchesYear = invoiceYear == year
+                }
+                
+                return matchesStatus && matchesYear
+            }
+        }
+    }
 }

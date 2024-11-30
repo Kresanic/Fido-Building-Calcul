@@ -371,6 +371,8 @@ struct InvoiceDetailView: View {
     }
     
     private func deleteCurrentInvoice(_ invoice: Invoice) {
+        invoiceProject?.addToToHistoryEvent(ProjectEvents.invoiceDeleted.entityObject)
+        try? viewContext.save()
         viewContext.delete(invoice)
         try? viewContext.save()
         dismiss()

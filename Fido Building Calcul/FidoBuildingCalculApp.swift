@@ -17,7 +17,7 @@ struct Fido_Building_CalculApp: App {
     @StateObject var pricingCalculations = PricingCalculations()
     
     init() {
-        Purchases.logLevel = .debug
+        Purchases.logLevel = .error
         Purchases.configure(withAPIKey: "appl_eEsIiyWisjWbLTkyAMcqCCFUDaB")
     }
     

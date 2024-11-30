@@ -121,7 +121,8 @@ struct OfferingBubblePreview: View {
             .scaleEffect(rectScale)
             .task {
                 Timer.scheduledTimer(withTimeInterval: 0.7, repeats: true) { _ in
-                    switch rectScale {
+                    DispatchQueue.main.async {
+                        switch rectScale {
                         case 1.0:
                             withAnimation(.easeInOut(duration: 0.7)) {
                                 rectScale = 0.97
@@ -134,6 +135,7 @@ struct OfferingBubblePreview: View {
                             withAnimation(.easeInOut(duration: 0.5)) {
                                 rectScale = 1.0
                             }
+                        }
                     }
                 }
             }

@@ -725,6 +725,16 @@
         }
       }
     },
+    "After maturity" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Po splatnosti"
+          }
+        }
+      }
+    },
     "After Maturity" : {
       "localizations" : {
         "sk" : {
@@ -761,6 +771,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Suma na úhradu"
+          }
+        }
+      }
+    },
+    "Any Time" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kedykoľvek"
           }
         }
       }
@@ -2447,7 +2467,7 @@
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ukončený"
+            "value" : "vyfakturované"
           }
         }
       }
@@ -2457,7 +2477,7 @@
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ukončený"
+            "value" : "Vyfakturované"
           }
         }
       }
@@ -2723,6 +2743,16 @@
         }
       }
     },
+    "in total, including VAT" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "celkovo, vrátane DPH"
+          }
+        }
+      }
+    },
     "Include" : {
       "localizations" : {
         "sk" : {
@@ -2814,6 +2844,16 @@
         }
       }
     },
+    "Invoice Deleted" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faktúra vymazaná"
+          }
+        }
+      }
+    },
     "Invoice Generated" : {
       "localizations" : {
         "sk" : {
@@ -2891,12 +2931,44 @@
         }
       }
     },
+    "invoices" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "invoices"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "faktúry"
+          }
+        }
+      }
+    },
     "Invoices" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invoices"
+          }
+        },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Faktúry"
+          }
+        }
+      }
+    },
+    "invoices in total" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "faktúry celkovo"
           }
         }
       }
@@ -4983,6 +5055,16 @@
         }
       }
     },
+    "Statistics" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Štatistiky"
+          }
+        }
+      }
+    },
     "Street" : {
       "localizations" : {
         "sk" : {
@@ -5103,12 +5185,12 @@
         }
       }
     },
-    "There is no Invoice for selected Invoice Status." : {
+    "There is no Invoice for the selected filter criteria." : {
       "localizations" : {
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pre vybratý stav faktúry neexistuje žiadna faktúra."
+            "value" : "Pre vybraté kritériá filtra neexistuje žiadna faktúra."
           }
         }
       }
@@ -5369,16 +5451,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Odomknite prémiové funkcie s predplatným. Prihlásením sa na odber súhlasíte s našimi zmluvnými podmienkami a zásadami ochrany osobných údajov. Vaše predplatné sa automaticky obnoví, pokiaľ ho nezrušíte aspoň 24 hodín pred koncom aktuálneho obdobia. Svoje predplatné môžete kedykoľvek spravovať alebo zrušiť v nastaveniach účtu App Store."
-          }
-        }
-      }
-    },
-    "unpaid" : {
-      "localizations" : {
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "neuhradené"
           }
         }
       }
@@ -5729,6 +5801,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "XY"
+          }
+        }
+      }
+    },
+    "Year" : {
+      "localizations" : {
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rok"
           }
         }
       }

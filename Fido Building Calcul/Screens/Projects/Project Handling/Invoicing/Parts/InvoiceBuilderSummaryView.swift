@@ -76,7 +76,7 @@ struct InvoiceBuilderSummaryView: View {
                 }
                 
                 Button {
-                    Task { await generateInvoiceObject() }
+                    generateInvoiceObject()
                 } label: {
                     HStack(spacing: 5) {
                         
@@ -106,83 +106,156 @@ struct InvoiceBuilderSummaryView: View {
         
     }
     
-    private func performInvoiceGeneration() async -> Bool {
+    private func performInvoiceGeneration() -> Bool {
         isGeneratingPDF = true // Toggle on when process begins
         defer {
             isGeneratingPDF = false // Ensure it toggles off when the process ends
         }
 
-        return await withCheckedContinuation { continuation in
-            Task {
-                let invoice = Invoice(context: viewContext)
-                invoice.cId = UUID()
-                invoice.dateCreated = Date.now.startOfTheDay
-                invoice.number = Int64(viewModel.invoiceDetails.invoiceNumber) ?? 0
+        let invoice = Invoice(context: viewContext)
+        invoice.cId = UUID()
+        invoice.dateCreated = Date.now.startOfTheDay
+        invoice.number = Int64(viewModel.invoiceDetails.invoiceNumber) ?? 0
 
-                do {
-                    invoice.pdfFile = try Data(contentsOf: viewModel.invoiceDetails.pdfURL)
-                } catch {
-                    print("Failed to load PDF data: \(error)")
-                    continuation.resume(returning: false)
-                    return
-                }
+        do {
+            invoice.pdfFile = try Data(contentsOf: viewModel.invoiceDetails.pdfURL)
+        } catch {
+            print("Failed to load PDF data: \(error)")
+            return false
+        }
 
-                if let receiptURL = viewModel.invoiceDetails.cashReceiptURL {
-                    do {
-                        invoice.cashReceipt = try Data(contentsOf: receiptURL)
-                    } catch {
-                        print("Failed to load cash receipt data: \(error)")
-                        continuation.resume(returning: false)
-                        return
-                    }
-                }
-
-                invoice.toClient = viewModel.invoiceDetails.client
-                invoice.toContractor = viewModel.invoiceDetails.contractor
-                invoice.toProject = viewModel.project
-                invoice.maturityDays = Int64(invoiceMaturityDuration)
-                invoice.priceWithoutVat = viewModel.invoiceDetails.unPriceWithoutVAT
-                invoice.vatAmount = viewModel.invoiceDetails.unCumulativeVat
-                invoice.status = InvoiceStatus.unpaid.rawValue
-
-                viewModel.project.addToToHistoryEvent(ProjectEvents.invoiceGenerated.entityObject)
-
-                do {
-                    try viewContext.save()
-                } catch {
-                    print("Failed to save context: \(error)")
-                    continuation.resume(returning: false)
-                    return
-                }
-
-                continuation.resume(returning: true)
+        if let receiptURL = viewModel.invoiceDetails.cashReceiptURL {
+            do {
+                invoice.cashReceipt = try Data(contentsOf: receiptURL)
+            } catch {
+                print("Failed to load cash receipt data: \(error)")
+                return false
             }
         }
-    }
 
-    private func generateInvoiceObject() async {
-        let missingValues = viewModel.invoiceDetails.missingValues
-        await MainActor.run { withAnimation { isGeneratingPDF = true } }
-        if missingValues.isEmpty {
-            let success = await Task.detached(priority: .background) {
-                return await performInvoiceGeneration()
-            }.value
-            
-            await MainActor.run {
-                if success {
-                    viewModel.isShowingPDF = true
-                    viewModel.wasPDFShown = true
-                }
-                withAnimation { isGeneratingPDF = false }
-            }
-        } else {
-            await MainActor.run {
-                viewModel.missingValues = missingValues
-                viewModel.isShowingMissingValues = true
-                withAnimation { isGeneratingPDF = false }
-            }
+        invoice.toClient = viewModel.invoiceDetails.client
+        invoice.toContractor = viewModel.invoiceDetails.contractor
+        invoice.toProject = viewModel.project
+        invoice.maturityDays = Int64(invoiceMaturityDuration)
+        invoice.priceWithoutVat = viewModel.invoiceDetails.unPriceWithoutVAT
+        invoice.vatAmount = viewModel.invoiceDetails.unCumulativeVat
+        invoice.status = InvoiceStatus.unpaid.rawValue
+
+        viewModel.project.addToToHistoryEvent(ProjectEvents.invoiceGenerated.entityObject)
+
+        do {
+            try viewContext.save()
+        } catch {
+            print("Failed to save context: \(error)")
+            return false
         }
+
+        return true
     }
     
+    
+    private func generateInvoiceObject() {
+        let missingValues = viewModel.invoiceDetails.missingValues
+        isGeneratingPDF = true // Begin generating the PDF
+
+        if missingValues.isEmpty {
+            let success = performInvoiceGeneration()
+
+            if success {
+                viewModel.isShowingPDF = true
+                viewModel.wasPDFShown = true
+            }
+
+            isGeneratingPDF = false // End generating the PDF
+        } else {
+            viewModel.missingValues = missingValues
+            viewModel.isShowingMissingValues = true
+            isGeneratingPDF = false // End generating the PDF since there are missing values
+        }
+    }
+
+    
+    
+    // OLD
+//    private func performInvoiceGeneration() async -> Bool {
+//        isGeneratingPDF = true // Toggle on when process begins
+//        defer {
+//            isGeneratingPDF = false // Ensure it toggles off when the process ends
+//        }
+//
+//        return await withCheckedContinuation { continuation in
+//            Task {
+//                let invoice = Invoice(context: viewContext)
+//                invoice.cId = UUID()
+//                invoice.dateCreated = Date.now.startOfTheDay
+//                invoice.number = Int64(viewModel.invoiceDetails.invoiceNumber) ?? 0
+//
+//                do {
+//                    invoice.pdfFile = try Data(contentsOf: viewModel.invoiceDetails.pdfURL)
+//                } catch {
+//                    print("Failed to load PDF data: \(error)")
+//                    continuation.resume(returning: false)
+//                    return
+//                }
+//
+//                if let receiptURL = viewModel.invoiceDetails.cashReceiptURL {
+//                    do {
+//                        invoice.cashReceipt = try Data(contentsOf: receiptURL)
+//                    } catch {
+//                        print("Failed to load cash receipt data: \(error)")
+//                        continuation.resume(returning: false)
+//                        return
+//                    }
+//                }
+//
+//                invoice.toClient = viewModel.invoiceDetails.client
+//                invoice.toContractor = viewModel.invoiceDetails.contractor
+//                invoice.toProject = viewModel.project
+//                invoice.maturityDays = Int64(invoiceMaturityDuration)
+//                invoice.priceWithoutVat = viewModel.invoiceDetails.unPriceWithoutVAT
+//                invoice.vatAmount = viewModel.invoiceDetails.unCumulativeVat
+//                invoice.status = InvoiceStatus.unpaid.rawValue
+//
+//                viewModel.project.addToToHistoryEvent(ProjectEvents.invoiceGenerated.entityObject)
+//
+//                await MainActor.run {
+//                    do {
+//                        try viewContext.save()
+//                    } catch {
+//                        print("Failed to save context: \(error)")
+//                        continuation.resume(returning: false)
+//                        return
+//                    }
+//                }
+//
+//                continuation.resume(returning: true)
+//            }
+//        }
+//    }
+//
+//    private func generateInvoiceObject() async {
+//        let missingValues = viewModel.invoiceDetails.missingValues
+//        await MainActor.run { withAnimation { isGeneratingPDF = true } }
+//        if missingValues.isEmpty {
+//            let success = await Task.detached(priority: .background) {
+//                return await performInvoiceGeneration()
+//            }.value
+//            
+//            await MainActor.run {
+//                if success {
+//                    viewModel.isShowingPDF = true
+//                    viewModel.wasPDFShown = true
+//                }
+//                withAnimation { isGeneratingPDF = false }
+//            }
+//        } else {
+//            await MainActor.run {
+//                viewModel.missingValues = missingValues
+//                viewModel.isShowingMissingValues = true
+//                withAnimation { isGeneratingPDF = false }
+//            }
+//        }
+//    }
+//    
 }
 

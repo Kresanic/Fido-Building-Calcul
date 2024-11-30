@@ -61,7 +61,7 @@ struct NewProjectSheet: View {
                     .multilineTextAlignment(.center)
                     .keyboardType(.default)
                     .onSubmit {
-                        if let newProject = createNewProject() {
+                        if let _ = createNewProject() {
                             dismiss()
                             behaviours.redraw()
 //                            behaviours.switchToProjectsPage(with: newProject)
@@ -102,7 +102,7 @@ struct NewProjectSheet: View {
             let permissionToCreate = (behaviours.activeContractor != nil || chosenContractor != nil) && !nameOfProject.isEmpty
             
             Button {
-                if let newProject = createNewProject() {
+                if let _ = createNewProject() {
                     dismiss()
                     behaviours.redraw()
 //                    behaviours.switchToProjectsPage(with: newProject)

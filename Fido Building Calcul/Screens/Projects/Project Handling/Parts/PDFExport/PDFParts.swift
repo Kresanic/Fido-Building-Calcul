@@ -74,7 +74,7 @@ struct PDFTotalPriceView: View {
                 
             }
          
-        }
+        }.foregroundStyle(.black)
     }
     
 }
@@ -237,7 +237,7 @@ struct PDFContractorInfoView: View {
                 
             }
             
-            Rectangle().foregroundStyle(Color.brandBlack).frame(maxWidth: .infinity).frame(height: 1)
+            Rectangle().foregroundStyle(.black).frame(maxWidth: .infinity).frame(height: 1)
             
             HStack(alignment: .lastTextBaseline, spacing: 0) {
                 
@@ -273,14 +273,14 @@ struct PDFContractorInfoView: View {
                     PDFPersonalInfoView(title: NSLocalizedString("Legal appendix", comment: ""), value: contractor.legalNotice)
                     
                     PDFPersonalInfoView(title: NSLocalizedString("Bank account number", comment: ""), value: contractor.bankAccountNumber)
-                    
+                        .foregroundStyle(.black)
                     PDFPersonalInfoView(title: NSLocalizedString("Bank Code", comment: ""), value: contractor.swiftCode)
                     
                 }
                 
             }
             
-        }
+        }.foregroundStyle(.black)
         
     }
     
@@ -302,11 +302,13 @@ struct PDFPersonalInfoView: View {
                     if let title {
                         Text("\(title): ")
                             .font(.system(size: 10))
+                            .foregroundStyle(.black)
                             .fixedSize()
                             .frame(minWidth: 50, alignment: .leading)
                     } else if let icon {
                         Image(systemName: icon)
                             .font(.system(size: 10))
+                            .foregroundStyle(.black)
                             .fixedSize(horizontal: true, vertical: true)
                             .padding(.trailing, 4)
                     }
@@ -317,11 +319,13 @@ struct PDFPersonalInfoView: View {
                         if !secondValue.isEmpty {
                             Text("\(value) \(secondValue)")
                                 .font(.system(size: 10))
+                                .foregroundStyle(.black)
                                 .fixedSize()
                         }
                     } else {
                         Text(value)
                             .font(.system(size: 10))
+                            .foregroundStyle(.black)
                             .fixedSize(horizontal: true, vertical: true)
                     }
                 }
@@ -384,7 +388,7 @@ struct PDFRowView: View {
                     .frame(width: 80, alignment: .trailing)
             }
             
-        }
+        }.foregroundStyle(.black)
         
     }
 }

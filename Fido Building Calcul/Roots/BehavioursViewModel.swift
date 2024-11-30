@@ -19,6 +19,7 @@ final class BehavioursViewModel: ObservableObject {
             activeContractorCID = activeContractor?.cId
         }
     }
+    
     @Published var currentTab: CustomTabs = .projects
     @Published var toRedraw = false
     @Published var projectsPath = NavigationPath()
@@ -50,6 +51,8 @@ final class BehavioursViewModel: ObservableObject {
         hasAnyClientContractorCheck()
         
     }
+    
+    
     
     func proEntitlementHandling() async {
         
@@ -231,10 +234,10 @@ final class BehavioursViewModel: ObservableObject {
         
     }
     
+    
     func showDialogWindow(using dialog: Dialog) {
         showingDialogWindow = dialog
     }
-    
     
     func switchToRoom(with room: Room) {
         withAnimation(.easeInOut(duration: 0.2)) {

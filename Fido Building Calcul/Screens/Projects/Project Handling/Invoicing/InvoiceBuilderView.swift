@@ -124,7 +124,7 @@ struct InvoiceBuilderView: View {
                 }
                 
             }
-            .scrollDismissesKeyboard(.interactively)
+            .scrollDismissesKeyboard(.immediately)
             .background{ Color.brandWhite.onTapGesture{ dismissKeyboard() }.ignoresSafeArea() }
             .sheet(item: $viewModel.dialogWindow) { dialog in
                 DialogWindow(dialog: dialog)

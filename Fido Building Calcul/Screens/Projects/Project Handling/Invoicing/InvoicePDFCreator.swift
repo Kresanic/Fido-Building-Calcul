@@ -49,7 +49,7 @@ import CoreData
     }
     
     func contentPDF() -> some View {
-        
+        // Checked
         VStack(alignment: .leading, spacing: 0) {
             
             HStack(alignment: .top) {
@@ -61,13 +61,13 @@ import CoreData
                     Text("\(localizedInvoice) \(invoiceDetails.invoiceNumber)")
                         .font(.system(size: 25, weight: .semibold))
                         .minimumScaleFactor(0.5)
-                        .foregroundStyle(Color.brandBlack)
+                        .foregroundStyle(.black)
                     
                     let localizedPriceOffer = NSLocalizedString("Price Offer", comment: "")
                 
                     Text("\(localizedPriceOffer) \(invoiceDetails.project.projectNumber)")
                         .font(.system(size: 14, weight: .medium))
-                        .foregroundStyle(Color.brandBlack.opacity(0.8))
+                        .foregroundStyle(.black.opacity(0.8))
                     
                     Spacer()
                     
@@ -77,6 +77,7 @@ import CoreData
                             
                             Text(NSLocalizedString("Customer", comment: ""))
                                 .font(.system(size: 13, weight: .bold))
+                                .foregroundStyle(.black)
                             
                             PDFClientInfoView(client: client)
                             
@@ -167,7 +168,7 @@ import CoreData
                 }
                 
                 Rectangle()
-                    .foregroundStyle(Color.brandBlack)
+                    .foregroundStyle(.black)
                     .frame(maxWidth: .infinity, maxHeight: 1).padding(.vertical, 4)
                 
                 if !projectSumUp.works.isEmpty {
@@ -200,7 +201,7 @@ import CoreData
                 ForEach(projectSumUp.others) { PDFInvoiceRowView($0) }
                 
                 Rectangle()
-                    .foregroundStyle(Color.brandBlack)
+                    .foregroundStyle(.black)
                     .frame(maxWidth: .infinity, maxHeight: 1).padding(.vertical, 4)
                 
                 HStack(alignment: .top) {
@@ -218,7 +219,7 @@ import CoreData
                                     
                                     Text(NSLocalizedString("Scan to Pay!", comment: ""))
                                         .font(.system(size: 10, weight: .medium))
-                                        .foregroundStyle(.brandBlack)
+                                        .foregroundStyle(.black)
                                     
                                 }
                             }
@@ -237,7 +238,7 @@ import CoreData
                                 
                                 Text(NSLocalizedString("Issued by:", comment: ""))
                                     .font(.system(size: 10, weight: .medium))
-                                    .foregroundStyle(.brandBlack)
+                                    .foregroundStyle(.black)
                                 
                                 Image(uiImage: signature)
                                     .resizable()
@@ -255,7 +256,7 @@ import CoreData
                 
                 Text(invoiceNote)
                     .font(.system(size: 10))
-                    .foregroundStyle(.brandBlack)
+                    .foregroundStyle(.black)
                     .padding(.bottom, 10)
                 
             } else { Text(NSLocalizedString("PDF could not be created.", comment: "")) }
@@ -349,13 +350,13 @@ import CoreData
     }
     
     func contentCashReceipt() -> some View {
-        
+        // Checked
         VStack(alignment: .leading, spacing: 0) {
             
             let localizedCashReceipt = NSLocalizedString("Cash Receipt", comment: "")
             
             Text("\(localizedCashReceipt) \(invoiceDetails.invoiceNumber)")
-            
+                .foregroundStyle(.black)
             HStack {
                 
                 let paymentForInvoiceLoc = NSLocalizedString("Payment for Invoice", comment: "")
@@ -405,7 +406,7 @@ import CoreData
                         }
                     }
                     
-                    Rectangle().foregroundStyle(Color.brandBlack).frame(maxWidth: .infinity).frame(height: 1)
+                    Rectangle().foregroundStyle(.black).frame(maxWidth: .infinity).frame(height: 1)
                     
                     PDFInvoiceTotalPriceView(invoiceDetails)
                     
@@ -662,11 +663,11 @@ struct PDFInvoiceSummaryBubble: View {
                 
                 Text(title)
                     .font(.system(size: 9))
-                    .foregroundStyle(.brandBlack)
+                    .foregroundStyle(.black)
                 
                 Text(value)
                     .font(.system(size: 15, weight: .semibold))
-                    .foregroundStyle(.brandBlack)
+                    .foregroundStyle(.black)
                     .lineLimit(1)
                     .fixedSize()
                     .minimumScaleFactor(0.6)
@@ -674,7 +675,7 @@ struct PDFInvoiceSummaryBubble: View {
             }.padding(.horizontal, 8)
                 .frame(height: 50)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .background { RoundedRectangle(cornerRadius: 13, style: .continuous).strokeBorder(.brandGray, lineWidth: 1) }
+                .background { RoundedRectangle(cornerRadius: 13, style: .continuous).strokeBorder(.secondary, lineWidth: 1) }
         }
         
     }

@@ -23,4 +23,8 @@ extension Date {
         return startOfTheDay ?? self
         
     }
+    
+    var year: Int {
+        Calendar.current.component(.year, from: self)
+    }
 }

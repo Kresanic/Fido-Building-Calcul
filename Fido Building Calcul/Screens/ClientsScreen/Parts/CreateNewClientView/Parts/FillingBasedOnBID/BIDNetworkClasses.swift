@@ -19,8 +19,8 @@ struct CompanyResult: Codable {
 
 struct Company: Codable {
     
-    let ico: String
-    let dic: String
+    let ico: String?
+    let dic: String?
     let dicDph: String?
     let companyName: String
     let address: [Address]

@@ -36,8 +36,10 @@ public class Client: NSManagedObject {
     public var associatedProjects: [Project] {
         
         let set = hasProject as? Set<Project> ?? []
+        
+        let sortedSet = set.sorted(by: { $0.dateCreated ?? Date.now >= $1.dateCreated ?? Date.now })
     
-        return Array(set)
+        return Array(sortedSet)
     }
     
 }

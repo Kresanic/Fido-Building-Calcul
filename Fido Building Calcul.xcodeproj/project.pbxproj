@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3906CF032C77CB6900246287 /* Data Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3906CF022C77CB6500246287 /* Data Extensions.swift */; };
 		390F80312B591D2800A10FF0 /* DuplicateProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390F80302B591D2800A10FF0 /* DuplicateProjectViewModel.swift */; };
 		390F80332B591DAA00A10FF0 /* NSManagedObject Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390F80322B591DAA00A10FF0 /* NSManagedObject Extension.swift */; };
 		390F80352B59483F00A10FF0 /* ProjectManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390F80342B59483F00A10FF0 /* ProjectManagementView.swift */; };
@@ -190,6 +191,7 @@
 		398B4C6E2B976C8A00F84DB6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399BB7772AEBFD1C00452560 /* StoreKit.framework */; };
 		398B4C722B976D0800F84DB6 /* ReceiptParser in Frameworks */ = {isa = PBXBuildFile; productRef = 398B4C712B976D0800F84DB6 /* ReceiptParser */; };
 		398B4C742B976D0800F84DB6 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 398B4C732B976D0800F84DB6 /* RevenueCat */; };
+		398E8CDC2C760E6500023CDF /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 398E8CDB2C760E6500023CDF /* Algorithms */; };
 		398ED2502BF4C327003CFA8A /* CustomWork+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398ED24F2BF4C327003CFA8A /* CustomWork+CoreDataClass.swift */; };
 		398ED2522BF4C3D8003CFA8A /* BrickPartitionsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398ED2512BF4C3D7003CFA8A /* BrickPartitionsViews.swift */; };
 		398ED2552BF4C448003CFA8A /* Fido_Building_Calcul.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 398ED2532BF4C448003CFA8A /* Fido_Building_Calcul.xcdatamodeld */; };
@@ -246,6 +248,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3906CF022C77CB6500246287 /* Data Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Extensions.swift"; sourceTree = "<group>"; };
 		390F80302B591D2800A10FF0 /* DuplicateProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateProjectViewModel.swift; sourceTree = "<group>"; };
 		390F80322B591DAA00A10FF0 /* NSManagedObject Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject Extension.swift"; sourceTree = "<group>"; };
 		390F80342B59483F00A10FF0 /* ProjectManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectManagementView.swift; sourceTree = "<group>"; };
@@ -492,6 +495,7 @@
 				3991E8082C04BBC3001B0979 /* RevenueCatUI in Frameworks */,
 				398B4C722B976D0800F84DB6 /* ReceiptParser in Frameworks */,
 				398B4C6E2B976C8A00F84DB6 /* StoreKit.framework in Frameworks */,
+				398E8CDC2C760E6500023CDF /* Algorithms in Frameworks */,
 				398B4C742B976D0800F84DB6 /* RevenueCat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -848,6 +852,7 @@
 		398900892B15F86500CC3870 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3906CF022C77CB6500246287 /* Data Extensions.swift */,
 				39475D522A76AABF006EC970 /* Color Extensions.swift */,
 				3996E2BC2A7985A1000D86E1 /* Binding Extensions.swift */,
 				39475D642A76E376006EC970 /* View Extensions.swift */,
@@ -1225,6 +1230,7 @@
 				398B4C712B976D0800F84DB6 /* ReceiptParser */,
 				398B4C732B976D0800F84DB6 /* RevenueCat */,
 				3991E8072C04BBC3001B0979 /* RevenueCatUI */,
+				398E8CDB2C760E6500023CDF /* Algorithms */,
 			);
 			productName = "Fido Building Calcul";
 			productReference = 395086E42A7182CF0099BAD8 /* Fido Building Calcul.app */;
@@ -1257,6 +1263,7 @@
 			mainGroup = 395086DB2A7182CF0099BAD8;
 			packageReferences = (
 				398B4C702B976D0800F84DB6 /* XCRemoteSwiftPackageReference "purchases-ios" */,
+				398E8CDA2C760E6500023CDF /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			productRefGroup = 395086E52A7182CF0099BAD8 /* Products */;
 			projectDirPath = "";
@@ -1293,6 +1300,7 @@
 				39E354912B9C92A900DE247E /* PlasterboardingOffsetWallViews.swift in Sources */,
 				397BB9A82AD041BF006BA23C /* PaintingWall+CoreDataClass.swift in Sources */,
 				398901052B17682600CC3870 /* ClientCreationHandling.swift in Sources */,
+				3906CF032C77CB6900246287 /* Data Extensions.swift in Sources */,
 				396435B92A7A69E300C148B8 /* BrickLoadBearingWallViews.swift in Sources */,
 				397BB9BE2AD041BF006BA23C /* Levelling+CoreDataClass.swift in Sources */,
 				398900A82B15FF4D00CC3870 /* RoomInputsParts.swift in Sources */,
@@ -1647,7 +1655,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
 				DEVELOPMENT_TEAM = J7CR9GZ8S9;
 				ENABLE_PREVIEWS = YES;
@@ -1668,7 +1676,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.1;
+				MARKETING_VERSION = 1.4.4;
 				PRODUCT_BUNDLE_IDENTIFIER = sk.fido.FidoBuildingCalcul;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1688,7 +1696,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fido Building Calcul/Fido Building Calcul.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Fido Building Calcul/Preview Content\"";
 				DEVELOPMENT_TEAM = J7CR9GZ8S9;
 				ENABLE_PREVIEWS = YES;
@@ -1709,7 +1717,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.1;
+				MARKETING_VERSION = 1.4.4;
 				PRODUCT_BUNDLE_IDENTIFIER = sk.fido.FidoBuildingCalcul;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1750,8 +1758,17 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
 			requirement = {
-				kind = upToNextMajorVersion;
+				kind = versionRange;
+				maximumVersion = 6.0.0;
 				minimumVersion = 4.37.0;
+			};
+		};
+		398E8CDA2C760E6500023CDF /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1766,6 +1783,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 398B4C702B976D0800F84DB6 /* XCRemoteSwiftPackageReference "purchases-ios" */;
 			productName = RevenueCat;
+		};
+		398E8CDB2C760E6500023CDF /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 398E8CDA2C760E6500023CDF /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
 		};
 		3991E8072C04BBC3001B0979 /* RevenueCatUI */ = {
 			isa = XCSwiftPackageProductDependency;
